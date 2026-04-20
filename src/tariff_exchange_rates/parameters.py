@@ -90,12 +90,12 @@ CALIBRATIONS = {
     "US–China–EU": make_params_3country(
         alpha_T_A=0.097, alpha_T_B=0.165, alpha_T_C=0.138, alpha_N=0.600,
         labor=(1.0, 1.21, 0.86),
-        sigma=1.0,
+        sigma=8.0,
     ),
     "US–China–VNM": make_params_3country(
         alpha_T_A=0.138, alpha_T_B=0.236, alpha_T_C=0.026, alpha_N=0.600,
         labor=(1.0, 1.21, 0.055),
-        sigma=4.0,
+        sigma=8.0,
     ),
     "US–China–ROW": make_params_3country(
         alpha_T_A=0.034, alpha_T_B=0.057, alpha_T_C=0.309, alpha_N=0.600,
@@ -110,5 +110,4 @@ CALIBRATIONS = {
 TARIFF_REGIMES = {
     "Regime 1 (Fentanyl)":       make_tariff_matrix(tau_AB=0.20),
     "Regime 2 (Peak trade war)": make_tariff_matrix(tau_AB=1.45, tau_BA=1.25, tau_AC=0.10),
-    "Regime 3 (Post-Geneva)":    make_tariff_matrix(tau_AB=0.35, tau_BA=0.10, tau_AC=0.10),
 }

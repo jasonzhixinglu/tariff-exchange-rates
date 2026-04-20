@@ -18,6 +18,19 @@ venv/
 # Output
 output/
 
+# Google Drive synced files
+gdrive_files/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+Exchange_Rate_Tariffs/*.pdf
+Exchange_Rate_Tariffs/paper_draft_*.tex
+
 # OS
 .DS_Store
 Thumbs.db
