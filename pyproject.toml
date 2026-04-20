@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tariff-exchange-rates"
+version = "0.1.0"
+description = "Analysis of tariff effects on exchange rates"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pandas",
+    "statsmodels",
+    "matplotlib",
+    "seaborn",
+    "tqdm",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
