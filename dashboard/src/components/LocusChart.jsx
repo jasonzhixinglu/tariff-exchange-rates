@@ -130,8 +130,8 @@ export default function LocusChart({ params, equilibrium }) {
     drawFrame,
   ])
 
-  // Tick labels for axes
-  const axisTicks = [-0.6, -0.3, 0, 0.3, 0.6]
+  const axisTicks  = [-0.6, -0.3, 0, 0.3, 0.6]   // grid lines (full range)
+  const labelTicks = [-0.5, -0.3, 0.3, 0.5]       // axis labels (no clipping at edge)
 
   return (
     <div className="card p-4 flex flex-col gap-2 lg:flex-1">
@@ -232,7 +232,7 @@ export default function LocusChart({ params, equilibrium }) {
           />
 
           {/* Axis tick labels */}
-          {axisTicks.filter(v => v !== 0).map(v => (
+          {labelTicks.map(v => (
             <g key={v}>
               <text
                 x={toSVG(v)} y={SVG_SIZE - 4}
