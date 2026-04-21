@@ -7,7 +7,10 @@ export default function AboutPanel() {
         <div>
           <div className="label mb-3">Working Paper</div>
           <h2 className="text-xl font-semibold text-slate-100 leading-snug">
-            Trade Tariffs and Exchange Rates: Revisiting Conventional Wisdom in a Three-Country Framework
+            Trade Tariffs and Exchange Rates
+            <span className="block text-base font-medium text-slate-300 mt-1">
+              Revisiting Conventional Wisdom in a Three-Country Framework
+            </span>
           </h2>
         </div>
 
