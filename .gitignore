@@ -21,6 +21,9 @@ output/
 # Google Drive synced files
 gdrive_files/
 
+# Paper directory (LaTeX sources, figures, literature)
+Exchange_Rate_Tariffs/
+
 # LaTeX build artifacts
 *.aux
 *.log
@@ -28,8 +31,6 @@ gdrive_files/
 *.synctex.gz
 *.fls
 *.fdb_latexmk
-Exchange_Rate_Tariffs/*.pdf
-Exchange_Rate_Tariffs/paper_draft_*.tex
 
 # OS
 .DS_Store
