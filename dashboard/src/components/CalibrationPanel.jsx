@@ -64,6 +64,16 @@ export default function CalibrationPanel() {
           Data columns show log-point change relative to 2024 annual average (Yahoo Finance).
           Green data = direction agrees with model; red = disagrees.
         </p>
+        <p className="text-xs text-slate-500 leading-relaxed">
+          <span className="text-slate-400 font-medium">Overall fit:</span>{' '}
+          Regime 1 directional predictions are broadly correct across all eight configurations.
+          Regime 2 is more mixed: the model correctly predicts USD depreciation against the euro and yen —
+          safe-haven currencies that appreciated during the escalation — but most other currencies moved
+          in the opposite direction as financial risk-off flows and dollar safe-haven demand dominated the
+          trade-balance channel the model captures. Korea and Taiwan follow the same pattern not because
+          they are emerging markets, but because their deep US trade dependence amplified the financial
+          channel response at short horizons.
+        </p>
       </div>
 
       {/* Country grid */}

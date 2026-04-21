@@ -46,20 +46,20 @@ function DeltaCard({ label, sub, value }) {
   const pos = value >  0.05
   const neg = value < -0.05
   return (
-    <div className={`rounded-lg border px-3 py-2.5 flex flex-col gap-0.5 ${
+    <div className={`rounded-lg border px-2 py-2 lg:px-3 lg:py-2.5 flex flex-col gap-0.5 ${
       pos ? 'bg-amber-950/30 border-amber-700/40' :
       neg ? 'bg-sky-950/30  border-sky-700/40'   :
             'bg-slate-800/40 border-slate-700/40'
     }`}>
-      <div className="flex justify-between items-baseline gap-2">
+      <div className="flex justify-between items-baseline gap-1">
         <span className="text-xs text-slate-500 font-mono">{label}</span>
-        <span className={`text-base font-mono font-semibold tabular-nums ${
+        <span className={`text-sm lg:text-base font-mono font-semibold tabular-nums ${
           pos ? 'text-amber-400' : neg ? 'text-sky-400' : 'text-slate-400'
         }`}>
           {value > 0 ? '+' : ''}{value.toFixed(2)}%
         </span>
       </div>
-      <span className="text-xs text-slate-600">{sub}</span>
+      <span className="text-xs text-slate-600 hidden lg:block">{sub}</span>
     </div>
   )
 }
