@@ -78,9 +78,9 @@ COUNTRY_CONFIGS = {
         "currency": "EUR",
         "s_C": 0.120,
         "L_C": 25.1 / 29.2,    # 0.860
-        "sigma": 4,
-        "sigma_note": "Moderate manufacturing competition; China Shock 2.0 narrative. "
-                      "Lower than Vietnam/Korea given EU's product differentiation.",
+        "sigma": 6,
+        "sigma_note": "Moderate-to-high manufacturing competition; China Shock 2.0 narrative. "
+                      "Intermediate between Vietnam/Korea and ROW given EU's product differentiation.",
         "flag": "🇪🇺",
     },
     "JPN": {
@@ -88,7 +88,7 @@ COUNTRY_CONFIGS = {
         "currency": "JPY",
         "s_C": 0.033,
         "L_C": 6.6 / 29.2,     # 0.226
-        "sigma": 3,
+        "sigma": 4,
         "sigma_note": "Advanced manufactures (autos, machinery) with limited overlap "
                       "with Chinese exports; Feenstra et al. 2018 aggregate estimate.",
         "flag": "🇯🇵",

@@ -90,7 +90,7 @@ CALIBRATIONS = {
     "US–China–EU": make_params_3country(
         alpha_T_A=0.097, alpha_T_B=0.165, alpha_T_C=0.138, alpha_N=0.600,
         labor=(1.0, 1.21, 0.86),
-        sigma=8.0,
+        sigma=6.0,
     ),
     "US–China–VNM": make_params_3country(
         alpha_T_A=0.138, alpha_T_B=0.236, alpha_T_C=0.026, alpha_N=0.600,
