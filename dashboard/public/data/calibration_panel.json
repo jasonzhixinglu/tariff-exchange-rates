@@ -14,6 +14,57 @@
     "convention": "delta_e_XY > 0 means depreciation of X's currency against Y"
   },
   "countries": {
+    "ROW": {
+      "meta": {
+        "label": "Rest of World",
+        "currency": "TWI",
+        "flag": "\ud83c\udf10",
+        "sigma": 2,
+        "sigma_note": "Large heterogeneous aggregate; bilateral substitution patterns attenuated by aggregation across many trading partners (Fajgelbaum et al. 2020; Feenstra et al. 2018).",
+        "alpha_T_A": 0.0336,
+        "alpha_T_B": 0.0573,
+        "alpha_T_C": 0.3091,
+        "alpha_N": 0.6,
+        "L_C": 3.5103,
+        "s_C": 0.772
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.54761905,
+          "e_AC_ft": 4.90532184,
+          "e_BC_ft": 3.16959258,
+          "e_AB": 1.53261299,
+          "e_AC": 4.8961429,
+          "e_BC": 3.19463749,
+          "delta_e_AB": -0.9696,
+          "delta_e_AC": -0.1871,
+          "delta_e_BC": 0.7902,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.54761905,
+          "e_AC_ft": 4.90532184,
+          "e_BC_ft": 3.16959258,
+          "e_AB": 1.52523152,
+          "e_AC": 4.94894463,
+          "e_BC": 3.244717,
+          "delta_e_AB": -1.4466,
+          "delta_e_AC": 0.8893,
+          "delta_e_BC": 2.3702,
+          "error": null
+        }
+      }
+    },
     "EU": {
       "meta": {
         "label": "European Union",

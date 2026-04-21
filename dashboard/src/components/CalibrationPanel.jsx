@@ -37,7 +37,8 @@ export default function CalibrationPanel() {
   }
 
   const countries = calibData.countries
-  const countryKeys = Object.keys(countries)
+  // Top row: main-text configurations; remaining rows: appendix configurations
+  const COUNTRY_ORDER = ['EU', 'VNM', 'ROW', 'JPN', 'KOR', 'MEX', 'CAN', 'TWN', 'IND']
 
   return (
     <div className="flex flex-col gap-5">
@@ -63,10 +64,11 @@ export default function CalibrationPanel() {
           Model columns show % change relative to free-trade equilibrium.
           Data columns show log-point change relative to 2024 annual average (Yahoo Finance).
           Green data = direction agrees with model; red = disagrees.
+          ROW data uses the Fed Advanced Economy trade-weighted index (H.10); no ticker shown.
         </p>
         <p className="text-xs text-slate-500 leading-relaxed">
           <span className="text-slate-400 font-medium">Overall fit:</span>{' '}
-          Regime 1 directional predictions are broadly correct across all eight configurations.
+          Regime 1 directional predictions are broadly correct across all nine configurations.
           Regime 2 is more mixed: the model correctly predicts USD depreciation against the euro and yen —
           safe-haven currencies that appreciated during the escalation — but most other currencies moved
           in the opposite direction as financial risk-off flows and dollar safe-haven demand dominated the
@@ -76,9 +78,9 @@ export default function CalibrationPanel() {
         </p>
       </div>
 
-      {/* Country grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {countryKeys.map(key => (
+      {/* Country grid — 3 × 3: top row is the three main-text configs */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {COUNTRY_ORDER.map(key => countries[key] && (
           <CountryCard
             key={key}
             countryKey={key}

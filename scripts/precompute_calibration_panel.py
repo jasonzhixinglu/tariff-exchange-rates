@@ -73,6 +73,17 @@ def make_alpha(s_C):
     return {"alpha_T_A": a_A, "alpha_T_B": a_B, "alpha_T_C": a_C, "alpha_N": 0.60}
 
 COUNTRY_CONFIGS = {
+    "ROW": {
+        "label": "Rest of World",
+        "currency": "TWI",
+        "s_C": 0.772,
+        "L_C": 102.5 / 29.2,   # 3.510 — world PPP GDP minus US and China
+        "sigma": 2,
+        "sigma_note": "Large heterogeneous aggregate; bilateral substitution patterns attenuated "
+                      "by aggregation across many trading partners "
+                      "(Fajgelbaum et al. 2020; Feenstra et al. 2018).",
+        "flag": "🌐",
+    },
     "EU": {
         "label": "European Union",
         "currency": "EUR",
