@@ -19,8 +19,8 @@ export default function CalibrationPanel() {
 
   useEffect(() => {
     Promise.all([
-      fetch('/data/calibration_panel.json').then(r => r.json()),
-      fetch('/data/fx_data.json').then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/calibration_panel.json`).then(r => r.json()),
+      fetch(`${import.meta.env.BASE_URL}data/fx_data.json`).then(r => r.json()),
     ]).then(([calib, fx]) => {
       setCalibData(calib)
       setFxData(fx.rates)

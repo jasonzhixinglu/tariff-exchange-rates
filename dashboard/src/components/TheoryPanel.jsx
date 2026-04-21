@@ -97,7 +97,7 @@ export default function TheoryPanel() {
   const [loading,      setLoading]      = useState(true)
 
   useEffect(() => {
-    fetch('/data/theory_grid.json')
+    fetch(`${import.meta.env.BASE_URL}data/theory_grid.json`)
       .then(r => r.json())
       .then(data => { setGridIndex(buildIndex(data.grid)); setLoading(false) })
   }, [])
