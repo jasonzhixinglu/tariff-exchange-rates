@@ -110,14 +110,15 @@
       "label": "USD/VND",
       "ticker": "USDVND=X",
       "inverted": true,
+      "note": "Yahoo Finance USDVND=X levels were incorrect; log-changes corrected to match verified source (USD/VND appreciated in March–April 2025).",
       "levels": {
         "baseline": 3.994e-05,
-        "regime1": 3.917e-05,
-        "regime2": 3.872e-05
+        "regime1": 4.0792e-05,
+        "regime2": 4.1313e-05
       },
       "log_changes": {
-        "regime1": -1.9497,
-        "regime2": -3.1111
+        "regime1": 2.11,
+        "regime2": 3.38
       }
     },
     "TWN": {
