@@ -55,9 +55,14 @@ def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
         label = "free trade" if tau == 0 else f"τ = {tau:g}"
         (line,) = ax.plot(log_e_vec, tb_vec, color=color, linewidth=1.8)
 
-        # Equilibrium dot
+        # Equilibrium dot + value label
         eq = solve_2country(params, tau=tau, log_e_bounds=log_e_range)
-        ax.scatter(eq["log_e_AB"], 0, color=color, zorder=5, s=40, clip_on=False)
+        x_eq = eq["log_e_AB"]
+        ax.scatter(x_eq, 0, color=color, zorder=5, s=40, clip_on=False)
+        ax.annotate(f"{x_eq:.3f}", xy=(x_eq, 0),
+                    xytext=(0, -14), textcoords="offset points",
+                    fontsize=8.5, color=color, ha="center", va="top",
+                    clip_on=False)
 
         curves.append((log_e_vec, tb_vec, color, label))
 
@@ -70,7 +75,7 @@ def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
 
     ax.axhline(0, color="#cccccc", linewidth=0.8)
     ax.set_xlabel(r"$\log(e_{AB})$", fontsize=11)
-    ax.set_ylabel(r"$\widetilde{TB}_A$", fontsize=11)
+    ax.set_ylabel(r"$TB_A$", fontsize=11)
     if title:
         ax.set_title(title, fontsize=11)
     ax.spines["top"].set_visible(False)
