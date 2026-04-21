@@ -9,7 +9,7 @@ const PRESETS = [
   { label: 'Free Trade',
     vals: { tau_AB: 0,    tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Isolated Tariff',
-    vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
+    vals: { tau_AB: 1.0,  tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Uniform Tariff',
     vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0.25, tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Trade War',
@@ -90,10 +90,10 @@ function CWBadge({ deltaAC }) {
 // Diagram explainer
 // ---------------------------------------------------------------------------
 function DiagramExplainer() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const id = useId()
   return (
-    <div className="card mt-3">
+    <div className="card">
       <button
         onClick={() => setOpen(v => !v)}
         className="w-full flex items-center justify-between px-4 py-3 text-left"
@@ -242,34 +242,36 @@ export default function TheoryPanel() {
         </div>
       </div>
 
-      {/* ── Center: locus chart + explainer ── */}
-      <div className="flex-1 min-w-0 flex flex-col">
+      {/* ── Center: locus chart ── */}
+      <div className="flex-1 min-w-0">
         <LocusChart params={params} equilibrium={eq} />
-        <DiagramExplainer />
       </div>
 
-      {/* ── Right: results ── */}
-      <div className="lg:shrink-0 lg:w-[230px]">
-        <div className="label px-1 mb-2">Equilibrium shifts</div>
-        <div className="grid grid-cols-3 lg:grid-cols-1 gap-2 lg:gap-2.5">
-          <DeltaCard
-            label="Δe_AB"
-            sub="USD vs B  (− = A appreciates)"
-            value={eq?.delta_AB}
-          />
-          <DeltaCard
-            label="Δe_AC"
-            sub="USD vs C  (− = A appreciates)"
-            value={eq?.delta_AC}
-          />
-          <DeltaCard
-            label="Δe_BC"
-            sub="B vs C"
-            value={eq?.delta_BC}
-          />
+      {/* ── Right: results + explainer ── */}
+      <div className="lg:shrink-0 lg:w-[288px] lg:overflow-y-auto flex flex-col gap-3">
+        <div>
+          <div className="label px-1 mb-2">Equilibrium shifts</div>
+          <div className="grid grid-cols-3 lg:grid-cols-1 gap-2 lg:gap-2">
+            <DeltaCard
+              label="Δe_AB"
+              sub="USD vs B  (− = A appreciates)"
+              value={eq?.delta_AB}
+            />
+            <DeltaCard
+              label="Δe_AC"
+              sub="USD vs C  (− = A appreciates)"
+              value={eq?.delta_AC}
+            />
+            <DeltaCard
+              label="Δe_BC"
+              sub="B vs C"
+              value={eq?.delta_BC}
+            />
+          </div>
+          <div className="border-t border-slate-800 mt-2 mb-2" />
+          <CWBadge deltaAC={eq?.delta_AC} />
         </div>
-        <div className="border-t border-slate-800 my-2 lg:my-0.5" />
-        <CWBadge deltaAC={eq?.delta_AC} />
+        <DiagramExplainer />
       </div>
 
     </div>
