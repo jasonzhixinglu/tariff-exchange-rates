@@ -39,12 +39,12 @@ export default function App() {
             </p>
           </div>
           {/* Tabs */}
-          <nav className="flex gap-1.5 flex-wrap">
+          <nav className="grid grid-cols-3 gap-1.5 sm:flex sm:flex-wrap">
             {TABS.map(tab => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`tab-btn text-left ${activeTab === tab.id ? 'tab-btn-active' : 'tab-btn-inactive'}`}
+                className={`tab-btn text-center sm:text-left px-2 py-2 text-xs sm:px-5 sm:py-2.5 sm:text-sm leading-tight ${activeTab === tab.id ? 'tab-btn-active' : 'tab-btn-inactive'}`}
               >
                 <div>{tab.label}</div>
                 <div className={`text-xs mt-0.5 font-normal hidden sm:block ${
