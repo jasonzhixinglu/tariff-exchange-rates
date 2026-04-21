@@ -243,7 +243,7 @@ export default function TheoryPanel() {
       </div>
 
       {/* ── Center: locus chart ── */}
-      <div className="flex-1 min-w-0 lg:h-full">
+      <div className="flex-1 min-w-0 lg:flex lg:flex-col">
         <LocusChart params={params} equilibrium={eq} />
       </div>
 

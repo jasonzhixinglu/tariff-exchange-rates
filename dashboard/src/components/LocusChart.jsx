@@ -134,7 +134,7 @@ export default function LocusChart({ params, equilibrium }) {
   const axisTicks = [-0.6, -0.3, 0, 0.3, 0.6]
 
   return (
-    <div className="card p-4 flex flex-col gap-2 lg:h-full">
+    <div className="card p-4 flex flex-col gap-2 lg:flex-1">
       <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between">
         <span className="label">Balanced-trade loci</span>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
