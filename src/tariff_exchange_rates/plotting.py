@@ -20,8 +20,11 @@ _COUNTRY_IDX = {"A": 0, "B": 1, "C": 2}
 # 2-Country: trade balance locus
 # =============================================================================
 
+_TB_LOCUS_COLORS = ["#aaaaaa", "#6baed6", "#2171b5", "#084594"]
+
+
 def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
-                  title=None, pdf_name=None, figsize=(8, 4)):
+                  title=None, pdf_name=None, figsize=(7, 4)):
     """
     Plot country A's trade balance as a function of the log exchange rate
     for one or more tariff rates, and mark the equilibrium for each.
@@ -32,7 +35,7 @@ def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
     taus        : list   — tariff rates to overlay (e.g. [0.0, 0.5, 1.0])
     log_e_range : tuple  — (min, max) for log(e_AB)
     n_points    : int    — grid resolution
-    title       : str    — plot title (auto-generated if None)
+    title       : str    — figure title (omitted if None)
     pdf_name    : str    — save to PDF if provided
     figsize     : tuple
     """
@@ -41,24 +44,35 @@ def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
 
     fig, ax = plt.subplots(figsize=figsize)
 
-    for tau in taus:
+    curves = []
+    for idx, tau in enumerate(taus):
+        color   = _TB_LOCUS_COLORS[idx % len(_TB_LOCUS_COLORS)]
         tariffs = np.array([[0.0, tau], [0.0, 0.0]])
         tb_vec  = [
             compute_allocation(params, [e], tariffs)["trade_balance"][0]
             for e in e_vec
         ]
-        label = f"τ = {tau}" if tau > 0 else "free trade"
-        (line,) = ax.plot(log_e_vec, tb_vec, label=label)
+        label = "free trade" if tau == 0 else f"τ = {tau:g}"
+        (line,) = ax.plot(log_e_vec, tb_vec, color=color, linewidth=1.8)
 
-        # Mark equilibrium
+        # Equilibrium dot
         eq = solve_2country(params, tau=tau, log_e_bounds=log_e_range)
-        ax.scatter(eq["log_e_AB"], 0, color=line.get_color(), zorder=5, s=50)
+        ax.scatter(eq["log_e_AB"], 0, color=color, zorder=5, s=40, clip_on=False)
 
-    ax.axhline(0, color="black", linewidth=0.8, linestyle="--")
-    ax.set_xlabel(r"$\log(e_{AB})$", fontsize=12)
-    ax.set_ylabel("Trade balance (A)", fontsize=11)
-    ax.set_title(title or "Two-country model: trade balance locus", fontsize=12)
-    ax.legend(fontsize=10)
+        curves.append((log_e_vec, tb_vec, color, label))
+
+    # Inline curve labels at the right end
+    for log_e_vec_, tb_vec_, color, label in curves:
+        x_label = log_e_vec_[-1]
+        y_label = tb_vec_[-1]
+        ax.text(x_label + 0.04, y_label, label, color=color,
+                fontsize=9, va="center", clip_on=False)
+
+    ax.axhline(0, color="#cccccc", linewidth=0.8)
+    ax.set_xlabel(r"$\log(e_{AB})$", fontsize=11)
+    ax.set_ylabel(r"$\widetilde{TB}_A$", fontsize=11)
+    if title:
+        ax.set_title(title, fontsize=11)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     plt.tight_layout()

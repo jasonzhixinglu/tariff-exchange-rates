@@ -19,9 +19,9 @@ src/tariff_exchange_rates/          Core Python package
     plotting.py                     Figure helpers
 
 notebooks/
-    section3_two_country_model.ipynb      Two-country benchmark and robustness
-    section4_three_country_model.ipynb    Three-country results and paper figures
-    section5_calibration.ipynb            Calibration and model-data comparison
+    section2_two_country_model.ipynb      Two-country benchmark and robustness
+    section3_three_country_model.ipynb    Three-country results and paper figures
+    section4_calibration.ipynb            Calibration and model-data comparison
 
 scripts/
     precompute_theory_grid.py       Generate data/theory_grid.json (4^6 × 3 grid, ~9 min)
@@ -66,9 +66,9 @@ npm run dev
 
 ## Reproducing results
 
-**Paper figures** (Sections 3–4): run `notebooks/section4_three_country_model.ipynb`. Figures are written to `Exchange_Rate_Tariffs/`.
+**Paper figures** (Sections 2–3): run `notebooks/section3_three_country_model.ipynb`. Figures are written to `Exchange_Rate_Tariffs/`.
 
-**Calibration figure** (Section 5): run `scripts/regenerate_calibration_figure.py`. Output goes to `output/calibration_results.pdf` and is copied to `Exchange_Rate_Tariffs/`.
+**Calibration figure** (Section 4): run `scripts/regenerate_calibration_figure.py`. Output goes to `output/calibration_results.pdf` and is copied to `Exchange_Rate_Tariffs/`.
 
 **Dashboard data**: precomputed files in `data/` are committed. To regenerate from scratch:
 
@@ -78,7 +78,7 @@ python scripts/precompute_calibration_panel.py
 python scripts/fetch_fx_data.py                # requires internet
 ```
 
-## Calibration (Section 5)
+## Calibration (Section 4)
 
 Three main configurations appear in the paper body; eight appear in the dashboard and Appendix B. Parameters are calibrated as follows:
 
