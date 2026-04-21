@@ -84,6 +84,33 @@ for col, (cfg_name, cfg_label) in enumerate(zip(CFG_ORDER, CFG_LABELS)):
         bars_d = ax.bar(x + w/2, data_vals,  w, color=DATA_COLOR,  alpha=0.85, label="Data")
         ax.axhline(0, color="black", lw=0.6, ls="--", zorder=0)
 
+        # Value labels on bars
+        all_vals = model_vals + data_vals
+        y_range  = max(abs(v) for v in all_vals if v is not None) or 1
+        pad      = y_range * 0.06
+
+        def _label_bars(bars, vals):
+            for bar, val in zip(bars, vals):
+                if val is None:
+                    continue
+                xc = bar.get_x() + bar.get_width() / 2
+                sign = "+" if val >= 0 else ""
+                if val >= 0:
+                    ax.text(xc, val + pad, f"{sign}{val:.1f}",
+                            ha="center", va="bottom", fontsize=7.5,
+                            color="black", fontweight="medium")
+                else:
+                    ax.text(xc, val - pad, f"{val:.1f}",
+                            ha="center", va="top", fontsize=7.5,
+                            color="black", fontweight="medium")
+
+        _label_bars(bars_m, model_vals)
+        _label_bars(bars_d, data_vals)
+
+        # Extra vertical room for labels
+        lo, hi = ax.get_ylim()
+        ax.set_ylim(lo - y_range * 0.15, hi + y_range * 0.15)
+
         ax.set_xticks(x)
         ax.set_xticklabels(ER_LABELS, fontsize=8.5)
         ax.yaxis.set_major_formatter(mticker.FormatStrFormatter("%.1f"))
