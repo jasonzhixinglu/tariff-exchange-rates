@@ -86,7 +86,7 @@ Three main configurations appear in the paper body; eight appear in the dashboar
 |---|---|
 | Expenditure shares $\alpha_{T_j}$ | 2024 world goods export shares (WTO); tradable budget fixed at 0.40 |
 | Labor endowments $L_i$ | 2024 PPP GDP (IMF WEO Oct 2024), normalised to $L_A = 1$ (US) |
-| $\sigma$ | Broda & Weinstein (2006) and Feenstra et al. (2018); varies by config (see table below) |
+| $\sigma$ | Amiti, Redding & Weinstein (2019) as anchor (≈6); Fajgelbaum et al. (2020, 2024); Feenstra et al. (2018); varies by config (see table below) |
 
 Tariff regimes (incremental above pre-2025 baseline):
 
@@ -99,8 +99,8 @@ Extended calibration parameters (Appendix B / dashboard):
 
 | Country C | $\sigma$ | $\alpha_{T,C}$ | $L_C/L_A$ | Rationale |
 |---|---|---|---|---|
-| European Union | 4 (8 in paper) | 0.138 | 0.860 | China Shock 2.0; moderate manufacturing overlap |
-| Japan | 3 | 0.051 | 0.226 | Advanced manufactures; limited Chinese overlap |
+| European Union | 6 | 0.138 | 0.860 | China Shock 2.0; ARW (2019) central estimate |
+| Japan | 4 | 0.051 | 0.226 | Advanced manufactures; below ARW, limited Chinese overlap |
 | South Korea | 5 | 0.043 | 0.103 | Electronics/semiconductor overlap |
 | Mexico | 5 | 0.044 | 0.113 | Nearshoring; autos and electronics overlap |
 | Canada | 2 | 0.038 | 0.086 | Commodity-heavy; low substitutability |

@@ -95,7 +95,7 @@ export default function CalibrationPanel() {
         <div><span className="text-slate-500 font-medium">Labor endowments:</span> IMF WEO October 2024 (PPP GDP, US = 1)</div>
         <div><span className="text-slate-500 font-medium">Expenditure shares:</span> WTO Merchandise Trade Statistics 2024</div>
         <div><span className="text-slate-500 font-medium">Tariff rates:</span> USTR executive orders and Federal Register (2025)</div>
-        <div><span className="text-slate-500 font-medium">Elasticities (σ):</span> Broda & Weinstein (2006); Feenstra et al. (2018)</div>
+        <div><span className="text-slate-500 font-medium">Elasticities (σ):</span> Amiti, Redding &amp; Weinstein (2019); Fajgelbaum et al. (2020, 2024); Feenstra et al. (2018)</div>
         <div><span className="text-slate-500 font-medium">FX data:</span> Yahoo Finance, monthly averages</div>
       </div>
     </div>
