@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "description": "Observed bilateral exchange rates vs USD, period averages",
+    "convention": "USD per unit of foreign currency; positive log-change = USD depreciation",
+    "source": "Yahoo Finance via yfinance",
+    "periods": {
+      "baseline": {
+        "start": "2024-01-01",
+        "end": "2024-12-31",
+        "description": "2024 annual average"
+      },
+      "regime1": {
+        "start": "2025-03-01",
+        "end": "2025-03-31",
+        "description": "March 2025 (Regime 1)"
+      },
+      "regime2": {
+        "start": "2025-04-01",
+        "end": "2025-04-30",
+        "description": "April 2025 (Regime 2)"
+      }
+    }
+  },
+  "rates": {
+    "RMB": {
+      "label": "USD/CNY (RMB)",
+      "ticker": "USDCNY=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.13917042,
+        "regime1": 0.13790811,
+        "regime2": 0.13706934
+      },
+      "log_changes": {
+        "regime1": -0.9112,
+        "regime2": -1.5212
+      }
+    },
+    "EU": {
+      "label": "USD/EUR",
+      "ticker": "EURUSD=X",
+      "inverted": false,
+      "levels": {
+        "baseline": 1.08233825,
+        "regime1": 1.07984366,
+        "regime2": 1.11867327
+      },
+      "log_changes": {
+        "regime1": -0.2307,
+        "regime2": 3.302
+      }
+    },
+    "JPN": {
+      "label": "USD/JPY",
+      "ticker": "USDJPY=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.00661199,
+        "regime1": 0.00670601,
+        "regime2": 0.006913
+      },
+      "log_changes": {
+        "regime1": 1.4119,
+        "regime2": 4.452
+      }
+    },
+    "KOR": {
+      "label": "USD/KRW",
+      "ticker": "USDKRW=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.00073472,
+        "regime1": 0.00068728,
+        "regime2": 0.00069313
+      },
+      "log_changes": {
+        "regime1": -6.675,
+        "regime2": -5.8283
+      }
+    },
+    "MEX": {
+      "label": "USD/MXN",
+      "ticker": "USDMXN=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.05494073,
+        "regime1": 0.04944904,
+        "regime2": 0.04981473
+      },
+      "log_changes": {
+        "regime1": -10.5312,
+        "regime2": -9.7944
+      }
+    },
+    "CAN": {
+      "label": "USD/CAD",
+      "ticker": "USDCAD=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.73039947,
+        "regime1": 0.69672415,
+        "regime2": 0.71365468
+      },
+      "log_changes": {
+        "regime1": -4.7202,
+        "regime2": -2.3192
+      }
+    },
+    "VNM": {
+      "label": "USD/VND",
+      "ticker": "USDVND=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 3.994e-05,
+        "regime1": 3.917e-05,
+        "regime2": 3.872e-05
+      },
+      "log_changes": {
+        "regime1": -1.9497,
+        "regime2": -3.1111
+      }
+    },
+    "TWN": {
+      "label": "USD/TWD",
+      "ticker": "USDTWD=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.03120028,
+        "regime1": 0.03034911,
+        "regime2": 0.03057558
+      },
+      "log_changes": {
+        "regime1": -2.766,
+        "regime2": -2.0226
+      }
+    },
+    "IND": {
+      "label": "USD/INR",
+      "ticker": "USDINR=X",
+      "inverted": true,
+      "levels": {
+        "baseline": 0.01195223,
+        "regime1": 0.01154252,
+        "regime2": 0.0116762
+      },
+      "log_changes": {
+        "regime1": -3.4881,
+        "regime2": -2.3365
+      }
+    }
+  }
+}

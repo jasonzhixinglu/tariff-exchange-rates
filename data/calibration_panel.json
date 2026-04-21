@@ -1,0 +1,426 @@
+{
+  "meta": {
+    "description": "Pre-calibrated panel: US (A) vs China (B) vs 8 third countries (C)",
+    "countries_A_B": {
+      "A": "US",
+      "B": "China"
+    },
+    "data_sources": {
+      "labor": "IMF WEO October 2024 (PPP GDP, normalized to US = 1)",
+      "shares": "WTO Merchandise Trade Statistics 2024 (world goods export shares)",
+      "tariffs": "USTR executive orders and Federal Register notices (2025)",
+      "sigma": "Broda & Weinstein (2006) and Feenstra et al. (2018)"
+    },
+    "convention": "delta_e_XY > 0 means depreciation of X's currency against Y"
+  },
+  "countries": {
+    "EU": {
+      "meta": {
+        "label": "European Union",
+        "currency": "EUR",
+        "flag": "\ud83c\uddea\ud83c\uddfa",
+        "sigma": 4,
+        "sigma_note": "Moderate manufacturing competition; China Shock 2.0 narrative. Lower than Vietnam/Korea given EU's product differentiation.",
+        "alpha_T_A": 0.0968,
+        "alpha_T_B": 0.1648,
+        "alpha_T_C": 0.1383,
+        "alpha_N": 0.6,
+        "L_C": 0.8596,
+        "s_C": 0.12
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.62315655,
+          "e_AC_ft": 1.48364242,
+          "e_BC_ft": 0.91404764,
+          "e_AB": 1.54422017,
+          "e_AC": 1.47083498,
+          "e_BC": 0.95247751,
+          "delta_e_AB": -4.8631,
+          "delta_e_AC": -0.8632,
+          "delta_e_BC": 4.2044,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.62315655,
+          "e_AC_ft": 1.48364242,
+          "e_BC_ft": 0.91404764,
+          "e_AB": 1.67286633,
+          "e_AC": 1.66343754,
+          "e_BC": 0.9943637,
+          "delta_e_AB": 3.0625,
+          "delta_e_AC": 12.1185,
+          "delta_e_BC": 8.7869,
+          "error": null
+        }
+      }
+    },
+    "JPN": {
+      "meta": {
+        "label": "Japan",
+        "currency": "JPY",
+        "flag": "\ud83c\uddef\ud83c\uddf5",
+        "sigma": 3,
+        "sigma_note": "Advanced manufactures (autos, machinery) with limited overlap with Chinese exports; Feenstra et al. 2018 aggregate estimate.",
+        "alpha_T_A": 0.1292,
+        "alpha_T_B": 0.22,
+        "alpha_T_C": 0.0508,
+        "alpha_N": 0.6,
+        "L_C": 0.226,
+        "s_C": 0.033
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.59757637,
+          "e_AC_ft": 0.64493254,
+          "e_BC_ft": 0.40369434,
+          "e_AB": 1.46943537,
+          "e_AC": 0.6312806,
+          "e_BC": 0.4296076,
+          "delta_e_AB": -8.021,
+          "delta_e_AC": -2.1168,
+          "delta_e_BC": 6.419,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.59757637,
+          "e_AC_ft": 0.64493254,
+          "e_BC_ft": 0.40369434,
+          "e_AB": 1.70103897,
+          "e_AC": 0.78563664,
+          "e_BC": 0.46185693,
+          "delta_e_AB": 6.4762,
+          "delta_e_AC": 21.8169,
+          "delta_e_BC": 14.4076,
+          "error": null
+        }
+      }
+    },
+    "KOR": {
+      "meta": {
+        "label": "South Korea",
+        "currency": "KRW",
+        "flag": "\ud83c\uddf0\ud83c\uddf7",
+        "sigma": 5,
+        "sigma_note": "Electronics and semiconductors create meaningful overlap with Chinese exports; between disaggregated and aggregate estimates.",
+        "alpha_T_A": 0.1323,
+        "alpha_T_B": 0.2252,
+        "alpha_T_C": 0.0425,
+        "alpha_N": 0.6,
+        "L_C": 0.1027,
+        "s_C": 0.027
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.63870084,
+          "e_AC_ft": 0.50668354,
+          "e_BC_ft": 0.30919832,
+          "e_AB": 1.51689489,
+          "e_AC": 0.50080379,
+          "e_BC": 0.33015062,
+          "delta_e_AB": -7.4331,
+          "delta_e_AC": -1.1604,
+          "delta_e_BC": 6.7763,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.63870084,
+          "e_AC_ft": 0.50668354,
+          "e_BC_ft": 0.30919832,
+          "e_AB": 1.69086776,
+          "e_AC": 0.57655746,
+          "e_BC": 0.34098318,
+          "delta_e_AB": 3.1834,
+          "delta_e_AC": 13.7904,
+          "delta_e_BC": 10.2798,
+          "error": null
+        }
+      }
+    },
+    "MEX": {
+      "meta": {
+        "label": "Mexico",
+        "currency": "MXN",
+        "flag": "\ud83c\uddf2\ud83c\uddfd",
+        "sigma": 5,
+        "sigma_note": "Nearshoring beneficiary; manufacturing overlap with China in autos and electronics. USMCA integration complicates but product-level substitutability is meaningful.",
+        "alpha_T_A": 0.1318,
+        "alpha_T_B": 0.2243,
+        "alpha_T_C": 0.0439,
+        "alpha_N": 0.6,
+        "L_C": 0.113,
+        "s_C": 0.028
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.63870084,
+          "e_AC_ft": 0.51552832,
+          "e_BC_ft": 0.31459575,
+          "e_AB": 1.51724675,
+          "e_AC": 0.50956304,
+          "e_BC": 0.33584718,
+          "delta_e_AB": -7.4116,
+          "delta_e_AC": -1.1571,
+          "delta_e_BC": 6.7552,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.63870084,
+          "e_AC_ft": 0.51552832,
+          "e_BC_ft": 0.31459575,
+          "e_AB": 1.69050352,
+          "e_AC": 0.58640082,
+          "e_BC": 0.34687939,
+          "delta_e_AB": 3.1612,
+          "delta_e_AC": 13.7475,
+          "delta_e_BC": 10.2619,
+          "error": null
+        }
+      }
+    },
+    "CAN": {
+      "meta": {
+        "label": "Canada",
+        "currency": "CAD",
+        "flag": "\ud83c\udde8\ud83c\udde6",
+        "sigma": 2,
+        "sigma_note": "Commodity-heavy export basket (energy, mining, agriculture) with low substitutability for Chinese manufactures; Feenstra et al. 2018 aggregate lower bound.",
+        "alpha_T_A": 0.1339,
+        "alpha_T_B": 0.2279,
+        "alpha_T_C": 0.0382,
+        "alpha_N": 0.6,
+        "L_C": 0.0856,
+        "s_C": 0.024
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.54761905,
+          "e_AC_ft": 0.97645757,
+          "e_BC_ft": 0.63094182,
+          "e_AB": 1.40158738,
+          "e_AC": 0.94329629,
+          "e_BC": 0.67301996,
+          "delta_e_AB": -9.4359,
+          "delta_e_AC": -3.3961,
+          "delta_e_BC": 6.6691,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.54761905,
+          "e_AC_ft": 0.97645757,
+          "e_BC_ft": 0.63094182,
+          "e_AB": 1.66004846,
+          "e_AC": 1.21127365,
+          "e_BC": 0.72966162,
+          "delta_e_AB": 7.2647,
+          "delta_e_AC": 24.0477,
+          "delta_e_BC": 15.6464,
+          "error": null
+        }
+      }
+    },
+    "VNM": {
+      "meta": {
+        "label": "Vietnam",
+        "currency": "VND",
+        "flag": "\ud83c\uddfb\ud83c\uddf3",
+        "sigma": 8,
+        "sigma_note": "Assembly and re-export hub deeply integrated in Chinese supply chains; Vietnamese and Chinese exports to the US are close substitutes at the product level (Broda & Weinstein 2006).",
+        "alpha_T_A": 0.1383,
+        "alpha_T_B": 0.2354,
+        "alpha_T_C": 0.0263,
+        "alpha_N": 0.6,
+        "L_C": 0.0548,
+        "s_C": 0.016
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.66229684,
+          "e_AC_ft": 0.27384105,
+          "e_BC_ft": 0.16473655,
+          "e_AB": 1.54264502,
+          "e_AC": 0.27234538,
+          "e_BC": 0.17654443,
+          "delta_e_AB": -7.198,
+          "delta_e_AC": -0.5462,
+          "delta_e_BC": 7.1677,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.66229684,
+          "e_AC_ft": 0.27384105,
+          "e_BC_ft": 0.16473655,
+          "e_AB": 1.66603489,
+          "e_AC": 0.29130314,
+          "e_BC": 0.17484816,
+          "delta_e_AB": 0.2249,
+          "delta_e_AC": 6.3767,
+          "delta_e_BC": 6.138,
+          "error": null
+        }
+      }
+    },
+    "TWN": {
+      "meta": {
+        "label": "Taiwan",
+        "currency": "TWD",
+        "flag": "\ud83c\uddf9\ud83c\uddfc",
+        "sigma": 3,
+        "sigma_note": "Semiconductor dominance means Taiwanese exports are largely non-substitutable with Chinese goods at the aggregate level; low sigma despite product-level integration in other categories.",
+        "alpha_T_A": 0.1349,
+        "alpha_T_B": 0.2297,
+        "alpha_T_C": 0.0353,
+        "alpha_N": 0.6,
+        "L_C": 0.0582,
+        "s_C": 0.022
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.59757637,
+          "e_AC_ft": 0.67575309,
+          "e_BC_ft": 0.42298641,
+          "e_AB": 1.46361135,
+          "e_AC": 0.66074502,
+          "e_BC": 0.45144841,
+          "delta_e_AB": -8.3855,
+          "delta_e_AC": -2.2209,
+          "delta_e_BC": 6.7288,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.59757637,
+          "e_AC_ft": 0.67575309,
+          "e_BC_ft": 0.42298641,
+          "e_AB": 1.70708704,
+          "e_AC": 0.82990419,
+          "e_BC": 0.48615224,
+          "delta_e_AB": 6.8548,
+          "delta_e_AC": 22.8118,
+          "delta_e_BC": 14.9333,
+          "error": null
+        }
+      }
+    },
+    "IND": {
+      "meta": {
+        "label": "India",
+        "currency": "INR",
+        "flag": "\ud83c\uddee\ud83c\uddf3",
+        "sigma": 3,
+        "sigma_note": "Emerging manufacturing base with growing but currently limited overlap with Chinese export categories; aggregate estimate appropriate given product heterogeneity (Feenstra et al. 2018).",
+        "alpha_T_A": 0.1366,
+        "alpha_T_B": 0.2325,
+        "alpha_T_C": 0.0309,
+        "alpha_N": 0.6,
+        "L_C": 0.4966,
+        "s_C": 0.019
+      },
+      "regimes": {
+        "regime1": {
+          "label": "Regime 1 \u2014 Fentanyl tariffs (Feb\u2013Mar 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 0.2
+          },
+          "e_AB_ft": 1.59757637,
+          "e_AC_ft": 0.28563577,
+          "e_BC_ft": 0.17879319,
+          "e_AB": 1.47020653,
+          "e_AC": 0.2797803,
+          "e_BC": 0.1903,
+          "delta_e_AB": -7.9727,
+          "delta_e_AC": -2.05,
+          "delta_e_BC": 6.4358,
+          "error": null
+        },
+        "regime2": {
+          "label": "Regime 2 \u2014 Peak escalation (April 2025)",
+          "tariff_kwargs": {
+            "tau_AB": 1.45,
+            "tau_BA": 1.25,
+            "tau_AC": 0.1
+          },
+          "e_AB_ft": 1.59757637,
+          "e_AC_ft": 0.28563577,
+          "e_BC_ft": 0.17879319,
+          "e_AB": 1.70207271,
+          "e_AC": 0.34875343,
+          "e_BC": 0.20489925,
+          "delta_e_AB": 6.5409,
+          "delta_e_AC": 22.0973,
+          "delta_e_BC": 14.6013,
+          "error": null
+        }
+      }
+    }
+  }
+}
