@@ -124,19 +124,19 @@ function DiagramExplainer() {
           <ul className="space-y-2 pl-3 border-l border-slate-700/60">
             <li>
               <span className="text-slate-300 font-medium">Uniform tariffs</span>
-              <span className="text-slate-500"> (A taxes both B and C equally):</span>{' '}
+              <span className="text-slate-500"> (A tariffs both B and C equally):</span>{' '}
               both curves shift symmetrically and the conventional appreciation result holds.
             </li>
             <li>
               <span className="text-slate-300 font-medium">Isolated tariff</span>
-              <span className="text-slate-500"> (A taxes B only):</span>{' '}
+              <span className="text-slate-500"> (A tariffs B only):</span>{' '}
               the curves shift asymmetrically. For high enough &sigma;, expenditure diverts toward C
               rather than toward domestic goods, and A's currency depreciates against C — reversing
               the conventional prediction.
             </li>
             <li>
               <span className="text-slate-300 font-medium">Bilateral trade war</span>
-              <span className="text-slate-500"> (A and B tax each other):</span>{' '}
+              <span className="text-slate-500"> (A and B tariff each other):</span>{' '}
               both currencies depreciate against C in all cases, regardless of &sigma;. The
               conventional wisdom fails unambiguously.
             </li>
@@ -243,7 +243,7 @@ export default function TheoryPanel() {
       </div>
 
       {/* ── Center: locus chart ── */}
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 lg:h-full">
         <LocusChart params={params} equilibrium={eq} />
       </div>
 
