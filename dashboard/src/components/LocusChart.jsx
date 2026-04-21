@@ -12,8 +12,8 @@ import { computeGrid, zeroContour, tariffMatrix } from '../lib/modelJs.js'
 
 // Grid resolution and range
 const N_GRID   = 90
-const LOG_MIN  = -0.40
-const LOG_MAX  =  0.40
+const LOG_MIN  = -0.60
+const LOG_MAX  =  0.60
 const ANIM_MS  = 900          // animation duration when params change
 
 function linspace(lo, hi, n) {
@@ -131,7 +131,7 @@ export default function LocusChart({ params, equilibrium }) {
   ])
 
   // Tick labels for axes
-  const axisTicks = [-0.3, -0.15, 0, 0.15, 0.3]
+  const axisTicks = [-0.6, -0.3, 0, 0.3, 0.6]
 
   return (
     <div className="card p-4 flex flex-col gap-2">

@@ -1,9 +1,9 @@
 /**
- * Multilinear interpolation over the 3^7 theory grid.
+ * Multilinear interpolation over the 4^6 × 3 theory grid.
  *
- * Grid axes (3 points each):
- *   tau_AB, tau_BA, tau_AC, tau_CA, tau_BC, tau_CB  -> [0, 0.25, 0.75]
- *   sigma                                            -> [1, 2, 8]
+ * Grid axes:
+ *   tau_AB, tau_BA, tau_AC, tau_CA, tau_BC, tau_CB  -> [0, 0.25, 0.75, 1.5]  (4 pts)
+ *   sigma                                            -> [1, 2, 8]              (3 pts)
  *
  * The grid is stored as a flat array of records. On first call, buildIndex()
  * converts it to a Map keyed by comma-separated dimension indices for O(1)
@@ -11,12 +11,12 @@
  */
 
 export const AXES = {
-  tau_AB: [0, 0.25, 0.75],
-  tau_BA: [0, 0.25, 0.75],
-  tau_AC: [0, 0.25, 0.75],
-  tau_CA: [0, 0.25, 0.75],
-  tau_BC: [0, 0.25, 0.75],
-  tau_CB: [0, 0.25, 0.75],
+  tau_AB: [0, 0.25, 0.75, 1.5],
+  tau_BA: [0, 0.25, 0.75, 1.5],
+  tau_AC: [0, 0.25, 0.75, 1.5],
+  tau_CA: [0, 0.25, 0.75, 1.5],
+  tau_BC: [0, 0.25, 0.75, 1.5],
+  tau_CB: [0, 0.25, 0.75, 1.5],
   sigma:  [1, 2, 8],
 }
 

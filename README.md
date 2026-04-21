@@ -24,7 +24,7 @@ notebooks/
     section5_calibration.ipynb            Calibration and model-data comparison
 
 scripts/
-    precompute_theory_grid.py       Generate data/theory_grid.json (3^7 grid, ~94s)
+    precompute_theory_grid.py       Generate data/theory_grid.json (4^6 × 3 grid, ~9 min)
     precompute_calibration_panel.py Generate data/calibration_panel.json (8 configs)
     fetch_fx_data.py                Fetch observed FX data from Yahoo Finance
     regenerate_calibration_figure.py Regenerate output/calibration_results.pdf
@@ -73,7 +73,7 @@ npm run dev
 **Dashboard data**: precomputed files in `data/` are committed. To regenerate from scratch:
 
 ```bash
-python scripts/precompute_theory_grid.py       # ~94s
+python scripts/precompute_theory_grid.py       # ~9 min (4^6 × 3 = 12,288 points)
 python scripts/precompute_calibration_panel.py
 python scripts/fetch_fx_data.py                # requires internet
 ```

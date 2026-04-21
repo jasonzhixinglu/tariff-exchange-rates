@@ -1,10 +1,11 @@
 """
-Precompute equilibrium exchange rates over a sparse 3^7 grid for the
+Precompute equilibrium exchange rates over a 4^6 × 3 grid for the
 interactive theory panel of the dashboard.
 
-Grid axes (3 points each):
-  tau_AB, tau_BA, tau_AC, tau_CA, tau_BC, tau_CB  in [0, 0.25, 0.75]
-  sigma                                            in [1, 2, 8]
+Grid axes:
+  tau_AB, tau_BA, tau_AC, tau_CA, tau_BC, tau_CB  in [0, 0.25, 0.75, 1.5]  (4 pts)
+  sigma                                            in [1, 2, 8]              (3 pts)
+  Total: 4^6 * 3 = 12,288 points
 
 Parameters held fixed (symmetric baseline):
   alpha_T_A = alpha_T_B = alpha_T_C = 0.25, alpha_N = 0.25
@@ -34,7 +35,7 @@ from tariff_exchange_rates.tariffs import make_tariff_matrix
 # Grid definition
 # ---------------------------------------------------------------------------
 
-TAU_VALS   = [0.0, 0.25, 0.75]   # 3 points for each tariff rate
+TAU_VALS   = [0.0, 0.25, 0.75, 1.5]  # 4 points for each tariff rate
 SIGMA_VALS = [1.0, 2.0,  8.0]    # Cobb-Douglas, moderate CES, high substitutability
 
 TAU_KEYS = ["tau_AB", "tau_BA", "tau_AC", "tau_CA", "tau_BC", "tau_CB"]
@@ -111,7 +112,7 @@ def run():
 
     payload = {
         "meta": {
-            "description": "Theory grid: symmetric 3-country model, 3^7 parameter points",
+            "description": "Theory grid: symmetric 3-country model, 4^6 x 3 = 12288 parameter points",
             "axes": grid_axes,
             "fixed_params": {
                 "alpha_T_A": 0.25, "alpha_T_B": 0.25, "alpha_T_C": 0.25, "alpha_N": 0.25,
