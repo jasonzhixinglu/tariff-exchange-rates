@@ -131,7 +131,7 @@ export default function LocusChart({ params, equilibrium }) {
   ])
 
   const axisTicks  = [-0.6, -0.3, 0, 0.3, 0.6]   // grid lines (full range)
-  const labelTicks = [-0.5, -0.3, 0.3, 0.5]       // axis labels (no clipping at edge)
+  const labelTicks = [-0.5, -0.25, 0.25, 0.5]      // axis labels (no clipping at edge)
 
   return (
     <div className="card p-4 flex flex-col gap-2 lg:flex-1">

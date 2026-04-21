@@ -11,9 +11,9 @@ const PRESETS = [
   { label: 'Isolated Tariff',
     vals: { tau_AB: 1.0,  tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Uniform Tariff',
-    vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0.25, tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
+    vals: { tau_AB: 1.0,  tau_BA: 0,    tau_AC: 1.0,  tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Trade War',
-    vals: { tau_AB: 0.25, tau_BA: 0.25, tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
+    vals: { tau_AB: 1.0,  tau_BA: 1.0,  tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
 ]
 
 const DEFAULT = PRESETS[1].vals
