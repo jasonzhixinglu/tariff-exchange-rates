@@ -48,10 +48,12 @@ export default function CountryCard({ countryKey, meta, regimes, fxData, activeR
   const modelAC = isError ? null : regime.delta_e_AC
   const modelBC = isError ? null : regime.delta_e_BC
 
-  const dataAB = fxData?.RMB?.log_changes?.[activeRegime]
-  const dataAC = fxData?.[countryKey]?.log_changes?.[activeRegime]
-  // e_BC = RMB / C — derived from e_AB and e_AC in log terms: ln(e_BC) = ln(e_AC) - ln(e_AB)
-  const dataBC = (dataAC != null && dataAB != null) ? dataAC - dataAB : null
+  const dataAB = fxData?.RMB?.pct_changes?.[activeRegime]
+  const dataAC = fxData?.[countryKey]?.pct_changes?.[activeRegime]
+  // e_BC = RMB/C: 100 × ((1 + d_AC/100) / (1 + d_AB/100) − 1)
+  const dataBC = (dataAC != null && dataAB != null)
+    ? 100 * ((1 + dataAC / 100) / (1 + dataAB / 100) - 1)
+    : null
 
   return (
     <div className="card p-4 flex flex-col gap-3">
@@ -83,7 +85,7 @@ export default function CountryCard({ countryKey, meta, regimes, fxData, activeR
             <DeltaRow label="Δe_BC" model={modelBC} data={dataBC} />
           </div>
           <div className="text-xs text-slate-600 leading-relaxed">
-            Data: log-pt change vs 2024 avg.
+            Data: % change vs 2024 avg.
             {activeRegime === 'regime1' ? ' March 2025.' : ' April 2025.'}
           </div>
         </>

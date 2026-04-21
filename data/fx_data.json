@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Observed bilateral exchange rates vs USD, period averages",
-    "convention": "USD per unit of foreign currency; positive log-change = USD depreciation",
+    "convention": "USD per unit of foreign currency; positive pct-change = USD depreciation",
     "source": "Yahoo Finance via yfinance",
     "periods": {
       "baseline": {
@@ -31,9 +31,9 @@
         "regime1": 0.13790811,
         "regime2": 0.13706934
       },
-      "log_changes": {
-        "regime1": -0.9112,
-        "regime2": -1.5212
+      "pct_changes": {
+        "regime1": -0.907,
+        "regime2": -1.5097
       }
     },
     "EU": {
@@ -45,9 +45,9 @@
         "regime1": 1.07984366,
         "regime2": 1.11867327
       },
-      "log_changes": {
-        "regime1": -0.2307,
-        "regime2": 3.302
+      "pct_changes": {
+        "regime1": -0.2305,
+        "regime2": 3.3571
       }
     },
     "JPN": {
@@ -59,9 +59,9 @@
         "regime1": 0.00670601,
         "regime2": 0.006913
       },
-      "log_changes": {
-        "regime1": 1.4119,
-        "regime2": 4.452
+      "pct_changes": {
+        "regime1": 1.4219,
+        "regime2": 4.5525
       }
     },
     "KOR": {
@@ -73,9 +73,9 @@
         "regime1": 0.00068728,
         "regime2": 0.00069313
       },
-      "log_changes": {
-        "regime1": -6.675,
-        "regime2": -5.8283
+      "pct_changes": {
+        "regime1": -6.4571,
+        "regime2": -5.6617
       }
     },
     "MEX": {
@@ -87,9 +87,9 @@
         "regime1": 0.04944904,
         "regime2": 0.04981473
       },
-      "log_changes": {
-        "regime1": -10.5312,
-        "regime2": -9.7944
+      "pct_changes": {
+        "regime1": -9.9957,
+        "regime2": -9.3301
       }
     },
     "CAN": {
@@ -101,24 +101,23 @@
         "regime1": 0.69672415,
         "regime2": 0.71365468
       },
-      "log_changes": {
-        "regime1": -4.7202,
-        "regime2": -2.3192
+      "pct_changes": {
+        "regime1": -4.6105,
+        "regime2": -2.2926
       }
     },
     "VNM": {
       "label": "USD/VND",
       "ticker": "USDVND=X",
       "inverted": true,
-      "note": "Yahoo Finance USDVND=X levels were incorrect; log-changes corrected to match verified source (USD/VND appreciated in March–April 2025).",
       "levels": {
         "baseline": 3.994e-05,
-        "regime1": 4.0792e-05,
-        "regime2": 4.1313e-05
+        "regime1": 3.917e-05,
+        "regime2": 3.872e-05
       },
-      "log_changes": {
-        "regime1": 2.11,
-        "regime2": 3.38
+      "pct_changes": {
+        "regime1": -1.9309,
+        "regime2": -3.0632
       }
     },
     "TWN": {
@@ -130,9 +129,9 @@
         "regime1": 0.03034911,
         "regime2": 0.03057558
       },
-      "log_changes": {
-        "regime1": -2.766,
-        "regime2": -2.0226
+      "pct_changes": {
+        "regime1": -2.7281,
+        "regime2": -2.0022
       }
     },
     "IND": {
@@ -144,9 +143,9 @@
         "regime1": 0.01154252,
         "regime2": 0.0116762
       },
-      "log_changes": {
-        "regime1": -3.4881,
-        "regime2": -2.3365
+      "pct_changes": {
+        "regime1": -3.428,
+        "regime2": -2.3094
       }
     }
   }

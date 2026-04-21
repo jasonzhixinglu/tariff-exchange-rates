@@ -90,10 +90,10 @@ def fetch_monthly_avg(ticker_sym: str, invert: bool) -> dict[str, float]:
 
 
 def pct_change(new_val, base_val):
-    """Log-point change * 100, consistent with paper's Table 3 convention."""
+    """Percent change: 100 × (level_t / level_0 − 1)."""
     if new_val is None or base_val is None:
         return None
-    return round(100.0 * (np.log(new_val) - np.log(base_val)), 4)
+    return round(100.0 * (new_val / base_val - 1.0), 4)
 
 
 def run():
@@ -115,13 +115,13 @@ def run():
                 "ticker":  ticker,
                 "inverted": spec["invert"],
                 "levels":  {k: round(v, 8) if v else None for k, v in avgs.items()},
-                "log_changes": {
+                "pct_changes": {
                     "regime1": pct_change(avgs["regime1"], base),
                     "regime2": pct_change(avgs["regime2"], base),
                 },
             }
-            r1 = results[key]["log_changes"]["regime1"]
-            r2 = results[key]["log_changes"]["regime2"]
+            r1 = results[key]["pct_changes"]["regime1"]
+            r2 = results[key]["pct_changes"]["regime2"]
             print(f"R1={r1:+.2f}%  R2={r2:+.2f}%")
         except Exception as exc:
             results[key] = {"label": label, "ticker": ticker, "error": str(exc)}
@@ -130,7 +130,7 @@ def run():
     payload = {
         "meta": {
             "description": "Observed bilateral exchange rates vs USD, period averages",
-            "convention":  "USD per unit of foreign currency; positive log-change = USD depreciation",
+            "convention":  "USD per unit of foreign currency; positive pct-change = USD depreciation",
             "source":      "Yahoo Finance via yfinance",
             "periods": {k: {"start": v[0], "end": v[1], "description": v[2]}
                         for k, v in PERIODS.items()},

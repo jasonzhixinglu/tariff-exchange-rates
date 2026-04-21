@@ -16,14 +16,16 @@ sys.path.insert(0, str(ROOT / "src"))
 from tariff_exchange_rates import CALIBRATIONS, TARIFF_REGIMES, solve_3country, free_trade
 
 # ---------------------------------------------------------------------------
-# Realized exchange rate data (log-point changes x100 vs 2024 annual average)
-# Source: paper Table 3; Regime 1 = March 2025, Regime 2 = April 2025
+# Realized exchange rate data (percent changes vs 2024 annual average)
+# Formula: 100 x (level_t / level_0 - 1); Source: Yahoo Finance (fx_data.json)
+# ROW d_AC: Federal Reserve H.10 Advanced Economy trade-weighted index
+# d_BC derived as 100 x ((1 + d_AC/100) / (1 + d_AB/100) - 1)
 # Convention: positive = depreciation of first-named currency
 # ---------------------------------------------------------------------------
 REALIZED = {
-    "EU":  {"R1": (-0.74, -0.05,  0.69), "R2": (-1.39,  3.75,  5.15)},
-    "VNM": {"R1": (-0.74,  2.11,  2.85), "R2": (-1.39,  3.38,  4.77)},
-    "ROW": {"R1": (-0.74, -1.05, -0.31), "R2": (-1.39,  2.18,  3.57)},
+    "EU":  {"R1": (-0.91, -0.23,  0.69), "R2": (-1.51,  3.36,  4.94)},
+    "VNM": {"R1": (-0.91, -1.93, -1.03), "R2": (-1.51, -3.06, -1.57)},
+    "ROW": {"R1": (-0.91, -1.05, -0.14), "R2": (-1.51,  2.18,  3.75)},
 }
 
 CFG_SHORT   = {"US\u2013China\u2013EU": "EU", "US\u2013China\u2013VNM": "VNM", "US\u2013China\u2013ROW": "ROW"}
@@ -117,7 +119,7 @@ for col, (cfg_name, cfg_label) in enumerate(zip(CFG_ORDER, CFG_LABELS)):
         ax.tick_params(axis="y", labelsize=8)
 
         if col == 0:
-            ax.set_ylabel(REGIME_TITLES[rkey] + "\n% change", fontsize=8.5, labelpad=4)
+            ax.set_ylabel(REGIME_TITLES[rkey] + "\npercent change", fontsize=8.5, labelpad=4)
         if row_idx == 0:
             ax.set_title(cfg_label, fontsize=9, fontweight="bold", pad=6)
 

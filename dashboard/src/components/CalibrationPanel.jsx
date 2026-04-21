@@ -62,7 +62,7 @@ export default function CalibrationPanel() {
         <p className="text-xs text-slate-600 leading-relaxed">
           Countries A = US, B = China. Tariffs are incremental above pre-2025 baseline.
           Model columns show % change relative to free-trade equilibrium.
-          Data columns show log-point change relative to 2024 annual average (Yahoo Finance).
+          Data columns show percent change relative to 2024 annual average (Yahoo Finance).
           Green data = direction agrees with model; red = disagrees.
           ROW data uses the Fed Advanced Economy trade-weighted index (H.10); no ticker shown.
         </p>
