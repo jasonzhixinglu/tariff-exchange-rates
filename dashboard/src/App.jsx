@@ -1,17 +1,23 @@
 import { useState } from 'react'
 import TheoryPanel from './components/TheoryPanel.jsx'
 import CalibrationPanel from './components/CalibrationPanel.jsx'
+import AboutPanel from './components/AboutPanel.jsx'
 
 const TABS = [
   {
     id: 'theory',
-    label: 'Theory Model',
+    label: '3-Country Model',
     sub: 'Symmetric 3-country · Interactive grid',
   },
   {
     id: 'calibration',
     label: 'Calibrated Examples',
     sub: 'US–China–C · Data-matched parameters',
+  },
+  {
+    id: 'about',
+    label: 'About',
+    sub: 'Paper · Authors · Abstract',
   },
 ]
 
@@ -55,6 +61,7 @@ export default function App() {
         <div className="max-w-screen-2xl mx-auto lg:h-full">
           {activeTab === 'theory'      && <TheoryPanel />}
           {activeTab === 'calibration' && <CalibrationPanel />}
+          {activeTab === 'about'       && <AboutPanel />}
         </div>
       </main>
 

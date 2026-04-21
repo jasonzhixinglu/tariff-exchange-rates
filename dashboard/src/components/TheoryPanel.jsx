@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo, useCallback, useId } from 'react'
 import { buildIndex, interpolate, AXES } from '../lib/interpolate.js'
 import LocusChart from './LocusChart.jsx'
 
@@ -7,13 +7,13 @@ import LocusChart from './LocusChart.jsx'
 // ---------------------------------------------------------------------------
 const PRESETS = [
   { label: 'Free Trade',
-    vals: { tau_AB: 0,    tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 2 } },
+    vals: { tau_AB: 0,    tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Isolated Tariff',
-    vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 2 } },
+    vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Uniform Tariff',
-    vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0.25, tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 2 } },
+    vals: { tau_AB: 0.25, tau_BA: 0,    tau_AC: 0.25, tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
   { label: 'Trade War',
-    vals: { tau_AB: 0.25, tau_BA: 0.25, tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 2 } },
+    vals: { tau_AB: 0.25, tau_BA: 0.25, tau_AC: 0,    tau_CA: 0, tau_BC: 0, tau_CB: 0, sigma: 4 } },
 ]
 
 const DEFAULT = PRESETS[1].vals
@@ -85,6 +85,67 @@ function CWBadge({ deltaAC }) {
   )
 }
 
+
+// ---------------------------------------------------------------------------
+// Diagram explainer
+// ---------------------------------------------------------------------------
+function DiagramExplainer() {
+  const [open, setOpen] = useState(false)
+  const id = useId()
+  return (
+    <div className="card mt-3">
+      <button
+        onClick={() => setOpen(v => !v)}
+        className="w-full flex items-center justify-between px-4 py-3 text-left"
+        aria-expanded={open}
+        aria-controls={id}
+      >
+        <span className="label">How to read this diagram</span>
+        <span className={`text-slate-500 text-xs transition-transform duration-150 ${open ? 'rotate-90' : ''}`}>▶</span>
+      </button>
+
+      {open && (
+        <div id={id} className="px-4 pb-4 space-y-3 text-xs text-slate-400 leading-relaxed border-t border-slate-700/40 pt-3">
+          <p>
+            Standard two-country models predict that tariffs lead to an appreciation of the
+            tariff-imposing country's currency. This three-country model challenges that prediction.
+          </p>
+          <p>
+            The two curves show the combinations of bilateral exchange rates at which each foreign
+            country's trade is balanced. Their intersection is the equilibrium. All parameters are
+            symmetric across countries except the tariff rate (&tau;) and the elasticity of substitution
+            across foreign suppliers (&sigma;), isolating exactly how these two forces shape the
+            exchange rate outcome.
+          </p>
+          <p>
+            When tariffs shift the curves, the equilibrium moves. The direction depends on the tariff
+            configuration:
+          </p>
+          <ul className="space-y-2 pl-3 border-l border-slate-700/60">
+            <li>
+              <span className="text-slate-300 font-medium">Uniform tariffs</span>
+              <span className="text-slate-500"> (A taxes both B and C equally):</span>{' '}
+              both curves shift symmetrically and the conventional appreciation result holds.
+            </li>
+            <li>
+              <span className="text-slate-300 font-medium">Isolated tariff</span>
+              <span className="text-slate-500"> (A taxes B only):</span>{' '}
+              the curves shift asymmetrically. For high enough &sigma;, expenditure diverts toward C
+              rather than toward domestic goods, and A's currency depreciates against C — reversing
+              the conventional prediction.
+            </li>
+            <li>
+              <span className="text-slate-300 font-medium">Bilateral trade war</span>
+              <span className="text-slate-500"> (A and B tax each other):</span>{' '}
+              both currencies depreciate against C in all cases, regardless of &sigma;. The
+              conventional wisdom fails unambiguously.
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
 
 // ---------------------------------------------------------------------------
 // Main panel
@@ -181,9 +242,10 @@ export default function TheoryPanel() {
         </div>
       </div>
 
-      {/* ── Center: locus chart ── */}
-      <div className="flex-1 min-w-0">
+      {/* ── Center: locus chart + explainer ── */}
+      <div className="flex-1 min-w-0 flex flex-col">
         <LocusChart params={params} equilibrium={eq} />
+        <DiagramExplainer />
       </div>
 
       {/* ── Right: results ── */}
