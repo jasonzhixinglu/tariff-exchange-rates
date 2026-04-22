@@ -41,7 +41,7 @@ export default function AboutPanel() {
           tariffs becomes ambiguous and the tariff-imposing country's currency may depreciate against
           untariffed trading partners even as it appreciates against the tariffed one. In a bilateral
           trade war, where two countries impose tariffs on one another while a third country remains
-          untaxed, the ambiguity is resolved: both tariff-imposing countries' currencies depreciate
+          untariffed, the ambiguity is resolved: both tariff-imposing countries' currencies depreciate
           unambiguously against the third country. We calibrate the model to the 2025 US&#8209;China
           tariff episode and show that it correctly predicts the direction of dollar depreciation against
           third-country currencies during the peak escalation period, consistent with the bilateral trade
