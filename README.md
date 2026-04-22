@@ -92,7 +92,7 @@ Tariff regimes (incremental above pre-2025 baseline):
 
 | Regime | $\tau_{AB}$ | $\tau_{BA}$ | $\tau_{AC}$ | Data reference |
 |---|---|---|---|---|
-| 1 — Fentanyl tariffs | 20% | 0% | 0% | March 2025 |
+| 1 — Fentanyl-related tariffs | 20% | 0% | 0% | March 2025 |
 | 2 — Peak escalation | 145% | 125% | 10% | April 2025 |
 
 Extended calibration parameters (Appendix B / dashboard):
