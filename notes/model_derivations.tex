@@ -1,0 +1,432 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+
+\newtheorem{result}{Result}[section]
+
+\title{Model Derivations\\ \large Companion notes to ``Trade Tariffs and Exchange Rates''}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent These notes derive three models with minimal exposition: the two-country benchmark, the two-layer nested three-country model with the reversal threshold, and the canonical competing-exporters model from the preferential-trade-agreement (PTA) literature.
+
+\section{Two-country model}
+
+\subsection{Setup}
+
+Countries $i \in \{A, B\}$. Goods: tradable $T_i$ (produced only in $i$, consumed in both) and non-tradable $N_i$. Labor is the only factor, immobile across countries, endowment $L_i$.
+
+Technology (linear):
+\begin{equation}
+Y_{T_i} = A_{T_i} L_{T_i}, \qquad Y_{N_i} = A_{N_i} L_{N_i}, \qquad L_{T_i} + L_{N_i} = L_i .
+\end{equation}
+Perfect competition and the normalization $P_{T_i} = 1$ (producer price of each tradable in its own currency) give
+\begin{equation}
+w_i = A_{T_i}, \qquad P_{N_i} = \frac{w_i}{A_{N_i}} = \frac{A_{T_i}}{A_{N_i}} .
+\label{eq:2c-wage}
+\end{equation}
+Let $e$ be the nominal exchange rate: units of $A$'s currency per unit of $B$'s currency. The price of $T_B$ in $A$'s currency is $e$; the price of $T_A$ in $B$'s currency is $1/e$.
+
+Preferences (Cobb--Douglas, common weights):
+\begin{equation}
+U_i = C_{T_A i}^{\alpha_{T_A}}\, C_{T_B i}^{\alpha_{T_B}}\, C_{N_i}^{\alpha_N},
+\qquad \alpha_{T_A} + \alpha_{T_B} + \alpha_N = 1,
+\end{equation}
+where $C_{gi}$ is country $i$'s consumption of good $g$.
+
+\subsection{Demands}
+
+Cobb--Douglas expenditure shares are constant. With income $I_i$ and consumer prices $P^{(i)}_g$ (in $i$'s currency),
+\begin{equation}
+P^{(i)}_g C_{g i} = \alpha_g I_i
+\quad\Longrightarrow\quad
+C_{g i} = \frac{\alpha_g I_i}{P^{(i)}_g} .
+\label{eq:2c-demand}
+\end{equation}
+Under free trade $I_i = w_i L_i$, $P^{(A)}_{T_B} = e$, $P^{(B)}_{T_A} = 1/e$.
+
+\subsection{Equilibrium under free trade}
+
+Country $A$'s trade balance in $A$'s currency is export revenue minus import spending. From \eqref{eq:2c-demand}, the quantity $B$ buys of $T_A$ is $C_{T_A B} = \alpha_{T_A} I_B / (1/e) = \alpha_{T_A} w_B L_B\, e$, valued at producer price $1$ in $A$'s currency. The quantity $A$ buys of $T_B$ is $C_{T_B A} = \alpha_{T_B} w_A L_A / e$, valued at price $e$. Hence
+\begin{equation}
+\mathrm{TB}_A = 1 \cdot C_{T_A B} - e\, C_{T_B A}
+= \alpha_{T_A} w_B L_B\, e - \alpha_{T_B} w_A L_A .
+\end{equation}
+Setting $\mathrm{TB}_A = 0$ (by Walras' law this is the only independent condition):
+\begin{equation}
+\boxed{\;e = \frac{\alpha_{T_B}}{\alpha_{T_A}}\cdot\frac{w_A L_A}{w_B L_B}
+= \frac{\alpha_{T_B}}{\alpha_{T_A}}\cdot\frac{A_{T_A} L_A}{A_{T_B} L_B}\;}
+\label{eq:2c-freetrade}
+\end{equation}
+
+\subsection{Tariff}
+
+Country $A$ levies ad valorem tariff $\tau \geq 0$ on imports of $T_B$. The consumer price in $A$ becomes $(1+\tau)e$; producers in $B$ still receive $1$. Revenue is rebated lump-sum:
+\begin{equation}
+I_A = w_A L_A + T^{\mathrm{rev}}_A, \qquad
+T^{\mathrm{rev}}_A = \tau e\, C_{T_B A} .
+\end{equation}
+Using $C_{T_B A} = \alpha_{T_B} I_A / [(1+\tau)e]$,
+\begin{equation}
+I_A = w_A L_A + \frac{\tau}{1+\tau}\,\alpha_{T_B} I_A
+\quad\Longrightarrow\quad
+I_A = \frac{w_A L_A}{1 - \dfrac{\alpha_{T_B}\tau}{1+\tau}} .
+\label{eq:2c-income}
+\end{equation}
+The trade balance (flows valued at producer prices; the tariff wedge is a domestic transfer):
+\begin{equation}
+\mathrm{TB}_A = C_{T_A B} - e\, C_{T_B A}
+= \alpha_{T_A} w_B L_B\, e \;-\; \frac{\alpha_{T_B} I_A}{1+\tau} .
+\end{equation}
+Setting $\mathrm{TB}_A = 0$ and substituting \eqref{eq:2c-income}:
+\begin{equation}
+\boxed{\;e(\tau) = \frac{1}{1+\tau}\cdot
+\frac{1}{1 - \dfrac{\alpha_{T_B}\tau}{1+\tau}}\cdot
+\frac{\alpha_{T_B}}{\alpha_{T_A}}\cdot\frac{A_{T_A} L_A}{A_{T_B} L_B}\;}
+\label{eq:2c-etau}
+\end{equation}
+
+\begin{result}
+$e(\tau)$ is strictly decreasing in $\tau$ for $\alpha_{T_B} \in (0,1)$: a tariff appreciates the tariff-imposing country's currency.
+\end{result}
+
+\begin{proof}
+Write $e(\tau) = e(0) \cdot f(\tau)$ with $f(\tau) = \big[(1+\tau) - \alpha_{T_B}\tau\big]^{-1} = \big[1 + (1-\alpha_{T_B})\tau\big]^{-1}$. Since $1-\alpha_{T_B} > 0$, $f' < 0$.
+\end{proof}
+
+\subsection{Relative wage, terms of trade, and real exchange rate}
+\label{sec:quantities}
+
+\paragraph{Relative wage.} Wages in own currency are $w_A = A_{T_A}$ and $w_B = A_{T_B}$, both constant. The relative wage in a common currency ($A$'s) is
+\begin{equation}
+\omega \;\equiv\; \frac{e\, w_B}{w_A} \;=\; \frac{A_{T_B}}{A_{T_A}}\, e \;\propto\; e .
+\label{eq:relwage}
+\end{equation}
+A rise in $e$ (depreciation of $A$'s currency) is a fall in $A$'s wage relative to $B$'s.
+
+\paragraph{Terms of trade.} $A$'s terms of trade are the price of its exports relative to its imports, in a common currency and at world (pre-tariff) prices:
+\begin{equation}
+\mathrm{ToT}_A \;\equiv\; \frac{P_{T_A}}{e\, P_{T_B}} \;=\; \frac{1}{e} .
+\label{eq:tot}
+\end{equation}
+Combining \eqref{eq:relwage} and \eqref{eq:tot}: the exchange rate, the (inverse) common-currency relative wage, and the (inverse) terms of trade are the same object up to constants,
+\begin{equation}
+e \;\propto\; \frac{w_B\,e}{w_A} \;\propto\; \frac{1}{\mathrm{ToT}_A} .
+\end{equation}
+This holds because producer prices are unit labor costs ($P_{T_i} = w_i / A_{T_i} = 1$): one factor and constant returns make the identification exact.
+
+\paragraph{Real exchange rate.} The consumer price index in each country is the Cobb--Douglas index over consumer prices (constants $\kappa_i$ collect the share terms):
+\begin{align}
+P_A &= \kappa_A\, \big[ P_{T_A} \big]^{\alpha_{T_A}} \big[ (1+\tau)e \big]^{\alpha_{T_B}} \big[ P_{N_A} \big]^{\alpha_N}
+= \kappa_A\, \big[(1+\tau)e\big]^{\alpha_{T_B}} \Big(\tfrac{A_{T_A}}{A_{N_A}}\Big)^{\alpha_N},\\
+P_B &= \kappa_B\, \big[ 1/e \big]^{\alpha_{T_A}} \big[ P_{T_B} \big]^{\alpha_{T_B}} \big[ P_{N_B} \big]^{\alpha_N}
+= \kappa_B\, e^{-\alpha_{T_A}} \Big(\tfrac{A_{T_B}}{A_{N_B}}\Big)^{\alpha_N} .
+\end{align}
+The real exchange rate is
+\begin{equation}
+q \;\equiv\; \frac{e\, P_B}{P_A}
+\;=\; \text{const} \times e^{\,1 - \alpha_{T_A} - \alpha_{T_B}}\, (1+\tau)^{-\alpha_{T_B}}
+\;=\; \text{const} \times e^{\,\alpha_N}\, (1+\tau)^{-\alpha_{T_B}} ,
+\label{eq:2c-q}
+\end{equation}
+so in logs
+\begin{equation}
+d\log q \;=\; \alpha_N\, d\log e \;-\; \alpha_{T_B}\, \frac{d\tau}{1+\tau} .
+\label{eq:2c-dq}
+\end{equation}
+Three observations. (i) $q$ moves with $e$, attenuated by the non-tradable share $\alpha_N$. (ii) The tariff appreciates $A$ in real terms directly, at any $e$, because it raises $A$'s consumer price index. (iii) $P_{N_i} = A_{T_i}/A_{N_i}$ is a productivity ratio, so non-tradables affect the level of $q$ but not its response to trade shocks except through the exponent $\alpha_N$.
+
+\subsection{The Marshall--Lerner condition}
+\label{sec:ml}
+
+Let export volume depend on the price foreign buyers face, $p^* = 1/e$, and import volume on the price home buyers face, $p = (1+\tau)e$. Write $X(p^*)$ and $M(p)$ with elasticities
+\begin{equation}
+\varepsilon_X \equiv -\frac{X'(p^*)\, p^*}{X} \;\geq\; 0,
+\qquad
+\varepsilon_M \equiv -\frac{M'(p)\, p}{M} \;\geq\; 0 .
+\end{equation}
+The trade balance in $A$'s currency, at producer prices, is
+\begin{equation}
+\mathrm{TB}_A(e, \tau) = X(1/e) \;-\; e\, M\big((1+\tau)e\big) .
+\label{eq:ml-tb}
+\end{equation}
+
+\paragraph{Response to the exchange rate.} Differentiate \eqref{eq:ml-tb} with respect to $e$ at $\tau = 0$:
+\begin{equation}
+\frac{\partial \mathrm{TB}_A}{\partial e}
+= -\frac{X'(1/e)}{e^2} - M - e\, M'(e)
+= \frac{\varepsilon_X X}{e} - M + \varepsilon_M M ,
+\end{equation}
+using $X' = -\varepsilon_X X e$ and $e M' = -\varepsilon_M M$. Evaluated at balanced trade ($X = eM$):
+\begin{equation}
+\boxed{\;\frac{\partial \mathrm{TB}_A}{\partial e} = M \big( \varepsilon_X + \varepsilon_M - 1 \big)\;}
+\label{eq:ml}
+\end{equation}
+A depreciation improves the trade balance if and only if $\varepsilon_X + \varepsilon_M > 1$. This is the Marshall--Lerner condition. The ``$-1$'' term is the valuation effect: a depreciation makes each unit of imports more expensive in home currency, worsening the balance one-for-one, and the two volume responses must jointly overcome it.
+
+\paragraph{Response to the tariff.} Differentiate \eqref{eq:ml-tb} with respect to $\tau$ at fixed $e$:
+\begin{equation}
+\frac{\partial \mathrm{TB}_A}{\partial \tau}
+= -e\, M'\big((1+\tau)e\big)\, e
+= \frac{\varepsilon_M}{1+\tau}\, e M \;>\; 0
+\quad\text{whenever } \varepsilon_M > 0 .
+\label{eq:ml-tau}
+\end{equation}
+A tariff improves the trade balance at a fixed exchange rate as long as import demand slopes down. (With a revenue rebate, income effects modify \eqref{eq:ml-tau}; in the Cobb--Douglas model of Section 1.4 the producer-price import value is $\alpha_{T_B} I_A/(1+\tau) \propto [1+(1-\alpha_{T_B})\tau]^{-1}$, still decreasing in $\tau$.)
+
+\paragraph{Why Marshall--Lerner is necessary and sufficient for the conventional wisdom.} Equilibrium requires $\mathrm{TB}_A(e(\tau), \tau) = 0$. By the implicit function theorem,
+\begin{equation}
+\frac{de}{d\tau} = -\, \frac{\partial \mathrm{TB}_A / \partial \tau}{\partial \mathrm{TB}_A / \partial e} .
+\label{eq:ml-ift}
+\end{equation}
+The numerator is positive by \eqref{eq:ml-tau}: the tariff creates a surplus at the old exchange rate. To restore balance, the exchange rate must move in whichever direction \emph{worsens} the trade balance. If Marshall--Lerner holds, that direction is appreciation ($de < 0$): the conventional result. If Marshall--Lerner fails, depreciation worsens the balance instead, and the same tariff-induced surplus requires $de > 0$: the conventional result reverses. The sign of $de/d\tau$ is the opposite of the sign of $\varepsilon_X + \varepsilon_M - 1$, which is why the condition is necessary and sufficient.
+
+\paragraph{The Cobb--Douglas case.} With unit expenditure shares, import volume is $M = \alpha_{T_B} I / p$, so $\varepsilon_M = 1$; similarly $\varepsilon_X = 1$. Then $\varepsilon_X + \varepsilon_M = 2 > 1$ and \eqref{eq:ml} is positive: Marshall--Lerner holds automatically, which is why the closed form \eqref{eq:2c-etau} is monotone.
+
+\paragraph{Multilateral remark.} In the three-country model of Section 2, each bilateral relationship satisfies a Marshall--Lerner condition, and the tariff still improves $A$'s overall balance at fixed rates. What the bilateral conditions do not determine is \emph{how the required adjustment is split between $e_{AB}$ and $e_{AC}$}. That split depends on substitution across foreign origins ($\rho$) relative to substitution between home and foreign goods ($\eta$), which is the subject of Section 2.
+
+\section{Three-country nested model}
+
+\subsection{Setup}
+
+Countries $i \in \{A, B, C\}$, each producing tradable $T_i$ and non-tradable $N_i$ with the same linear technology, wage equation, and normalization as \eqref{eq:2c-wage}. Exchange rates $e_{ij}$ ($i$'s currency per unit of $j$'s), $e_{ii}=1$, no-arbitrage $e_{ij} = e_{ik}e_{kj}$; the free rates are $e_{AB}, e_{AC}$. Tariffs $\tau_{ij} \geq 0$ ($i$'s tariff on $j$'s good). Consumer price of $T_j$ in $i$: $p_{ij} = (1+\tau_{ij})\, e_{ij}$.
+
+Preferences (two-layer nest):
+\begin{align}
+C_i &= C_{T_i}^{\alpha_T}\, C_{N_i}^{1-\alpha_T} && \text{(Cobb--Douglas outer)}
+\label{eq:3c-outer}\\[2pt]
+C_{T_i} &= \Big[\, \alpha_D^{1/\eta}\, C_{T_i i}^{\frac{\eta-1}{\eta}}
++ (1-\alpha_D)^{1/\eta}\, M_i^{\frac{\eta-1}{\eta}} \Big]^{\frac{\eta}{\eta-1}}
+&& \text{(home vs.\ imports, elasticity } \eta)
+\label{eq:3c-mid}\\[2pt]
+M_i &= \Big[\, \textstyle\sum_{j \neq i} \beta_j^{1/\rho}\, C_{T_j i}^{\frac{\rho-1}{\rho}} \Big]^{\frac{\rho}{\rho-1}}
+&& \text{(across origins, elasticity } \rho)
+\label{eq:3c-inner}
+\end{align}
+with home weight $\alpha_D$, origin weights $\beta_j$ (symmetric case: $\beta_j = 1/2$). The single-elasticity model is the special case $\rho = \eta$.
+
+\subsection{Price indices and expenditure shares}
+
+CES price indices (in $i$'s currency):
+\begin{equation}
+P_{M_i} = \Big[ \textstyle\sum_{j\neq i} \beta_j\, p_{ij}^{\,1-\rho} \Big]^{\frac{1}{1-\rho}},
+\qquad
+P_{T_i} = \Big[ \alpha_D\, p_{ii}^{\,1-\eta} + (1-\alpha_D)\, P_{M_i}^{\,1-\eta} \Big]^{\frac{1}{1-\eta}} .
+\label{eq:3c-indices}
+\end{equation}
+Expenditure shares of total income $I_i$ (rows sum to $\alpha_T$):
+\begin{align}
+s_{ii} &= \alpha_T\, \alpha_D \left(\frac{p_{ii}}{P_{T_i}}\right)^{1-\eta},
+\label{eq:3c-shome}\\
+s_{ij} &= \alpha_T\, (1-\alpha_D) \left(\frac{P_{M_i}}{P_{T_i}}\right)^{1-\eta}
+\beta_j \left(\frac{p_{ij}}{P_{M_i}}\right)^{1-\rho}, \qquad j \neq i .
+\label{eq:3c-sfor}
+\end{align}
+
+\subsection{Income and trade balances}
+
+Tariff revenue is rebated lump-sum. A fraction $\tau_{ij}/(1+\tau_{ij})$ of spending $s_{ij} I_i$ is revenue, so
+\begin{equation}
+I_i = w_i L_i + \sum_{j \neq i} \frac{\tau_{ij}}{1+\tau_{ij}}\, s_{ij} I_i
+\quad\Longrightarrow\quad
+I_i = \frac{w_i L_i}{1 - \sum_{j\neq i} \dfrac{\tau_{ij}}{1+\tau_{ij}}\, s_{ij}} .
+\label{eq:3c-income}
+\end{equation}
+The shares depend only on prices, so \eqref{eq:3c-income} is a closed form.
+
+Trade balances at producer prices (spending $s_{ij}I_i$ is tariff-inclusive; divide by $1+\tau_{ij}$ to get the producer-price value):
+\begin{equation}
+\mathrm{TB}_i = \sum_{k \neq i} \frac{s_{ki}\, I_k}{1+\tau_{ki}}
+- \sum_{j \neq i} \frac{s_{ij}\, I_i}{1+\tau_{ij}} ,
+\label{eq:3c-tb}
+\end{equation}
+with all quantities expressed in a common currency (this does not affect the zeros). Equilibrium: $\mathrm{TB}_B = \mathrm{TB}_C = 0$; $\mathrm{TB}_A = 0$ follows by Walras' law.
+
+\subsection{Linearization at the symmetric point}
+
+Set $L_i = 1$, $A_{T_i}=A_{N_i}=1$, $\beta_j = 1/2$, and evaluate at free trade ($\tau_{ij}=0$), where $e_{AB}=e_{AC}=1$ and all incomes equal $1$. Baseline shares:
+\begin{equation}
+s_{ii} = \alpha_T \alpha_D \equiv a, \qquad
+s_{ij} = \tfrac{1}{2}\,\alpha_T (1-\alpha_D) \equiv \tfrac{m}{2},
+\qquad m \equiv \alpha_T(1-\alpha_D).
+\end{equation}
+Perturb by $d\tau$ ($A$'s tariff on $B$) and let $\nu_j \equiv d\log e_{Aj}$ ($\nu_A = 0$). Log price changes: $d\log p_{ij} = \nu_j + \mathbf{1}\{(i,j)=(A,B)\}\, d\tau$.
+
+Index changes, from \eqref{eq:3c-indices}:
+\begin{equation}
+d\log P_{M_i} = \sum_{j\neq i}\beta_j\, d\log p_{ij}, \qquad
+d\log P_{T_i} = \alpha_D\, d\log p_{ii} + (1-\alpha_D)\, d\log P_{M_i} .
+\end{equation}
+Explicitly:
+\begin{align}
+d\log P_{M_A} &= \tfrac{1}{2}(\nu_B + \nu_C + d\tau), &
+d\log P_{M_B} &= \tfrac{1}{2}\nu_C, &
+d\log P_{M_C} &= \tfrac{1}{2}\nu_B .
+\end{align}
+Share changes, from \eqref{eq:3c-shome}--\eqref{eq:3c-sfor}:
+\begin{align}
+d\log s_{ii} &= (1-\eta)\big( d\log p_{ii} - d\log P_{T_i} \big),
+\label{eq:3c-dshome}\\
+d\log s_{ij} &= (1-\rho)\big( d\log p_{ij} - d\log P_{M_i} \big)
++ (1-\eta)\big( d\log P_{M_i} - d\log P_{T_i} \big) .
+\label{eq:3c-dsfor}
+\end{align}
+Income changes, from \eqref{eq:3c-income} (the revenue term is first order for country $A$ only):
+\begin{equation}
+d\log I_A = \tfrac{m}{2}\, d\tau, \qquad
+d\log I_B = \nu_B, \qquad
+d\log I_C = \nu_C .
+\end{equation}
+
+Differentiate \eqref{eq:3c-tb} for $i = B, C$ at the baseline. Each term $s\,I/(1+\tau)$ contributes $\tfrac{m}{2}\,( d\log s + d\log I - d\tau_{\cdot})$, where $d\tau_{\cdot} = d\tau$ appears only in the $A$-to-$B$ flow:
+\begin{align}
+d\,\mathrm{TB}_B &= \tfrac{m}{2}\Big[
+\big(d\log s_{AB} + \tfrac{m}{2}d\tau - d\tau\big)
++ \big(d\log s_{CB} + \nu_C\big)
+- \big(d\log s_{BA} + \nu_B\big)
+- \big(d\log s_{BC} + \nu_B\big) \Big] = 0,
+\\
+d\,\mathrm{TB}_C &= \tfrac{m}{2}\Big[
+\big(d\log s_{AC} + \tfrac{m}{2}d\tau\big)
++ \big(d\log s_{BC} + \nu_B\big)
+- \big(d\log s_{CA} + \nu_C\big)
+- \big(d\log s_{CB} + \nu_C\big) \Big] = 0 .
+\end{align}
+Substituting \eqref{eq:3c-dshome}--\eqref{eq:3c-dsfor} and collecting terms in $(\nu_B, \nu_C, d\tau)$ gives a linear system. Define
+\begin{equation}
+D \equiv 3\alpha_D(\eta - 1) + \rho + 1, \qquad
+\rho^* \equiv 3\big[\, 1 + \alpha_D(\eta-1) - \alpha_T(1-\alpha_D) \,\big] .
+\label{eq:3c-Ddef}
+\end{equation}
+The system evaluates to (each entry verified symbolically):
+\begin{equation}
+-\frac{mD}{4}
+\begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}
+\begin{pmatrix} \nu_B \\ \nu_C \end{pmatrix}
+=
+\frac{m}{4}
+\begin{pmatrix} \rho + \rho^*/3 \\ -\rho + \rho^*/3 \end{pmatrix} d\tau .
+\label{eq:3c-system}
+\end{equation}
+Invert using $\begin{pmatrix} 2 & -1 \\ -1 & 2\end{pmatrix}^{-1} = \frac{1}{3}\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$:
+\begin{equation}
+\begin{pmatrix} \nu_B \\ \nu_C \end{pmatrix}
+= -\frac{1}{3D}
+\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}
+\begin{pmatrix} \rho + \rho^*/3 \\ -\rho + \rho^*/3 \end{pmatrix} d\tau
+= \frac{1}{3D}
+\begin{pmatrix} -(\rho + \rho^*) \\ \rho - \rho^* \end{pmatrix} d\tau .
+\end{equation}
+
+\begin{result}[Threshold]
+At the symmetric point,
+\begin{equation}
+\frac{d\log e_{AB}}{d\tau}\bigg|_{\tau=0} = -\,\frac{\rho + \rho^*}{3D} < 0,
+\qquad
+\boxed{\;\frac{d\log e_{AC}}{d\tau}\bigg|_{\tau=0} = \frac{\rho - \rho^*}{3D}\;}
+\end{equation}
+with $D > 0$ for $\eta \geq 1$ (local stability). $A$ appreciates against $B$ for all parameters; $A$ depreciates against the untariffed $C$ if and only if $\rho > \rho^*$.
+\end{result}
+
+\subsection{Impossibility under a single elasticity}
+
+Impose $\rho = \eta = \sigma$ (the single-elasticity CES). Then
+\begin{equation}
+\rho^* - \sigma
+= 3 + 3\alpha_D(\sigma - 1) - 3\alpha_T(1-\alpha_D) - \sigma
+= \sigma(3\alpha_D - 1) + 3(1-\alpha_D)(1-\alpha_T) .
+\label{eq:3c-gap}
+\end{equation}
+
+\begin{result}[Impossibility]
+If $\alpha_D \geq 1/3$, both terms in \eqref{eq:3c-gap} are nonnegative and the second is positive, so $\rho^* > \sigma$ for every $\sigma > 0$: the conventional appreciation against $C$ survives at any elasticity. At $\alpha_D = 1/3$, $\alpha_T = 3/4$ (the symmetric baseline calibration $\alpha_{T_j} = \alpha_N = 1/4$): $\rho^* - \sigma = 1/2$ and $D = 2\sigma$, so
+\begin{equation}
+\frac{d\log e_{AC}}{d\tau}\bigg|_{\tau=0} = \frac{\sigma - \rho^*}{3D} = -\,\frac{1}{12\sigma}
+\;\longrightarrow\; 0^- .
+\end{equation}
+\end{result}
+
+\subsection{Nominal versus real exchange rate in the three-country model}
+
+The quantities of Section~\ref{sec:quantities} carry over: $e_{Aj}$ is proportional to $j$'s relative wage in $A$'s currency and to the inverse of $A$'s bilateral terms of trade with $j$. The real rate against $C$ is $q_{AC} = e_{AC} P_C / P_A$ with $P_i = \kappa_i\, (P_{T_i}^{\mathrm{own}})^{\alpha_T} (P_{N_i})^{1-\alpha_T}$, where $P_{T_i}^{\mathrm{own}}$ is the tariff-inclusive tradable index \eqref{eq:3c-indices} in $i$'s own currency and $P_{N_i} = A_{T_i}/A_{N_i}$ is constant. Hence
+\begin{equation}
+d\log q_{AC} = d\log e_{AC} + \alpha_T \big( d\log P_{T_C}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big) .
+\end{equation}
+At the symmetric point, converting the indices to own currency ($d\log P_{T_C}^{\mathrm{own}} = d\log P_{T_C} - \nu_C$):
+\begin{align}
+d\log P_{T_A}^{\mathrm{own}} &= (1-\alpha_D)\,\tfrac{1}{2}(\nu_B + \nu_C + d\tau), \\
+d\log P_{T_C}^{\mathrm{own}} &= \alpha_D \nu_C + (1-\alpha_D)\tfrac{1}{2}\nu_B - \nu_C
+= (1-\alpha_D)\big( \tfrac{1}{2}\nu_B - \nu_C \big) .
+\end{align}
+Substituting and using $m = \alpha_T(1-\alpha_D)$:
+\begin{equation}
+d\log q_{AC}
+= \nu_C + m\Big( \tfrac{1}{2}\nu_B - \nu_C - \tfrac{1}{2}\nu_B - \tfrac{1}{2}\nu_C - \tfrac{1}{2}d\tau \Big)
+= \Big(1 - \tfrac{3m}{2}\Big) \nu_C \;-\; \tfrac{m}{2}\, d\tau .
+\label{eq:3c-dq}
+\end{equation}
+As in \eqref{eq:2c-dq}, the tariff appreciates $A$ in real terms directly through the price index (the $-\tfrac{m}{2} d\tau$ term), and the pass-through from the nominal rate is attenuated. Setting \eqref{eq:3c-dq} to zero with $\nu_C = \frac{\rho - \rho^*}{3D}\, d\tau$ gives the real-rate reversal threshold: $(2 - 3m)(\rho - \rho^*) = 3mD$, and since $D = 3\alpha_D(\eta-1) + \rho + 1$ this is linear in $\rho$, with solution
+\begin{equation}
+\boxed{\;\rho^*_q = \frac{(2 - 3m)\,\rho^* + 3m\big[\,3\alpha_D(\eta-1) + 1\,\big]}{2 - 6m}\;}
+\qquad (\rho^*_q > \rho^* \text{ for } m \in (0, \tfrac{1}{3})) .
+\label{eq:3c-rhoq}
+\end{equation}
+At the benchmark ($\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$, so $m = 0.08$): $\rho^* = 3.96$ and $\rho^*_q = 4.93$. Real depreciation against $C$ requires more diversion than nominal depreciation, because part of the nominal movement is absorbed by the tariff's direct effect on $A$'s price index.
+
+\section{Canonical PTA model: competing exporters}
+
+\subsection{Setup}
+
+Countries $A$ (importer), $B$ and $C$ (exporters). Two goods: $x$ and numeraire $y$. Endowments: $A$ holds only $y$; $B$ and $C$ hold $x$ (and possibly $y$). Quasilinear preferences in each country,
+\begin{equation}
+U_i = u_i(x_i) + y_i, \qquad u_i' > 0,\; u_i'' < 0 .
+\end{equation}
+$A$ levies specific tariffs $t_B, t_C$ on imports of $x$ from $B$ and $C$. Let $q_j$ be the price received by exporter $j$ (the world price of its good) and $p$ the domestic price of $x$ in $A$. Both origins sell in $A$ at the same domestic price:
+\begin{equation}
+p = q_B + t_B = q_C + t_C .
+\label{eq:pta-arb}
+\end{equation}
+
+\subsection{Demands and market clearing}
+
+From $u_i'(x_i) = (\text{local price of } x)$:
+\begin{equation}
+M_A(p) = x_A^d(p), \qquad
+E_j(q_j) = \omega_j - x_j^d(q_j), \quad j = B, C,
+\end{equation}
+with $M_A' < 0$ and $E_j' > 0$. Market clearing for $x$:
+\begin{equation}
+M_A(p) = E_B(q_B) + E_C(q_C) = E_B(p - t_B) + E_C(p - t_C) .
+\label{eq:pta-mc}
+\end{equation}
+Equation \eqref{eq:pta-mc} determines $p$ given $(t_B, t_C)$; then $q_B, q_C$ follow from \eqref{eq:pta-arb}.
+
+\subsection{Comparative statics of a discriminatory tariff}
+
+Totally differentiate \eqref{eq:pta-mc} with respect to $t_B$, holding $t_C$:
+\begin{equation}
+M_A'\, \frac{dp}{dt_B} = E_B'\Big( \frac{dp}{dt_B} - 1 \Big) + E_C'\, \frac{dp}{dt_B}
+\quad\Longrightarrow\quad
+\frac{dp}{dt_B} = \frac{E_B'}{E_B' + E_C' - M_A'} \in (0, 1) .
+\end{equation}
+Therefore
+\begin{align}
+\frac{dq_B}{dt_B} &= \frac{dp}{dt_B} - 1 = \frac{E_C' - M_A'}{E_B' + E_C' - M_A'}\cdot(-1) \;<\; 0,
+\\[2pt]
+\frac{dq_C}{dt_B} &= \frac{dp}{dt_B} \;>\; 0 .
+\end{align}
+
+\begin{result}[Viner--Mundell]
+A discriminatory tariff on $B$ worsens $B$'s terms of trade and \emph{improves} $C$'s terms of trade. Equivalently, a preferential tariff cut toward $B$ (lower $t_B$) improves $B$'s and worsens $C$'s terms of trade.
+\end{result}
+
+\subsection{Mapping to the exchange-rate model}
+
+In the model of Section 2, $C$'s terms of trade improving corresponds to $C$'s wage rising in common-currency units, i.e.\ $e_{AC}$ rising: $A$ depreciates against $C$. The canonical PTA model therefore always delivers the reversal. The reason is visible in \eqref{eq:pta-mc}: $A$ has no domestic production of $x$, so tariffed demand can only switch between $B$ and $C$. There is no home--import margin. In the notation of Section 2, the PTA model sets the home share to zero, and \eqref{eq:3c-gap} with $\alpha_D = 0$ gives $\rho^* - \sigma = 3(1-\alpha_T) - \sigma$, which is negative for moderate $\sigma$: the impossibility disappears when there is nothing to switch home to. The nested three-country model adds the home margin ($\eta$, $\alpha_D$) and shows that with realistic home bias the diversion force must clear the threshold $\rho^*$ before the PTA logic controls the exchange rate.
+
+\end{document}
