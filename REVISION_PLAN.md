@@ -1,0 +1,230 @@
+# Revision Plan — Response to Referee Report (August 2026)
+
+**Paper:** *Trade Tariffs and Exchange Rates: Revisiting Conventional Wisdom in a Three-Country Framework* (Lu & Milkov)
+**Referee recommendation:** Reject in current form; encouraged resubmission after major revision.
+**Status of this document:** Living tracking document. Check off items as completed; record decisions and verified numbers here so the revision has a single source of truth.
+
+---
+
+## 1. The one-paragraph reframe
+
+The referee's verdict is harsh on the current draft but generous on the underlying project: *"There is a good paper here, but it is a different paper from the one submitted."* The revision should be understood not as damage control but as an upgrade of the contribution. The current draft claims an ambiguity ("the sign of e_AC can flip") that it never exhibits and — as the referee proves and we have independently verified — **cannot** exhibit under its own single-elasticity specification. The revised paper replaces a claimed-but-absent numerical possibility with two sharp analytical results:
+
+> **Proposition 1 (impossibility).** In the flat single-elasticity CES, the conventional appreciation result survives the move to three countries *as a theorem*: for any σ > 0, whenever home bias α_D ≥ 1/3, an isolated tariff cannot depreciate A's currency against the untariffed third country. The flat-CES intuition is precisely why the profession has stayed anchored on the two-country prior.
+>
+> **Proposition 2 (threshold).** Once the home-vs-import elasticity η and the cross-origin elasticity ρ are separated in a two-layer nest, reversal occurs iff ρ > ρ* = 3[1 + α_D(η−1) − α_T(1−α_D)]. At US-realistic parameters ρ* ≈ 4 — comfortably inside measured cross-origin elasticities (FLOR 2018, Broda–Weinstein 2006, Fajgelbaum et al. 2024). The reversal is not a knife-edge curiosity; it is attainable at standard parameters, but *only* once the two margins are separated.
+
+Everything the paper cares about survives and gets stronger: the trade-war amplification result stays unambiguous (with a corrected comparative static), the policy payoff for the 2025 attribution debate stands, and the two results together tell a cleaner story than "ambiguity": **the conventional wisdom fails not because a third country exists, but because home-vs-import and cross-origin substitution are different margins.**
+
+---
+
+## 2. Understanding the referee report
+
+Three independently disqualifying problems, plus a constructive fix handed to us nearly complete.
+
+### 2.1 The headline result is never produced (§3.1, §5.3)
+
+- Figures 4–6 show Δlog e_AC = −0.15, −0.05, 0.00 at σ = 0.5, 1, 2: monotonically approaching zero from below, never crossing. Section 3.2.2's claim of reversal at high σ cites a figure showing 0.00, not a positive number.
+- Table 4 Panel A (the isolated-tariff regime that maps onto the theory): Δe_AC < 0 in **all eight** configurations, including Vietnam at σ = 8.
+- Referee's diagnosis: a single σ does double duty — it strengthens diversion (toward reversal) but simultaneously strengthens home-vs-import expenditure switching (against it). Imposing ρ = η = σ makes the threshold chase σ at rate 3α_D, so a crossing requires α_D < 1/3, which no economy satisfies. The paper's symmetric calibration (α_D = 1/3) sits exactly on the knife edge with d log e_AC/dτ = −1/(12σ) → 0⁻. Figure 6 shows an **asymptote**, not a near-crossing.
+
+### 2.2 The novelty claim is not defensible as stated (§3.3)
+
+- With one factor, linear technology, P_Ti = 1, and balanced trade, e_ij **is** the common-currency relative wage and simultaneously the terms of trade. That object is the routine output of Caliendo–Parro (2015), Ossa (2014), Costinot–Rodríguez-Clare (2014); third-country terms-of-trade effects of *discriminatory* tariffs are the core of the PTA literature (Bagwell–Staiger, Bond–Syropoulos, Ornelas).
+- The paper positions itself against Lerner–Metzler–Mundell — the textbook prior, not the frontier.
+- What the referee concedes **is** genuinely new (this becomes the stated contribution):
+  1. The closed-form analytical threshold ρ* and its comparative statics (elasticity gap, home bias, size).
+  2. The impossibility result under a single elasticity.
+  3. Unambiguous trade-war joint depreciation, sign independent of the elasticity.
+  4. The *translation*: the trade literature reports ŵ and welfare; nobody in it says "therefore the dollar should depreciate against the euro." That inferential step, and the correction it implies for the 2025 attribution debate, is defensible even though the equilibrium object is familiar.
+
+### 2.3 The calibration does not support the abstract (§3.5–3.7, 3.9)
+
+- Regime 2 predicts Δe_AC > 0 in all 8 configurations; data show it in 2 (EU, Japan) — both safe havens, i.e. the financial pattern the model abstracts from. Six failures relegated to Appendix C reads as selective reporting.
+- Magnitudes are order-of-magnitude misses (+24.05% Canada, +22.81% Taiwan, +17.45% Japan).
+- Expenditure shares calibrated from world *export* shares imply the US spends 70% more on Chinese tradables than its own (α_TA = 0.097 vs α_TB = 0.165); actual US expenditure on Chinese goods is ~1–2% of consumption. Zero home bias inflates the diversion mechanism.
+- σ is hand-assigned per configuration by narrative, and it controls the sign of the headline result.
+- Long-run balanced-trade predictions compared to one month of nominal FX data — the horizon where disconnect (Itskhoki–Mukhin) is strongest.
+
+### 2.4 Equation and claim errors (§4)
+
+- **Eq. (28):** spurious e_ik in the export term; internally inconsistent with eq. (9). Manuscript typo — the code is correct.
+- **Eqs. (26)–(27):** D_k is the price-index denominator of a *flat* CES over all four goods, contradicting the stated nested CD-outer/CES-inner structure. They coincide only at σ = 1.
+- **§3.2.3:** trade-war depreciation magnitude is claimed increasing in σ; in the single-σ model it is **decreasing**. It is increasing in ρ in the nested model — another argument for the nest.
+- **§2.2 robustness:** Lemmas 2.1–2.2 are Marshall–Lerner in different clothing; restate honestly as "the result holds wherever Marshall–Lerner holds," which sets up Section 3 better (bilateral ML does not pin down the multilateral sign).
+
+### 2.5 The constructive proposal (§5)
+
+Two-layer nest: Cobb–Douglas outer (tradables share α_T); CES over {home, import bundle} with macro elasticity η; CES across foreign origins with micro elasticity ρ. Delivers:
+
+- ρ* = 3[1 + α_D(η−1) − α_T(1−α_D)] at the symmetric point; reversal iff ρ > ρ*. Denominator 3[3α_D(η−1)+ρ+1] > 0 for η ≥ 1 is the local stability condition.
+- ρ* grid lands in 2.5–5.5 across the realistic (α_D, η) box.
+- ρ* is **decreasing in L_C** (small C appreciates sharply per unit of diverted demand): Vietnam ρ* = 8.76, EU 4.32, ROW 3.78 at (α_D=.80, α_T=.40, η=1.5, L_B=1.21). Vietnam is the *hardest* configuration, not the easiest — the current draft has this backwards.
+- ρ* **falls monotonically in tariff size** (3.96 → 2.70 at τ=1.45, equal sizes): the local threshold is a conservative bound; the 2025-scale tariffs make reversal easier. Report this — it pre-empts the "your threshold is local" objection.
+- Resist going further (three-level nest, CRESH): the two-level nest delivers the result and richer heterogeneity cannot be disciplined by available estimates.
+
+---
+
+## 3. Independent verification (what we ran and found)
+
+All referee claims checked against the repo; scripts in the session scratchpad, to be promoted into `scripts/`/tests during Phase 0.
+
+### 3.1 We found the *cause* of the paper–referee replication discrepancy: a code bug
+
+`src/tariff_exchange_rates/economy.py` (~line 99) computes disposable income as
+
+```
+I_i = w_i L_i / (1 − Σ_j α_T[j] · τ_ij/(1+τ_ij))        # eq. (25), "exact for all σ"
+```
+
+This closed form is **only exact at σ = 1**. Under the inner CES the expenditure share on variety j is price-dependent, not the fixed weight α_Tj, so tariff revenue is mis-measured whenever σ ≠ 1 and consumer prices differ from 1. The correct fixed point uses realized CES shares:
+
+```
+I_i = w_i L_i / (1 − Σ_j s_ij(p) · τ_ij/(1+τ_ij)),   s_ij(p) = realized expenditure share
+```
+
+The same bug is in the dashboard port `dashboard/src/lib/modelJs.js` (~line 59). All published figures, `data/theory_grid.json`, and `data/calibration_panel.json` were generated with the buggy formula.
+
+**Symmetric baseline, isolated tariff τ_AB = 1, log e_AC:**
+
+| σ | repo code (buggy) | corrected | paper figure | referee's replication |
+|---|---|---|---|---|
+| 0.5 | −0.1488 | −0.1133 | −0.15 | −0.113 |
+| 1 | −0.0488 | −0.0488 | −0.05 | −0.049 |
+| 2 | **+0.0048** | −0.0163 | 0.00 | −0.016 |
+| 5 | **+0.0218** | −0.0013 | — | −0.001 |
+
+The referee's numbers match the *corrected* model exactly. The apparent sign flip at σ ≳ 1.9 in our code (and interactively visible in the dashboard) **is a numerical artifact of the income bug**. Under the correct model log e_AC asymptotes to 0⁻ and never crosses — at the symmetric calibration and at every asymmetric calibration in the paper (checked EU config, whose α_D ≈ 0.24 is *below* the 1/3 knife edge, up to σ = 20: still no crossing). This is slightly stronger than the referee's symmetric-case impossibility statement and worth formalizing.
+
+Note the paper's Figure 6 reports 0.00 (roughly the truth) while the buggy code gives +0.005 — so the figures' provenance vs. the current code state should be audited in Phase 0 (`notebooks/section3_three_country_model.ipynb`).
+
+### 3.2 Referee's threshold verified
+
+Ran the referee's `threecountry_threshold.py` (symbolic + numeric): analytic d log e_AC/dτ matches the nonlinear solve to 6 decimals at every point tested; ρ* formula, the size table (Vietnam 8.76 / EU 4.32 / ROW 3.78), and the ρ*−σ ≡ +0.50 constant-gap result at the paper's calibration all reproduce.
+
+### 3.3 Trade-war comparative static (§4.3) verified
+
+Single-σ: log e_AC = +0.094 → +0.046 as σ: 1.5 → 10 (**decreasing** — paper's claim is wrong). Nested with η = 1.5: +0.016 → +0.252 as ρ: 1.5 → 10 (increasing — the claim is right only in the nest).
+
+### 3.4 Effect of the income-formula fix on the published calibration (Δe_AC, %)
+
+| Config, regime | published | corrected |
+|---|---|---|
+| EU, Regime 1 | −0.40 | −0.53 |
+| EU, Regime 2 | +7.29 | +5.58 |
+| VNM, Regime 2 | +6.38 | +4.69 |
+| ROW, Regime 2 | +0.87 | **−0.14** |
+
+The ROW sign flips under the corrected model, removing one of the two directional "successes" claimed in the abstract (advanced-economy trade-weighted index, +2.18% in data). **The calibration problem is slightly worse than the referee reports.** This must be handled forthrightly in the response letter; the rebuilt calibration (Phase 3) supersedes these numbers anyway.
+
+### 3.5 Equation errors confirmed
+
+Eq. (28): code implements the correct (producer-price) export term, so the manuscript e_ik is a typo. Eqs. (26)–(27): code implements the nested structure (equivalent up to a scale factor irrelevant to shares), so the manuscript's flat-CES D_k is the error; make the text match the nested spec and the σ=1 replications line up to two decimals.
+
+---
+
+## 4. The revised paper's narrative (constructive framing)
+
+The referee's §6/§8 sketch, adopted with our additions. The pitch:
+
+> In a minimal multilateral setting, the conventional two-country appreciation result survives a flat-CES extension **as a theorem**: with a common elasticity it cannot be overturned at any plausible home bias — which is why moving from two to three countries has not, by itself, disturbed the textbook prior. It fails only once the home-vs-import elasticity η and the cross-origin elasticity ρ are separated, and we derive the exact threshold ρ* at which it fails. At US-realistic parameters ρ* ≈ 4, well within measured cross-origin elasticities, so bilateral appreciation against a tariffed partner can coexist with depreciation against untariffed ones. In a bilateral trade war the ambiguity resolves: both belligerents depreciate against the bystander unambiguously, with magnitude increasing in ρ. Consequently, observed multilateral dollar depreciation during a tariff episode cannot be attributed to financial or convenience-yield channels on the strength of the two-country prior alone.
+
+Framing principles for the rewrite:
+
+1. **Lead with the impossibility theorem, not the ambiguity.** "The conventional result survives flat CES as a theorem and fails only when the two elasticities are separated" is sharper, explains why the point was overlooked, and turns the referee's most damaging finding into our Proposition 1.
+2. **Own the equivalence e = relative wage = terms of trade** in a prominent early subsection (new §2.5). State what the quantitative trade literature already computes, and what we add: the closed-form sign characterization and the translation into exchange-rate language for the 2025 attribution debate. Doing this ourselves is far better than having a referee do it.
+3. **Restate the robustness section honestly** as "the result holds wherever Marshall–Lerner holds" — cleaner, and it sets up the punchline that bilateral ML does not pin down the multilateral sign.
+4. **Defend the minimal structure deliberately** (not in a caveat list): the paper establishes a *sign* result, and the stripped-down setting shows the flip requires no dynamics, no capital, no financial frictions. Engage Ricardo–Viner, EKNR/CDP, and the intertemporal (temporary-vs-permanent tariff) literatures as the boundary of the exercise.
+5. **Calibration as disciplined illustration, not horse race.** Country-specific import-share preferences, (η, ρ) from the literature, results over a grid with ρ* marked, all configurations in the main text, and either an extended data window or explicitly no directional-validation claim.
+6. **Turn size comparative statics into content:** Vietnam has the highest assigned elasticity but the highest threshold — small countries are the hardest place to see the reversal. This reverses the current draft's presentation and is a quotable, policy-relevant point.
+
+---
+
+## 5. Work plan
+
+### Phase 0 — Fix and verify existing code *(prerequisite for everything)*
+
+- [ ] **0.1** Fix income/tariff-revenue fixed point in `src/tariff_exchange_rates/economy.py`: solve for I_i using realized CES expenditure shares (closed form exists: shares don't depend on income, so it's still one division per country — no iteration needed).
+- [ ] **0.2** Mirror the fix in `dashboard/src/lib/modelJs.js`.
+- [ ] **0.3** Add regression tests: (i) σ=1 results invariant to the fix; (ii) corrected model matches referee's replication values (−0.113 / −0.0488 / −0.016 at σ = 0.5/1/2, τ=1); (iii) numerical d log e_AC/dτ matches analytic −(ρ*−ρ)/(3(3α_D(η−1)+ρ+1)) to 1e-6 once Phase 2 lands.
+- [ ] **0.4** Audit figure provenance in `notebooks/section3_three_country_model.ipynb` (paper's Fig. 6 shows 0.00 but buggy code gives +0.005 — determine what actually generated the PDFs).
+- [ ] **0.5** Regenerate `data/theory_grid.json`, `data/calibration_panel.json`, `output/*.pdf`; confirm no sign reversal exists anywhere in the single-σ model (numerical footing for Prop. 1).
+- [ ] **0.6** Promote scratchpad verification scripts into `scripts/verify_referee_claims.py` (or tests) so every number in this document is reproducible.
+
+### Phase 1 — Derive the theory
+
+- [ ] **1.1** Independently re-derive ρ* symbolically (do not import the referee's algebra untested — we've verified it numerically, but the paper needs our own derivation): symmetric equal-size case first.
+- [ ] **1.2** Extend to unequal sizes L_B, L_C (general threshold = root of a quadratic, closed form → appendix) and to asymmetric/country-specific preference weights.
+- [ ] **1.3** Prove Proposition 1 (impossibility): symmetric statement (α_D ≥ 1/3 ⇒ no reversal for any σ), plus the asymmetric extension motivated by our finding that even α_D ≈ 0.24 calibrations never cross (characterize the true asymmetric condition).
+- [ ] **1.4** Large-tariff threshold: ρ*(τ) decreasing — table for τ ∈ {0, 0.2, 0.5, 1.0, 1.45, 2.0} at equal and US–China–EU sizes.
+- [ ] **1.5** Stability condition 3α_D(η−1)+ρ+1 > 0 stated as such.
+- [ ] **1.6** Trade-war proposition: joint depreciation unambiguous; magnitude increasing in ρ (nested), with the single-σ decreasing case noted as another artifact of conflating margins.
+
+### Phase 2 — Implement the two-layer nest
+
+- [ ] **2.1** New model module (alongside flat-CES, which stays for Prop. 1 exhibits and reproducibility): CD outer (α_T) → CES(η) over {home, M_i} → CES(ρ) over foreign origins; parameters α_D, β_j weights, country-specific.
+- [ ] **2.2** Solver + threshold utilities (`rho_star(aD, aT, eta)`, general-size numeric threshold via root-finding).
+- [ ] **2.3** Verify analytic-vs-numeric to 1e-6 across the parameter box (test 0.3-iii).
+- [ ] **2.4** Rebuild dashboard around (η, ρ) with ρ* marked on the theory panel; keep a flat-CES toggle to demonstrate the impossibility result interactively. *(The dashboard becomes a genuine asset here: the threshold is visible.)*
+- [ ] **2.5** Regenerate theory grid for the nested model.
+
+### Phase 3 — Rebuild the calibration
+
+- [ ] **3.1** Recalibrate expenditure shares from **bilateral import shares in each country's absorption**, country-specific preferences (drop common-preference assumption and world-export-share construction). Realistic US home bias α_D ≈ 0.8.
+- [ ] **3.2** Source (η, ρ) from Feenstra–Luck–Obstfeld–Russ (2018) [macro vs micro wedge — currently miscited in support of σ=2], Broda–Weinstein (2006), Fajgelbaum et al. (2020, 2024). Fix the Amiti–Redding–Weinstein attribution (pass-through paper, not cross-origin elasticity).
+- [ ] **3.3** Report results over a ρ grid per configuration with ρ* marked; no hand-assigned point values driving signs.
+- [ ] **3.4** Include the large-tariff ρ*(τ) result (1.4) in the calibration section.
+- [ ] **3.5** All configurations in the main text; no appendix relegation of failures.
+- [ ] **3.6** Extend FX comparison window through end-2025 (`scripts/fetch_fx_data.py`) **and** reframe as magnitude/mechanism illustration rather than directional horse race. Be explicit that safe-haven/financial channels dominate at monthly horizons (Itskhoki–Mukhin) and that this is the boundary of the model.
+- [ ] **3.7** Resolve ROW: **[DECISION — see §6]** drop it or construct a matched "world minus US and China" trade-weighted index.
+- [ ] **3.8** Reconcile Table 2 vs Table 3 (α_TB 0.236 vs 0.235) and the incorrect Appendix C note about "slightly different σ values."
+
+### Phase 4 — Rewrite the paper
+
+- [ ] **4.1** Abstract: referee's §8 language as the skeleton (see §4 above). No "correctly predicts the direction" claim unless the rebuilt calibration actually supports it.
+- [ ] **4.2** Introduction: drop "we challenge the conventional wisdom on different grounds"; state the contribution as the sign characterization + the inference correction. Motivation stays: the 2025 dollar-depreciation attribution debate is real and current.
+- [ ] **4.3** New §2.5 (half page): e ∝ relative wage ∝ terms of trade; situate vs. Caliendo–Parro, Ossa, Costinot–Rodríguez-Clare, PTA literature; say exactly what is new.
+- [ ] **4.4** §2.2 restated as Marshall–Lerner; fix the "or more generally" logic slip in Lemma 2.1's export condition.
+- [ ] **4.5** §3 restructured: Prop. 1 (impossibility) first, Prop. 2 (threshold ρ*) with comparative statics (α_D, η, α_T, L_C, τ), then trade war (corrected magnitude claim).
+- [ ] **4.6** Fix eq. (28) (drop e_ik from export term; align with eq. (9)); make eqs. (26)–(27) match the implemented nested structure; note α_N inert under CD outer (state what N buys or drop it).
+- [ ] **4.7** New §3.4: Ricardo–Viner extension (Y_T = A·L^γ, γ<1) formalizing the export-supply channel; explicit boundary discussion of dynamic (EKNR, CDP) and intertemporal (Obstfeld–Rogoff Ch. 4; temporary vs permanent tariffs) literatures; deliberate defense of the minimal structure. **[DECISION — see §6]**
+- [ ] **4.8** Compress Figures 2–7 into one multi-panel locus figure + one d log e_AC/dτ-vs-ρ plot with ρ* marked.
+- [ ] **4.9** Conclusion: the inferential payoff stated directly (bilateral appreciation ≠ broad strength; multilateral depreciation ≠ evidence of financial channels by itself).
+- [ ] **4.10** Flag trade-war e_AB-unchanged as a knife-edge (requires τ_AB = τ_BA and equal size; calibration has neither), not a result.
+
+### Phase 5 — Minor comments sweep (referee §7)
+
+- [ ] **5.1** State once, early: e is a relative wage in a real model with no nominal anchor.
+- [ ] **5.2** Percent-change convention (positive = depreciation of first-named currency) moved from figure notes to text.
+- [ ] **5.3** Figure 1 tariff legend overlap fixed.
+- [ ] **5.4** §2.2 opening cross-reference ("Section 2" → "Section 2.1").
+- [ ] **5.5** Bibliography additions: Itskhoki & Mukhin (2021); Caliendo & Parro (2015); Ossa (2014); Costinot & Rodríguez-Clare (2014); Bagwell & Staiger + PTA terms-of-trade (Bond–Syropoulos, Ornelas); Broda & Weinstein (2006); Eaton–Kortum–Neiman–Romalis (2016); Caliendo–Dvorkin–Parro (2019); Obstfeld (2025); Werning et al. (2025); Feenstra–Luck–Obstfeld–Russ (2018) recited correctly.
+- [ ] **5.6** README + dashboard About text updated to the new narrative (README currently states the old claim).
+
+### Phase 6 — Response to referee
+
+- [ ] **6.1** Point-by-point response letter. Tone: accept the diagnosis, document the fix. Where we found *more* than the referee (the income-formula bug explaining the replication discrepancy; the ROW sign flip under the corrected model; the asymmetric impossibility observation), say so plainly — it demonstrates the revision is load-bearing, not cosmetic.
+
+---
+
+## 6. Open decisions (user input needed)
+
+| # | Decision | Options | Notes |
+|---|---|---|---|
+| D1 | Ricardo–Viner extension (4.7) | (a) Implement fully (Y = A·L^γ): referee "recommends implementing"; tractable; likely *lowers* ρ*, strengthening the result. (b) Verbal + defense of minimal structure only, park as future work. | Referee explicitly recommends (a) but the load-bearing revision is Props. 1–2. Could be staged: (b) for structure, (a) if time allows. |
+| D2 | ROW configuration (3.7) | (a) Drop it. (b) Construct a matched "world minus US−China" trade-weighted index. | The corrected model flips ROW's Regime-2 sign anyway (−0.14%), so its "success" is gone regardless. Leaning (a) unless the matched index is cheap to build. |
+| D3 | FX comparison window (3.6) | Extend through end-2025, reframe as illustration, or both. | Current recommendation: both. |
+| D4 | Do we keep the flat-CES model in the main text as Prop. 1's vehicle, with the nest as the main specification? | Yes (referee's structure) — but confirm how much of old §3 survives. | Referee's §6 sketch keeps flat CES for Prop. 1, nest for Prop. 2. |
+
+---
+
+## 7. Key verified numbers (quick reference)
+
+- **ρ\* formula:** ρ* = 3[1 + α_D(η−1) − α_T(1−α_D)]; slope denominator 3[3α_D(η−1)+ρ+1].
+- **US-realistic:** α_D=0.80, α_T=0.40, η=1.5 ⇒ ρ* = 3.96. Range over realistic box: 2.5–5.5.
+- **Impossibility gap** at paper's calibration (α_D=1/3, α_T=3/4): ρ*−σ ≡ +0.50 for all σ; d log e_AC/dτ = −1/(12σ).
+- **Size:** ρ* = 8.76 (Vietnam, L_C=.055), 4.32 (EU, .86), 4.24 (equal), 3.78 (ROW, 3.51).
+- **Large tariffs:** ρ* falls 3.96 → 2.70 as τ: 0 → 1.45 (equal sizes).
+- **Trade war (τ=.5, equal):** nested η=1.5: +0.016 → +0.252 over ρ: 1.5 → 10 (increasing); single-σ: +0.094 → +0.046 (decreasing).
+- **Income-bug corrections (symmetric, τ_AB=1):** σ=2: +0.0048 → −0.0163; σ=5: +0.0218 → −0.0013.
+- **Calibration corrections (Δe_AC, %):** EU R2 +7.29 → +5.58; VNM R2 +6.38 → +4.69; ROW R2 +0.87 → **−0.14** (sign flip).
