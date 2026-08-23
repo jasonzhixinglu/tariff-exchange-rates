@@ -62,7 +62,25 @@ PERIODS = {
     "baseline": ("2024-01-01", "2024-12-31", "2024 annual average"),
     "regime1":  ("2025-03-01", "2025-03-31", "March 2025 (Regime 1)"),
     "regime2":  ("2025-04-01", "2025-04-30", "April 2025 (Regime 2)"),
+    # Extended windows (revision item D3): the model's object is the long-run
+    # position, which only becomes visible as the transition plays out.
+    "h2_2025":  ("2025-07-01", "2025-12-31", "H2 2025 average (extended window)"),
+    "dec2025":  ("2025-12-01", "2025-12-31", "December 2025 (extended window)"),
 }
+
+FETCH_END = "2026-01-01"
+
+# Matched ROW index (revision item D2): the model's C = "world minus US and
+# China", so the comparison index must exclude the RMB. We strip the CNY
+# component out of the Fed H.10 BROAD nominal dollar index using the Fed's
+# published weight and renormalize:
+#   dlog I_exCN = (dlog I_broad - w_CN * dlog CNYperUSD) / (1 - w_CN)
+# expressed in this file's convention (positive = USD depreciation) as the
+# negative of dollar appreciation. Weight source: H.10 currency weights,
+# China = 10.897 percent (2024/2025 weights).
+FRED_BROAD_URL = ("https://fred.stlouisfed.org/graph/fredgraph.csv"
+                  "?id=DTWEXBGS")
+CN_WEIGHT = 0.10897
 
 
 def fetch_monthly_avg(ticker_sym: str, invert: bool) -> dict[str, float]:
@@ -70,7 +88,7 @@ def fetch_monthly_avg(ticker_sym: str, invert: bool) -> dict[str, float]:
     raw = yf.download(
         ticker_sym,
         start="2024-01-01",
-        end="2025-05-01",
+        end=FETCH_END,
         auto_adjust=True,
         progress=False,
     )["Close"]
@@ -87,6 +105,50 @@ def fetch_monthly_avg(ticker_sym: str, invert: bool) -> dict[str, float]:
         avgs[period_key] = float(slice_.mean()) if len(slice_) > 0 else None
 
     return avgs
+
+
+def fetch_row_matched_index() -> dict:
+    """
+    Construct the ex-China broad-dollar index for the ROW configuration.
+
+    Returns period log-levels of the Fed broad index and USD/CNY, and the
+    implied ex-China percent changes in this file's convention
+    (positive = USD depreciation against the ex-China basket).
+    """
+    import io
+    import urllib.request
+
+    with urllib.request.urlopen(FRED_BROAD_URL, timeout=60) as resp:
+        csv_bytes = resp.read()
+    broad = pd.read_csv(io.BytesIO(csv_bytes), na_values=".")
+    date_col, val_col = broad.columns[0], broad.columns[1]
+    broad[date_col] = pd.to_datetime(broad[date_col])
+    broad = broad.set_index(date_col)[val_col].dropna()
+
+    cny_per_usd = yf.download("USDCNY=X", start="2024-01-01", end=FETCH_END,
+                              auto_adjust=True, progress=False)["Close"]
+    if isinstance(cny_per_usd, pd.DataFrame):
+        cny_per_usd = cny_per_usd.squeeze()
+
+    out = {"log_broad": {}, "log_cny": {}, "pct_changes": {}}
+    for period_key, (start, end, _) in PERIODS.items():
+        b = broad.loc[start:end].dropna()
+        c = cny_per_usd.loc[start:end].dropna()
+        out["log_broad"][period_key] = float(np.log(b).mean()) if len(b) else None
+        out["log_cny"][period_key] = float(np.log(c).mean()) if len(c) else None
+
+    b0, c0 = out["log_broad"]["baseline"], out["log_cny"]["baseline"]
+    for period_key in PERIODS:
+        if period_key == "baseline":
+            continue
+        bt, ct = out["log_broad"][period_key], out["log_cny"][period_key]
+        if None in (b0, c0, bt, ct):
+            out["pct_changes"][period_key] = None
+            continue
+        dlog_appr_ex_cn = ((bt - b0) - CN_WEIGHT * (ct - c0)) / (1 - CN_WEIGHT)
+        out["pct_changes"][period_key] = round(
+            100.0 * (np.exp(-dlog_appr_ex_cn) - 1.0), 4)
+    return out
 
 
 def pct_change(new_val, base_val):
@@ -116,16 +178,36 @@ def run():
                 "inverted": spec["invert"],
                 "levels":  {k: round(v, 8) if v else None for k, v in avgs.items()},
                 "pct_changes": {
-                    "regime1": pct_change(avgs["regime1"], base),
-                    "regime2": pct_change(avgs["regime2"], base),
+                    k: pct_change(avgs[k], base)
+                    for k in PERIODS if k != "baseline"
                 },
             }
-            r1 = results[key]["pct_changes"]["regime1"]
-            r2 = results[key]["pct_changes"]["regime2"]
-            print(f"R1={r1:+.2f}%  R2={r2:+.2f}%")
+            pc = results[key]["pct_changes"]
+            print("  ".join(f"{k}={v:+.2f}%" for k, v in pc.items()
+                            if v is not None))
         except Exception as exc:
             results[key] = {"label": label, "ticker": ticker, "error": str(exc)}
             print(f"FAILED: {exc}")
+
+    # Matched ex-China broad-dollar index for the ROW configuration
+    print("  Fetching FRED DTWEXBGS + stripping CNY (w = "
+          f"{CN_WEIGHT:.5f}) ...", end=" ", flush=True)
+    try:
+        row = fetch_row_matched_index()
+        results["ROW"] = {
+            "label": "Ex-China broad dollar index (Fed H.10 DTWEXBGS, "
+                     "CNY stripped and renormalized)",
+            "ticker": "DTWEXBGS (FRED) + USDCNY=X",
+            "cn_weight": CN_WEIGHT,
+            "log_levels": {"broad": row["log_broad"], "cny": row["log_cny"]},
+            "pct_changes": row["pct_changes"],
+        }
+        print("  ".join(f"{k}={v:+.2f}%" for k, v in row["pct_changes"].items()
+                        if v is not None))
+    except Exception as exc:
+        results["ROW"] = {"label": "Ex-China broad dollar index",
+                          "error": str(exc)}
+        print(f"FAILED: {exc}")
 
     payload = {
         "meta": {

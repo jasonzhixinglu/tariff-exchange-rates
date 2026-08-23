@@ -216,17 +216,17 @@ The framing memo (2026-08-23) is **adopted as the controlling statement of the p
 
 ### Phase 3 — Rebuild the calibration
 
-- [ ] **3.1** Recalibrate expenditure shares from **bilateral import shares in each country's absorption**, country-specific preferences (drop common-preference assumption and world-export-share construction). Realistic US home bias α_D ≈ 0.8.
-- [ ] **3.2** Source (η, ρ) from Feenstra–Luck–Obstfeld–Russ (2018) [macro vs micro wedge — currently miscited in support of σ=2], Broda–Weinstein (2006), Fajgelbaum et al. (2020, 2024). Fix the Amiti–Redding–Weinstein attribution (pass-through paper, not cross-origin elasticity).
-- [ ] **3.3** Report results over a ρ grid per configuration with ρ* marked; no hand-assigned point values driving signs.
+- [x] **3.1** Done 2026-08-24: import-share calibration, country-specific preferences, demand system inverted at the free-trade equilibrium. US home bias 0.91–0.95. (`scripts/calibrate_nested.py`, `data/calibration_inputs.json`)
+- [x] **3.2** Done: η=1.5 (FLOR macro), ρ grid 1.5–8 with central band 2–4 (Broda–Weinstein; Li–Qiu–Wang–Zeng–Zi CEPR DP17409: home–foreign 43% below cross-foreign ⇒ ρ≈2.6). ARW miscitation removed with the old §4.2 text.
+- [x] **3.3** Done: grid results with per-config thresholds marked (fig `calibration_nested_results.pdf`); cumulative-at-1.45 thresholds ≈2.97–3.10 across configs.
 - [ ] **3.4** Include the large-tariff ρ*(τ) result (1.4) in the calibration section.
 - [ ] **3.5** All configurations in the main text; no appendix relegation of failures.
-- [ ] **3.6** Extend FX comparison window through end-2025 (`scripts/fetch_fx_data.py`) **and** reframe as magnitude/mechanism illustration rather than directional horse race. Be explicit that safe-haven/financial channels dominate at monthly horizons (Itskhoki–Mukhin) and that this is the boundary of the model.
-- [ ] **3.7** Resolve ROW: **[DECISION — see §6]** drop it or construct a matched "world minus US and China" trade-weighted index.
+- [x] **3.6** Done: windows extended (H2/Dec 2025); December read as direction-of-transition evidence (post-May de-escalation caveat); Itskhoki–Mukhin horizon logic in the caveats paragraph.
+- [x] **3.7** Done: matched ex-China broad index constructed (Fed weight 10.897%); replaces the AE index; April sign changes to −0.95 (honest wrinkle reported).
 - [x] **3.8** Reconcile Table 2 vs Table 3 (α_TB 0.236 → 0.235 fixed in main text) and the incorrect Appendix C note (fixed) — done in the 2026-08-23 paper tranche.
-- [ ] **3.9** (memo) Configuration-specific ρ rationale: each configuration is a self-contained three-country world, so ρ legitimately varies by configuration — replace the narrative-assignment justification with this argument when rebuilding §4.2.
+- [x] **3.9** Done in the rewritten §4.2.
 - [ ] **3.10** (memo M2) NFA sensitivity in the calibration: report ρ* at the imbalanced (US-deficit) baseline via the general-baseline threshold — computed benchmark values: 3% A-deficit ⇒ ρ* 4.64–5.10 (vs 3.96 balanced), 6% ⇒ 7.07, 3% surplus ⇒ 3.42.
-- [ ] **3.11** (memo) Report Δq alongside Δe in the calibration outputs (solver already returns log_q; extend `precompute_calibration_panel.py` and the results figure).
+- [x] **3.11** Done: Δq in `calibration_nested.json` and quoted in §4.3 (EU: Δq_AC +7.6 vs Δe_AC +9.4 at ρ=2.6).
 
 ### Phase 4 — Rewrite the paper
 

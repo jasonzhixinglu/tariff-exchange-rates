@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "description": "Verified 2024 inputs for the import-share (absorption) calibration of the nested model. All trade flows are goods only, billions of USD, importer-reported where available.",
+    "assembled": "2026-08-24",
+    "principles": [
+      "Importer-reported flows preferred (US: Census; EU: Eurostat; China: GACC; Vietnam: VN customs).",
+      "Expenditure share of country i on partner j's goods = imports_ij / GDP_i (share of total expenditure).",
+      "Home tradable share: alpha_D_i = (alpha_T - sum_j shares_ij) / alpha_T within each three-country configuration; goods from outside the trio are treated as part of home tradables (conservative for the diversion mechanism).",
+      "Vietnam caveat: gross imports include heavy processing/re-export content, overstating final absorption; a sensitivity variant treats 50% of VN imports from China as final absorption. Flagged, not resolved."
+    ],
+    "sources": {
+      "us_trade": "US Census Bureau, 2024 year-to-date (Dec) goods trade by partner, Census basis",
+      "us_eu": "US Census via BEA annual 2024: exports 370.2, imports 605.8",
+      "eu_trade": "Eurostat news 2025-03-04 / 2025-03-11: EU-China imports EUR 517.8bn, exports EUR 213.3bn; EU imports from US EUR 333.4bn, exports EUR 531.6bn (2024)",
+      "china_trade": "GACC 2024: US-China total $688.28bn, China exports to US $524.66bn; imports from EU CNY 1,916.4bn; totals: exports CNY 25.45tn, imports CNY 18.39tn",
+      "vietnam_trade": "VN customs 2024: imports from China $144.0bn; exports to China $61.2bn; total imports $380.76bn, total exports $405.53bn",
+      "gdp": "IMF WEO 2024 nominal, current USD: US 29,184.9; China 18,273.4; Japan 4,070.1; India 3,889.1. Others widely-reported 2024 values, re-verify against WEO vintage: EU ~19,410 (Eurostat EUR 17.94tn at 1.0824); Korea ~1,869; Taiwan ~796; Vietnam 476.3; Mexico 1,852.7; Canada 2,241.3",
+      "fx_conversion": "2024 averages used: EURUSD 1.0824, CNYUSD 7.12",
+      "world_gdp": "IMF WEO 2024 world nominal GDP ~$110.5tn (re-verify vintage); ROW = world - US - China"
+    },
+    "units": "billions of USD unless noted"
+  },
+  "gdp_nominal_2024": {
+    "USA": 29184.9,
+    "CHN": 18273.4,
+    "EU": 19410.0,
+    "VNM": 476.3,
+    "JPN": 4070.1,
+    "KOR": 1869.0,
+    "MEX": 1852.7,
+    "CAN": 2241.3,
+    "TWN": 796.0,
+    "IND": 3889.1,
+    "WORLD": 110500.0,
+    "ROW": 63041.700000000004
+  },
+  "gdp_ppp_2024_L": {
+    "note": "PPP-based size weights L_i (US=1), unchanged from the original calibration (IMF WEO PPP GDP)",
+    "USA": 1.0,
+    "CHN": 1.21,
+    "EU": 0.86,
+    "VNM": 0.055,
+    "JPN": 0.226,
+    "KOR": 0.103,
+    "MEX": 0.113,
+    "CAN": 0.086,
+    "TWN": 0.058,
+    "IND": 0.497,
+    "ROW": 3.51
+  },
+  "goods_imports_2024": {
+    "note": "imports_2024[i][j] = country i's goods imports from j (importer-reported unless flagged)",
+    "USA": {
+      "CHN": 438.9,
+      "EU": 605.8,
+      "VNM": 136.6,
+      "JPN": 148.2,
+      "KOR": 131.5,
+      "MEX": 505.9,
+      "CAN": 412.7,
+      "TWN": 116.3,
+      "IND": 87.4,
+      "WORLD": 3267.4,
+      "ROW": 2828.5
+    },
+    "CHN": {
+      "USA": 163.6,
+      "EU": 269.2,
+      "VNM": 61.2,
+      "WORLD": 2582.9,
+      "flags": {
+        "USA": "GACC: bilateral total 688.28 minus China exports 524.66",
+        "EU": "GACC CNY 1,916.4bn at 7.12",
+        "VNM": "VN-reported exports to China (fob); GACC reports substantially higher (~97) incl. routing - sensitivity irrelevant at <0.5% expenditure share",
+        "WORLD": "GACC CNY 18.39tn at 7.12"
+      },
+      "ROW": 2419.3
+    },
+    "EU": {
+      "USA": 360.9,
+      "CHN": 560.5,
+      "flags": {
+        "USA": "Eurostat EUR 333.4bn at 1.0824",
+        "CHN": "Eurostat EUR 517.8bn at 1.0824"
+      }
+    },
+    "VNM": {
+      "CHN": 144.0,
+      "USA": 13.1,
+      "WORLD": 380.76,
+      "flags": {
+        "USA": "US-reported exports (fob); VN-reported ~15",
+        "processing": "VN gross imports are ~80% of GDP; heavy processing content - see meta.principles"
+      }
+    },
+    "ROW": {
+      "USA": 1921.7,
+      "CHN": 3049.7,
+      "flags": {
+        "USA": "US exports to world minus China (US-reported)",
+        "CHN": "China exports total ($3,574.4bn = CNY 25.45tn at 7.12) minus exports to US 524.66 (China-reported)"
+      }
+    }
+  },
+  "us_goods_exports_2024": {
+    "note": "US-reported exports, for reference/mirrors",
+    "CHN": 143.5,
+    "EU": 370.2,
+    "VNM": 13.1,
+    "JPN": 79.7,
+    "KOR": 65.5,
+    "MEX": 334.0,
+    "CAN": 349.4,
+    "TWN": 42.3,
+    "IND": 41.8,
+    "WORLD": 2065.2
+  },
+  "elasticities": {
+    "note": "eta = macro (home-import) Armington; rho = cross-origin. Sources: FLOR 2018 (micro > macro for a substantial fraction of goods); Li-Qiu-Wang-Zeng-Zi (CEPR DP17409, 2022): home-foreign elasticity 43% BELOW cross-foreign => rho/eta ~ 1.75; Broda-Weinstein 2006 medians ~2.5-4 at 3-digit aggregation; Fajgelbaum et al. 2020, 2024.",
+    "eta_baseline": 1.5,
+    "eta_sensitivity": [
+      1.0,
+      2.0
+    ],
+    "rho_grid": [
+      1.5,
+      2.0,
+      2.6,
+      3.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "rho_central_ratio": 1.75
+  }
+}
