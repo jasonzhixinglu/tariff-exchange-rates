@@ -6,17 +6,26 @@ Replication code for *Trade Tariffs and Exchange Rates: Revisiting Conventional 
 
 ## Overview
 
-The paper develops a three-country, two-sector, one-factor general equilibrium model to study how tariffs affect bilateral exchange rates. The key result is that a bilateral trade war — unlike a unilateral tariff — unambiguously depreciates the currencies of both warring parties against uninvolved third-country currencies, reversing the conventional two-country appreciation result. The paper calibrates the model to the 2025 US–China tariff episode across three main configurations and eight additional country-C pairings.
+The paper develops a three-country, two-sector, one-factor general equilibrium model to study how tariffs affect bilateral exchange rates. Two results (paper under revision — see `REVISION_PLAN.md`):
+
+1. **Impossibility.** In a flat single-elasticity CES, the conventional two-country prediction — the tariff-imposing country appreciates — survives the move to three countries *as a theorem*: an isolated tariff cannot depreciate country A against the untariffed third country at any σ when home bias is realistic. Raising σ strengthens trade diversion and home-vs-import expenditure switching in lockstep, so diversion never dominates.
+2. **Threshold.** Once the home-vs-import elasticity η and the cross-origin elasticity ρ are separated in a two-layer nest, the reversal exists, with closed-form threshold **ρ\* = 3[1 + α_D(η−1) − α_T(1−α_D)]**: A's currency depreciates against the untariffed third country iff ρ > ρ\*. At US-realistic parameters ρ\* ≈ 4, inside measured cross-origin elasticities. A near-symmetric bilateral trade war unambiguously depreciates both belligerents against the bystander, with magnitude increasing in ρ.
+
+The paper calibrates the model to the 2025 US–China tariff episode across three main configurations and eight additional country-C pairings.
 
 ## Repository structure
 
 ```
 src/tariff_exchange_rates/          Core Python package
-    economy.py                      Allocation and price-index functions
+    economy.py                      Flat-CES allocation and price-index functions
+    nested.py                       Nested (eta, rho) model, solver, rho* threshold utilities
     equilibrium.py                  Solvers: solve_2country, solve_3country
     tariffs.py                      Tariff matrix constructors
     parameters.py                   Calibrated configurations (CALIBRATIONS, TARIFF_REGIMES)
     plotting.py                     Figure helpers
+
+tests/                              Regression tests (pytest): model fixes, referee
+                                    replication values, analytic threshold checks
 
 notebooks/
     section2_two_country_model.ipynb      Two-country benchmark and robustness
@@ -24,10 +33,13 @@ notebooks/
     section4_calibration.ipynb            Calibration and model-data comparison
 
 scripts/
-    precompute_theory_grid.py       Generate data/theory_grid.json (4^6 × 3 grid, ~9 min)
+    precompute_theory_grid.py       Generate data/theory_grid.json (4^6 × 3 grid)
     precompute_calibration_panel.py Generate data/calibration_panel.json (8 configs)
     fetch_fx_data.py                Fetch observed FX data from Yahoo Finance
     regenerate_calibration_figure.py Regenerate output/calibration_results.pdf
+    verify_referee_claims.py        Reproduce every quantitative claim in the Aug 2026
+                                    referee report (--symbolic re-derives rho* via sympy)
+    derive_general_threshold.py     General-size threshold via share-based linearization
 
 data/
     theory_grid.json                Precomputed equilibria for dashboard theory panel
