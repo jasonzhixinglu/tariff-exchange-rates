@@ -177,7 +177,7 @@ The framing memo (2026-08-23) is **adopted as the controlling statement of the p
 - [x] **M1** ρ*(q) vs ρ*(e) — computed (amendment a); paper write-up pending (→ 4.13).
 - [x] **M2** NFA robustness TB_i = −b_i — computed (amendment b); paper write-up pending (→ 4.15, 3.10).
 - [ ] **M3** Literature diligence: do Ossa (2014) or the PTA terms-of-trade papers state the third-country ambiguity as a proposition? Cite-and-lean or say-explicitly-not accordingly (honest either way).
-- [ ] **M4** Scope section drafted before the model (→ 4.11); intro/§2.3/abstract re-leaned to connection-first (→ 4.12); Δq reported alongside Δe in experiments and calibration (→ 4.13, code support exists — solver already returns log_q); natural-language trap + home-bias/nest division of labor into §3.3–3.4 (→ 4.14); NFA sensitivity paragraph (→ 4.15); configuration-specific-ρ rationale into §4 (→ 3.9); new PTA citations (→ 5.5).
+- [x] **M4** Scope section drafted before the model (→ 4.11); intro/§2.3/abstract re-leaned to connection-first (→ 4.12); Δq reported alongside Δe in experiments and calibration (→ 4.13, code support exists — solver already returns log_q); natural-language trap + home-bias/nest division of labor into §3.3–3.4 (→ 4.14); NFA sensitivity paragraph (→ 4.15); configuration-specific-ρ rationale into §4 (→ 3.9); new PTA citations (→ 5.5).
 - [x] **M5** Ricardo–Viner — implemented (see REVISION_CHANGES 2026-08-24): rho* falls with DRS; size gradient compressed (Vietnam 8.76 → 5.27 at γ=2/3). Paper §3.4 subsubsection written.
 
 ## 5. Work plan
@@ -237,20 +237,20 @@ The framing memo (2026-08-23) is **adopted as the controlling statement of the p
 - [ ] **4.5** §3 restructured: Prop. 1 (impossibility) first, Prop. 2 (threshold ρ*) with comparative statics (α_D, η, α_T, L_C, τ), then trade war (corrected magnitude claim).
 - [ ] **4.6** Fix eq. (28) (drop e_ik from export term; align with eq. (9)); make eqs. (26)–(27) match the implemented nested structure; note α_N inert under CD outer (state what N buys or drop it).
 - [x] **4.7** Ricardo–Viner subsubsection (`sec:rv`) + boundary-of-the-exercise paragraph written 2026-08-24; also corrected the draft's backwards supply-side claim. Numbers in REVISION_CHANGES.
-- [ ] **4.8** Compress Figures 2–7 into one multi-panel locus figure + one d log e_AC/dτ-vs-ρ plot with ρ* marked.
+- [x] **4.8** Done: `loci_multipanel.pdf` (2×3) + the §3.3 threshold figure.
 - [ ] **4.9** Conclusion: the inferential payoff stated directly (bilateral appreciation ≠ broad strength; multilateral depreciation ≠ evidence of financial channels by itself).
 - [x] **4.10** Flag trade-war e_AB-unchanged as a knife-edge — done in the 2026-08-23 tranche (with the asymmetric-war boundary added).
-- [ ] **4.11** (memo) New "Scope and Modelling Choices" section placed **before** the three-country model: long-run object; one-factor exactness as a separate justification; capital-accumulation vs financial-account distinction; country-count trilemma (table); the single-aggregate cost stated plainly + pair-by-pair-diagnostic follow-up. Use the corrected NFA sentence (general-baseline structure intact; location moves — see §4a amendment b), NOT the memo's "level but not comparative static" claim.
-- [ ] **4.12** (memo) Re-lean intro, §2.3, abstract, and conclusion to connection-first positioning (PTA connection as headline; isolated tariff ≡ preferential arrangement stated formally; impossibility as the story of why the connection was invisible; memo §6 statement as the canonical contribution, amended per §4a).
-- [ ] **4.13** (memo M1) Real-rate result: state propositions for e; add the ρ*(q) = 4.93 > ρ*(e) = 3.96 result with the mechanical-CPI intuition, the Balassa–Samuelson sentence, and the non-tradables-inert-for-the-mechanism point; report Δq alongside Δe in the tariff experiments.
-- [ ] **4.14** (memo) §3.3–3.4 additions: the natural-language trap (China–Vietnam vs US–China is the ρ-vs-η gap); home-bias-vs-nest division of labor with ∂ρ*/∂α_D = 3[(η−1)+α_T] > 0; two-level nest necessary-and-sufficient statement (no bilateral heterogeneity).
-- [ ] **4.15** (memo M2) NFA robustness paragraph (scope section and/or §3.3): threshold structure intact at imbalanced baselines via the general-baseline proposition; location shifts reported.
+- [x] **4.11** (memo) New "Scope and Modelling Choices" section placed **before** the three-country model: long-run object; one-factor exactness as a separate justification; capital-accumulation vs financial-account distinction; country-count trilemma (table); the single-aggregate cost stated plainly + pair-by-pair-diagnostic follow-up. Use the corrected NFA sentence (general-baseline structure intact; location moves — see §4a amendment b), NOT the memo's "level but not comparative static" claim.
+- [x] **4.12** (memo) Re-lean intro, §2.3, abstract, and conclusion to connection-first positioning (PTA connection as headline; isolated tariff ≡ preferential arrangement stated formally; impossibility as the story of why the connection was invisible; memo §6 statement as the canonical contribution, amended per §4a).
+- [x] **4.13** (memo M1) Real-rate result: state propositions for e; add the ρ*(q) = 4.93 > ρ*(e) = 3.96 result with the mechanical-CPI intuition, the Balassa–Samuelson sentence, and the non-tradables-inert-for-the-mechanism point; report Δq alongside Δe in the tariff experiments.
+- [x] **4.14** (memo) §3.3–3.4 additions: the natural-language trap (China–Vietnam vs US–China is the ρ-vs-η gap); home-bias-vs-nest division of labor with ∂ρ*/∂α_D = 3[(η−1)+α_T] > 0; two-level nest necessary-and-sufficient statement (no bilateral heterogeneity).
+- [x] **4.15** (memo M2) NFA robustness paragraph (scope section and/or §3.3): threshold structure intact at imbalanced baselines via the general-baseline proposition; location shifts reported.
 
 ### Phase 5 — Minor comments sweep (referee §7)
 
 - [ ] **5.1** State once, early: e is a relative wage in a real model with no nominal anchor.
 - [ ] **5.2** Percent-change convention (positive = depreciation of first-named currency) moved from figure notes to text.
-- [ ] **5.3** Figure 1 tariff legend overlap fixed.
+- [x] **5.3** Figure 1 legend fixed (standard legend in `plot_tb_locus`).
 - [ ] **5.4** §2.2 opening cross-reference ("Section 2" → "Section 2.1").
 - [x] **5.5** Bibliography additions — 13 entries added 2026-08-23 (Caliendo–Parro, Ossa, Costinot–Rodríguez-Clare, Bagwell–Staiger 1999, Bond–Syropoulos, Ornelas, Itskhoki–Mukhin, EKNR, CDP, Corsetti–Lloyd–Ostry 2025, Werning et al. 2025, Kalemli-Özcan et al. 2025, Obstfeld 2025). *Still to add (memo):* Viner (1950), Mundell (1964), Kemp–Wan (1976), Bagwell–Staiger (2002), Chang & Winters (2002), Krugman (1991), Yi (2000) — wire in with items 4.11–4.12. FLOR recitation check remains (Phase 3).
 - [ ] **5.6** README + dashboard About text updated to the new narrative (README currently states the old claim).

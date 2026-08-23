@@ -53,7 +53,8 @@ def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
             for e in e_vec
         ]
         label = "free trade" if tau == 0 else f"τ = {tau:g}"
-        (line,) = ax.plot(log_e_vec, tb_vec, color=color, linewidth=1.8)
+        (line,) = ax.plot(log_e_vec, tb_vec, color=color, linewidth=1.8,
+                          label=label)
 
         # Equilibrium dot + value label
         eq = solve_2country(params, tau=tau, log_e_bounds=log_e_range)
@@ -66,12 +67,9 @@ def plot_tb_locus(params, taus, log_e_range=(-1.5, 1.5), n_points=300,
 
         curves.append((log_e_vec, tb_vec, color, label))
 
-    # Inline curve labels at the right end
-    for log_e_vec_, tb_vec_, color, label in curves:
-        x_label = log_e_vec_[-1]
-        y_label = tb_vec_[-1]
-        ax.text(x_label + 0.04, y_label, label, color=color,
-                fontsize=9, va="center", clip_on=False)
+    # Standard legend (inline right-end labels overlapped when curves
+    # converge — referee minor comment on Figure 1)
+    ax.legend(fontsize=9, loc="upper left", frameon=False)
 
     ax.axhline(0, color="#cccccc", linewidth=0.8)
     ax.set_xlabel(r"$\log(e_{AB})$", fontsize=11)
