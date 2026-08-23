@@ -2,6 +2,7 @@
 
 **Paper:** *Trade Tariffs and Exchange Rates: Revisiting Conventional Wisdom in a Three-Country Framework* (Lu & Milkov)
 **Referee recommendation:** Reject in current form; encouraged resubmission after major revision.
+**Inputs:** (1) referee report (`referee_report_tariffs_fx.md`); (2) referee's derivation script (`threecountry_threshold.py`); (3) **framing memo** (`revision_framing_memo.md`, received 2026-08-23) — repositions the contribution as *a connection to the PTA literature, illustrated*; see §4a below for its adoption and our verified amendments.
 **Status of this document:** Living tracking document. Check off items as completed; record decisions and verified numbers here so the revision has a single source of truth.
 
 ---
@@ -147,6 +148,34 @@ Framing principles for the rewrite:
 
 ---
 
+## 4a. The framing memo: adoption, verified amendments, and disagreements
+
+The framing memo (2026-08-23) is **adopted as the controlling statement of the paper's positioning**, superseding §4's framing where they differ. Its core moves and our assessment:
+
+### Adopted
+1. **Connection-first positioning.** The headline is: *the PTA literature bears directly on the tariff–exchange-rate question, and we illustrate the connection with minimal theory.* The isolated tariff **is** formally a preferential arrangement in favor of C ("raise τ_AB, hold τ_AC=0" ≡ "cut τ_AC, hold τ_AB" up to level/revenue). Deliberately modest: ρ* becomes a bonus, not a load-bearing novelty claim. The impossibility theorem is retained as *the paper's story about the literature* — the standard Armington specification conflates the two elasticities that make the connection visible, which is why the obvious first extension finds nothing and why the connection went unstated. (Our current intro/§2.3, written before the memo, lead with "we characterize the sign in closed form" — they need a re-lean, not a rewrite; the content is compatible.)
+2. **Scope-and-modelling-choices section placed BEFORE the three-country model**, defenses by purpose: long-run object; one factor as a *separate* justification (exactness of e = ToT = relative wage licenses the translation); no capital (accumulation ≠ financial account); three countries via the country-count trilemma (symmetric-n loses heterogeneity, quantitative-n loses propositions, n=3 is the smallest with discrimination and the largest with closed forms); the cost stated plainly in one sentence (a single untariffed aggregate cannot show simultaneous appreciation/depreciation across partners — which defines the follow-up: ρ* as a pair-by-pair diagnostic).
+3. **Specification discipline**: two-level nest necessary and sufficient; no bilateral-elasticity heterogeneity (undisciplinable); the natural-language trap (China–Vietnam vs US–China *is* the ρ-vs-η gap); home bias = credibility fix, nest = result (∂ρ*/∂α_D = 3[(η−1)+α_T] > 0 — verified); configuration-specific ρ justified because each configuration is a self-contained three-country world (adopt as the Phase 3 rationale, replacing narrative assignment).
+4. **Long-run real framing** converts calibration failures into predictions and gives the principled reason for extending the FX window (resolves D3 in favor of "both").
+5. **Contribution statement** (memo §6) adopted as canonical, subject to amendment (b) below.
+6. Additional citations to wire in: Viner (1950), Mundell (1964, tariff preferences & ToT), Kemp–Wan (1976), Bagwell–Staiger (2002), Chang & Winters (2002, Mercosur excluded-country prices — empirical anchor), Krugman (1991), Yi (2000).
+
+### Verified amendments (memo open items resolved by computation, 2026-08-23)
+- **(a) ρ* for the real rate differs — and it is a result, as the memo anticipated.** At the benchmark (α_D=.8, α_T=.4, η=1.5, equal sizes): **ρ*(q) = 4.93 vs ρ*(e) = 3.96**. The CPI-real threshold is higher because the tariff mechanically raises A's tariff-inclusive price index, absorbing part of the nominal depreciation (d log q = d log e + d log P_C − d log P_A with dP_A > 0 at fixed e). Both thresholds sit inside the measured cross-origin range. Paper treatment: propositions stated for e (= relative wage = ToT, the clean object); a short result reports ρ*(q) > ρ*(e) with the mechanical-CPI intuition and the Balassa–Samuelson remark (P_N is a pure productivity ratio, so all real-rate action runs through tradables — non-tradables are inert *for the mechanism* but govern the e→q mapping).
+- **(b) The NFA-neutrality sentence in memo §3.2 is wrong and must not go into the paper as written.** Memo claims non-zero NFA "shifts the level but not the comparative static." Numerically it shifts the threshold substantially: with a permanent A trade deficit of 3% of income, ρ* rises from 3.96 to 4.64–5.10 (depending on whether the counterpart surplus is B's or C's); at 6%, to 7.07; an A *surplus* of 3% lowers it to 3.42. A US-scale deficit therefore makes the reversal meaningfully harder, and the bilateral composition of the imbalance matters. The correct defense of balanced trade is our general-baseline proposition: the threshold structure (reversal iff ρ > larger root of a quadratic in observables) is intact at *any* baseline, including imbalanced ones — the *location* moves with the baseline, and we can report it. This is a better sentence for the scope section and an honest new sensitivity result for the calibration (the US runs ~3% deficits).
+
+### Disagreements / nuances (ours)
+- **Do not undersell the impossibility theorem.** The memo's own §2 calls it "the paper's story about the literature"; keep it as Proposition 1 with full prominence — the modest headline and a sharp theorem are compatible.
+- **The general-baseline quadratic is not "unenlightening."** The memo (§3.2) uses it as evidence that closed forms die beyond symmetry. In fact it factors interpretably (c₂ = b_AB·b_AC·b_CA·b_CB(1−h_A)(1−h_C)y_A y_C > 0; common factor b_AB(1−h_A)y_A; c₀ contains the symmetric threshold with h_A ↦ α_D) and is stated in *observables* — which is precisely what enables the memo's own proposed follow-up (ρ* as a pair-by-pair diagnostic in a many-country world) and the NFA sensitivity in (b). Present it as a feature (sufficient-statistics diagnostic), while agreeing that n = 4 cofactor expansions are hopeless.
+- **Memo §4 (errors to fix) is already fully executed** in the 2026-08-23 paper tranche, including the resolution of its open question in item 2: the code implemented *neither* stated structure — the discrepancy was the tariff-revenue income formula (exact only at σ=1), now fixed and disclosed in a footnote.
+
+### New work items from the memo (folded into the phases below)
+- [x] **M1** ρ*(q) vs ρ*(e) — computed (amendment a); paper write-up pending (→ 4.13).
+- [x] **M2** NFA robustness TB_i = −b_i — computed (amendment b); paper write-up pending (→ 4.15, 3.10).
+- [ ] **M3** Literature diligence: do Ossa (2014) or the PTA terms-of-trade papers state the third-country ambiguity as a proposition? Cite-and-lean or say-explicitly-not accordingly (honest either way).
+- [ ] **M4** Scope section drafted before the model (→ 4.11); intro/§2.3/abstract re-leaned to connection-first (→ 4.12); Δq reported alongside Δe in experiments and calibration (→ 4.13, code support exists — solver already returns log_q); natural-language trap + home-bias/nest division of labor into §3.3–3.4 (→ 4.14); NFA sensitivity paragraph (→ 4.15); configuration-specific-ρ rationale into §4 (→ 3.9); new PTA citations (→ 5.5).
+- [ ] **M5** Ricardo–Viner ρ* re-derivation — same as D1 (prototype next).
+
 ## 5. Work plan
 
 ### Phase 0 — Fix and verify existing code *(prerequisite for everything)*
@@ -190,7 +219,10 @@ Framing principles for the rewrite:
 - [ ] **3.5** All configurations in the main text; no appendix relegation of failures.
 - [ ] **3.6** Extend FX comparison window through end-2025 (`scripts/fetch_fx_data.py`) **and** reframe as magnitude/mechanism illustration rather than directional horse race. Be explicit that safe-haven/financial channels dominate at monthly horizons (Itskhoki–Mukhin) and that this is the boundary of the model.
 - [ ] **3.7** Resolve ROW: **[DECISION — see §6]** drop it or construct a matched "world minus US and China" trade-weighted index.
-- [ ] **3.8** Reconcile Table 2 vs Table 3 (α_TB 0.236 vs 0.235) and the incorrect Appendix C note about "slightly different σ values."
+- [x] **3.8** Reconcile Table 2 vs Table 3 (α_TB 0.236 → 0.235 fixed in main text) and the incorrect Appendix C note (fixed) — done in the 2026-08-23 paper tranche.
+- [ ] **3.9** (memo) Configuration-specific ρ rationale: each configuration is a self-contained three-country world, so ρ legitimately varies by configuration — replace the narrative-assignment justification with this argument when rebuilding §4.2.
+- [ ] **3.10** (memo M2) NFA sensitivity in the calibration: report ρ* at the imbalanced (US-deficit) baseline via the general-baseline threshold — computed benchmark values: 3% A-deficit ⇒ ρ* 4.64–5.10 (vs 3.96 balanced), 6% ⇒ 7.07, 3% surplus ⇒ 3.42.
+- [ ] **3.11** (memo) Report Δq alongside Δe in the calibration outputs (solver already returns log_q; extend `precompute_calibration_panel.py` and the results figure).
 
 ### Phase 4 — Rewrite the paper
 
@@ -203,7 +235,12 @@ Framing principles for the rewrite:
 - [ ] **4.7** New §3.4: Ricardo–Viner extension (Y_T = A·L^γ, γ<1) formalizing the export-supply channel; explicit boundary discussion of dynamic (EKNR, CDP) and intertemporal (Obstfeld–Rogoff Ch. 4; temporary vs permanent tariffs) literatures; deliberate defense of the minimal structure. **[DECISION — see §6]**
 - [ ] **4.8** Compress Figures 2–7 into one multi-panel locus figure + one d log e_AC/dτ-vs-ρ plot with ρ* marked.
 - [ ] **4.9** Conclusion: the inferential payoff stated directly (bilateral appreciation ≠ broad strength; multilateral depreciation ≠ evidence of financial channels by itself).
-- [ ] **4.10** Flag trade-war e_AB-unchanged as a knife-edge (requires τ_AB = τ_BA and equal size; calibration has neither), not a result.
+- [x] **4.10** Flag trade-war e_AB-unchanged as a knife-edge — done in the 2026-08-23 tranche (with the asymmetric-war boundary added).
+- [ ] **4.11** (memo) New "Scope and Modelling Choices" section placed **before** the three-country model: long-run object; one-factor exactness as a separate justification; capital-accumulation vs financial-account distinction; country-count trilemma (table); the single-aggregate cost stated plainly + pair-by-pair-diagnostic follow-up. Use the corrected NFA sentence (general-baseline structure intact; location moves — see §4a amendment b), NOT the memo's "level but not comparative static" claim.
+- [ ] **4.12** (memo) Re-lean intro, §2.3, abstract, and conclusion to connection-first positioning (PTA connection as headline; isolated tariff ≡ preferential arrangement stated formally; impossibility as the story of why the connection was invisible; memo §6 statement as the canonical contribution, amended per §4a).
+- [ ] **4.13** (memo M1) Real-rate result: state propositions for e; add the ρ*(q) = 4.93 > ρ*(e) = 3.96 result with the mechanical-CPI intuition, the Balassa–Samuelson sentence, and the non-tradables-inert-for-the-mechanism point; report Δq alongside Δe in the tariff experiments.
+- [ ] **4.14** (memo) §3.3–3.4 additions: the natural-language trap (China–Vietnam vs US–China is the ρ-vs-η gap); home-bias-vs-nest division of labor with ∂ρ*/∂α_D = 3[(η−1)+α_T] > 0; two-level nest necessary-and-sufficient statement (no bilateral heterogeneity).
+- [ ] **4.15** (memo M2) NFA robustness paragraph (scope section and/or §3.3): threshold structure intact at imbalanced baselines via the general-baseline proposition; location shifts reported.
 
 ### Phase 5 — Minor comments sweep (referee §7)
 
@@ -211,7 +248,7 @@ Framing principles for the rewrite:
 - [ ] **5.2** Percent-change convention (positive = depreciation of first-named currency) moved from figure notes to text.
 - [ ] **5.3** Figure 1 tariff legend overlap fixed.
 - [ ] **5.4** §2.2 opening cross-reference ("Section 2" → "Section 2.1").
-- [ ] **5.5** Bibliography additions: Itskhoki & Mukhin (2021); Caliendo & Parro (2015); Ossa (2014); Costinot & Rodríguez-Clare (2014); Bagwell & Staiger + PTA terms-of-trade (Bond–Syropoulos, Ornelas); Broda & Weinstein (2006); Eaton–Kortum–Neiman–Romalis (2016); Caliendo–Dvorkin–Parro (2019); Obstfeld (2025); Werning et al. (2025); Feenstra–Luck–Obstfeld–Russ (2018) recited correctly.
+- [x] **5.5** Bibliography additions — 13 entries added 2026-08-23 (Caliendo–Parro, Ossa, Costinot–Rodríguez-Clare, Bagwell–Staiger 1999, Bond–Syropoulos, Ornelas, Itskhoki–Mukhin, EKNR, CDP, Corsetti–Lloyd–Ostry 2025, Werning et al. 2025, Kalemli-Özcan et al. 2025, Obstfeld 2025). *Still to add (memo):* Viner (1950), Mundell (1964), Kemp–Wan (1976), Bagwell–Staiger (2002), Chang & Winters (2002), Krugman (1991), Yi (2000) — wire in with items 4.11–4.12. FLOR recitation check remains (Phase 3).
 - [ ] **5.6** README + dashboard About text updated to the new narrative (README currently states the old claim).
 
 ### Phase 6 — Response to referee

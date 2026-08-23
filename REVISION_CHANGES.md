@@ -178,3 +178,12 @@ Conventions: all new or modified paper text is wrapped in blue markup (`\rev{...
 **Build.** Compiles clean (pdflatex ×3 + bibtex): 39 pages, zero warnings, all citations resolved.
 
 **Still pending in the paper** (tracked in `REVISION_PLAN.md`): Ricardo–Viner extension subsection (D1 — prototype first); Figure 2–7 compression (4.8); Figure 1 legend overlap (5.3); §4.2 (η, ρ) sourcing and grid reporting (Phase 3); matched ROW index (D2); extended FX window (D3).
+
+### 2026-08-23 — framing memo received, assessed, and folded into the plan
+
+- **`revision_framing_memo.md`** (author's notes on motivation/framing/contribution) copied into the repo and adopted as the controlling positioning statement — the paper's headline becomes *"the PTA literature bears directly on the tariff–exchange-rate question; we illustrate the connection with minimal theory,"* with the impossibility theorem as the story of why the connection was invisible. Full adoption/amendment record in `REVISION_PLAN.md` §4a; new work items M1–M5 and checklist entries 3.9–3.11, 4.11–4.15 added there.
+- **New script `scripts/verify_framing_memo_checks.py`** resolving the memo's two computable open items:
+  1. **ρ*(q) vs ρ*(e)** (memo §3.4): they differ — **ρ*(q) = 4.93 vs ρ*(e) = 3.96** at the benchmark. The tariff mechanically raises A's tariff-inclusive CPI, absorbing part of the nominal depreciation, so real depreciation against C requires more diversion. Both inside the measured cross-origin range. Goes into the paper as a result (item 4.13).
+  2. **NFA robustness** (memo §3.2): the memo's claim that non-zero NFA "shifts the level but not the comparative static" is **contradicted numerically** — with TB_i = −b_i, a permanent 3% A-deficit raises ρ* from 3.96 to 4.64–5.10 (composition-dependent), 6% → 7.07, 3% surplus → 3.42. The correct defense of balanced trade is the general-baseline proposition (structure invariant, location baseline-dependent), and the US-deficit sensitivity becomes an honest calibration result (items 4.15, 3.10).
+- Recorded disagreements (plan §4a): keep the impossibility theorem prominent; the general-baseline quadratic is a sufficient-statistics *feature* (it enables the memo's own pair-by-pair-diagnostic follow-up and the NFA sensitivity), not an "unenlightening root"; memo §4's four errors were already fixed in the first paper tranche.
+- D3 (FX window) considered resolved by the memo's long-run-real framing: extend the window **and** frame as the transition becoming visible.
