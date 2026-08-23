@@ -222,12 +222,14 @@ Framing principles for the rewrite:
 
 ## 6. Open decisions (user input needed)
 
-| # | Decision | Options | Notes |
-|---|---|---|---|
-| D1 | Ricardo–Viner extension (4.7) | (a) Implement fully (Y = A·L^γ): referee "recommends implementing"; tractable; likely *lowers* ρ*, strengthening the result. (b) Verbal + defense of minimal structure only, park as future work. | Referee explicitly recommends (a) but the load-bearing revision is Props. 1–2. Could be staged: (b) for structure, (a) if time allows. |
-| D2 | ROW configuration (3.7) | (a) Drop it. (b) Construct a matched "world minus US−China" trade-weighted index. | The corrected model flips ROW's Regime-2 sign anyway (−0.14%), so its "success" is gone regardless. Leaning (a) unless the matched index is cheap to build. |
-| D3 | FX comparison window (3.6) | Extend through end-2025, reframe as illustration, or both. | Current recommendation: both. |
-| D4 | Do we keep the flat-CES model in the main text as Prop. 1's vehicle, with the nest as the main specification? | Yes (referee's structure) — but confirm how much of old §3 survives. | Referee's §6 sketch keeps flat CES for Prop. 1, nest for Prop. 2. |
+| # | Decision | Resolution |
+|---|---|---|
+| D1 | Ricardo–Viner extension (4.7) | **DECIDED (user, 2026-08-23): implement**, conditional on results aligning nicely and not adding excess complexity. Plan: numeric prototype first (Y_T = A·L_T^γ); write §3.4 only if the threshold comparative static is clean (expected: upward-sloping export supply in C lowers ρ*). |
+| D2 | ROW configuration (3.7) | **DECIDED (delegated to us, 2026-08-23): keep ROW and construct the matched index** — strip the CNY component out of the Fed H.10 broad dollar index using published weights and renormalize, giving a "world minus US minus China" trade-weighted rate. Note: under the share-linear corrected model ROW performs well (+2.43 vs AE-index +2.18), strengthening the case for keeping it with a defensible index. Implementation in Phase 3 (`fetch_fx_data.py`). |
+| D3 | FX comparison window (3.6) | Extend through end-2025, reframe as illustration, or both. Current recommendation: both. *(open)* |
+| D4 | Flat CES in main text as Prop. 1's vehicle, nest as main spec? | Yes (referee's structure) — being implemented in the Phase 4 rewrite. |
+
+Additional convention decision (ours, 2026-08-23): the paper and code use the **share-linear CES convention** throughout (utility weights α^(1/σ); weights = unit-price expenditure shares). `economy.py` switched accordingly (commit `41305c4`); symmetric results invariant; calibration panel/figure regenerated.
 
 ---
 

@@ -115,6 +115,66 @@ Documented in detail in `REVISION_PLAN.md` §3.1, §3.6 and Phase 0 notes; in br
 
 ## 6. Paper changes (`Exchange_Rate_Tariffs/paper_draft.tex`)
 
-Convention: all new or modified paper text is wrapped in blue markup (`\rev{...}`, defined in the preamble as `\textcolor{RevBlue}{...}`) so the referee and co-author can see exactly what changed. Pure deletions are recorded here rather than marked in the PDF.
+Conventions: all new or modified paper text is wrapped in blue markup (`\rev{...}` for inline text, `revblock` environment for whole paragraphs/subsections; color `RevBlue`, RGB 0,0,205) so the referee and co-author can see exactly what changed. Pure deletions are recorded here rather than marked in the PDF. As of 2026-08-23 the paper directory is **tracked in git** (commit `c622821` = pre-revision baseline; `.gitignore` now excludes only `literature_review/`, compiled paper PDFs, and LaTeX build artifacts), so `git diff c622821 -- Exchange_Rate_Tariffs/paper_draft.tex` shows the full revision diff.
 
-*(entries added as paper edits are made — see below)*
+### 2026-08-23 — first paper tranche (Phase 4 core)
+
+**Preamble.** Added `corollary` theorem env; `RevBlue` color, `\rev{}` macro, `revblock` environment.
+
+**Abstract.** Fully rewritten (blue): impossibility theorem first, threshold ρ* second, near-symmetric trade war, calibration as illustration (five-of-six signs claim replaced the old "correctly predicts the direction" claim), closing inference for the 2025 attribution debate. Old abstract's "prediction is not robust … response becomes ambiguous" framing deleted.
+
+**Introduction.**
+- After the 2025-literature paragraph: added (blue) engagement with Kalemli-Özcan–Soylu–Yildirim (2025, uncertainty channel), Werning–Lorenzoni–Guerrieri (2025, cost-push), and Corsetti–Lloyd–Ostry (2025, BoE SWP 1139) — whose unilateral-vs-retaliation event-study pattern is exactly the model's configuration dependence.
+- Deleted the "we challenge the two-country conventional wisdom on different grounds" paragraph and the two paragraphs following it (single-elasticity mechanism claims; old results roadmap). Replaced (blue, 3 paragraphs): equilibrium object = relative wage computed routinely by Caliendo–Parro/Ossa/Costinot–Rodríguez-Clare + PTA literature; what we add (sign characterization + impossibility + translation); impossibility intuition; nested threshold with comparative statics; trade war.
+- Roadmap paragraph rewritten (blue).
+
+**Section 2.2 (robustness).**
+- Fixed cross-reference: "Section 2" → new label `sec:twocountry_cw` (Section 2.1).
+- Added (blue): explicit statement that Lemma 2.2 is Marshall–Lerner, Lemma 2.1 its tariff analogue; "holds wherever Marshall–Lerner holds" framing; setup for the multilateral insufficiency point.
+- Lemma 2.1: "or more generally" corrected to "or, under the weaker sufficient condition", with an explanatory clause (referee §3.8 minor).
+- Closing paragraph replaced (blue): honest Marshall–Lerner statement + bridge to Section 3.
+
+**New Section 2.3 "The Exchange Rate as a Relative Wage"** (`sec:relwage`, all blue): derivation of e ∝ relative wage ∝ terms of trade; no-nominal-anchor statement (referee §7 terminology); positioning vs quantitative trade and PTA literatures; explicit statement of the three things added (referee §3.3/§6).
+
+**Section 3 opening.** "Robustness … its breakdown cannot be attributed to modeling choices" replaced (blue): Marshall–Lerner holds bilaterally throughout; the question is what it leaves undetermined.
+
+**Section 3.1.2 (households/tariffs) — equation corrections.**
+- Eq. (24) demand: α_Tj^σ → α_Tj (share-linear, consistent with the stated utility weights α^(1/σ)); added sentence fixing the convention.
+- Price index: weights α_Tj^σ → α_Tj/α_T (normalized, =1 at unit prices).
+- NEW eq. `eq:realized_shares` defining realized income shares ς_ij; income equation rewritten to use ς_ij with the statement that it is closed-form because shares are price-only; explicit note that the fixed-weight version is exact only at σ=1, with a footnote disclosing that an earlier version used the fixed-weight formula and that it generated a spurious sign reversal (referee §4.2 + our income-bug finding).
+- Labor allocation equation: flat-CES denominator (with α_N^σ P_N^(1−σ)) replaced by the CD-outer form L_N/L = α_N·I/(wL).
+- Market clearing: D_k corrected to the within-tradables denominator Σ_m α_Tm((1+τ)e)^(1−σ) — no α_N term (referee §4.2); demand under the α_T·I_k scaling.
+- Eq. (28) trade balance: spurious e_ik removed from the export term (now C_{T_i k} at producer price); surrounding sentence corrected; import-term explanation added (tariff wedge is a domestic transfer) (referee §4.1).
+
+**Section 3.2.2 (isolated tariff).** Third-force (home expenditure switching) added to the two-forces discussion (blue); "does not depreciate relative to C" low-σ sentence corrected; the σ=2 reversal claim ("depreciates relative to C, reversing the conventional two-country prediction") **deleted** and replaced (blue) with the corrected pattern: log e_AC = −0.11 (σ=0.5) → −0.016 (σ=2), monotone toward zero from below, asymptote-not-crossing statement with forward reference to `sec:impossibility` (referee §3.1).
+
+**Section 3.2.3 (trade war).** Replaced closing paragraph (blue): e_AB stability flagged as knife-edge (symmetric case only; the calibration violates it) (referee §7); near-symmetry qualifier with the lopsided-war boundary (our theory-grid finding) and the note that Regime 2 (1.45/1.25) is inside the joint-depreciation region; magnitude comparative static corrected — decreasing in flat σ, increasing in nested ρ (referee §4.3); Corsetti–Lloyd–Ostry empirical anchor added.
+
+**NEW Section 3.3 "An Impossibility Result and a Reversal Threshold"** (`sec:impossibility`, all blue):
+- Proposition 3.1 (Impossibility): displayed slope −[σ(3α_D−1)+3(1−α_D)(1−α_T)]/(3[3α_D(σ−1)+σ+1]); α_D ≥ 1/3 ⇒ appreciation at every σ; −1/(12σ) at the baseline calibration; asymptote discussion; grid-verified global statement; footnote on why the point was overlooked.
+- Nested (η, ρ) preferences defined; FLOR/Broda–Weinstein/Fajgelbaum empirical anchor for ρ > η.
+- Proposition 3.2 (Reversal threshold): slope (ρ−ρ*)/(3[3α_D(η−1)+ρ+1]), boxed ρ* = 3[1+α_D(η−1)−α_T(1−α_D)]; stability condition stated as such (referee §5.2).
+- Comparative statics; ρ* = 3.96 at US-realistic parameters.
+- NEW Figure `threshold_figure.pdf` (two panels: equilibrium response vs ρ with thresholds marked and the flat-CES asymptote; ρ* vs home bias with measured-elasticity band). Generated by new `scripts/make_threshold_figure.py`.
+- NEW Table `tab:rhostar_grid`: Panel A ρ* over (α_D, η); Panel B by third-country size (Vietnam 8.76 / EU 4.32 / equal 4.24 / ROW 3.78) and by tariff size (cumulative threshold 3.55/3.19/2.86/2.70) (referee §5.4–5.6).
+- Third-country size paragraph: Vietnam-is-hardest point (reverses the original draft's presentation).
+- Large-tariff paragraph: threshold falls with τ, local bound conservative.
+- General-baselines paragraph: quadratic N(ρ), positive leading coefficient, pointer to new Appendix.
+
+**Section 3.4 (old 3.3, mechanisms).** "our baseline CES structure captures this in reduced form through the single parameter σ" **deleted** (now false); replaced (blue) with references to Props 3.1/3.2 and the appendix threshold's dependence on expenditure shares.
+
+**Section 4 (calibration).**
+- Sign convention moved from figure notes into the text (blue) (referee §7).
+- Results discussion (two paragraphs) fully rewritten (blue) with corrected share-linear model values — R1: EU (−5.39, −0.44), VNM (−8.27, −0.49), ROW (−2.76, −0.78); R2: EU (−2.50, +3.57), VNM (−3.39, +2.42), ROW (−1.81, +2.43) — honest five-of-six-signs statement, Vietnam failure tied to safe-haven flows *and* to the size result of §3.3, explicit Itskhoki–Mukhin horizon caveat, and explicit statement that world-export-share preferences understate home bias (referee §3.5, §3.6, §3.9). "Correctly predicts the direction … most salient finding" framing deleted.
+- Table 2: Vietnam α_TB 0.236 → 0.235 (reconciles with appendix; referee §7).
+- Appendix C: "slightly different σ values" note corrected to "same parameter values"; fit-summary paragraph rewritten (blue); all 48 model-column values in `tab:app_regimes` replaced with corrected values (blue); caption notes the recomputation.
+
+**Conclusion.** First two paragraphs rewritten (blue): impossibility + threshold narrative, corrected calibration claim, inference payoff, Corsetti–Lloyd–Ostry, and the discipline point (single-elasticity calibrations cannot capture the mechanism).
+
+**NEW Appendix "The Reversal Threshold at a General Baseline"** (`app:threshold`, all blue): hat-algebra linearization (share log-changes, income differential, the two dTB conditions), Proposition (general-baseline threshold) with the c₂ formula and larger-root statement, symmetric reduction, validation note, replication-package pointer.
+
+**References (`references.bib`).** Added 13 entries: caliendo2015, ossa2014, costinot2014, bagwell1999, bond1996, ornelas2005, itskhoki2021, eaton2016, caliendo2019, corsetti2025 (BoE SWP 1139), werning2025 (NBER 33772), kalemli2025 (NBER 34728), obstfeld2025 (VoxEU). eaton2016/caliendo2019/obstfeld2025 reserved for the forthcoming §3.4 extension discussion.
+
+**Build.** Compiles clean (pdflatex ×3 + bibtex): 39 pages, zero warnings, all citations resolved.
+
+**Still pending in the paper** (tracked in `REVISION_PLAN.md`): Ricardo–Viner extension subsection (D1 — prototype first); Figure 2–7 compression (4.8); Figure 1 legend overlap (5.3); §4.2 (η, ρ) sourcing and grid reporting (Phase 3); matched ROW index (D2); extended FX window (D3).
