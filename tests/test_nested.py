@@ -65,18 +65,17 @@ def test_walras():
 # Collapse to the flat single-elasticity model when rho = eta
 #
 # With rho = eta = sigma the nest is a flat CES over the three varieties
-# with plain weights {aD, (1-aD)/2, (1-aD)/2}. The package flat model uses
-# the alpha^sigma share convention, so set its weights to the sigma-th
-# root of the plain weights (alpha_j = w_j^(1/sigma) up to normalization —
-# shares and equilibria are invariant to common rescaling of weights).
+# with share weights {aD, (1-aD)/2, (1-aD)/2}. Both the nested and the
+# flat model use the share-linear convention (weights = expenditure shares
+# at unit prices), so the flat weights are alpha_j = aT * w_j directly.
 # ---------------------------------------------------------------------------
 
 @pytest.mark.parametrize("sigma", [0.5, 2.0, 5.0])
 def test_collapse_to_flat_ces(sigma):
     aD, aT = 1.0 / 3.0, 0.75
     p_nest = make_params_nested(alpha_T=aT, alpha_D=aD, eta=sigma, rho=sigma)
-    w = np.array([aD, (1 - aD) / 2, (1 - aD) / 2])   # plain weights
-    alpha_flat = aT * w ** (1.0 / sigma) / (w ** (1.0 / sigma)).sum()
+    w = np.array([aD, (1 - aD) / 2, (1 - aD) / 2])   # share weights
+    alpha_flat = aT * w
     p_flat = {
         "productivity_T": np.ones(3), "productivity_N": np.ones(3),
         "labor": np.ones(3), "alpha_T": alpha_flat,

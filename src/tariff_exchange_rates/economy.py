@@ -95,12 +95,15 @@ def compute_allocation(params, exchange_rates, tariffs):
     #   shares_T[i, j] = share of country i's TRADABLE budget spent on
     #                    variety j (rows sum to 1):
     #
-    #   CES:  shares_T[i,j] = alpha_T[j]^sigma * Pc[i,j]^(1-sigma)
-    #                         / sum_k alpha_T[k]^sigma * Pc[i,k]^(1-sigma)
+    #   CES:  shares_T[i,j] = alpha_T[j] * Pc[i,j]^(1-sigma)
+    #                         / sum_k alpha_T[k] * Pc[i,k]^(1-sigma)
     #   CD (sigma=1): shares_T[i,j] = alpha_T[j] / alpha_T_total
     #
-    # For sigma != 1 the shares are price-dependent. Computed in log
-    # space to avoid overflow at high sigma or extreme prices.
+    # Share-linear convention: the CES utility weights are alpha_T[j]^(1/sigma),
+    # so the weights alpha_T[j] ARE the expenditure shares at unit prices
+    # (calibration-friendly, matches the paper's stated preferences). For
+    # sigma != 1 the shares are price-dependent. Computed in log space to
+    # avoid overflow at high sigma or extreme prices.
     # ------------------------------------------------------------------
     alpha_T_total = alpha_T.sum()
     log_Pc      = np.log(Pc)
@@ -108,7 +111,7 @@ def compute_allocation(params, exchange_rates, tariffs):
     if abs(sigma - 1.0) < 1e-10:
         shares_T = np.tile(alpha_T / alpha_T_total, (n, 1))
     else:
-        log_share_terms = sigma * log_alpha_T[np.newaxis, :] + (1.0 - sigma) * log_Pc
+        log_share_terms = log_alpha_T[np.newaxis, :] + (1.0 - sigma) * log_Pc
         shares_T = np.exp(log_share_terms
                           - logsumexp(log_share_terms, axis=1)[:, np.newaxis])
 
@@ -172,14 +175,15 @@ def compute_allocation(params, exchange_rates, tariffs):
     # Outer CD:  P[i] = P_T_agg[i]^(sum alpha_T) * P_N[i]^alpha_N
     # ------------------------------------------------------------------
     # CES weights are normalized within the tradable bundle
-    # (b_j = alpha_T[j]^sigma / sum_k alpha_T[k]^sigma) so that P_T_agg = 1
-    # at unit prices and the sigma -> 1 limit is the CD index with weights
-    # alpha_T / alpha_T_total. Normalization leaves shares_T unchanged.
+    # (b_j = alpha_T[j] / alpha_T_total under the share-linear convention)
+    # so that P_T_agg = 1 at unit prices and the sigma -> 1 limit is the
+    # CD index with the same weights. Normalization leaves shares_T
+    # unchanged.
     if abs(sigma - 1.0) < 1e-10:
         log_price_T_agg = ((alpha_T / alpha_T_total)[np.newaxis, :] * log_Pc).sum(axis=1)
     else:
         # Log-space aggregation to avoid overflow
-        log_b = sigma * log_alpha_T - logsumexp(sigma * log_alpha_T)
+        log_b = log_alpha_T - logsumexp(log_alpha_T)
         log_price_T_agg = logsumexp(
             log_b[np.newaxis, :] + (1.0 - sigma) * log_Pc, axis=1
         ) / (1.0 - sigma)
