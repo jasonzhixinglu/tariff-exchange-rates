@@ -96,9 +96,14 @@ def build_linearization():
                 expr -= s[(i, j)] * y[i] * (dls[(i, j)] + dlI[i])
         return expr
 
-    sol = sp.solve([sp.Eq(dTB("B"), 0), sp.Eq(dTB("C"), 0)], [nB, nC], dict=True)
-    assert len(sol) == 1
-    dnuC_dtau = sp.together(sp.cancel(sol[0][nC] / t))
+    # The system is linear in (nB, nC): solve the 2x2 by hand (Cramer),
+    # which is orders of magnitude faster than sp.solve here.
+    eqs = [sp.expand(dTB("B")), sp.expand(dTB("C"))]
+    A_mat, rhs = sp.linear_eq_to_matrix(eqs, [nB, nC])
+    det = sp.expand(A_mat[0, 0] * A_mat[1, 1] - A_mat[0, 1] * A_mat[1, 0])
+    nC_sol = sp.expand(A_mat[0, 0] * rhs[1] - A_mat[1, 0] * rhs[0]) / det
+    # rhs is proportional to t; divide it out exactly
+    dnuC_dtau = sp.cancel(nC_sol / t)
     syms = dict(eta=eta, rho=rho, aT=aT, h=h, y=y, b=b)
     return dnuC_dtau, syms
 
@@ -108,7 +113,9 @@ def baseline_observables(alpha_T, alpha_D, eta, rho, labor):
     p = make_params_nested(alpha_T, alpha_D, eta, rho, labor)
     eq = solve_3country_nested(p, np.zeros((3, 3)))
     a = eq["allocation"]
-    shares, income = a["shares"], a["income"]      # shares of income, incomes in A's currency
+    shares = a["shares"]                            # currency-invariant
+    # incomes converted to the common (country A) currency: y_i = e_Ai w_i L_i
+    income = a["exchange_matrix"][0] * a["income"]
     vals = {}
     for i_ix, i in enumerate(IDX):
         vals[f"y_{i}"] = income[i_ix]
@@ -139,19 +146,28 @@ def main():
     for (i, j), expr in s["b"].items():
         if isinstance(expr, sp.Symbol):
             sym_subs[expr] = sp.Rational(1, 2)
-    dnuC_sym = sp.simplify(dnuC.subs(sym_subs))
+    dnuC_sym = sp.cancel(sp.together(dnuC.subs(sym_subs)))
     target = (s["rho"] - 3 * (1 + aD * (s["eta"] - 1)
                               - s["aT"] * (1 - aD))) \
         / (3 * (3 * aD * (s["eta"] - 1) + s["rho"] + 1))
-    diff = sp.simplify(dnuC_sym - target)
-    print("  symmetric reduction matches (rho - rho*)/(3[3 aD(eta-1)+rho+1]):",
-          diff == 0)
-    assert diff == 0
+    diff = sp.cancel(sp.together(dnuC_sym - target))
+    ok = sp.simplify(diff) == 0
+    print("  symmetric reduction matches (rho - rho*)/(3[3 aD(eta-1)+rho+1]):", ok)
+    assert ok
 
     # ------------------------------------------------------------------
     # Quadratic coefficients (general case) -> save for the paper appendix
     # ------------------------------------------------------------------
-    c2, c1, c0 = [sp.factor(sp.simplify(c)) for c in num_poly.all_coeffs()]
+    c2, c1, c0 = [sp.factor(c) for c in num_poly.all_coeffs()]
+    # Verified structure: c2 = b_AB b_AC b_CA b_CB (1-h_A)(1-h_C) y_A y_C > 0,
+    # so N is an upward parabola, rho* is its larger root, and "reversal iff
+    # rho > rho*" holds at any baseline. All three coefficients share the
+    # factor b_AB (1-h_A) y_A -- A's import exposure to B.
+    h, y, b = s["h"], s["y"], s["b"]
+    conj_c2 = (b[("A", "B")] * (1 - b[("A", "B")])
+               * b[("C", "A")] * (1 - b[("C", "A")])
+               * (1 - h["A"]) * (1 - h["C"]) * y["A"] * y["C"])
+    assert sp.expand(c2 - conj_c2) == 0
     out = ROOT / "output" / "general_threshold_symbolic.txt"
     with open(out, "w", encoding="utf-8") as f:
         f.write(
