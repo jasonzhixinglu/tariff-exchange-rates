@@ -26,7 +26,7 @@ gdrive_files/
 # output PDFs stay untracked; LaTeX build artifacts are covered below.
 Exchange_Rate_Tariffs/literature_review/
 Exchange_Rate_Tariffs/main.pdf
-Exchange_Rate_Tariffs/paper_draft.pdf
+# paper_draft.pdf is tracked so the current compiled draft is downloadable from GitHub
 Exchange_Rate_Tariffs/paper_draft_original.pdf
 Exchange_Rate_Tariffs/*.bbl
 Exchange_Rate_Tariffs/*.blg
