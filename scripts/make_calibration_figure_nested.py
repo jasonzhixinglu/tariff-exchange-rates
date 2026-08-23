@@ -45,19 +45,19 @@ def main():
         ax.plot(rhos, ac, color=C_AC, lw=2,
                 label=r"model $\Delta e_{AC}$ (USD/$C$)")
 
+        # April data only: each window is compared to its own tariff regime,
+        # and this figure is the April window vs the Regime-2 rates.
         d = fx[fxkey]["pct_changes"]
         drmb = fx["RMB"]["pct_changes"]
-        for pk, ls, alpha in [("regime2", ":", 0.9), ("dec2025", "-.", 0.9)]:
-            if d.get(pk) is not None:
-                ax.axhline(d[pk], color=C_AC, ls=ls, lw=1.3, alpha=alpha)
-            if drmb.get(pk) is not None:
-                ax.axhline(drmb[pk], color=C_AB, ls=ls, lw=1.3, alpha=alpha)
-        # annotate the data lines on the first panel only
+        if d.get("regime2") is not None:
+            ax.axhline(d["regime2"], color=C_AC, ls=":", lw=1.4)
+        if drmb.get("regime2") is not None:
+            ax.axhline(drmb["regime2"], color=C_AB, ls=":", lw=1.4)
         if key == "EU":
-            ax.annotate("data Apr-25", xy=(7.0, d["regime2"] + 0.4),
+            ax.annotate("data Apr-25 (USD/EUR)", xy=(5.2, d["regime2"] + 0.5),
                         color=C_AC, fontsize=8)
-            ax.annotate("data Dec-25", xy=(7.0, d["dec2025"] + 0.4),
-                        color=C_AC, fontsize=8)
+            ax.annotate("data Apr-25 (USD/RMB)", xy=(5.2, drmb["regime2"] - 1.3),
+                        color=C_AB, fontsize=8)
 
         rs = cfg["rho_star"]["cum_tau145"]
         if rs:

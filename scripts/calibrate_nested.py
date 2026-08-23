@@ -42,6 +42,20 @@ ETA = 1.5
 REGIMES = {
     "regime1": {"tau_AB": 0.20, "tau_BA": 0.00, "tau_AC": 0.00},
     "regime2": {"tau_AB": 1.45, "tau_BA": 1.25, "tau_AC": 0.10},
+    # Regime 3: rates in force at the December 2025 window (post-Geneva truce
+    # and the November 10, 2025 fentanyl cut): US on China 10% reciprocal +
+    # 10% fentanyl = 20% incremental; China on US 10%; US on C from the 2025
+    # framework deals: EU 15%, Vietnam 20%, ROW ~15% (approximate trade-
+    # weighted mix of the 10% baseline / 15% floor / higher country rates).
+    "regime3": {"tau_AB": 0.20, "tau_BA": 0.10,
+                "tau_AC": {"EU": 0.15, "VNM": 0.20, "VNM_adj": 0.20,
+                           "ROW": 0.15}},
+    # Regime 2a: the April 2, 2025 ANNOUNCED reciprocal rates on C (paused
+    # April 9), for the expectations-pricing variant: EU 20%, Vietnam 46%.
+    # ROW announced average is ambiguous; variant reported for EU/VNM only.
+    "regime2a": {"tau_AB": 1.45, "tau_BA": 1.25,
+                 "tau_AC": {"EU": 0.20, "VNM": 0.46, "VNM_adj": 0.46,
+                            "ROW": 0.10}},
 }
 
 
@@ -104,11 +118,12 @@ def invert_weights(target_shares, L, eta, rho, tol=1e-9, max_iter=200):
     raise RuntimeError(f"weight inversion did not converge (gap {gap:.2e})")
 
 
-def tariff_matrix(reg):
+def tariff_matrix(reg, config=None):
     T = np.zeros((3, 3))
     T[0, 1] = reg["tau_AB"]
     T[1, 0] = reg["tau_BA"]
-    T[0, 2] = reg["tau_AC"]
+    tac = reg["tau_AC"]
+    T[0, 2] = tac[config] if isinstance(tac, dict) else tac
     return T
 
 
@@ -195,7 +210,7 @@ def run():
             entry = {"alpha_D_weights": np.round(aD, 5).tolist(),
                      "share_fit_gap": float(np.max(np.abs(realized - s)))}
             for rk, reg in REGIMES.items():
-                entry[rk] = solve_changes(p, tariff_matrix(reg), base_eq)
+                entry[rk] = solve_changes(p, tariff_matrix(reg, name), base_eq)
             cfg["rho_results"][str(rho)] = entry
             r2 = entry["regime2"]
             print(f"  rho={rho:4.1f}: R2 de_AB={r2['de_AB']:+6.2f} "
