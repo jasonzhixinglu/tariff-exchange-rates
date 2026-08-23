@@ -144,12 +144,17 @@ Framing principles for the rewrite:
 
 ### Phase 0 — Fix and verify existing code *(prerequisite for everything)*
 
-- [ ] **0.1** Fix income/tariff-revenue fixed point in `src/tariff_exchange_rates/economy.py`: solve for I_i using realized CES expenditure shares (closed form exists: shares don't depend on income, so it's still one division per country — no iteration needed).
-- [ ] **0.2** Mirror the fix in `dashboard/src/lib/modelJs.js`.
-- [ ] **0.3** Add regression tests: (i) σ=1 results invariant to the fix; (ii) corrected model matches referee's replication values (−0.113 / −0.0488 / −0.016 at σ = 0.5/1/2, τ=1); (iii) numerical d log e_AC/dτ matches analytic −(ρ*−ρ)/(3(3α_D(η−1)+ρ+1)) to 1e-6 once Phase 2 lands.
-- [ ] **0.4** Audit figure provenance in `notebooks/section3_three_country_model.ipynb` (paper's Fig. 6 shows 0.00 but buggy code gives +0.005 — determine what actually generated the PDFs).
-- [ ] **0.5** Regenerate `data/theory_grid.json`, `data/calibration_panel.json`, `output/*.pdf`; confirm no sign reversal exists anywhere in the single-σ model (numerical footing for Prop. 1).
-- [ ] **0.6** Promote scratchpad verification scripts into `scripts/verify_referee_claims.py` (or tests) so every number in this document is reproducible.
+- [x] **0.1** Fix income/tariff-revenue fixed point in `src/tariff_exchange_rates/economy.py`: solve for I_i using realized CES expenditure shares (still closed-form — shares don't depend on income). *Also fixed while there:* the CES demand branch spent all income on tradables (budget violated by 1+α_N; discontinuous with the CD branch by 1/α_T — scale error, cancels in TB=0 so no effect on equilibria but corrupts levels), and the tradable price index used unnormalized weights (diverges as σ→1; now normalized, HD1, branch-consistent — affects reported RERs only).
+- [x] **0.2** Mirror the fix in `dashboard/src/lib/modelJs.js` (verified exact parity with Python TBs at test points).
+- [x] **0.3** Regression tests in `tests/test_economy.py` (15 passing): budget consistency; CES↔CD continuity; σ=1 equilibria unchanged; corrected model matches referee replication to 4 dp at σ = 0.5/1/2/5; no sign reversal over σ ∈ [0.3, 50]; finite-difference slope matches analytic −1/(12σ) at the paper's calibration; two-country closed form; Walras; price-index HD1. (Nested-model analytic-slope test to be added with Phase 2.)
+- [x] **0.4** Figure provenance audited: the saved notebook outputs show e_AC = 1.0048 at σ=2 and print "e_AC crosses 1.0 near σ ≈ 1.86" — all Section 3 figures and the paper's Fig. 6 "0.00" (= rounded log 0.0048) came from the buggy code. Notebook narrative (intro, §4.4, σ-scan, summary table) asserted the spurious reversal; patched to the corrected story and re-executed cleanly (σ=2 isolated: e_AC = 0.9838; max e_AC over σ-grid = 0.9971 < 1).
+- [x] **0.5** Regenerated: `data/calibration_panel.json`, `data/theory_grid.json`, `output/*.pdf` + copies in `Exchange_Rate_Tariffs/`, section 3 + 4 notebooks re-executed. No sign reversal anywhere in the single-σ model — numerical footing for Prop. 1 confirmed. (Dashboard `public/data` + `dist` rebuild tracked as 0.7.)
+- [x] **0.6** `scripts/verify_referee_claims.py` reproduces and asserts every referee claim + repo findings (sections 1–5, `--symbolic` for the sympy ρ* derivation). All checks pass.
+- [ ] **0.7** Copy regenerated JSONs to `dashboard/public/data/` and rebuild `dashboard/dist` (`npm run build`) so the deployed dashboard reflects the corrected model.
+
+**New findings from Phase 0 (beyond §3):**
+- The referee's §5.6 large-tariff table is the **cumulative** threshold (ρ such that the total Δlog e_AC over [0,τ] is zero) — reproduced exactly (3.55/3.19/2.86/2.70 at τ = 0.2/0.5/1.0/1.45). The **marginal** threshold (slope zero at τ) is lower still (3.23/2.69/2.26/2.07). Report both in the paper; cumulative is the policy-relevant one for a discrete tariff.
+- Corrected calibration-panel values (flat CES, for reference until Phase 3 supersedes): EU R2 Δe_AC +5.58, VNM R2 +4.66, ROW R2 −0.14, Taiwan R2 +19.24, India R2 +18.43 — magnitudes still far too large, reinforcing the home-bias recalibration case (§2.3).
 
 ### Phase 1 — Derive the theory
 

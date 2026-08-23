@@ -15,6 +15,7 @@
 
 const ALPHA_T = [0.25, 0.25, 0.25]
 const ALPHA_N = 0.25
+const ALPHA_T_TOTAL = ALPHA_T.reduce((a, b) => a + b, 0)
 
 /**
  * Build the 3×3 exchange rate matrix from the two free rates.
@@ -54,39 +55,41 @@ export function computeTB(logEAB, logEAC, tau, sigma) {
   // Consumer prices: Pc[i][j] = (1 + tau[i][j]) * E[i][j]  (P_T = 1)
   const Pc = tau.map((row, i) => row.map((t, j) => (1 + t) * E[i][j]))
 
-  // Disposable income (wages * L = 1 for all i in symmetric case)
-  //   I[i] = 1 / (1 - sum_j alpha_T[j] * tau[i][j] / (1 + tau[i][j]))
+  // Realized within-tradable expenditure shares (rows sum to 1)
+  //
+  // CES:  shares[i][j] = alpha_T[j]^sigma * Pc[i][j]^(1-sigma)
+  //                      / sum_k( alpha_T[k]^sigma * Pc[i][k]^(1-sigma) )
+  // CD (sigma=1): shares[i][j] = alpha_T[j] / alpha_T_total
+  let shares
+  if (Math.abs(sigma - 1) < 1e-9) {
+    shares = Pc.map(() => ALPHA_T.map(a => a / ALPHA_T_TOTAL))
+  } else {
+    shares = Pc.map(row => {
+      const terms = row.map((p, k) =>
+        Math.pow(ALPHA_T[k], sigma) * Math.pow(p, 1 - sigma)
+      )
+      const denom = terms.reduce((a, b) => a + b, 0)
+      return terms.map(t => t / denom)
+    })
+  }
+
+  // Disposable income with lump-sum tariff rebate (wages * L = 1 here)
+  //   I[i] = 1 / (1 - alpha_T_total * sum_j shares[i][j] * tau[i][j]/(1+tau[i][j]))
+  // Tariff revenue must use the REALIZED price-dependent shares; the raw
+  // weights alpha_T[j] are exact only at sigma = 1.
   const income = tau.map((row, i) => {
     let wedge = 0
     for (let j = 0; j < 3; j++) {
-      if (i !== j) wedge += ALPHA_T[j] * row[j] / (1 + row[j])
+      if (i !== j) wedge += ALPHA_T_TOTAL * shares[i][j] * row[j] / (1 + row[j])
     }
     return 1 / (1 - wedge)
   })
 
-  // Tradable demand: demand[i][j] = country i's quantity demand for j's good
-  //
-  // CES:  demand[i][j] = income[i] * alpha_T[j]^sigma * Pc[i][j]^(-sigma)
-  //                      / sum_k( alpha_T[k]^sigma * Pc[i][k]^(1-sigma) )
-  //
-  // CD (sigma=1): demand[i][j] = income[i] * alpha_T[j] / Pc[i][j]
-  let demand
-  if (Math.abs(sigma - 1) < 1e-9) {
-    demand = Pc.map((row, i) =>
-      row.map((p, j) => income[i] * ALPHA_T[j] / p)
-    )
-  } else {
-    demand = Pc.map((row, i) => {
-      // denominator of CES weight
-      let denom = 0
-      for (let k = 0; k < 3; k++) {
-        denom += Math.pow(ALPHA_T[k], sigma) * Math.pow(Pc[i][k], 1 - sigma)
-      }
-      return row.map((p, j) =>
-        income[i] * Math.pow(ALPHA_T[j], sigma) * Math.pow(p, -sigma) / denom
-      )
-    })
-  }
+  // Tradable demand: spending on j is alpha_T_total * shares[i][j] * I[i],
+  // so quantity demand[i][j] = alpha_T_total * shares[i][j] * I[i] / Pc[i][j]
+  const demand = Pc.map((row, i) =>
+    row.map((p, j) => ALPHA_T_TOTAL * shares[i][j] * income[i] / p)
+  )
 
   // Trade balance: TB[i] = exports_i - imports_i (in i's currency)
   //   exports[i]  = sum_k demand[k][i]          (world demand for i's good, valued at P_T=1)

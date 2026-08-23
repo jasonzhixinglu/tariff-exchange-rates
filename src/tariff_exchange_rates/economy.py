@@ -90,36 +90,57 @@ def compute_allocation(params, exchange_rates, tariffs):
     Pc = (1.0 + tariffs) * E * prices_T[np.newaxis, :]
 
     # ------------------------------------------------------------------
-    # Disposable income with lump-sum tariff rebate
-    #   I_i = w_i L_i / (1 - sum_j alpha_T[j] * tau[i,j] / (1 + tau[i,j]))
+    # Realized within-tradable expenditure shares
     #
-    # The outer CD layer fixes the budget share on each tradable variety
-    # regardless of sigma, making this income formula exact for all sigma
-    # under the nested CD-CES structure.
+    #   shares_T[i, j] = share of country i's TRADABLE budget spent on
+    #                    variety j (rows sum to 1):
+    #
+    #   CES:  shares_T[i,j] = alpha_T[j]^sigma * Pc[i,j]^(1-sigma)
+    #                         / sum_k alpha_T[k]^sigma * Pc[i,k]^(1-sigma)
+    #   CD (sigma=1): shares_T[i,j] = alpha_T[j] / alpha_T_total
+    #
+    # For sigma != 1 the shares are price-dependent. Computed in log
+    # space to avoid overflow at high sigma or extreme prices.
     # ------------------------------------------------------------------
-    tariff_wedge = alpha_T[np.newaxis, :] * tariffs / (1.0 + tariffs)
-    np.fill_diagonal(tariff_wedge, 0.0)
-    income = wages * labor / (1.0 - tariff_wedge.sum(axis=1))
+    alpha_T_total = alpha_T.sum()
+    log_Pc      = np.log(Pc)
+    log_alpha_T = np.log(alpha_T)
+    if abs(sigma - 1.0) < 1e-10:
+        shares_T = np.tile(alpha_T / alpha_T_total, (n, 1))
+    else:
+        log_share_terms = sigma * log_alpha_T[np.newaxis, :] + (1.0 - sigma) * log_Pc
+        shares_T = np.exp(log_share_terms
+                          - logsumexp(log_share_terms, axis=1)[:, np.newaxis])
 
     # ------------------------------------------------------------------
-    # Tradable demand — inner CES (Cobb-Douglas when sigma = 1)
+    # Disposable income with lump-sum tariff rebate
     #
-    # CES:  C_T[i,j] = alpha_T[j]^sigma * Pc[i,j]^(-sigma) * I_i
-    #                  / sum_k alpha_T[k]^sigma * Pc[i,k]^(1-sigma)
+    #   I_i = w_i L_i + sum_j tau[i,j]/(1+tau[i,j]) * (spending on j)
+    #       = w_i L_i / (1 - alpha_T_total * sum_j shares_T[i,j] * tau[i,j]/(1+tau[i,j]))
     #
-    # CD (sigma=1): C_T[i,j] = alpha_T[j] * I_i / Pc[i,j]
+    # Spending on variety j is alpha_T_total * shares_T[i,j] * I_i: the
+    # outer CD layer fixes the tradable budget at alpha_T_total * I_i and
+    # the inner CES splits it by the realized shares. Shares depend only
+    # on prices, not income, so the fixed point in I_i is still a single
+    # division. NOTE: using the raw weights alpha_T[j] in the wedge here
+    # (as in earlier versions of this code) is exact only at sigma = 1;
+    # for sigma != 1 it mismeasures tariff revenue.
     # ------------------------------------------------------------------
-    if abs(sigma - 1.0) < 1e-10:
-        demand_T = alpha_T[np.newaxis, :] * income[:, np.newaxis] / Pc
-    else:
-        # Compute in log space to avoid overflow at high sigma or extreme prices
-        log_Pc      = np.log(Pc)
-        log_alpha_T = np.log(alpha_T)
-        log_num     = sigma * log_alpha_T[np.newaxis, :] - sigma * log_Pc
-        log_den_terms = sigma * log_alpha_T[np.newaxis, :] + (1.0 - sigma) * log_Pc
-        log_den     = logsumexp(log_den_terms, axis=1)
-        log_demand_T = np.log(income)[:, np.newaxis] + log_num - log_den[:, np.newaxis]
-        demand_T    = np.exp(log_demand_T)
+    tariff_frac  = tariffs / (1.0 + tariffs)          # diagonal is zero
+    tariff_wedge = alpha_T_total * (shares_T * tariff_frac).sum(axis=1)
+    income = wages * labor / (1.0 - tariff_wedge)
+
+    # ------------------------------------------------------------------
+    # Tradable demand — nested CD-CES (Cobb-Douglas when sigma = 1)
+    #
+    #   spending:  Pc[i,j] * C_T[i,j] = alpha_T_total * shares_T[i,j] * I_i
+    #   quantity:  C_T[i,j] = alpha_T_total * shares_T[i,j] * I_i / Pc[i,j]
+    #
+    # At sigma = 1 this reduces to C_T[i,j] = alpha_T[j] * I_i / Pc[i,j].
+    # Total spending is alpha_T_total * I_i on tradables plus
+    # alpha_N * I_i on nontradables, exhausting the budget.
+    # ------------------------------------------------------------------
+    demand_T = alpha_T_total * shares_T * income[:, np.newaxis] / Pc
 
     # ------------------------------------------------------------------
     # Nontradable demand
@@ -150,16 +171,20 @@ def compute_allocation(params, exchange_rates, tariffs):
     #
     # Outer CD:  P[i] = P_T_agg[i]^(sum alpha_T) * P_N[i]^alpha_N
     # ------------------------------------------------------------------
+    # CES weights are normalized within the tradable bundle
+    # (b_j = alpha_T[j]^sigma / sum_k alpha_T[k]^sigma) so that P_T_agg = 1
+    # at unit prices and the sigma -> 1 limit is the CD index with weights
+    # alpha_T / alpha_T_total. Normalization leaves shares_T unchanged.
     if abs(sigma - 1.0) < 1e-10:
-        log_price_T_agg = (alpha_T[np.newaxis, :] * np.log(Pc)).sum(axis=1)
-        price_T_agg = np.exp(log_price_T_agg)
+        log_price_T_agg = ((alpha_T / alpha_T_total)[np.newaxis, :] * log_Pc).sum(axis=1)
     else:
         # Log-space aggregation to avoid overflow
-        log_Pc_agg_terms = sigma * log_alpha_T[np.newaxis, :] + (1.0 - sigma) * log_Pc
-        log_price_T_agg  = logsumexp(log_Pc_agg_terms, axis=1) / (1.0 - sigma)
-        price_T_agg      = np.exp(log_price_T_agg)
+        log_b = sigma * log_alpha_T - logsumexp(sigma * log_alpha_T)
+        log_price_T_agg = logsumexp(
+            log_b[np.newaxis, :] + (1.0 - sigma) * log_Pc, axis=1
+        ) / (1.0 - sigma)
+    price_T_agg = np.exp(log_price_T_agg)
 
-    alpha_T_total = alpha_T.sum()
     price_level = price_T_agg ** alpha_T_total * prices_N ** alpha_N
 
     # ------------------------------------------------------------------
