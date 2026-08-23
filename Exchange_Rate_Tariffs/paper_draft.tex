@@ -1,0 +1,577 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{siunitx}
+\usepackage{empheq}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{comment}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}
+\excludecomment{notes} % or \includecomment{notes}
+
+% Theorem-style environments
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+% Optional: remarks (roman text)
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+% Optional: section-based numbering (recommended)
+\numberwithin{lemma}{section}
+\numberwithin{proposition}{section}
+
+\bibliographystyle{apalike}
+
+\geometry{margin=1in}
+
+\setstretch{1.2}
+\title{Trade Tariffs and Exchange Rates:\\
+Revisiting Conventional Wisdom in a Three-Country Framework}
+
+\author{
+Jason Lu\thanks{International Monetary Fund, Research Department. Email: {\tt jlu2@imf.org}} 
+\and 
+Dimitre Milkov\thanks{International Monetary Fund, Research Department. Email: {\tt dmilkov@imf.org}}
+}
+
+\date{First draft: November 10, 2025 \\ This version: \today \footnote{An interactive companion dashboard is available at {\tt https://jasonzhixinglu.github.io/tariff-exchange-rates/}.}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+An important feature of standard two-country trade models is the robust theoretical prediction that tariffs lead to an appreciation of the tariff-imposing country's currency. We show that this prediction is not robust when moving to the smallest multilateral setting with the introduction of a third country. When tariffs are applied selectively, imports can be diverted toward an untariffed supplier rather than toward domestic goods, generating opposing trade-diversion and trade-redirection forces whose relative strength depends on the elasticity of substitution across foreign suppliers. As a result, the exchange-rate response to selective tariffs becomes ambiguous and the tariff-imposing country's currency may depreciate against untariffed trading partners even as it appreciates against the tariffed one. In a bilateral trade war, where two countries impose tariffs on one another while a third country remains untaxed, the ambiguity is resolved: both tariff-imposing countries' currencies depreciate unambiguously against the third country. We calibrate the model to the 2025 US-China tariff episode and show that it correctly predicts the direction of dollar depreciation against third-country currencies during the peak escalation period, consistent with the bilateral trade war mechanism.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Trade Tariffs, Exchange Rates, Trade Diversion, Open-Economy Equilibrium
+
+\newpage
+\section{Introduction}
+
+What happens to exchange rates when a country imposes trade tariffs? In practice, exchange rate responses are context dependent and reflect a confluence of factors, but the conventional wisdom derived from a two-country trade model predicts an unambiguous currency appreciation for the tariff-imposing country. The intuition is that tariffs lead to a substitution of expenditure toward domestic goods, and hence an improvement in the bilateral trade balance and an appreciation of the home currency. This result has a long lineage, beginning with \cite{lerner1936symmetry}, who established the equivalence between import tariffs and export taxes in a two-country setting and the closely related link between tariffs and exchange rate adjustment under flexible rates. \cite{metzler1949tariffs} extended the analysis to a two-country general equilibrium framework emphasizing the terms-of-trade channel, and \cite{mundell1961flexible} embedded these ideas in an open-economy macroeconomic framework showing that tariff-induced currency appreciation offsets the trade-balance effects of commercial policy under flexible exchange rates. Modern micro-founded treatments reinforce the same conclusion: \cite{obstfeld1996foundations} and \cite{corsetti2001welfare} provided the analytical toolkit for studying policy transmission through terms-of-trade and exchange rate adjustments in fully intertemporal settings with optimizing agents, demonstrating that the relative price channels identified in the classical literature remain operative across a wide range of frameworks.
+
+The way this mechanism works is as follows. A tariff imposed by country $A$ on imports from country $B$ raises the consumer price of $B$'s tradable goods in country $A$. Holding the exchange rate fixed, the immediate effect is an expenditure-switching response: households in country $A$ substitute away from imported goods toward domestically produced goods. This contraction in import demand improves country $A$'s trade balance at the prevailing exchange rate, requiring an appreciation of country $A$'s currency in equilibrium to restore trade balance. Depending on the treatment of tariff revenue, income effects may reinforce this mechanism by further reducing import demand as real income falls. More generally, any force that lowers import expenditures at a given exchange rate shifts the trade balance condition in the same direction. While additional channels, for example through adjustments in export prices or firm markups, may also be relevant depending on the context, they are not essential for the result.
+
+Empirical evidence from recent tariff episodes has complicated this picture. \cite{jeanne2024extent} studies the 2018--19 US-China trade tariffs using a calibrated small open economy model and shows that the model generates only a small appreciation of the USD alongside a large depreciation of the RMB, broadly matching the observed exchange rate pattern during the episode. They also conduct a high-frequency event study showing that US tariff announcements led to an immediate USD appreciation, while Chinese retaliation announcements had no significant exchange rate effects. \cite{khalil2024us} argues that tariff-induced increases in trade policy uncertainty contributed to the appreciation of the USD during the same episode, operating through higher safe-haven demand for US Treasuries — an additional channel that reinforces the conventional prediction. The 2025 episode is harder to reconcile with the conventional wisdom. \cite{cardani2025exchange} studies the April 2025 US reciprocal tariffs using a three-country DSGE open economy model and documents that the dollar weakened after the announcement, contrary to the conventional prediction. They attribute this to a decline in the convenience yield of US Treasuries, driven by weaker growth expectations and heightened policy uncertainty, which triggered portfolio outflows from the US. Taken together, the 2018--19 episode is broadly consistent with the conventional wisdom, possibly amplified by financial safe-haven flows, while the 2025 episode is not, and the existing literature has turned primarily to financial and convenience-yield channels to account for the gap.
+
+In this paper, we challenge the two-country conventional wisdom on different grounds. We show that the magnitude and direction of the exchange rate response to tariffs can change, and may reverse, once the model is extended to a three-country setting. Moreover, this can occur in a purely real model without nominal rigidities, financial frictions, or uncertainty channels. The underlying intuition is as follows. When country $A$ imposes tariffs on imports from country $B$, the first-order expenditure-switching effect need not be directed solely toward domestically produced goods. In a three-country environment, expenditure can instead be diverted toward imports from a third country $C$. This diversion deteriorates the bilateral trade balance between countries $A$ and $C$ and generates depreciation pressure on country $A$'s currency.
+
+Moreover, we show that the strength of this counteracting channel is increasing in the degree of substitutability between exports from countries $B$ and $C$, governed in our model by the elasticity of substitution across tradable varieties. When this elasticity is high, expenditure reallocates easily toward imports from country $C$ following the tariff on country $B$, amplifying the trade-diversion channel and the associated depreciation pressure on country $A$'s currency. When it is low, the diversion channel is weak and the model behaves close to the two-country benchmark. 
+
+Our paper first examines the conventional two-country model setting and shows the unambiguous appreciation of the home currency, in particular, we explain why the qualitative prediction of home currency appreciation does not hinge on a particular production technology, preference specification, or trade elasticity, but instead follows from general monotonicity properties of import and export behavior that hold across a wide range of models. 
+
+We then introduce a three-country model in which consumption is modeled using a constant elasticity of substitution utility function. We begin with a setting where country $A$ imposes tariffs uniformly on countries $B$ and $C$, which again results in an unambiguous appreciation of country $A$'s currency, similar to the two-country model. In our baseline model setup, the effects on countries $B$ and $C$ are symmetric, leading to equal depreciation of their currencies relative to country $A$. However, when country $A$ imposes tariffs only on country $B$, this result is no longer unambiguous, and we demonstrate that it is possible for the home currency to depreciate if the substitution effect between country $B$'s and country $C$'s tradable goods is sufficiently strong. Finally, we examine a trade war scenario in which country $A$ imposes tariffs on country $B$ and country $B$ retaliates in kind. This leads to an unambiguous depreciation of the currencies of countries $A$ and $B$ relative to country $C$. In this setting, there is symmetry between countries $A$ and $B$ relative to country $C$ in the baseline calibration, so country $C$'s currency unambiguously appreciates relative to those of countries $A$ and $B$ by an equal proportion.
+
+The model abstracts from several features present in a more realistic model of multilateral trade, and the results should be interpreted accordingly. First, the three-country framework represents a minimal multilateral environment. Real trade networks involve many countries simultaneously, and the interactions among bilateral exchange rates in a fully multilateral model can be considerably more complex than what we characterize here. Second, the model abstracts from richer production structures, including capital, endogenous labor supply, human capital, intermediate goods, and cross-country technological differences, all of which shape the transmission of tariff shocks in quantitative trade models. Third, the model is static and real: there are no nominal rigidities in consumer prices, no role for invoicing currency, and no intertemporal dynamics. A large literature examines how invoicing currency and nominal price rigidities shape the transmission of tariff shocks to exchange rates and trade flows, which our model does not speak to.\footnote{\cite{devereux2003monetary} shows that the currency of price-setting determines exchange rate passthrough, with complete passthrough under producer currency pricing and attenuated passthrough under local currency pricing. \cite{gopinath2020dominant} extends this framework by introducing a third invoicing currency, and \cite{bergin2023macroeconomic} show that the resulting asymmetries can create monetary policy tradeoffs that potentially reverse standard predictions about the exchange rate response to tariff shocks.} Our exchange rate predictions should therefore be interpreted as long-run equilibrium outcomes in which prices have fully adjusted and current account imbalances cannot persist indefinitely.
+
+Introducing short-run dynamics would require nominal frictions, sticky prices, and a financial account that allows trade imbalances to be offset by capital flows. In practice, financial flows are large relative to trade flows and often dominate exchange rate movements at business cycle frequencies, which is one reason observed exchange rate changes may differ substantially from the model's long-run predictions. Given these limitations, the purpose of this paper is not to deliver a realistic framework for quantitative analysis but to establish a conceptual point: one cannot appeal to the conventional two-country wisdom to conclude that any observed depreciation must reflect financial or non-trade factors. In a multilateral setting, real trade channels alone are sufficient to generate depreciation of the tariff-imposing country's currency against untariffed trading partners, and the qualitative direction of the multilateral exchange rate response depends on the structure of trade as much as on financial conditions.
+
+The rest of the paper is organized as follows. Section~\ref{sec:twocountry} develops the two-country model, establishes the conventional appreciation result, and demonstrates its robustness. Section~\ref{sec:threecountry} introduces the three-country model and analyzes three tariff configurations, showing how the conventional result can break down in a multilateral setting. Section~\ref{sec:calibration} presents a quantitative illustration of the three-country model calibrated to the recent US tariff episode. Section~\ref{sec:conclusion} concludes.
+
+\section{The Two-Country Model}
+\label{sec:twocountry}
+
+We consider a static two-country, two-sector, one-factor model in which a single nominal exchange rate equilibrates international trade. We first derive the conventional result that tariffs lead to an appreciation of the tariff-imposing country's currency, obtain a closed-form expression for the equilibrium exchange rate, and then establish the robustness of this result using a general monotonicity argument that does not rely on specific functional form assumptions.
+
+\subsection{The Two-Country Conventional Wisdom}
+
+Countries are indexed by $i \in \{A,B\}$ and goods by $g \in \{T_A, T_B, N\}$, where $T_i$ denotes the tradable good produced in country $i$ and $N$ denotes a non-tradable good that is produced and consumed domestically. Labor is the only factor of production and is immobile across countries.
+
+\subsubsection{Firms}
+
+Each good is produced using a linear technology. Output in the tradable and non-tradable sectors satisfies
+\begin{equation}
+Y_{T_i} = A_{T_i} L_{T_i}, \qquad Y_{N_i} = A_{N_i} L_{N_i}, \qquad L_{T_i} + L_{N_i} = L_i,
+\end{equation}
+where $A_{T_i}$ and $A_{N_i}$ denote sectoral labor productivities and $L_i$ is the total labor endowment in country $i$. Markets are perfectly competitive. With linear production technologies, firms earn zero profits in equilibrium, and wages in each country are equalized across sectors. We normalize the producer prices of tradable goods to one, so that $P_{T_A}=P_{T_B}=1$, and maintain this normalization throughout the analysis. Under this normalization, equilibrium wages satisfy
+\begin{equation}
+w_i = A_{T_i} = P_{N_i} A_{N_i},
+\label{eq:wage}
+\end{equation}
+which implies $P_{N_i} = A_{T_i}/A_{N_i}$, so that nontradable prices are pinned down by the ratio of sectoral productivities.
+
+\subsubsection{Households}
+
+Households in each country consume the domestically produced tradable good, the tradable good produced abroad, and a non-tradable good produced locally. Let $C_{T_i i}$ denote country $i$'s consumption of its own tradable good, $C_{T_j i}$ its consumption of the tradable good produced in the other country $j \neq i$, and $C_{N_i}$ its consumption of the local non-tradable good. Let $e$ denote the nominal exchange rate, defined as units of country $A$'s currency per unit of country $B$'s currency, so that the domestic-currency price of $T_B$ in country $A$ is $eP_{T_B}$ and the domestic-currency price of $T_A$ in country $B$ is $P_{T_A}/e$. Under free trade, household income equals wage income, $I_i = w_i L_i$. The household budget constraints are
+\begin{equation}
+w_A L_A = P_{T_A}\, C_{T_A A} + e P_{T_B}\, C_{T_B A} + P_{N_A}\, C_{N_A},
+\label{eq:budget_A}
+\end{equation}
+\begin{equation}
+w_B L_B = \frac{P_{T_A}}{e}\, C_{T_A B} + P_{T_B}\, C_{T_B B} + P_{N_B}\, C_{N_B}.
+\label{eq:budget_B}
+\end{equation}
+Preferences in each country are Cobb--Douglas over the two tradable goods and the local non-tradable good, with expenditure shares $\alpha_{T_A}$, $\alpha_{T_B}$, and $\alpha_N = 1 - \alpha_{T_A} - \alpha_{T_B}$ on goods $T_A$, $T_B$, and $N$ respectively, where $\alpha_{T_j}$ denotes the common weight on good $T_j$ in both countries' utility functions. Utility in country $i$ is given by
+\[
+U_i = C_{T_A i}^{\alpha_{T_A}}\, C_{T_B i}^{\alpha_{T_B}}\, C_{N_i}^{\,\alpha_N}.
+\]
+Utility maximization subject to the budget constraints implies that households allocate constant expenditure shares across goods. Equilibrium expenditures satisfy
+\begin{equation}
+P_{T_A}\, C_{T_A i} = \alpha_{T_A}\, I_i, \qquad P_{T_B}^{(i)}\, C_{T_B i} = \alpha_{T_B}\, I_i, \qquad P_{N_i}\, C_{N_i} = \alpha_N\, I_i,
+\label{eq:expenditures}
+\end{equation}
+where $P_{T_B}^{(i)}$ denotes the domestic-currency price of $T_B$ faced by country $i$, equal to $eP_{T_B}$ in country $A$ and $P_{T_B}$ in country $B$ under free trade. These expenditure-share conditions hold generally, with $I_i = w_i L_i$ under free trade; once tariffs are introduced in Section~\ref{sec:tariffs}, $I_i$ includes rebated tariff revenue and $I_i \neq w_i L_i$ in general. The corresponding consumption quantities are
+\begin{equation}
+C_{T_A i} = \frac{\alpha_{T_A}\, I_i}{P_{T_A}}, \qquad C_{T_B i} = \frac{\alpha_{T_B}\, I_i}{P_{T_B}^{(i)}}, \qquad C_{N_i} = \frac{\alpha_N\, I_i}{P_{N_i}}.
+\label{eq:demands}
+\end{equation}
+
+\subsubsection{Market Clearing and Equilibrium}
+
+In equilibrium, markets clear in each country for non-tradable and tradable goods, and international trade is balanced. Non-tradable goods are produced and consumed domestically; for each country $i \in \{A,B\}$, market clearing requires $Y_{N_i} = C_{N_i}$. Using the production technology, the wage condition $P_{N_i} = w_i/A_{N_i}$, and Cobb--Douglas demand, equilibrium labor allocations satisfy
+\begin{equation}
+\frac{L_{N_i}}{L_i} = \alpha_N, \qquad \frac{L_{T_i}}{L_i} = 1 - \alpha_N = \alpha_{T_A} + \alpha_{T_B}.
+\end{equation}
+Each tradable variety is produced in only one country and consumed in both. For tradable good $T_i$, global market clearing requires $Y_{T_i} = C_{T_i i} + C_{T_i j}$, which using \eqref{eq:demands} gives
+\begin{equation}
+A_{T_A} L_{T_A} = \frac{\alpha_{T_A}\, I_A}{P_{T_A}} + \frac{\alpha_{T_A}\, I_B}{P_{T_A}/e}, \qquad
+A_{T_B} L_{T_B} = \frac{\alpha_{T_B}\, I_B}{P_{T_B}} + \frac{\alpha_{T_B}\, I_A}{e\, P_{T_B}},
+\label{eq:T_world_clearing}
+\end{equation}
+where $P_{T_A}/e$ is the price of $T_A$ in country $B$'s currency and $eP_{T_B}$ is the price of $T_B$ in country $A$'s currency. Trade balances are measured in each country's own currency; for country $A$, export revenues are $P_{T_A} C_{T_A B}$ and import expenditures are $eP_{T_B} C_{T_B A}$, giving
+\begin{equation}
+\mathrm{TB}_A = P_{T_A}\, C_{T_A B} - e P_{T_B}\, C_{T_B A}.
+\label{eq:TB}
+\end{equation}
+Imposing balanced trade $\mathrm{TB}_A = 0$ and substituting \eqref{eq:demands} yields the equilibrium condition
+\begin{equation}
+\alpha_{T_A}\, w_B L_B = \alpha_{T_B}\, e\, w_A L_A.
+\label{eq:TB_condition}
+\end{equation}
+By Walras' Law, satisfying \eqref{eq:TB_condition} for country $A$ ensures global market clearing, so the equilibrium exchange rate is fully determined by a single trade balance condition.
+
+\subsubsection{Imposing Tariffs in the Two-Country Model}
+\label{sec:tariffs}
+
+We introduce an ad valorem tariff $\tau \ge 0$ levied by country $A$ on imports of the tradable good $T_B$. The tariff raises the consumer price of $T_B$ in country $A$ to $(1+\tau)e P_{T_B}$, while producers in country $B$ continue to receive the world price $P_{T_B} = 1$, so the tariff wedge $\tau e P_{T_B}$ is collected as revenue by country $A$'s government and rebated lump-sum to households. The household budget constraint in country $A$ becomes
+\begin{equation}
+I_A = P_{T_A}\, C_{T_A A} + (1+\tau)e P_{T_B}\, C_{T_B A} + P_{N_A}\, C_{N_A},
+\end{equation}
+where $I_A \equiv w_A L_A + T_A^{\mathrm{rev}}$ is total household income and tariff revenue is $T_A^{\mathrm{rev}} = \tau e P_{T_B}\, C_{T_B A}$. Substituting $T_A^{\mathrm{rev}}$ into the definition of $I_A$ and using the Cobb--Douglas expenditure share condition $C_{T_B A} = \alpha_{T_B} I_A / [(1+\tau)e P_{T_B}]$, income solves to the closed form
+\begin{equation}
+I_A = \frac{w_A L_A}{1 - \dfrac{\alpha_{T_B}\,\tau}{1+\tau}},
+\label{eq:income_tariff}
+\end{equation}
+which exceeds wage income $w_A L_A$ for any $\tau > 0$, reflecting the rebated tariff revenue. Equilibrium consumption demands in country $A$ are then
+\begin{align}
+C_{T_A A} &= \frac{\alpha_{T_A}\, I_A}{P_{T_A}}, \\
+C_{T_B A} &= \frac{\alpha_{T_B}\, I_A}{(1+\tau)\,e\,P_{T_B}}, \\
+C_{N_A}   &= \frac{\alpha_N\, I_A}{P_{N_A}}.
+\end{align}
+In country $B$, which does not impose tariffs, income equals wage income and consumption demands remain
+\begin{align}
+C_{T_A B} &= \frac{\alpha_{T_A}\, w_B L_B}{P_{T_A}/e}, \\
+C_{T_B B} &= \frac{\alpha_{T_B}\, w_B L_B}{P_{T_B}}, \\
+C_{N_B}   &= \frac{\alpha_N\, w_B L_B}{P_{N_B}}.
+\end{align}
+Tariffs do not directly affect production decisions in this environment. Firms operate under perfect competition and linear technologies, so equilibrium wages continue to satisfy $w_i = A_{T_i}$ and nontradable prices satisfy $P_{N_i} = A_{T_i}/A_{N_i}$, as in the free-trade case. The tariff alters only the consumer price of the imported good in country $A$ and leaves producer prices unchanged in both countries, so sectoral labor allocations are also unchanged. As in the free-trade case, equilibrium is fully characterized by the trade balance condition $\mathrm{TB}_A = 0$. Figure~\ref{fig:2c2s1f_with_tariffs_eq} illustrates the deviation from trade balance as a function of the exchange rate for different tariff rates. An increase in the tariff shifts the trade balance schedule upward at any given exchange rate, reflecting the reduction in import demand induced by the higher consumer price of the foreign tradable.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{2c2s1f_with_tariffs_eq.pdf}
+    \caption{Trade balance deviation as a function of the exchange rate in the two-country model with tariffs. Equilibrium occurs where the trade balance deviation crosses zero. The figure is constructed under $A_{N_i}=A_{T_i}=1$, $\alpha_{T_i}=\alpha_N=1/3$, and the normalization $P_{T_A}=P_{T_B}=1$. In this calibration, the free-trade equilibrium exchange rate is $e=1$, and higher tariff rates lead to a larger equilibrium exchange rate appreciation.}
+    \label{fig:2c2s1f_with_tariffs_eq}
+\end{figure}
+Substituting \eqref{eq:income_tariff} and the demand expressions into the trade balance condition $\mathrm{TB}_A = 0$ and solving for $e$ yields
+\begin{equation}
+e(\tau)
+= \frac{1}{1+\tau}
+\cdot \frac{1}{1 - \dfrac{\alpha_{T_B}\,\tau}{1+\tau}}
+\cdot \frac{\alpha_{T_B}}{\alpha_{T_A}}
+\cdot \frac{A_{T_A} L_A}{A_{T_B} L_B},
+\label{eq:e_tau}
+\end{equation}
+which is strictly decreasing in $\tau$ for $\alpha_{T_B} > 0$. An increase in tariffs by country $A$ therefore requires an appreciation of its currency relative to country $B$ in equilibrium in order to offset the tariff-induced improvement in the trade balance at a given exchange rate.
+
+\subsection{Robustness of the Two-Country Conventional Wisdom}
+\label{sec:robustness}
+
+The closed-form result in Section~\ref{sec:twocountry} relies on Cobb--Douglas preferences and linear production technologies. We now show that the qualitative prediction $de/d\tau < 0$ is independent of these assumptions: it follows from general monotonicity properties of import and export behavior that hold across a wide class of demand systems, production structures, and fiscal closures. To establish this, we avoid solving each alternative specification in closed form and instead derive the sign of $de/d\tau$ from primitive conditions on trade flows. Equilibrium is characterized by balanced trade for country $A$,
+\[
+\mathrm{TB}_A(e,\tau) \equiv X_A(e,\tau) - M_A(e,\tau) = 0,
+\]
+where $e$ denotes units of country $A$'s currency per unit of country $B$'s currency and $\tau$ is an ad valorem tariff imposed by country $A$ on imports from country $B$. Assume that $\mathrm{TB}_A(e,\tau)$ is continuously differentiable and that $\mathrm{TB}_{A,e}(e,\tau) \neq 0$ locally. By the implicit function theorem, there exists a locally unique equilibrium mapping $e(\tau)$ satisfying
+\[
+\frac{de(\tau)}{d\tau} = -\frac{\mathrm{TB}_{A,\tau}(e(\tau),\tau)}{\mathrm{TB}_{A,e}(e(\tau),\tau)}.
+\]
+Thus, $de/d\tau < 0$ follows if $\mathrm{TB}_{A,\tau}(e,\tau) > 0$ and $\mathrm{TB}_{A,e}(e,\tau) > 0$ at equilibrium. Throughout, let $X_A(e,\tau)$ and $M_A(e,\tau)$ denote the values of exports and imports measured in country $A$'s currency. Let $p_M(e,\tau)$ denote the consumer price in country $A$ of imports from country $B$, and let $p_X(e)$ denote the price of country $A$'s exports faced by consumers in country $B$, expressed in $B$'s currency. Under the producer-price normalization $P_{T_A} = P_{T_B} = 1$,
+\[
+p_M(e,\tau) = (1+\tau)e, \qquad p_X(e) = \frac{1}{e}.
+\]
+
+\begin{lemma}[Tariff monotonicity]\label{lem:tariff_monotonicity}
+Fix $e$. Suppose (i) the consumer import price $p_M(e,\tau)$ is increasing in $\tau$, and (ii) import expenditures $M_A(e,\tau)$ are decreasing in the consumer import price. In addition, suppose that any induced effect of $\tau$ on export revenues satisfies
+\[
+X_{A,\tau}(e,\tau) \ge 0, \qquad \text{or more generally,} \qquad X_{A,\tau}(e,\tau) > M_{A,\tau}(e,\tau).
+\]
+Then $\mathrm{TB}_{A,\tau}(e,\tau) > 0$.
+\end{lemma}
+
+\begin{proof}
+Differentiating $\mathrm{TB}_A(e,\tau) = X_A(e,\tau) - M_A(e,\tau)$ with respect to $\tau$ at fixed $e$ yields $\mathrm{TB}_{A,\tau}(e,\tau) = X_{A,\tau}(e,\tau) - M_{A,\tau}(e,\tau)$. By (i)--(ii), $M_{A,\tau}(e,\tau) = (\partial M_A/\partial p_M)(\partial p_M/\partial\tau) < 0$. The stated condition on $X_{A,\tau}$ then implies $\mathrm{TB}_{A,\tau}(e,\tau) > 0$.
+\end{proof}
+
+\begin{remark}
+In the baseline two-country model, the tariff applies only to imports and there is no policy response abroad, so $X_A(e,\tau)$ is independent of $\tau$ at fixed $e$. Hence $X_{A,\tau}(e,\tau) = 0$ and the condition of Lemma~\ref{lem:tariff_monotonicity} holds trivially.
+\end{remark}
+
+\begin{lemma}[Exchange-rate monotonicity]\label{lem:er_monotonicity}
+Fix $\tau$. Suppose that a depreciation of country $A$'s currency (an increase in $e$) weakly improves its trade balance, in the sense that
+\[
+M_{A,e}(e,\tau) < 0 \qquad \text{and} \qquad X_{A,e}(e,\tau) \ge 0,
+\]
+with at least one inequality strict. Then $\mathrm{TB}_{A,e}(e,\tau) > 0$.
+\end{lemma}
+
+\begin{proof}
+Differentiating $\mathrm{TB}_A(e,\tau) = X_A(e,\tau) - M_A(e,\tau)$ with respect to $e$ at fixed $\tau$ yields $\mathrm{TB}_{A,e}(e,\tau) = X_{A,e}(e,\tau) - M_{A,e}(e,\tau)$. Under the stated conditions, $-M_{A,e}(e,\tau) > 0$ and $X_{A,e}(e,\tau) \ge 0$, with at least one strict inequality, implying $\mathrm{TB}_{A,e}(e,\tau) > 0$.
+\end{proof}
+
+\begin{proposition}[Sign of exchange rate response to tariffs]\label{prop:sign_de_dtau}
+Suppose that $\mathrm{TB}_A(e,\tau)$ is continuously differentiable and that $\mathrm{TB}_{A,e}(e,\tau) \neq 0$ in a neighborhood of an equilibrium $(e^*,\tau)$ satisfying $\mathrm{TB}_A(e^*,\tau) = 0$. If the conditions of Lemmas~\ref{lem:tariff_monotonicity} and~\ref{lem:er_monotonicity} hold in that neighborhood, then the equilibrium mapping $e(\tau)$ exists locally and satisfies $de(\tau)/d\tau < 0$.
+\end{proposition}
+
+\begin{proof}
+By the implicit function theorem, there exists a locally unique function $e(\tau)$ such that $\mathrm{TB}_A(e(\tau),\tau) = 0$, and $de(\tau)/d\tau = -\mathrm{TB}_{A,\tau}(e(\tau),\tau)/\mathrm{TB}_{A,e}(e(\tau),\tau)$. Lemma~\ref{lem:tariff_monotonicity} implies $\mathrm{TB}_{A,\tau}(e,\tau) > 0$ and Lemma~\ref{lem:er_monotonicity} implies $\mathrm{TB}_{A,e}(e,\tau) > 0$, so $de(\tau)/d\tau < 0$.
+\end{proof}
+
+Lemmas~\ref{lem:tariff_monotonicity} and~\ref{lem:er_monotonicity} are satisfied under the alternative preference, technology, and policy specifications. In each case, the core monotonicity logic is preserved, and the extensions do not introduce qualitatively new channels that would overturn the baseline result. For brevity, we defer the supporting arguments to Appendix~\ref{app:robustness}.
+
+\section{The Three-Country Model}
+\label{sec:threecountry}
+
+This section develops a three-country extension of the baseline framework and uses it to study how exchange rates adjust to tariffs when trade is multilateral. The robustness established in Section~\ref{sec:robustness} makes the results that follow more striking, its breakdown in the three-country setting cannot be attributed to particular modeling choices. The violation of the conventional wisdom is instead a structural consequence of multilateral trade.
+
+\subsection{Model Setup}
+
+We develop a static three-country model with CES preferences over differentiated tradable goods and flexible exchange rates, which allows us to isolate the role of substitution patterns across foreign suppliers.
+
+\subsubsection{Firms}
+
+Each country $i \in \{A,B,C\}$ produces one distinct tradable good $T_i$ and one non-tradable good $N_i$ using labor as the sole factor of production. Technologies are linear:
+\begin{equation}
+Y_{T_i} = A_{T_i} L_{T_i}, \qquad Y_{N_i} = A_{N_i} L_{N_i}, \qquad L_{T_i} + L_{N_i} = L_i,
+\end{equation}
+where $A_{T_i}$ and $A_{N_i}$ denote sectoral productivities and $L_i$ is the labor endowment in country $i$. Markets are perfectly competitive. As in the two-country model, we normalize the producer price of each tradable good to one, $P_{T_i} = 1$, and maintain this normalization throughout. Under linear technologies and perfect competition, firms earn zero profits and wages are equalized across sectors within each country. Equilibrium wages therefore satisfy $w_i = A_{T_i}$, with nontradable prices pinned down by $P_{N_i} = A_{T_i}/A_{N_i}$, exactly as in the two-country model.
+
+\subsubsection{Households and Tariffs}
+
+Households in each country $i \in \{A,B,C\}$ consume all three tradable goods and a locally produced non-tradable good. Preferences are nested: households allocate income between a tradable bundle and a non-tradable good via Cobb--Douglas, and substitute across tradable varieties via a CES aggregator:
+\[
+C_i = C_{T_i}^{\alpha_T}\, C_{N_i}^{\alpha_N}, \qquad C_{T_i} = \left[ \sum_{j \in \{A,B,C\}} \alpha_{T_j}^{1/\sigma} C_{T_j i}^{\frac{\sigma-1}{\sigma}} \right]^{\frac{\sigma}{\sigma-1}},
+\]
+where $\alpha_T = \alpha_{T_A} + \alpha_{T_B} + \alpha_{T_C}$, $\alpha_N = 1 - \alpha_T$, $\alpha_{T_j} > 0$, and $\sigma > 0$ is the elasticity of substitution across tradable varieties. The outer Cobb--Douglas layer fixes the expenditure share on the tradable bundle at $\alpha_T$ regardless of relative prices; the inner CES aggregator governs substitution across country varieties of tradables. Preference parameters are assumed to be identical across countries. The Cobb--Douglas model of Section~\ref{sec:twocountry} arises as the special case $\sigma = 1$, under which the inner CES collapses to Cobb--Douglas across all four goods.
+
+Let $e_{ij}$ denote the nominal exchange rate defined as units of country $i$'s currency per unit of country $j$'s currency, with $e_{ii} = 1$ and the no-arbitrage condition $e_{ij} = e_{ik} e_{kj}$. In the three-country model the full exchange rate matrix is determined by two free bilateral rates, which we take to be $e_{AB}$ and $e_{AC}$; all other rates follow from no-arbitrage. Country $i$ applies an ad valorem tariff $\tau_{ij} \ge 0$ to consumption of tradable good $T_j$. Under the producer-price normalization $P_{T_j} = 1$, the consumer price of $T_j$ in country $i$ is $(1+\tau_{ij})e_{ij}$, with the tariff wedge $\tau_{ij} e_{ij}$ collected as government revenue and rebated lump-sum to households. The household budget constraint is
+\begin{equation}
+w_i L_i + T_i^{\mathrm{rev}} = \sum_{j \in \{A,B,C\}} (1+\tau_{ij})\, e_{ij}\, C_{T_j i} + P_{N_i}\, C_{N_i},
+\label{eq:hh_budget_ces}
+\end{equation}
+where $T_i^{\mathrm{rev}} = \sum_{j} \tau_{ij} e_{ij} C_{T_j i}$. Letting $I_i = w_i L_i + T_i^{\mathrm{rev}}$ denote disposable income, the outer Cobb--Douglas layer allocates a fixed share $\alpha_T$ of income to the tradable bundle, and the inner CES demand gives
+\begin{align}
+C_{T_j i} &= \frac{\alpha_{T_j}^\sigma \bigl((1+\tau_{ij})e_{ij}\bigr)^{-\sigma}}{\sum_{k} \alpha_{T_k}^\sigma \bigl((1+\tau_{ik})e_{ik}\bigr)^{1-\sigma}}\, \alpha_T\, I_i, \label{eq:ces_tradable_demand} \\[4pt]
+C_{N_i} &= \frac{\alpha_N\, I_i}{P_{N_i}}. \label{eq:ces_nontradable_demand}
+\end{align}
+The CES price index for the tradable bundle and the aggregate price level are
+\begin{equation}
+P_{T_i} = \left[ \sum_{j \in \{A,B,C\}} \alpha_{T_j}^\sigma \bigl((1+\tau_{ij})e_{ij}\bigr)^{1-\sigma} \right]^{\frac{1}{1-\sigma}}, \qquad P_i = P_{T_i}^{\alpha_T}\, P_{N_i}^{\alpha_N},
+\label{eq:price_level_ces}
+\end{equation}
+and the bilateral real exchange rate between countries $i$ and $j$ is $q_{ij} \equiv e_{ij} P_j / P_i$. Since the outer Cobb--Douglas layer fixes expenditure shares at $\alpha_{T_j}$ as a fraction of total income, substituting the demand expressions into the tariff revenue formula and solving for $I_i$ yields the closed-form income equation
+\begin{equation}
+I_i = \frac{w_i L_i}{1 - \displaystyle\sum_{j \in \{A,B,C\}} \alpha_{T_j}\, \dfrac{\tau_{ij}}{1+\tau_{ij}}},
+\label{eq:income_ces}
+\end{equation}
+which is exact for all $\sigma$. Note that \eqref{eq:income_ces} is the natural generalization of the two-country income formula \eqref{eq:income_tariff}: under free trade all $\tau_{ij} = 0$ and $I_i = w_i L_i$, while positive tariffs raise disposable income above wage income through the rebated revenue.
+
+\subsubsection{Market Clearing and Equilibrium}
+\label{sec:equilibrium}
+
+For each country $i \in \{A,B,C\}$, non-tradable goods are produced and consumed domestically. Market clearing requires $Y_{N_i} = C_{N_i}$, which using $Y_{N_i} = A_{N_i} L_{N_i}$, $P_{N_i} = w_i/A_{N_i}$, and CES demand gives equilibrium labor allocations
+\begin{equation}
+\frac{L_{N_i}}{L_i} = \frac{\alpha_N^\sigma P_{N_i}^{1-\sigma}}{\alpha_N^\sigma P_{N_i}^{1-\sigma} + \sum_{j} \alpha_{T_j}^\sigma \bigl((1+\tau_{ij})e_{ij}\bigr)^{1-\sigma}}, \qquad \frac{L_{T_i}}{L_i} = 1 - \frac{L_{N_i}}{L_i}.
+\end{equation}
+Each tradable variety $T_i$ is produced only in country $i$ and consumed in all countries. World market clearing for tradable $T_i$ requires $Y_{T_i} = \sum_{k} C_{T_i k}$, which using $Y_{T_i} = A_{T_i} L_{T_i}$ and \eqref{eq:ces_tradable_demand} gives
+\begin{equation}
+A_{T_i} L_{T_i} = \sum_{k \in \{A,B,C\}} I_k \frac{\alpha_{T_i}^\sigma \bigl((1+\tau_{ki})e_{ki}\bigr)^{-\sigma}}{D_k}, \qquad i \in \{A,B,C\},
+\label{eq:tradable_market_clearing_ces}
+\end{equation}
+where $D_k = \alpha_N^\sigma P_{N_k}^{1-\sigma} + \sum_{m} \alpha_{T_m}^\sigma \bigl((1+\tau_{km})e_{km}\bigr)^{1-\sigma}$ is the CES price index denominator for country $k$. Note that $I_k$ here is the full disposable income from \eqref{eq:income_ces}, which already incorporates tariff revenue. Trade balances are measured in each country's own currency. Exports of $T_i$ from country $i$ to country $k$ are valued at $e_{ik} C_{T_i k}$ in $i$'s currency, while imports of $T_j$ into country $i$ are valued at $e_{ij} C_{T_j i}$. The trade balance for country $i$ is therefore
+\begin{equation}
+\mathrm{TB}_i = \sum_{k \neq i} e_{ik}\, C_{T_i k} - \sum_{j \neq i} e_{ij}\, C_{T_j i}, \qquad i \in \{A,B,C\}.
+\label{eq:tb_ces_def}
+\end{equation}
+An equilibrium is a pair of nominal exchange rates $\{e_{AB}, e_{AC}\}$ such that $\mathrm{TB}_i = 0$ for all $i$. With three countries, only two of the three trade-balance conditions are independent by Walras' Law, so the system \eqref{eq:tb_ces_def} evaluated at $i \in \{B, C\}$ pins down the two free exchange rates, with $\mathrm{TB}_A = 0$ following automatically. All remaining exchange rates are recovered via no-arbitrage: $e_{BA} = 1/e_{AB}$, $e_{CA} = 1/e_{AC}$, and $e_{BC} = e_{AC}/e_{AB}$.
+
+\subsubsection{Equilibrium Visualization}
+
+Figure~\ref{fig:3c2s1f_eq} illustrates equilibrium determination in a symmetric baseline calibration under Cobb-Douglas preferences ($\sigma = 1$), with $A_{T_i} = A_{N_i} = 1$ and $\alpha_{T_A} = \alpha_{T_B} = \alpha_{T_C} = \alpha_N = 1/4$. The figure plots, in $(e_{AB}, e_{AC})$ space, the loci of exchange rates that satisfy $\mathrm{TB}_B = 0$ and $\mathrm{TB}_C = 0$. By symmetry, the two loci are mirror images around the 45-degree line and intersect at $e_{AB} = e_{AC} = 1$. The figure also displays iso-trade-balance curves that partition the exchange-rate space according to the sign of trade imbalances. The bottom-left region corresponds to combinations of $(e_{AB}, e_{AC})$ for which both $B$ and $C$ run trade surpluses against $A$, reflecting an overvaluation of $A$'s currency relative to both foreign currencies; the top-right region corresponds to the reverse. The remaining two quadrants feature offsetting imbalances, with one foreign country in surplus and the other in deficit.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3c2s1f_CD_free_trade.pdf}
+    \caption{Three-country model: balanced-trade loci in $(e_{AB}, e_{AC})$ space under free trade. Parameters: $A_{T_i} = A_{N_i} = 1$, $\alpha_{T_i} = \alpha_N = 1/4$, $P_{T_i} = 1$. The equilibrium is at $e_{AB} = e_{AC} = 1$ by symmetry.}
+    \label{fig:3c2s1f_eq}
+\end{figure}
+
+\subsection{Tariff Experiments}
+
+This section studies the exchange rate response to tariffs in the three-country model. We consider three tariff configurations that progressively depart from the two-country benchmark: uniform tariffs, isolated tariffs, and bilateral trade war.
+
+\subsubsection{Uniform Tariffs: The Two-Country Analogue}
+
+We begin by considering a uniform tariff imposed by country $A$ on imports from both foreign countries, $B$ and $C$. Let $\tau \ge 0$ denote the common tariff applied to imports of both $T_B$ and $T_C$, so that $\tau_{AB} = \tau_{AC} = \tau$ and all other tariff rates are zero. With linear technologies and competitive firms, producer prices remain normalized at $P_{T_i} = 1$, wages satisfy $w_i = A_{T_i}$, and nontradable prices $P_{N_i} = A_{T_i}/A_{N_i}$ are unchanged. The tariff applies only to consumer prices in country $A$ and not to producer prices received abroad, so production decisions and sectoral labor allocations are unaffected. Figure~\ref{fig:3c2s1f_CD_uniform_tariff} plots the trade-balance loci for countries $B$ and $C$ under free trade ($\tau = 0$, solid lines) and a uniform tariff ($\tau = 1$, dashed lines), under the symmetric baseline calibration $A_{T_i} = A_{N_i} = 1$ and $\alpha_{T_i} = \alpha_N = 1/4$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3c2s1f_CD_uniform_tariff.pdf}
+    \caption{Three-country model with uniform tariffs: trade-balance loci under free trade (solid) and uniform tariff $\tau = 1$ (dashed). Parameters: $A_{T_i} = A_{N_i} = 1$, $\alpha_{T_i} = \alpha_N = 1/4$, $\sigma = 1$.}
+    \label{fig:3c2s1f_CD_uniform_tariff}
+\end{figure}
+Introducing a uniform tariff shifts both trade-balance loci outward relative to the 45-degree line, reflecting the reduction in import demand at any given exchange rate, and the new equilibrium corresponds to an appreciation of country $A$'s currency relative to both foreign currencies. Because the tariff is symmetric across foreign suppliers, country $A$'s currency appreciates by the same amount against $e_{AB}$ and $e_{AC}$. Changes in the elasticity of substitution affect the magnitude of the appreciation but not its sign. This configuration therefore provides the natural three-country analogue to the two-country benchmark: uniform tariffs replicate the conventional result unambiguously.
+
+\subsubsection{Isolated Tariff: The Ambiguous Case}
+
+We next consider an isolated tariff imposed by country $A$ on imports from country $B$ only, so that $\tau_{AB} = \tau > 0$ and $\tau_{AC} = 0$. This breaks symmetry across foreign suppliers and introduces an adjustment margin absent in the uniform-tariff case. Figure~\ref{fig:3c2s1f_CD_isolated_tariff} plots the balanced-trade loci comparing free trade with an isolated tariff ($\tau_{AB} = 1$, dashed lines).
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3c2s1f_CD_isolated_tariff.pdf}
+    \caption{Three-country model with an isolated tariff on imports from $B$: trade-balance loci under free trade (solid) and isolated tariff $\tau_{AB} = 1$ (dashed). Parameters as in Figure~\ref{fig:3c2s1f_CD_uniform_tariff}.}
+    \label{fig:3c2s1f_CD_isolated_tariff}
+\end{figure}
+The tariff shifts country $B$'s balanced-trade locus outward, reflecting reduced access to $A$'s market, while country $C$'s locus shifts inward. As a result, $e_{AB}$ unambiguously falls — country $A$'s currency appreciates against $B$'s — whereas the sign of the response of $e_{AC}$ is no longer pinned down and depends on the relative magnitude of the two shifts. The ambiguity in $e_{AC}$ reflects two opposing general-equilibrium forces. The first is a trade-diversion effect: imports into $A$ are reallocated away from $B$ toward $C$, raising demand for $C$'s exports and putting appreciation pressure on $C$'s currency. The second is a trade-redirection effect: as $B$ loses access to $A$'s market, it reallocates exports toward $C$, increasing $C$'s imports and generating depreciation pressure on $C$'s currency. The net exchange-rate response depends on which force dominates, and the relative strength of these channels is governed by the elasticity of substitution $\sigma$ between goods produced by $B$ and $C$.
+
+When $\sigma$ is low, trade diversion is muted and the redirection channel dominates, so the equilibrium remains close to the two-country benchmark and country $A$'s currency does not depreciate relative to $C$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3c2s1f_CES05_isolated_tariff.pdf}
+    \caption{Three-country model with an isolated tariff and CES utility $\sigma = 0.5$. Parameters otherwise as in Figure~\ref{fig:3c2s1f_CD_uniform_tariff}.}
+    \label{fig:3c2s1f_CES05_isolated_tariff}
+\end{figure}
+Figure~\ref{fig:3c2s1f_CES05_isolated_tariff} illustrates this case for $\sigma = 0.5$. When $\sigma$ is high, trade diversion toward country $C$ becomes quantitatively important and the inward shift of $C$'s balanced-trade locus dominates, so country $A$'s currency depreciates relative to $C$, reversing the conventional two-country prediction.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3c2s1f_CES2_isolated_tariff.pdf}
+    \caption{Three-country model with an isolated tariff and CES utility $\sigma = 2$. Parameters otherwise as in Figure~\ref{fig:3c2s1f_CD_uniform_tariff}.}
+    \label{fig:3c2s1f_CES2_isolated_tariff}
+\end{figure}
+Figure~\ref{fig:3c2s1f_CES2_isolated_tariff} illustrates this case for $\sigma = 2$. This case highlights the key deviation from the two-country benchmark. Country $A$'s tariff on $B$ continues to generate an appreciation of $A$'s currency relative to $B$, consistent with conventional intuition, but once a third country is present the exchange rate between $A$ and $C$ becomes ambiguous. When country $C$ is interpreted as a proxy for the rest of the world, the model implies that bilateral appreciation against the tariffed partner can coexist with depreciation against untariffed trading partners.
+
+\subsubsection{Bilateral Trade War: The Amplification Case}
+
+Finally, we consider a bilateral trade war in which countries $A$ and $B$ impose reciprocal tariffs on one another, so that $\tau_{AB} = \tau_{BA} = \tau > 0$, while country $C$ remains untaxed. Relative to the isolated-tariff case, symmetry is restored between $A$ and $B$, which are now jointly engaged in tariff escalation from the perspective of the uninvolved third country. Figure~\ref{fig:3c2s1f_CD_trade_war} plots the balanced-trade loci for countries $A$ and $B$ in $(e_{AC}, e_{BC})$ space, comparing free trade (solid lines) with a bilateral trade war ($\tau_{AB} = \tau_{BA} = 1$, dashed lines).
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{3c2s1f_CD_trade_war.pdf}
+    \caption{Three-country model with reciprocal tariffs between $A$ and $B$: trade-balance loci in $(e_{AC}, e_{BC})$ space under free trade (solid) and trade war $\tau_{AB} = \tau_{BA} = 1$ (dashed). Parameters as in Figure~\ref{fig:3c2s1f_CD_uniform_tariff}.}
+    \label{fig:3c2s1f_CD_trade_war}
+\end{figure}
+The imposition of reciprocal tariffs shifts both countries' balanced-trade loci outward in $(e_{AC}, e_{BC})$ space. Because $A$ and $B$ are symmetric in this configuration, the bilateral exchange rate $e_{AB}$ is unchanged — adjustment occurs entirely through a joint depreciation of both currencies relative to country $C$. The magnitude of this depreciation is increasing in the elasticity of substitution: higher $\sigma$ amplifies the outward shift of the balanced-trade loci and produces a larger joint depreciation of $A$ and $B$ relative to $C$. In this sense, bilateral trade wars unambiguously depreciate the currencies of both warring parties against uninvolved third countries, even when the bilateral exchange rate between the warring parties remains stable.
+
+\subsection{Economic Mechanisms and Extensions}
+
+The tariff experiments illustrate that the standard two-country intuition for exchange-rate adjustment need not extend to multilateral trade environments. In a three-country setting, an isolated tariff imposed by country $A$ on imports from $B$ generates opposing trade-diversion and trade-redirection forces whose relative strength determines the sign and magnitude of the exchange-rate response. The bilateral trade war case resolves this ambiguity: when both $A$ and $B$ impose reciprocal tariffs, the two forces reinforce one another from $C$'s perspective, producing an unambiguous joint depreciation of $A$ and $B$ relative to $C$.
+
+The relative importance of the trade-diversion channel depends on several features that can be incorporated in richer models. First, the elasticity of substitution between goods produced by $B$ and $C$ in $A$'s market is the central parameter: high substitutability means that small relative price changes induce large reallocations of demand toward untaxed suppliers, amplifying trade diversion. This mechanism can be formalized using nested CES preferences, where substitution between foreign suppliers is governed by a higher elasticity than substitution between domestic and foreign goods, and our baseline CES structure captures this in reduced form through the single parameter $\sigma$. Second, the strength of the diversion channel depends on expenditure patterns. When goods from country $C$ account for a large share of $A$'s import basket, relative price changes translate into larger demand reallocations toward $C$. Such asymmetries arise naturally from heterogeneous preference weights $\alpha_{T_j}$ across tradable varieties, and can be further captured through non-homothetic demand structures that allow import shares to vary with income. Third, supply-side considerations matter. Greater competitiveness of country $C$, arising from higher tradable productivity $A_{T_C}$ or lower marginal costs, allows $C$'s exports to expand in response to diverted demand without a sharp deterioration in its terms of trade, strengthening the appreciation channel. Conversely, capacity constraints or increasing marginal costs in country $C$ would limit export expansion and dampen the diversion effect. 
+
+Finally, initial trade patterns may also shape the strength of the trade-redirection channel. When the elasticity of demand in country $C$ for goods from $B$ is low, or when $C$'s import capacity is limited, the redirection of $B$'s exports following the tariff has a muted effect on $C$'s import prices and hence on depreciation pressure on $C$'s currency. This mechanism is related to the trade deflection literature \citep{bown2007}, who document empirically that import restrictions by one country redirect exports toward third market. Larger tariff shocks amplify the expenditure-switching and trade-diversion channels by inducing larger reallocations of trade flows \citep{amiti2019}.
+
+\section{Calibration Exercise}
+\label{sec:calibration}
+
+We calibrate the three-country model to offer quantitative guidance on the mechanisms identified in Section~\ref{sec:threecountry}, using the 2025 US reciprocal tariff episode as the application. In this episode, the United States imposed large tariffs on imports from a range of trading partners, with particularly high rates directed at China and China retaliating in kind, culminating in effective bilateral tariff rates exceeding 100 percent by mid-2025. We consider three alternative configurations for the third economy $C$: the European Union, representing a large bloc of advanced-economy trading partners with deep trade links to both the US and China; Vietnam, representing a smaller economy that has emerged as a significant node for trade redirection away from the direct US-China bilateral linkage; and the rest of the world aggregated as a single block.
+
+The model is deliberately stylized, and the calibration exercise should be interpreted not as a realistic simulation of the episode but as an illustration of the relative importance of the trade-diversion and trade-redirection channels under parameter configurations that are broadly consistent with its observable features. The parameters we vary across configurations are the expenditure shares $\{\alpha_{T_A}, \alpha_{T_B}, \alpha_{T_C}, \alpha_N\}$, which govern bilateral trade intensities; the labor endowments $\{L_A, L_B, L_C\}$, which govern relative economic size; and the tariff rates $\{\tau_{AB}, \tau_{BA}\}$ for the trade war experiment or $\tau_{AB}$ alone for the isolated tariff case. We set productivity parameters to $A_{T_i} = A_{N_i} = 1$ for all economies, so that relative economic size is captured entirely through the endowments $L_i$.
+
+
+\subsection{Tariff Regimes}
+We consider two tariff regimes corresponding to distinct phases of the 2025 US-China trade conflict, measured as incremental tariff rates above the pre-2025 baseline. The US is country $A$, China is country $B$, and the third country $C$ varies across configurations. Table~\ref{tab:tariff_regimes} summarizes the tariff rates across both regimes and configurations; full details of the rate construction are provided in Appendix~\ref{app:tariffs}.
+
+Regime 1 imposes a unilateral US tariff on China with no retaliation and no tariff on $C$, mapping directly onto the isolated tariff experiment of Section~\ref{sec:threecountry}. Regime 2 represents peak bilateral escalation between the US and China; the rates are not exactly symmetric but are of similar magnitude and map naturally onto the trade war experiment. Furthermore, regime 2 includes $\tau_{AC} = 0.10$ across all configurations in this regime, reflecting the universal baseline tariff that remained in place for non-China trading partners after the April 9 pause.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{llcccccc}
+\hline
+& & \multicolumn{2}{c}{US-China} & \multicolumn{2}{c}{US-$C$} & \multicolumn{2}{c}{$C$-US} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Regime & Description & $\tau_{AB}$ & $\tau_{BA}$ & $\tau_{AC}^{\mathrm{EU}}$ & $\tau_{AC}^{\mathrm{VNM}}$ & $\tau_{CA}$ & Type \\
+\hline
+1 & Fentanyl-related tariffs        & 0.20 & 0.00 & 0.00 & 0.00 & 0.00 & Isolated \\
+2 & Peak escalation                 & 1.45 & 1.25 & 0.10 & 0.10 & 0.00 & Trade war \\
+\hline
+\end{tabular}
+\caption{Tariff regimes used in the calibration exercise. Rates are incremental ad valorem tariffs above the pre-2025 baseline. $\tau_{AB}$ is the US tariff on China, $\tau_{BA}$ is the Chinese tariff on the US, $\tau_{AC}$ is the US tariff on $C$, and $\tau_{CA}$ is $C$'s tariff on the US. The ROW configuration uses the same $\tau_{AC}$ as EU and Vietnam.}
+\label{tab:tariff_regimes}
+\end{table}
+
+\subsection{Preference and Endowment Calibration}
+
+Expenditure shares $\{\alpha_{T_A}, \alpha_{T_B}, \alpha_{T_C}, \alpha_N\}$ are calibrated from 2024 US bilateral goods import data, rescaled to a total expenditure basis using the US import penetration ratio. Labor endowments are set proportional to 2024 GDP at purchasing power parity (PPP), normalizing $L_A = 1$, giving $L_B = 1.21$ for China, $L_C = 0.86$ for the EU, $L_C = 0.055$ for Vietnam, and $L_C = 3.51$ for the ROW aggregate. Productivity parameters are set to $A_{T_i} = A_{N_i} = 1$ throughout. The implied calibration targets are reported in Table~\ref{tab:calibration}; full details are provided in Appendix~\ref{app:calibration}.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lccccccc}
+\hline
+Configuration & $\alpha_{T_A}$ & $\alpha_{T_B}$ & $\alpha_{T_C}$ & $\alpha_N$ & $L_C / L_A$ & $\sigma$ \\
+\hline
+US-China-EU  & 0.097 & 0.165 & 0.138 & 0.600 & 0.860  & 6 \\
+US-China-VNM & 0.138 & 0.236 & 0.026 & 0.600 & 0.055  & 8 \\
+US-China-ROW & 0.034 & 0.057 & 0.309 & 0.600 & 3.510  & 2 \\
+\hline
+\end{tabular}
+\caption{Calibration by third-country configuration. $\alpha_N = 0.60$ is fixed throughout. Tradable shares satisfy $\alpha_{T_j} = 0.40 \times s_j / (s_A + s_B + s_C)$, where $s_j$ is country $j$'s 2024 world goods export share (WTO); $\alpha_{T_A}$ and $\alpha_{T_B}$ vary across configurations because the normalization depends on $s_C$. Labor endowments are proportional to 2024 PPP GDP \citep{imf2024weo}, normalizing $L_A = 1$. $\sigma$ is the elasticity of substitution within the tradable bundle; see below for justification.}
+\label{tab:calibration}
+\end{table}
+
+For the elasticity of substitution $\sigma$, we assign a value to each configuration based on the nature of the bilateral trading relationship between the third economy and China in US import markets. For the US-China-EU configuration we set $\sigma = 6$, anchored on the cross-origin central estimate from \citet{amiti2019impact}, which yields an estimated elasticity of about six across a broad range of manufactured goods imported by the US. This value reflects the increasing overlap between European and Chinese tradables in US import markets, where Chinese manufacturing has progressively entered product categories previously dominated by European exporters. For the US-China-Vietnam configuration we set $\sigma = 8$, consistent with Vietnam's integration into Chinese supply chains as an assembly and re-export platform \citep{fajgelbaum2024trade}; Vietnamese and Chinese exports to the US are close substitutes at the product level, warranting an elasticity above the cross-origin average. For the US-China-ROW configuration we set $\sigma = 2$, consistent with the attenuation of bilateral substitution patterns by aggregation across a large and heterogeneous set of trading partners \citep{fajgelbaum2020return, feenstra2018}.\footnote{Appendix~\ref{app:extended_calibrations} extends this analysis to six additional third-country configurations -- Japan, South Korea, Mexico, Canada, Taiwan, and India -- and provides a unified parameter table covering all nine configurations.}
+
+\subsection{Results and Comparison With Data}
+
+Figure~\ref{fig:results} reports model-implied bilateral exchange rate changes alongside realized data for both regimes and all three configurations, with values labeled on each bar. The data refer to percent changes\footnote{We report $100 \times (\text{level}_t / \text{level}_0 - 1)$ relative to the 2024 annual average.} in observed bilateral rates relative to the 2024 annual average, using monthly averages for March 2025 (Regime~1) and April 2025 (Regime~2). For the ROW configuration, we use the Federal Reserve Advanced Economy trade-weighted dollar index (H.10 release) rather than a broad index.\footnote{This choice is motivated by the need to exclude China from the third-country exchange rate: a broad trade-weighted index would assign substantial weight to the RMB. Restricting to advanced economies removes this contamination, at the cost of excluding emerging market economies from the ROW aggregate, which is a limitation of this configuration.}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{calibration_results.pdf}
+\caption{Model-implied and realized bilateral exchange rate changes (\%) by configuration and tariff regime. Blue bars show model predictions (percent change relative to free trade); red bars show realized percent changes relative to the 2024 annual average. Each panel corresponds to one third-country configuration; bars show $\Delta e_{AB}$ (USD/RMB), $\Delta e_{AC}$ (USD/$C$), and $\Delta e_{BC}$ (RMB/$C$). Positive values denote depreciation of the first currency. Configurations are US--China--EU ($\sigma=6$), US--China--Vietnam ($\sigma=8$), and US--China--ROW ($\sigma=2$).}
+\label{fig:results}
+\end{figure}
+
+Under Regime~1, the RMB depreciates against both the dollar and the third-country currency in all three configurations, mapping onto the isolated unilateral tariff case of Section~\ref{sec:threecountry} with dollar appreciation against the RMB and a smaller appreciation against the third currency. Regime~2 is more nuanced: the model predicts dollar \emph{depreciation} against the RMB in the EU configuration ($\Delta e_{AB} = +1.10\%$) and a near-zero USD/RMB change in the Vietnam configuration ($\Delta e_{AB} = +0.22\%$), reflecting that the bilateral trade war mechanism tilts toward USD weakness at moderate-to-high elasticities when the third-country tariff ($\tau_{AC} = 0.10$) redirects some expenditure back toward US goods; the ROW configuration continues to predict dollar appreciation against the RMB.
+The most salient finding for the USD--third currency rate is that the model correctly predicts dollar depreciation against the euro and, in trade-weighted terms, against advanced economies in Regime~2. In the data, the dollar depreciated against the euro by 3.36 percent in April 2025 and in trade-weighted terms against advanced economies by 2.18 percent; the model predicts 7.29 and 0.87 percent respectively, matching the sign in both cases, with the EU prediction overstating the realized depreciation. For the Vietnam configuration, the corrected data show dollar appreciation against the VND of 3.06 percent in Regime~2, consistent with the broader pattern among non-safe-haven currencies in which financial risk-off flows and dollar safe-haven demand dominated the trade-balance channel during the April 2025 escalation.
+
+For the USD--third currency rate under Regime~1, the model predicts small dollar appreciations against third-country currencies. For the Vietnam configuration this prediction is borne out in the data: both the model ($\Delta e_{AC} = -0.55\%$) and the data ($\Delta e_{AC} = -1.93\%$) indicate dollar appreciation against the VND, with the model understating the realized magnitude. For the ROW configuration the directional prediction is less clear-cut, consistent with the theoretical ambiguity of Section~\ref{sec:threecountry}: competing trade-diversion and trade-redirection forces make the sign of $\Delta e_{AC}$ sensitive to trade patterns. For the USD/RMB rate, the model overpredicts dollar appreciation under Regime~1 across all three configurations. Under Regime~2, the data show a modest dollar appreciation of 1.51 percent against the RMB, whereas the model predicts dollar depreciation in the EU and Vietnam configurations and dollar appreciation in the ROW configuration; the sign mismatch for the EU and Vietnam configurations is consistent with safe-haven demand for dollars dominating the trade-balance channel at short horizons, a dynamic the model abstracts from by design. These are expected limitations in a model calibrated for sign predictions of multilateral exchange rate movements rather than precise magnitudes of bilateral USD/RMB dynamics.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper studies the exchange-rate effects of tariffs in the smallest multilateral trade environment. We first establish that in a canonical two-country model tariffs unambiguously appreciate the tariff-imposing country's currency, and show that this result holds across a wide range of model specifications. We then show that this prediction is not robust to the introduction of a third country. When tariffs are applied selectively, expenditure may be diverted toward imports from an untariffed supplier rather than toward domestic goods, generating opposing trade-diversion and trade-redirection forces whose relative strength depends on the elasticity of substitution across foreign suppliers. The exchange-rate response to selective tariffs is therefore ambiguous: bilateral appreciation against the tariffed partner can coexist with depreciation against untariffed trading partners, so that the tariff-imposing country's currency may depreciate in multilateral terms even as it appreciates bilaterally. In the bilateral trade war case, where both countries impose tariffs on one another, this ambiguity is resolved and both currencies depreciate unambiguously relative to the uninvolved third country. We calibrate the model to the 2025 US-China tariff episode and find that the model correctly predicts the direction of dollar depreciation against third-country currencies during the peak escalation period, consistent with the bilateral trade war mechanism.
+
+These results have direct implications for interpreting exchange-rate movements during tariff episodes. The direction of the multilateral exchange-rate response depends on the size of the tariff shock but also on the structure of trade, specifically on the substitutability between tariffed and untariffed exporters and on the initial pattern of bilateral trade flows. Exchange-rate appreciation against a bilateral trading partner should therefore not be taken as evidence of broader currency strength, and the conventional two-country wisdom should not be invoked to alone attribute observed multilateral depreciation to financial or non-trade factors.
+
+Several directions for future work suggest themselves. A natural extension would embed the mechanisms identified here in a quantitative multi-country trade model with richer bilateral trade flow patterns, input-output linkages, and heterogeneous elasticities across sectors and country pairs. A further extension would introduce nominal rigidities and a financial account, allowing the real exchange rate channels to interact with the monetary and portfolio balance dynamics that dominate exchange rate movements at shorter horizons. Incorporating these features into a unified framework would bring the conceptual results established here closer to a quantitative tool suitable for policy analysis.
+
+\newpage
+
+\addcontentsline{toc}{section}{\bf \small{References}} 
+% \bibliographystyle{apa}
+\bibliography{references}
+
+\newpage
+\begin{appendix}
+
+\section{Two-Country Conventional Wisdom Robustness}
+\label{app:robustness}
+
+\paragraph{Alternative demand-side specifications.}
+We first examine the robustness of Lemmas~\ref{lem:tariff_monotonicity} and~\ref{lem:er_monotonicity} under a broad class of standard demand systems. The key observation is that tariffs and exchange rates affect demand only through relative prices. As long as import demand is decreasing in its consumer price and export revenues are weakly increasing in export competitiveness, the monotonicity conditions required for the sign of $de/d\tau$ are satisfied. Consider CES (Armington) preferences over tradable goods with elasticity of substitution $\sigma > 0$, with utility separable between tradables and non-tradables. Under the producer-price normalization, the consumer price of imports in country $A$ is $p_M(e,\tau) = (1+\tau)e$. For any $\sigma > 0$, Marshallian import demand is strictly decreasing in $p_M(e,\tau)$, so at a fixed exchange rate an increase in $\tau$ reduces import expenditures while export revenues are locally unaffected, verifying the conditions of Lemma~\ref{lem:tariff_monotonicity}. Holding $\tau$ fixed, a depreciation raises the domestic-currency price of imports and lowers the foreign-currency price of exports, implying falling import expenditures and weakly rising export revenues, which verifies Lemma~\ref{lem:er_monotonicity}. The same logic applies to nested CES preferences that allow for separate elasticities between tradables and non-tradables and across tradable varieties. While tariff-induced income effects may reallocate expenditure between tradables and non-tradables, the monotonic relationship between import demand and its consumer price is preserved as long as the elasticity of substitution across tradables is positive, and exchange-rate movements continue to generate standard expenditure-switching effects. Finally, under quasi-linear preferences, income effects from tariff revenue are eliminated entirely. Import demand depends only on relative prices and remains decreasing in the consumer import price, while export revenues respond monotonically to changes in export competitiveness. The conditions of Lemmas~\ref{lem:tariff_monotonicity} and~\ref{lem:er_monotonicity} therefore hold by construction.
+
+\paragraph{Alternative production-side specifications.}
+We next examine alternative production structures that allow wages and output to adjust endogenously. The common feature of these specifications is that tariffs and exchange rates affect production only through their effects on demand and relative prices. Consider production technologies with diminishing returns to labor or sector-specific factors. Under perfect competition, wages adjust to clear labor markets and output responds endogenously to demand shifts. Holding the exchange rate fixed, a higher tariff continues to raise the consumer price of imports in country $A$ and reduce import expenditures. Although wages and output adjust in general equilibrium, these adjustments do not overturn the import-compression effect of the tariff. In particular, since the tariff does not introduce any export-side wedge or subsidy, export revenues are not adversely affected at fixed $e$, so the conditions of Lemma~\ref{lem:tariff_monotonicity} remain satisfied. Holding the tariff fixed, a depreciation raises the domestic-currency price of imports and lowers the foreign-currency price of exports. Under standard regularity conditions, import expenditures fall and export revenues weakly increase, even when wages and output adjust endogenously. Sectoral wage adjustments induced by demand shifts reinforce, rather than offset, the expenditure-switching effects as long as higher export demand raises export-sector wages or output without generating a sufficiently strong increase in marginal costs that would reverse the competitiveness gain. We rule out such counterfactual cases by assuming that export supply is weakly increasing in export prices, under which the requirements of Lemma~\ref{lem:er_monotonicity} are satisfied. A similar argument applies when export supply is endogenous due to capacity constraints or increasing marginal costs: provided that export supply is weakly increasing in the export price faced by foreign consumers, a depreciation raises the value of exports measured in country $A$'s currency while higher import prices reduce import expenditures, so $\mathrm{TB}_{A,e}(e,\tau) > 0$ continues to hold locally.
+
+\paragraph{Alternative fiscal closures and other specifications.}
+Finally, we briefly examine additional modeling choices commonly considered in the literature. These specifications differ in how income effects, pricing, or market structure are treated, but they leave unchanged the relative-price channels through which tariffs and exchange rates affect trade flows in the medium to long run. First, consider alternative treatments of tariff revenue. Whether tariff revenue is rebated lump-sum, wasted, transferred abroad, or used to finance government spending, a tariff continues to raise the consumer price of imports at a fixed exchange rate. As long as import demand is decreasing in its consumer price, import expenditures fall at the prevailing exchange rate while export revenues are not adversely affected locally, and a depreciation continues to raise import prices and lower export prices. Hence the conditions of Lemmas~\ref{lem:tariff_monotonicity} and~\ref{lem:er_monotonicity} hold under standard fiscal closures. Second, consider alternative market structures and pricing assumptions, such as monopolistic competition in tradables or local- and dominant-currency pricing. These assumptions primarily affect the degree and timing of exchange rate passthrough. In the short run, incomplete passthrough under dominant-currency pricing may attenuate expenditure-switching effects and delay the adjustment of trade flows. However, once prices adjust, relative prices faced by consumers reflect both the tariff wedge and the exchange rate, and in this flexible-price equilibrium the monotonicity conditions remain valid. Finally, these conclusions are unchanged in simpler or asymmetric environments, including pure-tradables economies or the small open economy limit. In each case, tariffs compress import demand at a fixed exchange rate and exchange-rate movements generate standard expenditure-switching effects. While the magnitude of the exchange rate response may vary across specifications, its sign does not. Taken together, the results in this section show that the appreciation of the tariff-imposing country's currency in a two-country setting is not an artifact of particular assumptions about fiscal policy, market structure, or pricing conventions. Rather, it follows from general monotonicity properties of import and export behavior that hold across a wide range of standard models, once relative prices are allowed to adjust.
+
+\section{Calibration Details}
+\label{app:calibration}
+
+\subsection*{Tariff Rate Calibration}
+\label{app:tariffs}
+All tariff rates are measured as incremental ad valorem rates above the pre-2025 baseline, which we treat as free trade. Rates are sourced from official executive orders, Federal Register notices, and contemporaneous policy documentation.
+
+\paragraph{Regime 1 (Fentanyl-related tariffs).} The 20 percent tariff on Chinese imports ($\tau_{AB} = 0.20$) reflects the cumulative incremental tariffs imposed on China in February and March 2025 under the International Emergency Economic Powers Act (IEEPA) on fentanyl-related grounds, prior to the Liberation Day announcement. China did not impose retaliatory tariffs during this period, giving $\tau_{BA} = 0$. No incremental tariff was imposed on third countries at this stage, so $\tau_{AC} = \tau_{CA} = 0$ across all configurations.
+
+\paragraph{Regime 2 (Peak escalation).} Following the Liberation Day announcement of April 2, 2025, the US imposed country-specific reciprocal tariffs on most trading partners effective April 9. However, on April 9 the administration suspended all country-specific reciprocal tariffs for 90 days for every country except China, leaving only a universal 10 percent baseline tariff in place for non-China partners. The effective incremental US tariff on China at the peak of escalation was 145 percent ($\tau_{AB} = 1.45$), combining the Liberation Day reciprocal rate of 34 percent with the pre-existing fentanyl tariffs and subsequent escalation steps. China retaliated with a cumulative tariff of 125 percent on US goods ($\tau_{BA} = 1.25$). For all third-country configurations, the US tariff on $C$ is set to the 10 percent baseline that remained in effect after the April 9 pause ($\tau_{AC} = 0.10$). Neither the EU nor Vietnam imposed retaliatory tariffs on the US during this period, so $\tau_{CA} = 0$.
+
+\subsection*{Expenditure Shares}
+Expenditure shares are calibrated from 2024 world goods export shares (WTO), with the nontradable share fixed at $\alpha_N = 0.60$ to match the broad cross-country average. Letting $s_j$ denote country $j$'s share of world goods exports, tradable shares are constructed as
+\[
+\alpha_{T_j} = 0.40 \times \frac{s_j}{s_A + s_B + s_C},
+\]
+normalizing within each configuration so that shares sum to one. The underlying export shares are $s_A = 8.4\%$ (US), $s_B = 14.3\%$ (China), $s_C = 12.0\%$ (EU), $1.6\%$ (Vietnam), and $77.2\%$ (ROW), where the ROW share is computed as world exports minus the US and China. Because the normalization denominator depends on $s_C$, the values of $\alpha_{T_A}$ and $\alpha_{T_B}$ differ across configurations; the resulting calibration targets are reported in Table~\ref{tab:calibration}. Preference parameters are assumed common across countries, so the same shares apply to $A$, $B$, and $C$.
+
+\subsection*{Labor Endowments}
+Labor endowments are set proportional to 2024 GDP at purchasing power parity (PPP), normalizing $L_A = 1$ for the US. PPP-based weights are appropriate because the model abstracts from price level differences across countries, and PPP GDP provides a better measure of relative economic size in volume terms than nominal GDP at market exchange rates. The source figures from the IMF World Economic Outlook \citep{imf2024weo} are: United States \$29.2 trillion, China \$35.3 trillion, European Union \$25.1 trillion, and Vietnam \$1.6 trillion (all in 2024 international dollars), giving $L_B = 1.21$, $L_C^{\mathrm{EU}} = 0.86$, and $L_C^{\mathrm{VNM}} = 0.055$. For the ROW configuration, $L_C^{\mathrm{ROW}}$ is computed as world PPP GDP minus the US and China, giving \$167.0 - \$29.2 - \$35.3 = \$102.5 trillion and $L_C^{\mathrm{ROW}} = 3.51$.
+
+\subsection*{Elasticity of Substitution}
+The elasticity of substitution within the tradable bundle is set to $\sigma = 6$ for the EU configuration, $\sigma = 8$ for Vietnam, and $\sigma = 2$ for the ROW configuration. For the EU, the value $\sigma = 6$ is anchored on the cross-origin central estimate from \citet{amiti2019impact}, which yields a preferred elasticity near six across a broad range of manufactured goods imported by the US. The EU value reflects the China Shock 2.0 narrative, under which Chinese manufacturing increasingly competes with European industrial and machinery exports in US import markets. For Vietnam, $\sigma = 8$ reflects Vietnam's deep integration into Chinese supply chains as an assembly and re-export platform \citep{fajgelbaum2024trade}, making Vietnamese and Chinese exports to the US close substitutes at the product level and warranting an elasticity above the cross-origin average. For the ROW aggregate, $\sigma = 2$ reflects the attenuation of bilateral substitution patterns by aggregation across a large and heterogeneous set of trading partners \citep{fajgelbaum2020return, feenstra2018}.
+
+\section{Extended Calibration Results}
+\label{app:extended_calibrations}
+
+This appendix presents calibration parameters and model-vs-data comparisons for eight third-country configurations: the European Union and Vietnam (which appear in the main text under slightly different $\sigma$ values used there), plus Japan, South Korea, Mexico, Canada, Taiwan, and India. For each configuration, $\sigma$ is assigned based on the nature of the bilateral trading relationship with China in US import markets. EU and Vietnam are included for completeness alongside the additional configurations. All data are sourced as described in Appendix~\ref{app:calibration}; observed exchange rate changes are percent changes relative to the 2024 annual average.
+
+The broad pattern of fit mirrors what is discussed for the three main configurations in Section~\ref{sec:calibration}. Under Regime~1 the model's directional predictions are broadly consistent with the data across most configurations, though magnitudes vary. Under Regime~2 the model uniformly predicts USD depreciation against all third-country currencies, consistent with the bilateral trade war mechanism. The data confirm this for safe-haven currencies such as the euro and yen, while for most other trading partners the financial risk-off channel -- which the model abstracts from by design -- appears to dominate at the April 2025 horizon. South Korea and Taiwan follow the same pattern as the other non-safe-haven currencies; their divergence reflects their deep integration in US-oriented trade and supply chains rather than any emerging-market classification.
+
+\begin{table}[htbp]
+\centering
+\caption{Calibration parameters by third-country configuration. $\alpha_N = 0.60$ throughout. Tradable shares are constructed from 2024 WTO world goods export shares; labor endowments from IMF WEO 2024 PPP GDP ($L_A = 1$). $\sigma$ assigned as described in main text and notes below.}
+\label{tab:app_params}
+\vspace{4pt}
+\begin{tabular}{lcccccc}
+\hline\hline
+Country $C$ & $\sigma$ & $\alpha_{T,A}$ & $\alpha_{T,B}$ & $\alpha_{T,C}$ & $\alpha_N$ & $L_C / L_A$ \\
+\hline
+European Union  & 6 & 0.097 & 0.165 & 0.138 & 0.600 & 0.860 \\
+Japan           & 4 & 0.129 & 0.220 & 0.051 & 0.600 & 0.226 \\
+South Korea     & 5 & 0.132 & 0.225 & 0.043 & 0.600 & 0.103 \\
+Mexico          & 5 & 0.132 & 0.224 & 0.044 & 0.600 & 0.113 \\
+Canada          & 2 & 0.134 & 0.228 & 0.038 & 0.600 & 0.086 \\
+Vietnam         & 8 & 0.138 & 0.235 & 0.026 & 0.600 & 0.055 \\
+Taiwan          & 3 & 0.135 & 0.230 & 0.035 & 0.600 & 0.058 \\
+India           & 3 & 0.137 & 0.233 & 0.031 & 0.600 & 0.497 \\
+\hline\hline
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes:} $\sigma$ values: EU ($\sigma=6$) anchored on Amiti, Redding \& Weinstein (2019) cross-origin central estimate; Japan ($\sigma=4$) advanced autos and machinery with limited Chinese overlap; South Korea ($\sigma=5$) and Mexico ($\sigma=5$) meaningful product-level overlap in electronics and manufacturing; Canada ($\sigma=2$) commodity-heavy exports (energy, mining) with low substitutability; Vietnam ($\sigma=8$) deep supply-chain integration with China; Taiwan ($\sigma=3$) semiconductor-dominant with limited aggregate substitutability; India ($\sigma=3$) growing manufacturing base with limited current overlap.
+\end{tablenotes}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Model-implied and realized exchange rate changes by regime. Model columns report percent changes relative to the free-trade benchmark; data columns report percent changes relative to the 2024 annual average. $\Delta e_{AB}$: USD/RMB; $\Delta e_{AC}$: USD/$C$-currency; $\Delta e_{BC}$: RMB/$C$-currency. Positive values denote depreciation of the first currency.}
+\label{tab:app_regimes}
+\vspace{4pt}
+\begin{tabular}{l
+    r r r
+    @{\hspace{0.6cm}}
+    r r r}
+\hline\hline
+ & \multicolumn{3}{c}{Model (\%)} & \multicolumn{3}{c}{Data (\%)} \\
+Country $C$ & $\Delta e_{AB}$ & $\Delta e_{AC}$ & $\Delta e_{BC}$ & $\Delta e_{AB}$ & $\Delta e_{AC}$ & $\Delta e_{BC}$ \\
+\hline
+\multicolumn{7}{l}{\textit{Panel A: Regime 1 (Fentanyl-related tariffs, March 2025)}} \\[2pt]
+European Union  & $-4.31$ & $-0.40$ & $+4.08$ & $-0.91$ & $-0.23$ & $+0.69$ \\
+Japan           & $-7.49$ & $-1.50$ & $+6.48$ & $-0.91$ & $+1.42$ & $+2.35$ \\
+South Korea     & $-7.43$ & $-1.16$ & $+6.78$ & $-0.91$ & $-6.46$ & $-5.60$ \\
+Mexico          & $-7.41$ & $-1.16$ & $+6.76$ & $-0.91$ & $-10.00$ & $-9.17$ \\
+Canada          & $-9.44$ & $-3.40$ & $+6.67$ & $-0.91$ & $-4.61$ & $-3.73$ \\
+Vietnam         & $-7.20$ & $-0.55$ & $+7.17$ & $-0.91$ & $-1.93$ & $-1.03$ \\
+Taiwan          & $-8.39$ & $-2.22$ & $+6.73$ & $-0.91$ & $-2.73$ & $-1.84$ \\
+India           & $-7.97$ & $-2.05$ & $+6.44$ & $-0.91$ & $-3.43$ & $-2.54$ \\[4pt]
+\multicolumn{7}{l}{\textit{Panel B: Regime 2 (Peak escalation, April 2025)}} \\[2pt]
+European Union  & $+1.10$ & $+7.29$  & $+6.12$  & $-1.51$ & $+3.36$  & $+4.94$ \\
+Japan           & $+4.65$ & $+17.45$ & $+12.23$ & $-1.51$ & $+4.55$  & $+6.15$ \\
+South Korea     & $+3.18$ & $+13.79$ & $+10.28$ & $-1.51$ & $-5.66$  & $-4.21$ \\
+Mexico          & $+3.16$ & $+13.75$ & $+10.26$ & $-1.51$ & $-9.33$  & $-7.94$ \\
+Canada          & $+7.26$ & $+24.05$ & $+15.65$ & $-1.51$ & $-2.29$  & $-0.79$ \\
+Vietnam         & $+0.22$ & $+6.38$  & $+6.14$  & $-1.51$ & $-3.06$  & $-1.57$ \\
+Taiwan          & $+6.85$ & $+22.81$ & $+14.93$ & $-1.51$ & $-2.00$  & $-0.50$ \\
+India           & $+6.54$ & $+22.10$ & $+14.60$ & $-1.51$ & $-2.31$  & $-0.81$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\end{appendix}
+
+
+\end{document}

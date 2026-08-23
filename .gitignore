@@ -21,8 +21,15 @@ output/
 # Google Drive synced files
 gdrive_files/
 
-# Paper directory (LaTeX sources, figures, literature)
-Exchange_Rate_Tariffs/
+# Paper directory: LaTeX sources and figures ARE tracked (revision is
+# diffed through git). Only third-party literature PDFs and the compiled
+# output PDFs stay untracked; LaTeX build artifacts are covered below.
+Exchange_Rate_Tariffs/literature_review/
+Exchange_Rate_Tariffs/main.pdf
+Exchange_Rate_Tariffs/paper_draft.pdf
+Exchange_Rate_Tariffs/paper_draft_original.pdf
+Exchange_Rate_Tariffs/*.bbl
+Exchange_Rate_Tariffs/*.blg
 
 # LaTeX build artifacts
 *.aux
