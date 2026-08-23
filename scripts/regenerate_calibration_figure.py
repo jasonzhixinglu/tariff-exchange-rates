@@ -54,7 +54,7 @@ for cfg_name, params in CALIBRATIONS.items():
 # Figure: both regimes, side by side per configuration
 # ---------------------------------------------------------------------------
 CFG_ORDER    = ["US\u2013China\u2013EU", "US\u2013China\u2013VNM", "US\u2013China\u2013ROW"]
-CFG_LABELS   = ["US\u2013China\u2013EU  (\u03c3=8)", "US\u2013China\u2013VNM  (\u03c3=8)", "US\u2013China\u2013ROW  (\u03c3=2)"]
+CFG_LABELS   = ["US\u2013China\u2013EU  (\u03c3=6)", "US\u2013China\u2013VNM  (\u03c3=8)", "US\u2013China\u2013ROW  (\u03c3=2)"]
 REGIME_ORDER = ["R1", "R2"]
 REGIME_TITLES = {"R1": "Regime 1 \u2014 Fentanyl tariffs", "R2": "Regime 2 \u2014 Peak escalation"}
 

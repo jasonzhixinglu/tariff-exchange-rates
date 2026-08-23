@@ -94,7 +94,7 @@ The same bug is in the dashboard port `dashboard/src/lib/modelJs.js` (~line 59).
 | 2 | **+0.0048** | −0.0163 | 0.00 | −0.016 |
 | 5 | **+0.0218** | −0.0013 | — | −0.001 |
 
-The referee's numbers match the *corrected* model exactly. The apparent sign flip at σ ≳ 1.9 in our code (and interactively visible in the dashboard) **is a numerical artifact of the income bug**. Under the correct model log e_AC asymptotes to 0⁻ and never crosses — at the symmetric calibration and at every asymmetric calibration in the paper (checked EU config, whose α_D ≈ 0.24 is *below* the 1/3 knife edge, up to σ = 20: still no crossing). This is slightly stronger than the referee's symmetric-case impossibility statement and worth formalizing.
+The referee's numbers match the *corrected* model exactly. The apparent sign flip at σ ≳ 1.9 in our code (and interactively visible in the dashboard) **is a numerical artifact of the income bug**. Under the correct model log e_AC asymptotes to 0⁻ and never crosses at the symmetric calibration, and at the paper's asymmetric calibrations *as coded* (checked EU config up to σ = 20 — but see the weight-convention caveat in §3.6 below: under the paper's *stated* utility, an α_D < 1/3 calibration does cross, exactly as the symmetric theory predicts).
 
 Note the paper's Figure 6 reports 0.00 (roughly the truth) while the buggy code gives +0.005 — so the figures' provenance vs. the current code state should be audited in Phase 0 (`notebooks/section3_three_country_model.ipynb`).
 
@@ -120,6 +120,13 @@ The ROW sign flips under the corrected model, removing one of the two directiona
 ### 3.5 Equation errors confirmed
 
 Eq. (28): code implements the correct (producer-price) export term, so the manuscript e_ik is a typo. Eqs. (26)–(27): code implements the nested structure (equivalent up to a scale factor irrelevant to shares), so the manuscript's flat-CES D_k is the error; make the text match the nested spec and the σ=1 replications line up to two decimals.
+
+### 3.6 Weight-convention inconsistency and mis-hit calibration targets (found in Phase 1/2 probing)
+
+The paper's stated inner-CES utility uses weights α_Tj^(1/σ), which implies expenditure shares ∝ α_Tj·p^(1−σ) (*plain* convention). The paper's demand formula (24) and the code instead use shares ∝ α_Tj^σ·p^(1−σ). The two coincide only at σ = 1 or under symmetric weights — which is why every symmetric-baseline result matches the referee regardless. Consequences:
+
+- **The asymmetric impossibility picture depends on the convention.** Under plain weights (the stated utility), the symmetric boundary is sharp and verified numerically: with α_D = 0.267 < 1/3, the flat-CES crossing appears at exactly the predicted σ* = 2.75, and size asymmetry does *not* kill it (checked L configurations from (1,1,1) to (1, 1.21, 3.51), all cross at σ = 6). Under the α^σ convention the calibrated configurations never cross. Proposition 1 must state its weight convention explicitly.
+- **The calibrated model misses its own calibration targets at σ ≠ 1.** In the EU configuration at σ = 6, realized baseline US expenditure shares are (0.094, 0.188, 0.118) against targets (0.097, 0.165, 0.138) — China off by +14%, EU by −14%. Phase 3 recalibration must invert the demand system so shares match at the free-trade *equilibrium* (standard practice), not plug data shares in as weights.
 
 ---
 
@@ -153,23 +160,24 @@ Framing principles for the rewrite:
 - [ ] **0.7** Copy regenerated JSONs to `dashboard/public/data/` and rebuild `dashboard/dist` (`npm run build`) so the deployed dashboard reflects the corrected model.
 
 **New findings from Phase 0 (beyond §3):**
+- **Trade-war asymmetry boundary:** on the regenerated theory grid, 1 of 27 flat-CES war points has e_AC < 1 — the most lopsided war (τ_AB=1.5, τ_BA=0.25, σ=1), where the dominant tariffer behaves like the isolated case and mildly *appreciates* vs C (−0.45%) while B still depreciates. The trade-war proposition's "unambiguous joint depreciation" needs a near-symmetry qualifier (extends the referee's §7 knife-edge remark about e_AB). Relevant to the calibration: Regime 2 has τ_AB=1.45 vs τ_BA=1.25 — comfortably inside the joint-depreciation region.
 - The referee's §5.6 large-tariff table is the **cumulative** threshold (ρ such that the total Δlog e_AC over [0,τ] is zero) — reproduced exactly (3.55/3.19/2.86/2.70 at τ = 0.2/0.5/1.0/1.45). The **marginal** threshold (slope zero at τ) is lower still (3.23/2.69/2.26/2.07). Report both in the paper; cumulative is the policy-relevant one for a discrete tariff.
 - Corrected calibration-panel values (flat CES, for reference until Phase 3 supersedes): EU R2 Δe_AC +5.58, VNM R2 +4.66, ROW R2 −0.14, Taiwan R2 +19.24, India R2 +18.43 — magnitudes still far too large, reinforcing the home-bias recalibration case (§2.3).
 
 ### Phase 1 — Derive the theory
 
-- [ ] **1.1** Independently re-derive ρ* symbolically (do not import the referee's algebra untested — we've verified it numerically, but the paper needs our own derivation): symmetric equal-size case first.
-- [ ] **1.2** Extend to unequal sizes L_B, L_C (general threshold = root of a quadratic, closed form → appendix) and to asymmetric/country-specific preference weights.
-- [ ] **1.3** Prove Proposition 1 (impossibility): symmetric statement (α_D ≥ 1/3 ⇒ no reversal for any σ), plus the asymmetric extension motivated by our finding that even α_D ≈ 0.24 calibrations never cross (characterize the true asymmetric condition).
-- [ ] **1.4** Large-tariff threshold: ρ*(τ) decreasing — table for τ ∈ {0, 0.2, 0.5, 1.0, 1.45, 2.0} at equal and US–China–EU sizes.
-- [ ] **1.5** Stability condition 3α_D(η−1)+ρ+1 > 0 stated as such.
-- [ ] **1.6** Trade-war proposition: joint depreciation unambiguous; magnitude increasing in ρ (nested), with the single-σ decreasing case noted as another artifact of conflating margins.
+- [x] **1.1** ρ* re-derived symbolically from our own model setup (sympy, `scripts/verify_referee_claims.py --symbolic`): matches 3[1 + α_D(η−1) − α_T(1−α_D)] exactly; slope denominator 3[3α_D(η−1)+ρ+1] confirmed.
+- [ ] **1.2** General sizes: `scripts/derive_general_threshold.py` (symbolic derivation at a general baseline, in progress) — target: threshold as root of a quadratic in ρ with coefficients in baseline shares, validated against brute-force 8.76/4.32/4.24/3.78. Asymmetric preference weights after that.
+- [ ] **1.3** Proposition 1 (impossibility) — numerically mapped, statement pending: under plain weights, symmetric boundary α_D < 1/3 is sharp (crossing at predicted σ* = 2.75 for α_D = 0.267; verified robust to size asymmetry), and α_D ≥ 1/3 kills the crossing at every σ tested (up to 50). Must state weight convention (see §3.6). Formal proof for the proposition text remains.
+- [x] **1.4** Large-tariff thresholds computed under **both** definitions — cumulative (referee's §5.6: 3.96 → 2.70 over τ: 0 → 1.45, reproduced exactly) and marginal (3.96 → 2.07, lower still). Report both; cumulative is policy-relevant for a discrete tariff.
+- [ ] **1.5** Stability condition 3α_D(η−1)+ρ+1 > 0 stated as such (write-up task, Phase 4).
+- [x] **1.6** Trade-war comparative statics verified: joint depreciation, magnitude increasing in ρ (nested: +0.016 → +0.252 over ρ 1.5 → 10) and decreasing in σ (flat: +0.094 → +0.046); asserted in `tests/test_nested.py`.
 
 ### Phase 2 — Implement the two-layer nest
 
-- [ ] **2.1** New model module (alongside flat-CES, which stays for Prop. 1 exhibits and reproducibility): CD outer (α_T) → CES(η) over {home, M_i} → CES(ρ) over foreign origins; parameters α_D, β_j weights, country-specific.
-- [ ] **2.2** Solver + threshold utilities (`rho_star(aD, aT, eta)`, general-size numeric threshold via root-finding).
-- [ ] **2.3** Verify analytic-vs-numeric to 1e-6 across the parameter box (test 0.3-iii).
+- [x] **2.1** `src/tariff_exchange_rates/nested.py`: CD outer (α_T) → CES(η) over {home, M_i} → CES(ρ) over foreign origins; country-specific α_D and β weights; plain-weight convention (matches the paper's stated utility; see §3.6).
+- [x] **2.2** `solve_3country_nested`, `rho_star_symmetric`, `rho_star_numeric` (marginal + cumulative definitions, general sizes/weights/tariff levels), `d_log_eAC_dtau`.
+- [x] **2.3** `tests/test_nested.py` (18 passing): collapse to flat CES at ρ=η, analytic slope to 1e-6, referee tables 5.5/5.6/4.3, genuine reversal at ρ = 4.5 > ρ* = 3.96.
 - [ ] **2.4** Rebuild dashboard around (η, ρ) with ρ* marked on the theory panel; keep a flat-CES toggle to demonstrate the impossibility result interactively. *(The dashboard becomes a genuine asset here: the threshold is visible.)*
 - [ ] **2.5** Regenerate theory grid for the nested model.
 
