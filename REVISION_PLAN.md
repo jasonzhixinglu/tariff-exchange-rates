@@ -178,7 +178,7 @@ The framing memo (2026-08-23) is **adopted as the controlling statement of the p
 - [x] **M2** NFA robustness TB_i = −b_i — computed (amendment b); paper write-up pending (→ 4.15, 3.10).
 - [ ] **M3** Literature diligence: do Ossa (2014) or the PTA terms-of-trade papers state the third-country ambiguity as a proposition? Cite-and-lean or say-explicitly-not accordingly (honest either way).
 - [ ] **M4** Scope section drafted before the model (→ 4.11); intro/§2.3/abstract re-leaned to connection-first (→ 4.12); Δq reported alongside Δe in experiments and calibration (→ 4.13, code support exists — solver already returns log_q); natural-language trap + home-bias/nest division of labor into §3.3–3.4 (→ 4.14); NFA sensitivity paragraph (→ 4.15); configuration-specific-ρ rationale into §4 (→ 3.9); new PTA citations (→ 5.5).
-- [ ] **M5** Ricardo–Viner ρ* re-derivation — same as D1 (prototype next).
+- [x] **M5** Ricardo–Viner — implemented (see REVISION_CHANGES 2026-08-24): rho* falls with DRS; size gradient compressed (Vietnam 8.76 → 5.27 at γ=2/3). Paper §3.4 subsubsection written.
 
 ## 5. Work plan
 
@@ -236,7 +236,7 @@ The framing memo (2026-08-23) is **adopted as the controlling statement of the p
 - [ ] **4.4** §2.2 restated as Marshall–Lerner; fix the "or more generally" logic slip in Lemma 2.1's export condition.
 - [ ] **4.5** §3 restructured: Prop. 1 (impossibility) first, Prop. 2 (threshold ρ*) with comparative statics (α_D, η, α_T, L_C, τ), then trade war (corrected magnitude claim).
 - [ ] **4.6** Fix eq. (28) (drop e_ik from export term; align with eq. (9)); make eqs. (26)–(27) match the implemented nested structure; note α_N inert under CD outer (state what N buys or drop it).
-- [ ] **4.7** New §3.4: Ricardo–Viner extension (Y_T = A·L^γ, γ<1) formalizing the export-supply channel; explicit boundary discussion of dynamic (EKNR, CDP) and intertemporal (Obstfeld–Rogoff Ch. 4; temporary vs permanent tariffs) literatures; deliberate defense of the minimal structure. **[DECISION — see §6]**
+- [x] **4.7** Ricardo–Viner subsubsection (`sec:rv`) + boundary-of-the-exercise paragraph written 2026-08-24; also corrected the draft's backwards supply-side claim. Numbers in REVISION_CHANGES.
 - [ ] **4.8** Compress Figures 2–7 into one multi-panel locus figure + one d log e_AC/dτ-vs-ρ plot with ρ* marked.
 - [ ] **4.9** Conclusion: the inferential payoff stated directly (bilateral appreciation ≠ broad strength; multilateral depreciation ≠ evidence of financial channels by itself).
 - [x] **4.10** Flag trade-war e_AB-unchanged as a knife-edge — done in the 2026-08-23 tranche (with the asymmetric-war boundary added).
