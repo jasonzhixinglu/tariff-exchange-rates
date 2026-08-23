@@ -13,7 +13,7 @@
 \begin{document}
 \maketitle
 
-\noindent These notes derive three models with minimal exposition: the two-country benchmark, the two-layer nested three-country model with the reversal threshold, and the canonical competing-exporters model from the preferential-trade-agreement (PTA) literature.
+\noindent These notes derive three models: the two-country benchmark, the two-layer nested three-country model with the reversal threshold, and the canonical competing-exporters model from the preferential-trade-agreement (PTA) literature. Prose is limited to defining variables and linking equations.
 
 \section{Two-country model}
 
@@ -52,7 +52,7 @@ Under free trade $I_i = w_i L_i$, $P^{(A)}_{T_B} = e$, $P^{(B)}_{T_A} = 1/e$.
 
 \subsection{Equilibrium under free trade}
 
-Country $A$'s trade balance in $A$'s currency is export revenue minus import spending. From \eqref{eq:2c-demand}, the quantity $B$ buys of $T_A$ is $C_{T_A B} = \alpha_{T_A} I_B / (1/e) = \alpha_{T_A} w_B L_B\, e$, valued at producer price $1$ in $A$'s currency. The quantity $A$ buys of $T_B$ is $C_{T_B A} = \alpha_{T_B} w_A L_A / e$, valued at price $e$. Hence
+Country $A$'s trade balance in $A$'s currency is export revenue minus import spending. From \eqref{eq:2c-demand}, $B$'s purchases of $T_A$ are $C_{T_A B} = \alpha_{T_A} I_B / (1/e) = \alpha_{T_A} w_B L_B\, e$, valued at producer price $1$ in $A$'s currency, and $A$'s purchases of $T_B$ are $C_{T_B A} = \alpha_{T_B} w_A L_A / e$, valued at price $e$. Therefore
 \begin{equation}
 \mathrm{TB}_A = 1 \cdot C_{T_A B} - e\, C_{T_B A}
 = \alpha_{T_A} w_B L_B\, e - \alpha_{T_B} w_A L_A .
@@ -139,7 +139,7 @@ so in logs
 d\log q \;=\; \alpha_N\, d\log e \;-\; \alpha_{T_B}\, \frac{d\tau}{1+\tau} .
 \label{eq:2c-dq}
 \end{equation}
-Three observations. (i) $q$ moves with $e$, attenuated by the non-tradable share $\alpha_N$. (ii) The tariff appreciates $A$ in real terms directly, at any $e$, because it raises $A$'s consumer price index. (iii) $P_{N_i} = A_{T_i}/A_{N_i}$ is a productivity ratio, so non-tradables affect the level of $q$ but not its response to trade shocks except through the exponent $\alpha_N$.
+Equation \eqref{eq:2c-dq} has three implications. First, $q$ moves with $e$, attenuated by the non-tradable share $\alpha_N$. Second, the tariff appreciates $A$ in real terms directly, at any $e$, because it raises $A$'s consumer price index. Third, since $P_{N_i} = A_{T_i}/A_{N_i}$ is a productivity ratio, non-tradables affect the level of $q$ but enter its response to trade shocks only through the exponent $\alpha_N$.
 
 \subsection{The Marshall--Lerner condition}
 \label{sec:ml}
@@ -167,7 +167,7 @@ using $X' = -\varepsilon_X X e$ and $e M' = -\varepsilon_M M$. Evaluated at bala
 \boxed{\;\frac{\partial \mathrm{TB}_A}{\partial e} = M \big( \varepsilon_X + \varepsilon_M - 1 \big)\;}
 \label{eq:ml}
 \end{equation}
-A depreciation improves the trade balance if and only if $\varepsilon_X + \varepsilon_M > 1$. This is the Marshall--Lerner condition. The ``$-1$'' term is the valuation effect: a depreciation makes each unit of imports more expensive in home currency, worsening the balance one-for-one, and the two volume responses must jointly overcome it.
+A depreciation improves the trade balance if and only if $\varepsilon_X + \varepsilon_M > 1$. This is the Marshall--Lerner condition. The term $-1$ in \eqref{eq:ml} is the valuation effect: a depreciation raises the home-currency cost of each unit of imports, which worsens the balance one-for-one. The two volume responses must offset this effect.
 
 \paragraph{Response to the tariff.} Differentiate \eqref{eq:ml-tb} with respect to $\tau$ at fixed $e$:
 \begin{equation}
@@ -184,11 +184,11 @@ A tariff improves the trade balance at a fixed exchange rate as long as import d
 \frac{de}{d\tau} = -\, \frac{\partial \mathrm{TB}_A / \partial \tau}{\partial \mathrm{TB}_A / \partial e} .
 \label{eq:ml-ift}
 \end{equation}
-The numerator is positive by \eqref{eq:ml-tau}: the tariff creates a surplus at the old exchange rate. To restore balance, the exchange rate must move in whichever direction \emph{worsens} the trade balance. If Marshall--Lerner holds, that direction is appreciation ($de < 0$): the conventional result. If Marshall--Lerner fails, depreciation worsens the balance instead, and the same tariff-induced surplus requires $de > 0$: the conventional result reverses. The sign of $de/d\tau$ is the opposite of the sign of $\varepsilon_X + \varepsilon_M - 1$, which is why the condition is necessary and sufficient.
+The numerator is positive by \eqref{eq:ml-tau}: the tariff creates a surplus at the initial exchange rate. To restore balance, the exchange rate must move in the direction that worsens the trade balance. If Marshall--Lerner holds, that direction is appreciation, $de < 0$, which is the conventional result. If Marshall--Lerner fails, depreciation worsens the balance instead, and the same tariff-induced surplus requires $de > 0$, so the conventional result reverses. The sign of $de/d\tau$ is therefore the opposite of the sign of $\varepsilon_X + \varepsilon_M - 1$. This is why the condition is both necessary and sufficient.
 
-\paragraph{The Cobb--Douglas case.} With unit expenditure shares, import volume is $M = \alpha_{T_B} I / p$, so $\varepsilon_M = 1$; similarly $\varepsilon_X = 1$. Then $\varepsilon_X + \varepsilon_M = 2 > 1$ and \eqref{eq:ml} is positive: Marshall--Lerner holds automatically, which is why the closed form \eqref{eq:2c-etau} is monotone.
+\paragraph{The Cobb--Douglas case.} With constant expenditure shares, import volume is $M = \alpha_{T_B} I / p$, so $\varepsilon_M = 1$; similarly $\varepsilon_X = 1$. Then $\varepsilon_X + \varepsilon_M = 2 > 1$ and \eqref{eq:ml} is positive. Marshall--Lerner holds automatically, which is why the closed form \eqref{eq:2c-etau} is monotone in $\tau$.
 
-\paragraph{Multilateral remark.} In the three-country model of Section 2, each bilateral relationship satisfies a Marshall--Lerner condition, and the tariff still improves $A$'s overall balance at fixed rates. What the bilateral conditions do not determine is \emph{how the required adjustment is split between $e_{AB}$ and $e_{AC}$}. That split depends on substitution across foreign origins ($\rho$) relative to substitution between home and foreign goods ($\eta$), which is the subject of Section 2.
+\paragraph{Multilateral remark.} In the three-country model of Section 2, each bilateral relationship satisfies a Marshall--Lerner condition, and the tariff still improves $A$'s overall balance at fixed exchange rates. The bilateral conditions do not determine how the required adjustment is split between $e_{AB}$ and $e_{AC}$. That split depends on substitution across foreign origins, governed by $\rho$, relative to substitution between home and foreign goods, governed by $\eta$. This is the subject of Section 2.
 
 \section{Three-country nested model}
 
@@ -303,7 +303,7 @@ D \equiv 3\alpha_D(\eta - 1) + \rho + 1, \qquad
 \rho^* \equiv 3\big[\, 1 + \alpha_D(\eta-1) - \alpha_T(1-\alpha_D) \,\big] .
 \label{eq:3c-Ddef}
 \end{equation}
-The system evaluates to (each entry verified symbolically):
+Collecting terms yields the linear system
 \begin{equation}
 -\frac{mD}{4}
 \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}
@@ -425,8 +425,8 @@ Therefore
 A discriminatory tariff on $B$ worsens $B$'s terms of trade and \emph{improves} $C$'s terms of trade. Equivalently, a preferential tariff cut toward $B$ (lower $t_B$) improves $B$'s and worsens $C$'s terms of trade.
 \end{result}
 
-\subsection{Mapping to the exchange-rate model}
+\subsection{Relation to the exchange-rate model}
 
-In the model of Section 2, $C$'s terms of trade improving corresponds to $C$'s wage rising in common-currency units, i.e.\ $e_{AC}$ rising: $A$ depreciates against $C$. The canonical PTA model therefore always delivers the reversal. The reason is visible in \eqref{eq:pta-mc}: $A$ has no domestic production of $x$, so tariffed demand can only switch between $B$ and $C$. There is no home--import margin. In the notation of Section 2, the PTA model sets the home share to zero, and \eqref{eq:3c-gap} with $\alpha_D = 0$ gives $\rho^* - \sigma = 3(1-\alpha_T) - \sigma$, which is negative for moderate $\sigma$: the impossibility disappears when there is nothing to switch home to. The nested three-country model adds the home margin ($\eta$, $\alpha_D$) and shows that with realistic home bias the diversion force must clear the threshold $\rho^*$ before the PTA logic controls the exchange rate.
+In the model of Section 2, an improvement in $C$'s terms of trade corresponds to a rise in $C$'s wage in common-currency units, that is, a rise in $e_{AC}$: $A$ depreciates against $C$. The canonical PTA model therefore always delivers the reversal. The reason is visible in \eqref{eq:pta-mc}: $A$ produces no $x$, so tariffed demand can only switch between $B$ and $C$, and there is no home--import margin. In the notation of Section 2, the PTA model sets the home share to zero. Evaluating \eqref{eq:3c-gap} at $\alpha_D = 0$ gives $\rho^* - \sigma = 3(1-\alpha_T) - \sigma$, which is negative for moderate $\sigma$: the impossibility result disappears when there are no home goods to switch to. The nested three-country model adds the home margin, through $\eta$ and $\alpha_D$, and shows that with realistic home bias the diversion force must exceed the threshold $\rho^*$ before the PTA logic determines the exchange rate.
 
 \end{document}
