@@ -389,16 +389,23 @@ J\, d\nu = -F\, d\tau
 \frac{d\nu}{d\tau} = (-J)^{-1} F = \frac{\operatorname{adj}(-J)\, F}{\det(-J)} ,
 \label{eq:N-system}
 \end{equation}
-where $J_{ij} = \partial \mathrm{TB}_i / \partial \nu_j$ and $F_i = \partial \mathrm{TB}_i / \partial \tau$ at fixed exchange rates (the impact effects). The entries of $J$ and $F$ are linear in $\eta$ and $\rho$, with coefficients given by baseline expenditure shares and incomes, exactly as in the three-country linearization of Section 2.4. Equation \eqref{eq:N-system} generalizes the two-country formula \eqref{eq:ml-ift}, which is the case of a single equation: one $J$, one $F$.
+where $J_{ij} = \partial \mathrm{TB}_i / \partial \nu_j$ and $F_i = \partial \mathrm{TB}_i / \partial \tau$ at fixed exchange rates (the impact effects). The entries of $J$ and $F$ are linear in $\eta$ and $\rho$, with baseline shares and incomes as coefficients, as in Section 2.4. At $N = 2$, \eqref{eq:N-system} is the single equation \eqref{eq:ml-ift}.
 
-\paragraph{Stability.} The adjustment process $\dot\nu_i \propto \mathrm{TB}_i$ is locally stable if and only if all eigenvalues of $J$ have negative real parts. Any such matrix satisfies $\det(-J) > 0$, so at a stable equilibrium the common denominator in \eqref{eq:N-system} is positive and the sign of each response equals the sign of its numerator. This condition is the $N$-country analogue of the Marshall--Lerner condition: at $N = 2$ it is the scalar $\partial \mathrm{TB}_A/\partial e > 0$, that is $\varepsilon_X + \varepsilon_M > 1$ from \eqref{eq:ml}; at the symmetric three-country point it is $D > 0$ from Section 2.5.
+\paragraph{Stability.} The adjustment $\dot\nu_i \propto \mathrm{TB}_i$ is locally stable if and only if all eigenvalues of $J$ have negative real parts, which implies $\det(-J) > 0$: each response then has the sign of its numerator. The analogues at each scale:
+\begin{equation}
+N = 2:\;\; \varepsilon_X + \varepsilon_M > 1 \;\; \eqref{eq:ml};
+\qquad
+N = 3:\;\; D > 0;
+\qquad
+\text{general } N:\;\; \det(-J) > 0 .
+\end{equation}
 
-\paragraph{The multilateral Marshall--Lerner condition.} Suppose the demand system satisfies gross substitutability. Then $J$ has negative diagonal entries, nonnegative off-diagonal entries, and a dominant diagonal (from homogeneity and Walras' law, with the numeraire absorbing the residual). The diagonal entries are the bilateral Marshall--Lerner conditions of Section 1.6, one per country: own appreciation worsens own balance. The off-diagonal sign is the multilateral addition, with no two-country counterpart: another country's appreciation improves your balance. A matrix with this sign pattern is a stable Metzler matrix, and $-J$ is then an M-matrix. M-matrices are inverse-positive:
+\paragraph{The multilateral Marshall--Lerner condition.} Under gross substitutability, $J$ has negative diagonal entries (the bilateral conditions of Section 1.6), nonnegative off-diagonal entries (another country's appreciation improves your balance), and a dominant diagonal (homogeneity and Walras' law). Then $J$ is a stable Metzler matrix, $-J$ is an M-matrix, and
 \begin{equation}
 (-J)^{-1} \;\geq\; 0 \quad \text{elementwise.}
 \label{eq:N-invpos}
 \end{equation}
-At the symmetric three-country point all of these conditions collapse into the single scalar $D$: the Jacobian there is $-\tfrac{mD}{4}\begin{pmatrix} 2 & -1 \\ -1 & 2\end{pmatrix}$, so the two diagonal conditions and stability all hold if and only if $D > 0$.
+At the symmetric three-country point, $J = -\tfrac{mD}{4}\begin{pmatrix} 2 & -1 \\ -1 & 2\end{pmatrix}$: all of these conditions reduce to $D > 0$.
 
 \begin{result}[Generic sign rule]
 At a stable equilibrium satisfying the multilateral Marshall--Lerner condition,
@@ -411,9 +418,15 @@ At a stable equilibrium satisfying the multilateral Marshall--Lerner condition,
 In particular, if all impact effects share a sign, all responses share it. Sign ambiguity arises only when the impact vector is mixed.
 \end{result}
 
-The rule contains the earlier cases. At $N = 2$ there is one weight and one impact: the impact is positive by \eqref{eq:ml-tau}, so the sign is unconditional and the currency appreciates --- the conventional result of Section 1. At $N = 3$ the weights are $\tfrac{1}{3}\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$, and the bystander's response mixes its own impact with the target's negative impact; the threshold $\rho^*$ of Section 2 is the value of $\rho$ at which this weighted sum crosses zero.
+The rule contains the earlier cases. At $N = 2$ there is one weight and one impact; the impact is positive by \eqref{eq:ml-tau}, so the currency appreciates unconditionally (Section 1). At $N = 3$,
+\begin{equation}
+(-J)^{-1} = \frac{4}{3mD}\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix},
+\qquad
+\frac{d\nu_C}{d\tau} \;\propto\; F_B + 2 F_C ,
+\end{equation}
+and $\rho^*$ is the value of $\rho$ at which $F_B + 2F_C = 0$.
 
-Because $F$ is linear in $\rho$ and $\operatorname{adj}(-J)$ is a polynomial of degree $N-2$ in $\rho$, each numerator in \eqref{eq:N-system} is a polynomial of degree $N-1$ in $\rho$. At $N = 3$ this is a quadratic with one relevant root, which yields the scalar threshold of Section 2. At $N \geq 4$ single crossing is not guaranteed: there exist asymmetric configurations in which the sign of a bystander's response changes twice as $\rho$ rises, so no scalar threshold exists in general. The sign of any particular response remains computable from \eqref{eq:N-signrule}.
+$F$ is linear in $\rho$ and $\operatorname{adj}(-J)$ has degree $N-2$, so each numerator in \eqref{eq:N-system} has degree $N-1$ in $\rho$: a quadratic with one relevant root at $N = 3$ (the threshold of Section 2); degree three or more at $N \geq 4$, where single crossing can fail --- configurations exist in which a bystander's sign changes twice as $\rho$ rises. The sign of any given response remains computable from \eqref{eq:N-signrule}.
 
 \subsection{The symmetric case: a closed form}
 
@@ -442,7 +455,7 @@ In the symmetric $N$-country model, an isolated tariff depreciates $A$'s currenc
 \begin{equation}
 \boxed{\;\rho \;>\; \rho^*(N) \;=\; N \big[\, 1 + \alpha_D(\eta-1) - \alpha_T(1-\alpha_D) \,\big] \;}
 \end{equation}
-At $N = 3$ this is the threshold of Section 2: the coefficient $3$ there is the number of countries. The threshold grows linearly in $N$ because, with symmetric weights, each bystander receives a share $1/(N-1)$ of the diverted expenditure, so the substitutability required for any single bystander to gain scales with the number of countries.
+At $N = 3$ this is the threshold of Section 2: the coefficient $3$ there is the number of countries. The threshold grows linearly in $N$ because each bystander receives a share $1/(N-1)$ of the diverted expenditure.
 \end{result}
 
 For the symmetric trade war, add the responses to $d\tau_{AB}$ and its mirror $d\tau_{BA}$. Relabeling countries gives $\nu_C^{\mathrm{war}} = 2\nu_C - \nu_B$, and substituting \eqref{eq:N-eAB}--\eqref{eq:N-eAC}:
@@ -459,7 +472,7 @@ In a symmetric trade war, every bystander's currency appreciates against both be
 \begin{equation}
 \boxed{\;\rho \;>\; \rho^*_1 \;=\; \frac{\rho^*(N)}{N}\;}
 \end{equation}
-for any number of countries. The belligerents' adjustments offset ($e_{AB}$ is unchanged), so each bystander's equation decouples and its sign equals the sign of its own impact effect, a per-country condition that does not dilute with $N$. At $\eta = 1$, $\rho^*_1 = 1 - \alpha_T(1-\alpha_D) < 1$, so any $\rho \geq 1$ produces joint depreciation of the belligerents; for $\eta > 1$, $\rho^*_1$ can exceed one, and sufficiently low cross-origin substitutability reverses even the war case.
+for any number of countries. With $e_{AB}$ unchanged, each bystander's equation decouples and its sign equals the sign of its own impact effect, which does not dilute with $N$. At $\eta = 1$: $\rho^*_1 = 1 - \alpha_T(1-\alpha_D) < 1$, so any $\rho \geq 1$ gives joint depreciation; for $\eta > 1$, $\rho^*_1$ can exceed one.
 \end{result}
 
 The formulas are verified against nonlinear equilibrium solves at $N = 4$ (threshold $\rho^*(4) = 5.28$ at $\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$, matching the numerical root to five decimal places).
@@ -531,15 +544,15 @@ A discriminatory tariff on $B$ worsens $B$'s terms of trade and \emph{improves} 
 
 \subsection{The PTA assumptions as restrictions on the three-country threshold}
 
-In the model of Section 2, an improvement in $C$'s terms of trade corresponds to a rise in $C$'s wage in common-currency units, that is, a rise in $e_{AC}$: $A$ depreciates against $C$. The canonical PTA model delivers this sign unconditionally, from the slope conditions $E_j' > 0$ and $M_A' < 0$ alone, while Section 2 requires $\rho > \rho^*$. To see exactly why, decompose the threshold into its three claims on $C$'s trade balance (values at the benchmark $\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$):
+An improvement in $C$'s terms of trade is a rise in $e_{AC}$ (Section 2.3). The canonical model signs this unconditionally from $E_j' > 0$ and $M_A' < 0$; Section 2 requires $\rho > \rho^*$. The difference is the three pieces of the threshold (benchmark values: $\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$):
 \begin{equation}
-\rho^* = \underbrace{3}_{\substack{\text{$B$--$C$ linkage:}\\ \text{$B$'s income loss cuts its}\\ \text{purchases from $C$; $C$ switches}\\ \text{toward $B$'s cheapened goods}}}
-\;+\; \underbrace{3\alpha_D(\eta-1)}_{\substack{\text{home switching:}\\ \text{$A$'s spending leaves}\\ \text{the import bundle}}}
-\;-\; \underbrace{3\alpha_T(1-\alpha_D)}_{\substack{\text{openness credit:}\\ \text{more import spending}\\ \text{available to divert}}}
+\rho^* = \underbrace{3}_{\text{$B$--$C$ linkage}}
+\;+\; \underbrace{3\alpha_D(\eta-1)}_{\text{home switching}}
+\;-\; \underbrace{3\alpha_T(1-\alpha_D)}_{\text{openness credit}}
 \;=\; 3.0 + 1.2 - 0.24 = 3.96 .
 \label{eq:pta-decomp}
 \end{equation}
-Each assumption of the canonical model removes one piece. Recomputing the threshold under each restriction (numerically, with the nested model of Section 2; severing trade changes the baseline, so the pieces are approximately rather than exactly additive):
+The linkage claim collects the two forces running through $B$--$C$ trade: $B$'s income loss cuts its purchases from $C$, and $C$ substitutes toward $B$'s cheapened goods. Each canonical assumption removes one piece. Recomputed thresholds under each restriction (severing trade changes the baseline, so the pieces are approximately additive):
 
 \begin{center}
 \begin{tabular}{lll}
@@ -556,12 +569,24 @@ no $B$--$C$ trade and $\alpha_D = 0$ & none: reversal for all $\rho > 0$ & \\
 \end{tabular}
 \end{center}
 
-Three readings of the table. First, the largest single piece of the threshold is the $B$--$C$ linkage, not home switching: severing the target--bystander trade alone cuts the threshold from $3.96$ to $1.05$ even with full home bias and non-tradables. Second, non-tradables are not an independent opposing force: with the linkage severed and $\alpha_D = 0$, there is no threshold at any $\alpha_T$; the non-tradable share matters only by shrinking the credit that offsets the other claims. Third, there are two routes to an unconditional sign --- remove the home claim and maximize the credit ($\alpha_D = 0$, $\alpha_T = 1$), or remove the home claim and the linkage claim structurally --- and the canonical model takes both at once, adds quasilinearity (which removes income effects wherever trade remains), and in the strict Viner case sets $\rho = \infty$.
+Three readings:
+\begin{itemize}
+\item The largest piece is the $B$--$C$ linkage: severing it alone moves the threshold from $3.96$ to $1.05$.
+\item Non-tradables are not an independent force: with the linkage severed and $\alpha_D = 0$, no threshold exists at any $\alpha_T$. The non-tradable share enters only through the credit.
+\item Two routes reach $\rho^* \leq 0$: $\{\alpha_D = 0,\ \alpha_T = 1\}$ or $\{\alpha_D = 0,\ \beta_{BC} = \beta_{CB} = 0\}$. The canonical model takes both, adds quasilinearity, and in the Viner case sets $\rho = \infty$.
+\end{itemize}
 
 \begin{result}
 The canonical PTA model is the restriction of the three-country model to a subspace of structures on which $\rho^* \leq 0$. The unconditional Viner--Mundell sign is the threshold condition of Section 2 evaluated where it cannot bind.
 \end{result}
 
-The same reading organizes the literature. The competing-exporter models (Bagwell--Staiger 1999 and the GATT literature; Ornelas 2005) impose the severed topology and quasilinearity; the symmetric endowment-bloc models (Krugman 1991; Bond--Syropoulos 1996) impose full tradability with no distinct home-consumption margin and a single elasticity; the Viner tradition takes $\rho = \infty$; and Kemp--Wan 1976, which restricts none of these, proves existence and signs nothing. Applied models of preferential agreements (the GTAP-class CGE models, with a two-level Armington nest as standard practice, and modern quantitative trade models) keep all three pieces of \eqref{eq:pta-decomp} positive and generate configuration-dependent excluded-country signs --- but report simulation output rather than the condition. The threshold of Section 2 is that condition.
+The literature maps onto the table:
+\begin{itemize}
+\item competing exporters (Bagwell--Staiger 1999; Ornelas 2005): $\beta_{BC} = \beta_{CB} = 0$, quasilinear;
+\item symmetric endowment blocs (Krugman 1991; Bond--Syropoulos 1996): $\alpha_D \approx 0$, $\alpha_T = 1$, one elasticity;
+\item Viner: $\rho = \infty$;
+\item Kemp--Wan 1976: none of these restrictions, and no sign claims.
+\end{itemize}
+Applied models (GTAP-class CGE, with a two-level Armington nest as standard practice; quantitative trade) keep all pieces of \eqref{eq:pta-decomp} positive and produce configuration-dependent signs, but report simulations, not the condition. The threshold of Section 2 is that condition.
 
 \end{document}
