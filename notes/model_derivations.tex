@@ -378,6 +378,89 @@ As in \eqref{eq:2c-dq}, the tariff appreciates $A$ in real terms directly throug
 \end{equation}
 At the benchmark ($\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$, so $m = 0.08$): $\rho^* = 3.96$ and $\rho^*_q = 4.93$. Real depreciation against $C$ requires more diversion than nominal depreciation, because part of the nominal movement is absorbed by the tariff's direct effect on $A$'s price index.
 
+\section{The $N$-country case}
+
+\subsection{General linear structure}
+
+Countries $i \in \{1, \dots, N\}$, country 1 the numeraire, with the same technology and nested preferences as Section 2: home share $\alpha_{D_i}$, origin weights $\beta_{ij}$, elasticities $(\eta, \rho)$. Let $\nu = (\nu_2, \dots, \nu_N)$ collect the log exchange rates and let a tariff $d\tau$ be imposed by country 1 on country 2. Linearizing the $N-1$ independent trade-balance conditions at a free-trade baseline gives
+\begin{equation}
+J\, d\nu = -F\, d\tau
+\quad\Longrightarrow\quad
+\frac{d\nu}{d\tau} = (-J)^{-1} F = \frac{\operatorname{adj}(-J)\, F}{\det(-J)} ,
+\label{eq:N-system}
+\end{equation}
+where $J_{ij} = \partial \mathrm{TB}_i / \partial \nu_j$ and $F_i = \partial \mathrm{TB}_i / \partial \tau$ at fixed exchange rates (the impact effects). The entries of $J$ and $F$ are linear in $\eta$ and $\rho$, with coefficients given by baseline expenditure shares and incomes, exactly as in the three-country linearization of Section 2.4.
+
+\paragraph{Stability.} The adjustment process $\dot\nu_i \propto \mathrm{TB}_i$ is locally stable if and only if all eigenvalues of $J$ have negative real parts. Any such matrix satisfies $\det(-J) > 0$, so at a stable equilibrium the common denominator in \eqref{eq:N-system} is positive and the sign of each response equals the sign of its numerator.
+
+\paragraph{The multilateral Marshall--Lerner condition.} Suppose the demand system satisfies gross substitutability. Then $J$ has negative diagonal entries (each country's own appreciation worsens its own balance: the bilateral Marshall--Lerner conditions), nonnegative off-diagonal entries (another country's appreciation improves your balance), and a dominant diagonal (from homogeneity and Walras' law, with the numeraire absorbing the residual). A matrix with this sign pattern is a stable Metzler matrix, and $-J$ is then an M-matrix. M-matrices are inverse-positive:
+\begin{equation}
+(-J)^{-1} \;\geq\; 0 \quad \text{elementwise.}
+\label{eq:N-invpos}
+\end{equation}
+
+\begin{result}[Generic sign rule]
+At a stable equilibrium satisfying the multilateral Marshall--Lerner condition,
+\begin{equation}
+\operatorname{sign}\!\left( \frac{d\nu_i}{d\tau} \right)
+= \operatorname{sign}\!\Big( \sum_j w_{ij} F_j \Big),
+\qquad w_{ij} \equiv \big[(-J)^{-1}\big]_{ij} > 0 .
+\label{eq:N-signrule}
+\end{equation}
+In particular, if all impact effects share a sign, all responses share it. Sign ambiguity arises only when the impact vector is mixed.
+\end{result}
+
+Because $F$ is linear in $\rho$ and $\operatorname{adj}(-J)$ is a polynomial of degree $N-2$ in $\rho$, each numerator in \eqref{eq:N-system} is a polynomial of degree $N-1$ in $\rho$. At $N = 3$ this is a quadratic with one relevant root, which yields the scalar threshold of Section 2. At $N \geq 4$ single crossing is not guaranteed: there exist asymmetric configurations in which the sign of a bystander's response changes twice as $\rho$ rises, so no scalar threshold exists in general. The sign of any particular response remains computable from \eqref{eq:N-signrule}.
+
+\subsection{The symmetric case: a closed form}
+
+Let all countries have equal size, common preferences, home share $\alpha_D$, and equal origin weights $1/(N-1)$. Country 1 ($A$) tariffs country 2 ($B$); the remaining $k = N-2$ bystanders are identical, with representative $c$. By symmetry the system \eqref{eq:N-system} reduces to two unknowns, $(\nu_B, \nu_C)$. Define
+\begin{equation}
+\rho^*_1 \;\equiv\; 1 + \alpha_D(\eta - 1) - \alpha_T(1 - \alpha_D),
+\qquad
+D_N \;\equiv\; N\alpha_D(\eta-1) + (N-2)\rho + 1 .
+\end{equation}
+Solving the two-equation system (the derivation parallels Section 2.4 and is verified symbolically in the replication package) gives
+\begin{align}
+\frac{d\log e_{AB}}{d\tau}\bigg|_{\tau=0}
+&= -\,\frac{N\rho^*_1 + (N-2)\rho}{N\, D_N} \;<\; 0,
+\label{eq:N-eAB}\\[4pt]
+\frac{d\log e_{AC}}{d\tau}\bigg|_{\tau=0}
+&= \frac{\rho - N\rho^*_1}{N\, D_N},
+\label{eq:N-eAC}\\[4pt]
+\frac{d\log e_{BC}}{d\tau}\bigg|_{\tau=0}
+&= \frac{(N-1)\,\rho}{N\, D_N} \;>\; 0,
+\label{eq:N-eBC}
+\end{align}
+with $D_N > 0$ the stability condition. Hence:
+
+\begin{result}[$N$-country threshold]
+In the symmetric $N$-country model, an isolated tariff depreciates $A$'s currency against each untariffed bystander if and only if
+\begin{equation}
+\boxed{\;\rho \;>\; \rho^*(N) \;=\; N \big[\, 1 + \alpha_D(\eta-1) - \alpha_T(1-\alpha_D) \,\big] \;}
+\end{equation}
+At $N = 3$ this is the threshold of Section 2; the coefficient $3$ there is the number of countries. The threshold grows linearly in $N$: with symmetric weights, each bystander receives a share $1/(N-1)$ of the diverted expenditure, so the substitutability required for any single bystander to gain scales with the number of countries.
+\end{result}
+
+For the symmetric trade war, add the responses to $d\tau_{AB}$ and its mirror $d\tau_{BA}$. Relabeling countries gives $\nu_C^{\mathrm{war}} = 2\nu_C - \nu_B$, and substituting \eqref{eq:N-eAB}--\eqref{eq:N-eAC}:
+\begin{equation}
+\frac{d\log e_{AC}}{d\tau}\bigg|^{\mathrm{war}}_{\tau=0}
+= \frac{\rho - \rho^*_1}{D_N},
+\qquad
+\frac{d\log e_{AB}}{d\tau}\bigg|^{\mathrm{war}}_{\tau=0} = 0 .
+\label{eq:N-war}
+\end{equation}
+
+\begin{result}[War threshold is independent of $N$]
+In a symmetric trade war, every bystander's currency appreciates against both belligerents if and only if
+\begin{equation}
+\boxed{\;\rho \;>\; \rho^*_1 \;=\; \frac{\rho^*(N)}{N}\;}
+\end{equation}
+for any number of countries. The reason is that the belligerents' adjustments offset ($e_{AB}$ is unchanged), so each bystander's equation decouples and its sign equals the sign of its own impact effect, which is a per-country condition that does not dilute with $N$. At $\eta = 1$, $\rho^*_1 = 1 - \alpha_T(1-\alpha_D) < 1$, so any $\rho \geq 1$ produces joint depreciation of the belligerents; for $\eta > 1$, $\rho^*_1$ can exceed one, and sufficiently low cross-origin substitutability reverses even the war case.
+\end{result}
+
+The formulas above are verified against nonlinear equilibrium solves at $N = 4$ (threshold $\rho^*(4) = 5.28$ at $\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$, matching the numerical root to five decimal places).
+
 \section{Canonical PTA model: competing exporters}
 
 \subsection{Setup}
