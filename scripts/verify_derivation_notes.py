@@ -196,3 +196,25 @@ for N in (3, 6):
     DN = N * aD * (eta - 1) + (N - 2) * rho + 1
     nu = solve_linear(N, sym_b(N), aD, aT, eta, rho, [(0, j) for j in range(1, N)])
     print(f"N={N}: nu spread {nu[1:].max() - nu[1:].min():.2e}, value {nu[1]:+.8f}  formula {-(N - 1) * rho1s / DN:+.8f}")
+
+
+print("\n=== Check (vi): kappa-asymmetric NEER, flip threshold and sign preservation ===")
+def neer_kappa(N, kappa, rho):
+    b = kappa_b(N, kappa)
+    nu = solve_linear(N, b, aD, aT, eta, rho, [(0, 1)])
+    return np.sum(b[0] * nu)
+
+for (N, kappa) in ((10, 0.5), (20, 0.5), (50, 0.5), (20, 0.2)):
+    lo, hi = 0.1, 2000.0
+    for _ in range(80):
+        mid = 0.5 * (lo + hi)
+        if neer_kappa(N, kappa, mid) < 0:
+            lo = mid
+        else:
+            hi = mid
+    crude = N * rho1s / (1 - kappa)
+    print(f"N={N} kappa={kappa}: NEER flip at rho={0.5*(lo+hi):8.3f}  leading-order N*rho1*/(1-k)={crude:8.3f}")
+
+for (N, kappa) in ((10, 1.0), (10, 2.0), (10, 5.0), (30, 3.0)):
+    vals = [neer_kappa(N, kappa, r) for r in (0.2, 1, 5, 20, 100, 1000)]
+    print(f"N={N} kappa={kappa}: sign preserved over rho grid: {all(v < 0 for v in vals)}")
