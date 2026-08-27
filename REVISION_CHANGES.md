@@ -276,4 +276,4 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
   (iv) new closed forms: both bilateral real rates obey d log q_Aj = (1 − mN/(N−1))·nu_j − (m/(N−1))·dtau; general-N real threshold rho_q*(N) boxed (4.93 / 7.34 / 10.40 at N = 3/4/5, benchmark); REER response −(1 − mN/(N−1))·rho_1*/D_N − m/(N−1) < 0 unconditionally;
   (v) broad uniform tariff: every bilateral = NEER = −(N−1)·rho_1*/D_N, rho drops out (no discrimination → no diversion margin).
 - Reduced symmetric-N system derived symbolically (sympy, N symbolic): D_N · [[−(N−1), N−2],[1, −2]] (nu_B, nu_C)' = ((N−2)rho + rho_1*, rho_1* − rho)' dtau — elasticities enter the adjustment matrix only through the scalar D_N.
-- `multilateral_tariff_exchange_rate_results.tex` (user's results outline) added to the repo.
+- `multilateral_tariff_exchange_rate_results.tex` (user's results outline) added to the repo; archived 2026-08-27 as `notes/archive/2026-08-27_multilateral_results_outline.tex` (see `notes/archive/README.md`) after its content was incorporated into the rewritten notes.
