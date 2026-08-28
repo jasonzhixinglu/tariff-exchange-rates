@@ -378,3 +378,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's section-title/Result-4.2 edits reviewed and incorporated
 
 - Kept: paragraph split in §2.1, subsection retitle "Tariffs, prices, income, and trade balance", §3 retitle (hyphenated to "General Results on Exchange-Rate Adjustment"), §4 retitle "Tariff Responses in the Model", trimmed §3 intro, "Now suppose..." transition (constant made singular). CITE SECTION 2 placeholder resolved with \label{sec:model} + \ref. Result 4.2 rewritten to restore the dropped rho_1* > 0 half (Jase's version derived appreciation from ML alone) and the clarification comment answered in text: D_2 > 0 is the N=2 analog of the multilateral ML condition, rho_1* > 0 the analog of the condition on F; the scalar disturbance has an unambiguous sign at N=2, which is why ambiguity first arises at N=3. Hyphenation fix in the mixed-F sentence. 13 pp, compiles clean.
+
+### 2026-08-28 — Jase's N=2 repetition cut reviewed
+
+- Cut accepted: the interpretation paragraph after Result 4.2 removed (the Result now carries both ingredients itself; underbrace labels cover the economics; the rho-inoperative clause is covered by §2.1). Fixed: doubled "therefore" in the Result; the Appendix A pointer restored as a one-line note (the deleted paragraph held the only reference to Appendix A). 13 pp, compiles clean.
