@@ -31,9 +31,23 @@ The results can be understood through a distinction that recurs throughout the a
 \qquad\text{versus}\qquad
 \boxed{\text{reallocation across foreign suppliers}} .
 \]
-The first margin governs the aggregate value of the tariffing country's currency. The second determines how the adjustment is distributed across individual foreign partners. The two-country model contains only the first observable margin, because there is only one foreign supplier. A multilateral model contains both. Bilateral exchange rates reflect both margins, whereas aggregation across trading partners largely removes the second. In this sense, the conventional two-country result is best understood as an aggregate result that happens also to be bilateral when there is only one foreign country.
+The first margin determines the sign of the aggregate response of the tariffing country's currency. The second determines how the adjustment is distributed across individual foreign partners; through equilibrium it also affects the magnitude, though not the sign, of the aggregate response. The two-country model contains only the first observable margin, because there is only one foreign supplier. A multilateral model contains both. Bilateral exchange rates reflect both margins, whereas aggregation across trading partners largely removes the second. In this sense, the conventional two-country result is best understood as an aggregate result that happens also to be bilateral when there is only one foreign country.
 
 The analysis develops this argument progressively. We first recover the conventional two-country result and connect it exactly to the Marshall--Lerner condition (Section 3). We then add a single untreated country (Section 4). This is the smallest environment in which foreign-supplier reallocation exists, and it is enough to generate the central bilateral ambiguity: the tariffing country always appreciates against the target but can depreciate against the untreated country when cross-origin substitution is sufficiently strong. Only after these mechanisms are visible do we introduce the general disturbance-adjustment framework (Section 5), which separates the trade-balance disturbance created by the tariff from the exchange-rate adjustment that eliminates it. Section 6 asks what happens to the overall value of the tariffing country's currency and shows that the bilateral ambiguity disappears from the nominal effective exchange rate. Section 7 generalizes to $N$ countries: increasing the number of countries dilutes trade diversion toward any individual bystander, but leaves the sign of the effective response unchanged under symmetry. Sections 8--10 examine tariff configurations, real exchange rates, and asymmetry. Section 11 relates the mechanism to the canonical theory of preferential trade agreements, in which the familiar Viner--Mundell result emerges as a special environment where the forces opposing trade diversion toward the untreated exporter have been removed. Section 12 concludes. Every closed form is verified numerically in the replication package.
+
+The results sit at four levels of generality, and it is worth stating the hierarchy at the outset:
+\begin{center}
+\begin{tabular}{l}
+\textbf{General:} any differentiable multilateral equilibrium separates disturbance $F$ from adjustment $J$ \\[2pt]
+$\downarrow$ \\[2pt]
+\textbf{Broad mechanism:} home-versus-foreign adjustment versus foreign-supplier reallocation \\[2pt]
+$\downarrow$ \\[2pt]
+\textbf{Nested CES:} $\eta$ and $\rho$ isolate the two margins with constant elasticities \\[2pt]
+$\downarrow$ \\[2pt]
+\textbf{Symmetric nested CES:} exact linear thresholds and the exact NEER cancellation \\
+\end{tabular}
+\end{center}
+Each layer below inherits the logic of the layer above and adds structure. The exact formulas belong to the bottom layer; the mechanism they illustrate belongs to the layers above it.
 
 \section{Economic Environment: Two Margins of Substitution}
 
@@ -68,6 +82,8 @@ M_i &= \Big[\, \textstyle\sum_{j \neq i} \beta_{ij}^{1/\rho}\, C_{T_j i}^{\frac{
 with the share-linear CES convention (weights enter expenditure shares linearly).
 
 The two elasticities correspond directly to the two forms of adjustment studied below. The elasticity $\eta$ governs the \textbf{home-versus-foreign margin}: following a tariff, how much expenditure moves between domestic and imported tradables. The elasticity $\rho$ governs the \textbf{foreign-supplier reallocation margin}: conditional on importing, how readily expenditure moves from the tariffed exporter toward untreated foreign suppliers. This distinction is irrelevant in a two-country model, because there is only one foreign supplier. It becomes economically active as soon as a third country is introduced.
+
+The distinction between the two margins is more general than the particular CES specification used here. Any demand system in which total import expenditure and its allocation across foreign origins can adjust separately contains analogous margins. The nested CES structure is useful because it isolates them with two constant elasticities, $\eta$ and $\rho$, and thereby yields closed-form thresholds. The exact comparative statics derived below, including the linear thresholds in $\rho$ and the exact cancellation in the effective exchange rate, should therefore be understood as results of the nested-CES environment rather than consequences of the conceptual distinction alone. The mechanism is general; the parameterization and the exact theorems are model-specific.
 
 With the roles of $\eta$ and $\rho$ fixed, the special cases can be stated. The symmetric benchmark used below imposes more than equal origin weights $\beta_{ij} = 1/(N-1)$. Countries also share the preference parameters $(\alpha_T, \alpha_D, \eta, \rho)$ and have equal labor endowments and productivities, so all countries have equal size at the free-trade baseline. Home and foreign tradables remain asymmetric through the home weight $\alpha_D$. Equal treatment of all tradable origins would be a still stronger restriction, since it additionally requires $\rho = \eta$ and $\alpha_D = 1/N$; it is not imposed. The single-elasticity CES is the special case $\rho = \eta$. Cobb--Douglas substitution between the domestic tradable and the import composite is the special case $\eta = 1$; it fixes the elasticity, not the weight $\alpha_D$.
 
@@ -358,7 +374,7 @@ The threshold $3\rho_1^*$ is the point at which foreign-supplier reallocation be
 \end{equation}
 $C$'s equilibrium response mixes its own impact gain with $B$'s impact loss. $F_C > 0$ at $\rho > \rho_1^*$, but reversal of $e_{AC}$ requires the diversion gain to outweigh $C$'s exposure to $B$'s deterioration, which happens only at $\rho > 3\rho_1^*$. A higher $\rho$ makes foreign suppliers easier to substitute across, so more of the expenditure displaced from the tariffed $B$ is redirected toward $C$; the response against $C$ changes sign only when that diversion becomes strong enough.
 
-This is not a failure of Marshall--Lerner logic. The ambiguity arises because the tariff creates a mixed pattern of trade-balance disturbances across countries. That observation motivates a general way to organize the comparative statics, introduced next.
+This is not a failure of Marshall--Lerner logic. The ambiguity arises because the tariff creates a mixed pattern of trade-balance disturbances across countries. The lesson is more general than the factor of three: \emph{a bystander's own favorable trade-diversion shock need not determine its equilibrium bilateral exchange rate, because that rate responds to the entire vector of trade-balance disturbances through $(-J)^{-1}F$}. That observation motivates a general way to organize the comparative statics, introduced next.
 
 \section{Disturbance and Adjustment: The General Multilateral Framework}
 
@@ -372,9 +388,11 @@ The three-country case suggests a general decomposition. A tariff first creates 
 \]
 This section derives that structure for general $N$ and arbitrary weights, states the condition under which the adjustment mechanism is regular, and gives the resulting sign rule. The systems of Sections 3 and 4 are its $N = 2$ and $N = 3$ cases.
 
+The decomposition itself is the most general layer of the analysis. Any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions admits a local representation of the form $J\, d\nu + G\, d\boldsymbol{\tau} = 0$, and the disturbance-adjustment reading does not rely on the symmetry used for the closed-form results. The nested CES structure enters at a lower level: it supplies the explicit expressions for $J$ and $G$ derived below, and primitive conditions for their signs. The general representation and the particular formulas should be kept distinct.
+
 \subsection{General linearization}
 
-Evaluate at $\tau_{ij} = 0$ with balanced trade, and normalize baseline incomes. The baseline objects are the home share within tradables $h_i = \alpha_D$, the within-import shares $b_{ij} = \beta_{ij}$, the income shares $s_{ij} = \alpha_T(1-\alpha_D) b_{ij} = m\, b_{ij}$, and the flow values $f_{ij} = s_{ij} I_i$ from \eqref{eq:tb} at $\tau = 0$. A country-specific home share $h_i$ carries through the derivation unchanged. Balance requires $\sum_k f_{ki} = \sum_j f_{ij}$.
+The equations of this subsection are the nested-CES expressions for the general objects: they compute the entries of $J$ and $G$ for the demand system of Section 2. Evaluate at $\tau_{ij} = 0$ with balanced trade, and normalize baseline incomes. The baseline objects are the home share within tradables $h_i = \alpha_D$, the within-import shares $b_{ij} = \beta_{ij}$, the income shares $s_{ij} = \alpha_T(1-\alpha_D) b_{ij} = m\, b_{ij}$, and the flow values $f_{ij} = s_{ij} I_i$ from \eqref{eq:tb} at $\tau = 0$. A country-specific home share $h_i$ carries through the derivation unchanged. Balance requires $\sum_k f_{ki} = \sum_j f_{ij}$.
 
 Perturb by tariffs $dt_{ij}$ and collect exchange-rate changes $\nu_j = d\log e_{Aj}$. Log price changes in $i$'s own currency ($dp_{ii} = 0$):
 \begin{equation}
@@ -521,7 +539,9 @@ This gives a different interpretation of the familiar two-country result. In a t
 \textbf{The two-country appreciation result is best understood as an aggregate home-versus-foreign result, not as a prediction that the tariffing country must appreciate against every foreign currency.}
 \end{center}
 
-\paragraph{Where the conditions sit empirically.} Given \eqref{eq:invpos}, $D > 0$ and $\rho_1^* > 0$ hold at every admissible calibration. The signs of $e_{AB}$, $e_{BC}$, and the NEER are therefore parameter-free. The one genuinely ambiguous object is the bilateral rate against the bystander. At the benchmark calibration ($\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$), $\rho_3^* = 3.96$ sits inside the range of estimated cross-origin trade elasticities, roughly $2$--$8$, with macro estimates at the low end and trade-level estimates at the high end. Either sign of $d\log e_{AC}$ is empirically plausible. By contrast, the trade-war threshold of Section 8, $\rho_1^* = 1.32$, lies beneath essentially all estimates, so the war predictions are clear-cut.
+\noindent Two qualifications keep the statement precise. The exact cancellation behind it is a property of the symmetric nested-CES environment (Sections 2.2 and 10); the decomposition of margins is more general. And $\rho$ does not disappear from the NEER response: it cancels from the numerator, but remains in $D$, so foreign-supplier substitution affects the magnitude of the aggregate adjustment even though, under symmetry, it cannot affect its sign.
+
+\paragraph{Where the conditions sit empirically.} Given \eqref{eq:invpos}, $D > 0$ and $\rho_1^* > 0$ hold at every admissible calibration. The signs of $e_{AB}$, $e_{BC}$, and the NEER are therefore parameter-free. The one genuinely ambiguous object is the bilateral rate against the bystander, and locating its threshold empirically requires care. The parameter $\rho$ is a specific structural object: substitution across foreign origins conditional on the import composite, in this two-layer demand system. Estimates labeled ``trade elasticities'' in the literature are not, in general, estimates of that object; they mix home-versus-foreign substitution, extensive margins, intermediate inputs, and gravity responses. What can be said is qualitative. Estimated upper-nest (home-versus-import) elasticities are typically low, and estimated lower-nest (cross-origin) elasticities are typically several times larger, so a benchmark threshold of $\rho_3^* = 3.96$ is neither clearly above nor clearly below plausible values of $\rho$. Neither sign of $d\log e_{AC}$ can be ruled out, but a sharper statement would require estimates that map onto $\rho$ directly. The trade-war threshold of Section 8, $\rho_1^* = 1.32$, is less sensitive to this mapping: it asks only that foreign origins substitute more easily with one another than the level at which home and foreign goods are usually estimated to substitute, so the war predictions are comparatively robust.
 
 \section{General $N$: Dilution and Aggregation}
 
@@ -570,10 +590,10 @@ $A$ depreciates against each untariffed bystander iff
 \begin{equation}
 \boxed{\;\rho > \rho_N^* = N \rho_1^* \;}
 \end{equation}
-The threshold is linear in $N$ because diverted expenditure splits across $N-2$ bystanders, each receiving weight $1/(N-1)$, so a larger $\rho$ is needed to reverse any one bilateral rate. This is a statement about how the adjustment is distributed across partners, not about the aggregate value of $A$'s currency.
+The threshold rises with $N$ because diverted expenditure splits across $N-2$ bystanders, each receiving weight $1/(N-1)$, so a larger $\rho$ is needed to reverse any one bilateral rate. This is a statement about how the adjustment is distributed across partners, not about the aggregate value of $A$'s currency.
 \end{result}
 
-The reason is dilution. With one bystander, expenditure diverted away from $B$ has only one alternative foreign destination. With $N-2$ bystanders, the same foreign reallocation is spread across many suppliers. Each individual bystander receives a smaller diversion gain, and stronger cross-origin substitutability is required to generate enough appreciation to reverse its bilateral rate against $A$.
+The economic force behind the rising threshold is dilution. With one bystander, expenditure diverted away from $B$ has only one alternative foreign destination. With $N-2$ bystanders, the same foreign reallocation is spread across many suppliers. Each individual bystander receives a smaller diversion gain, and stronger cross-origin substitutability is required to generate enough appreciation to reverse its bilateral rate against $A$. Dilution is a force one can expect in many models; the exact linearity of the threshold in $N$ is a property of the symmetric nested-CES structure.
 
 \subsection{Effective exchange-rate aggregation}
 
@@ -595,7 +615,7 @@ The $\rho$ terms cancel exactly, and $N$ affects only the magnitude through $D_N
 In the symmetric model, for every $N \geq 2$ and every $\rho$, a unilateral tariff appreciates the tariffing country's NEER: $d\nu_A^E/d\tau = -\rho_1^*/D_N < 0$ by \eqref{eq:rho1-identity}. Cross-origin substitution reallocates the adjustment across partners \eqref{eq:N-decomp} and can reverse individual bilateral rates \eqref{eq:N-eAC}, but under symmetry it cannot reverse the NEER. This is the precise sense in which the conventional two-country appreciation result survives multilateralization.
 \end{result}
 
-The general model therefore sharpens the decomposition. Home-versus-foreign adjustment maps into the effective exchange rate; reallocation across foreign suppliers maps into the dispersion of bilateral exchange rates. Cross-origin substitution affects the magnitude of the aggregate response through equilibrium adjustment, but under symmetry it cannot change its sign. Its qualitatively new role is to redistribute the adjustment across foreign partners.
+Under the symmetric nested-CES structure the decomposition becomes especially sharp: the home-versus-foreign component determines the sign of the effective response, while cross-origin reallocation governs the dispersion of bilateral responses. The statement is about signs, not orthogonality. Foreign-supplier substitution determines the bilateral distribution of the adjustment and also affects the magnitude of the aggregate response through $D_N$; under symmetry it cannot affect the aggregate sign. Its qualitatively new role is to redistribute the adjustment across foreign partners.
 
 \subsection{Single-elasticity restriction: an impossibility result}
 
@@ -801,7 +821,7 @@ N\,\frac{d\nu_A^E}{d\tau}
 to leading order, asymmetric exposure scales the symmetric NEER response by the target's relative importance $\kappa$ and preserves its sign.
 \end{result}
 
-To leading order, asymmetry simply scales the symmetric effective appreciation by the relative importance of the tariff target. The symmetric result is therefore not economically knife-edge, even though its exact finite-$N$ cancellation is.
+To leading order, asymmetry simply scales the symmetric effective appreciation by the relative importance of the tariff target. Within this structured class of asymmetric economies, the symmetric result is therefore not knife-edge, even though its exact finite-$N$ cancellation is. The experiment does not establish robustness to arbitrary asymmetry; it establishes it for the $\kappa$-parameterized family.
 
 \subsection{When can the NEER sign reverse?}
 
@@ -815,11 +835,11 @@ At finite $N$ the sign of the exact solution follows from $Q$, and the direction
 \end{equation}
 and the NEER \emph{depreciates} for $\rho$ beyond it. The intuition follows directly from the aggregation argument. $A$ appreciates against $B$, but $B$ receives little weight in $A$'s NEER; if $A$ simultaneously depreciates against many bystanders, those movements dominate the average. As $\kappa \to 0$, the flip point approaches the bilateral threshold $N\rho_1^*$, because a weightless target leaves the NEER equal to the bystander rates.
 \end{itemize}
-The exact cancellation of \eqref{eq:N-neer} is therefore one-sided. Tariffs on disproportionately large partners preserve the conventional aggregate sign for every $\rho$. Tariffs on minor partners can reverse it, but only at $\rho$ of order $N$. The same dilution that makes individual bilateral reversals harder as $N$ grows also makes aggregate reversal under asymmetry difficult: such values lie far above the war threshold $\rho_1^*$ and, at moderate $N$, above estimated elasticities ($\rho_E^* \approx 22$ at $N = 10$, $\kappa = 0.5$, benchmark parameters). The symmetric result should be read as exact under symmetry and approximately robust more broadly, rather than as a knife-edge curiosity.
+The exact cancellation of \eqref{eq:N-neer} is therefore one-sided. Tariffs on disproportionately large partners preserve the conventional aggregate sign for every $\rho$. Tariffs on minor partners can reverse it, but only at $\rho$ of order $N$. The same dilution that makes individual bilateral reversals harder as $N$ grows also makes aggregate reversal under asymmetry difficult: such values lie far above the war threshold $\rho_1^*$ and, at moderate $N$, above plausible elasticities ($\rho_E^* \approx 22$ at $N = 10$, $\kappa = 0.5$, benchmark parameters). The symmetric result should be read as exact under symmetry and approximately robust within the $\kappa$-parameterized class, rather than as a knife-edge curiosity; robustness to arbitrary asymmetric trade networks is not claimed.
 
 \section{Why the Canonical PTA Model Is Sharper}
 
-The multilateral model predicts that an untreated exporter benefits from a discriminatory tariff only when cross-origin substitution is sufficiently strong. This may initially appear to conflict with the canonical theory of preferential trade agreements, in which discrimination against one exporter unambiguously improves the terms of trade of its competitor. The difference is not a competing mechanism. It is a difference in the set of margins permitted by the two environments.
+The multilateral model predicts that an untreated exporter benefits from a discriminatory tariff only when cross-origin substitution is sufficiently strong. This may initially appear to conflict with the canonical theory of preferential trade agreements, in which discrimination against one exporter unambiguously improves the terms of trade of its competitor. The difference is not a competing mechanism. It is a difference in the set of margins permitted by the two environments. The right framing is therefore not that nested CES produces a threshold where Viner--Mundell does not. It is that the nested-CES model provides a tractable way of placing several economically meaningful margins in one environment, and the threshold states how strong foreign-supplier substitution must be to overcome the opposing margins. This section also shows that the threshold is not an artifact of CES curvature: each of its pieces corresponds to an identifiable economic force absent from the canonical setup.
 
 \subsection{Competing exporters}
 
@@ -934,6 +954,6 @@ The common principle is simple:
 \[
 \boxed{\text{tariffs change both how much a country buys from abroad and from whom it buys it.}}
 \]
-The first margin governs the aggregate value of the currency. The second governs the distribution of that adjustment across bilateral exchange rates. Distinguishing the two clarifies both what survives from the two-country model and what genuinely changes in a multilateral world.
+The first margin determines the sign of the aggregate response of the currency. The second determines the distribution of that adjustment across bilateral exchange rates, and through equilibrium it also affects the magnitude of the aggregate response. The results sit in the hierarchy stated in the Introduction: the disturbance-adjustment logic is general, the two-margin mechanism is broad, the nested CES isolates the margins with two elasticities, and symmetry delivers the exact thresholds and the exact cancellation. Distinguishing these layers clarifies both what survives from the two-country model and what genuinely changes in a multilateral world.
 
 \end{document}
