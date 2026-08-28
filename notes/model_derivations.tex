@@ -17,13 +17,13 @@
 
 \section{Introduction}
 
-In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign. These notes characterize the exchange-rate responses in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry and a multilateral Marshall--Lerner condition, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin substitution elasticity exceeds a threshold $N\rho_1^*$. Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate appreciates independently of the cross-origin elasticity and $N$, since the cross-origin terms cancel from the aggregate numerator. The exact cancellation and the linear threshold are properties of the symmetric nested-CES benchmark, but the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general.
+In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign. These notes characterize the exchange-rate responses in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry and a multilateral Marshall--Lerner condition, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin substitution elasticity exceeds a threshold $N\rho_1^*$. Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate appreciates independently of the cross-origin elasticity and $N$. The exact cancellation behind this aggregate result and the linear threshold are properties of the symmetric nested-CES model, but the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general.
 
 \section{$N$-Country Model and Equilibrium}
 
 \subsection{Production and preferences}
 
-Countries $i, j \in \{1, \dots, N\}$; $A$ is the tariff imposer, $B$ the target, $C$ a bystander. Each country produces a country-specific tradable and a non-tradable from labor:
+Countries are indexed by $i, j \in \{1, \dots, N\}$; generically, $A$ denotes the tariff imposer, $B$ the tariff target, and $C$ an untariffed bystander. Each country produces a country-specific tradable and a non-tradable from labor:
 \begin{equation}
 Y_{T_i} = A_{T_i} L_{T_i}, \qquad Y_{N_i} = A_{N_i} L_{N_i}, \qquad L_{T_i} + L_{N_i} = L_i ,
 \end{equation}
@@ -32,7 +32,7 @@ with perfect competition and producer-price normalization $P_{T_i} = 1$ in $i$'s
 w_i = A_{T_i}, \qquad P_{N_i} = A_{T_i}/A_{N_i} .
 \label{eq:wage}
 \end{equation}
-Wages are constant in own currency; all relative adjustment runs through exchange rates. Preferences are nested CES with share-linear weights:
+Wages are constant in own currency, so all relative adjustment runs through exchange rates. Preferences are nested CES with share-linear weights:
 \begin{align}
 C_i &= C_{T_i}^{\alpha_T}\, C_{N_i}^{1-\alpha_T}
 && \text{(tradable share } \alpha_T)
@@ -45,7 +45,7 @@ M_i &= \Big[\, \textstyle\sum_{j \neq i} \beta_{ij}^{1/\rho}\, C_{T_j i}^{\frac{
 && \text{(origin weights } \beta_{ij}, \text{ elasticity } \rho) .
 \label{eq:inner}
 \end{align}
-$\eta$ governs substitution between domestic and imported tradables (the home-versus-foreign margin); $\rho$ governs substitution across foreign origins conditional on importing (the foreign-supplier reallocation margin), inactive at $N = 2$ and active at $N \geq 3$. The two margins are economically more general than nested CES; the constant-elasticity representation and the exact closed forms below are model-specific. The \emph{symmetric benchmark} imposes $\beta_{ij} = 1/(N-1)$, common parameters $(\alpha_T, \alpha_D, \eta, \rho)$, and equal endowments and productivities; home bias $\alpha_D$ keeps home and foreign tradables asymmetric ($\rho = \eta$, $\alpha_D = 1/N$ is not imposed).
+$\eta$ governs substitution between domestic and imported tradables (the home-versus-foreign tradables margin); $\rho$ governs substitution across foreign origins conditional on importing (the foreign-supplier tradables reallocation margin, inactive at $N = 2$ and active at $N \geq 3$). The \emph{symmetric benchmark} imposes $\beta_{ij} = 1/(N-1)$, common parameters $(\alpha_T, \alpha_D, \eta, \rho)$, and equal endowments and productivities. Home bias $\alpha_D$ keeps home and foreign tradables asymmetric; full home-versus-foreign tradables symmetry would additionally require $\rho = \eta$ and $\alpha_D = 1/N$, and is not imposed.
 
 \subsection{Prices, expenditure, income, and trade balance}
 

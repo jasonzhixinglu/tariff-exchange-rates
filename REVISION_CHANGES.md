@@ -346,3 +346,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — formal PTA references added to the canonical notes
 
 - notes/model_derivations.tex: §6.1 opens by placing the competing-exporter environment in the Viner (1950) / Mundell (1964) tradition; §6.2 literature paragraph converted to formal author-year citations; a hand-formatted References section (matching Exchange_Rate_Tariffs/references.bib entries exactly) added after the conclusion: Bagwell-Staiger 1999 AER, Bond-Syropoulos 1996 JIE, Kemp-Wan 1976 JIE, Krugman 1991 (Helpman-Razin volume), Mundell 1964 Manchester School, Ornelas 2005 EER, Viner 1950. Still 12 pp.
+
+### 2026-08-28 — Jase's §1/§2.1 edits reviewed and repaired
+
+- Kept: intro trim (mechanism clause removed, benchmark -> model), "so" connective, "tradables" in the margin names, deletion of the §2.1 generality caveat (duplicate of the intro's final sentence). Fixed: orphaned "exact cancellation" reference in the intro (now "the exact cancellation behind this aggregate result"); country-indexing sentence grammar; restored the inactive-at-N=2 clause (used by §3.1); the rho=eta, alpha_D=1/N parenthetical restated as explicitly not imposed; double space. 12 pp, compiles clean.
