@@ -19,7 +19,7 @@
 
 \section{Introduction}
 
-In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign. These notes characterize the exchange-rate responses in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry and a multilateral Marshall--Lerner condition, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin substitution elasticity exceeds a threshold $N\rho_1^*$. Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate appreciates independently of the cross-origin elasticity and $N$. The exact cancellation behind this aggregate result and the linear threshold are properties of the symmetric nested-CES model, but the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general.
+In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign across countries. These notes characterize the exchange-rate responses in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry and a multilateral Marshall--Lerner condition, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin substitution elasticity exceeds a threshold $N\rho_1^*$. Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate appreciates independently of the cross-origin elasticity and $N$. The exact cancellation behind this aggregate result and the linear threshold are properties of the symmetric nested-CES model, but the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general. Proofs of all formal results are collected in Appendix~\ref{app:proofs}.
 
 \section{$N$-Country Model and Equilibrium}
 \label{sec:model}
@@ -310,7 +310,7 @@ $A$ always appreciates against $B$, $B$ always depreciates against $C$, and $A$ 
 \noindent The distinction between the two thresholds deserves emphasis. A favorable trade-diversion effect on $C$ at unchanged exchange rates ($F_C > 0$, i.e.\ $\rho > \rho_1^*$) is not sufficient for the $A$--$C$ bilateral rate to reverse. By the sign rule, $d\nu_C/d\tau \propto F_B + 2F_C \propto \rho - 3\rho_1^*$: $C$'s equilibrium rate responds to the entire disturbance vector through $(-J)^{-1}F$, mixing $C$'s own diversion gain with its exposure to $B$'s deterioration, and reversal requires the gain to outweigh that exposure.
 
 \begin{corollary}[Single elasticity]
-With $\rho = \eta = \sigma$: $\rho_3^* - \sigma = \sigma(3\alpha_D - 1) + 3(1-\alpha_D)(1-\alpha_T) > 0$ whenever $\alpha_D \geq 1/3$, for any $\alpha_T$; the reversal is unreachable. At the equal-weights point $\alpha_D = 1/3$, $\alpha_T = 3/4$: $d\log e_{AC}/d\tau = -1/(12\sigma) \to 0^-$.
+With $\rho = \eta = \sigma$: $\rho_3^* - \sigma = \sigma(3\alpha_D - 1) + 3(1-\alpha_D)(1-\alpha_T) \geq 0$ whenever $\alpha_D \geq 1/3$, for any $\alpha_T$ (with equality only at $\alpha_D = 1/3$, $\alpha_T = 1$); the reversal is unreachable. At the equal-weights point $\alpha_D = 1/3$, $\alpha_T = 3/4$: $d\log e_{AC}/d\tau = -1/(12\sigma) \to 0^-$.
 \label{cor:single}
 \end{corollary}
 
@@ -360,7 +360,7 @@ Under \eqref{eq:invpos}, the bystander bilateral rate reverses iff
 \label{res:Nthresh}
 \end{theorem}
 
-\noindent Diverted expenditure is spread across $N-2$ bystanders, each with weight $1/(N-1)$, so stronger cross-origin substitution is required to reverse any individual bilateral rate (dilution).\footnote{The exact linearity in $N$ is a symmetric nested-CES result, but it is also true that at any balanced baseline where $A$ and a bystander both import from both foreign origins, sufficiently strong cross-origin substitution still reverses the bystander rate (Appendix B).} Furthermore, with $\rho = \eta = \sigma$, $\rho_N^* - \sigma = \sigma(N\alpha_D - 1) + N(1-\alpha_D)(1-\alpha_T) > 0$ whenever $\alpha_D \geq 1/N$, so the reversal is again unreachable for single-elasticity models on the home-biased region.
+\noindent Diverted expenditure is spread across $N-2$ bystanders, each with weight $1/(N-1)$, so stronger cross-origin substitution is required to reverse any individual bilateral rate (dilution).\footnote{The exact linearity in $N$ is a symmetric nested-CES result, but it is also true that at any balanced baseline where $A$ and a bystander both import from both foreign origins, sufficiently strong cross-origin substitution still reverses the bystander rate (Appendix B).} Furthermore, with $\rho = \eta = \sigma$, $\rho_N^* - \sigma = \sigma(N\alpha_D - 1) + N(1-\alpha_D)(1-\alpha_T) \geq 0$ whenever $\alpha_D \geq 1/N$, so the reversal is again unreachable for single-elasticity models on the home-biased region.
 
 \section{Bilateral versus Effective Exchange Rates}
 
@@ -592,5 +592,182 @@ war threshold & --- & $\rho_1^*$ & $\rho_1^*$, independent of $N$ \\
 \end{tabular}
 \end{center}
 
+
+\section{Proofs}
+\label{app:proofs}
+
+Throughout, $m \equiv \alpha_T(1-\alpha_D)$, $P \equiv \rho + \alpha_D(\eta-1)$, and all derivatives are evaluated at the balanced free-trade baseline of Section 4.1.
+
+\begin{proof}[Proof of Proposition \ref{res:mml}]
+By \eqref{eq:dp}, prices enter \eqref{eq:dindex}--\eqref{eq:dtb} only through differences $\nu_j - \nu_i$, so adding a common constant to every $\nu_i$ (including $\nu_A$) leaves each $d\,\mathrm{TB}_i$ unchanged: $\sum_l \widetilde J_{il} = 0$ for all $i$. Summing \eqref{eq:tb} over $i$ gives $\sum_i \mathrm{TB}_i \equiv 0$ identically, so $\sum_i \widetilde J_{il} = 0$ for all $l$. Under Assumption \ref{as:gs}, $\widetilde J_{il} \geq 0$ for $l \neq i$, so $\widetilde J_{ii} = -\sum_{l \neq i} \widetilde J_{il} \leq 0$, and deleting row and column $A$ gives \eqref{eq:diagdom}, with strict inequality in every row $i$ with $\widetilde J_{iA} > 0$.
+
+Thus $-J$ is a Z-matrix (nonpositive off-diagonal entries) whose rows are diagonally dominant with nonnegative diagonal, irreducible, with strict dominance in at least one row. Its diagonal is strictly positive: $|J_{ii}| = 0$ would force row $i$ of $J$ to vanish, contradicting irreducibility. Write $-J = D - B$ with $D = \operatorname{diag}(-J) > 0$ and $B \geq 0$. Row dominance makes every row sum of $D^{-1}B$ at most one, strictly less in some row; with irreducibility, its spectral radius satisfies $r \equiv \rho(D^{-1}B) < 1$. Hence
+\[
+(-J)^{-1} = (I - D^{-1}B)^{-1} D^{-1} = \sum_{k \geq 0} (D^{-1}B)^k D^{-1} \;\geq\; 0 .
+\]
+Nonsingularity follows from $r < 1$; $\det(-J) = \det D \cdot \det(I - D^{-1}B) > 0$ because $\det D > 0$ and the eigenvalues $1 - \lambda$ of $I - D^{-1}B$ satisfy $|\lambda| \leq r < 1$, so real eigenvalues are positive and complex ones enter in conjugate pairs with positive products. Finally, the Gershgorin discs of $-J$ are centered at $|J_{ii}| > 0$ with radii at most $|J_{ii}|$, so they lie in the closed right half-plane and touch the imaginary axis only at the origin, which nonsingularity excludes: $\operatorname{Re}\lambda(-J) > 0$, i.e., $\operatorname{Re}\lambda(J) < 0$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{res:signrule}]
+Immediate from \eqref{eq:system}: $d\nu/d\tau = (-J)^{-1}F$ with $(-J)^{-1} = (\vartheta_{ij}) \geq 0$ elementwise by Proposition \ref{res:mml}.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:2c}]
+At $N = 2$, $f_{AB} = f_{BA} = m$ and each country has a single import origin, so $dp_{AB} = d\log P_{M_A} = \nu_B + d\tau$ and $dp_{BA} = d\log P_{M_B} = -\nu_B$; the $(1-\rho)$ term of \eqref{eq:dsfor} vanishes and
+\[
+d\log s_{AB} = (1-\eta)\alpha_D(\nu_B + d\tau),
+\qquad
+d\log s_{BA} = -(1-\eta)\alpha_D\,\nu_B,
+\qquad
+d\log I_A = m\,d\tau,
+\qquad
+d\log I_B = \nu_B .
+\]
+Substituting into \eqref{eq:dtb},
+\[
+d\,\mathrm{TB}_A
+= m\big[ d\log s_{BA} + \nu_B \big] - m\big[ d\log s_{AB} + m\,d\tau - d\tau \big]
+= m\big[ \big(1 + 2\alpha_D(\eta-1)\big)\nu_B + \big(1 - m + \alpha_D(\eta-1)\big) d\tau \big],
+\]
+which is \eqref{eq:2c-collected} with $D_2 = 1 + 2\alpha_D(\eta-1)$ and $\rho_1^* = 1 - m + \alpha_D(\eta-1)$; the boxed slope follows. For the elasticity form, hold income fixed and let $M(p)$ denote import volume at consumer price $p = p_{AB}$: import value is $s_{AB} I_A$, so $\varepsilon_M \equiv -\partial \log M/\partial \log p = 1 - \partial \log s_{AB}/\partial \log p = 1 - (1-\eta)\alpha_D = 1 + \alpha_D(\eta-1)$, and $\varepsilon_X = 1 + \alpha_D(\eta-1)$ by the mirror computation in $B$. Differentiating $\mathrm{TB}_A(e, \tau) = X(1/e) - e\,M((1+\tau)e)$ at $\tau = 0$ and balanced trade $X = eM$ gives $\partial \mathrm{TB}_A/\partial e = M(\varepsilon_X + \varepsilon_M - 1)$, so $\varepsilon_X + \varepsilon_M - 1 = 2\alpha_D(\eta-1) + 1 = D_2$ and \eqref{eq:invpos} at $N = 2$ is exactly $\varepsilon_X + \varepsilon_M > 1$. Since $F = m\rho_1^* > 0$ by \eqref{eq:rho1-identity}, the slope $-\rho_1^*/D_2$ is negative.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:3c}]
+From \eqref{eq:3c-indices}, the deviations of each bilateral price from the relevant import index are
+\[
+\begin{aligned}
+dp_{AB} - d\log P_{M_A} &= \tfrac12(\nu_B - \nu_C + d\tau), &
+dp_{AC} - d\log P_{M_A} &= \tfrac12(\nu_C - \nu_B - d\tau), \\
+dp_{BA} - d\log P_{M_B} &= -\tfrac12 \nu_C, &
+dp_{BC} - d\log P_{M_B} &= \tfrac12 \nu_C, \\
+dp_{CA} - d\log P_{M_C} &= -\tfrac12 \nu_B, &
+dp_{CB} - d\log P_{M_C} &= \tfrac12 \nu_B ,
+\end{aligned}
+\]
+and the share changes follow from \eqref{eq:dsfor}. With flow values $m/2$, \eqref{eq:dtb} reads
+\[
+\begin{aligned}
+\tfrac{2}{m}\, d\,\mathrm{TB}_B &= \big( d\log s_{AB} + \tfrac{m}{2} d\tau - d\tau \big) + \big( d\log s_{CB} + \nu_C \big) - \big( d\log s_{BA} + \nu_B \big) - \big( d\log s_{BC} + \nu_B \big), \\
+\tfrac{2}{m}\, d\,\mathrm{TB}_C &= \big( d\log s_{AC} + \tfrac{m}{2} d\tau \big) + \big( d\log s_{BC} + \nu_B \big) - \big( d\log s_{CA} + \nu_C \big) - \big( d\log s_{CB} + \nu_C \big) .
+\end{aligned}
+\]
+Collecting coefficients is elementary; for illustration, the coefficient of $\nu_B$ in $\tfrac{2}{m} d\,\mathrm{TB}_B$ is
+\[
+\underbrace{\tfrac12\big[(1-\rho) + (1-\eta)\alpha_D\big]}_{d\log s_{AB}}
++ \underbrace{\tfrac12\big[(1-\rho) + (1-\eta)\alpha_D\big]}_{d\log s_{CB}}
++ \underbrace{2(1-\eta)\alpha_D - 2}_{-\,d\log s_{BA} - d\log s_{BC} - 2\nu_B}
+= -\big( 3\alpha_D(\eta-1) + \rho + 1 \big) = -D_3 .
+\]
+Carrying out the same collection for the remaining coefficients yields \eqref{eq:3c-JF}; the replication package verifies the full collection symbolically. Inverting, as displayed in \eqref{eq:3c-solution}, gives \eqref{eq:3c-slopes}. With $D_3 > 0$: the $e_{AB}$ numerator $-(\rho + 3\rho_1^*)$ is negative and the $e_{BC}$ numerator $2\rho$ positive for all admissible parameters, while $\operatorname{sign}(d\log e_{AC}/d\tau) = \operatorname{sign}(\rho - 3\rho_1^*)$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary \ref{cor:single}]
+Substituting $\rho = \eta = \sigma$ into $3\rho_1^* = 3[1 + \alpha_D(\sigma-1) - \alpha_T(1-\alpha_D)]$,
+\[
+\rho_3^* - \sigma = \sigma(3\alpha_D - 1) + 3(1-\alpha_D)(1-\alpha_T) .
+\]
+For $\alpha_D \geq 1/3$ the first term is nonnegative and the second is nonnegative, with both zero only at $\alpha_D = 1/3$, $\alpha_T = 1$. Reversal requires the strict inequality $\rho > \rho_3^*$, i.e.\ $\sigma > \rho_3^*$, which fails whenever $\rho_3^* - \sigma \geq 0$. At $\alpha_D = 1/3$, $\alpha_T = 3/4$: $\rho_3^* - \sigma = \tfrac12$ and $D_3 = 3\cdot\tfrac13(\sigma-1) + \sigma + 1 = 2\sigma$, so $d\log e_{AC}/d\tau = (\sigma - \rho_3^*)/(3D_3) = -1/(12\sigma)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{res:Nthresh}]
+The equilibrium is unique by Proposition \ref{res:mml}, and the system is invariant under permutations of the $N-2$ bystanders, so the unique solution is permutation-invariant: all bystanders share a common $\nu_C$, and the system reduces to the conditions for $B$ and one representative bystander. From \eqref{eq:N-indices},
+\[
+\begin{aligned}
+dp_{AB} - d\log P_{M_A} &= \tfrac{N-2}{N-1}(\nu_B + d\tau - \nu_C), &
+dp_{AC} - d\log P_{M_A} &= \tfrac{1}{N-1}(\nu_C - \nu_B - d\tau), \\
+dp_{BA} - d\log P_{M_B} &= -\tfrac{N-2}{N-1}\nu_C, &
+dp_{BC} - d\log P_{M_B} &= \tfrac{1}{N-1}\nu_C, \\
+dp_{CA} - d\log P_{M_C} &= -\tfrac{1}{N-1}\big[(N-3)\nu_C + \nu_B\big], &
+dp_{CB} - d\log P_{M_C} &= \tfrac{1}{N-1}\big[(N-2)\nu_B - (N-3)\nu_C\big], \\
+dp_{CC'} - d\log P_{M_C} &= \tfrac{1}{N-1}(2\nu_C - \nu_B) , &&
+\end{aligned}
+\]
+with share changes from \eqref{eq:dsfor} and flow values $m/(N-1)$. The two conditions are
+\[
+\begin{aligned}
+\tfrac{N-1}{m}\, d\,\mathrm{TB}_B &= \big( d\log s_{AB} + \tfrac{m}{N-1} d\tau - d\tau \big) + (N-2)\big( d\log s_{CB} + \nu_C \big) - \big( d\log s_{BA} + \nu_B \big) - (N-2)\big( d\log s_{BC} + \nu_B \big), \\
+\tfrac{N-1}{m}\, d\,\mathrm{TB}_C &= \big( d\log s_{AC} + \tfrac{m}{N-1} d\tau \big) + \big( d\log s_{BC} + \nu_B \big) + (N-3)\big( d\log s_{C'C} + \nu_C \big) \\
+&\qquad - \big( d\log s_{CA} + \nu_C \big) - \big( d\log s_{CB} + \nu_C \big) - (N-3)\big( d\log s_{CC'} + \nu_C \big) .
+\end{aligned}
+\]
+Collecting coefficients exactly as in the proof of Proposition \ref{res:3c} yields \eqref{eq:N-system}; the collection is verified symbolically in the replication package. The counting matrix has determinant $2(N-1) - (N-2) = N$, so inverting gives \eqref{eq:N-slopes}, which contain \eqref{eq:3c-slopes} at $N = 3$ and \eqref{eq:2c-slope} at $N = 2$. Under \eqref{eq:invpos}, $D_N > 0$: the $e_{AB}$ numerator $-[N\rho_1^* + (N-2)\rho]$ is negative and the $e_{BC}$ numerator positive, while $\operatorname{sign}(d\log e_{AC}/d\tau) = \operatorname{sign}(\rho - N\rho_1^*)$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{res:neer}]
+With symmetric weights $w_{Aj} = 1/(N-1)$, using \eqref{eq:N-slopes},
+\[
+\frac{d\nu_A^E}{d\tau}
+= \frac{\nu_B + (N-2)\nu_C}{N-1}
+= \frac{-\big[N\rho_1^* + (N-2)\rho\big] + (N-2)\big[\rho - N\rho_1^*\big]}{(N-1)\,N\,D_N}
+= \frac{-(N-1)\,N\rho_1^*}{(N-1)\,N\,D_N}
+= -\,\frac{\rho_1^*}{D_N} ,
+\]
+the $\rho$ terms cancelling identically. By \eqref{eq:rho1-identity}, $\rho_1^* = \alpha_D\eta + (1-\alpha_D)(1-\alpha_T) > 0$ for $\alpha_D, \eta > 0$ and $\alpha_T \leq 1$, and $D_N > 0$ under \eqref{eq:invpos}, so the response is negative for every $N \geq 2$ and every admissible $\rho$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:war}]
+Let primes denote responses to the mirror shock $dt_{BA} = d\tau$. Relabeling $A \leftrightarrow B$ in \eqref{eq:N-slopes} gives $d\log e_{BA}' = -[N\rho_1^* + (N-2)\rho]/(N D_N)$ and $d\log e_{BC}' = (\rho - N\rho_1^*)/(N D_N)$, hence, using $e_{AB} = 1/e_{BA}$ and $e_{AC} = e_{AB} e_{BC}$,
+\[
+d\log e_{AB}' = \frac{N\rho_1^* + (N-2)\rho}{N D_N},
+\qquad
+d\log e_{AC}' = d\log e_{AB}' + d\log e_{BC}' = \frac{(N-1)\rho}{N D_N} .
+\]
+By linearity, the war response is the sum of \eqref{eq:N-slopes} and the primed responses:
+\[
+d\log e_{AB}\big|^w = 0,
+\qquad
+d\log e_{AC}\big|^w = \frac{\rho - N\rho_1^*}{N D_N} + \frac{(N-1)\rho}{N D_N} = \frac{\rho - \rho_1^*}{D_N} ,
+\]
+and by the $A \leftrightarrow B$ symmetry of the war, $d\log e_{BC}|^w = d\log e_{AC}|^w$. The war NEER is $\tfrac{1}{N-1}[0 + (N-2)(\rho - \rho_1^*)/D_N]$. All three statements have the sign of $\rho - \rho_1^*$ given $D_N > 0$, independently of $N$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:real}]
+From \eqref{eq:rer} and \eqref{eq:indices}, only tradable prices move, so $d\log q_{Aj} = \nu_j + \alpha_T( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}})$ with $d\log P_{T_i}^{\mathrm{own}} = (1-\alpha_D)\, d\log P_{M_i}$, the indices in \eqref{eq:N-indices} already being in own currency. Then
+\[
+d\log q_{AB}
+= \nu_B + m\Big[ \tfrac{(N-2)\nu_C}{N-1} - \nu_B - \tfrac{\nu_B + d\tau + (N-2)\nu_C}{N-1} \Big]
+= \Big(1 - \tfrac{mN}{N-1}\Big)\nu_B - \tfrac{m}{N-1}\, d\tau ,
+\]
+and the identical computation for $j = C$ gives \eqref{eq:qgen} (the bracket again collapses to $-\tfrac{N\nu_C + d\tau}{N-1}$). Setting $d\log q_{AC} = 0$ with $\nu_C$ from \eqref{eq:N-slopes}:
+\[
+\big[(N-1) - mN\big] \frac{\rho - N\rho_1^*}{N} = m\, D_N(\rho),
+\]
+which is linear in $\rho$ since $D_N(\rho) = N\alpha_D(\eta-1) + (N-2)\rho + 1$; solving gives \eqref{eq:N-rhoq}, using $(N-1) - mN - mN(N-2) = (N-1)(1 - mN)$. For $m < 1/N$ the left factor $(N-1) - mN$ is positive, and $D_N(\rho_q^*) > 0$ for $\eta \geq 1$, so $\rho_q^* > N\rho_1^*$: part (i). Averaging \eqref{eq:qgen} over $j$ and substituting \eqref{eq:N-neer} gives \eqref{eq:N-reer}; both terms are negative for $m < (N-1)/N$ under \eqref{eq:invpos}: part (ii).
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:viner}]
+Displayed in \eqref{eq:pta-cs}: total differentiation of market clearing gives $dp/dt_B \in (0,1)$, and the signs of $dq_B/dt_B$ and $dq_C/dt_B$ follow from $M_A' < 0$ and $E_j' > 0$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:pta}]
+Embed the canonical structure in the nested model's parameter space. $A$ produces none of the importable, so the home share within tradables is $\alpha_D = 0$; the numeraire is traded and there is no non-tradable, so $\alpha_T = 1$; quasilinearity removes the income effects otherwise carried by the linkage term. Evaluating \eqref{eq:rho1-identity}, $\rho_1^* = \alpha_D \eta + (1-\alpha_D)(1-\alpha_T) = 0$, hence $\rho_3^* = 3\rho_1^* = 0 \leq 0$, and the reversal condition $\rho > \rho_3^*$ holds for every $\rho > 0$.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{res:kappa}]
+With the weights \eqref{eq:kappa-b} the bystanders remain interchangeable, so by the uniqueness and symmetry argument of Theorem \ref{res:Nthresh} the system again reduces to two unknowns $(\nu_B, \nu_C)$, with flow values $m\beta$, $m\gamma$, $m\xi$ for $\beta = \kappa/(N-1)$, $\gamma = (1-\beta)/(N-2)$, $\xi = (1-2\gamma)/(N-3)$. Write $\nu_B = b/N$ and $\nu_C = c/N$ with $d\tau$ fixed, and expand the two equilibrium conditions in $1/N$ at fixed $(\kappa, \rho)$. To leading order, $\beta \to \kappa/N$, $(N-2)\gamma \to 1$, and
+\[
+d\log P_{M_A} = \frac{\kappa\, d\tau + c}{N} + O(N^{-2}),
+\qquad
+d\log P_{M_B} = \frac{c - b}{N} + O(N^{-2}),
+\qquad
+d\log P_{M_C} = O(N^{-2}) .
+\]
+Substituting into \eqref{eq:dsfor} and the flow sums, and multiplying the $B$- and $C$-conditions by $N/m$ and $N(N-2)/m$ respectively, every coefficient converges, and the limit system in $(b, c)$ is
+\[
+P\,(b - c) = -\,\kappa\rho\, d\tau,
+\qquad\qquad
+P\,(2c - b) = \kappa(\rho - \rho_1^*)\, d\tau,
+\qquad
+P \equiv \rho + \alpha_D(\eta-1) > 0 :
+\]
+the first from the collapse of the tariff term $\beta[(1-\rho) - 1]d\tau = -\beta\rho\,d\tau$ and the relative share responses between $B$ and the bystanders; the second from $A$'s diversion toward $C$ net of $C$'s exposure to $B$, whose $d\tau$ coefficient is $\kappa[\rho - 1 + (1-\eta)\alpha_D + m] = \kappa(\rho - \rho_1^*)$. The limit matrix $P\left(\begin{smallmatrix} 1 & -1 \\ -1 & 2 \end{smallmatrix}\right)$ has determinant $P^2 > 0$, so the solution of the exact system converges to the solution of the limit system: adding the two equations, $c = -\kappa\rho_1^*\, d\tau / P$. The NEER weights are $w_{AB} = \beta = O(N^{-1})$ and $w_{AC} = \gamma$ with $(N-2)\gamma \to 1$, so
+\[
+N\,\frac{d\nu_A^E}{d\tau}
+= N\big[ \beta\, \nu_B + (N-2)\gamma\, \nu_C \big]\big/ d\tau
+\;\longrightarrow\; c/d\tau
+= -\,\frac{\kappa\,\rho_1^*}{\rho + \alpha_D(\eta-1)} ,
+\]
+which equals $-\kappa \lim_N N\rho_1^*/D_N$ since $D_N/N \to P$.
+\end{proof}
 
 \end{document}

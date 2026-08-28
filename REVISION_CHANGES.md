@@ -430,3 +430,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — conclusion small edit
 
 - "aggregation under symmetry" qualifier kept; the origins/countries/soruces placeholder resolved to "foreign origins" (matches cross-origin vocabulary, avoids repeating "suppliers"). 13 pp, compiles clean.
+
+### 2026-08-28 — proofs appendix added (user-directed)
+
+- New Appendix D "Proofs": formal proofs for all twelve statements. Highlights: Prop 3.1 proved self-contained (homogeneity/Walras identities from the model, derived dominance, Neumann-series inverse-positivity, det > 0 via eigenvalue pairing, Gershgorin for stability); Prop 4.2 with the full N=2 collection and the fixed-income elasticity computation eps_X = eps_M = 1 + aD(eta-1); Prop 4.3 and Thm 4.5 with the dp - dPM difference tables, flow sums, and an illustrative coefficient collection (-D_3); Thm 5.1 cancellation algebra; Prop 6.1 by relabeling + superposition; Prop 6.2 derives eq:qgen by hand and both threshold/REER parts; Prop 7.2 by parameter embedding (aD = 0, aT = 1 gives rho_3* = 0); Prop B.1 proved analytically via 1/N expansion to a nonsingular limit system (no reliance on the symbolic computation). Main text: intro pointer to the appendix; boundary-case fix in Corollary 4.4 and the general-N remark (gap >= 0, equality only at aD = 1/N, aT = 1). 17 pp.
