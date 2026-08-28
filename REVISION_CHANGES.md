@@ -382,3 +382,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's N=2 repetition cut reviewed
 
 - Cut accepted: the interpretation paragraph after Result 4.2 removed (the Result now carries both ingredients itself; underbrace labels cover the economics; the rho-inoperative clause is covered by §2.1). Fixed: doubled "therefore" in the Result; the Appendix A pointer restored as a one-line note (the deleted paragraph held the only reference to Appendix A). 13 pp, compiles clean.
+
+### 2026-08-28 — Jase's N=3 edits reviewed; rho > eta necessary-condition claim corrected
+
+- Kept: Appendix A pointer trim, "impact trade-balance disturbances" and "target B always moves toward deficit" (accurate), removal of the closing repetition in the two-thresholds paragraph. Corrected the new post-corollary sentence: direction fixed (reversal = A DEPRECIATING against C, not appreciating); scope added (3 rho_1* >= eta holds iff alpha_D >= 1/3, so rho > eta is necessary for reversal only under that home-bias condition); flagged as necessary-not-sufficient with the operative threshold 3 rho_1*; deterioation typo. 13 pp, compiles clean.
