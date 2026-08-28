@@ -414,3 +414,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — cannot-bind sentence rewritten plainly; "openness credit" renamed
 
 - PTA link sentence now one step per clause: canonical restrictions push the threshold to rho_3* <= 0, so rho > rho_3* holds for every rho > 0, making the Viner-Mundell sign automatic, not a different mechanism. (A heredoc-mangled \rho was introduced and repaired in the same pass.) "Openness credit" renamed "openness offset" with an explicit negative-sign explanation, after Jase flagged the term as unclear. 13 pp, compiles clean.
+
+### 2026-08-28 — Jase's PTA-section cuts reviewed and polished
+
+- Kept: "Relation to our model" retitle, paragraph splits, "This is formally stated as follows" bridge, "direct corollary" framing, deletion of the CES-curvature-artifact sentence. Fixed: "owing to the fact that" -> "arises because", THis and corrolary typos, "corollary from" -> "of", and the literature lead-in ("Other models ... includes:" was ungrammatical and mislabeled the competing-exporter class, which IS the canonical environment) -> "The PTA literature varies in which margins it removes." 13 pp, compiles clean.
