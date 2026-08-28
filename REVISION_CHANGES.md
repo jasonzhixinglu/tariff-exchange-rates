@@ -426,3 +426,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — full proofread pass of the canonical notes
 
 - Six fixes, none touching content: (1) Proposition 4.2 "appreciates by [negative]" -> colon; (2) sign-rule weights renamed omega -> vartheta (exact symbol collision with the relative wage omega_ij; table cell updated; PTA endowment omega_j left as standard single-subscript notation); (3) eq:N-rhoq comma-before-capital -> period; (4) hyphenation consistency (bilateral exchange-rate ambiguity, effective exchange-rate response); (5) dt_jk introduced in words at first use in §3.1. Verified: appendix section numbers, all cross-references resolve, no undefined labels, no other typos found. 13 pp, compiles clean.
+
+### 2026-08-28 — conclusion small edit
+
+- "aggregation under symmetry" qualifier kept; the origins/countries/soruces placeholder resolved to "foreign origins" (matches cross-origin vocabulary, avoids repeating "suppliers"). 13 pp, compiles clean.
