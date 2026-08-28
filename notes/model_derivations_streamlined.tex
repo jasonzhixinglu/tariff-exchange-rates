@@ -495,7 +495,7 @@ An improvement in $C$'s terms of trade is a rise in $e_{AC}$; the nested model r
 The canonical model deletes the first two opposing forces and the income effects behind the first: $B$ and $C$ are competing exporters rather than full trading partners (no $B$--$C$ demand linkage), $A$ does not produce the imported good (no home switching), and quasilinearity removes income effects. What remains is reallocation between the two foreign suppliers, signed directly by $M_A' < 0$ and $E_j' > 0$; the Viner case adds $\rho = \infty$.
 
 \begin{result}
-The canonical PTA model is the restriction of the three-country model to a subspace on which $\rho_3^* \leq 0$: the unconditional Viner--Mundell sign is the threshold condition evaluated where it cannot bind. The nested model embeds the same diversion mechanism among the opposing margins, and $\rho > \rho_3^*$ states when it dominates.\footnote{Analytical PTA models obtain sharp signs by such restrictions (competing exporters: Bagwell--Staiger 1999, Ornelas 2005; symmetric endowment blocs: Krugman 1991, Bond--Syropoulos 1996; Viner: $\rho = \infty$; Kemp--Wan 1976: no restrictions, no sign claims). Applied GTAP-class and quantitative trade models retain every margin and generate both signs in simulations without stating the separating condition. Appendix C verifies the decomposition by recomputing the threshold with each margin removed.}
+The canonical PTA model is the restriction of the three-country model to a subspace on which $\rho_3^* \leq 0$: the unconditional Viner--Mundell sign is the threshold condition evaluated where it cannot bind. The nested model embeds the same diversion mechanism among the opposing margins, and $\rho > \rho_3^*$ states when it dominates.\footnote{Analytical PTA models obtain sharp signs by such restrictions (competing exporters: Bagwell--Staiger 1999, Ornelas 2005; symmetric endowment blocs: Krugman 1991, Bond--Syropoulos 1996; Viner: $\rho = \infty$; Kemp--Wan 1976: no restrictions, no sign claims). Applied GTAP-class and quantitative trade models retain every margin and generate both signs in simulations without stating the separating condition. Numerically, severing the $B$--$C$ linkage alone accounts for most of the threshold, and combining it with $\alpha_D = 0$ removes the reversal region entirely (replication package).}
 \label{res:pta}
 \end{result}
 
@@ -537,26 +537,5 @@ war threshold & --- & $\rho_1^*$ & $\rho_1^*$, independent of $N$ \\
 \end{center}
 
 \paragraph{Empirical mapping of $\rho$.} The parameter $\rho$ is substitution across foreign origins conditional on the import composite; estimates labeled ``trade elasticities'' generally measure different objects (aggregate import responses, home-versus-foreign substitution, gravity responses mixing margins). Qualitatively, upper-nest estimates are low and lower-nest estimates several times larger, so the benchmark $\rho_3^* = 3.96$ is neither clearly above nor below plausible $\rho$: neither sign of $e_{AC}$ can be ruled out without estimates that map onto $\rho$ directly. The war threshold $\rho_1^* = 1.32$ is less sensitive to this mapping, so the war predictions are comparatively robust.
-
-\section{Threshold decomposition: restriction table}
-
-Recomputing $\rho_3^*$ with each margin of \eqref{eq:pta-decomp} removed (severing trade changes the baseline, so the pieces are approximately additive):
-
-\begin{center}
-\begin{tabular}{lll}
-\toprule
-restriction & threshold $\rho_3^*$ & piece removed \\
-\midrule
-none (benchmark) & $3.96$ & --- \\
-no $B$--$C$ trade ($\beta_{BC} = \beta_{CB} = 0$) & $1.05$ & the linkage \\
-no home tradables ($\alpha_D = 0$) & $1.80$ & home switching \\
-no non-tradables ($\alpha_T = 1$) & $3.60$ & credit maximized \\
-$\alpha_D = 0$ and $\alpha_T = 1$ & none: reversal for all $\rho > 0$ & \\
-no $B$--$C$ trade and $\alpha_D = 0$ & none: reversal for all $\rho > 0$ & \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\noindent The largest piece is the $B$--$C$ linkage; two routes reach $\rho_3^* \leq 0$, and the canonical PTA model takes both.
 
 \end{document}
