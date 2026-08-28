@@ -335,7 +335,7 @@ The bystander bilateral rate reverses iff
 \label{res:Nthresh}
 \end{result}
 
-\noindent Diverted expenditure is spread across $N-2$ bystanders, each with weight $1/(N-1)$, so stronger cross-origin substitution is required to reverse any individual bilateral rate (dilution). The exact linearity in $N$ is a symmetric nested-CES result. With $\rho = \eta = \sigma$, $\rho_N^* - \sigma = \sigma(N\alpha_D - 1) + N(1-\alpha_D)(1-\alpha_T) > 0$ whenever $\alpha_D \geq 1/N$: the reversal stays unreachable for single-elasticity models on the home-biased region.
+\noindent Diverted expenditure is spread across $N-2$ bystanders, each with weight $1/(N-1)$, so stronger cross-origin substitution is required to reverse any individual bilateral rate (dilution). The exact linearity in $N$ is a symmetric nested-CES result, and away from symmetry no universal threshold exists; the reversal region itself is not a symmetry artifact, however --- at any balanced baseline where $A$ and a bystander both import from both foreign origins, sufficiently strong cross-origin substitution still reverses the bystander rate (Appendix B). With $\rho = \eta = \sigma$, $\rho_N^* - \sigma = \sigma(N\alpha_D - 1) + N(1-\alpha_D)(1-\alpha_T) > 0$ whenever $\alpha_D \geq 1/N$: the reversal stays unreachable for single-elasticity models on the home-biased region.
 
 \section{Bilateral versus Effective Exchange Rates}
 
@@ -354,7 +354,7 @@ Under symmetry, a unilateral tariff appreciates the tariffing country's NEER for
 \label{res:neer}
 \end{result}
 
-\noindent $\rho$ governs the relative distribution of adjustment across foreign partners: its direct terms cancel from the NEER numerator under symmetry, while it remains in $D_N$ and therefore still affects the magnitude of the aggregate response. The two-country appreciation result thus survives multilateralization as an effective, rather than universally bilateral, statement --- it is bilateral at $N = 2$ only because there is one foreign country. The exact cancellation is specific to the symmetric nested-CES environment (Section 5.3 quantifies its robustness); the distinction between aggregate home-versus-foreign adjustment and foreign-supplier reallocation is more general. (Appendix B collects the correspondence across $N$ and remarks on the empirical mapping of $\rho$.)
+\noindent $\rho$ governs the relative distribution of adjustment across foreign partners: its direct terms cancel from the NEER numerator under symmetry, while it remains in $D_N$ and therefore still affects the magnitude of the aggregate response. The two-country appreciation result thus survives multilateralization as an effective, rather than universally bilateral, statement --- it is bilateral at $N = 2$ only because there is one foreign country. The exact cancellation is specific to the symmetric nested-CES environment; the distinction between aggregate home-versus-foreign adjustment and foreign-supplier reallocation is more general. Appendix B quantifies the robustness of the cancellation: within a structured asymmetric family it is preserved to leading order in $1/N$, and it can reverse only for a disproportionately under-weighted target at $\rho$ of order $N$. (Appendix C collects the correspondence across $N$ and remarks on the empirical mapping of $\rho$.)
 
 \section{Extensions}
 
@@ -416,45 +416,6 @@ The direct CPI effect makes real bilateral reversal harder than nominal reversal
 \label{res:real}
 \end{result}
 
-\subsection{Asymmetry}
-
-The $J$--$F$ framework remains valid without symmetry; the exact thresholds and the NEER cancellation do not.
-
-\paragraph{General asymmetric baseline.} At any balanced baseline, \eqref{eq:dp}--\eqref{eq:dtb} hold with observed shares $(b_{ij}, h_i)$ and incomes $y_i$ as coefficients. For $N = 3$ at a general baseline (paper appendix), the bystander slope has denominator $\det(-J) > 0$ and numerator quadratic in $\rho$,
-\begin{equation}
-\operatorname{sign} \frac{d\log e_{AC}}{d\tau}
-= \operatorname{sign}\big( c_2\, \rho^2 + c_1\, \rho + c_0 \big),
-\qquad
-c_2 = b_{AB}\, b_{AC}\, b_{CA}\, b_{CB}\, (1-h_A)(1-h_C)\, y_A\, y_C ,
-\label{eq:asym-quad}
-\end{equation}
-with $c_1, c_0$ depending on the full pattern of shares and sizes. Since $c_2 > 0$ whenever $A$ and $C$ each buy from both origins, sufficiently strong cross-origin substitution reverses $e_{AC}$ at any such baseline; the threshold is the largest root, equal to $3\rho_1^*$ at the symmetric point. Away from symmetry no universal bilateral threshold exists.
-
-\paragraph{Structured asymmetry.} Let the target carry a multiple $\kappa$ of the symmetric bilateral share (comparable across $N$, since the symmetric share shrinks like $1/(N-1)$), with the weight matrix symmetric and balanced:
-\begin{equation}
-b_{AB} = b_{BA} = \frac{\kappa}{N-1},
-\qquad
-b_{AC} = b_{CA} = b_{BC} = b_{CB} = \frac{1 - \frac{\kappa}{N-1}}{N-2},
-\qquad
-b_{CC'} = \frac{1 - 2\,b_{CA}}{N-3} .
-\label{eq:kappa-b}
-\end{equation}
-The reduced system again has two unknowns and solves in closed form (symbolically; replication package). With NEER weights $w_{Aj} = b_{Aj}$, the response is a rational function of $(\rho, N, \kappa)$ collapsing to $-\rho_1^*/D_N$ at $\kappa = 1$, with numerator $-\kappa\rho_1^*$ times a quadratic $Q(\rho)$ whose leading coefficient is proportional to $(\kappa-1)(N-1-\kappa)$.
-
-\begin{result}[Asymmetric NEER]
-Holding $\kappa$ fixed as $N \to \infty$,
-\begin{equation}
-N\,\frac{d\nu_A^E}{d\tau}
-\;\longrightarrow\;
--\,\kappa\;\frac{\rho_1^*}{\rho + \alpha_D(\eta-1)}
-= -\,\kappa \lim_{N\to\infty}\frac{N\rho_1^*}{D_N} .
-\label{eq:kappa-neer}
-\end{equation}
-\label{res:kappa}
-\end{result}
-
-\noindent To leading order, asymmetric exposure scales the symmetric NEER response by the target's relative importance and preserves its sign. At finite $N$: for $\kappa \geq 1$ all coefficients of $Q$ are positive at large $N$, so effective appreciation holds for every $\rho$; for $\kappa < 1$, $Q$ has a single positive root $\rho_E^*(\kappa, N) = \tfrac{N\rho_1^*}{1-\kappa}(1 + O(N^{-1}))$, beyond which the NEER depreciates --- an under-weighted target lets depreciations against many bystanders outweigh the appreciation against $B$, with $\rho_E^* \to N\rho_1^*$ as $\kappa \to 0$. The reversal threshold is of order $N$ ($\rho_E^* \approx 22$ at $N = 10$, $\kappa = 0.5$, benchmark). The symmetric NEER result is exact under symmetry and approximately robust within this structured asymmetric family; robustness to arbitrary asymmetric trade networks is not claimed.
-
 \section{Relation to the Canonical PTA Model}
 
 \subsection{Competing exporters}
@@ -501,7 +462,7 @@ The canonical PTA model is the restriction of the three-country model to a subsp
 
 \section{Conclusion}
 
-The general equilibrium response to a tariff is $(-J)^{-1}F$: the tariff creates trade-balance disturbances at unchanged exchange rates, and the adjustment mechanism, regular under the multilateral Marshall--Lerner condition, combines them with nonnegative weights. At $N = 2$ this reduces to the textbook Marshall--Lerner appreciation result. At $N \geq 3$, a discriminatory tariff generates foreign-supplier reallocation and hence a mixed-sign disturbance vector: the tariffing country always appreciates against the target, but under symmetry depreciates against a bystander iff $\rho > N\rho_1^*$, a threshold that rises with $N$ because diversion is diluted across bystanders. Aggregation removes the direct reallocation term from the NEER numerator, so the effective exchange rate appreciates for every $\rho$ and $N$; configuration and asymmetry set the limits of this aggregate result, with reciprocal retaliation reversing it at $\rho > \rho_1^*$ and an under-weighted target reversing it at $\rho$ of order $N$.
+The general equilibrium response to a tariff is $(-J)^{-1}F$: the tariff creates trade-balance disturbances at unchanged exchange rates, and the adjustment mechanism, regular under the multilateral Marshall--Lerner condition, combines them with nonnegative weights. At $N = 2$ this reduces to the textbook Marshall--Lerner appreciation result. At $N \geq 3$, a discriminatory tariff generates foreign-supplier reallocation and hence a mixed-sign disturbance vector: the tariffing country always appreciates against the target, but under symmetry depreciates against a bystander iff $\rho > N\rho_1^*$, a threshold that rises with $N$ because diversion is diluted across bystanders. Aggregation removes the direct reallocation term from the NEER numerator, so the effective exchange rate appreciates for every $\rho$ and $N$; configuration and asymmetry set the limits of this aggregate result, with reciprocal retaliation reversing it at $\rho > \rho_1^*$ and, as Appendix B shows, an under-weighted target reversing it at $\rho$ of order $N$.
 
 The organizing distinction is between aggregate home-versus-foreign adjustment, which determines the sign of the effective response, and reallocation across foreign suppliers, which distributes the adjustment across bilateral rates and affects the magnitude of the aggregate response. Tariffs change both how much a country buys from abroad and from whom it buys it.
 
@@ -517,6 +478,45 @@ e(\tau) = \frac{w_A L_A}{w_B L_B}\cdot \frac{1}{1 + (1-m)\tau},
 \label{eq:2c-exact}
 \end{equation}
 globally decreasing in $\tau$: the linearized sign in \eqref{eq:2c-slope} is exact at all tariff levels in this case. ($\eta = 1$ fixes the elasticity, not the weight $\alpha_D$.)
+
+\section{Asymmetry}
+
+The disturbance-adjustment representation \eqref{eq:system} and the multilateral Marshall--Lerner condition \eqref{eq:invpos} do not use symmetry; the exact thresholds of Section 3 and the NEER cancellation of Section 4 do. This appendix establishes what survives without it: the bilateral reversal region survives at any interior baseline, and the NEER result is preserved to leading order within a structured asymmetric family.
+
+\paragraph{General asymmetric baseline.} At any balanced baseline, \eqref{eq:dp}--\eqref{eq:dtb} hold with observed shares $(b_{ij}, h_i)$ and incomes $y_i$ as coefficients. For $N = 3$ at a general baseline (paper appendix), the bystander slope has denominator $\det(-J) > 0$ and numerator quadratic in $\rho$,
+\begin{equation}
+\operatorname{sign} \frac{d\log e_{AC}}{d\tau}
+= \operatorname{sign}\big( c_2\, \rho^2 + c_1\, \rho + c_0 \big),
+\qquad
+c_2 = b_{AB}\, b_{AC}\, b_{CA}\, b_{CB}\, (1-h_A)(1-h_C)\, y_A\, y_C ,
+\label{eq:asym-quad}
+\end{equation}
+with $c_1, c_0$ depending on the full pattern of shares and sizes. Since $c_2 > 0$ whenever $A$ and $C$ each buy from both origins, sufficiently strong cross-origin substitution reverses $e_{AC}$ at any such baseline; the threshold is the largest root, equal to $3\rho_1^*$ at the symmetric point. Away from symmetry no universal bilateral threshold exists.
+
+\paragraph{Structured asymmetry.} Let the target carry a multiple $\kappa$ of the symmetric bilateral share (comparable across $N$, since the symmetric share shrinks like $1/(N-1)$), with the weight matrix symmetric and balanced:
+\begin{equation}
+b_{AB} = b_{BA} = \frac{\kappa}{N-1},
+\qquad
+b_{AC} = b_{CA} = b_{BC} = b_{CB} = \frac{1 - \frac{\kappa}{N-1}}{N-2},
+\qquad
+b_{CC'} = \frac{1 - 2\,b_{CA}}{N-3} .
+\label{eq:kappa-b}
+\end{equation}
+The reduced system again has two unknowns and solves in closed form (symbolically; replication package). With NEER weights $w_{Aj} = b_{Aj}$, the response is a rational function of $(\rho, N, \kappa)$ collapsing to $-\rho_1^*/D_N$ at $\kappa = 1$, with numerator $-\kappa\rho_1^*$ times a quadratic $Q(\rho)$ whose leading coefficient is proportional to $(\kappa-1)(N-1-\kappa)$.
+
+\begin{result}[Asymmetric NEER]
+Holding $\kappa$ fixed as $N \to \infty$,
+\begin{equation}
+N\,\frac{d\nu_A^E}{d\tau}
+\;\longrightarrow\;
+-\,\kappa\;\frac{\rho_1^*}{\rho + \alpha_D(\eta-1)}
+= -\,\kappa \lim_{N\to\infty}\frac{N\rho_1^*}{D_N} .
+\label{eq:kappa-neer}
+\end{equation}
+\label{res:kappa}
+\end{result}
+
+\noindent To leading order, asymmetric exposure scales the symmetric NEER response by the target's relative importance and preserves its sign. At finite $N$: for $\kappa \geq 1$ all coefficients of $Q$ are positive at large $N$, so effective appreciation holds for every $\rho$; for $\kappa < 1$, $Q$ has a single positive root $\rho_E^*(\kappa, N) = \tfrac{N\rho_1^*}{1-\kappa}(1 + O(N^{-1}))$, beyond which the NEER depreciates --- an under-weighted target lets depreciations against many bystanders outweigh the appreciation against $B$, with $\rho_E^* \to N\rho_1^*$ as $\kappa \to 0$. The reversal threshold is of order $N$ ($\rho_E^* \approx 22$ at $N = 10$, $\kappa = 0.5$, benchmark). The symmetric NEER result is exact under symmetry and approximately robust within this structured asymmetric family; robustness to arbitrary asymmetric trade networks is not claimed.
 
 \section{Correspondence across $N$ and empirical remarks}
 
