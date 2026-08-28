@@ -350,3 +350,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's §1/§2.1 edits reviewed and repaired
 
 - Kept: intro trim (mechanism clause removed, benchmark -> model), "so" connective, "tradables" in the margin names, deletion of the §2.1 generality caveat (duplicate of the intro's final sentence). Fixed: orphaned "exact cancellation" reference in the intro (now "the exact cancellation behind this aggregate result"); country-indexing sentence grammar; restored the inactive-at-N=2 clause (used by §3.1); the rho=eta, alpha_D=1/N parenthetical restated as explicitly not imposed; double space. 12 pp, compiles clean.
+
+### 2026-08-28 — Jase's §2.2/§2.3 edits reviewed and committed
+
+- Kept: "given by" lead-ins, tariff-inclusive/tariff-exclusive clarification, "since the tariff wedge is a domestic transfer", explicit closure/equilibrium phrasing, "Therefore" before the sign convention, deletion of the redundant depreciation-positive clause for effective rates (derivable from the bolded bilateral convention). Fixed: "raates" typo, serial comma, comma around i != A, trailing whitespace. 12 pp, compiles clean.

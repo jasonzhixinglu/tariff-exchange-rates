@@ -49,7 +49,7 @@ $\eta$ governs substitution between domestic and imported tradables (the home-ve
 
 \subsection{Prices, expenditure, income, and trade balance}
 
-Tariffs $\tau_{ij} \geq 0$ are ad valorem, levied by $i$ on imports from $j$, with $\tau_{ii} = 0$; consumer prices in $i$'s currency are $p_{ij} = (1+\tau_{ij})\, e_{ij}$, $p_{ii} = 1$. Price indices:
+Tariffs $\tau_{ij} \geq 0$ are ad valorem, levied by $i$ on imports from $j$, with $\tau_{ii} = 0$. Consumer prices in $i$'s currency are given by $p_{ij} = (1+\tau_{ij})\, e_{ij}$, $p_{ii} = 1$, and price indices are given by:
 \begin{equation}
 P_{M_i} = \Big[ \textstyle\sum_{j\neq i} \beta_{ij}\, p_{ij}^{\,1-\rho} \Big]^{\frac{1}{1-\rho}},
 \qquad
@@ -58,7 +58,7 @@ P_{T_i} = \Big[ \alpha_D\, p_{ii}^{\,1-\eta} + (1-\alpha_D)\, P_{M_i}^{\,1-\eta}
 P_i = \kappa_i\, P_{T_i}^{\,\alpha_T}\, P_{N_i}^{\,1-\alpha_T} .
 \label{eq:indices}
 \end{equation}
-Expenditure shares of income:
+Expenditure shares of income are given by:
 \begin{equation}
 s_{ii} = \alpha_T\, \alpha_D \left(\frac{p_{ii}}{P_{T_i}}\right)^{1-\eta},
 \qquad
@@ -66,25 +66,25 @@ s_{ij} = \alpha_T\, (1-\alpha_D) \left(\frac{P_{M_i}}{P_{T_i}}\right)^{1-\eta}
 \beta_{ij} \left(\frac{p_{ij}}{P_{M_i}}\right)^{1-\rho}, \quad j \neq i ,
 \label{eq:sfor}
 \end{equation}
-tariff-inclusive: $s_{ij} I_i$ is spending at consumer prices, $s_{ij} I_i/(1+\tau_{ij})$ the border value. Revenue is rebated lump-sum,
+therefore, $s_{ij} I_i$ is tariff-inclusive spending at consumer prices, $s_{ij} I_i/(1+\tau_{ij})$ is the tariff-exclusive border value. Revenue is rebated lump-sum,
 \begin{equation}
 I_i = w_i L_i + \sum_{j \neq i} \frac{\tau_{ij}}{1+\tau_{ij}}\, s_{ij} I_i
 \quad\Longrightarrow\quad
 I_i = \frac{w_i L_i}{1 - \sum_{j\neq i} \frac{\tau_{ij}}{1+\tau_{ij}}\, s_{ij}} .
 \label{eq:income}
 \end{equation}
-Trade balances at producer prices in a common currency (the tariff wedge is a domestic transfer):
+Trade balances at producer prices in a common currency (since the tariff wedge is a domestic transfer):
 \begin{equation}
 \mathrm{TB}_i = \sum_{k \neq i} f_{ki} - \sum_{j \neq i} f_{ij},
 \qquad
 f_{ij} \equiv \frac{s_{ij}\, I_i}{1+\tau_{ij}} .
 \label{eq:tb}
 \end{equation}
-By Walras' law only $N-1$ conditions are independent. Closure: no internationally traded assets, $\mathrm{TB}_i = 0$ for all $i$; given $\{\tau_{ij}\}$, the $N-1$ free rates solve $\mathrm{TB}_i = 0$, $i \neq A$.
+By Walras' law only $N-1$ conditions are independent. Furthermore, we impose closure, i.e., no internationally traded assets: $\mathrm{TB}_i = 0$ for all $i$. Therefore, given $\{\tau_{ij}\}$, the $N-1$ free rates solve $\mathrm{TB}_i = 0$, $i \neq A$, in equilibrium.
 
 \subsection{Exchange-rate concepts}
 
-$e_{ij}$ = units of $i$'s currency per unit of $j$'s, $e_{ii} = 1$, $e_{ij} = e_{ik}e_{kj}$; \textbf{a rise in $e_{ij}$ is a depreciation of $i$ against $j$}. Perturbations $\nu_j \equiv d\log e_{Aj}$, $\nu_A = 0$. Definitions:
+Define $e_{ij}$ = units of $i$'s currency per unit of $j$'s, $e_{ii} = 1$, $e_{ij} = e_{ik}e_{kj}$. \textbf{Therefore, a rise in $e_{ij}$ is a depreciation of $i$ against $j$}. Log perturbations in bilateral exchange rates relative to $A$ are defined by $\nu_j \equiv d\log e_{Aj}$, $\nu_A = 0$. Define relative wages, terms of trade, real exchange rates, and effective exchange rates:
 \begin{equation}
 \omega_{ij} \equiv \frac{e_{ij} w_j}{w_i},
 \qquad
@@ -101,7 +101,7 @@ d q_i^{E} \equiv \sum_{j \neq i} w_{ij}\, d\log q_{ij},
 w_{ij} = \frac{f_{ij} + f_{ji}}{\sum_{k\neq i} (f_{ik} + f_{ki})} ,
 \label{eq:neer}
 \end{equation}
-with $w_{ij} = 1/(N-1)$ in the symmetric model; effective rates are depreciation-positive. Under the production normalization,
+with $w_{ij} = 1/(N-1)$ in the symmetric model. Under the production normalization,
 \begin{equation}
 d\log e_{ij} = d\log \omega_{ij} = -\,d\log \mathrm{ToT}_{ij} ,
 \label{eq:onetoone}
