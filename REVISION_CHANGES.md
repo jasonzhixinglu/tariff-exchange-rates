@@ -394,3 +394,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's §5 NEER trim reviewed; contrast, caveat, and Appendix C pointer restored
 
 - Kept: Result trimmed to the bare statement; footnote simplification in §4.4 ("it's" -> "it is"); the rewritten interpretation paragraph structure. Restored compactly at the paragraph's end: the bilateral-vs-effective contrast (NEER appreciates even for rho > N rho_1*, where every bystander bilateral has reversed), the symmetry caveat with the Appendix B robustness summary, and the Appendix C pointer (which the cut had orphaned). Grammar: "means that ... thus" de-doubled, "or changes" -> "and to changes", impact -> affect. 13 pp, compiles clean.
+
+### 2026-08-28 — Jase's corollary/NEER footnote edits reviewed
+
+- NEER paragraph: contrast-clause deletion accepted (second deliberate cut; intro and conclusion carry it), appendix pointers footnoted, space before footnote marker fixed. Corollary sentence corrected again: "treated symmetrically in the utility function" -> "enter a single CES nest (a common elasticity for both margins)" since weights remain asymmetric under rho = eta, and the load-bearing alpha_D >= 1/3 qualifier restored. 13 pp, compiles clean.
