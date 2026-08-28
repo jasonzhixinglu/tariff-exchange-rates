@@ -326,3 +326,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Appendix C dropped from streamlined notes (user-directed)
 
 - The PTA restriction table removed; its conceptually load-bearing content folded into the §6.2 footnote qualitatively (severing the B-C linkage alone accounts for most of the threshold; combined with aD=0 it removes the reversal region; replication package holds the numbers). 11 pp total.
+
+### 2026-08-28 — asymmetry moved to appendix in streamlined notes (user-directed, deep move)
+
+- §5.3 relocated to Appendix B (appendices reordered by first reference: A exact CD, B asymmetry, C correspondence + empirical). Ripple-through: §4's symmetry caveat is now self-contained (states the leading-order preservation and the order-N reversal conclusion inline, derivation in Appendix B); §3.3 gains the one robustness fact the main text needs — the reversal region is not a symmetry artifact (c2 > 0 at any interior baseline) — with pointer; the conclusion's asymmetry clause re-anchored to Appendix B; appendix opening rewritten for appendix context (framework general, closed forms symmetric). Main text now ~9 pp + 3 pp appendix.
