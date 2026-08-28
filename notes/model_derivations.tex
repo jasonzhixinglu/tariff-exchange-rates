@@ -119,7 +119,7 @@ Exchange-rate determination under the trade-balance closure has a structure that
 
 \subsection{The local disturbance--adjustment representation}
 
-Consider any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions, $\mathrm{TB}_i = 0$ for $i \neq A$, as functions of the exchange rates and the tariffs. Stacking $d\nu \equiv (\nu_j)_{j \neq A}$ and $d\boldsymbol{\tau} \equiv (dt_{jk})_{j \neq k}$, the conditions for $i \neq A$ are
+Consider any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions, $\mathrm{TB}_i = 0$ for $i \neq A$, as functions of the exchange rates and the tariffs. Stacking $d\nu \equiv (\nu_j)_{j \neq A}$ and the tariff perturbations $d\boldsymbol{\tau} \equiv (dt_{jk})_{j \neq k}$, the conditions for $i \neq A$ are
 \begin{equation}
 J\, d\nu + G\, d\boldsymbol{\tau} = 0,
 \qquad
@@ -181,8 +181,8 @@ Under Assumption \ref{as:gs}, with $J$ irreducible and $\widetilde J_{iA} > 0$ f
 Under \eqref{eq:invpos},
 \begin{equation}
 \operatorname{sign}\!\left( \frac{d\nu_i}{d\tau} \right)
-= \operatorname{sign}\!\Big( \sum_j \omega_{ij} F_j \Big),
-\qquad \omega_{ij} \equiv \big[(-J)^{-1}\big]_{ij} \geq 0 .
+= \operatorname{sign}\!\Big( \sum_j \vartheta_{ij} F_j \Big),
+\qquad \vartheta_{ij} \equiv \big[(-J)^{-1}\big]_{ij} \geq 0 .
 \label{eq:signrule}
 \end{equation}
 \label{res:signrule}
@@ -257,7 +257,7 @@ In reduced form, with export volume $X(1/e)$, import volume $M((1+\tau)e)$, and 
 \end{equation}
 
 \begin{proposition}[Conventional wisdom, $N=2$]
-At $N = 2$, the multilateral Marshall--Lerner condition \eqref{eq:invpos} is equivalent to $D_2 > 0$, which corresponds exactly to the textbook Marshall--Lerner condition $\varepsilon_X + \varepsilon_M > 1$. In our nested-CES model, it holds whenever $\eta \geq 1$. The impact disturbance is $F = m\rho_1^* > 0$ for all admissible parameters, therefore a unilateral import tariff appreciates the tariffing country's currency by $d\log e_{AB}/d\tau = -\rho_1^*/D_2 < 0$. 
+At $N = 2$, the multilateral Marshall--Lerner condition \eqref{eq:invpos} is equivalent to $D_2 > 0$, which corresponds exactly to the textbook Marshall--Lerner condition $\varepsilon_X + \varepsilon_M > 1$. In our nested-CES model, it holds whenever $\eta \geq 1$. The impact disturbance is $F = m\rho_1^* > 0$ for all admissible parameters, therefore a unilateral import tariff appreciates the tariffing country's currency: $d\log e_{AB}/d\tau = -\rho_1^*/D_2 < 0$. 
 \label{res:2c}
 \end{proposition}
 
@@ -393,7 +393,7 @@ Responses are linear in the tariff vector, so configurations are superpositions 
 \qquad \forall j :
 \label{eq:N-broad}
 \end{equation}
-$\rho$ drops out of the numerator, every bilateral rate appreciates equally, and bilateral and effective responses coincide. This shows that bilateral exchange rate ambiguity arises from discrimination across foreign suppliers, not protection itself.
+$\rho$ drops out of the numerator, every bilateral rate appreciates equally, and bilateral and effective responses coincide. This shows that bilateral exchange-rate ambiguity arises from discrimination across foreign suppliers, not protection itself.
 
 \paragraph{Symmetric trade war.} Adding the mirror shock $dt_{BA} = d\tau$:
 \begin{equation}
@@ -424,7 +424,7 @@ d\log q_{Aj} = \Big( 1 - \frac{mN}{N-1} \Big)\, \nu_j \;-\; \frac{m}{N-1}\, d\ta
 attenuated nominal pass-through plus a direct price-index term working toward real appreciation of $A$. Setting $d\log q_{AC} = 0$ with \eqref{eq:N-slopes} (for $m < 1/N$):
 \begin{equation}
 \rho_q^*(N) = \frac{\big[(N-1) - mN\big]\, N\rho_1^* + mN\big[ N\alpha_D(\eta-1) + 1 \big]}{(N-1)(1 - mN)}
-\;>\; N\rho_1^* ,
+\;>\; N\rho_1^* .
 \label{eq:N-rhoq}
 \end{equation}
 Averaging \eqref{eq:qgen}:
@@ -488,7 +488,7 @@ The canonical PTA model is the restriction of the three-country model to a subsp
 \label{res:pta}
 \end{proposition}
 
-\noindent Therefore, the Viner--Mundell result is a direct corollary of our nested-CES model. The canonical restrictions push the threshold down to $\rho_3^* \leq 0$, so the reversal condition $\rho > \rho_3^*$ is satisfied by every $\rho > 0$. 
+\noindent Therefore, the Viner--Mundell result is a direct corollary of our nested-CES model. The canonical restrictions push the threshold down to $\rho_3^* \leq 0$, so the reversal condition $\rho > \rho_3^*$ is always satisfied. 
 
 The PTA literature varies in which margins it removes. Competing-exporter models (Bagwell and Staiger, 1999; Ornelas, 2005) impose no $B$--$C$ trade and quasilinearity, so the sign is unconditional. Bloc and endowment models (Krugman, 1991; Bond and Syropoulos, 1996) instead remove home production of importables; Viner's (1950) identical-goods case is the limit $\rho = \infty$. Kemp and Wan (1976) impose none of these restrictions and claim no sign. Applied GTAP-class and quantitative trade models keep every margin in \eqref{eq:pta-decomp} and have been shown capable of generating either sign in simulations, but they do not study the threshold in analytical terms.
 
@@ -498,7 +498,7 @@ Our analysis shows that the general equilibrium response to a tariff is $(-J)^{-
 
 At $N = 2$ this reduces to the textbook Marshall--Lerner appreciation result, but at $N \geq 3$, a discriminatory tariff generates foreign-supplier reallocation and hence a mixed-sign disturbance vector. This means that the tariffing country always appreciates against the target, but can depreciate against a bystander if the cross-origin substitution elasticity is sufficiently high. 
 
-Despite this ambiguity in bilateral exchange-rate adjustments, aggregation shows that $A$'s NEER appreciates for every $\rho$ and $N$, i.e., the conventional wisdom survives in effective exchange rates. Therefore, a core takeaway from our analysis is the organizing distinction between aggregate \emph{home-versus-foreign adjustment} and \emph{reallocation across foreign suppliers}. Under symmetry, the aggregate margin determines the sign of the effective exchange rate response, while reallocation determines its bilateral distribution. 
+Despite this ambiguity in bilateral exchange-rate adjustments, aggregation shows that $A$'s NEER appreciates for every $\rho$ and $N$, i.e., the conventional wisdom survives in effective exchange rates. Therefore, a core takeaway from our analysis is the organizing distinction between aggregate \emph{home-versus-foreign adjustment} and \emph{reallocation across foreign suppliers}. Under symmetry, the aggregate margin determines the sign of the effective exchange-rate response, while reallocation determines its bilateral distribution. 
 
 \section*{References}
 
@@ -583,7 +583,7 @@ object & $N = 2$ & $N = 3$ & general $N$ \\
 \midrule
 ML condition \eqref{eq:invpos} & $\varepsilon_X + \varepsilon_M - 1 = D_2 > 0$ & $D_3 > 0$ & $-J$ a nonsingular M-matrix \\[3pt]
 sufficient primitive & $\eta \geq 1$ & $\eta \geq 1$ & gross substitutability (Assumption \ref{as:gs}) \\[3pt]
-sign rule & one impact, unconditional & weights $\tfrac{1}{3}\left(\begin{smallmatrix} 2 & 1 \\ 1 & 2\end{smallmatrix}\right)$ & $\operatorname{sign}\big(\sum_j \omega_{ij}F_j\big)$, $\omega \geq 0$ \\[3pt]
+sign rule & one impact, unconditional & weights $\tfrac{1}{3}\left(\begin{smallmatrix} 2 & 1 \\ 1 & 2\end{smallmatrix}\right)$ & $\operatorname{sign}\big(\sum_j \vartheta_{ij}F_j\big)$, $\vartheta \geq 0$ \\[3pt]
 bilateral threshold & none (no bystander) & $3\rho_1^*$ & $N\rho_1^*$ (symmetric); degree-$(N-1)$ roots in general \\[3pt]
 real bilateral threshold & none & $\rho_q^*(3)$ & $\rho_q^*(N)$ \eqref{eq:N-rhoq} \\[3pt]
 NEER (unilateral) & $-\rho_1^*/D_2$ & $-\rho_1^*/D_3$ & $-\rho_1^*/D_N$: sign invariant under symmetry \\[3pt]
