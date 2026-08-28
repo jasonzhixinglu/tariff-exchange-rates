@@ -402,3 +402,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — formal theorem taxonomy (user-directed); prose edits accepted
 
 - The generic Result environment replaced by Theorem/Proposition/Corollary (shared per-section counter, amsthm). Grading: THEOREMS = dilution threshold (rho > N rho_1*) and NEER preservation (the two headline results); PROPOSITIONS = multilateral ML condition, conventional wisdom N=2, three-country threshold (pedagogical special case of the theorem), war threshold, real rates, Viner-Mundell, canonical PTA restriction (now named), asymmetric NEER; COROLLARIES = sign rule (immediate from the ML proposition) and single elasticity (formalized from inline text). Jase's broad-tariff and war-interpretation prose edits kept. 13 pp, compiles clean.
+
+### 2026-08-28 — real-rates proposition rewritten to the point
+
+- Proposition now states the two claims plainly: (i) rho_q*(N) > N rho_1*; (ii) dq_A^E/dtau < 0 for every rho and N. Mechanism (direct price-index term) moved to a one-line note after the proposition; the magnitude clause dropped (visible directly in eq:N-reer). 13 pp, compiles clean.
