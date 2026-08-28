@@ -152,7 +152,7 @@ $F$ is the vector of trade-balance disturbances created by the tariff at unchang
 
 \subsection{The multilateral Marshall--Lerner condition}
 
-Let $\widetilde J$ be the full $N \times N$ Jacobian before dropping country $A$. Homogeneity (only relative prices enter \eqref{eq:dp}) and Walras' law give the identities
+Let $\widetilde J$ be the full $N \times N$ Jacobian before dropping country $A$. Homogeneity (which states that only relative prices enter \eqref{eq:dp}) and Walras' law give the identities
 \begin{equation}
 \sum_{l} \widetilde J_{il} = 0 \quad \forall i,
 \qquad\qquad
@@ -165,7 +165,7 @@ $\widetilde J_{il} \geq 0$ for all $l \neq i$. In the symmetric systems below ev
 \label{as:gs}
 \end{assumption}
 
-Homogeneity and Assumption \ref{as:gs} give $\widetilde J_{ii} = -\sum_{l\neq i}\widetilde J_{il} \leq 0$ (the bilateral Marshall--Lerner conditions), and the reduced $J$ inherits a dominant diagonal,
+Homogeneity and Assumption \ref{as:gs} give $\widetilde J_{ii} = -\sum_{l\neq i}\widetilde J_{il} \leq 0$ (i.e., the bilateral Marshall--Lerner conditions), and the reduced $J$ inherits a dominant diagonal,
 \begin{equation}
 |J_{ii}| = \sum_{l \neq i,\,A} J_{il} + \widetilde J_{iA} \;\geq\; \sum_{l \neq i,\,A} J_{il} ,
 \label{eq:diagdom}
@@ -196,7 +196,11 @@ Under \eqref{eq:invpos},
 \label{res:signrule}
 \end{result}
 
-\noindent The adjustment mechanism translates the tariff-induced trade-balance disturbances into exchange-rate movements with nonnegative weights: it can dampen or spread the shocks across currencies, but it cannot reverse their direction. Opposite-signed bilateral responses therefore require a mixed-sign $F$; bilateral ambiguity comes from the tariff disturbance, never from the adjustment mechanism. Gross substitutability is sufficient, not necessary; the eigenvalue face of \eqref{eq:invpos} is local stability of the tatonnement $\dot\nu_i = k_i \mathrm{TB}_i$, so stability is not a separate requirement. Since $F$ is linear in $\rho$ and $\operatorname{adj}(-J)$ has degree $N-2$, each weighted sum in \eqref{eq:signrule} is a degree-$(N-1)$ polynomial in $\rho$: one relevant root at $N = 3$, possibly several sign changes at $N \geq 4$.
+\noindent In words, the multilateral Marshall--Lerner condition says that the exchange-rate adjustment mechanism is regular in the sense of the two-country condition: each country's own depreciation improves its own trade balance, no country's appreciation worsens another country's balance, and the own effect dominates the cross effects. Any pattern of trade imbalances is then eliminated by conventional adjustment --- surplus countries appreciate, deficit countries depreciate --- and the mapping from disturbances to exchange-rate responses preserves signs.
+
+Given an adjustment mechanism satisfying the multilateral Marshall--Lerner condition, the sign rule translates the tariff-induced trade-balance disturbances into exchange-rate movements with \emph{nonnegative weights}. Opposite-signed bilateral responses therefore require a mixed-sign $F$, i.e., bilateral ambiguity comes from the tariff disturbance on trade balances and not from the adjustment mechanism.
+
+Three related notions appear above, ranked as: gross substitutability $\Rightarrow$ multilateral Marshall--Lerner $\Leftrightarrow$ local stability. Gross substitutability (Assumption \ref{as:gs}) is a restriction on primitives, sufficient but not necessary for \eqref{eq:invpos}. The multilateral Marshall--Lerner condition is the working condition; everything below uses only \eqref{eq:invpos}. Local stability is not a third requirement: the eigenvalue statement in \eqref{eq:invpos} is local stability of the tatonnement $\dot\nu_i = k_i \mathrm{TB}_i$ for any speeds $k_i > 0$, so stability, inverse positivity, and $\det(-J) > 0$ are equivalent faces of one condition. Since $F$ is linear in $\rho$ and $\operatorname{adj}(-J)$ has degree $N-2$, each weighted sum in \eqref{eq:signrule} is a degree-$(N-1)$ polynomial in $\rho$: one relevant root at $N = 3$, possibly several sign changes at $N \geq 4$.
 
 \section{Tariff Responses: Two, Three, and $N$ Countries}
 
