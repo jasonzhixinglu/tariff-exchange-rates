@@ -17,7 +17,7 @@
 
 \section{Introduction}
 
-In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign. These notes characterize the distinction in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry, the tariffing country always appreciates against the target; its bilateral rate against an untreated bystander reverses iff cross-origin substitution exceeds a threshold $N\rho_1^*$; and its nominal effective exchange rate appreciates for every elasticity and every $N$, because the cross-origin terms cancel from the aggregate numerator. The exact cancellation and the linear threshold are properties of the symmetric nested-CES benchmark; the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general. Closed forms are verified numerically in the replication package.
+In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign. These notes characterize the exchange-rate responses in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry and a multilateral Marshall--Lerner condition, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin substitution elasticity exceeds a threshold $N\rho_1^*$. Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate appreciates independently of the cross-origin elasticity and $N$, since the cross-origin terms cancel from the aggregate numerator. The exact cancellation and the linear threshold are properties of the symmetric nested-CES benchmark, but the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general.
 
 \section{$N$-Country Model and Equilibrium}
 
@@ -283,7 +283,7 @@ With $D_3 > 0$,
 \frac{d\log e_{BC}}{d\tau} = \frac{2\rho}{3D_3} > 0 :
 \label{eq:3c-slopes}
 \end{equation}
-$A$ always appreciates against $B$, $B$ always depreciates against $C$, and $A$ depreciates against the untreated $C$ iff $\rho > \rho_3^* \equiv 3\rho_1^*$.
+$A$ always appreciates against $B$, $B$ always depreciates against $C$, and $A$ depreciates against the untariffed $C$ iff $\rho > \rho_3^* \equiv 3\rho_1^*$.
 \label{res:3c}
 \end{result}
 
@@ -302,7 +302,7 @@ d\log P_{M_B} = \frac{(N-2)\nu_C}{N-1} - \nu_B,
 d\log P_{M_C} = \frac{\nu_B - 2\nu_C}{N-1},
 \label{eq:N-indices}
 \end{equation}
-with $d\log I_A = \tfrac{m}{N-1}d\tau$, $d\log I_B = \nu_B$, $d\log I_C = \nu_C$. Collecting \eqref{eq:dtb} for $B$ and a representative bystander (rows scaled by $(N-1)/m$; verified symbolically):
+with $d\log I_A = \tfrac{m}{N-1}d\tau$, $d\log I_B = \nu_B$, $d\log I_C = \nu_C$. Collecting \eqref{eq:dtb} for $B$ and a representative bystander (rows scaled by $(N-1)/m$):
 \begin{equation}
 D_N
 \begin{pmatrix} -(N-1) & N-2 \\ 1 & -2 \end{pmatrix}
@@ -328,7 +328,7 @@ where the counting matrix has determinant $N$; inverting:
 which reduce to \eqref{eq:3c-slopes} at $N = 3$ and to \eqref{eq:2c-slope} at $N = 2$.
 
 \begin{result}[Dilution threshold]
-The bystander bilateral rate reverses iff
+Under \eqref{eq:invpos}, the bystander bilateral rate reverses iff
 \begin{equation}
 \boxed{\;\rho > \rho_N^* = N \rho_1^* . \;}
 \end{equation}
@@ -354,7 +354,7 @@ Under symmetry, a unilateral tariff appreciates the tariffing country's NEER for
 \label{res:neer}
 \end{result}
 
-\noindent $\rho$ governs the relative distribution of adjustment across foreign partners: its direct terms cancel from the NEER numerator under symmetry, while it remains in $D_N$ and therefore still affects the magnitude of the aggregate response. The two-country appreciation result thus survives multilateralization as an effective, rather than universally bilateral, statement --- it is bilateral at $N = 2$ only because there is one foreign country. The exact cancellation is specific to the symmetric nested-CES environment; the distinction between aggregate home-versus-foreign adjustment and foreign-supplier reallocation is more general. Appendix B quantifies the robustness of the cancellation: within a structured asymmetric family it is preserved to leading order in $1/N$, and it can reverse only for a disproportionately under-weighted target at $\rho$ of order $N$. (Appendix C collects the correspondence across $N$ and remarks on the empirical mapping of $\rho$.)
+\noindent $\rho$ governs the relative distribution of adjustment across foreign partners: its direct terms cancel from the NEER numerator under symmetry, while it remains in $D_N$ and therefore still affects the magnitude of the aggregate response. The two-country appreciation result thus survives multilateralization as an effective, rather than universally bilateral, statement --- it is bilateral at $N = 2$ only because there is one foreign country. The exact cancellation is specific to the symmetric nested-CES environment; the distinction between aggregate home-versus-foreign adjustment and foreign-supplier reallocation is more general. Appendix B quantifies the robustness of the cancellation: within a structured asymmetric family it is preserved to leading order in $1/N$, and it can reverse only for a disproportionately under-weighted target at $\rho$ of order $N$. (Appendix C collects the correspondence across $N$.)
 
 \section{Extensions}
 
@@ -381,7 +381,7 @@ $\rho$ drops out of the numerator, every bilateral rate appreciates equally, and
 \end{equation}
 
 \begin{result}[War threshold]
-In a symmetric war the belligerents' effective rates depreciate, and every bystander appreciates against both, iff
+Under \eqref{eq:invpos}, in a symmetric war the belligerents' effective rates depreciate, and every bystander appreciates against both, iff
 $\rho > \rho_1^*$, independently of $N$.
 \label{res:war}
 \end{result}
@@ -390,7 +390,7 @@ $\rho > \rho_1^*$, independently of $N$.
 
 \subsection{Real exchange rates}
 
-From \eqref{eq:rer} and \eqref{eq:indices}, $d\log q_{Aj} = \nu_j + \alpha_T(d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}})$; for the unilateral tariff both bilateral real rates take one form at every $N$ (verified symbolically):
+From \eqref{eq:rer} and \eqref{eq:indices}, $d\log q_{Aj} = \nu_j + \alpha_T(d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}})$; for the unilateral tariff both bilateral real rates take one form at every $N$:
 \begin{equation}
 d\log q_{Aj} = \Big( 1 - \frac{mN}{N-1} \Big)\, \nu_j \;-\; \frac{m}{N-1}\, d\tau,
 \qquad j = B, C :
@@ -402,7 +402,7 @@ attenuated nominal pass-through plus a direct price-index term working toward re
 \;>\; N\rho_1^* ,
 \label{eq:N-rhoq}
 \end{equation}
-with benchmark values $\rho_q^*(3, 4, 5) = 4.93,\, 7.34,\, 10.40$ against nominal thresholds $3.96,\, 5.28,\, 6.60$. Averaging \eqref{eq:qgen}:
+Averaging \eqref{eq:qgen}:
 \begin{equation}
 \frac{dq_A^E}{d\tau}
 = -\Big( 1 - \frac{mN}{N-1} \Big) \frac{\rho_1^*}{D_N} - \frac{m}{N-1}
@@ -412,7 +412,7 @@ with benchmark values $\rho_q^*(3, 4, 5) = 4.93,\, 7.34,\, 10.40$ against nomina
 \end{equation}
 
 \begin{result}[Real rates]
-The direct CPI effect makes real bilateral reversal harder than nominal reversal, $\rho_q^*(N) > N\rho_1^*$, and reinforces effective appreciation: the REER response is negative for all $\rho$ and $N$, and strictly larger in magnitude than the pass-through of the nominal response alone.
+Under \eqref{eq:invpos}, the direct CPI effect makes real bilateral reversal harder than nominal reversal, $\rho_q^*(N) > N\rho_1^*$, and reinforces effective appreciation: the REER response is negative for all $\rho$ and $N$, and strictly larger in magnitude than the pass-through of the nominal response alone.
 \label{res:real}
 \end{result}
 
@@ -445,12 +445,11 @@ A discriminatory tariff on $B$ worsens $B$'s and improves $C$'s terms of trade, 
 
 \subsection{Relation to the present model}
 
-An improvement in $C$'s terms of trade is a rise in $e_{AC}$; the nested model requires $\rho > 3\rho_1^*$, the canonical model nothing. The canonical environment removes the margins that oppose diversion toward $C$. Decomposing the threshold (benchmark $\alpha_D = 0.8$, $\alpha_T = 0.4$, $\eta = 1.5$):
+An improvement in $C$'s terms of trade is a rise in $e_{AC}$; the nested model requires $\rho > 3\rho_1^*$, the canonical model nothing. The canonical environment removes the margins that oppose diversion toward $C$. Decomposing the threshold:
 \begin{equation}
 \rho_3^* = 3\rho_1^* = \underbrace{3}_{\text{$B$--$C$ linkage}}
 + \underbrace{3\alpha_D(\eta-1)}_{\text{home switching}}
-- \underbrace{3\alpha_T(1-\alpha_D)}_{\text{openness credit}}
-= 3.0 + 1.2 - 0.24 = 3.96 .
+- \underbrace{3\alpha_T(1-\alpha_D)}_{\text{openness credit}} .
 \label{eq:pta-decomp}
 \end{equation}
 The linkage term collects the forces running through $B$--$C$ trade: $B$'s income loss cuts its purchases from $C$, and relative prices induce $C$ to substitute toward $B$'s cheapened goods. The second term is $A$'s switching toward its own tradable; the openness credit reflects that a larger import share $m$ gives the tariff more foreign expenditure to reallocate. Each piece is an identifiable economic force, so the threshold is not a CES-curvature artifact. The canonical model deletes the first two opposing forces and the income effects behind the first: $B$ and $C$ are competing exporters rather than full trading partners (no $B$--$C$ demand linkage), $A$ does not produce the imported good (no home switching), and quasilinearity removes income effects. What remains is reallocation between the two foreign suppliers, signed directly by $M_A' < 0$ and $E_j' > 0$.
@@ -460,7 +459,7 @@ The canonical PTA model is the restriction of the three-country model to a subsp
 \label{res:pta}
 \end{result}
 
-\noindent This locates the analytical trade-agreement literature by model class rather than by conclusion. Competing-exporter models of preferential agreements (Bagwell--Staiger 1999; Ornelas 2005) study exactly the canonical environment: $B$ and $C$ sell to $A$ but do not trade with each other, and quasilinearity removes income effects, so the Viner--Mundell sign holds unconditionally. Symmetric bloc and endowment structures (Krugman 1991; Bond--Syropoulos 1996) reach the same sharpness along the other route, with little or no home production of importables; Viner's original identical-goods case is the limit $\rho = \infty$. Kemp and Wan (1976) illustrate the converse: with none of these restrictions imposed, no unconditional sign is claimed. Applied models sit at the opposite pole: GTAP-class and modern quantitative trade models retain every margin in \eqref{eq:pta-decomp} and generate either sign in simulations, without an explicit analytical threshold. The condition $\rho > 3\rho_1^*$ is that threshold.\footnote{Numerically, severing the $B$--$C$ linkage alone accounts for most of the threshold, and combining it with $\alpha_D = 0$ removes the reversal region entirely (replication package).}
+\noindent This locates the analytical trade-agreement literature by model class rather than by conclusion. Competing-exporter models of preferential agreements (Bagwell--Staiger 1999; Ornelas 2005) study exactly the canonical environment: $B$ and $C$ sell to $A$ but do not trade with each other, and quasilinearity removes income effects, so the Viner--Mundell sign holds unconditionally. Symmetric bloc and endowment structures (Krugman 1991; Bond--Syropoulos 1996) reach the same sharpness along the other route, with little or no home production of importables; Viner's original identical-goods case is the limit $\rho = \infty$. Kemp and Wan (1976) illustrate the converse: with none of these restrictions imposed, no unconditional sign is claimed. Applied models sit at the opposite pole: GTAP-class and modern quantitative trade models retain every margin in \eqref{eq:pta-decomp} and generate either sign in simulations, without an explicit analytical threshold. The condition $\rho > 3\rho_1^*$ is that threshold.\footnote{Severing the $B$--$C$ linkage alone accounts for most of the threshold, and combining it with $\alpha_D = 0$ removes the reversal region entirely.}
 
 \section{Conclusion}
 
@@ -504,7 +503,7 @@ b_{AC} = b_{CA} = b_{BC} = b_{CB} = \frac{1 - \frac{\kappa}{N-1}}{N-2},
 b_{CC'} = \frac{1 - 2\,b_{CA}}{N-3} .
 \label{eq:kappa-b}
 \end{equation}
-The reduced system again has two unknowns and solves in closed form (symbolically; replication package). With NEER weights $w_{Aj} = b_{Aj}$, the response is a rational function of $(\rho, N, \kappa)$ collapsing to $-\rho_1^*/D_N$ at $\kappa = 1$, with numerator $-\kappa\rho_1^*$ times a quadratic $Q(\rho)$ whose leading coefficient is proportional to $(\kappa-1)(N-1-\kappa)$.
+The reduced system again has two unknowns and solves in closed form. With NEER weights $w_{Aj} = b_{Aj}$, the response is a rational function of $(\rho, N, \kappa)$ collapsing to $-\rho_1^*/D_N$ at $\kappa = 1$, with numerator $-\kappa\rho_1^*$ times a quadratic $Q(\rho)$ whose leading coefficient is proportional to $(\kappa-1)(N-1-\kappa)$.
 
 \begin{result}[Asymmetric NEER]
 Holding $\kappa$ fixed as $N \to \infty$,
@@ -518,9 +517,9 @@ N\,\frac{d\nu_A^E}{d\tau}
 \label{res:kappa}
 \end{result}
 
-\noindent To leading order, asymmetric exposure scales the symmetric NEER response by the target's relative importance and preserves its sign. At finite $N$: for $\kappa \geq 1$ all coefficients of $Q$ are positive at large $N$, so effective appreciation holds for every $\rho$; for $\kappa < 1$, $Q$ has a single positive root $\rho_E^*(\kappa, N) = \tfrac{N\rho_1^*}{1-\kappa}(1 + O(N^{-1}))$, beyond which the NEER depreciates --- an under-weighted target lets depreciations against many bystanders outweigh the appreciation against $B$, with $\rho_E^* \to N\rho_1^*$ as $\kappa \to 0$. The reversal threshold is of order $N$ ($\rho_E^* \approx 22$ at $N = 10$, $\kappa = 0.5$, benchmark). The symmetric NEER result is exact under symmetry and approximately robust within this structured asymmetric family; robustness to arbitrary asymmetric trade networks is not claimed.
+\noindent To leading order, asymmetric exposure scales the symmetric NEER response by the target's relative importance and preserves its sign. At finite $N$: for $\kappa \geq 1$ all coefficients of $Q$ are positive at large $N$, so effective appreciation holds for every $\rho$; for $\kappa < 1$, $Q$ has a single positive root $\rho_E^*(\kappa, N) = \tfrac{N\rho_1^*}{1-\kappa}(1 + O(N^{-1}))$, beyond which the NEER depreciates --- an under-weighted target lets depreciations against many bystanders outweigh the appreciation against $B$, with $\rho_E^* \to N\rho_1^*$ as $\kappa \to 0$. The reversal threshold is of order $N$. The symmetric NEER result is exact under symmetry and approximately robust within this structured asymmetric family; robustness to arbitrary asymmetric trade networks is not claimed.
 
-\section{Correspondence across $N$ and empirical remarks}
+\section{Correspondence across $N$}
 
 \begin{center}
 \begin{tabular}{p{3.6cm}p{3.0cm}p{3.4cm}p{4.2cm}}
@@ -538,6 +537,5 @@ war threshold & --- & $\rho_1^*$ & $\rho_1^*$, independent of $N$ \\
 \end{tabular}
 \end{center}
 
-\paragraph{Empirical mapping of $\rho$.} The parameter $\rho$ is substitution across foreign origins conditional on the import composite; estimates labeled ``trade elasticities'' generally measure different objects (aggregate import responses, home-versus-foreign substitution, gravity responses mixing margins). Qualitatively, upper-nest estimates are low and lower-nest estimates several times larger, so the benchmark $\rho_3^* = 3.96$ is neither clearly above nor below plausible $\rho$: neither sign of $e_{AC}$ can be ruled out without estimates that map onto $\rho$ directly. The war threshold $\rho_1^* = 1.32$ is less sensitive to this mapping, so the war predictions are comparatively robust.
 
 \end{document}
