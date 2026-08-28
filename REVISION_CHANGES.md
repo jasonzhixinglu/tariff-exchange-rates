@@ -342,3 +342,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — v2 promoted to the canonical model_derivations; superseded versions and blueprints removed
 
 - notes/model_derivations_streamlined_v2.{tex,pdf} renamed to notes/model_derivations.{tex,pdf}: the 12 pp general-N-first theoretical derivations are now THE derivation notes. Deleted (recoverable from git history): the original equation-chain model_derivations, model_derivations_rewrite (27 pp narrative), model_derivations_streamlined (pre-refinement), and the three planning mds (multilateral_tariff_rewrite_blueprint.md, Streamlined Derivation Blueprint.md, Streamlined Derivation Structure.md). notes/archive README's pointer to notes/model_derivations.tex remains valid.
+
+### 2026-08-28 — formal PTA references added to the canonical notes
+
+- notes/model_derivations.tex: §6.1 opens by placing the competing-exporter environment in the Viner (1950) / Mundell (1964) tradition; §6.2 literature paragraph converted to formal author-year citations; a hand-formatted References section (matching Exchange_Rate_Tariffs/references.bib entries exactly) added after the conclusion: Bagwell-Staiger 1999 AER, Bond-Syropoulos 1996 JIE, Kemp-Wan 1976 JIE, Krugman 1991 (Helpman-Razin volume), Mundell 1964 Manchester School, Ornelas 2005 EER, Viner 1950. Still 12 pp.
