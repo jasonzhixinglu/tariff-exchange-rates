@@ -366,3 +366,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — §2.5 ranking moved to a footnote per Jase's comment
 
 - Jase's rewritten in-words ML paragraph kept; missing verb restored ("disturbances translate into"); the three-notions ranking compressed into a footnote (GS assumed as primitive, only invpos used by the analysis; stability equivalent to invpos under the Metzler sign structure, strictly weaker without it); the degree-(N-1) polynomial remark kept in main text as its own paragraph. 13 pp, compiles clean.
+
+### 2026-08-28 — §2.5 polynomial-structure logic expanded; footnote qualifier
+
+- Jase's merge of the nonnegative-weights paragraph accepted (the sign-rule Result carries the "therefore"). The degree-(N-1) remark expanded into the full chain: rho enters shares only via (1-rho) -> J, F entries linear in rho -> adjugate entries degree <= N-2 -> numerators degree <= N-1 -> sign changes only at roots -> symmetric N=3 linear (single threshold), general baseline quadratic (Appendix B), N >= 4 multiple crossings. Footnote: "under the sign structure of Assumption 1" qualifier added to the ML = stability equivalence (unconditional equivalence would overclaim); "algorithms" -> "processes"; hyphenation. 13 pp, compiles clean.
