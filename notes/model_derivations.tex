@@ -20,6 +20,7 @@
 In a two-country model, an import tariff appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign suppliers, so bilateral exchange-rate responses need not share a sign. These notes characterize the exchange-rate responses in an $N$-country model. The general equilibrium response is $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates and $J$ is the exchange-rate adjustment mechanism. Under symmetry and a multilateral Marshall--Lerner condition, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin substitution elasticity exceeds a threshold $N\rho_1^*$. Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate appreciates independently of the cross-origin elasticity and $N$. The exact cancellation behind this aggregate result and the linear threshold are properties of the symmetric nested-CES model, but the disturbance-adjustment decomposition, and the distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers, are more general.
 
 \section{$N$-Country Model and Equilibrium}
+\label{sec:model}
 
 \subsection{Production and preferences}
 
@@ -45,9 +46,11 @@ M_i &= \Big[\, \textstyle\sum_{j \neq i} \beta_{ij}^{1/\rho}\, C_{T_j i}^{\frac{
 && \text{(origin weights } \beta_{ij}, \text{ elasticity } \rho) .
 \label{eq:inner}
 \end{align}
-$\eta$ governs substitution between domestic and imported tradables (the home-versus-foreign tradables margin); $\rho$ governs substitution across foreign origins conditional on importing (the foreign-supplier tradables reallocation margin, inactive at $N = 2$ and active at $N \geq 3$). The \emph{symmetric benchmark} imposes $\beta_{ij} = 1/(N-1)$, common parameters $(\alpha_T, \alpha_D, \eta, \rho)$, and equal endowments and productivities. Home bias $\alpha_D$ keeps home and foreign tradables asymmetric; full home-versus-foreign tradables symmetry would additionally require $\rho = \eta$ and $\alpha_D = 1/N$, and is not imposed.
+$\eta$ governs substitution between domestic and imported tradables (the home-versus-foreign tradables margin); $\rho$ governs substitution across foreign origins conditional on importing (the foreign-supplier tradables reallocation margin, inactive at $N = 2$ and active at $N \geq 3$). 
 
-\subsection{Prices, expenditure, income, and trade balance}
+The \emph{symmetric benchmark} imposes $\beta_{ij} = 1/(N-1)$, common parameters $(\alpha_T, \alpha_D, \eta, \rho)$, and equal endowments and productivities. Home bias $\alpha_D$ keeps home and foreign tradables asymmetric; full home-versus-foreign tradables symmetry would additionally require $\rho = \eta$ and $\alpha_D = 1/N$, and is not imposed.
+
+\subsection{Tariffs, prices, income, and trade balance}
 
 Tariffs $\tau_{ij} \geq 0$ are ad valorem, levied by $i$ on imports from $j$, with $\tau_{ii} = 0$. Consumer prices in $i$'s currency are given by $p_{ij} = (1+\tau_{ij})\, e_{ij}$, $p_{ii} = 1$, and price indices are given by:
 \begin{equation}
@@ -108,9 +111,9 @@ d\log e_{ij} = d\log \omega_{ij} = -\,d\log \mathrm{ToT}_{ij} ,
 \end{equation}
 so every nominal exchange-rate result is equivalently a relative-wage or terms-of-trade result.
 
-\section{Disturbance and Adjustment: General Results}
+\section{General Results on Exchange-Rate Adjustment}
 
-Exchange-rate determination under the trade-balance closure has a structure that does not depend on the nested-CES specification. This section states the general results once; the next section computes their ingredients in the model.
+Exchange-rate determination under the trade-balance closure has a structure that does not depend on the nested-CES specification. 
 
 \subsection{The local disturbance--adjustment representation}
 
@@ -183,11 +186,11 @@ Under \eqref{eq:invpos},
 \label{res:signrule}
 \end{result}
 
-Under the multilateral Marshall--Lerner condition, opposite-signed bilateral responses require a mixed-sign $F$, i.e., bilateral ambiguity comes from the tariff disturbance on trade balances and not from the adjustment mechanism.
+Under the multilateral Marshall--Lerner condition, opposite-signed bilateral responses require a mixed-sign $F$, i.e., bilateral exchange-rate ambiguity comes from the tariff disturbance on trade balances and not from the adjustment mechanism.
 
-\section{Tariff Responses in the Model: Two, Three, and $N$ Countries}
+\section{Tariff Responses in the Model}
 
-This section computes the entries of $J$ and $G$ for the nested-CES model and specializes to $N = 2$, $N = 3$, and general symmetric $N$.
+This section computes the entries of $J$ and $G$ for the nested-CES model for $N = 2$, $N = 3$, and general symmetric $N$.
 
 \subsection{The linearized system}
 
@@ -211,11 +214,11 @@ d\,\mathrm{TB}_i
 - \sum_{j \neq i} f_{ij} \big( d\log s_{ij} + d\log I_i - dt_{ij} \big) .
 \label{eq:dtb}
 \end{align}
-Reading the coefficients off \eqref{eq:dtb} gives the model's entries of $J$ and $G$ in \eqref{eq:JFdef}: the nested CES delivers specific parametric expressions for every term.
+Reading the coefficients off \eqref{eq:dtb} gives the model's entries of $J$ and $G$ in \eqref{eq:JFdef}, so we obtain specific parametric expressions for every term from the model of Section~\ref{sec:model}.
 
 The algebraic structure of \eqref{eq:system} also bounds how bilateral signs can change with $\rho$. The elasticity $\rho$ enters the share responses \eqref{eq:dsfor} only through the coefficient $(1-\rho)$, so every entry of $J$ and $F$ is linear in $\rho$. Each entry of $\operatorname{adj}(-J)$ is a determinant of an $(N-2) \times (N-2)$ submatrix of $-J$ and is therefore a polynomial of degree at most $N-2$ in $\rho$, so each numerator $[\operatorname{adj}(-J)\,F]_i$ in \eqref{eq:system} is a polynomial of degree at most $N-1$. Since $\det(-J) > 0$ under \eqref{eq:invpos}, a bilateral response can change sign only at a root of its numerator polynomial. At $N = 3$ the symmetric baseline reduces the relevant numerator to a linear function of $\rho$, giving the single threshold derived below; a general asymmetric baseline gives a quadratic (Appendix B); and at $N \geq 4$ the higher-degree numerators allow a response to change sign more than once as $\rho$ rises.
 
-In the specializations below, $A$ imposes $d\tau = dt_{AB}$ at the symmetric baseline, and every threshold is measured in units of
+Now suppose $A$ imposes $d\tau = dt_{AB}$ at the symmetric baseline. Define the following constant, a function of model parameters alone:
 \begin{equation}
 \rho_1^*
 \equiv 1 + \alpha_D(\eta-1) - \alpha_T(1-\alpha_D)
@@ -252,11 +255,11 @@ In reduced form, with export volume $X(1/e)$, import volume $M((1+\tau)e)$, and 
 \end{equation}
 
 \begin{result}[Conventional wisdom, $N=2$]
-Condition \eqref{eq:invpos} collapses to $D_2 > 0$, which is exactly the textbook Marshall--Lerner condition $\varepsilon_X + \varepsilon_M > 1$ (automatic for $\eta \geq 1$). Under it a unilateral import tariff appreciates the tariffing country's currency, since $\rho_1^* > 0$.
+At $N = 2$, condition \eqref{eq:invpos} collapses to $D_2 > 0$, which is exactly the textbook Marshall--Lerner condition $\varepsilon_X + \varepsilon_M > 1$; in the nested-CES model it holds whenever $\eta \geq 1$. The impact disturbance is $F = m\rho_1^* > 0$ for all admissible parameters. A unilateral import tariff therefore appreciates the tariffing country's currency: $d\log e_{AB}/d\tau = -\rho_1^*/D_2 < 0$. 
 \label{res:2c}
 \end{result}
 
-\noindent At unchanged exchange rates the tariff improves $A$'s balance by $m\rho_1^* d\tau$, through home switching and non-tradable absorption; the appreciation eliminates the surplus. The disturbance signs the numerator and Marshall--Lerner signs the denominator. (Appendix A gives the exact finite-tariff Cobb--Douglas solution, which confirms the sign globally.)
+\noindent The two ingredients of the general sign rule appear separately here: $D_2 > 0$ is the $N = 2$ analog of the multilateral Marshall--Lerner condition \eqref{eq:invpos}, and $\rho_1^* > 0$ is the analog of the condition on $F$. At $N = 2$ the disturbance is a scalar with an unambiguous sign --- at unchanged exchange rates the tariff improves $A$'s balance by $m\rho_1^*\, d\tau$, through home switching and non-tradable absorption --- and hence the exchange rate appreciates in equilibrium to eliminate the surplus, with no threshold condition. Bilateral ambiguity can first arise at $N = 3$, where $F$ acquires a second component. (Appendix A gives the exact finite-tariff Cobb--Douglas solution, which confirms the sign globally.)
 
 \subsection{Three countries}
 
