@@ -406,3 +406,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — real-rates proposition rewritten to the point
 
 - Proposition now states the two claims plainly: (i) rho_q*(N) > N rho_1*; (ii) dq_A^E/dtau < 0 for every rho and N. Mechanism (direct price-index term) moved to a one-line note after the proposition; the magnitude clause dropped (visible directly in eq:N-reer). 13 pp, compiles clean.
+
+### 2026-08-28 — PTA section edits incorporated; literature paragraph cut per instruction
+
+- Kept: one-sentence Proposition (Canonical PTA restriction), deletion-sentence trim, "also shows" footnote tweak. Fixed: limks/incldues/additionall typos, competing-exporter opening reworded ("also has" -> "has two"), the ToT-e_AC equivalence attributed via eq:onetoone rather than to the PTA models. Literature paragraph cut roughly in half with one claim per sentence: (1) the link -- Viner-Mundell = threshold evaluated where it cannot bind (the Proposition's deleted tail, folded into the promised lead-in); (2) competing-exporter class and why unconditional; (3) bloc/endowment class and the Viner rho = infinity limit; (4) Kemp-Wan converse; (5) applied pole and the threshold they lack. 13 pp, compiles clean.
