@@ -108,29 +108,13 @@ d\log e_{ij} = d\log \omega_{ij} = -\,d\log \mathrm{ToT}_{ij} ,
 \end{equation}
 so every nominal exchange-rate result is equivalently a relative-wage or terms-of-trade result.
 
-\subsection{General linearization}
+\section{Disturbance and Adjustment: General Results}
 
-Linearizing at a balanced free-trade baseline with normalized incomes, define home share $h_i = \alpha_D$, within-import shares $b_{ij} = \beta_{ij}$, income shares $s_{ij} = m\, b_{ij}$ with $m \equiv \alpha_T(1-\alpha_D)$, and flows $f_{ij} = s_{ij} I_i$, $\sum_k f_{ki} = \sum_j f_{ij}$. Perturbing this baseline with tariffs $dt_{ij}$:
-\begin{align}
-dp_{ij} &= \nu_j - \nu_i + dt_{ij} \qquad (dp_{ii} = 0),
-\label{eq:dp}\\
-d\log P_{M_i} &= \sum_{j\neq i} b_{ij}\, dp_{ij},
-\qquad
-d\log P_{T_i} = (1-\alpha_D)\, d\log P_{M_i} ,
-\label{eq:dindex}\\
-d\log s_{ii} &= -(1-\eta)(1-\alpha_D)\, d\log P_{M_i},
-\label{eq:dshome}\\
-d\log s_{ij} &= \underbrace{(1-\rho)\big( dp_{ij} - d\log P_{M_i} \big)}_{\text{across origins}}
-+ \underbrace{(1-\eta)\,\alpha_D\, d\log P_{M_i}}_{\text{home vs.\ imports}} ,
-\label{eq:dsfor}\\
-d\log I_i &= \nu_i + \sum_{j\neq i} s_{ij}\, dt_{ij} ,
-\label{eq:dincome}\\
-d\,\mathrm{TB}_i
-&= \sum_{k \neq i} f_{ki} \big( d\log s_{ki} + d\log I_k - dt_{ki} \big)
-- \sum_{j \neq i} f_{ij} \big( d\log s_{ij} + d\log I_i - dt_{ij} \big) .
-\label{eq:dtb}
-\end{align}
-Stacking $d\nu \equiv (\nu_j)_{j \neq A}$ and $d\boldsymbol{\tau} \equiv (dt_{jk})_{j \neq k}$, the conditions for $i \neq A$ are
+Exchange-rate determination under the trade-balance closure has a structure that does not depend on the nested-CES specification. This section states the general results once; the next section computes their ingredients in the model.
+
+\subsection{The local disturbance--adjustment representation}
+
+Consider any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions, $\mathrm{TB}_i = 0$ for $i \neq A$, as functions of the exchange rates and the tariffs. Stacking $d\nu \equiv (\nu_j)_{j \neq A}$ and $d\boldsymbol{\tau} \equiv (dt_{jk})_{j \neq k}$, the conditions for $i \neq A$ are
 \begin{equation}
 J\, d\nu + G\, d\boldsymbol{\tau} = 0,
 \qquad
@@ -148,11 +132,11 @@ J\, d\nu = -F\, d\tau,
 \frac{d\nu}{d\tau} = (-J)^{-1} F .
 \label{eq:system}
 \end{equation}
-$F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates (incorporating multilateral substitution and income effects), $J$ describes how trade balances respond to exchange rates, and configurations differ only in the direction $a$ applied to the same $G$. This local disturbance-adjustment representation holds for any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions; the nested CES delivers specific parametric expressions for every term.
+$F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates (incorporating multilateral substitution and income effects), $J$ describes how trade balances respond to exchange rates, and configurations differ only in the direction $a$ applied to the same $G$.
 
 \subsection{The multilateral Marshall--Lerner condition}
 
-Let $\widetilde J$ be the full $N \times N$ Jacobian before dropping country $A$. Homogeneity (which states that only relative prices enter \eqref{eq:dp}) and Walras' law give the identities
+Let $\widetilde J$ be the full $N \times N$ Jacobian before dropping country $A$. Homogeneity (trade balances depend only on relative currency values) and Walras' law give the identities
 \begin{equation}
 \sum_{l} \widetilde J_{il} = 0 \quad \forall i,
 \qquad\qquad
@@ -185,6 +169,9 @@ Under Assumption \ref{as:gs}, with $J$ irreducible and $\widetilde J_{iA} > 0$ f
 \label{res:mml}
 \end{result}
 
+\noindent In words, the multilateral Marshall--Lerner condition generalizes the bilateral Marshall--Lerner condition to require that the exchange-rate adjustment mechanism is regular in the sense that each country's own depreciation improves its own trade balance, no country's appreciation worsens another country's balance, and the own effect dominates the cross effects. Therefore, any pattern of trade imbalances is eliminated by 
+``conventional'' exchange rate adjustment: surplus countries appreciate, deficit countries depreciate.\footnote{Formally: gross substitutability $\Rightarrow$ multilateral Marshall--Lerner. We assume the former as the primitive (Assumption \ref{as:gs}), but the subsequent analysis uses only \eqref{eq:invpos}. Under the sign structure of Assumption \ref{as:gs}, multilateral Marshall--Lerner $\equiv$ local stability of the tatonnement $\dot\nu_i = k_i \mathrm{TB}_i$, any $k_i > 0$, which says that simple dynamic exchange-rate adjustment processes converge to the equilibrium.}
+
 \begin{result}[Sign rule]
 Under \eqref{eq:invpos},
 \begin{equation}
@@ -196,14 +183,39 @@ Under \eqref{eq:invpos},
 \label{res:signrule}
 \end{result}
 
-\noindent In words, the multilateral Marshall--Lerner condition generalizes the bilateral Marshall--Lerner condition to require that the exchange-rate adjustment mechanism is regular in the sense that each country's own depreciation improves its own trade balance, no country's appreciation worsens another country's balance, and the own effect dominates the cross effects. Therefore, any pattern of trade imbalances is eliminated by 
-``conventional'' exchange rate adjustment: surplus countries appreciate, deficit countries depreciate. Opposite-signed bilateral responses therefore require a mixed-sign $F$, i.e., bilateral ambiguity comes from the tariff disturbance on trade balances and not from the adjustment mechanism.\footnote{Formally: gross substitutability $\Rightarrow$ multilateral Marshall--Lerner. We assume the former as the primitive (Assumption \ref{as:gs}), but the subsequent analysis uses only \eqref{eq:invpos}. Under the sign structure of Assumption \ref{as:gs}, multilateral Marshall--Lerner $\equiv$ local stability of the tatonnement $\dot\nu_i = k_i \mathrm{TB}_i$, any $k_i > 0$, which says that simple dynamic exchange-rate adjustment processes converge to the equilibrium.}
+Under the multilateral Marshall--Lerner condition, opposite-signed bilateral responses require a mixed-sign $F$, i.e., bilateral ambiguity comes from the tariff disturbance on trade balances and not from the adjustment mechanism.
+
+\section{Tariff Responses in the Model: Two, Three, and $N$ Countries}
+
+This section computes the entries of $J$ and $G$ for the nested-CES model and specializes to $N = 2$, $N = 3$, and general symmetric $N$.
+
+\subsection{The linearized system}
+
+Linearizing at a balanced free-trade baseline with normalized incomes, define home share $h_i = \alpha_D$, within-import shares $b_{ij} = \beta_{ij}$, income shares $s_{ij} = m\, b_{ij}$ with $m \equiv \alpha_T(1-\alpha_D)$, and flows $f_{ij} = s_{ij} I_i$, $\sum_k f_{ki} = \sum_j f_{ij}$. Perturbing this baseline with tariffs $dt_{ij}$:
+\begin{align}
+dp_{ij} &= \nu_j - \nu_i + dt_{ij} \qquad (dp_{ii} = 0),
+\label{eq:dp}\\
+d\log P_{M_i} &= \sum_{j\neq i} b_{ij}\, dp_{ij},
+\qquad
+d\log P_{T_i} = (1-\alpha_D)\, d\log P_{M_i} ,
+\label{eq:dindex}\\
+d\log s_{ii} &= -(1-\eta)(1-\alpha_D)\, d\log P_{M_i},
+\label{eq:dshome}\\
+d\log s_{ij} &= \underbrace{(1-\rho)\big( dp_{ij} - d\log P_{M_i} \big)}_{\text{across origins}}
++ \underbrace{(1-\eta)\,\alpha_D\, d\log P_{M_i}}_{\text{home vs.\ imports}} ,
+\label{eq:dsfor}\\
+d\log I_i &= \nu_i + \sum_{j\neq i} s_{ij}\, dt_{ij} ,
+\label{eq:dincome}\\
+d\,\mathrm{TB}_i
+&= \sum_{k \neq i} f_{ki} \big( d\log s_{ki} + d\log I_k - dt_{ki} \big)
+- \sum_{j \neq i} f_{ij} \big( d\log s_{ij} + d\log I_i - dt_{ij} \big) .
+\label{eq:dtb}
+\end{align}
+Reading the coefficients off \eqref{eq:dtb} gives the model's entries of $J$ and $G$ in \eqref{eq:JFdef}: the nested CES delivers specific parametric expressions for every term.
 
 The algebraic structure of \eqref{eq:system} also bounds how bilateral signs can change with $\rho$. The elasticity $\rho$ enters the share responses \eqref{eq:dsfor} only through the coefficient $(1-\rho)$, so every entry of $J$ and $F$ is linear in $\rho$. Each entry of $\operatorname{adj}(-J)$ is a determinant of an $(N-2) \times (N-2)$ submatrix of $-J$ and is therefore a polynomial of degree at most $N-2$ in $\rho$, so each numerator $[\operatorname{adj}(-J)\,F]_i$ in \eqref{eq:system} is a polynomial of degree at most $N-1$. Since $\det(-J) > 0$ under \eqref{eq:invpos}, a bilateral response can change sign only at a root of its numerator polynomial. At $N = 3$ the symmetric baseline reduces the relevant numerator to a linear function of $\rho$, giving the single threshold derived below; a general asymmetric baseline gives a quadratic (Appendix B); and at $N \geq 4$ the higher-degree numerators allow a response to change sign more than once as $\rho$ rises.
 
-\section{Tariff Responses: Two, Three, and $N$ Countries}
-
-Throughout this section $A$ imposes $d\tau = dt_{AB}$ at the symmetric baseline, and
+In the specializations below, $A$ imposes $d\tau = dt_{AB}$ at the symmetric baseline, and every threshold is measured in units of
 \begin{equation}
 \rho_1^*
 \equiv 1 + \alpha_D(\eta-1) - \alpha_T(1-\alpha_D)
@@ -507,7 +519,7 @@ globally decreasing in $\tau$: the linearized sign in \eqref{eq:2c-slope} is exa
 
 \section{Asymmetry}
 
-The disturbance-adjustment representation \eqref{eq:system} and the multilateral Marshall--Lerner condition \eqref{eq:invpos} do not use symmetry; the exact thresholds of Section 3 and the NEER cancellation of Section 4 do. This appendix establishes what survives without it: the bilateral reversal region survives at any interior baseline, and the NEER result is preserved to leading order within a structured asymmetric family.
+The disturbance-adjustment representation \eqref{eq:system} and the multilateral Marshall--Lerner condition \eqref{eq:invpos} do not use symmetry; the exact thresholds of Section 4 and the NEER cancellation of Section 5 do. This appendix establishes what survives without it: the bilateral reversal region survives at any interior baseline, and the NEER result is preserved to leading order within a structured asymmetric family.
 
 \paragraph{General asymmetric baseline.} At any balanced baseline, \eqref{eq:dp}--\eqref{eq:dtb} hold with observed shares $(b_{ij}, h_i)$ and incomes $y_i$ as coefficients. For $N = 3$ at a general baseline (paper appendix), the bystander slope has denominator $\det(-J) > 0$ and numerator quadratic in $\rho$,
 \begin{equation}
