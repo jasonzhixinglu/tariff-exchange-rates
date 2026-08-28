@@ -84,7 +84,7 @@ By Walras' law only $N-1$ conditions are independent. Furthermore, we impose clo
 
 \subsection{Exchange-rate concepts}
 
-Define $e_{ij}$ = units of $i$'s currency per unit of $j$'s, $e_{ii} = 1$, $e_{ij} = e_{ik}e_{kj}$. \textbf{Therefore, a rise in $e_{ij}$ is a depreciation of $i$ against $j$}. Log perturbations in bilateral exchange rates relative to $A$ are defined by $\nu_j \equiv d\log e_{Aj}$, $\nu_A = 0$. Define relative wages, terms of trade, real exchange rates, and effective exchange rates:
+Define $e_{ij}$ = units of $i$'s currency per unit of $j$'s, $e_{ii} = 1$, $e_{ij} = e_{ik}e_{kj}$. Therefore, a rise in $e_{ij}$ is a depreciation of $i$ against $j$. Log perturbations in bilateral exchange rates relative to $A$ are defined by $\nu_j \equiv d\log e_{Aj}$, $\nu_A = 0$. Define relative wages, terms of trade, real exchange rates, and effective exchange rates:
 \begin{equation}
 \omega_{ij} \equiv \frac{e_{ij} w_j}{w_i},
 \qquad
@@ -110,7 +110,7 @@ so every nominal exchange-rate result is equivalently a relative-wage or terms-o
 
 \subsection{General linearization}
 
-Linearize at a balanced free-trade baseline with normalized incomes: home share $h_i = \alpha_D$ (a country-specific $h_i$ carries through unchanged), within-import shares $b_{ij} = \beta_{ij}$, income shares $s_{ij} = m\, b_{ij}$ with $m \equiv \alpha_T(1-\alpha_D)$, flows $f_{ij} = s_{ij} I_i$, $\sum_k f_{ki} = \sum_j f_{ij}$. Perturbing by tariffs $dt_{ij}$:
+Linearizing at a balanced free-trade baseline with normalized incomes, define home share $h_i = \alpha_D$, within-import shares $b_{ij} = \beta_{ij}$, income shares $s_{ij} = m\, b_{ij}$ with $m \equiv \alpha_T(1-\alpha_D)$, and flows $f_{ij} = s_{ij} I_i$, $\sum_k f_{ki} = \sum_j f_{ij}$. Perturbing this baseline with tariffs $dt_{ij}$:
 \begin{align}
 dp_{ij} &= \nu_j - \nu_i + dt_{ij} \qquad (dp_{ii} = 0),
 \label{eq:dp}\\
@@ -139,7 +139,7 @@ J_{il} \equiv \frac{\partial\, d\mathrm{TB}_i}{\partial \nu_l},
 G_{i,(jk)} \equiv \frac{\partial\, d\mathrm{TB}_i}{\partial\, dt_{jk}}\bigg|_{\nu \text{ fixed}} .
 \label{eq:JFdef}
 \end{equation}
-A tariff experiment is a direction $a$ scaled by $d\tau$ (unilateral tariff: $a_{AB} = 1$; war: $a_{AB} = a_{BA} = 1$), with impact vector
+Separating the tariff perturbation into a direction $a$ scaled by $d\tau$ (unilateral tariff: $a_{AB} = 1$; war: $a_{AB} = a_{BA} = 1$) gives the impact vector
 \begin{equation}
 F \equiv G a
 \qquad\Longrightarrow\qquad
@@ -148,7 +148,7 @@ J\, d\nu = -F\, d\tau,
 \frac{d\nu}{d\tau} = (-J)^{-1} F .
 \label{eq:system}
 \end{equation}
-$F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates; $J$ describes how trade balances respond to exchange rates; configurations differ only in the direction $a$ applied to the same $G$. This local disturbance-adjustment representation holds for any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions; nested CES supplies the particular entries above.
+$F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates (incorporating multilateral substitution and income effects), $J$ describes how trade balances respond to exchange rates, and configurations differ only in the direction $a$ applied to the same $G$. This local disturbance-adjustment representation holds for any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions; the nested CES delivers specific parametric expressions for every term.
 
 \subsection{The multilateral Marshall--Lerner condition}
 

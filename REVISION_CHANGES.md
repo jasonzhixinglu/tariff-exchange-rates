@@ -354,3 +354,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's §2.2/§2.3 edits reviewed and committed
 
 - Kept: "given by" lead-ins, tariff-inclusive/tariff-exclusive clarification, "since the tariff wedge is a domestic transfer", explicit closure/equilibrium phrasing, "Therefore" before the sign convention, deletion of the redundant depreciation-positive clause for effective rates (derivable from the bolded bilateral convention). Fixed: "raates" typo, serial comma, comma around i != A, trailing whitespace. 12 pp, compiles clean.
+
+### 2026-08-28 — Jase's §2.4 (linearization/J-F) edits reviewed and committed
+
+- Kept: un-bolded sign convention, restructured linearization lead-in (country-specific h_i aside dropped; the general-baseline claim survives in Appendix B), "Perturbing this baseline", the "(incorporating multilateral substitution and income effects)" gloss on F, clause-list restructuring. Fixed: the "Separating..." fragment now reads "...gives the impact vector" (appositive commas around a dropped); "shall give us" -> "delivers". 12 pp, compiles clean.
