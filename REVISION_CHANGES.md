@@ -390,3 +390,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's corollary rewording and N-section footnote demotion reviewed
 
 - Kept: restructured necessary-condition sentence (operative-threshold reminder dropped, stated in the Result above), linearity/asymmetry caveat demoted to a footnote in §4.4, "Furthermore" connective. Fixed: domesic typo plus "in substitution" qualifier (avoids collision with §2.1's stronger full-symmetry notion), comma splice ("1/N, the reversal" -> "1/N, so the reversal"). 13 pp, compiles clean.
+
+### 2026-08-28 — Jase's §5 NEER trim reviewed; contrast, caveat, and Appendix C pointer restored
+
+- Kept: Result trimmed to the bare statement; footnote simplification in §4.4 ("it's" -> "it is"); the rewritten interpretation paragraph structure. Restored compactly at the paragraph's end: the bilateral-vs-effective contrast (NEER appreciates even for rho > N rho_1*, where every bystander bilateral has reversed), the symmetry caveat with the Appendix B robustness summary, and the Appendix C pointer (which the cut had orphaned). Grammar: "means that ... thus" de-doubled, "or changes" -> "and to changes", impact -> affect. 13 pp, compiles clean.
