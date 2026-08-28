@@ -362,3 +362,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — Jase's §2.5 comments incorporated
 
 - New plain-words statement of the multilateral ML condition after the sign rule (own depreciation improves own balance; no other's appreciation worsens it; own effect dominates; surpluses appreciate, deficits depreciate, signs preserved). Jase's sign-rule paragraph polished (trnaslate typo; "which we may assume to satisfy" tightened). Second comment answered in text with the explicit ranking: gross substitutability => multilateral ML <=> local stability, GS a sufficient-not-necessary primitive, ML the working condition, stability an equivalent face. Kept: "which states that" and "i.e." edits. 13 pp, compiles clean.
+
+### 2026-08-28 — §2.5 ranking moved to a footnote per Jase's comment
+
+- Jase's rewritten in-words ML paragraph kept; missing verb restored ("disturbances translate into"); the three-notions ranking compressed into a footnote (GS assumed as primitive, only invpos used by the analysis; stability equivalent to invpos under the Metzler sign structure, strictly weaker without it); the degree-(N-1) polynomial remark kept in main text as its own paragraph. 13 pp, compiles clean.
