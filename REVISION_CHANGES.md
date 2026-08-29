@@ -454,3 +454,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-29 — §3 placeholder filled
 
 - "assume only differentiability of ..." completed: differentiability of the trade-balance conditions in the exchange rates and tariffs. 17 pp, compiles clean.
+
+### 2026-08-29 — §3 wording edits reviewed
+
+- Kept: "trade balances with respect to exchange rates and tariffs" rephrase; "assuming homogeneity" framing in the general section (derived for the model in the proof). Fixed: missing "that"; "alongside with the Walras' law give" -> "together with Walras' law gives". 17 pp, compiles clean.
