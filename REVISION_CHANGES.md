@@ -442,3 +442,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-28 — authors and companion-paper citation added to the notes
 
 - Title page now carries Jason Lu and Dimitre Milkov. Appendix B's dangling "(paper appendix)" pointer replaced with a formal citation to the companion paper, and a reference entry added (Lu and Milkov, forthcoming, "Trade Tariffs and Exchange Rates: Revisiting Conventional Wisdom in a Three-Country Framework," IMF Working Paper), alphabetically placed. 17 pp, compiles clean.
+
+### 2026-08-29 — Jase's intro restructure reviewed
+
+- Three-paragraph intro kept (Jacobian gloss on J, cross-origin parenthetical, NEER acronym introduced). Fixed: "cancellation of N and rho in the response" -> "from the numerator of the NEER response" (both still affect magnitude through D_N); subject-verb agreement after the trim (distinction ... is more general). 17 pp, compiles clean.
