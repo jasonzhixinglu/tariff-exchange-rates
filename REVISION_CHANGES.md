@@ -446,3 +446,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-29 — Jase's intro restructure reviewed
 
 - Three-paragraph intro kept (Jacobian gloss on J, cross-origin parenthetical, NEER acronym introduced). Fixed: "cancellation of N and rho in the response" -> "from the numerator of the NEER response" (both still affect magnitude through D_N); subject-verb agreement after the trim (distinction ... is more general). 17 pp, compiles clean.
+
+### 2026-08-29 — §2.1/§3 trims reviewed
+
+- Kept: rho parenthetical trimmed to the inactive/active clause (the margin's name lives in the intro), §3 retitle "General Exchange-Rate Adjustments", one-line section intro. Fixed: missing verb ("The following results are not specific..."). 17 pp, compiles clean.
