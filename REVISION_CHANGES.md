@@ -458,3 +458,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-29 — §3 wording edits reviewed
 
 - Kept: "trade balances with respect to exchange rates and tariffs" rephrase; "assuming homogeneity" framing in the general section (derived for the model in the proof). Fixed: missing "that"; "alongside with the Walras' law give" -> "together with Walras' law gives". 17 pp, compiles clean.
+
+### 2026-08-29 — Jase's batch edits reviewed (intro, §3, §4-6 titles, footnote consolidation, self-citation removal)
+
+- Kept: J-gloss moved next to eq:JFdef, configuration examples dropped from §3.1 (concrete shocks defined where used), mixed-F sentence now introduces the Corollary ("Stated formally:"), "Tariff Responses in Our Model" and "Trade war threshold" retitles, appendix pointers consolidated into the dilution footnote, NEER-paragraph footnote removed, PTA "curious" framing, self-citation entry dropped from References. Fixed: "independent trade-balance disturbances" -> "disturbances to the independent trade balances"; dangling "the cancellation" in the moved footnote -> "the NEER cancellation of Section 5"; the now-dangling Lu-Milkov author-year citation made self-contained ("companion IMF working paper by..."); conclusion hyphenation. 17 pp, compiles clean.

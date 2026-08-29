@@ -21,7 +21,7 @@
 
 In a two-country model, an import tariff always appreciates the tariffing country's currency under the Marshall--Lerner condition. In a multilateral setting, a discriminatory tariff also reallocates expenditure across foreign countries, so the tariffing country's bilateral exchange-rate responses need not share a sign across countries. 
 
-These notes characterize the exchange-rate responses of tariffs in an $N$-country model. The general log-linearized equilibrium response in exchange rates is given by $(-J)^{-1}F$, where $F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates, and $J$ is the Jacobian that records how trade balances respond to exchange-rate adjustments. Under symmetry and a multilateral Marshall--Lerner condition on $J$, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin elasticity of substitution (across foreign imported tradables) exceeds a threshold $N\rho_1^*$. 
+These notes characterize the exchange-rate responses of tariffs in an $N$-country model. The general log-linearized equilibrium response in exchange rates is given by $(-J)^{-1}F$, where $F$ is the vector of disturbances to the independent trade balances created by the tariff at unchanged exchange rates, and $J$ is the Jacobian that records how the independent trade balances respond to exchange-rate adjustments. Under symmetry and a multilateral Marshall--Lerner condition on $J$, the tariffing country always appreciates against the target, but the sign of its bilateral exchange-rate response against an untariffed bystander is ambiguous and depends on whether the cross-origin elasticity of substitution (across foreign imported tradables) exceeds a threshold $N\rho_1^*$. 
 
 Despite this bilateral sign ambiguity, the tariffing country's nominal effective exchange rate (NEER) appreciates \emph{independently} of the cross-origin elasticity and $N$. The exact cancellation of $N$ and $\rho$ from the numerator of the NEER response is a property of the symmetric nested-CES model, but the underlying distinction between aggregate home-versus-foreign adjustment and reallocation across foreign suppliers is more general. Proofs of all formal results are collected in Appendix~\ref{app:proofs}.
 
@@ -132,7 +132,7 @@ J_{il} \equiv \frac{\partial\, d\mathrm{TB}_i}{\partial \nu_l},
 G_{i,(jk)} \equiv \frac{\partial\, d\mathrm{TB}_i}{\partial\, dt_{jk}}\bigg|_{\nu \text{ fixed}} .
 \label{eq:JFdef}
 \end{equation}
-Separating the tariff perturbation into a direction $a$ scaled by $d\tau$ (unilateral tariff: $a_{AB} = 1$; war: $a_{AB} = a_{BA} = 1$) gives the impact vector
+Here, $J$ describes how trade balances respond to exchange rates. Separating the tariff perturbation into a direction $a$ scaled by $d\tau$ gives the impact vector
 \begin{equation}
 F \equiv G a
 \qquad\Longrightarrow\qquad
@@ -141,7 +141,7 @@ J\, d\nu = -F\, d\tau,
 \frac{d\nu}{d\tau} = (-J)^{-1} F .
 \label{eq:system}
 \end{equation}
-$F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates (incorporating multilateral substitution and income effects), $J$ describes how trade balances respond to exchange rates, and configurations differ only in the direction $a$ applied to the same $G$.
+$F$ is the vector of trade-balance disturbances created by the tariff at unchanged exchange rates (incorporating multilateral substitution and income effects).
 
 \subsection{The multilateral Marshall--Lerner condition}
 
@@ -178,8 +178,8 @@ Under Assumption \ref{as:gs}, with $J$ irreducible and $\widetilde J_{iA} > 0$ f
 \label{res:mml}
 \end{proposition}
 
-\noindent In words, the multilateral Marshall--Lerner condition generalizes the bilateral Marshall--Lerner condition to require that the exchange-rate adjustment mechanism is regular in the sense that each country's own depreciation improves its own trade balance, no country's appreciation worsens another country's balance, and the own effect dominates the cross effects. Therefore, any pattern of trade imbalances is eliminated by 
-``conventional'' exchange rate adjustment: surplus countries appreciate, deficit countries depreciate.\footnote{Formally: gross substitutability $\Rightarrow$ multilateral Marshall--Lerner. We assume the former as the primitive (Assumption \ref{as:gs}), but the subsequent analysis uses only \eqref{eq:invpos}. Under the sign structure of Assumption \ref{as:gs}, multilateral Marshall--Lerner $\equiv$ local stability of the tatonnement $\dot\nu_i = k_i \mathrm{TB}_i$, any $k_i > 0$, which says that simple dynamic exchange-rate adjustment processes converge to the equilibrium.}
+\noindent In words, the multilateral Marshall--Lerner condition generalizes the bilateral Marshall--Lerner condition to require that the exchange-rate adjustment mechanism is ``regular'', in the sense that each country's own depreciation improves its own trade balance, no country's appreciation worsens another country's balance, and the own effect dominates the cross effects. Therefore, any pattern of trade imbalances is eliminated by 
+``conventional'' exchange rate adjustment: surplus countries appreciate, deficit countries depreciate.\footnote{Formally: gross substitutability $\Rightarrow$ multilateral Marshall--Lerner. We assume the former as the primitive (Assumption \ref{as:gs}), but the subsequent analysis uses only \eqref{eq:invpos}. Under the sign structure of Assumption \ref{as:gs}, multilateral Marshall--Lerner $\equiv$ local stability of the tatonnement $\dot\nu_i = k_i \mathrm{TB}_i$, any $k_i > 0$, which says that simple dynamic exchange-rate adjustment processes converge to the equilibrium.} Therefore, under the multilateral Marshall--Lerner condition, opposite-signed bilateral responses require a mixed-sign $F$. Stated formally:
 
 \begin{corollary}[Sign rule]
 Under \eqref{eq:invpos},
@@ -192,9 +192,7 @@ Under \eqref{eq:invpos},
 \label{res:signrule}
 \end{corollary}
 
-Under the multilateral Marshall--Lerner condition, opposite-signed bilateral responses require a mixed-sign $F$, i.e., bilateral exchange-rate ambiguity comes from the tariff disturbance on trade balances and not from the adjustment mechanism.
-
-\section{Tariff Responses in the Model}
+\section{Tariff Responses in Our Model}
 
 This section computes the entries of $J$ and $G$ for the nested-CES model for $N = 2$, $N = 3$, and general symmetric $N$.
 
@@ -364,7 +362,7 @@ Under \eqref{eq:invpos}, the bystander bilateral rate reverses iff
 \label{res:Nthresh}
 \end{theorem}
 
-\noindent Diverted expenditure is spread across $N-2$ bystanders, each with weight $1/(N-1)$, so stronger cross-origin substitution is required to reverse any individual bilateral rate (dilution).\footnote{The exact linearity in $N$ is a symmetric nested-CES result, but it is also true that at any balanced baseline where $A$ and a bystander both import from both foreign origins, sufficiently strong cross-origin substitution still reverses the bystander rate (Appendix B).} Furthermore, with $\rho = \eta = \sigma$, $\rho_N^* - \sigma = \sigma(N\alpha_D - 1) + N(1-\alpha_D)(1-\alpha_T) \geq 0$ whenever $\alpha_D \geq 1/N$, so the reversal is again unreachable for single-elasticity models on the home-biased region.
+\noindent Diverted expenditure is spread across $N-2$ bystanders, each with weight $1/(N-1)$, so stronger cross-origin substitution is required to reverse any individual bilateral rate (dilution).\footnote{The exact linearity in $N$ is a symmetric nested-CES result, but it is also true that at any balanced baseline where $A$ and a bystander both import from both foreign origins, sufficiently strong cross-origin substitution still reverses the bystander rate (Appendix B). Appendix B also shows that the NEER cancellation of Section 5 survives to leading order within a structured asymmetric family but can reverse for a sufficiently under-weighted target, and Appendix C collects the correspondence across $N$.} Furthermore, with $\rho = \eta = \sigma$, $\rho_N^* - \sigma = \sigma(N\alpha_D - 1) + N(1-\alpha_D)(1-\alpha_T) \geq 0$ whenever $\alpha_D \geq 1/N$, so the reversal is again unreachable for single-elasticity models on the home-biased region.
 
 \section{Bilateral versus Effective Exchange Rates}
 
@@ -383,13 +381,13 @@ Under symmetry, a unilateral tariff appreciates the tariffing country's NEER for
 \label{res:neer}
 \end{theorem}
 
-\noindent While $\rho$ governs the relative distribution of adjustment across foreign partners, its direct terms cancel from the NEER numerator under symmetry and cannot affect the sign of the adjustment (it nonetheless enters in $D_N$ and therefore still affects the magnitude of the aggregate response). This means that the conventional two-country appreciation result survives multilateralization as a statement on effective exchange rates, robust to $N$ and to changes in $\rho$.\footnote{Appendix B also shows that the cancellation survives to leading order within a structured asymmetric family but can reverse for a sufficiently under-weighted target, and Appendix C collects the correspondence across $N$.}
+\noindent While $\rho$ governs the relative distribution of adjustment across foreign partners, its direct terms cancel from the NEER numerator under symmetry and cannot affect the sign of the adjustment (it nonetheless enters in $D_N$ and therefore still affects the magnitude of the aggregate response). This means that the conventional two-country appreciation result survives multilateralization as a statement on effective exchange rates, robust to $N$ and to changes in $\rho$.
 
 \section{Extensions}
 
 \subsection{Alternative tariff configurations}
 
-Responses are linear in the tariff vector, so configurations are superpositions of directed bilateral shocks (directions $a$ on the same $G$).
+Responses are linear in the tariff vector, so alternative tariff scenarios can be constructed by adding together directed bilateral tariff shocks.
 
 \paragraph{Broad unilateral tariff.} A uniform tariff on all $N-1$ partners treats every origin identically, deactivating cross-origin reallocation. Superposing \eqref{eq:N-slopes} over targets:
 \begin{equation}
@@ -409,13 +407,13 @@ $\rho$ drops out of the numerator, every bilateral rate appreciates equally, and
 \label{eq:N-war}
 \end{equation}
 
-\begin{proposition}[War threshold]
-Under \eqref{eq:invpos}, in a symmetric war the belligerents' effective rates depreciate, and every bystander appreciates against both, iff
+\begin{proposition}[Trade war threshold]
+Under \eqref{eq:invpos}, in a symmetric trade war the belligerents' effective rates depreciate, and every bystander appreciates against both, iff
 $\rho > \rho_1^*$, independently of $N$.
 \label{res:war}
 \end{proposition}
 
-\noindent Retaliation cancels the direct bilateral component between $A$ and $B$, leaving only the bystander reallocation margin. The war threshold is far below the unilateral threshold $N\rho_1^*$ because the direct appreciation against $B$ has been removed. At $\eta = 1$, $\rho_1^* = 1 - m < 1$.
+\noindent Retaliation cancels the direct bilateral component between $A$ and $B$, leaving only the bystander reallocation margin. The bilateral trade war threshold for $\rho$ is far below the unilateral threshold $N\rho_1^*$ because the direct appreciation against $B$ has been removed. At $\eta = 1$, $\rho_1^* = 1 - m < 1$.
 
 \subsection{Real exchange rates}
 
@@ -476,7 +474,7 @@ A discriminatory tariff on $B$ worsens $B$'s and improves $C$'s terms of trade, 
 
 \subsection{Relation to our model}
 
-An improvement in $C$'s terms of trade is equivalent to a rise in $e_{AC}$ \eqref{eq:onetoone}. The canonical PTA model delivers it with no additional conditions, while our nested-CES model requires $\rho > 3\rho_1^*$. This difference arises because the PTA environment removes the margins that oppose diversion toward $C$. Decomposing our threshold:
+We stated before that in our framework, an improvement in $C$'s terms of trade is equivalent to a rise in $e_{AC}$ \eqref{eq:onetoone}. Therefore, it is curious that the canonical PTA model delivers a depreciation of $A$ with respect to $C$ with no additional conditions, while our nested-CES model requires $\rho > 3\rho_1^*$. This difference arises because the PTA environment removes the margins that oppose diversion toward $C$. Decomposing our threshold:
 \begin{equation}
 \rho_3^* = 3\rho_1^* = \underbrace{3}_{\text{$B$--$C$ linkage}}
 + \underbrace{3\alpha_D(\eta-1)}_{\text{home switching}}
@@ -498,7 +496,7 @@ The PTA literature varies in which margins it removes. Competing-exporter models
 
 \section{Conclusion}
 
-Our analysis shows that the general equilibrium response to a tariff is $(-J)^{-1}F$: the tariff creates trade-balance disturbances at unchanged exchange rates, and the adjustment mechanism, regular under the multilateral Marshall--Lerner condition, combines them with nonnegative weights. 
+Our analysis shows that the general equilibrium response to a tariff is $(-J)^{-1}F$: the tariff creates trade-balance disturbances at unchanged exchange rates, and the adjustment mechanism, regular under the multilateral Marshall--Lerner condition, combines them with nonnegative weights to arrive at the equilibrium exchange-rate response.
 
 At $N = 2$ this reduces to the textbook Marshall--Lerner appreciation result, but at $N \geq 3$, a discriminatory tariff generates foreign-supplier reallocation and hence a mixed-sign disturbance vector. This means that the tariffing country always appreciates against the target, but can depreciate against a bystander if the cross-origin substitution elasticity is sufficiently high. 
 
@@ -517,8 +515,6 @@ Despite this ambiguity in bilateral exchange-rate adjustments, aggregation under
 \refentry{Kemp, Murray C., and Henry Y. Wan (1976). ``An Elementary Proposition Concerning the Formation of Customs Unions.'' \emph{Journal of International Economics} 6(1), 95--97.}
 
 \refentry{Krugman, Paul (1991). ``Is Bilateralism Bad?'' In Elhanan Helpman and Assaf Razin (eds.), \emph{International Trade and Trade Policy}, 9--23. Cambridge, MA: MIT Press.}
-
-\refentry{Lu, Jason, and Dimitre Milkov (forthcoming). ``Trade Tariffs and Exchange Rates: Revisiting Conventional Wisdom in a Three-Country Framework.'' IMF Working Paper, International Monetary Fund, Washington, DC.}
 
 \refentry{Mundell, Robert A. (1964). ``Tariff Preferences and the Terms of Trade.'' \emph{The Manchester School of Economic and Social Studies} 32(1), 1--13.}
 
@@ -545,7 +541,7 @@ globally decreasing in $\tau$: the linearized sign in \eqref{eq:2c-slope} is exa
 
 The disturbance-adjustment representation \eqref{eq:system} and the multilateral Marshall--Lerner condition \eqref{eq:invpos} do not use symmetry; the exact thresholds of Section 4 and the NEER cancellation of Section 5 do. This appendix establishes what survives without it: the bilateral reversal region survives at any interior baseline, and the NEER result is preserved to leading order within a structured asymmetric family.
 
-\paragraph{General asymmetric baseline.} At any balanced baseline, \eqref{eq:dp}--\eqref{eq:dtb} hold with observed shares $(b_{ij}, h_i)$ and incomes $y_i$ as coefficients. For $N = 3$ at a general baseline, the bystander slope has denominator $\det(-J) > 0$ and numerator quadratic in $\rho$ (derived in the appendix of the companion paper, Lu and Milkov, forthcoming),
+\paragraph{General asymmetric baseline.} At any balanced baseline, \eqref{eq:dp}--\eqref{eq:dtb} hold with observed shares $(b_{ij}, h_i)$ and incomes $y_i$ as coefficients. For $N = 3$ at a general baseline, the bystander slope has denominator $\det(-J) > 0$ and numerator quadratic in $\rho$ (derived in the appendix of the companion IMF working paper by Lu and Milkov, forthcoming),
 \begin{equation}
 \operatorname{sign} \frac{d\log e_{AC}}{d\tau}
 = \operatorname{sign}\big( c_2\, \rho^2 + c_1\, \rho + c_0 \big),
