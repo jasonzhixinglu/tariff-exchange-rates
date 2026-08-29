@@ -450,3 +450,7 @@ Full editorial pass over all revision (blue) text, at the user's request, to pla
 ### 2026-08-29 — §2.1/§3 trims reviewed
 
 - Kept: rho parenthetical trimmed to the inactive/active clause (the margin's name lives in the intro), §3 retitle "General Exchange-Rate Adjustments", one-line section intro. Fixed: missing verb ("The following results are not specific..."). 17 pp, compiles clean.
+
+### 2026-08-29 — §3 placeholder filled
+
+- "assume only differentiability of ..." completed: differentiability of the trade-balance conditions in the exchange rates and tariffs. 17 pp, compiles clean.
