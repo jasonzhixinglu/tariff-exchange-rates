@@ -4,8 +4,9 @@
 Every line, slope, shift and point is computed from the model equations, so
 the figures are quantitatively consistent with the text:
 
-  Fig 1  two-country adjustment in (nu_B, dTB_A) space
-         dTB_A = m D_2 nu_B + m rho1* dtau,   D_2 = 1 + 2 aD (eta-1)
+  Fig 1  generic bilateral adjustment in (nu, dTB_A) space
+         dTB_A = TB_Anu nu + TB_Atau dtau; drawn with the nested-CES
+         values TB_Anu = m D_2, TB_Atau = m rho1*, but labelled generically
 
   Fig 2  three-country adjustment in (nu_B, nu_C) space
          TB_B = 0:  nu_C = 2 nu_B + (rho + rho1*) dtau / D_3
@@ -96,8 +97,8 @@ def _line_point(slope, intercept, xlim, ylim, frac, pad=0.06):
 
 # ------------------------------------------------------------------- Figure 1
 def figure1(dtau=0.20):
-    shift = m * rho1 * dtau                 # upward shift of the schedule
-    slope = m * D2                          # d TB_A / d nu_B
+    shift = m * rho1 * dtau                 # TB_Atau * dtau
+    slope = m * D2                          # TB_Anu
     nu_star = -rho1 / D2 * dtau             # post-tariff equilibrium
 
     xlim, ylim = (-0.30, 0.27), (-0.105, 0.125)
@@ -105,7 +106,7 @@ def figure1(dtau=0.20):
     x = np.linspace(xlim[0], xlim[1], 200)
     ax.plot(x, slope * x, color=GREY, lw=1.3, ls=DASH, zorder=3)
     ax.plot(x, slope * x + shift, color=INK, lw=1.5, zorder=3)
-    _frame(ax, xlim, ylim, r"$\nu_B=d\log e_{AB}$", r"$d\mathrm{TB}_A$")
+    _frame(ax, xlim, ylim, r"$\nu=d\log e_{AB}$", r"$d\mathrm{TB}_A$")
 
     # (i) tariff shifts the schedule up at unchanged exchange rates
     ax.annotate("", xy=(0, shift), xytext=(0, 0),
@@ -121,11 +122,12 @@ def figure1(dtau=0.20):
                                 shrinkA=5, shrinkB=5,
                                 connectionstyle="arc3,rad=-0.3"))
 
-    ax.text(0.014, shift, r"$m\,\rho_1^*\,d\tau$", va="center", ha="left",
-            fontsize=9)
+    ax.text(0.014, shift, r"$\mathrm{TB}_{A\tau}\,d\tau$", va="center",
+            ha="left", fontsize=9)
     ax.text(0.014, shift - 0.020, "tariff at unchanged\nexchange rates",
             va="top", ha="left", fontsize=7.4, color=MID)
-    ax.text(nu_star, -0.012, r"$\nu_B^{\ast}=-\dfrac{\rho_1^*}{D_2}\,d\tau$",
+    ax.text(nu_star, -0.012,
+            r"$\nu^{\ast}=-\dfrac{\mathrm{TB}_{A\tau}}{\mathrm{TB}_{A\nu}}\,d\tau$",
             va="top", ha="center", fontsize=9)
 
     px, py = _line_point(slope, shift, xlim, ylim, 1.0)
@@ -136,7 +138,7 @@ def figure1(dtau=0.20):
             fontsize=7.8, color=GREY)
     px, py = _line_point(slope, 0.0, xlim, ylim, 0.0)
     ax.text(px + 0.010, py - 0.010,
-            "slope $m\\,D_2$\n$=m(\\varepsilon_X+\\varepsilon_M-1)>0$",
+            "slope $\\mathrm{TB}_{A\\nu}>0$\n(Marshall–Lerner)",
             ha="left", va="top", fontsize=7.8, color=INK)
 
     fig.tight_layout(pad=0.4)

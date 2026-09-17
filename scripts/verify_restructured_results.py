@@ -97,6 +97,18 @@ def section3():
     # Figure 1 geometry: slope and shift of the plotted schedule
     check("fig 1 slope/shift", eq(sp.diff(dTB[0], nu[1]), m * D2)
           and eq(dTB[0].subs(nu[1], 0), m * rho1 * dtau))
+    # eq:bilat -- the generic bilateral coefficients of Section 2.1
+    TB_Anu = sp.diff(dTB[0], nu[1])
+    TB_Atau = dTB[0].subs(nu[1], 0) / dtau
+    check("eq:bilat TB_Anu = m D_2", eq(TB_Anu, m * D2))
+    check("eq:bilat TB_Atau = m rho1*", eq(TB_Atau, m * rho1))
+    check("eq:bilat-slope", eq(-TB_Atau / TB_Anu * dtau, -rho1 / D2 * dtau))
+    # Section 2.2: at N=2 the multilateral scalars are -J = TB_Anu, F = -TB_Atau
+    Jsc = sp.diff(dTB[1], nu[1])
+    Fsc = dTB[1].subs(nu[1], 0) / dtau
+    check("N=2 -J = TB_Anu = m D_2", eq(-Jsc, TB_Anu) and eq(-Jsc, m * D2))
+    check("N=2 F = -TB_Atau = -m rho1*", eq(Fsc, -TB_Atau) and eq(Fsc, -m * rho1))
+    check("N=2 nu = (-J)^-1 F dtau", eq(Fsc / (-Jsc) * dtau, -rho1 / D2 * dtau))
 
 
 # --------------------------------------------------------------- Section 5.1
@@ -149,8 +161,11 @@ def section52():
         check("N=%d eq:gj-ratios g_D/g_S = rho/rho1*" % N,
               eq(gD / gS, rho / rho1))
         check("N=%d eq:gj-ratios j_D/j_S = N" % N, eq(jD / jS, N))
-        check("N=%d lambda_D/lambda_S = rho/(N rho1*)" % N,
+        # eq:lam-ratio
+        check("N=%d eq:lam-ratio lambda_D/lambda_S = rho/(N rho1*)" % N,
               eq((gD / jD) / (gS / jS), rho / (N * rho1)))
+        check("N=%d eq:DN" % N,
+              eq(DN(N), N * aD * (eta - 1) + (N - 2) * rho + 1))
         # eq:scale-disc for a generic tariff vector
         sol = sp.solve([sp.Eq(x, 0) for x in dTB[1:]], nu[1:], dict=True)[0]
         tbar = sum(ts) / (N - 1)
@@ -161,6 +176,15 @@ def section52():
         # eq:neer-scale
         neer = sum(sol[nu[j]] for j in range(1, N)) / (N - 1)
         check("N=%d eq:neer-scale" % N, eq(neer, lS * tbar))
+        # eq:reltreat: nu_j is a positive multiple of the stated condition,
+        # so nu_j > 0 iff (rho/N)(tbar - t_j) > rho1* tbar
+        for j in range(1, N):
+            check("N=%d eq:reltreat j=%d" % (N, j),
+                  eq(sol[nu[j]] * DN(N) / (N - 1),
+                     rho / N * (tbar - ts[j - 1]) - rho1 * tbar))
+        # ordering: t_j > t_k implies nu_j < nu_k since lambda_D < 0
+        check("N=%d eq:reltreat ordering" % N,
+              eq(sol[nu[1]] - sol[nu[2]], lD * (ts[0] - ts[1])))
         # eq:cross-disc
         if N >= 3:
             check("N=%d eq:cross-disc" % N,
