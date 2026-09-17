@@ -137,21 +137,6 @@ for Nn in (2, 3, 5, 10):
 print("N*rho_1^* - sigma == sigma(N aD - 1) + N(1-aD)(1-aT)  for all spot checks -> OK")
 print("(> 0 whenever aD >= 1/N)")
 
-print("\n=== Check (iii): large-N kappa-asymmetric NEER approximation ===")
-rho = 2.0
-print(f"{'N':>5} {'kappa':>6} {'numeric NEER':>14} {'approx':>14} {'ratio':>8}")
-for kappa in (0.5, 1.0, 2.0, 5.0):
-    for N in (10, 20, 50, 100, 200):
-        b = kappa_b(N, kappa)
-        assert np.all(b >= 0), (N, kappa)
-        nu = solve_linear(N, b, aD, aT, eta, rho, [(0, 1)])
-        neer = np.sum(b[0] * nu)
-        approx = -(kappa / (N - 2)) * rho1s / (rho + aD * (eta - 1))
-        print(f"{N:>5} {kappa:>6.1f} {neer:>+14.8f} {approx:>+14.8f} {neer/approx:>8.4f}")
-
-
-
-
 print("\n=== Check (iv): general-N real rates, real threshold, REER ===")
 rho = 3.0
 def q_slopes(N, rho, pairs=((0, 1),)):
