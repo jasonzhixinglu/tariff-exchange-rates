@@ -8,14 +8,14 @@ the figures are quantitatively consistent with the text:
          dTB_A = TB_Anu dnu + TB_Atau dtau; drawn with the nested-CES
          values TB_Anu = m D_2, TB_Atau = m rho1*, but labelled generically
 
-  Fig 2  three-country adjustment in (nu_B, nu_C) space
-         TB_B = 0:  nu_C = 2 nu_B + (rho + rho1*) dtau / D_3
-         TB_C = 0:  nu_C = nu_B/2 + (rho - rho1*) dtau / (2 D_3)
+  Fig 2  three-country adjustment in (dnu_B, dnu_C) space
+         TB_B = 0:  dnu_C = 2 dnu_B + (rho + rho1*) dtau / D_3
+         TB_C = 0:  dnu_C = dnu_B/2 + (rho - rho1*) dtau / (2 D_3)
 
   Fig 3  average protection / relative treatment decomposition at N = 3
-         (tau, 0) = (tau/2, tau/2) + (tau/2, -tau/2)
-         nu = lambda_S (tau/2) 1 + lambda_D (tau/2, -tau/2)
-         with the two components orthogonal in (nu_B, nu_C) space.
+         (dtau, 0) = (dtau/2, dtau/2) + (dtau/2, -dtau/2)
+         dnu = lambda_S (dtau/2) 1 + lambda_D (dtau/2, -dtau/2)
+         with the two components orthogonal in (dnu_B, dnu_C) space.
 
 Run:  python scripts/make_theory_figures.py
 """
@@ -161,7 +161,7 @@ def _panel2(ax, rho, dtau, title, show_impact):
     ax.plot(x, 0.5 * x, color=GREY, lw=1.0, ls=DASH, zorder=2)
     ax.plot(x, 2.0 * x + sB, color=INK, lw=1.5, zorder=3)
     ax.plot(x, 0.5 * x + sC, color=INK, lw=1.5, zorder=3)
-    _frame(ax, xlim, ylim, r"$\nu_B$", r"$\nu_C$", equal=True)
+    _frame(ax, xlim, ylim, r"$d\nu_B$", r"$d\nu_C$", equal=True)
 
     ax.plot([0], [0], "o", ms=4.4, mfc="white", mec=INK, mew=1.2, zorder=7)
     ax.plot([nuB], [nuC], "o", ms=5.0, color=INK, zorder=7)
@@ -191,7 +191,7 @@ def _panel2(ax, rho, dtau, title, show_impact):
 
     # read the bystander response off the vertical axis
     ax.plot([nuB, 0], [nuC, nuC], color=GREY, lw=0.6, ls=DOT, zorder=2)
-    ax.text(-0.016, nuC + (0.016 if nuC > 0 else -0.016), r"$\nu_C$",
+    ax.text(-0.016, nuC + (0.016 if nuC > 0 else -0.016), r"$d\nu_C$",
             ha="right", va="bottom" if nuC > 0 else "top", fontsize=8,
             color=MID)
 
@@ -204,11 +204,11 @@ def figure2(dtau=1.0):
     out = {}
     out["mid"] = _panel2(
         axes[0], RHO_MID, dtau,
-        r"(a) $\rho_1^*<\rho<3\rho_1^*$:  $\nu_C<0$ although $F_C>0$",
+        r"(a) $\rho_1^*<\rho<3\rho_1^*$:  $d\nu_C<0$ although $F_C>0$",
         show_impact=True)
     out["high"] = _panel2(
         axes[1], RHO_HIGH, dtau,
-        r"(b) $\rho>3\rho_1^*$:  bilateral reversal, $\nu_C>0$",
+        r"(b) $\rho>3\rho_1^*$:  bilateral reversal, $d\nu_C>0$",
         show_impact=False)
     fig.suptitle(r"dashed: loci at $d\tau=0$;  solid: loci after the tariff",
                  y=0.035, fontsize=7.6, color=MID)
@@ -226,7 +226,7 @@ def _panel3(ax, rho, tau, title):
     Fx, Fy = step + rel, step - rel
 
     xlim, ylim = (-0.64, 0.16), (-0.50, 0.30)
-    _frame(ax, xlim, ylim, r"$\nu_B$", r"$\nu_C$", equal=True)
+    _frame(ax, xlim, ylim, r"$d\nu_B$", r"$d\nu_C$", equal=True)
 
     # the constant (NEER) direction
     d = np.linspace(-0.48, 0.13, 40)
@@ -262,13 +262,13 @@ def _panel3(ax, rho, tau, title):
             r"$\lambda_D\,\tilde t$", ha="right", va="top", fontsize=9.5)
     ax.text(Sx + 0.028, Sy - 0.028,
             r"$d\nu_A^E=\lambda_S\bar t$", ha="left", va="top", fontsize=8)
-    ax.text(Fx - 0.022, Fy + 0.022, r"$\nu$", ha="right", va="bottom",
+    ax.text(Fx - 0.022, Fy + 0.022, r"$d\boldsymbol{\nu}$", ha="right", va="bottom",
             fontsize=10)
 
     # the height of nu above the axis is the bystander response
     ax.plot([Fx, 0], [Fy, Fy], color=GREY, lw=0.6, ls=DOT, zorder=2)
     ax.text(-0.014, Fy + (0.014 if Fy > 0 else -0.014),
-            r"$\nu_C$", ha="right", va="bottom" if Fy > 0 else "top",
+            r"$d\nu_C$", ha="right", va="bottom" if Fy > 0 else "top",
             fontsize=8, color=MID)
 
     ax.set_title(title, fontsize=8.8, pad=8)
@@ -279,10 +279,10 @@ def figure3(tau=1.0):
     fig, axes = plt.subplots(1, 2, figsize=(6.7, 3.9), layout="constrained")
     out = {}
     out["mid"] = _panel3(axes[0], RHO_MID, tau,
-                         r"(a) $\rho<3\rho_1^*$:  $\nu_C<0$")
+                         r"(a) $\rho<3\rho_1^*$:  $d\nu_C<0$")
     out["high"] = _panel3(axes[1], RHO_HIGH, tau,
-                          r"(b) $\rho>3\rho_1^*$:  $\nu_C>0$")
-    fig.suptitle(r"$t=(\tau,0)=(\tau/2,\ \tau/2)+(\tau/2,\ -\tau/2)$",
+                          r"(b) $\rho>3\rho_1^*$:  $d\nu_C>0$")
+    fig.suptitle(r"$\mathbf{t}=(d\tau,0)=(d\tau/2,\ d\tau/2)+(d\tau/2,\ -d\tau/2)$",
                  y=0.035, fontsize=8, color=MID)
     fig.savefig(os.path.join(OUT, "fig3_decomposition.pdf"))
     plt.close(fig)
