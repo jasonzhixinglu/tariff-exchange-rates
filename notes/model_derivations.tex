@@ -16,7 +16,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{assumption}{Assumption}
 
-\title{Trade Tariffs and Exchange Rates in a Multilateral World}
+\title{Understanding Multilateral Tariffs and Exchange Rates}
 \author{Jason Lu \and Dimitre Milkov}
 \date{\today}
 
@@ -25,77 +25,106 @@
 
 \section{Introduction}
 
-In the standard two-country setting, a tariff that improves the tariffing country's trade balance at unchanged exchange rates appreciates its currency under the Marshall--Lerner condition. With more than two countries, a tariff on one partner also reallocates expenditure across foreign suppliers, so bilateral exchange rates need not all move in the same direction. This paper studies how these multilateral trade effects shape bilateral and effective exchange-rate adjustment.
+The conventional wisdom from a standard two-country model of international trade is that a tariff shifts demand toward domestic goods, improving the tariffing country's trade balance and appreciating its currency under the Marshall--Lerner condition. With more than two countries, however, a tariff on one partner also reallocates expenditure across foreign suppliers, so bilateral exchange rates need not move in the same direction. When differentiated tariffs are imposed on multiple foreign suppliers, these effects interact and become harder to characterize. This paper revisits the conventional two-country result and develops a framework for understanding how tariffs affect bilateral and effective exchange rates in a multilateral setting.
 
-In an $N$-country model, we show that the log-linearized equilibrium response can be written as $(-J)^{-1}F$, where $F$ gives the trade-balance effects of a tariff at unchanged exchange rates and $J$ is the Jacobian of trade balances with respect to exchange rates. Under a multilateral Marshall--Lerner (MML) condition on $J$, this separates the tariff disturbance from the exchange-rate adjustment required to restore equilibrium.
+In a general $N$-country trade environment, we show that the log-linearized exchange-rate response to tariffs can be represented as $(-J)^{-1}F$, where $F$ gives the trade-balance effects of tariffs at unchanged exchange rates and $J$ is the Jacobian of trade balances with respect to exchange rates. This representation separates the initial trade-balance effects of the tariffs from the exchange-rate adjustment required to restore equilibrium. We introduce a multilateral Marshall--Lerner (MML) condition on $J$ to characterize this adjustment and show that, under partner symmetry, the response to any tariff vector decomposes into average protection and relative treatment. Average protection determines the change in the tariffing country's nominal effective exchange rate, while relative treatment determines the distribution of bilateral exchange rates around that effective rate.
 
-Under partner symmetry, we show that the response to any tariff vector further decomposes into average protection and relative treatment. Section~\ref{sec:general} derives this decomposition without imposing a specific model of preferences or trade: average protection determines the tariffing country's nominal effective exchange rate (NEER), while relative treatment determines differences across bilateral rates. Section~\ref{sec:model} then derives these responses in a nested-CES model. For a unilateral tariff, we show that the tariffing country appreciates against the target and its NEER appreciates, while its rate against an untariffed bystander can move in either direction. A bystander depreciation occurs only when substitution across foreign origins is sufficiently strong relative to the other effects of the tariff (Section~\ref{sec:unilateral}). Section~\ref{sec:wars} extends the analysis to retaliatory and preferential tariffs. Proofs are in Appendix~\ref{app:proofs}.
+To quantify these effects in a parsimonious framework, we develop a multilateral trade model with nested-CES preferences. The key determinants of the exchange-rate responses are two substitution margins: $\eta$, the elasticity of substitution between domestic and imported tradables, and $\rho$, the elasticity of substitution across foreign tradables. For a unilateral tariff, we show that the tariffing country always appreciates against the targeted country, while its exchange rate against an untariffed bystander can depreciate when substitution across foreign suppliers is sufficiently strong relative to domestic-import substitution and the associated expenditure effects. We then consider bilateral and global retaliatory tariffs and show that retaliation lowers the threshold for depreciation against bystander countries by adding a relative-treatment effect that offsets the average-protection force toward appreciation. Finally, we relate these results to the preferential-trade-agreement literature on third-country terms-of-trade effects. We show that standard competing-exporter models can be understood as deliberately abstracting from some of the domestic-substitution and income channels present in our model in order to isolate substitution across foreign suppliers.
 
 \section{Tariffs and Exchange-Rate Adjustment}
-
 \label{sec:general}
 
-This section does not rely on the nested-CES model of Section~\ref{sec:model}. It begins from a general differentiable trade system and adds restrictions where needed.
+This section develops the expression for $N$-country exchange-rate adjustments and its implications for a general tariff vector under symmetry and the MML condition. We begin with the bilateral case and then extend the same logic to a general differentiable trade system.
 
 \subsection{The bilateral case}
-
 \label{sec:bilateral}
 
-Consider first two countries, $A$ and $B$. Let $e_{AB}$ be units of $A$'s currency per unit of $B$'s, so that a rise in $e_{AB}$ is a depreciation of $A$, and write $\nu\equiv d\log e_{AB}$. Let $A$'s trade balance $\mathrm{TB}_A$ be a differentiable function of $\nu$ and of a tariff $\tau$ that $A$ levies on $B$. Linearizing at a balanced free-trade baseline,
+Consider first two countries, $A$ and $B$. Let $e_{AB}$ denote units of $A$'s currency per unit of $B$'s, so that a rise in $e_{AB}$ is a depreciation of $A$. Country $A$ levies a tariff $\tau$ on imports from $B$. Both the tariff and the exchange rate affect relative consumer prices and hence $A$'s trade balance. The balanced-trade equilibrium is therefore defined by
+\[
+\mathrm{TB}_A(e_{AB},\tau)=0.
+\]
+
+Write $\nu\equiv\log e_{AB}$. Linearizing the trade-balance condition around an equilibrium gives
 \begin{equation}
-d\,\mathrm{TB}_A=\mathrm{TB}_{A\nu}\,\nu+\mathrm{TB}_{A\tau}\,d\tau,
+d\,\mathrm{TB}_A
+=
+\mathrm{TB}_{A\nu}\,d\nu
++
+\mathrm{TB}_{A\tau}\,d\tau,
 \qquad
-\mathrm{TB}_{A\nu}\equiv\frac{\partial\,d\mathrm{TB}_A}{\partial\nu},
+\mathrm{TB}_{A\nu}\equiv\frac{\partial\,\mathrm{TB}_A}{\partial\nu},
 \qquad
-\mathrm{TB}_{A\tau}\equiv\frac{\partial\,d\mathrm{TB}_A}{\partial\tau}\bigg|_{\nu\ \mathrm{fixed}} .
+\mathrm{TB}_{A\tau}\equiv
+\frac{\partial\,\mathrm{TB}_A}{\partial\tau}\bigg|_{\nu\ \mathrm{fixed}} .
 \label{eq:bilat}
 \end{equation}
-Suppose the tariff improves $A$'s trade balance at unchanged exchange rates, $\mathrm{TB}_{A\tau}>0$. Restoring balance then requires
+
+Suppose that $\mathrm{TB}_{A\tau}>0$, i.e., the tariff improves $A$'s trade balance at unchanged exchange rates. This is the standard case in which the tariff raises the domestic price of imports and shifts expenditure away from foreign goods, reducing import demand relative to exports. Restoring balance then requires
 \begin{equation}
-\nu^{\ast}=-\frac{\mathrm{TB}_{A\tau}}{\mathrm{TB}_{A\nu}}\,d\tau ,
+d\nu^{\ast} = -\frac{\mathrm{TB}_{A\tau}}{\mathrm{TB}_{A\nu}}\,d\tau ,
 \label{eq:bilat-slope}
 \end{equation}
-which is an appreciation if and only if $\mathrm{TB}_{A\nu}>0$, that is, if and only if a depreciation improves $A$'s trade balance. This is the ordinary Marshall--Lerner condition; Section~\ref{sec:twocountry} shows that in the nested-CES model it takes the familiar elasticity form $\varepsilon_X+\varepsilon_M>1$.
+which is an appreciation if and only if $\mathrm{TB}_{A\nu}>0$, that is, if and only if a depreciation improves $A$'s trade balance. At a balanced-trade baseline,
+\[
+\mathrm{TB}_{A\nu}=X\left(\varepsilon_X+\varepsilon_M-1\right),
+\]
+where $X$ is the value of exports, and $\varepsilon_X$ and $\varepsilon_M$ are the export and import demand elasticities, respectively. Hence a depreciation improves $A$'s trade balance under the bilateral Marshall--Lerner condition
+\begin{equation}
+\varepsilon_X+\varepsilon_M>1.
+\label{eq:ML-bilateral}
+\end{equation}
 
-The two steps in \eqref{eq:bilat}--\eqref{eq:bilat-slope} are the whole of the adjustment logic: the tariff first displaces the trade balance at unchanged exchange rates, and the exchange rate then moves to absorb that displacement. Figure~\ref{fig:twocountry} displays them.
+Figure~\ref{fig:twocountry} illustrates the logic of Equations~\eqref{eq:bilat}--\eqref{eq:bilat-slope}. The tariff first changes the trade balance at unchanged exchange rates, and under the bilateral Marshall--Lerner condition \eqref{eq:ML-bilateral}, the exchange rate then appreciates to restore balance.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.72\textwidth]{fig1_two_country.pdf}
-\caption{Bilateral equilibrium adjustment. The schedule is \eqref{eq:bilat}; its slope $\mathrm{TB}_{A\nu}$ is positive exactly under the Marshall--Lerner condition. At unchanged exchange rates the tariff shifts the schedule up by $\mathrm{TB}_{A\tau}\,d\tau>0$ (open square). The currency then appreciates along the new schedule until balance is restored at $\nu^{\ast}=-(\mathrm{TB}_{A\tau}/\mathrm{TB}_{A\nu})\,d\tau$.}
+\caption{Bilateral tariff and exchange-rate adjustment under $\mathrm{TB}_{A\tau}>0$ and $\mathrm{TB}_{A\nu}>0$.}
 \label{fig:twocountry}
 \end{figure}
-
 \FloatBarrier
 
 \subsection{The local disturbance--adjustment representation}
-
 \label{sec:representation}
 
-Consider any differentiable multilateral trade environment with $N-1$ independent trade-balance conditions, $\mathrm{TB}_i = 0$ for $i \neq A$, which are each functions of exchange rates and tariffs. Stack the exchange-rate changes as $\nu \equiv (\nu_j)_{j \neq A}$, $\nu_j\equiv d\log e_{Aj}$, and the bilateral tariff changes as $d\boldsymbol\tau \equiv (dt_{jk})_{j \neq k}$, so that $\nu$ and $d\boldsymbol\tau$ are the perturbation vectors of the levels $e_{Aj}$ and $\tau_{jk}$. The conditions for $i \neq A$ are
+Now consider a differentiable $N$-country trade environment. Taking $A$'s currency as the numeraire, the $N-1$ bilateral exchange rates $e_{Aj}$, $j\neq A$, span all exchange-rate changes, and Walras' law leaves $N-1$ independent trade-balance conditions. We therefore characterize the balanced-trade equilibrium by
+\[
+\mathrm{TB}_i\bigl(\{e_{Aj}\}_{j\neq A},\{\tau_{jk}\}_{j\neq k}\bigr)=0,
+\qquad i\neq A.
+\]
+
+Stack the log exchange rates as $\nu\equiv(\nu_j)_{j\neq A}$, with $\nu_j\equiv\log e_{Aj}$, and the bilateral tariff changes as $d\boldsymbol{\tau}\equiv(dt_{jk})_{j\neq k}$. Linearizing the $N-1$ trade-balance conditions gives
 \begin{equation}
-J\, \nu + G\, d\boldsymbol\tau = 0,
+J\,d\nu+G\,d\boldsymbol{\tau}=0,
 \qquad
-J_{il} \equiv \frac{\partial\, d\mathrm{TB}_i}{\partial \nu_l},
+J_{il}\equiv\frac{\partial\,\mathrm{TB}_i}{\partial\nu_l},
 \qquad
-G_{i,(jk)} \equiv \frac{\partial\, d\mathrm{TB}_i}{\partial t_{jk}}\bigg|_{\nu \text{ fixed}} .
+G_{i,(jk)}\equiv\frac{\partial\,\mathrm{TB}_i}{\partial t_{jk}}\bigg|_{\nu\ \mathrm{fixed}} .
 \label{eq:JFdef}
 \end{equation}
-A tariff experiment fixes a \emph{pattern} of tariff changes $a$ and a scalar \emph{magnitude} $ds$, so that $d\boldsymbol\tau = a\,ds$. Defining
+
+Now separate a general tariff change into its direction and scale. Let $\boldsymbol{a}$ denote the direction of the tariff change, normalized so that $\|\boldsymbol{a}\|_2=1$, and let $ds$ denote its scale, so that
+\[
+d\boldsymbol{\tau}=\boldsymbol{a}\,ds.
+\]
+The vector $\boldsymbol{a}$ therefore describes which bilateral tariffs change and in what proportions, while $ds=\|d\boldsymbol{\tau}\|_2$ gives the magnitude of the tariff change. For a given direction $\boldsymbol{a}$, define
 \begin{equation}
-F \equiv G\,a ,
+F\equiv G\,\boldsymbol{a},
 \label{eq:Fdef}
 \end{equation}
-the vector of fixed-exchange-rate trade-balance disturbances generated by one unit of that pattern, the equilibrium conditions become
+where $F$ is the vector of trade-balance disturbances generated by a unit increase in the scale of the tariff change at unchanged exchange rates. Substituting $d\boldsymbol{\tau}=\boldsymbol{a}\,ds$ into \eqref{eq:JFdef} gives
 \begin{equation}
-J\, \nu = -F\, ds,
-\qquad
-\nu = (-J)^{-1} F\, ds .
+J\,d\nu+F\,ds=0.
 \label{eq:system}
 \end{equation}
-Thus $F$, and more generally $G$, gives the trade-balance effects of the tariff at unchanged exchange rates, including substitution and income effects; $J$ describes how trade balances respond to exchange-rate changes; and $(-J)^{-1}$ maps the disturbance into the equilibrium exchange-rate changes that absorb it.
 
-At $N=2$ there is a single condition, $\mathrm{TB}_B=0$. Since $d\,\mathrm{TB}_B=-d\,\mathrm{TB}_A$, the scalars in \eqref{eq:JFdef} are $-J=\mathrm{TB}_{A\nu}$ and $F=-\mathrm{TB}_{A\tau}$, and with $a=1$ and $ds=d\tau$, \eqref{eq:system} is exactly \eqref{eq:bilat-slope}. The $N$-country system is the matrix analogue of that scalar problem.
+Hence the marginal exchange-rate response to a tariff vector with direction $\boldsymbol{a}$ is
+\begin{equation}
+\frac{d\nu}{ds}=(-J)^{-1}F.
+\label{eq:response}
+\end{equation}
+
+Equation~\eqref{eq:response} is the multilateral analogue of the bilateral adjustment in Equation~\eqref{eq:bilat-slope} (setting $N=2$, $\boldsymbol{a}=1$, and $ds=d\tau$). This expression shows that the exchange-rate response to tariffs can be separated into two parts. The vector $F$, and more generally $G$, describes the initial trade-balance effects of tariff changes at unchanged exchange rates, including substitution and income effects. The matrix $J$ describes how trade balances respond to exchange-rate changes, while $(-J)^{-1}$ maps the initial disturbance into the exchange-rate adjustment required to restore equilibrium.
 
 \subsection{The multilateral Marshall--Lerner condition}
 

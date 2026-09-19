@@ -4,8 +4,8 @@
 Every line, slope, shift and point is computed from the model equations, so
 the figures are quantitatively consistent with the text:
 
-  Fig 1  generic bilateral adjustment in (nu, dTB_A) space
-         dTB_A = TB_Anu nu + TB_Atau dtau; drawn with the nested-CES
+  Fig 1  generic bilateral adjustment in (dnu, dTB_A) space
+         dTB_A = TB_Anu dnu + TB_Atau dtau; drawn with the nested-CES
          values TB_Anu = m D_2, TB_Atau = m rho1*, but labelled generically
 
   Fig 2  three-country adjustment in (nu_B, nu_C) space
@@ -106,7 +106,7 @@ def figure1(dtau=0.20):
     x = np.linspace(xlim[0], xlim[1], 200)
     ax.plot(x, slope * x, color=GREY, lw=1.3, ls=DASH, zorder=3)
     ax.plot(x, slope * x + shift, color=INK, lw=1.5, zorder=3)
-    _frame(ax, xlim, ylim, r"$\nu=d\log e_{AB}$", r"$d\mathrm{TB}_A$")
+    _frame(ax, xlim, ylim, r"$d\nu=d\log e_{AB}$", r"$d\mathrm{TB}_A$")
 
     # (i) tariff shifts the schedule up at unchanged exchange rates
     ax.annotate("", xy=(0, shift), xytext=(0, 0),
@@ -127,7 +127,7 @@ def figure1(dtau=0.20):
     ax.text(0.014, shift - 0.020, "tariff at unchanged\nexchange rates",
             va="top", ha="left", fontsize=7.4, color=MID)
     ax.text(nu_star, -0.012,
-            r"$\nu^{\ast}=-\dfrac{\mathrm{TB}_{A\tau}}{\mathrm{TB}_{A\nu}}\,d\tau$",
+            r"$d\nu^{\ast}=-\dfrac{\mathrm{TB}_{A\tau}}{\mathrm{TB}_{A\nu}}\,d\tau$",
             va="top", ha="center", fontsize=9)
 
     px, py = _line_point(slope, shift, xlim, ylim, 1.0)
