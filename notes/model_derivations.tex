@@ -29,7 +29,7 @@ The conventional wisdom from a standard two-country model of international trade
 
 In a general $N$-country trade environment, we show that the log-linearized exchange-rate response to tariffs can be represented as $(-J)^{-1}F$, where $F$ gives the trade-balance effects of tariffs at unchanged exchange rates and $J$ is the Jacobian of trade balances with respect to exchange rates. This representation separates the initial trade-balance effects of the tariffs from the exchange-rate adjustment required to restore equilibrium. We introduce a multilateral Marshall--Lerner (MML) condition on $J$ to characterize this adjustment and show that, under partner symmetry, the response to any tariff vector decomposes into average protection and relative treatment. Average protection determines the change in the tariffing country's nominal effective exchange rate, while relative treatment determines the distribution of bilateral exchange rates around that effective rate.
 
-To quantify these effects in a parsimonious framework, we develop a multilateral trade model with nested-CES preferences. The key determinants of the exchange-rate responses are two substitution margins: $\eta$, the elasticity of substitution between domestic and imported tradables, and $\rho$, the elasticity of substitution across foreign tradables. For a unilateral tariff, we show that the tariffing country always appreciates against the targeted country, while its exchange rate against an untariffed bystander can depreciate when substitution across foreign suppliers is sufficiently strong relative to domestic-import substitution and the associated expenditure effects. We then consider bilateral and global retaliatory tariffs and show that retaliation lowers the threshold for depreciation against bystander countries by adding a relative-treatment effect that offsets the average-protection force toward appreciation. Finally, we relate these results to the preferential-trade-agreement literature on third-country terms-of-trade effects. We show that standard competing-exporter models can be understood as deliberately abstracting from some of the domestic-substitution and income channels present in our model in order to isolate substitution across foreign suppliers.
+To quantify these effects in a parsimonious framework, we develop a multilateral trade model with nested-CES preferences. The key determinants of the exchange-rate responses are two substitution margins: $\eta$, the elasticity of substitution between domestic and imported tradables, and $\rho$, the elasticity of substitution across foreign tradables. For a unilateral tariff, we show that the tariffing country always appreciates against the targeted country, while its exchange rate against an untariffed bystander can depreciate when substitution across foreign suppliers is sufficiently strong relative to domestic-import substitution and the associated expenditure effects. We then consider bilateral retaliation and retaliation by all partners and show that retaliation lowers the threshold for depreciation against bystander countries by adding a relative-treatment effect that offsets the average-protection force toward appreciation. Finally, we relate these results to the preferential-trade-agreement literature on third-country terms-of-trade effects. We show that standard competing-exporter models can be understood as deliberately abstracting from some of the domestic-substitution and income channels present in our model in order to isolate substitution across foreign suppliers.
 
 \section{Tariffs and Exchange-Rate Adjustment}
 \label{sec:general}
@@ -549,37 +549,39 @@ The first threshold depends only on the relative size of the tariff disturbances
 \FloatBarrier
 
 \section{Trade Wars and Preferential Tariffs}
+\label{sec:extensions}
 
-\label{sec:wars}
-
-Because the analysis is local, the effects of simultaneous tariff changes by several countries can be computed separately and superposed to first order. At the symmetric benchmark, each tariffing country's contribution follows from Theorem~\ref{res:main}.
+Because our analysis is local, simultaneous tariff changes by several countries can be superposed to first order. At the symmetric benchmark, each tariffing country's contribution follows from Theorem~\ref{res:main}.
 
 \subsection{Trade wars}
-
 \label{sec:tradewars}
 
-\paragraph{Bilateral retaliation.}
-Suppose $A$ raises its tariff on $B$ by $d\tau$ and $B$ raises its tariff on $A$ by the same amount. The two effects on the $A$--$B$ rate cancel, while for any bystander $C$,
+We first consider symmetric bilateral retaliation. Suppose $A$ raises its tariff on $B$ by $d\tau$ and $B$ raises its tariff on $A$ by the same amount. By symmetry, the two effects on the $A$--$B$ bilateral rate cancel. For any bystander $C$, superposing the two unilateral responses gives
 \begin{equation}
-\frac{d\log e_{AB}}{d\tau}\bigg|^{w}=0, \qquad
-\frac{d\log e_{AC}}{d\tau}\bigg|^{w}=\frac{\rho-\rho_1^*}{D_N}, \qquad
-\frac{d\nu_A^E}{d\tau}\bigg|^{w}=\frac{N-2}{N-1}\frac{\rho-\rho_1^*}{D_N}.
+\frac{d\log e_{AB}}{d\tau}=0, \qquad
+\frac{d\log e_{AC}}{d\tau}=\frac{\rho-\rho_1^*}{D_N}, \qquad
+\frac{d\nu_A^E}{d\tau}=\frac{N-2}{N-1}\frac{\rho-\rho_1^*}{D_N}.
 \label{eq:N-war}
 \end{equation}
-The $A$--$B$ rate is therefore unchanged, but each belligerent's effective exchange rate can still move through its rates against the bystanders. Relative to a unilateral tariff, retaliation lowers the bystander threshold from $N\rho_1^*$ to $\rho_1^*$: $B$'s tariff on $A$ contributes an additional relative-treatment effect on the $A$--$C$ rate, which removes the factor $N$ from the threshold.
+Compared with a unilateral tariff, retaliation lowers the bystander threshold from $N\rho_1^*$ to $\rho_1^*$, exactly the threshold at which the bystander's trade balance improves at unchanged exchange rates. With symmetric retaliation, $B$'s tariff on $A$ adds the relative-treatment contribution needed to offset the adjustment-ratio penalty that generates the factor $N$ under a unilateral tariff. The sign of the bystander's exchange-rate response therefore follows the sign of its trade-balance disturbance at unchanged exchange rates.
 
-\paragraph{Global retaliation.}
-Suppose instead that $A$ raises its tariff by $d\tau$ on every partner and each partner raises its tariff by $d\tau$ on $A$.
+Now suppose that $A$ raises its tariff by $d\tau$ on every partner and every partner raises its tariff by $d\tau$ on $A$. This configuration is the sum of $N-1$ bilateral trade wars involving $A$. For any $A$--$j$ bilateral rate, the bilateral war between $A$ and $j$ contributes zero by \eqref{eq:N-war}, while each of the remaining $N-2$ wars contributes the same bystander response.
 
 \begin{proposition}[Trade wars]
-At the symmetric benchmark of the nested-CES model, with $N\geq3$ and under MML:
+
+At the symmetric benchmark of the nested-CES model, with $N\geq 3$ and under MML:
+
 \begin{enumerate}
-\item[(i)] \emph{(Bilateral retaliation.)} In a symmetric bilateral trade war between $A$ and $B$, the belligerents' effective exchange rates depreciate, and every bystander appreciates against both, if and only if $\rho>\rho_1^*$. The threshold is independent of $N$.
-\item[(ii)] \emph{(Global retaliation.)} If $A$ taxes every partner and every partner taxes $A$, each at rate $d\tau$, then
+
+\item[(i)] Under symmetric bilateral retaliation between $A$ and $B$, the belligerents' effective exchange rates depreciate, and every bystander appreciates against both, if and only if $\rho>\rho_1^*$.
+
+\item[(ii)] If $A$ tariffs every partner and every partner tariffs $A$ by the same amount, then
 \begin{equation}
 \frac{d\log e_{Aj}}{d\tau}
-=\frac{d\nu_A^E}{d\tau}
-=\frac{(N-2)(\rho-\rho_1^*)}{D_N}
+=
+\frac{d\nu_A^E}{d\tau}
+=
+\frac{(N-2)(\rho-\rho_1^*)}{D_N}
 \qquad \forall j,
 \label{eq:globalwar}
 \end{equation}
@@ -588,10 +590,9 @@ while all exchange rates among $A$'s partners are unchanged. Hence $A$ depreciat
 \label{res:war}
 \end{proposition}
 
-\noindent The threshold in (ii) is the same as under bilateral retaliation.
+Thus the same threshold applies under bilateral retaliation and retaliation by all partners.
 
 \subsection{Preferential tariffs and competing exporters}
-
 \label{sec:pta}
 
 A standard benchmark in the preferential-trade-agreement literature has one importing country and two competing exporters, following Viner (1950) and Mundell (1964). Importer $A$ is endowed only with the numeraire good $y$, while exporters $B$ and $C$ are endowed with good $x$. Preferences are quasilinear, $U_i=u_i(x_i)+y_i$. Country $A$ levies specific tariffs $t_B$ and $t_C$. Let $p$ be the domestic price of $x$ in $A$, and let $q_j$ be exporter $j$'s price of $x$ in terms of the numeraire, which is $j$'s terms of trade. Market clearing requires
@@ -608,13 +609,13 @@ where $M_A(p)=x_A^d(p)$ and $E_j(q_j)=\omega_j-x_j^d(q_j)$. Differentiating with
 \frac{dq_C}{dt_B}=\frac{dp}{dt_B}>0.
 \label{eq:pta-cs}
 \end{equation}
-so a tariff on imports from $B$ worsens $B$'s terms of trade and improves $C$'s.
+Thus a tariff on imports from $B$ worsens $B$'s terms of trade and improves $C$'s.
 
-In our model an improvement in $C$'s terms of trade corresponds to an increase in $e_{AC}$ by \eqref{eq:rer}. In the competing-exporter model this occurs unconditionally after a tariff on $B$, whereas at the symmetric benchmark of the nested-CES model \eqref{eq:Nthresh} requires $\rho>N\rho_1^*$. A preferential tariff reduction gives the corresponding result with the signs reversed: if $A$ lowers its tariff on $B$ alone, $t=-\tau\,\mathbf{e}_B$, a non-member $C$'s terms of trade worsen if and only if $\rho>N\rho_1^*$.
+In our model, $\mathrm{ToT}_{CA}=e_{AC}$ by \eqref{eq:rer}, so an improvement in $C$'s terms of trade corresponds to an increase in $e_{AC}$. In the competing-exporter model this occurs unconditionally after a tariff on $B$, whereas at the symmetric free-trade benchmark of the nested-CES model \eqref{eq:Nthresh} requires $\rho>N\rho_1^*$. A differential tariff change in the opposite direction reverses these signs locally: for $\mathbf{t}=-d\tau\,\mathbf{e}_B$, a non-member $C$'s terms of trade worsen if and only if $\rho>N\rho_1^*$. This captures the mechanism behind preferential liberalization, although the closed-form threshold is derived around free trade rather than around a positive common external tariff.
 
-The difference reflects the economic environment. In the competing-exporter model, $A$ does not produce the importable good, so a tariff reallocates demand between the two foreign suppliers without inducing substitution toward a domestically produced import-competing good; the model isolates substitution across foreign suppliers. In our model, substitution across foreign import origins, governed by $\rho$, operates alongside substitution toward the domestic import-competing tradable, governed by $\eta$, and the associated income effects, both collected in $\rho_1^*$. The third-country terms-of-trade effect has the competing-exporter sign only when the first margin is strong relative to the second. The threshold rises with the domestic-import substitution term $\alpha_D(\eta-1)$ and falls with the import share $\alpha_T(1-\alpha_D)$; at $N=3$ it is $3\rho_1^*$.
+The difference reflects the economic environment. In the competing-exporter model, $A$ does not produce the importable good, so a tariff reallocates demand only across the two foreign suppliers. In our model, substitution across foreign origins, governed by $\rho$, operates alongside substitution toward the domestic tradable and the associated income effects, summarized by $\rho_1^*$. The competing-exporter sign therefore obtains only when substitution across foreign suppliers is sufficiently strong relative to these domestic channels.
 
-The two environments are not formally nested. The competing-exporter model has a common importable supplied by $B$ and $C$ and quasilinear preferences, while our model has country-specific differentiated tradables and nested-CES preferences, so the comparison is one of mechanisms. Competing-exporter models such as Bagwell and Staiger (1999) and Ornelas (2005) also abstract from trade between the foreign suppliers and use quasilinear preferences, while bloc and endowment models such as Krugman (1991) and Bond and Syropoulos (1996) abstract from domestic production of the importable.
+The two environments are not formally nested. The competing-exporter model has a common importable supplied by $B$ and $C$ and quasilinear preferences, while our model has country-specific differentiated tradables and nested-CES preferences, so the comparison is one of mechanisms rather than special cases. Related competing-exporter models include Bagwell and Staiger (1999) and Ornelas (2005), while Krugman (1991) and Bond and Syropoulos (1996) study related bloc and endowment environments.
 
 \section{Conclusion}
 
@@ -622,15 +623,15 @@ A tariff affects exchange rates through two steps. At unchanged exchange rates i
 
 With three or more countries, a tariff can also redirect expenditure across foreign suppliers. Under symmetry, the response to any tariff vector separates into an average-protection component and a relative-treatment component. Average protection determines the effective exchange-rate response, while relative treatment determines deviations of bilateral rates from that common response. At the symmetric benchmark of the nested-CES model, the tariffing country continues to appreciate against the targeted partner, but its exchange rate against an untariffed partner can move in either direction.
 
-In that benchmark, a unilateral tariff on one partner always appreciates the tariffing country's effective exchange rate; under asymmetric trade weights this need not hold (Appendix~\ref{app:asym}). Its bilateral rate against an untariffed bystander reverses only if
+At the symmetric benchmark, a unilateral tariff always appreciates the tariffing country's effective exchange rate, while the bilateral rate against an untariffed bystander reverses only if
 \[
-\rho>N\rho_1^*,
+\rho>N\rho_1^*.
 \]
-whereas the bystander's trade balance at unchanged exchange rates improves already at $\rho>\rho_1^*$. The factor $N$ comes from multilateral exchange-rate adjustment, $j_D/j_S=N$, rather than from dilution of the initial tariff disturbance, whose ratio $g_D/g_S=\rho/\rho_1^*$ does not depend on $N$.
+The factor $N$ reflects multilateral exchange-rate adjustment rather than the relative size of the initial tariff disturbances. Under symmetric bilateral retaliation, the threshold falls to $\rho_1^*$ and becomes independent of $N$. Under asymmetric trade weights, even the effective exchange-rate result need not hold (Appendix~\ref{app:asym}).
 
-Other tariff configurations alter this comparison. Under symmetric bilateral retaliation, the bystander threshold falls to $\rho_1^*$ and is independent of $N$. In the standard competing-exporter benchmark, substitution across foreign suppliers generates an unambiguous third-country terms-of-trade effect; in our model, that effect interacts with domestic-import substitution and income effects and therefore need not have an unconditional sign.
+In the standard competing-exporter benchmark, by contrast, substitution across foreign suppliers generates an unambiguous third-country terms-of-trade effect because the domestic-substitution and associated income channels are absent.
 
-The main implication is that the familiar two-country exchange-rate result survives multilateralization most cleanly at the level of the effective exchange rate. Bilateral exchange rates also reflect how trade policy differs across partners, and their responses need not inherit the sign of the aggregate adjustment.
+For a unilateral tariff, the familiar two-country appreciation result survives multilateralization most cleanly at the level of the effective exchange rate. Bilateral exchange rates also reflect how trade policy differs across partners, and their responses need not inherit the sign of the aggregate adjustment.
 
 \section*{References}
 
@@ -641,8 +642,6 @@ The main implication is that the familiar two-country exchange-rate result survi
 \refentry{Bagwell, Kyle, and Robert W. Staiger (1999). ``An Economic Theory of GATT.'' \emph{American Economic Review} 89(1), 215--248.}
 
 \refentry{Bond, Eric W., and Costas Syropoulos (1996). ``The Size of Trading Blocs: Market Power and World Welfare Effects.'' \emph{Journal of International Economics} 40(3--4), 411--437.}
-
-\refentry{Kemp, Murray C., and Henry Y. Wan (1976). ``An Elementary Proposition Concerning the Formation of Customs Unions.'' \emph{Journal of International Economics} 6(1), 95--97.}
 
 \refentry{Krugman, Paul (1991). ``Is Bilateralism Bad?'' In Elhanan Helpman and Assaf Razin (eds.), \emph{International Trade and Trade Policy}, 9--23. Cambridge, MA: MIT Press.}
 
