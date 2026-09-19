@@ -425,7 +425,7 @@ Consider the nested-CES model of Section~\ref{sec:model} at the symmetric benchm
 D_N\equiv N\alpha_D(\eta-1)+(N-2)\rho+1.
 \label{eq:DN}
 \end{equation}
-The MML condition \eqref{eq:invpos} holds if and only if $D_N>0$. Since $\alpha_D>0$ and $\rho\geq0$, $\eta\geq1$ is sufficient for $D_N>0$.
+The MML condition \eqref{eq:invpos} holds if and only if $D_N>0$. Since $\alpha_D>0$ and $\rho>0$, $\eta\geq1$ is sufficient for $D_N>0$.
 
 When $D_N>0$, the average-protection and relative-treatment coefficients are
 \[
@@ -675,15 +675,15 @@ Thus $e(\tau)$ is decreasing in $\tau$, so the sign of the linearized response i
 
 At the balanced free-trade baseline, let $m\equiv\alpha_T(1-\alpha_D)$, $b_{ij}\equiv\beta_{ij}$, and $f_{ij}=s_{ij}\widetilde I_i$, with $\sum_k f_{ki}=\sum_j f_{ij}$. All incomes and flows are measured in the common currency. Linearizing the demand, income, and trade-balance equations gives
 \begin{align}
-dp_{ij} &= d\nu_j-d\nu_i+dt_{ij} \qquad (dp_{ii}=0), \label{eq:dp}\\
+dp_{ij} &= d\nu_j-d\nu_i+d\tau_{ij} \qquad (dp_{ii}=0), \label{eq:dp}\\
 d\log P_{M_i} &= \sum_{j\neq i}b_{ij}\,dp_{ij}, \qquad
 d\log P_{T_i}=(1-\alpha_D)\,d\log P_{M_i}, \label{eq:dindex}\\
 d\log s_{ii} &= -(1-\eta)(1-\alpha_D)\,d\log P_{M_i}, \label{eq:dshome}\\
 d\log s_{ij} &= (1-\rho)\big(dp_{ij}-d\log P_{M_i}\big)
 +(1-\eta)\alpha_D\,d\log P_{M_i}, \label{eq:dsfor}\\
-d\log\widetilde I_i &= d\nu_i+\sum_{j\neq i}s_{ij}\,dt_{ij}, \label{eq:dincome}\\
-d\,\mathrm{TB}_i &= \sum_{k\neq i}f_{ki}\big(d\log s_{ki}+d\log\widetilde I_k-dt_{ki}\big)
--\sum_{j\neq i}f_{ij}\big(d\log s_{ij}+d\log\widetilde I_i-dt_{ij}\big).
+d\log\widetilde I_i &= d\nu_i+\sum_{j\neq i}s_{ij}\,d\tau_{ij}, \label{eq:dincome}\\
+d\,\mathrm{TB}_i &= \sum_{k\neq i}f_{ki}\big(d\log s_{ki}+d\log\widetilde I_k-d\tau_{ki}\big)
+-\sum_{j\neq i}f_{ij}\big(d\log s_{ij}+d\log\widetilde I_i-d\tau_{ij}\big).
 \label{eq:dtb}
 \end{align}
 These equations determine the model-specific matrices $J$ and $G$ in \eqref{eq:JFdef}. At $N=2$ they reduce to the calculation in Section~\ref{sec:twocountry}.
@@ -710,7 +710,7 @@ D_N = N\alpha_D(\eta-1)+(N-2)\rho+1.
 \end{lemma}
 
 \begin{proof}
-Set $dt_{jk}=0$, so $dp_{ij}=d\nu_j-d\nu_i$ and $d\log\widetilde I_i=d\nu_i$. Writing $S\equiv\sum_j d\nu_j$, \eqref{eq:dindex} gives
+Set $d\tau_{jk}=0$, so $dp_{ij}=d\nu_j-d\nu_i$ and $d\log\widetilde I_i=d\nu_i$. Writing $S\equiv\sum_j d\nu_j$, \eqref{eq:dindex} gives
 \[
 d\log P_{M_k} = \frac{S-N\,d\nu_k}{N-1},
 \qquad
@@ -921,18 +921,18 @@ This appendix gives the real exchange-rate counterparts of the results in Sectio
 
 From \eqref{eq:rer} and \eqref{eq:indices},
 \begin{equation*}
-d\log q_{Aj} = \nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big).
+d\log q_{Aj} = d\nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big).
 \end{equation*}
-For a tariff vector $t$, symmetry implies
+For a tariff vector $\mathbf{t}$, symmetry implies
 \[
 d\log P_{M_A} = d\nu_A^E+\bar t,
 \qquad
-d\log P_{M_j} = d\nu_A^E-\frac{N}{N-1}\nu_j
+d\log P_{M_j} = d\nu_A^E-\frac{N}{N-1}\,d\nu_j
 \]
 for a partner that imposes no tariff. Hence
 \begin{equation}
 \begin{aligned}
-d\log q_{Aj} &= \Big(1-\frac{mN}{N-1}\Big)\nu_j - m\,\bar t,\\
+d\log q_{Aj} &= \Big(1-\frac{mN}{N-1}\Big)d\nu_j - m\,\bar t,\\
 dq_A^E &= \Big[\Big(1-\frac{mN}{N-1}\Big)\lambda_S-m\Big]\bar t,\\
 d\log q_{Aj}-dq_A^E &= \Big(1-\frac{mN}{N-1}\Big)\lambda_D\,\tilde t_j.
 \end{aligned}
@@ -942,7 +942,7 @@ Thus average protection determines the real effective exchange-rate response, wh
 
 For a unilateral tariff, $\bar t=d\tau/(N-1)$ and
 \begin{equation}
-d\log q_{Aj} = \Big(1-\frac{mN}{N-1}\Big)\nu_j - \frac{m}{N-1}\,d\tau,
+d\log q_{Aj} = \Big(1-\frac{mN}{N-1}\Big)d\nu_j - \frac{m}{N-1}\,d\tau,
 \qquad
 j=B,C.
 \label{eq:qgen}
@@ -1050,13 +1050,13 @@ For $j_S,j_D\neq0$,
 \]
 as direct multiplication verifies. Thus $(-J)^{-1}$ and $G$ share the constant and zero-sum eigenspaces, with response coefficients $g_S/j_S$ and $g_D/j_D$. Writing
 \[
-t = \bar t\,\mathbf{1} + \tilde t,
+\mathbf{t} = \bar t\,\mathbf{1} + \tilde t,
 \qquad
 \mathbf{1}'\tilde t=0,
 \]
 gives
 \[
-\nu = \frac{g_S}{j_S}\bar t\,\mathbf{1} + \frac{g_D}{j_D}\tilde t,
+d\boldsymbol{\nu} = \frac{g_S}{j_S}\bar t\,\mathbf{1} + \frac{g_D}{j_D}\tilde t,
 \]
 and averaging with equal weights yields
 \[
@@ -1071,7 +1071,7 @@ so $-J$ has the Z-matrix sign pattern if and only if $j_D\geq j_S$. Given $j_D\g
 
 Finally, for any two partners $j,k\neq A$,
 \[
-d\log e_{jk} = \nu_k-\nu_j = \lambda_D (\tilde t_k-\tilde t_j) = \lambda_D(t_k-t_j),
+d\log e_{jk} = d\nu_k-d\nu_j = \lambda_D (\tilde t_k-\tilde t_j) = \lambda_D(t_k-t_j),
 \]
 which completes \eqref{eq:decomp-parts}.
 \end{proof}
@@ -1083,7 +1083,7 @@ At the symmetric benchmark relabeling $A$'s partners leaves the reduced system u
 \qquad
 \lambda_D=\frac{g_D}{j_D}=-\frac{(N-1)\rho}{ND_N},
 \]
-both negative since $\rho_1^*>0$ by \eqref{eq:rho1-identity} and $\rho\geq0$. Equation~\eqref{eq:scale-disc} and the three statements following it are then \eqref{eq:decomp} and \eqref{eq:decomp-parts}.
+both negative since $\rho_1^*>0$ by \eqref{eq:rho1-identity} and $\rho>0$. Equation~\eqref{eq:scale-disc} and the three statements following it are then \eqref{eq:decomp} and \eqref{eq:decomp-parts}.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{res:war}(i)]
@@ -1154,23 +1154,23 @@ The expression is the same for every $j$, so it also equals the NEER response, a
 \begin{proof}[Proof of Proposition~\ref{res:real}]
 From \eqref{eq:rer} and \eqref{eq:indices}, only tradable prices move, so
 \[
-d\log q_{Aj} = \nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big),
+d\log q_{Aj} = d\nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big),
 \]
 with
 \[
 d\log P_{T_i}^{\mathrm{own}} = (1-\alpha_D)d\log P_{M_i}.
 \]
-For a tariff vector $t$,
+For a tariff vector $\mathbf{t}$,
 \[
-d\log P_{M_A} = \frac{1}{N-1} \sum_j(\nu_j+t_j) = d\nu_A^E+\bar t,
+d\log P_{M_A} = \frac{1}{N-1} \sum_j(d\nu_j+t_j) = d\nu_A^E+\bar t,
 \]
 while for a partner that imposes no tariff,
 \[
-d\log P_{M_j} = d\nu_A^E - \frac{N}{N-1}\nu_j.
+d\log P_{M_j} = d\nu_A^E - \frac{N}{N-1}\,d\nu_j.
 \]
 Substitution gives \eqref{eq:q-decomp}, and $\bar t=d\tau/(N-1)$ gives \eqref{eq:qgen}.
 
-For (i), setting $d\log q_{AC}=0$ and substituting $\nu_C$ from \eqref{eq:N-slopes-C} gives
+For (i), setting $d\log q_{AC}=0$ and substituting $d\nu_C$ from \eqref{eq:N-slopes-C} gives
 \[
 \big[ (N-1)-mN \big] \frac{\rho-N\rho_1^*}{N} = mD_N(\rho).
 \]
