@@ -151,7 +151,7 @@ Under MML, each positive component of the trade-balance disturbance makes a weak
 \frac{d\nu_i}{ds}=\sum_j\vartheta_{ij}F_j ,
 \label{eq:signrule}
 \end{equation}
-where $\vartheta_{ij}$ measures the response of the $A$-$i$ bilateral exchange rate to a unit trade-balance disturbance in country $j$, with a positive response denoting a depreciation of $A$ against $i$. A uniformly signed $\boldsymbol{F}$ therefore cannot generate exchange-rate responses of the opposite sign. When $\boldsymbol{F}$ has mixed signs, the response of any individual exchange rate depends on the full vector of trade-balance effects rather than on the corresponding element $F_i$ alone.
+where $\vartheta_{ij}$ measures the response of the $A$--$i$ bilateral exchange rate to a unit trade-balance disturbance in country $j$, with a positive response denoting a depreciation of $A$ against $i$. A uniformly signed $\boldsymbol{F}$ therefore cannot generate exchange-rate responses of the opposite sign. When $\boldsymbol{F}$ has mixed signs, the response of any individual exchange rate depends on the full vector of trade-balance effects rather than on the corresponding element $F_i$ alone.
 
 The MML condition stated directly in terms of $(-J)^{-1}$ is somewhat abstract. A more intuitive sufficient condition can be stated in terms of gross substitutability. To express this condition without choosing a numeraire, extend the notation and let $\nu_i$, $i=1,\dots,N$, denote the log value of currency $i$ in a common unit of account, so that
 \[
@@ -328,7 +328,7 @@ M_i &= \Big[\textstyle\sum_{j\neq i}\beta_{ij}^{1/\rho}C_{T_j i}^{\frac{\rho-1}{
 && \text{(origin weights } \beta_{ij},\text{ elasticity } \rho).
 \end{align*}
 
-The top layer of the nested utility function is Cobb-Douglas, so the expenditure share on tradables is fixed at $\alpha_T$ and the share on non-tradables at $1-\alpha_T$. Within tradables, $\eta$ governs substitution between the domestic tradable and the import composite, while $\rho$ governs substitution across foreign origins. The latter margin is inactive at $N=2$, when there is only one foreign supplier, and becomes relevant at $N\geq3$.
+The top layer of the nested utility function is Cobb--Douglas, so the expenditure share on tradables is fixed at $\alpha_T$ and the share on non-tradables at $1-\alpha_T$. Within tradables, $\eta$ governs substitution between the domestic tradable and the import composite, while $\rho$ governs substitution across foreign origins. The latter margin is inactive at $N=2$, when there is only one foreign supplier, and becomes relevant at $N\geq3$.
 
 The \emph{symmetric benchmark} imposes $\beta_{ij}=1/(N-1)$, common parameters $(\alpha_T,\alpha_D,\eta,\rho)$, and equal endowments and productivities. Symmetry across countries does not eliminate home bias: domestic tradables retain weight $\alpha_D$. Full symmetry between the domestic tradable and each foreign tradable would additionally require $\rho=\eta$ and $\alpha_D=1/N$, which we do not impose.
 
@@ -354,7 +354,7 @@ Household income consists of labor income, $w_iL_i$, and tariff revenue, which i
 I_i=\frac{w_iL_i}{1-\sum_{j\neq i}\frac{\tau_{ij}}{1+\tau_{ij}}\,s_{ij}}.
 \label{eq:income}
 \end{equation}
-At the free-trade baseline, $I_i=w_iL_i$, so the Cobb-Douglas top layer implies that equilibrium labor allocations are $\alpha_T$ and $1-\alpha_T$ in the tradable and non-tradable sectors, respectively, independently of other production or preference parameters and exchange rates. With tariffs, rebated tariff revenue raises income relative to labor income, so these labor allocations are no longer fixed.
+At the free-trade baseline, $I_i=w_iL_i$, so the Cobb--Douglas top layer implies that equilibrium labor allocations are $\alpha_T$ and $1-\alpha_T$ in the tradable and non-tradable sectors, respectively, independently of other production or preference parameters and exchange rates. With tariffs, rebated tariff revenue raises income relative to labor income, so these labor allocations are no longer fixed.
 
 To express bilateral flows in a common currency, define $\widetilde I_i\equiv e_{Ai}I_i$. Since tariff revenue is a domestic transfer, trade balances are measured at tariff-exclusive border prices:
 \begin{equation}
@@ -408,7 +408,7 @@ and therefore
 \label{eq:2c-slope}
 \end{equation}
 
-In the terminology of Section~\ref{sec:bilateral}, $\rho_1^*$ and $D_2$ determine, up to the common scale factor $m$, the tariff-induced trade-balance disturbance and the exchange-rate adjustment, respectively. Here $\mathrm{TB}_{A\tau}=m\rho_1^*>0$, so the tariff unambiguously improves $A$'s trade balance at unchanged exchange rates. The expression for $\rho_1^*$ combines substitution between the domestic tradable and imports, measured by $\alpha_D\eta$, with the associated income and expenditure effect falling on nontradables, measured by $(1-\alpha_D)(1-\alpha_T)$.
+In the terminology of Section~\ref{sec:bilateral}, $\rho_1^*$ and $D_2$ determine, up to the common scale factor $m$, the tariff-induced trade-balance disturbance and the exchange-rate adjustment, respectively. Here $\mathrm{TB}_{A\tau}=m\rho_1^*>0$, so the tariff unambiguously improves $A$'s trade balance at unchanged exchange rates. The expression for $\rho_1^*$ combines substitution between the domestic tradable and imports, measured by $\alpha_D\eta$, with the associated income and expenditure effect falling on non-tradables, measured by $(1-\alpha_D)(1-\alpha_T)$.
 
 At the symmetric two-country benchmark, $\varepsilon_X=\varepsilon_M=1+\alpha_D(\eta-1)$, so $D_2=\varepsilon_X+\varepsilon_M-1$. Hence the Marshall--Lerner condition of Section~\ref{sec:bilateral} is $D_2>0$, which holds whenever $\eta\geq1$. Appendix~\ref{app:cd} gives the exact finite-tariff Cobb--Douglas solution.
 
@@ -497,13 +497,13 @@ so a unilateral tariff always appreciates $A$'s effective exchange rate at the s
 
 The bilateral responses additionally depend on relative treatment. Against the targeted country, average protection and relative treatment reinforce each other:
 \begin{equation}
-\frac{d\log e_{AB}}{d\tau}
+\frac{d\nu_B}{d\tau}
 =-\frac{N\rho_1^*+(N-2)\rho}{ND_N}<0,
 \label{eq:N-slopes}
 \end{equation}
 so $A$ always appreciates against $B$, again for every $N\geq2$. For $N\geq3$ there is also an untargeted bystander $C$, for which the two components work in opposite directions:
 \begin{equation}
-\frac{d\log e_{AC}}{d\tau}
+\frac{d\nu_C}{d\tau}
 =\frac{\rho-N\rho_1^*}{ND_N}.
 \label{eq:N-slopes-C}
 \end{equation}
@@ -520,7 +520,7 @@ In particular, the reversal cannot occur when the two substitution elasticities 
 N\rho_1^*-\sigma=\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T),
 \label{eq:single}
 \end{equation}
-which is nonnegative for $\alpha_D\geq1/N$. Hence $\rho\leq N\rho_1^*$ and the reversal condition cannot hold.\footnote{Equality in \eqref{eq:single} requires $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$ with $\rho=\eta=\sigma$, $d\log e_{AC}/d\tau=-(1-\alpha_T)/(N\sigma)$, which approaches zero from below as $\alpha_T\to1$; see Appendix~\ref{app:linear}.} More generally, for $\alpha_D\geq1/N$,
+which is nonnegative for $\alpha_D\geq1/N$. Hence $\rho\leq N\rho_1^*$ and the reversal condition cannot hold.\footnote{Equality in \eqref{eq:single} requires $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$ with $\rho=\eta=\sigma$, $d\nu_C/d\tau=-(1-\alpha_T)/(N\sigma)$, which approaches zero from below as $\alpha_T\to1$; see Appendix~\ref{app:linear}.} More generally, for $\alpha_D\geq1/N$,
 \[
 N\rho_1^*-\eta=\eta(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)\geq0,
 \]
@@ -551,51 +551,53 @@ The first threshold depends only on the relative size of the tariff disturbances
 \section{Trade Wars and Preferential Tariffs}
 \label{sec:extensions}
 
-Because our analysis is local, simultaneous tariff changes by several countries can be superposed to first order. At the symmetric benchmark, each tariffing country's contribution follows from Theorem~\ref{res:main}.
+Because our analysis is local to a given baseline, simultaneous tariff changes by several countries can be analyzed by considering each country's tariff change separately and then adding the resulting first-order effects. At the symmetric benchmark, each tariffing country's contribution to equilibrium exchange rates follows from Theorem~\ref{res:main}.
 
 \subsection{Trade wars}
 \label{sec:tradewars}
 
-We first consider symmetric bilateral retaliation. Suppose $A$ raises its tariff on $B$ by $d\tau$ and $B$ raises its tariff on $A$ by the same amount. By symmetry, the two effects on the $A$--$B$ bilateral rate cancel. For any bystander $C$, superposing the two unilateral responses gives
+We first consider bilateral retaliation. Suppose $A$ raises its tariff on $B$ by $d\tau$ and $B$ retaliates by raising its tariff on $A$ by the same amount. By symmetry, the two effects on the $A$--$B$ bilateral rate cancel. For any bystander $C$, superposing the two unilateral responses gives
 \begin{equation}
-\frac{d\log e_{AB}}{d\tau}=0, \qquad
-\frac{d\log e_{AC}}{d\tau}=\frac{\rho-\rho_1^*}{D_N}, \qquad
+\frac{d\nu_B}{d\tau}=0, \qquad
+\frac{d\nu_C}{d\tau}=\frac{\rho-\rho_1^*}{D_N}, \qquad
 \frac{d\nu_A^E}{d\tau}=\frac{N-2}{N-1}\frac{\rho-\rho_1^*}{D_N}.
 \label{eq:N-war}
 \end{equation}
-Compared with a unilateral tariff, retaliation lowers the bystander threshold from $N\rho_1^*$ to $\rho_1^*$, exactly the threshold at which the bystander's trade balance improves at unchanged exchange rates. With symmetric retaliation, $B$'s tariff on $A$ adds the relative-treatment contribution needed to offset the adjustment-ratio penalty that generates the factor $N$ under a unilateral tariff. The sign of the bystander's exchange-rate response therefore follows the sign of its trade-balance disturbance at unchanged exchange rates.
+Compared with a unilateral tariff, bilateral retaliation lowers the bystander threshold from $N\rho_1^*$ to $\rho_1^*$, exactly the threshold at which the bystander's trade balance improves at unchanged exchange rates. The retaliatory tariff imposed by $B$ adds an offsetting relative-treatment effect, so the sign of the bystander's exchange-rate response follows the sign of its trade-balance disturbance at unchanged exchange rates.
 
-Now suppose that $A$ raises its tariff by $d\tau$ on every partner and every partner raises its tariff by $d\tau$ on $A$. This configuration is the sum of $N-1$ bilateral trade wars involving $A$. For any $A$--$j$ bilateral rate, the bilateral war between $A$ and $j$ contributes zero by \eqref{eq:N-war}, while each of the remaining $N-2$ wars contributes the same bystander response.
+We next consider a multilateral trade war in which $A$ raises its tariff by $d\tau$ on every partner and every partner retaliates by raising its tariff by $d\tau$ on $A$. This configuration can be viewed as the sum of $N-1$ bilateral retaliations involving $A$. For any $A$--$j$ bilateral rate, the bilateral retaliation between $A$ and $j$ contributes zero by \eqref{eq:N-war}, while each of the remaining $N-2$ retaliations contributes the same bystander response.
 
-\begin{proposition}[Trade wars]
+\begin{proposition}[Retaliation and trade wars]
 
 At the symmetric benchmark of the nested-CES model, with $N\geq 3$ and under MML:
 
 \begin{enumerate}
 
-\item[(i)] Under symmetric bilateral retaliation between $A$ and $B$, the belligerents' effective exchange rates depreciate, and every bystander appreciates against both, if and only if $\rho>\rho_1^*$.
+\item[(i)] Under bilateral retaliation between $A$ and $B$, $d\nu_B=0$. Both countries depreciate against every bystander, and hence in effective terms, if and only if $\rho>\rho_1^*$. Exchange rates among bystanders are unchanged.
 
-\item[(ii)] If $A$ tariffs every partner and every partner tariffs $A$ by the same amount, then
+\item[(ii)] In a multilateral trade war in which $A$ tariffs every partner and every partner retaliates against $A$ by the same amount,
 \begin{equation}
-\frac{d\log e_{Aj}}{d\tau}
+\frac{d\nu_j}{d\tau}
 =
 \frac{d\nu_A^E}{d\tau}
 =
 \frac{(N-2)(\rho-\rho_1^*)}{D_N}
-\qquad \forall j,
+\qquad \forall j\neq A,
 \label{eq:globalwar}
 \end{equation}
-while all exchange rates among $A$'s partners are unchanged. Hence $A$ depreciates against every partner if and only if $\rho>\rho_1^*$.
+while exchange rates among $A$'s partners are unchanged. Hence $A$ depreciates against every partner if and only if $\rho>\rho_1^*$.
 \end{enumerate}
 \label{res:war}
 \end{proposition}
 
-Thus the same threshold applies under bilateral retaliation and retaliation by all partners.
+Thus bilateral retaliation and the multilateral trade-war case share the same threshold, although the pattern of adjustment differs. Relative to a unilateral tariff, retaliation offsets the relative-treatment force that makes a bystander depreciation harder to obtain, lowering the threshold from $N\rho_1^*$ to $\rho_1^*$. Under bilateral retaliation, the adjustment occurs against the untariffed bystanders while the $A$--$B$ rate is unchanged. In the multilateral trade war, there are no untariffed bystanders, and all of $A$'s bilateral rates move together.
 
 \subsection{Preferential tariffs and competing exporters}
 \label{sec:pta}
 
-A standard benchmark in the preferential-trade-agreement literature has one importing country and two competing exporters, following Viner (1950) and Mundell (1964). Importer $A$ is endowed only with the numeraire good $y$, while exporters $B$ and $C$ are endowed with good $x$. Preferences are quasilinear, $U_i=u_i(x_i)+y_i$. Country $A$ levies specific tariffs $t_B$ and $t_C$. Let $p$ be the domestic price of $x$ in $A$, and let $q_j$ be exporter $j$'s price of $x$ in terms of the numeraire, which is $j$'s terms of trade. Market clearing requires
+Our results are closely related to the classic competing-exporter mechanism in the preferential-trade-agreement literature. In that setting, raising a tariff on one foreign supplier improves the terms of trade of competing suppliers; conversely, preferentially lowering the tariff on one supplier worsens the terms of trade of excluded countries. We first derive this benchmark result and then compare it with the corresponding third-country effect in our model.
+
+Following Viner (1950) and Mundell (1964), consider one importing country and two competing exporters. Importer $A$ is endowed only with the numeraire good $y$, while exporters $B$ and $C$ are endowed with good $x$. Preferences are quasilinear, $U_i=u_i(x_i)+y_i$. Country $A$ levies specific tariffs $t_B$ and $t_C$. Let $p$ be the domestic price of $x$ in $A$, and let $q_j$ be exporter $j$'s price of $x$ in terms of the numeraire, which is $j$'s terms of trade. Market clearing requires
 \begin{equation}
 p=q_B+t_B=q_C+t_C, \qquad
 M_A(p)=E_B(p-t_B)+E_C(p-t_C), \qquad
@@ -609,13 +611,13 @@ where $M_A(p)=x_A^d(p)$ and $E_j(q_j)=\omega_j-x_j^d(q_j)$. Differentiating with
 \frac{dq_C}{dt_B}=\frac{dp}{dt_B}>0.
 \label{eq:pta-cs}
 \end{equation}
-Thus a tariff on imports from $B$ worsens $B$'s terms of trade and improves $C$'s.
+Thus raising the tariff on $B$ worsens $B$'s terms of trade and improves those of the competing exporter $C$. Reversing the tariff change also gives the familiar preferential-liberalization result, where lowering the tariff on $B$ improves $B$'s terms of trade and worsens those of the excluded country $C$.
 
-Since $\mathrm{ToT}_{CA}=e_{AC}$ by \eqref{eq:rer}, an improvement in $C$'s terms of trade corresponds to an increase in $e_{AC}$. This occurs unconditionally in \eqref{eq:pta-cs}, whereas at the symmetric free-trade benchmark of the nested-CES model \eqref{eq:Nthresh} requires $\rho>N\rho_1^*$. Reversing the direction of the differential reverses these signs locally, so that for $\mathbf{t}=-d\tau\,\mathbf{e}_B$ a non-member $C$'s terms of trade worsen if and only if $\rho>N\rho_1^*$.\footnote{While this captures the mechanism behind preferential liberalization, the closed-form threshold is derived around free trade rather than around a positive common external tariff.}
+The same third-country effect need not arise unconditionally in our model. Since $\mathrm{ToT}_{CA}=e_{AC}$ by \eqref{eq:rer}, an improvement in $C$'s terms of trade corresponds to an increase in $e_{AC}$. Following a tariff increase on $B$, the competing-exporter model therefore predicts an increase in $e_{AC}$ for any admissible demand and supply elasticities. At the symmetric free-trade benchmark of the nested-CES model, however, \eqref{eq:Nthresh} shows that $e_{AC}$ increases only if $\rho>N\rho_1^*$. Equivalently, under preferential liberalization toward $B$, $\mathbf{t}=-d\tau\,\mathbf{e}_B$, the excluded country $C$ suffers a terms-of-trade deterioration only if the same condition holds.\footnote{While this captures the mechanism behind preferential liberalization, the closed-form threshold is derived around free trade rather than around a positive common external tariff.}
 
-The difference arises because $A$ does not produce the importable good in the competing-exporter model, so a tariff reallocates demand only across the two foreign suppliers. In our model, substitution across foreign origins, governed by $\rho$, operates alongside substitution toward the domestic tradable and the associated income effects, summarized by $\rho_1^*$. The competing-exporter sign therefore obtains only when substitution across foreign suppliers is sufficiently strong relative to these domestic channels.
+The difference comes from the additional substitution margin in our model. In the competing-exporter benchmark, $A$ does not produce the importable good, so changing the tariff on $B$ reallocates demand between $B$ and $C$. In our model, expenditure can instead be redirected both across foreign suppliers and toward $A$'s domestic tradable. The first channel is governed by $\rho$, while the domestic substitution and associated income effects are summarized by $\rho_1^*$. The competing-exporter third-country effect therefore arises in our model only when substitution across foreign suppliers is sufficiently strong relative to these domestic channels.
 
-The two environments are therefore not formally nested. The competing-exporter model features a common importable supplied by $B$ and $C$ under quasilinear preferences, whereas our model has country-specific differentiated tradables and nested-CES preferences. Within that literature, related competing-exporter models include Bagwell and Staiger (1999) and Ornelas (2005), while Krugman (1991) and Bond and Syropoulos (1996) study related bloc and endowment environments. Taken together, these comparisons clarify that third-country exchange-rate effects also arise in our model, but their net sign depends on how strongly substitution across foreign suppliers operates relative to substitution toward domestic goods and the associated income effects.
+The two environments are not formally nested. The competing-exporter model features a common importable supplied by $B$ and $C$ under quasilinear preferences, whereas our model has country-specific differentiated tradables and nested-CES preferences. Related competing-exporter models include Bagwell and Staiger (1999) and Ornelas (2005), while Krugman (1991) and Bond and Syropoulos (1996) study related bloc and endowment environments. The comparison shows how the standard third-country terms-of-trade effect is modified once the importing country can also substitute toward its own goods.
 
 \section{Conclusion}
 
@@ -966,7 +968,7 @@ At the symmetric benchmark of the nested-CES model, consider a unilateral tariff
 
 \label{app:asym}
 
-The disturbance-adjustment representation \eqref{eq:system} and MML \eqref{eq:invpos} do not require symmetry, and at any balanced baseline the linearized system \eqref{eq:dp}--\eqref{eq:dtb} continues to hold with baseline shares and incomes as coefficients: $b_{ij}$, the share of origin $j$ in $i$'s import bundle; $h_i$, the home share of $i$'s tradable expenditure; and $y_i\equiv\widetilde I_i$, $i$'s income in the common currency. What requires symmetry is the collapse of the response to the two coefficients $\lambda_S$ and $\lambda_D$ of Proposition~\ref{res:decomp}. Away from symmetry, $G$ and $-J$ generally no longer act separately on average protection and relative treatment, so changes in relative treatment can affect the effective exchange rate. The unconditional NEER appreciation and the linear thresholds of Section~\ref{sec:model} therefore need not survive. This appendix records what does.
+The disturbance--adjustment representation \eqref{eq:system} and MML \eqref{eq:invpos} do not require symmetry, and at any balanced baseline the linearized system \eqref{eq:dp}--\eqref{eq:dtb} continues to hold with baseline shares and incomes as coefficients: $b_{ij}$, the share of origin $j$ in $i$'s import bundle; $h_i$, the home share of $i$'s tradable expenditure; and $y_i\equiv\widetilde I_i$, $i$'s income in the common currency. What requires symmetry is the collapse of the response to the two coefficients $\lambda_S$ and $\lambda_D$ of Proposition~\ref{res:decomp}. Away from symmetry, $G$ and $-J$ generally no longer act separately on average protection and relative treatment, so changes in relative treatment can affect the effective exchange rate. The unconditional NEER appreciation and the linear thresholds of Section~\ref{sec:model} therefore need not survive. This appendix records what does.
 
 \paragraph{Bilateral thresholds.}
 The elasticity $\rho$ enters the share responses \eqref{eq:dsfor} only through $(1-\rho)$, so every entry of $J$ and $F$ is linear in $\rho$. Each entry of $\operatorname{adj}(-J)$ is therefore a polynomial of degree at most $N-2$ in $\rho$, and each numerator $[\operatorname{adj}(-J)F]_i$ in \eqref{eq:system} a polynomial of degree at most $N-1$. Since $\det(-J)>0$ under MML, a bilateral response can change sign only at a root of this numerator. Symmetry reduces the problem to the two coefficients of Proposition~\ref{res:decomp}, yielding the linear thresholds \eqref{eq:Nthresh} and \eqref{eq:3c-slopes}. At a general asymmetric baseline the $N=3$ numerator is already quadratic in $\rho$:
@@ -1068,7 +1070,7 @@ which completes \eqref{eq:decomp-parts}.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{res:main}]
-At the symmetric benchmark relabeling $A$'s partners leaves the reduced system unchanged, so Proposition~\ref{res:decomp} applies. Appendix~\ref{app:linear} derives \eqref{eq:full-jacobian}, \eqref{eq:g-eigen} and \eqref{eq:j-eigen}. By \eqref{eq:j-eigen}, $j_S=mD_N/(N-1)^2$ and $j_D=Nj_S$, so $j_D\geq j_S$ always and $j_S>0$ if and only if $D_N>0$; by \eqref{eq:mml-eigen}, MML is therefore equivalent to $D_N>0$. If $\eta\geq1$ then every term of \eqref{eq:DN} is nonnegative and the last is one, so $D_N>0$. Given $D_N>0$, dividing \eqref{eq:g-eigen} by \eqref{eq:j-eigen} gives the coefficients of Theorem~\ref{res:main},
+At the symmetric benchmark, relabeling $A$'s partners leaves the reduced system unchanged, so Proposition~\ref{res:decomp} applies. Appendix~\ref{app:linear} derives \eqref{eq:full-jacobian}, \eqref{eq:g-eigen} and \eqref{eq:j-eigen}. By \eqref{eq:j-eigen}, $j_S=mD_N/(N-1)^2$ and $j_D=Nj_S$, so $j_D\geq j_S$ always and $j_S>0$ if and only if $D_N>0$; by \eqref{eq:mml-eigen}, MML is therefore equivalent to $D_N>0$. If $\eta\geq1$ then every term of \eqref{eq:DN} is nonnegative and the last is one, so $D_N>0$. Given $D_N>0$, dividing \eqref{eq:g-eigen} by \eqref{eq:j-eigen} gives the coefficients of Theorem~\ref{res:main},
 \[
 \lambda_S=\frac{g_S}{j_S}=-\frac{m\rho_1^*}{N-1}\cdot\frac{(N-1)^2}{mD_N}=-\frac{(N-1)\rho_1^*}{D_N},
 \qquad
