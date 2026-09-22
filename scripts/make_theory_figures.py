@@ -6,15 +6,15 @@ the figures are quantitatively consistent with the text:
 
   Fig 1  generic bilateral adjustment in (dnu, dTB_A) space
          dTB_A = TB_Anu dnu + TB_Atau dtau; drawn with the nested-CES
-         values TB_Anu = m D_2, TB_Atau = m rho1*, but labelled generically
+         values TB_Anu = m M_2, TB_Atau = m rho_D, but labelled generically
 
   Fig 2  three-country adjustment in (dnu_B, dnu_C) space
-         TB_B = 0:  dnu_C = 2 dnu_B + (rho + rho1*) dtau / D_3
-         TB_C = 0:  dnu_C = dnu_B/2 + (rho - rho1*) dtau / (2 D_3)
+         TB_B = 0:  dnu_C = 2 dnu_B + (rho + rho_D) dtau / (2 M_3)
+         TB_C = 0:  dnu_C = dnu_B/2 + (rho - rho_D) dtau / (4 M_3)
 
   Fig 3  average protection / relative treatment decomposition at N = 3
          (dtau, 0) = (dtau/2, dtau/2) + (dtau/2, -dtau/2)
-         dnu = lambda_S (dtau/2) 1 + lambda_D (dtau/2, -dtau/2)
+         dnu = lambda_A (dtau/2) 1 + lambda_R (dtau/2, -dtau/2)
          with the two components orthogonal in (dnu_B, dnu_C) space.
 
 Run:  python scripts/make_theory_figures.py
@@ -41,21 +41,21 @@ OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 # ---------------------------------------------------------------- parameters
 aD, aT, eta = 0.70, 0.60, 1.50
 m = aT * (1.0 - aD)
-rho1 = 1.0 + aD * (eta - 1.0) - aT * (1.0 - aD)      # rho_1^*
-D2 = 1.0 + 2.0 * aD * (eta - 1.0)
-RHO_MID, RHO_HIGH = 2.2, 5.0                          # rho1* < 2.2 < 3rho1* < 5
+rhoD = aD * eta + (1.0 - aD) * (1.0 - aT)             # domestic diversion margin
+M2 = 1.0 + 2.0 * aD * (eta - 1.0)
+RHO_MID, RHO_HIGH = 2.2, 5.0                          # rhoD < 2.2 < 3 rhoD < 5
 
 
-def D3(rho):
-    return 3.0 * aD * (eta - 1.0) + rho + 1.0
+def M3(rho):
+    return (3.0 * aD * (eta - 1.0) + rho + 1.0) / 2.0
 
 
-def lam_S(rho):
-    return -2.0 * rho1 / D3(rho)
+def lam_A(rho):
+    return -rhoD / M3(rho)
 
 
-def lam_D(rho):
-    return -2.0 * rho / (3.0 * D3(rho))
+def lam_R(rho):
+    return -rho / (3.0 * M3(rho))
 
 
 INK = "0.10"
@@ -97,9 +97,9 @@ def _line_point(slope, intercept, xlim, ylim, frac, pad=0.06):
 
 # ------------------------------------------------------------------- Figure 1
 def figure1(dtau=0.20):
-    shift = m * rho1 * dtau                 # TB_Atau * dtau
-    slope = m * D2                          # TB_Anu
-    nu_star = -rho1 / D2 * dtau             # post-tariff equilibrium
+    shift = m * rhoD * dtau                 # TB_Atau * dtau
+    slope = m * M2                          # TB_Anu
+    nu_star = -rhoD / M2 * dtau             # post-tariff equilibrium
 
     xlim, ylim = (-0.30, 0.27), (-0.105, 0.125)
     fig, ax = plt.subplots(figsize=(4.7, 3.3))
@@ -149,11 +149,11 @@ def figure1(dtau=0.20):
 
 # ------------------------------------------------------------------- Figure 2
 def _panel2(ax, rho, dtau, title, show_impact):
-    d3 = D3(rho)
-    sB = (rho + rho1) * dtau / d3            # intercept shift of TB_B = 0
-    sC = (rho - rho1) * dtau / (2.0 * d3)    # intercept shift of TB_C = 0
-    nuB = -(rho + 3.0 * rho1) / (3.0 * d3) * dtau
-    nuC = (rho - 3.0 * rho1) / (3.0 * d3) * dtau
+    m3 = M3(rho)
+    sB = (rho + rhoD) * dtau / (2.0 * m3)    # intercept shift of TB_B = 0
+    sC = (rho - rhoD) * dtau / (4.0 * m3)    # intercept shift of TB_C = 0
+    nuB = -(rho + 3.0 * rhoD) / (6.0 * m3) * dtau
+    nuC = (rho - 3.0 * rhoD) / (6.0 * m3) * dtau
 
     xlim, ylim = (-0.64, 0.28), (-0.40, 0.52)
     x = np.linspace(xlim[0], xlim[1], 200)
@@ -176,7 +176,7 @@ def _panel2(ax, rho, dtau, title, show_impact):
             fontsize=8, color=INK)
 
     # impact effect: holding nu_B at zero, C's balance clears at nu_C = sC,
-    # whose sign is the sign of rho - rho1*
+    # whose sign is the sign of rho - rho_D
     ax.plot([0], [sC], "s", ms=4.2, mfc="white", mec=INK, mew=1.2, zorder=7)
     ax.annotate("", xy=(0, sC), xytext=(0, 0),
                 arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.1,
@@ -204,11 +204,11 @@ def figure2(dtau=1.0):
     out = {}
     out["mid"] = _panel2(
         axes[0], RHO_MID, dtau,
-        r"(a) $\rho_1^*<\rho<3\rho_1^*$:  $d\nu_C<0$ although $F_C>0$",
+        r"(a) $\rho_D<\rho<3\rho_D$:  $d\nu_C<0$ although $F_C>0$",
         show_impact=True)
     out["high"] = _panel2(
         axes[1], RHO_HIGH, dtau,
-        r"(b) $\rho>3\rho_1^*$:  bilateral reversal, $d\nu_C>0$",
+        r"(b) $\rho>3\rho_D$:  bilateral reversal, $d\nu_C>0$",
         show_impact=False)
     fig.suptitle(r"dashed: loci at $d\tau=0$;  solid: loci after the tariff",
                  y=0.035, fontsize=7.6, color=MID)
@@ -219,9 +219,9 @@ def figure2(dtau=1.0):
 
 # ------------------------------------------------------------------- Figure 3
 def _panel3(ax, rho, tau, title):
-    lS, lD = lam_S(rho), lam_D(rho)
-    step = lS * tau / 2.0                     # average-protection step
-    rel = lD * tau / 2.0                      # relative-treatment step
+    lA, lR = lam_A(rho), lam_R(rho)
+    step = lA * tau / 2.0                     # average-protection step
+    rel = lR * tau / 2.0                      # relative-treatment step
     Sx, Sy = step, step
     Fx, Fy = step + rel, step - rel
 
@@ -256,12 +256,12 @@ def _panel3(ax, rho, tau, title):
     ax.plot([Fx], [Fy], "o", ms=5.2, color=INK, zorder=7)
 
     ax.text(Sx / 2 - 0.042, Sy / 2 + 0.042,
-            r"$\lambda_S\,\bar t\,\mathbf{1}$", ha="right", va="bottom",
+            r"$\lambda_A\,\bar t\,\mathbf{1}$", ha="right", va="bottom",
             fontsize=9.5)
     ax.text((Sx + Fx) / 2 - 0.032, (Sy + Fy) / 2 - 0.032,
-            r"$\lambda_D\,\tilde t$", ha="right", va="top", fontsize=9.5)
+            r"$\lambda_R\,\tilde t$", ha="right", va="top", fontsize=9.5)
     ax.text(Sx + 0.028, Sy - 0.028,
-            r"$d\nu_A^E=\lambda_S\bar t$", ha="left", va="top", fontsize=8)
+            r"$d\nu_A^E=\lambda_A\bar t$", ha="left", va="top", fontsize=8)
     ax.text(Fx - 0.022, Fy + 0.022, r"$d\boldsymbol{\nu}$", ha="right", va="bottom",
             fontsize=10)
 
@@ -272,16 +272,16 @@ def _panel3(ax, rho, tau, title):
             fontsize=8, color=MID)
 
     ax.set_title(title, fontsize=8.8, pad=8)
-    return dict(S=(Sx, Sy), F=(Fx, Fy), lam_S=lS, lam_D=lD)
+    return dict(S=(Sx, Sy), F=(Fx, Fy), lam_A=lA, lam_R=lR)
 
 
 def figure3(tau=1.0):
     fig, axes = plt.subplots(1, 2, figsize=(6.7, 3.9), layout="constrained")
     out = {}
     out["mid"] = _panel3(axes[0], RHO_MID, tau,
-                         r"(a) $\rho<3\rho_1^*$:  $d\nu_C<0$")
+                         r"(a) $\rho<3\rho_D$:  $d\nu_C<0$")
     out["high"] = _panel3(axes[1], RHO_HIGH, tau,
-                          r"(b) $\rho>3\rho_1^*$:  $d\nu_C>0$")
+                          r"(b) $\rho>3\rho_D$:  $d\nu_C>0$")
     fig.suptitle(r"$\mathbf{t}=(d\tau,0)=(d\tau/2,\ d\tau/2)+(d\tau/2,\ -d\tau/2)$",
                  y=0.035, fontsize=8, color=MID)
     fig.savefig(os.path.join(OUT, "fig3_decomposition.pdf"))
@@ -293,29 +293,29 @@ def figure3(tau=1.0):
 def selfcheck(r1, r2, r3):
     """Every plotted point must equal the closed form in the text."""
     dtau = 0.20
-    assert abs(r1["nu_star"] - (-rho1 / D2 * dtau)) < 1e-12
-    assert rho1 < RHO_MID < 3 * rho1 < RHO_HIGH
+    assert abs(r1["nu_star"] - (-rhoD / M2 * dtau)) < 1e-12
+    assert rhoD < RHO_MID < 3 * rhoD < RHO_HIGH
     for key, rho in (("mid", RHO_MID), ("high", RHO_HIGH)):
-        d3 = D3(rho)
-        nuB = -(rho + 3 * rho1) / (3 * d3)
-        nuC = (rho - 3 * rho1) / (3 * d3)
+        m3 = M3(rho)
+        nuB = -(rho + 3 * rhoD) / (6 * m3)
+        nuC = (rho - 3 * rhoD) / (6 * m3)
         assert abs(r2[key]["nuB"] - nuB) < 1e-12
         assert abs(r2[key]["nuC"] - nuC) < 1e-12
         # the two loci intersect at the closed-form equilibrium
         assert abs(nuC - (2 * nuB + r2[key]["sB"])) < 1e-12
         assert abs(nuC - (0.5 * nuB + r2[key]["sC"])) < 1e-12
-        # impact effect on C has the sign of rho - rho1*
-        assert np.sign(r2[key]["sC"]) == np.sign(rho - rho1)
+        # impact effect on C has the sign of rho - rho_D
+        assert np.sign(r2[key]["sC"]) == np.sign(rho - rhoD)
         # the decomposition lands on the same equilibrium
         assert abs(r3[key]["F"][0] - nuB) < 1e-12
         assert abs(r3[key]["F"][1] - nuC) < 1e-12
         # the average-protection component carries the whole NEER response
-        assert abs(r3[key]["S"][0] - (-rho1 / d3)) < 1e-12
+        assert abs(r3[key]["S"][0] - (-rhoD / (2 * m3))) < 1e-12
         # the two components are orthogonal in (nu_B, nu_C) space
         Sv = np.array(r3[key]["S"])
         Rv = np.array(r3[key]["F"]) - Sv
         assert abs(float(Sv @ Rv)) < 1e-14
-    print("rho1* = %.4f,  3 rho1* = %.4f,  D_2 = %.4f" % (rho1, 3 * rho1, D2))
+    print("rho_D = %.4f,  3 rho_D = %.4f,  M_2 = %.4f" % (rhoD, 3 * rhoD, M2))
     print("fig2 (a) rho=%.1f: F_C shift = %+.4f, equilibrium nu_C = %+.4f"
           % (RHO_MID, r2["mid"]["sC"], r2["mid"]["nuC"]))
     print("fig2 (b) rho=%.1f: F_C shift = %+.4f, equilibrium nu_C = %+.4f"
