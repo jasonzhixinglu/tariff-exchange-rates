@@ -27,9 +27,11 @@
 
 The conventional wisdom from a standard two-country model of international trade is that a tariff shifts demand toward domestic goods, improving the tariffing country's trade balance and appreciating its currency under the Marshall--Lerner condition. With more than two countries, however, a tariff on one partner also reallocates expenditure across foreign suppliers, so bilateral exchange rates need not move in the same direction. When differentiated tariffs are imposed on multiple foreign suppliers, these effects interact and become harder to characterize. This paper revisits the conventional two-country result and develops a framework for understanding how tariffs affect bilateral and effective exchange rates in a multilateral setting.
 
-In a general $N$-country trade environment, we show that the log-linearized exchange-rate response to tariffs can be represented as $(-J)^{-1}F$, where $F$ gives the trade-balance effects of tariffs at unchanged exchange rates and $J$ is the Jacobian of trade balances with respect to exchange rates. This representation separates the initial trade-balance effects of the tariffs from the exchange-rate adjustment required to restore equilibrium. We introduce a multilateral Marshall--Lerner (MML) condition on $J$ to characterize this adjustment and show that, under partner symmetry, the response to any tariff vector decomposes into average protection and relative treatment. Average protection determines the change in the tariffing country's nominal effective exchange rate, while relative treatment determines the distribution of bilateral exchange rates around that effective rate.
+In a general $N$-country trade environment, we show that the log-linearized exchange-rate response to tariffs can be represented as $(-J)^{-1}F$, where $F$ gives the trade-balance effects of tariffs at unchanged exchange rates and $J$ is the Jacobian of trade balances with respect to exchange rates. This representation separates the initial trade-balance effects of the tariffs from the exchange-rate adjustment required to restore equilibrium. We introduce a multilateral Marshall--Lerner (MML) condition on $J$ to characterize this adjustment and show that, under partner symmetry, the exchange-rate response to any tariff vector decomposes into its \emph{average protection} and \emph{relative treatment}. In particular, average protection alone determines the change in the tariffing country's nominal effective exchange rate, while relative treatment alone determines the distribution of bilateral exchange rates around that effective rate.
 
-To quantify these effects in a parsimonious framework, we develop a multilateral trade model with nested-CES preferences. The exchange-rate responses are governed by three margins built from the underlying elasticities: a domestic diversion margin $\rho_D$, which combines substitution toward the domestic tradable, governed by the domestic-import elasticity $\eta$, with the income effect of rebated tariff revenue on non-tradables; substitution across foreign suppliers, governed by the elasticity $\rho$; and a multilateral exchange-rate adjustment margin $\mathcal M_N$. For a unilateral tariff, we show that the tariffing country always appreciates against the targeted country, while its exchange rate against an untariffed bystander can depreciate when substitution across foreign suppliers is sufficiently strong relative to the domestic diversion margin. We then consider bilateral retaliation and retaliation by all partners and show that retaliation lowers the threshold for depreciation against bystander countries by adding a relative-treatment effect that offsets the average-protection force toward appreciation. Finally, we relate these results to the preferential-trade-agreement literature on third-country terms-of-trade effects. We show that standard competing-exporter models can be understood as deliberately abstracting from some of the domestic-substitution and income channels present in our model in order to isolate substitution across foreign suppliers.
+To quantify these effects in a parsimonious framework, we develop a multi-country trade model with nested-CES preferences. We show that the multilateral exchange-rate response to a general tariff vector is governed by three economic margins. The first is a domestic diversion margin, $\rho_D$, which captures how strongly a tariff shifts expenditure toward the domestic economy through substitution and income effects that raise demand for domestic tradables and non-tradables. The second is substitution across foreign suppliers, governed by the elasticity $\rho$, which determines how strongly differential tariffs redirect expenditure toward untariffed partners. The third is a multilateral exchange-rate adjustment margin, $\mathcal M_N$, which measures how sensitive a country's trade balance is to exchange-rate movements. Under a unilateral tariff, the tariffing country may depreciate against an untariffed bystander when diversion across foreign suppliers is sufficiently strong relative to domestic diversion.
+
+We then consider bilateral retaliation and retaliation by all partners and show that retaliation lowers the threshold for depreciation against bystander countries by adding a relative-treatment effect that offsets the average-protection force toward appreciation. Finally, we relate these results to the preferential-trade-agreement literature on third-country terms-of-trade effects. We show that standard competing-exporter models can be understood as deliberately abstracting from some of the domestic-substitution and income channels present in our model in order to isolate substitution across foreign suppliers.
 
 We abstract from several features that also matter for the exchange-rate effects of tariffs. Some are primarily relevant for short-run adjustment, including nominal and real adjustment frictions, trade imbalances, and capital flows. Others are likely to remain important in the long run, including productivity growth, capital and intermediate goods, supply chains, and re-exporting. We also abstract from risk, monetary and fiscal policy, and financial markets.
 
@@ -320,7 +322,7 @@ I_i=\frac{w_iL_i}{1-\sum_{j\neq i}\frac{\tau_{ij}}{1+\tau_{ij}}\,s_{ij}}.
 \label{eq:income}
 \end{equation}
 
-At the free-trade baseline, $I_i=w_iL_i$. The Cobb--Douglas top layer then fixes expenditure, and hence equilibrium labor, shares at $\alpha_T$ in tradables and $1-\alpha_T$ in non-tradables, independently of exchange rates and the lower-level substitution elasticities. Exchange-rate movements alone therefore do not reallocate labor between the tradable and non-tradable sectors. Tariffs are different because rebated tariff revenue raises household income relative to labor income. The resulting increase in expenditure on non-tradables requires labor to shift toward the non-tradable sector. This income channel will matter below for changes in average protection; at the symmetric free-trade benchmark, pure changes in relative treatment leave tariff revenue, income, and this sectoral allocation unchanged to first order.
+Observe that at the free-trade baseline, $I_i=w_iL_i$. The Cobb--Douglas top layer then fixes expenditure, and hence equilibrium labor allocation shares, at $\alpha_T$ in tradables and $1-\alpha_T$ in non-tradables, independently of exchange rates and the lower-level substitution elasticities. Exchange-rate movements alone therefore do not reallocate labor between the tradable and non-tradable sectors. Tariffs are different because rebated tariff revenue raises household income relative to labor income, so that higher revenue raises expenditure on non-tradables and shifts labor toward the non-tradable sector. 
 
 To express bilateral flows in a common currency, define $\widetilde I_i\equiv e_{Ai}I_i$. Since tariff revenue is a domestic transfer, trade balances are measured at tariff-exclusive border prices:
 \begin{equation}
@@ -365,7 +367,7 @@ Appendix~\ref{app:linear} gives the general $N$-country linearization, including
 and the exchange-rate adjustment margin
 \begin{equation}
 \mathcal M_2 \equiv
-\underbrace{1}_{\text{valuation}}
+1
 +
 \underbrace{2\alpha_D(\eta-1)}_{\text{two-sided trade adjustment}}.
 \label{eq:M2}
@@ -381,7 +383,7 @@ Thus $\rho_D$ determines the trade-balance disturbance generated by the tariff a
 \label{eq:2c-slope}
 \end{equation}
 
-The two margins have different economic origins. The tariff directly raises the price of imports in $A$, shifting expenditure toward the domestic economy. The first term in \eqref{eq:rhoD}, $\alpha_D\eta$, captures substitution from imports toward the domestic tradable. The second, $(1-\alpha_D)(1-\alpha_T)$, comes from the income effect of rebated tariff revenue. As discussed in Section~\ref{sec:setup}, the rebate raises household income and expenditure on non-tradables, shifting labor toward the non-tradable sector. Thus $\rho_D$ combines substitution toward the domestic tradable with the tariff-rebate channel operating through non-tradables. In particular, $\mathrm{TB}_{A\tau}=m\rho_D>0$, so the tariff unambiguously improves $A$'s trade balance at unchanged exchange rates.
+The tariff directly raises the price of imports in $A$, shifting expenditure toward the domestic economy. The first term in \eqref{eq:rhoD}, $\alpha_D\eta$, captures substitution from imports toward the domestic tradable. The second, $(1-\alpha_D)(1-\alpha_T)$, comes from the income effect of rebated tariff revenue. As discussed in Section~\ref{sec:setup}, the rebate raises household income and expenditure on non-tradables, shifting labor toward the non-tradable sector. Thus, $\rho_D$ combines substitution toward the domestic tradable with the tariff-rebate channel operating through non-tradables to give the overall diversion toward the domestic economy. In particular, $\mathrm{TB}_{A\tau}=m\rho_D>0$, so the tariff unambiguously improves $A$'s trade balance at unchanged exchange rates.
 
 The exchange-rate adjustment margin $\mathcal M_2$ instead reflects both sides of the bilateral trade relationship. A change in $e_{AB}$ affects $A$'s demand for imports from $B$ and $B$'s demand for exports from $A$. At the symmetric benchmark, the same domestic-import substitution margin appears on both sides, giving the factor $2$ in $2\alpha_D(\eta-1)$. Unlike a tariff change, an exchange-rate movement at unchanged tariffs does not generate tariff revenue and therefore does not activate the income channel toward non-tradables. Indeed,
 \begin{equation*}
@@ -389,16 +391,16 @@ The exchange-rate adjustment margin $\mathcal M_2$ instead reflects both sides o
 \end{equation*}
 so
 \begin{equation}
-\mathcal M_2=\varepsilon_X+\varepsilon_M-1.
+\mathcal M_2=\varepsilon_X+\varepsilon_M-1,
 \end{equation}
-The remaining $1$ is the usual valuation term in the Marshall--Lerner expression. Hence the Marshall--Lerner condition of Section~\ref{sec:bilateral} is simply $\mathcal M_2>0$, which holds whenever $\eta\geq1$.
+and the Marshall--Lerner condition of Section~\ref{sec:bilateral} is equivalent to $\mathcal M_2>0$.
 
 Equation~\eqref{eq:2c-slope} therefore has the same disturbance-adjustment interpretation as Section~\ref{sec:bilateral}: the tariff creates a trade-balance disturbance governed by the domestic diversion margin $\rho_D$, and the exchange rate restores balance with strength governed by the adjustment margin $\mathcal M_2$. Appendix~\ref{app:cd} gives the exact finite-tariff Cobb--Douglas solution.
 
 \subsection{The $N$-country case}
 \label{sec:ncountry}
 
-Now consider the $N$-country case, where $A$'s trading partners are symmetric in the sense of Section~\ref{sec:exch}. Proposition~\ref{res:decomp} shows that any tariff change can be decomposed into average protection and relative treatment, with corresponding common and relative exchange-rate responses. The nested-CES structure now gives economic content to these two components and shows how the disturbance-adjustment logic of the two-country case extends to a multilateral setting.
+Now consider the general $N$-country case, where $A$'s trading partners are symmetric in the sense of Section~\ref{sec:exch}. Proposition~\ref{res:decomp} shows that any tariff change can be decomposed into average protection and relative treatment, with corresponding common and relative exchange-rate responses. The nested-CES structure now gives economic content to these two components and shows how the disturbance-adjustment logic of the two-country case extends to a multilateral setting.
 
 \begin{theorem}[Exchange-rate responses in the symmetric nested-CES model]
 \label{res:main}
@@ -407,7 +409,7 @@ Consider the nested-CES model of Section~\ref{sec:model} at the symmetric benchm
 \mathcal M_N\equiv
 \frac{1}{N-1}
 \left[
-\underbrace{1}_{\textnormal{valuation}}
+1
 +
 \underbrace{N\alpha_D(\eta-1)}_{\textnormal{domestic-import adjustment}}
 +
@@ -434,28 +436,29 @@ For $N=2$, there is only one trading partner, so relative treatment is mechanica
 \[
 \mathcal M_2=2\alpha_D(\eta-1)+1.
 \]
-Theorem~\ref{res:main} therefore reduces directly to the two-country result in Section~\ref{sec:twocountry}. The same two objects continue to govern the common component of the response: $\rho_D$ measures the trade-balance disturbance generated by an increase in overall protection at unchanged exchange rates, while $\mathcal M_N$ measures the adjustment of $A$'s aggregate trade balance to a common movement in its exchange rates.
+Theorem~\ref{res:main} therefore reduces directly to the two-country result in Section~\ref{sec:twocountry}.
 
-To see the latter interpretation, consider a common exchange-rate change $d\nu_j=d\nu_A^E$ for all $j\neq A$, holding tariffs fixed. At the symmetric benchmark,
+The same disturbance-adjustment mechanism carries over to the common component of the $N$-country response. The domestic diversion margin $\rho_D$ measures the trade-balance disturbance generated by an increase in average protection at unchanged exchange rates, while $\mathcal M_N$ measures the adjustment of $A$'s aggregate trade balance to a common movement in its exchange rates.
+
+To illustrate the role of $\mathcal M_N$, consider a common exchange-rate change $d\nu_j=d\nu_A^E$ for all $j\neq A$, holding tariffs fixed. At the symmetric benchmark,
 \begin{equation}
 d\,\mathrm{TB}_A=m\mathcal M_N\,d\nu_A^E.
 \label{eq:MN-interpretation}
 \end{equation}
-Thus $\mathcal M_N$ is the multilateral counterpart of $\mathcal M_2$: up to the import-share scale factor $m$, it gives the response of $A$'s trade balance vis-a-vis the rest of the world to its effective exchange rate. The additional elasticity $\rho$ enters when $N>2$ because the exchange rate now affects a richer export-side substitution margin. In the two-country case, changes in $e_{AB}$ affect both $A$'s imports from $B$ and $A$'s exports to $B$ through the domestic-import substitution elasticity $\eta$. With additional countries, foreign buyers can also substitute between goods from $A$ and goods from other foreign suppliers, so substitution across foreign origins, governed by $\rho$, also contributes to the exchange-rate adjustment margin.
+Thus, up to the scale factor $m$, $\mathcal M_N$ is the multilateral counterpart of $\mathcal M_2$: it measures the sensitivity of $A$'s trade balance vis-a-vis the rest of the world to its effective exchange rate. When $N>2$, $\rho$ also enters because foreign buyers can substitute between goods from $A$ and those from other foreign suppliers.
 
-Average protection preserves the same tariff-side intuition as in the two-country case. A common increase in tariffs shifts expenditure toward the domestic economy. Direct substitution toward the domestic tradable is governed by $\eta$, while rebated tariff revenue raises income and expenditure on non-tradables, shifting labor toward the non-tradable sector. These effects are summarized by the same domestic diversion margin $\rho_D$ defined in \eqref{eq:rhoD}. Combining this tariff-induced disturbance with the aggregate exchange-rate adjustment in \eqref{eq:MN-interpretation} gives
+Average protection works much as in the two-country case. A common tariff increase shifts expenditure toward the domestic economy, both through substitution toward the domestic tradable and through the income effect of rebated tariff revenue on non-tradables. These forces are summarized by $\rho_D$. Together with the aggregate exchange-rate adjustment in \eqref{eq:MN-interpretation}, this gives
 \[
 \lambda_A=-\frac{\rho_D}{\mathcal M_N}.
 \]
-Average protection therefore affects $A$'s effective exchange rate through exactly the same disturbance-adjustment mechanism as in the two-country case.
 
-Relative treatment operates differently. A pure relative-treatment change satisfies $\mathbf 1'\widetilde{\mathbf t}=0$ and therefore leaves average protection, tariff revenue, and household income unchanged to first order at the symmetric free-trade benchmark. It consequently leaves the allocation of labor between tradables and non-tradables unchanged. Instead, it reallocates expenditure across foreign suppliers, so the tariff-induced disturbance in the relative direction is governed by $\rho$. The corresponding relative exchange-rate movement also changes competitiveness across foreign suppliers and therefore provides a stronger adjustment margin. Under symmetry, this relative adjustment margin is $N\mathcal M_N$, yielding
+Relative treatment instead reallocates expenditure across foreign suppliers. Because a pure relative-treatment change satisfies $\mathbf 1'\widetilde{\mathbf t}=0$, it leaves average protection, tariff revenue, household income, and the allocation of labor between tradables and non-tradables unchanged to first order at the symmetric free-trade benchmark. Its trade-balance effect is therefore governed by $\rho$. Under symmetry, the corresponding relative exchange-rate adjustment margin is $N\mathcal M_N$, so
 \[
 \lambda_R=-\frac{\rho}{N\mathcal M_N}.
 \]
-Thus the additional factor $1/N$ reflects the stronger adjustment of relative exchange rates under symmetry. A relative exchange-rate movement restores trade balances $N$ times as strongly as a common movement, so a given disturbance across foreign suppliers requires correspondingly less relative exchange-rate adjustment.
+The additional factor $1/N$ reflects the stronger adjustment of relative exchange rates: a given disturbance across foreign suppliers requires less exchange-rate movement than a common disturbance of the same size.
 
-The two coefficients are therefore governed by three economically distinct margins. The domestic diversion margin $\rho_D$ determines how strongly average protection shifts expenditure toward the domestic economy; $\rho$ determines how strongly relative treatment reallocates expenditure across foreign suppliers; and $\mathcal M_N$ determines how strongly the multilateral trade balance responds to exchange-rate adjustment. For $N\geq3$, $\lambda_R<0$, so $A$ appreciates more against partners facing larger tariff increases. The formal derivation, including the underlying eigenvalues of $G$ and $-J$, is given in Appendix~\ref{app:linear}.
+Thus, $\rho_D$ governs the average-protection response and $\rho$ the relative-treatment response, with both operating through the adjustment margin $\mathcal M_N$. For $N\geq3$, $\lambda_R<0$, so $A$ appreciates more against partners facing larger tariff increases. The formal derivation, including the underlying eigenvalues of $G$ and $-J$, is given in Appendix~\ref{app:linear}.
 
 \subsection{A unilateral tariff}
 \label{sec:unilateral}
