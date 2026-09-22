@@ -395,7 +395,7 @@ so
 \end{equation}
 and the Marshall--Lerner condition of Section~\ref{sec:bilateral} is equivalent to $\mathcal M_2>0$.
 
-Equation~\eqref{eq:2c-slope} therefore has the same disturbance-adjustment interpretation as Section~\ref{sec:bilateral}: the tariff creates a trade-balance disturbance governed by the domestic diversion margin $\rho_D$, and the exchange rate restores balance with strength governed by the adjustment margin $\mathcal M_2$. Appendix~\ref{app:cd} gives the exact finite-tariff Cobb--Douglas solution.
+Equation~\eqref{eq:2c-slope} therefore has the same disturbance-adjustment interpretation as Section~\ref{sec:bilateral}: the tariff creates a trade-balance disturbance governed by the domestic diversion margin $\rho_D$, and the exchange rate restores balance with strength governed by the adjustment margin $\mathcal M_2$. Appendix~\ref{app:asym-finite} gives the exact finite-tariff Cobb--Douglas solution.
 
 \subsection{The $N$-country case}
 \label{sec:ncountry}
@@ -456,7 +456,7 @@ Relative treatment instead reallocates expenditure across foreign suppliers. Bec
 \[
 \lambda_R=-\frac{\rho}{N\mathcal M_N}.
 \]
-The additional factor $1/N$ reflects the stronger adjustment of relative exchange rates: a given disturbance across foreign suppliers requires less exchange-rate movement than a common disturbance of the same size.
+The additional factor $1/N$ reflects the stronger adjustment of relative exchange rates. A tariff disturbs only partners' trade with $A$, and so does a common exchange-rate movement. A relative movement also shifts partners' trade with one another, so a given disturbance across foreign suppliers requires less exchange-rate movement than a common disturbance of the same size. At the symmetric benchmark, $A$ accounts for a share $1/N$ of the trade on which relative movements act (Appendix~\ref{app:asym-tariff}).
 
 Thus, $\rho_D$ governs the average-protection response and $\rho$ the relative-treatment response, with both operating through the adjustment margin $\mathcal M_N$. For $N\geq3$, $\lambda_R<0$, so $A$ appreciates more against partners facing larger tariff increases. The formal derivation, including the underlying eigenvalues of $G$ and $-J$, is given in Appendix~\ref{app:linear}.
 
@@ -477,7 +477,7 @@ Since relative treatment averages to zero, only average protection affects the e
 =-\frac{\rho_D}{(N-1)\mathcal M_N}<0,
 \label{eq:N-neer}
 \end{equation}
-so a unilateral tariff always appreciates $A$'s effective exchange rate at the symmetric benchmark, for every $N\geq2$. The factor $1/(N-1)$ reflects that a tariff on one partner raises average protection by only $d\tau/(N-1)$.
+so a unilateral tariff always appreciates $A$'s effective exchange rate at the symmetric benchmark, for every $N\geq2$.\footnote{Appendix~\ref{app:asym} examines finite tariffs and asymmetric baselines. When the target accounts for a small share of $A$'s trade, the trade-weighted effective exchange rate can depreciate (Appendix~\ref{app:asym-neer}).} The factor $1/(N-1)$ reflects that a tariff on one partner raises average protection by only $d\tau/(N-1)$.
 
 The bilateral responses additionally depend on relative treatment. Against the targeted country, average protection and relative treatment reinforce each other:
 \begin{equation}
@@ -493,10 +493,9 @@ so $A$ always appreciates against $B$, again for every $N\geq2$. For $N\geq3$ th
 \end{equation}
 Average protection shifts expenditure toward the domestic economy and pushes $A$ to appreciate against $C$, while $C$'s favorable relative treatment redirects expenditure toward $C$ and pushes in the opposite direction. Hence $A$ depreciates against $C$ if and only if
 \begin{equation}
-\rho>N\rho_D.\footnotemark
+\rho>N\rho_D.
 \label{eq:Nthresh}
 \end{equation}
-\footnotetext{Appendix~\ref{app:asym} examines finite tariffs and asymmetric baselines. With asymmetric trade weights, the effective exchange rate can depreciate; see Appendix~\ref{app:asym-neer}.}
 
 The threshold compares the two diversion margins identified in Section~\ref{sec:ncountry}. A larger $\eta$ strengthens substitution toward the domestic tradable and therefore raises $\rho_D$, while the tariff-rebate channel toward non-tradables also contributes to $\rho_D$. Both make a bystander depreciation less likely. A larger $\rho$, by contrast, strengthens diversion across foreign suppliers and makes it more likely. The factor $N$ reflects the stronger adjustment of relative exchange rates, which gives the relative-treatment response the additional factor $1/N$ in $\lambda_R=-\rho/(N\mathcal M_N)$, so diversion across foreign suppliers must be sufficiently strong to overcome the average-protection effect governed by $\rho_D$.
 
@@ -610,7 +609,7 @@ This paper begins from the observation that, to first order, a tariff changes co
 
 Under symmetry, we show that the impact of a general tariff vector can be decomposed into an average-protection component and a relative-treatment component. Average protection determines the effective exchange-rate response, while relative treatment determines deviations of bilateral rates from that common response. In the nested-CES model, the tariff disturbances along these two components are governed by $\rho_D$ and $\rho$, while exchange-rate adjustment is governed by the multilateral adjustment margin $\mathcal M_N$. At the symmetric benchmark of the nested-CES model, the tariffing country still appreciates against the targeted partner, but its exchange rate against an untariffed partner can move in either direction. In particular, a unilateral tariff always appreciates the tariffing country's effective exchange rate at this benchmark, while the bilateral rate against an untariffed bystander depreciates when substitution across foreign suppliers is sufficiently strong relative to the domestic diversion margin $\rho_D$, which combines substitution toward the domestic tradable with the income effect of rebated tariff revenue.
 
-We also examine how these results change under retaliation and compare them with the competing-exporter benchmark. Several extensions are natural. Appendix~\ref{app:asym} examines asymmetric baselines and finite tariffs. Richer production structures and asset trade would help assess how the mechanisms identified here operate away from the balanced-trade benchmark, while quantitative applications could evaluate their importance for observed tariff changes and exchange-rate movements. More generally, the analysis shows that once tariffs differ across trading partners, bilateral exchange-rate responses need not follow the familiar two-country result even when the effective exchange rate does.
+We also examine how these results change under retaliation and compare them with the competing-exporter benchmark. Appendix~\ref{app:asym} shows that these mechanisms carry over to a positive common external tariff, finite tariffs and asymmetric baselines, although the thresholds move and the effective exchange rate can depreciate once trade weights are asymmetric. Richer production structures and asset trade would help assess how the mechanisms identified here operate away from the balanced-trade benchmark, while quantitative applications could evaluate their importance for observed tariff changes and exchange-rate movements. More generally, the analysis shows that once tariffs differ across trading partners, bilateral exchange-rate responses need not follow the familiar two-country result even when the effective exchange rate does.
 
 \section*{References}
 
@@ -634,19 +633,6 @@ We also examine how these results change under retaliation and compare them with
 
 \appendix
 
-\section{Exact Cobb--Douglas solution ($N = 2$)}
-
-\label{app:cd}
-
-At $\eta = 1$, expenditure shares are fixed at their weights. From \eqref{eq:income}, $I_A = w_A L_A/[1 - \tfrac{\tau}{1+\tau}m]$, and $\mathrm{TB}_A = 0$ becomes $e\,m\,w_B L_B = m I_A/(1+\tau)$:
-\begin{equation}
-e(\tau) = \frac{w_A L_A}{w_B L_B}\cdot \frac{1}{1 + (1-m)\tau},
-\qquad
-\frac{d\log e}{d\tau}\bigg|_{\tau=0} = -(1-m) = -\frac{\rho_D}{\mathcal M_2}\bigg|_{\eta=1}.
-\label{eq:2c-exact}
-\end{equation}
-Thus $e(\tau)$ is decreasing in $\tau$, so the sign of the linearized response in \eqref{eq:2c-slope} is exact for all tariff levels in this case. Here $\eta = 1$ fixes the elasticity, not the weight $\alpha_D$.
-
 \section{The Linearized System}
 
 \label{app:linear}
@@ -666,15 +652,9 @@ d\,\mathrm{TB}_i &= \sum_{k\neq i}f_{ki}\big(d\log s_{ki}+d\log\widetilde I_k-d\
 \end{align}
 These equations determine the model-specific matrices $J$ and $G$ in \eqref{eq:JFdef}. At $N=2$ they reduce to the calculation in Section~\ref{sec:twocountry}.
 
-\begin{equation}
-\widetilde J_{il}=\frac{m\mathcal M_N}{N-1} \quad (l\neq i),
-\label{eq:full-jacobian}
-\end{equation}
-with $\mathcal M_N$ as in \eqref{eq:MN}. Lemma~\ref{lem:fulljac} below gives the derivation.
-
 \begin{lemma}[Full Jacobian at the symmetric baseline]
 At the symmetric balanced baseline of Appendix~\ref{app:linear}, where $b_{ij}=1/(N-1)$ and $f_{ij}=m/(N-1)$, the full $N\times N$ Jacobian of the nested-CES model is
-\begin{equation*}
+\begin{equation}
 \widetilde J_{il} = \frac{m\mathcal M_N}{N-1}
 \quad
 (l\neq i),
@@ -682,7 +662,8 @@ At the symmetric balanced baseline of Appendix~\ref{app:linear}, where $b_{ij}=1
 \widetilde J_{ii} = -m\mathcal M_N,
 \qquad
 \mathcal M_N = \frac{N\alpha_D(\eta-1)+(N-2)\rho+1}{N-1}.
-\end{equation*}
+\label{eq:full-jacobian}
+\end{equation}
 \label{lem:fulljac}
 \end{lemma}
 
@@ -793,15 +774,7 @@ With $\rho=\eta=\sigma$,
 \[
 N\rho_D = N\big[ 1+\alpha_D(\sigma-1)-\alpha_T(1-\alpha_D) \big],
 \]
-so
-\[
-N\rho_D-\sigma = \sigma(N\alpha_D-1) + N(1-\alpha_D)(1-\alpha_T).
-\]
-For $\alpha_D\geq1/N$ both terms are nonnegative, with both zero only at $\alpha_D=1/N$, $\alpha_T=1$; hence $\rho=\sigma\leq N\rho_D$. Since $\rho_D$ does not involve $\rho$,
-\[
-N\rho_D-\eta = \eta(N\alpha_D-1) + N(1-\alpha_D)(1-\alpha_T).
-\]
-At $\alpha_D=1/N$,
+which rearranges to \eqref{eq:single}. Since $\rho_D$ does not involve $\rho$, the same algebra with $\eta$ in place of $\sigma$ gives the expression for $N\rho_D-\eta$ in Section~\ref{sec:unilateral}. At $\alpha_D=1/N$,
 \[
 N\rho_D-\sigma = (N-1)(1-\alpha_T),
 \qquad
@@ -813,14 +786,14 @@ so by \eqref{eq:N-slopes-C},
 \]
 
 \paragraph{Relative treatment across partners.}
-By \eqref{eq:scale-disc}, $d\nu_j-d\nu_k=\lambda_R(t_j-t_k)$ with $\lambda_R<0$, so $t_j>t_k$ implies $d\nu_j<d\nu_k$. With $\bar t>0$, $A$ depreciates against partner $j$ if and only if
+With $\bar t>0$, $A$ depreciates against partner $j$ if and only if
 \begin{equation}
 \frac{\rho}{N}(\bar t-t_j)>\rho_D\,\bar t
 \qquad\Longleftrightarrow\qquad
-\frac{t_j}{\bar t}<1-\frac{N\rho_D}{\rho}.
+\frac{t_j}{\bar t}<1-\frac{N\rho_D}{\rho},
 \label{eq:reltreat}
 \end{equation}
-To see this, note that $d\nu_j>0$ if and only if $\lambda_A\bar t+\lambda_R(t_j-\bar t)>0$. Substituting $\lambda_A$ and $\lambda_R$ from Theorem~\ref{res:main} and multiplying by $\mathcal M_N>0$ gives $-\rho_D\bar t-\frac{\rho}{N}(t_j-\bar t)>0$, which rearranges to \eqref{eq:reltreat}. The right-hand side of the second form is positive only if $\rho>N\rho_D$, so depreciation against a relatively lightly taxed partner requires both $\rho>N\rho_D$ and a sufficiently large tariff differential.
+which follows by substituting $\lambda_A$ and $\lambda_R$ from Theorem~\ref{res:main} into \eqref{eq:scale-disc}. The right-hand side of the second form is positive only if $\rho>N\rho_D$, so depreciation against a relatively lightly taxed partner requires both $\rho>N\rho_D$ and a sufficiently large tariff differential.
 
 \paragraph{Tariffs on several partners.}
 If $A$ raises its tariff by $d\tau$ on a set of $k$ partners, $1\leq k\leq N-1$, then for every untargeted partner $C$ and every targeted partner $B$,
@@ -838,23 +811,7 @@ For every $k\leq N-2$, the bystander response has the same threshold $\rho>N\rho
 \qquad \forall j.
 \label{eq:N-broad}
 \end{equation}
-All bilateral rates then move together, and substitution across foreign origins plays no role.
-
-To derive these, let $t_j=d\tau$ on the $k$ targets and zero otherwise, so that
-\[
-\bar t = \frac{k\,d\tau}{N-1},
-\qquad
-\tilde t_B = \frac{N-1-k}{N-1}\,d\tau
-\]
-for a target, and
-\[
-\tilde t_C = -\frac{k\,d\tau}{N-1}
-\]
-for a bystander. Substituting into \eqref{eq:scale-disc} gives
-\[
-d\nu_C = \frac{k\,d\tau}{N-1} (\lambda_A-\lambda_R) = \frac{k\,d\tau}{N(N-1)\mathcal M_N} (\rho-N\rho_D),
-\]
-together with the target and NEER responses in \eqref{eq:k-targets}. For every $k\leq N-2$, the sign of the bystander response is therefore determined by $\rho-N\rho_D$. At $k=N-1$ there is no bystander and $\tilde t=0$, giving \eqref{eq:N-broad}.
+All bilateral rates then move together, and substitution across foreign origins plays no role. Both follow by substituting $\bar t=k\,d\tau/(N-1)$, $\tilde t_B=(N-1-k)\,d\tau/(N-1)$ and $\tilde t_C=-k\,d\tau/(N-1)$ into \eqref{eq:scale-disc}.
 
 \subsection{Three-country illustration}
 
@@ -899,9 +856,9 @@ This appendix gives the real exchange-rate counterparts of the results in Sectio
 
 From \eqref{eq:rer} and \eqref{eq:indices},
 \begin{equation*}
-d\log q_{Aj} = d\nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big).
+d\log q_{Aj} = d\nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big),
 \end{equation*}
-For a tariff vector $\mathbf{t}$, symmetry implies
+with $d\log P_{T_i}^{\mathrm{own}}=(1-\alpha_D)\,d\log P_{M_i}$ by \eqref{eq:dindex}. For a tariff vector $\mathbf{t}$, symmetry implies
 \[
 d\log P_{M_A} = d\nu_A^E+\bar t,
 \qquad
@@ -1010,7 +967,16 @@ The threshold rises with $\tau_0$, mainly because $x$ falls. The common apprecia
 \subsection{Finite tariffs}
 \label{app:asym-finite}
 
-The thresholds in \eqref{eq:Nthresh} and Proposition~\ref{res:war} concern marginal tariffs at free trade. For finite tariffs at $N=3$, starting from the symmetric free-trade benchmark, let $\rho^\ast(\tau)$ denote the value of $\rho$ at which $\log e_{AC}(\tau)=0$ in the exact model. Writing $\log e_{AC}(\tau)=a(\rho)\tau+\tfrac12 b_C\tau^2+O(\tau^3)$, where $a$ is the first-order slope and $b_C$ the second derivative along the tariff path, gives
+The thresholds in \eqref{eq:Nthresh} and Proposition~\ref{res:war} concern marginal tariffs at free trade. In one case the finite-tariff sign is exact. At $N=2$ and $\eta=1$, expenditure shares are fixed at their weights, and from \eqref{eq:income}, $I_A = w_A L_A/[1 - \tfrac{\tau}{1+\tau}m]$, so $\mathrm{TB}_A = 0$ becomes $e\,m\,w_B L_B = m I_A/(1+\tau)$:
+\begin{equation}
+e(\tau) = \frac{w_A L_A}{w_B L_B}\cdot \frac{1}{1 + (1-m)\tau},
+\qquad
+\frac{d\log e}{d\tau}\bigg|_{\tau=0} = -(1-m) = -\frac{\rho_D}{\mathcal M_2}\bigg|_{\eta=1}.
+\label{eq:2c-exact}
+\end{equation}
+Thus $e(\tau)$ is decreasing in $\tau$, so the sign of the linearized response in \eqref{eq:2c-slope} is exact for all tariff levels in this case.
+
+For finite tariffs at $N=3$, starting from the symmetric free-trade benchmark, let $\rho^\ast(\tau)$ denote the value of $\rho$ at which $\log e_{AC}(\tau)=0$ in the exact model. Writing $\log e_{AC}(\tau)=a(\rho)\tau+\tfrac12 b_C\tau^2+O(\tau^3)$, where $a$ is the first-order slope and $b_C$ the second derivative along the tariff path, gives
 \[
 \rho^\ast(\tau)=\rho^\ast_0+\kappa\,\tau+O(\tau^2),
 \qquad
@@ -1030,7 +996,7 @@ Sections~\ref{app:asym-tariff} and~\ref{app:asym-finite} illustrate a common pri
 \subsection{Asymmetric primitives}
 \label{app:asym-shares}
 
-At a general balanced baseline the linearized system \eqref{eq:dp}--\eqref{eq:dtb} continues to hold with baseline shares and incomes as coefficients: $b_{ij}$, the share of origin $j$ in $i$'s import bundle; $h_i$, the home share of $i$'s tradable expenditure; and $y_i\equiv\widetilde I_i$, $i$'s income in the common currency. What requires symmetry is the collapse of the response to the two coefficients $\lambda_A$ and $\lambda_R$ of Proposition~\ref{res:decomp}. Away from symmetry, the common and zero-sum directions are generally no longer eigen-directions of $G$ and $-J$.
+At a general balanced baseline, the coefficients of \eqref{eq:dp}--\eqref{eq:dtb} are the baseline shares $b_{ij}$ of origin $j$ in $i$'s import bundle, the home shares $h_i$ of $i$'s tradable expenditure, and the incomes $y_i\equiv\widetilde I_i$ in the common currency.
 
 The elasticity $\rho$ enters the share responses \eqref{eq:dsfor} only through $(1-\rho)$, so every entry of $J$ and $F$ is linear in $\rho$. Each entry of $\operatorname{adj}(-J)$ is therefore a polynomial of degree at most $N-2$ in $\rho$, and each numerator $[\operatorname{adj}(-J)F]_i$ in \eqref{eq:system} a polynomial of degree at most $N-1$. Since $\det(-J)>0$ under MML, a bilateral response can change sign only at a root of this numerator. Symmetry reduces the problem to the two coefficients of Proposition~\ref{res:decomp}, yielding the linear thresholds \eqref{eq:Nthresh} and \eqref{eq:3c-slopes}. At a general asymmetric baseline the $N=3$ numerator is already quadratic in $\rho$:
 \begin{equation}
@@ -1041,7 +1007,7 @@ c_2 = b_{AB}b_{AC}b_{CA}b_{CB} (1-h_A)(1-h_C)y_Ay_C.
 \end{equation}
 The coefficients $c_1$ and $c_0$ depend on the full pattern of trade shares and country sizes. Provided MML holds, $c_2>0$ whenever $A$ and $C$ each import from both foreign origins, so at given shares the response is positive beyond the largest positive root, which equals $3\rho_D$ at the symmetric point. The quadratic holds at given shares, however, and the shares themselves depend on $\rho$ once primitives are held fixed. At an asymmetric baseline relative prices differ across origins, and a higher $\rho$ also reallocates expenditure toward the cheapest origin. A large target, whose currency must depreciate to balance its trade, can then crowd $C$ out of $A$'s imports and prevent the reversal. With $L_B=2.2$ and all other primitives symmetric, $e_{AC}$ reverses only for $5.99<\rho<53.8$, as $A$'s import share from $B$ rises from $0.74$ at $\rho=5$ to $0.997$ at $\rho=100$, and with $L_B\geq2.6$ it does not reverse for any $\rho\leq1000$. Away from symmetry there may therefore be no bilateral threshold, one, or several, and for $N\geq4$ the numerator is of higher degree in $\rho$.
 
-The threshold also moves with asymmetric primitives near the symmetric benchmark. Table~\ref{tab:asym-sens} reports $d\rho^\ast/dx$ at $\rho=3\rho_D$, where $\rho^\ast$ solves $d\log e_{AC}/d\tau=0$ after perturbing a single primitive $x$ and recomputing the free-trade baseline. Here $\beta_{AB}$ is $A$'s weight on $B$, with $\beta_{AC}=1-\beta_{AB}$, and $\alpha_D^A$ is the home weight in $A$ alone. The signs are those on the grid described in Section~\ref{app:asym-finite}.
+The threshold also moves with asymmetric primitives near the symmetric benchmark. Table~\ref{tab:asym-sens} reports $d\rho^\ast/dx$ at $\rho=3\rho_D$, where $\rho^\ast$ solves $d\log e_{AC}/d\tau=0$ after perturbing a single primitive $x$ and recomputing the free-trade baseline. Derivatives are evaluated at $L_i=1$ and $\beta_{AB}=1/2$. Here $\beta_{AB}$ is $A$'s weight on $B$, with $\beta_{AC}=1-\beta_{AB}$, and $\alpha_D^A$ is the home weight in $A$ alone. The signs are those on the grid described in Section~\ref{app:asym-finite}.
 
 \begin{table}[!htbp]
 \centering
@@ -1060,14 +1026,14 @@ $\alpha_D^A$ & $+5.31$ & $+$ & Stronger home bias in $A$ raises domestic diversi
 \label{tab:asym-sens}
 \end{table}
 
-The effect of $\alpha_D^A$ has two parts of similar size. By \eqref{eq:signrule}, $d\nu_C=\vartheta_{CB}F_B+\vartheta_{CC}F_C$, so at the threshold $-F_C/F_B=\vartheta_{CB}/\vartheta_{CC}$. Stronger home bias in $A$ lowers $C$'s disturbance relative to $B$'s, which contributes $+2.88$, and raises $\vartheta_{CB}/\vartheta_{CC}$, which contributes $+2.43$. The threshold therefore responds more to home bias in $A$ than the symmetric formula would suggest, since $\partial(3\rho_D)/\partial\alpha_D=3.3$ when $\alpha_D$ rises in every country.
+The effect of $\alpha_D^A$ has two parts of similar size. By \eqref{eq:signrule}, $d\nu_C=\vartheta_{CB}F_B+\vartheta_{CC}F_C$, so at the threshold $-F_C/F_B=\vartheta_{CB}/\vartheta_{CC}$. Stronger home bias in $A$ lowers $C$'s disturbance relative to $B$'s, which contributes $+2.88$, and raises $\vartheta_{CB}/\vartheta_{CC}$, which contributes $+2.43$.
 
 \subsection{The effective rate and the ordering of bilateral responses}
 \label{app:asym-neer}
 
 At the symmetric benchmark, relative treatment has no effect on the equally weighted average of $A$'s bilateral responses, and this average coincides with the trade-weighted NEER in \eqref{eq:neer}. A unilateral tariff therefore always appreciates $A$'s effective exchange rate. Relative treatment drops out of the effective rate only when the trade weights and the adjustment structure are symmetric. With asymmetric trade weights, $d\nu_A^E=w_{AB}\,d\nu_B+w_{AC}\,d\nu_C$, and a bystander depreciation $d\nu_C>0$ enters with weight $w_{AC}$. The trade-weighted NEER can then depreciate when the bystander reversal occurs and the bystander carries most of $A$'s trade weight.
 
-Table~\ref{tab:neer} illustrates this at $\alpha_D=0.8$, $\alpha_T=0.4$ and $\eta=1.5$, common to all countries, so that $3\rho_D=3.96$. $A$ buys 20 percent of its imports from $B$, and $L_B$ is set so that $w_{AC}$ takes the stated value at $\rho=3\rho_D$. All other primitives are symmetric, and MML holds for all $\rho\leq20$. The reversal starts below $3\rho_D$ because a small target with a small import weight lowers the threshold, as in Table~\ref{tab:asym-sens}. The exact model at $\tau=0.01$ confirms the signs for $w_{AC}=0.85$.
+Table~\ref{tab:neer} illustrates this at $\alpha_D=0.8$, $\alpha_T=0.4$ and $\eta=1.5$, common to all countries, so that $3\rho_D=3.96$. $A$'s weight on $B$ is $\beta_{AB}=0.2$, and $L_B$ is set so that $w_{AC}$ takes the stated value at $\rho=3\rho_D$. All other primitives are symmetric, and MML holds for all $\rho\leq20$. The reversal starts below $3\rho_D$ because a small target with a small import weight lowers the threshold, as in Table~\ref{tab:asym-sens}. The exact model at $\tau=0.01$ confirms the signs for $w_{AC}=0.85$.
 
 \begin{table}[!htbp]
 \centering
@@ -1084,31 +1050,9 @@ $w_{AC}$ & $L_B$ & $d\nu_C>0$ for $\rho>$ & $d\nu_A^E>0$ for $\rho>$ \\
 \label{tab:neer}
 \end{table}
 
-The ordering $d\nu_B<d\nu_C$, which holds at the symmetric benchmark because $\lambda_R<0$, can also fail. This requires $\rho$ near one and a high $\eta$, and $\rho<\eta$ in every such case we found. For example, with $L=(5.12,4.26,2.28)$ for $(A,B,C)$, $\beta_{AB}=0.86$, $\beta_{BA}=0.65$, $\beta_{CA}=0.19$, $\alpha_D=0.89$, $\alpha_T=0.6$, $\eta=3.74$ and $\rho=1.20$, $d\nu_B-d\nu_C=0.08\,d\tau$.
+The ordering $d\nu_B<d\nu_C$, which holds at the symmetric benchmark because $\lambda_R<0$, can also fail. This requires $\rho$ near one and a high $\eta$, and $\rho<\eta$ in every case we examined. For example, with $L=(5.12,4.26,2.28)$ for $(A,B,C)$, $\beta_{AB}=0.86$, $\beta_{BA}=0.65$, $\beta_{CA}=0.19$, $\alpha_D=0.89$, $\alpha_T=0.6$, $\eta=3.74$ and $\rho=1.20$, $d\nu_B-d\nu_C=0.08\,d\tau$.
 
 \clearpage
-\section{Correspondence across $N$}
-
-\label{app:table}
-
-All entries are at the symmetric benchmark of the nested-CES model. MML holds if and only if $\mathcal M_N>0$.
-
-\begin{center}
-\begin{tabular}{>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{4.9cm}}
-\toprule
-object & $N=2$ & $N=3$ & general $N$ \\
-\midrule
-domestic diversion margin $\rho_D$ \eqref{eq:rhoD} & \multicolumn{3}{l}{$\alpha_D\eta+(1-\alpha_D)(1-\alpha_T)$, independent of $N$} \\[3pt]
-exchange-rate adjustment margin $\mathcal M_N$ \eqref{eq:MN} & $2\alpha_D(\eta-1)+1$ & $\dfrac{3\alpha_D(\eta-1)+\rho+1}{2}$ & $\dfrac{N\alpha_D(\eta-1)+(N-2)\rho+1}{N-1}$ \\[9pt]
-average-protection coefficient $\lambda_A$ & $-\rho_D/\mathcal M_2$ & $-\rho_D/\mathcal M_3$ & $-\rho_D/\mathcal M_N$ \\[3pt]
-relative-treatment coefficient $\lambda_R$ & --- & $-\rho/(3\mathcal M_3)$ & $-\rho/(N\mathcal M_N)$ \\[3pt]
-unilateral bystander threshold & none & $\rho>3\rho_D$ & $\rho>N\rho_D$ \\[3pt]
-unilateral NEER response & $-\rho_D/\mathcal M_2$ & $-\rho_D/(2\mathcal M_3)$ & $-\rho_D/\big[(N-1)\mathcal M_N\big]$ \\[3pt]
-trade-war threshold & --- & $\rho>\rho_D$ & $\rho>\rho_D$ \\
-\bottomrule
-\end{tabular}
-\end{center}
-
 \section{Proofs}
 
 \label{app:proofs}
@@ -1136,32 +1080,15 @@ Nonsingularity follows from $r<1$. Moreover,
 \begin{proof}[Proof of Proposition~\ref{res:decomp}]
 Let $M$ be an $(N-1)\times(N-1)$ matrix with $PMP'=M$ for every permutation matrix $P$. Conjugating by the transposition of $i$ and $j$ gives $M_{ii}=M_{jj}$, and conjugating by a permutation that sends the ordered pair $(i,j)$ to $(k,l)$, $i\neq j$, $k\neq l$, gives $M_{ij}=M_{kl}$. Hence
 \[
-M=aI+b\mathbf{1}\mathbf{1}'.
+M=aI+b\mathbf{1}\mathbf{1}',
 \]
-Since $\mathbf{1}'\mathbf{1}=N-1$,
-\[
-M\mathbf{1} = [a+(N-1)b]\mathbf{1},
-\]
-while $Mv=av$ for every $v$ satisfying $\mathbf{1}'v=0$. This gives \eqref{eq:jg-eigen} for $-J$ and $G$.
+whose eigenvalues on the common and zero-sum directions are given in Section~\ref{sec:exch}. This gives \eqref{eq:jg-eigen} for $-J$ and $G$.
 
 For $j_S,j_D\neq0$,
 \[
 (-J)^{-1} = \frac{1}{j_D}I + \frac{1}{N-1} \Big( \frac{1}{j_S}-\frac{1}{j_D} \Big) \mathbf{1}\mathbf{1}',
 \]
-as direct multiplication verifies. Thus $(-J)^{-1}$ and $G$ share the constant and zero-sum eigenspaces, with response coefficients $\lambda_A=g_S/j_S$ and $\lambda_R=g_D/j_D$. Writing
-\[
-\mathbf{t} = \bar t\,\mathbf{1} + \tilde t,
-\qquad
-\mathbf{1}'\tilde t=0,
-\]
-gives
-\[
-d\boldsymbol{\nu} = \frac{g_S}{j_S}\bar t\,\mathbf{1} + \frac{g_D}{j_D}\tilde t,
-\]
-and averaging with equal weights yields
-\[
-d\nu_A^E = \frac{g_S}{j_S}\bar t.
-\]
+as direct multiplication verifies. Thus $(-J)^{-1}$ and $G$ share the constant and zero-sum eigenspaces, with response coefficients $\lambda_A=g_S/j_S$ and $\lambda_R=g_D/j_D$. Applying them to $\mathbf{t}=\bar t\,\mathbf{1}+\widetilde{\mathbf{t}}$ gives \eqref{eq:decomp} and the first equality in \eqref{eq:decomp-parts}, as in Section~\ref{sec:exch}.
 
 For \eqref{eq:mml-eigen}, the off-diagonal entry of $-J$ is
 \[
@@ -1177,13 +1104,7 @@ which completes \eqref{eq:decomp-parts}.
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{res:main}]
-At the symmetric benchmark, relabeling $A$'s partners leaves the reduced system unchanged, so Proposition~\ref{res:decomp} applies. Appendix~\ref{app:linear} derives \eqref{eq:full-jacobian}, \eqref{eq:g-eigen} and \eqref{eq:j-eigen}. By \eqref{eq:j-eigen}, $j_S=m\mathcal M_N/(N-1)$ and $j_D=Nj_S$, so $j_S>0$ if and only if $\mathcal M_N>0$, in which case $j_D>j_S$; by \eqref{eq:mml-eigen}, MML is therefore equivalent to $\mathcal M_N>0$. If $\eta\geq1$ then every term in the numerator of \eqref{eq:MN} is nonnegative and the last is one, so $\mathcal M_N>0$. Given $\mathcal M_N>0$, dividing \eqref{eq:g-eigen} by \eqref{eq:j-eigen} gives the coefficients of Theorem~\ref{res:main},
-\[
-\lambda_A=\frac{g_S}{j_S}=-\frac{m\rho_D}{N-1}\cdot\frac{N-1}{m\mathcal M_N}=-\frac{\rho_D}{\mathcal M_N},
-\qquad
-\lambda_R=\frac{g_D}{j_D}=-\frac{m\rho}{N-1}\cdot\frac{N-1}{Nm\mathcal M_N}=-\frac{\rho}{N\mathcal M_N},
-\]
-both negative since $\rho_D>0$ by \eqref{eq:rhoD} and $\rho>0$. Equation~\eqref{eq:scale-disc} and the three statements following it are then \eqref{eq:decomp} and \eqref{eq:decomp-parts}.
+At the symmetric benchmark, relabeling $A$'s partners leaves the reduced system unchanged, so Proposition~\ref{res:decomp} applies. Appendix~\ref{app:linear} derives \eqref{eq:full-jacobian}, \eqref{eq:g-eigen} and \eqref{eq:j-eigen}. By \eqref{eq:j-eigen}, $j_S=m\mathcal M_N/(N-1)$ and $j_D=Nj_S$, so $j_S>0$ if and only if $\mathcal M_N>0$, in which case $j_D>j_S$; by \eqref{eq:mml-eigen}, MML is therefore equivalent to $\mathcal M_N>0$. If $\eta\geq1$ then every term in the numerator of \eqref{eq:MN} is nonnegative and the last is one, so $\mathcal M_N>0$. Given $\mathcal M_N>0$, dividing \eqref{eq:g-eigen} by \eqref{eq:j-eigen} gives $\lambda_A=-\rho_D/\mathcal M_N$ and $\lambda_R=-\rho/(N\mathcal M_N)$, as shown in Appendix~\ref{app:linear}. Both are negative since $\rho_D>0$ by \eqref{eq:rhoD} and $\rho>0$. Equation~\eqref{eq:scale-disc} and the three statements following it are then \eqref{eq:decomp} and \eqref{eq:decomp-parts}.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{res:war}(i)]
@@ -1207,10 +1128,7 @@ and
 \[
 d\log e_{AC}\big|^w = \frac{\rho-N\rho_D}{N(N-1)\mathcal M_N} + \frac{\rho}{N\mathcal M_N} = \frac{\rho-\rho_D}{(N-1)\mathcal M_N}.
 \]
-In terms of Theorem~\ref{res:main}, the three components are $A$'s average protection, $A$'s relative treatment, and $B$'s relative treatment:
-\[
-d\log e_{AC}\big|^w=-\frac{\rho_D}{(N-1)\mathcal M_N}+\frac{\rho}{N(N-1)\mathcal M_N}+\frac{\rho}{N\mathcal M_N}=\frac{\rho-\rho_D}{(N-1)\mathcal M_N}.
-\]
+In terms of Theorem~\ref{res:main}, the three components are $A$'s average protection, $-\rho_D/[(N-1)\mathcal M_N]$, $A$'s relative treatment, $\rho/[N(N-1)\mathcal M_N]$, and $B$'s relative treatment, $\rho/(N\mathcal M_N)$.
 By symmetry between $A$ and $B$, the same expression applies to $d\log e_{BC}|^w$. Averaging gives
 \[
 \frac{d\nu_A^E}{d\tau}\bigg|^w = \frac{N-2}{N-1} \frac{\rho-\rho_D}{(N-1)\mathcal M_N}.
@@ -1252,25 +1170,7 @@ The expression is the same for every $j$, so it also equals the NEER response, a
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{res:real}]
-From \eqref{eq:rer} and \eqref{eq:indices}, only tradable prices move, so
-\[
-d\log q_{Aj} = d\nu_j + \alpha_T \big( d\log P_{T_j}^{\mathrm{own}} - d\log P_{T_A}^{\mathrm{own}} \big),
-\]
-with
-\[
-d\log P_{T_i}^{\mathrm{own}} = (1-\alpha_D)d\log P_{M_i}.
-\]
-For a tariff vector $\mathbf{t}$,
-\[
-d\log P_{M_A} = \frac{1}{N-1} \sum_j(d\nu_j+t_j) = d\nu_A^E+\bar t,
-\]
-while for a partner that imposes no tariff,
-\[
-d\log P_{M_j} = d\nu_A^E - \frac{N}{N-1}\,d\nu_j.
-\]
-Substitution gives \eqref{eq:q-decomp}, and $\bar t=d\tau/(N-1)$ gives \eqref{eq:qgen}.
-
-For (i), setting $d\log q_{AC}=0$ and substituting $d\nu_C$ from \eqref{eq:N-slopes-C} gives
+Equations \eqref{eq:q-decomp} and \eqref{eq:qgen} are derived in Appendix~\ref{app:real}. For (i), setting $d\log q_{AC}=0$ and substituting $d\nu_C$ from \eqref{eq:N-slopes-C} gives
 \[
 \big[ (N-1)-mN \big] \frac{\rho-N\rho_D}{N} = m(N-1)\mathcal M_N(\rho).
 \]
