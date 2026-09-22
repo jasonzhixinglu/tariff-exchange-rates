@@ -31,6 +31,8 @@ In a general $N$-country trade environment, we show that the log-linearized exch
 
 To quantify these effects in a parsimonious framework, we develop a multilateral trade model with nested-CES preferences. The key determinants of the exchange-rate responses are two substitution margins: $\eta$, the elasticity of substitution between domestic and imported tradables, and $\rho$, the elasticity of substitution across foreign tradables. For a unilateral tariff, we show that the tariffing country always appreciates against the targeted country, while its exchange rate against an untariffed bystander can depreciate when substitution across foreign suppliers is sufficiently strong relative to domestic-import substitution and the associated expenditure effects. We then consider bilateral retaliation and retaliation by all partners and show that retaliation lowers the threshold for depreciation against bystander countries by adding a relative-treatment effect that offsets the average-protection force toward appreciation. Finally, we relate these results to the preferential-trade-agreement literature on third-country terms-of-trade effects. We show that standard competing-exporter models can be understood as deliberately abstracting from some of the domestic-substitution and income channels present in our model in order to isolate substitution across foreign suppliers.
 
+We abstract from several features that also matter for the exchange-rate effects of tariffs. Some are primarily relevant for short-run adjustment, including nominal and real adjustment frictions, trade imbalances, and capital flows. Others are likely to remain important in the long run, including productivity growth, capital and intermediate goods, supply chains, and re-exporting. We also abstract from risk, monetary and fiscal policy, and financial markets.
+
 \section{Tariffs and Exchange-Rate Adjustment}
 \label{sec:general}
 
@@ -130,28 +132,24 @@ Equation~\eqref{eq:response} is the multilateral analogue of the bilateral adjus
 \subsection{The multilateral Marshall--Lerner condition}
 \label{sec:mml}
 
-In the bilateral case, the requirement that exchange-rate adjustment stabilizes the trade balance is the scalar condition $-J=\mathrm{TB}_{A\nu}>0$, which has a straightforward interpretation. In the multilateral case, a tariff generates a vector of trade-balance disturbances, and the exchange-rate response depends on the full adjustment mapping $(-J)^{-1}$. A natural analogue of the bilateral Marshall--Lerner condition is therefore that exchange-rate cross-effects have the stabilizing sign and that the resulting adjustment mapping be well defined and preserve the sign of trade-balance disturbances.
+In the bilateral case, the requirement that exchange-rate adjustment stabilizes the trade balance is the scalar condition $-J=\mathrm{TB}_{A\nu}>0$, which has a straightforward interpretation. In the multilateral case, $-J$ relates a vector of exchange-rate changes to the trade-balance disturbances that those changes can offset, while $(-J)^{-1}$ gives the exchange-rate changes required to offset a given vector of disturbances. A natural analogue of the bilateral Marshall--Lerner condition is therefore that this adjustment be well defined and have the stabilizing sign.
 
 \begin{definition}[Multilateral Marshall--Lerner condition]
-
 The adjustment mechanism satisfies the \emph{multilateral Marshall--Lerner condition} (MML) if
 \begin{equation}
-J_{il}\geq0 \ \ (l\neq i),
-\qquad
-(-J)^{-1}\ \text{exists and satisfies}\ (-J)^{-1}\geq0 .
+J_{il}\geq0 \ \ (l\neq i), \qquad (-J)^{-1}\ \text{exists and satisfies}\ (-J)^{-1}\geq0 .
 \label{eq:invpos}
 \end{equation}
 Equivalently, $-J$ is a nonsingular M-matrix.
-
 \label{def:mml}
 \end{definition}
 
-Under MML, each positive component of the trade-balance disturbance makes a weakly positive contribution to every bilateral exchange-rate response. By \eqref{eq:response}, writing $\vartheta_{ij}\equiv\big[(-J)^{-1}\big]_{ij}\geq0$,
+Under MML, a positive trade-balance disturbance in any country makes a weakly positive contribution to every bilateral exchange-rate response. By \eqref{eq:response}, writing $\vartheta_{ij}\equiv\big[(-J)^{-1}\big]_{ij}\geq0$,
 \begin{equation}
 \frac{d\nu_i}{ds}=\sum_j\vartheta_{ij}F_j ,
 \label{eq:signrule}
 \end{equation}
-where $\vartheta_{ij}$ measures the response of the $A$--$i$ bilateral exchange rate to a unit trade-balance disturbance in country $j$, with a positive response denoting a depreciation of $A$ against $i$. A uniformly signed $\boldsymbol{F}$ therefore cannot generate exchange-rate responses of the opposite sign. When $\boldsymbol{F}$ has mixed signs, the response of any individual exchange rate depends on the full vector of trade-balance effects rather than on the corresponding element $F_i$ alone.
+where $\vartheta_{ij}$ measures the response of the $A$--$i$ bilateral exchange rate required to offset a unit trade-balance disturbance in country $j$, with a positive response denoting a depreciation of $A$ against $i$. A uniformly signed $\boldsymbol{F}$ therefore cannot generate exchange-rate responses of the opposite sign. When $\boldsymbol{F}$ has mixed signs, the response of any individual exchange rate depends on the full vector of trade-balance effects rather than on the corresponding element $F_i$ alone.
 
 The MML condition stated directly in terms of $(-J)^{-1}$ is somewhat abstract. A more intuitive sufficient condition can be stated in terms of gross substitutability. To express this condition without choosing a numeraire, extend the notation and let $\nu_i$, $i=1,\dots,N$, denote the log value of currency $i$ in a common unit of account, so that
 \[
@@ -163,28 +161,17 @@ and let $\widetilde J_{il}\equiv\partial\mathrm{TB}_i/\partial\nu_l$ be the full
 \]
 so at a balanced equilibrium
 \[
-\sum_l \widetilde J_{il}=0
-\qquad
-\forall i.
+\sum_l \widetilde J_{il}=0 \qquad \forall i.
 \]
 Separately, $\sum_i\mathrm{TB}_i\equiv0$ by Walras' law implies
 \[
-\sum_i \widetilde J_{il}=0
-\qquad
-\forall l.
+\sum_i \widetilde J_{il}=0 \qquad \forall l.
 \]
 Thus,
 \begin{equation}
-\sum_l \widetilde J_{il}=0
-\quad
-\forall i,
-\qquad
-\sum_i \widetilde J_{il}=0
-\quad
-\forall l .
+\sum_l \widetilde J_{il}=0 \quad \forall i, \qquad \sum_i \widetilde J_{il}=0 \quad \forall l .
 \label{eq:hom}
 \end{equation}
-
 The row identity pins down each diagonal entry of $\widetilde J$ from the off-diagonal entries, so the relevant sign restriction can be stated entirely in terms of these cross-effects.
 
 \begin{assumption}[Gross substitutability of trade balances]\label{as:gs}
@@ -194,9 +181,7 @@ $\widetilde J_{il}\geq0$ for all $l\neq i$.
 An appreciation of currency $l$ raises the price of $l$'s goods relative to those produced elsewhere. Assumption~\ref{as:gs} requires that this weakly improve every other country's trade balance once the associated income and expenditure effects are included. The intuition is the same as in the bilateral Marshall--Lerner condition: exchange-rate movements operate in the direction needed to offset trade-balance disturbances. Together with the row identity in \eqref{eq:hom}, this sign structure makes the reduced matrix weakly diagonally dominant; the additional connectivity conditions in Lemma~\ref{res:mml} ensure that $-J$ is a nonsingular M-matrix.
 
 \begin{lemma}[Sufficiency of gross substitutability]
-
 Suppose each trade balance is homogeneous of degree one in currency values. Under Assumption~\ref{as:gs}, with $J$ irreducible and $\widetilde J_{iA}>0$ for some $i$, MML \eqref{eq:invpos} holds.
-
 \label{res:mml}
 \end{lemma}
 
@@ -207,93 +192,70 @@ Suppose each trade balance is homogeneous of degree one in currency values. Unde
 
 Now restrict attention to tariff changes imposed by $A$, and write $\mathbf{t}=(t_j)_{j\neq A}$, with $t_j\equiv d\tau_{Aj}$. Restricting $G$ to these $N-1$ tariff changes, let $G$ henceforth denote the resulting $(N-1)\times(N-1)$ matrix. Suppose that $A$'s trading partners are symmetric, so that relabeling them leaves the reduced system unchanged:
 \[
-PJP'=J,
-\qquad
-PGP'=G
+PJP'=J, \qquad PGP'=G
 \]
 for every permutation matrix $P$ of the $N-1$ partners.
 
 Under partner symmetry, all partners are interchangeable except for how they are treated by $A$'s tariff changes. It is therefore natural to separate the part of the tariff change that is common across partners from the part that distinguishes among them. We refer to these as \emph{average protection} and \emph{relative treatment}, respectively. Decompose
 \begin{equation}
-\mathbf{t}=\bar t\,\mathbf{1}+\widetilde{\mathbf{t}},
-\qquad
-\bar t\equiv\frac{1}{N-1}\mathbf{1}'\mathbf{t},
-\qquad
-\mathbf{1}'\widetilde{\mathbf{t}}=0.
+\mathbf{t}=\bar t\,\mathbf{1}+\widetilde{\mathbf{t}}, \qquad \bar t\equiv\frac{1}{N-1}\mathbf{1}'\mathbf{t}, \qquad \mathbf{1}'\widetilde{\mathbf{t}}=0.
 \label{eq:t-split}
 \end{equation}
 Componentwise,
 \begin{equation}
-t_j=\bar t+(t_j-\bar t),
-\qquad
-\tilde t_j\equiv t_j-\bar t.
+t_j=\bar t+(t_j-\bar t), \qquad \tilde t_j\equiv t_j-\bar t.
 \label{eq:t-split-scalar}
 \end{equation}
 Thus $\bar t\,\mathbf{1}$ is the common component of the tariff change across partners, while $\widetilde{\mathbf{t}}$ records each partner's treatment relative to that common component.
+
+Partner symmetry also gives these two components a simple eigenvalue interpretation. For $G$, the input is a vector of tariff changes and the output is the resulting vector of trade-balance disturbances at unchanged exchange rates. A common tariff change is therefore an eigenvector of $G$, and every zero-sum relative-treatment change is an eigenvector with a common eigenvalue:
+\[
+G\mathbf{1}=g_S\mathbf{1}, \qquad Gv=g_Dv \quad \text{for any } v \text{ such that } \mathbf{1}'v=0.
+\]
+Thus $g_S$ measures the trade-balance disturbance generated by average protection, while $g_D$ measures the disturbance generated by relative treatment. Similarly, for $-J$, the input is a vector of exchange-rate changes and $-J\,d\boldsymbol{\nu}$ is the trade-balance disturbance that those changes can offset. Symmetry implies
+\[
+(-J)\mathbf{1}=j_S\mathbf{1}, \qquad (-J)v=j_Dv \quad \text{for any } v \text{ such that } \mathbf{1}'v=0,
+\]
+so $j_S$ and $j_D$ measure the strength of exchange-rate adjustment for common and relative movements, respectively.
 
 Now define
 \[
 d\nu_A^E\equiv\frac{1}{N-1}\sum_{j\neq A}d\nu_j,
 \]
-which denotes the equally weighted average of $A$'s bilateral exchange-rate responses. At a symmetric baseline with equal bilateral trade weights, this coincides with the change in $A$'s nominal effective exchange rate in \eqref{eq:neer}. The following result shows that partner symmetry allows the exchange-rate response to be characterized by the same common and relative components of $A$'s tariff changes.
+which denotes the equally weighted average of $A$'s bilateral exchange-rate responses. At a symmetric baseline with equal bilateral trade weights, this coincides with the change in $A$'s nominal effective exchange rate in \eqref{eq:neer}. The following result combines the tariff disturbances and exchange-rate adjustment along the two eigen-directions.
 
 \begin{proposition}[Average protection and relative treatment]
-
-Suppose $A$'s partners are symmetric and $N\geq3$. Then $-J$ and $G$ act separately on the common subspace $\operatorname{span}\{\mathbf{1}\}$ and the zero-sum subspace $\{v:\mathbf{1}'v=0\}$. Let $j_S,j_D$ and $g_S,g_D$ denote their respective scalars on these two subspaces. If $j_S,j_D\neq0$, the response to any tariff-change vector $\mathbf{t}$ is
+Suppose $A$'s partners are symmetric and $N\geq3$. Let $g_S,g_D$ denote the eigenvalues of $G$ for common and zero-sum tariff changes, and let $j_S,j_D$ denote the corresponding eigenvalues of $-J$ for common and zero-sum exchange-rate changes. If $j_S,j_D\neq0$, the response to any tariff-change vector $\mathbf{t}$ is
 \begin{equation}
-d\boldsymbol{\nu}
-=
-\lambda_S\,\bar t\,\mathbf{1}
-+
-\lambda_D\,\widetilde{\mathbf{t}},
-\qquad
-\lambda_S\equiv\frac{g_S}{j_S},
-\qquad
-\lambda_D\equiv\frac{g_D}{j_D}.
+d\boldsymbol{\nu}=\lambda_S\,\bar t\,\mathbf{1}+\lambda_D\,\widetilde{\mathbf{t}}, \qquad \lambda_S\equiv\frac{g_S}{j_S}, \qquad \lambda_D\equiv\frac{g_D}{j_D}.
 \label{eq:decomp}
 \end{equation}
 Hence
 \begin{equation}
-d\nu_A^E=\lambda_S\,\bar t,
-\qquad
-d\nu_j-d\nu_A^E=\lambda_D\,\tilde t_j,
-\qquad
-d\log e_{jk}=\lambda_D\,(t_k-t_j),
+d\nu_A^E=\lambda_S\,\bar t, \qquad d\nu_j-d\nu_A^E=\lambda_D\,\tilde t_j, \qquad d\log e_{jk}=\lambda_D\,(t_k-t_j),
 \label{eq:decomp-parts}
 \end{equation}
 so average protection determines the common exchange-rate response, while relative treatment determines bilateral deviations and cross rates. Furthermore, MML \eqref{eq:invpos} is equivalent to
 \begin{equation}
-j_S>0,
-\qquad
-j_D\geq j_S.
+j_S>0, \qquad j_D\geq j_S.
 \label{eq:mml-eigen}
 \end{equation}
-
 \label{res:decomp}
 \end{proposition}
 
-\noindent The two-term response follows directly from partner symmetry. Any matrix invariant to relabeling the partners has the form $aI+b\,\mathbf{1}\mathbf{1}'$. Since $\mathbf{1}'\mathbf{1}=N-1$ and $\mathbf{1}'\widetilde{\mathbf{t}}=0$,
-\begin{equation*}
-(aI+b\,\mathbf{1}\mathbf{1}')\,\mathbf{t}
-=
-\bigl(a+(N-1)b\bigr)\bar t\,\mathbf{1}
-+
-a\,\widetilde{\mathbf{t}}.
-\end{equation*}
-Thus the matrix acts separately on the common and zero-sum components, with eigenvalues $a+(N-1)b$ and $a$, respectively. For $-J$ and $G$, these are
+\noindent The eigenvalue structure follows directly from partner symmetry. Any matrix invariant to relabeling the partners has the form $aI+b\,\mathbf{1}\mathbf{1}'$. Since $\mathbf{1}'\mathbf{1}=N-1$ and $\mathbf{1}'v=0$ for any zero-sum vector $v$,
+\[
+(aI+b\,\mathbf{1}\mathbf{1}')\mathbf{1}=\bigl(a+(N-1)b\bigr)\mathbf{1}, \qquad (aI+b\,\mathbf{1}\mathbf{1}')v=av.
+\]
+Thus the common direction has eigenvalue $a+(N-1)b$, while every zero-sum direction has eigenvalue $a$. For $-J$ and $G$,
 \begin{equation}
 \begin{aligned}
--J &= a_JI+b_J\,\mathbf{1}\mathbf{1}' :
-& j_S &= a_J+(N-1)b_J,
-& j_D &= a_J, \\
-G &= a_GI+b_G\,\mathbf{1}\mathbf{1}' :
-& g_S &= a_G+(N-1)b_G,
-& g_D &= a_G.
+-J &= a_JI+b_J\,\mathbf{1}\mathbf{1}' : & j_S &= a_J+(N-1)b_J, & j_D &= a_J, \\
+G &= a_GI+b_G\,\mathbf{1}\mathbf{1}' : & g_S &= a_G+(N-1)b_G, & g_D &= a_G.
 \end{aligned}
 \label{eq:jg-eigen}
 \end{equation}
-
-Because relative treatment sums to zero, it has no effect on the equally weighted average of the bilateral exchange-rate responses, giving the first equality in \eqref{eq:decomp-parts}. The MML characterization in \eqref{eq:mml-eigen} follows from the same structure. Since
+Applying these eigenvalues to $\mathbf{t}=\bar t\,\mathbf{1}+\widetilde{\mathbf{t}}$ gives \eqref{eq:decomp}. Because relative treatment sums to zero, it has no effect on the equally weighted average of the bilateral exchange-rate responses, giving the first equality in \eqref{eq:decomp-parts}. The MML characterization in \eqref{eq:mml-eigen} follows from the same structure. Since
 \[
 b_J=\frac{j_S-j_D}{N-1},
 \]
@@ -415,12 +377,11 @@ At the symmetric two-country benchmark, $\varepsilon_X=\varepsilon_M=1+\alpha_D(
 \subsection{The $N$-country case}
 \label{sec:eigen}
 
-Now consider the $N$-country case, where $A$'s trading partners are symmetric in the sense of Section~\ref{sec:exch}. Proposition~\ref{res:decomp} shows that the exchange-rate response is characterized by its average-protection and relative-treatment components. We now derive closed-form expressions for the corresponding coefficients under the nested-CES structure.
+Now consider the $N$-country case, where $A$'s trading partners are symmetric in the sense of Section~\ref{sec:exch}. Proposition~\ref{res:decomp} shows that the exchange-rate response is characterized by its common and relative eigen-directions, corresponding to average protection and relative treatment. We now derive closed-form expressions for the exchange-rate response coefficients under the nested-CES structure.
 
 \begin{theorem}[Exchange-rate responses in the symmetric nested-CES model]
 \label{res:main}
-
-Consider the nested-CES model of Section~\ref{sec:model} at the symmetric benchmark. Let $\mathbf t=(t_j)_{j\neq A}$ denote any vector of tariff changes imposed by $A$, with average $\bar t$ as in \eqref{eq:t-split-scalar}. Define
+Consider the nested-CES model of Section~\ref{sec:model} at the symmetric benchmark. Let $\mathbf t=(t_j)_{j\neq A}$ denote any vector of tariff changes imposed by $A$, with average $\bar t$ as in \eqref{eq:t-split}. Define
 \begin{equation}
 D_N\equiv N\alpha_D(\eta-1)+(N-2)\rho+1.
 \label{eq:DN}
@@ -442,39 +403,39 @@ d\nu_j=\lambda_S\bar t+\lambda_D\tilde t_j.
 
 For $N=2$, there is only one trading partner, so relative treatment is mechanically zero, $D_N=D_2$, and Theorem~\ref{res:main} reduces to the two-country result in Section~\ref{sec:twocountry}. For $N\geq3$, relative treatment is governed by $\lambda_D<0$, implying that $A$ appreciates more against partners facing larger tariff increases. The proof is given in Appendix~\ref{app:linear}.
 
-Observe also that average protection and relative treatment enter differently through the tariff-induced trade-balance disturbance and the exchange-rate adjustment. For the trade-balance disturbance,
+The nested-CES structure also gives closed-form expressions for the eigenvalues introduced in Section~\ref{sec:exch}. For the tariff mapping $G$, the eigenvalues for common and zero-sum tariff changes are
 \begin{equation}
 g_S=-\frac{m\rho_1^*}{N-1}, \qquad
 g_D=-\frac{m\rho}{N-1},
 \label{eq:g-eigen}
 \end{equation}
-while for the trade-balance response to exchange-rate movements,
+while for the exchange-rate adjustment matrix $-J$, the corresponding eigenvalues for common and zero-sum exchange-rate changes are
 \begin{equation}
 j_S=\frac{mD_N}{(N-1)^2}, \qquad
 j_D=N\,\frac{mD_N}{(N-1)^2}.
 \label{eq:j-eigen}
 \end{equation}
-Comparing the two components gives
+Comparing the two eigen-directions gives
 \begin{equation}
 \frac{g_D}{g_S}=\frac{\rho}{\rho_1^*}, \qquad
 \frac{j_D}{j_S}=N.
 \label{eq:gj-ratios}
 \end{equation}
 
-The two ratios summarize how average protection and relative treatment differ at the disturbance and adjustment stages. The first ratio in \eqref{eq:gj-ratios} compares their effects on trade balances at unchanged exchange rates. Both scale with the bilateral import share $m/(N-1)$, so $N$ drops out of the ratio. Average protection operates through the domestic diversion margin $\rho_1^*$, while relative treatment operates through diversion across foreign suppliers, governed by $\rho$.
+The first ratio in \eqref{eq:gj-ratios} compares the trade-balance disturbances generated by relative treatment and average protection at unchanged exchange rates. Both scale with the bilateral import share $m/(N-1)$, so $N$ drops out of the ratio. Average protection operates through the domestic diversion margin $\rho_1^*$, while relative treatment operates through diversion across foreign suppliers, governed by $\rho$.
 
-The distinction between average protection and relative treatment also carries over to domestic allocation. At the symmetric free-trade baseline, a pure relative-treatment change leaves average protection, tariff revenue, and income unchanged to first order, so it does not affect the allocation of labor between tradables and non-tradables. By contrast, an increase in average protection raises tariff revenue and income, shifting labor toward non-tradables.
+The second ratio in \eqref{eq:gj-ratios} compares the trade-balance effects of relative and common exchange-rate movements. A common exchange-rate movement changes $A$'s currency against all partners together, while a relative movement also changes competitiveness across foreign suppliers. Trade balances are therefore $N$ times more responsive to a relative exchange-rate movement, so a disturbance of a given size requires only $1/N$ as much exchange-rate adjustment in that direction.
 
-The second ratio in \eqref{eq:gj-ratios} compares the responsiveness of trade balances to exchange-rate movements in the two directions. A common exchange-rate movement changes $A$'s currency against all partners together, while a relative movement also changes competitiveness across foreign suppliers. Trade balances are therefore $N$ times more responsive in the relative-treatment direction, so a disturbance of a given size requires only $1/N$ as much exchange-rate adjustment.
-
-Combining the two ratios gives
+Combining the disturbance and adjustment eigenvalues gives
 \begin{equation}
 \frac{\lambda_D}{\lambda_S}
 =\frac{g_D}{g_S}\frac{j_S}{j_D}
 =\frac{\rho}{N\rho_1^*}.
 \label{eq:lam-ratio}
 \end{equation}
-Thus $N$ does not affect the relative size of the initial disturbances, but it reduces the relative-treatment exchange-rate response relative to the average-protection response.
+Thus $N$ does not affect the relative size of the tariff-induced disturbances, but it reduces the relative-treatment exchange-rate response relative to the average-protection response.
+
+The distinction between average protection and relative treatment also carries over to domestic allocation. At the symmetric free-trade baseline, a pure relative-treatment change leaves average protection, tariff revenue, and income unchanged to first order, so it does not affect the allocation of labor between tradables and non-tradables. By contrast, an increase in average protection raises tariff revenue and income, shifting labor toward non-tradables.
 
 \subsection{A unilateral tariff}
 \label{sec:unilateral}
