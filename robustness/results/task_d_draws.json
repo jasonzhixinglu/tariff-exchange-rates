@@ -1,0 +1,118 @@
+{
+ "common": {
+  "draws": 20000,
+  "solver_failures": 0,
+  "mml_kept": 19995,
+  "mml_reasons": {
+   "ok": 19995,
+   "offdiag": 5
+  },
+  "gs_share_among_kept": 0.999549887471868,
+  "neer_positive": 1569,
+  "order_positive": 26,
+  "neer_max": 0.22847804681303344,
+  "neer_n_max": 0.7096125746603036,
+  "order_max": 0.08171122225684513,
+  "order_n_max": 0.06437230954011507,
+  "neer_quantiles": [
+   -0.9476422787345001,
+   -0.46906907911051365,
+   0.32217703299891565,
+   0.7096125746603036
+  ],
+  "order_quantiles": [
+   -1.0,
+   -0.8361823880585785,
+   -0.0653847200300825,
+   0.06437230954011507
+  ],
+  "non_mml_neer_positive": 0,
+  "non_mml_order_positive": 0,
+  "counterexample_profile": {
+   "neer": {
+    "n": 1569,
+    "rho_A_min": 2.1299104771164865,
+    "rho_A_median": 7.980835488148851,
+    "eta_A_median": 1.6274467296714852,
+    "share_dnuC_positive": 1.0,
+    "w_AC_median": 0.849093941882109,
+    "w_AC_min": 0.40867224593114165,
+    "share_FC_negative": 0.0,
+    "share_FB_negative": 1.0,
+    "equal_weight_avg_positive": 0.14276609305289995
+   },
+   "order": {
+    "n": 26,
+    "rho_A_min": 1.0034914123519263,
+    "rho_A_median": 1.153203223410428,
+    "eta_A_median": 3.659356105607329,
+    "share_dnuC_positive": 0.0,
+    "w_AC_median": 0.19018302375166957,
+    "w_AC_min": 0.08786165106880087,
+    "share_FC_negative": 1.0,
+    "share_FB_negative": 1.0,
+    "equal_weight_avg_positive": 0.0
+   },
+   "all_share_dnuC_positive": 0.416704176044011,
+   "all_share_dnuB_positive": 0.0
+  },
+  "closest_random_neer_n": {
+   "value": 0.7096125746603036,
+   "raw": 0.08046624855583867,
+   "params": {
+    "L": [
+     1.4541,
+     2.8782,
+     8.5319
+    ],
+    "beta_AB": 0.7329,
+    "beta_BA": 0.4548,
+    "beta_CA": 0.778,
+    "aD": [
+     0.6566,
+     0.6566,
+     0.6566
+    ],
+    "eta": [
+     1.2311,
+     1.2311,
+     1.2311
+    ],
+    "rho": [
+     9.5824,
+     9.5824,
+     9.5824
+    ]
+   }
+  },
+  "closest_random_order_n": {
+   "value": 0.06437230954011507,
+   "raw": 0.08171122225684513,
+   "params": {
+    "L": [
+     5.12,
+     4.2565,
+     2.2821
+    ],
+    "beta_AB": 0.8643,
+    "beta_BA": 0.6475,
+    "beta_CA": 0.1873,
+    "aD": [
+     0.8914,
+     0.8914,
+     0.8914
+    ],
+    "eta": [
+     3.7399,
+     3.7399,
+     3.7399
+    ],
+    "rho": [
+     1.1996,
+     1.1996,
+     1.1996
+    ]
+   }
+  }
+ }
+}

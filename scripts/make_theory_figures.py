@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Generate the three theoretical figures for notes/model_derivations.tex.
+"""Generate the two theoretical figures for notes/model_derivations.tex.
 
 Every line, slope, shift and point is computed from the model equations, so
 the figures are quantitatively consistent with the text:
@@ -8,14 +8,12 @@ the figures are quantitatively consistent with the text:
          dTB_A = TB_Anu dnu + TB_Atau dtau; drawn with the nested-CES
          values TB_Anu = m M_2, TB_Atau = m rho_D, but labelled generically
 
-  Fig 2  three-country adjustment in (dnu_B, dnu_C) space
-         TB_B = 0:  dnu_C = 2 dnu_B + (rho + rho_D) dtau / (2 M_3)
-         TB_C = 0:  dnu_C = dnu_B/2 + (rho - rho_D) dtau / (4 M_3)
-
-  Fig 3  average protection / relative treatment decomposition at N = 3
+  Fig 2  average protection / relative treatment decomposition at N = 3
          (dtau, 0) = (dtau/2, dtau/2) + (dtau/2, -dtau/2)
-         dnu = lambda_A (dtau/2) 1 + lambda_R (dtau/2, -dtau/2)
+         dnu   = lambda_A (dtau/2) 1 + lambda_R (dtau/2, -dtau/2)
+         F/j_S = lambda_A (dtau/2) 1 + 3 lambda_R (dtau/2, -dtau/2)
          with the two components orthogonal in (dnu_B, dnu_C) space.
+         (Written to fig3_decomposition.pdf, the name the .tex includes.)
 
 Run:  python scripts/make_theory_figures.py
 """
@@ -148,139 +146,82 @@ def figure1(dtau=0.20):
 
 
 # ------------------------------------------------------------------- Figure 2
-def _panel2(ax, rho, dtau, title, show_impact):
-    m3 = M3(rho)
-    sB = (rho + rhoD) * dtau / (2.0 * m3)    # intercept shift of TB_B = 0
-    sC = (rho - rhoD) * dtau / (4.0 * m3)    # intercept shift of TB_C = 0
-    nuB = -(rho + 3.0 * rhoD) / (6.0 * m3) * dtau
-    nuC = (rho - 3.0 * rhoD) / (6.0 * m3) * dtau
-
-    xlim, ylim = (-0.64, 0.28), (-0.40, 0.52)
-    x = np.linspace(xlim[0], xlim[1], 200)
-    ax.plot(x, 2.0 * x, color=GREY, lw=1.0, ls=DASH, zorder=2)
-    ax.plot(x, 0.5 * x, color=GREY, lw=1.0, ls=DASH, zorder=2)
-    ax.plot(x, 2.0 * x + sB, color=INK, lw=1.5, zorder=3)
-    ax.plot(x, 0.5 * x + sC, color=INK, lw=1.5, zorder=3)
-    _frame(ax, xlim, ylim, r"$d\nu_B$", r"$d\nu_C$", equal=True)
-
-    ax.plot([0], [0], "o", ms=4.4, mfc="white", mec=INK, mew=1.2, zorder=7)
-    ax.plot([nuB], [nuC], "o", ms=5.0, color=INK, zorder=7)
-    ax.text(0.024, -0.024, r"$E$", va="top", ha="left", fontsize=9)
-    ax.text(nuB - 0.045, nuC - 0.030, r"$E'$", va="top", ha="right", fontsize=9)
-
-    px, py = _line_point(2.0, sB, xlim, ylim, 1.0)
-    ax.text(px - 0.014, py, r"$\mathrm{TB}_B=0$", ha="right", va="center",
-            fontsize=8, color=INK)
-    px, py = _line_point(0.5, sC, xlim, ylim, 0.82)
-    ax.text(px, py + 0.022, r"$\mathrm{TB}_C=0$", ha="right", va="bottom",
-            fontsize=8, color=INK)
-
-    # impact effect: holding nu_B at zero, C's balance clears at nu_C = sC,
-    # whose sign is the sign of rho - rho_D
-    ax.plot([0], [sC], "s", ms=4.2, mfc="white", mec=INK, mew=1.2, zorder=7)
-    ax.annotate("", xy=(0, sC), xytext=(0, 0),
-                arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.1,
-                                shrinkA=0, shrinkB=0))
-    ax.text(0.048, sC, r"$F_C>0$", va="center", ha="left", fontsize=8.4)
-
-    if show_impact:
-        ax.annotate("", xy=(nuB, nuC), xytext=(0, sC),
-                    arrowprops=dict(arrowstyle="-|>", color=MID, lw=1.1,
-                                    shrinkA=6, shrinkB=7,
-                                    connectionstyle="arc3,rad=0.28"))
-
-    # read the bystander response off the vertical axis
-    ax.plot([nuB, 0], [nuC, nuC], color=GREY, lw=0.6, ls=DOT, zorder=2)
-    ax.text(-0.016, nuC + (0.016 if nuC > 0 else -0.016), r"$d\nu_C$",
-            ha="right", va="bottom" if nuC > 0 else "top", fontsize=8,
-            color=MID)
-
-    ax.set_title(title, fontsize=8.8, pad=8)
-    return dict(sB=sB, sC=sC, nuB=nuB, nuC=nuC)
-
-
-def figure2(dtau=1.0):
-    fig, axes = plt.subplots(1, 2, figsize=(6.7, 4.0), layout="constrained")
-    out = {}
-    out["mid"] = _panel2(
-        axes[0], RHO_MID, dtau,
-        r"(a) $\rho_D<\rho<3\rho_D$:  $d\nu_C<0$ although $F_C>0$",
-        show_impact=True)
-    out["high"] = _panel2(
-        axes[1], RHO_HIGH, dtau,
-        r"(b) $\rho>3\rho_D$:  bilateral reversal, $d\nu_C>0$",
-        show_impact=False)
-    fig.suptitle(r"dashed: loci at $d\tau=0$;  solid: loci after the tariff",
-                 y=0.035, fontsize=7.6, color=MID)
-    fig.savefig(os.path.join(OUT, "fig2_three_country.pdf"))
-    plt.close(fig)
-    return out
-
-
-# ------------------------------------------------------------------- Figure 3
-def _panel3(ax, rho, tau, title):
+def _panel2(ax, rho, tau, title):
     lA, lR = lam_A(rho), lam_R(rho)
     step = lA * tau / 2.0                     # average-protection step
     rel = lR * tau / 2.0                      # relative-treatment step
     Sx, Sy = step, step
-    Fx, Fy = step + rel, step - rel
+    Fx, Fy = step + rel, step - rel           # equilibrium d nu
+    Dx, Dy = step + 3.0 * rel, step - 3.0 * rel   # F / j_S (N = 3)
 
-    xlim, ylim = (-0.64, 0.16), (-0.50, 0.30)
+    xlim, ylim = (-1.00, 0.16), (-0.56, 0.66)
     _frame(ax, xlim, ylim, r"$d\nu_B$", r"$d\nu_C$", equal=True)
 
     # the constant (NEER) direction
-    d = np.linspace(-0.48, 0.13, 40)
+    d = np.linspace(-0.56, 0.13, 40)
     ax.plot(d, d, color=GREY, lw=0.8, ls=DOT, zorder=2)
-    ax.text(-0.455, -0.470, r"common direction $\mathbf{1}$",
+    ax.text(-0.560, -0.572, r"common direction $\mathbf{1}$",
             fontsize=7.2, color=MID, ha="left", va="top", rotation=45,
             rotation_mode="anchor")
 
-    # the zero-sum direction through the average-protection point
+    # the zero-sum direction through the average-protection point, drawn
+    # only where the legs do not already trace it
     amax = min(abs(rel) + 0.11, Sy - ylim[0] - 0.03, xlim[1] - Sx - 0.02)
-    amin = -(abs(rel) + 0.055)
-    a = np.linspace(amin, amax, 40)
+    if abs(Sx + amax) < 0.10:                 # keep the label off the axis
+        amax = -Sx - 0.02
+    a = np.linspace(0.0, amax, 20)
     ax.plot(Sx + a, Sy - a, color=GREY, lw=0.8, ls=DOT, zorder=2)
     ax.text(Sx + amax, Sy - amax + 0.012, "zero-sum",
             fontsize=7.2, color=MID, ha="right", va="bottom", rotation=-45,
             rotation_mode="anchor")
 
+    # disturbance at unchanged exchange rates (dashed), then the solid legs
+    ax.plot([Sx, Dx], [Sy, Dy], color=INK, lw=1.3, ls=DASH, zorder=3)
     ax.annotate("", xy=(Sx, Sy), xytext=(0, 0),
                 arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.6,
-                                shrinkA=0, shrinkB=0))
+                                shrinkA=0, shrinkB=0), zorder=5)
     ax.annotate("", xy=(Fx, Fy), xytext=(Sx, Sy),
                 arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.6,
-                                shrinkA=0, shrinkB=0))
+                                shrinkA=0, shrinkB=0), zorder=5)
 
     ax.plot([0], [0], "o", ms=4.2, mfc="white", mec=INK, mew=1.2, zorder=7)
     ax.plot([Sx], [Sy], "o", ms=4.2, color=INK, zorder=7)
     ax.plot([Fx], [Fy], "o", ms=5.2, color=INK, zorder=7)
+    ax.plot([Dx], [Dy], "s", ms=4.6, mfc="white", mec=INK, mew=1.2, zorder=7)
 
-    ax.text(Sx / 2 - 0.042, Sy / 2 + 0.042,
-            r"$\lambda_A\,\bar t\,\mathbf{1}$", ha="right", va="bottom",
-            fontsize=9.5)
+    ax.text(Sx / 2 + 0.012, Sy / 2 - 0.012,  # along the common arrow, at its midpoint
+            r"$\lambda_A\,\bar t\,\mathbf{1}$", ha="center", va="top",
+            fontsize=9.5, rotation=45, rotation_mode="anchor")
     ax.text((Sx + Fx) / 2 - 0.032, (Sy + Fy) / 2 - 0.032,
             r"$\lambda_R\,\tilde t$", ha="right", va="top", fontsize=9.5)
+    ax.text((Fx + Dx) / 2 + 0.030, (Fy + Dy) / 2 + 0.030,
+            r"$3\lambda_R\,\tilde t$", ha="left", va="bottom", fontsize=9.5)
     ax.text(Sx + 0.028, Sy - 0.028,
             r"$d\nu_A^E=\lambda_A\bar t$", ha="left", va="top", fontsize=8)
-    ax.text(Fx - 0.022, Fy + 0.022, r"$d\boldsymbol{\nu}$", ha="right", va="bottom",
-            fontsize=10)
+    ax.text(Fx + 0.030, Fy + 0.030, r"$d\boldsymbol{\nu}$", ha="left",
+            va="bottom", fontsize=10)
+    ax.text(Dx - 0.022, Dy + 0.022, r"$\boldsymbol{F}/j_S$", ha="right",
+            va="bottom", fontsize=9.5)
 
-    # the height of nu above the axis is the bystander response
-    ax.plot([Fx, 0], [Fy, Fy], color=GREY, lw=0.6, ls=DOT, zorder=2)
-    ax.text(-0.014, Fy + (0.014 if Fy > 0 else -0.014),
-            r"$d\nu_C$", ha="right", va="bottom" if Fy > 0 else "top",
-            fontsize=8, color=MID)
+    # heights above the axis: the bystander response and its disturbance
+    for y, lab in ((Fy, r"$d\nu_C$"), (Dy, r"$F_C>0$")):
+        x0 = Fx if y == Fy else Dx
+        ax.plot([x0, 0], [y, y], color=GREY, lw=0.6, ls=DOT, zorder=2)
+        ax.text(0.014, y + (0.014 if y > 0 else -0.014), lab,
+                ha="left", va="bottom" if y > 0 else "top",
+                fontsize=8, color=MID)
 
     ax.set_title(title, fontsize=8.8, pad=8)
-    return dict(S=(Sx, Sy), F=(Fx, Fy), lam_A=lA, lam_R=lR)
+    return dict(S=(Sx, Sy), F=(Fx, Fy), D=(Dx, Dy), lam_A=lA, lam_R=lR)
 
 
-def figure3(tau=1.0):
-    fig, axes = plt.subplots(1, 2, figsize=(6.7, 3.9), layout="constrained")
+def figure2(tau=1.0):
+    fig, axes = plt.subplots(1, 2, figsize=(6.7, 4.05), layout="constrained")
     out = {}
-    out["mid"] = _panel3(axes[0], RHO_MID, tau,
-                         r"(a) $\rho<3\rho_D$:  $d\nu_C<0$")
-    out["high"] = _panel3(axes[1], RHO_HIGH, tau,
+    out["mid"] = _panel2(
+        axes[0], RHO_MID, tau,
+        r"(a) $\rho_D<\rho<3\rho_D$:  $d\nu_C<0$ although $F_C>0$")
+    out["high"] = _panel2(axes[1], RHO_HIGH, tau,
                           r"(b) $\rho>3\rho_D$:  $d\nu_C>0$")
     fig.suptitle(r"$\mathbf{t}=(d\tau,0)=(d\tau/2,\ d\tau/2)+(d\tau/2,\ -d\tau/2)$",
                  y=0.035, fontsize=8, color=MID)
@@ -290,7 +231,7 @@ def figure3(tau=1.0):
 
 
 # ------------------------------------------------------------------- checks
-def selfcheck(r1, r2, r3):
+def selfcheck(r1, r2):
     """Every plotted point must equal the closed form in the text."""
     dtau = 0.20
     assert abs(r1["nu_star"] - (-rhoD / M2 * dtau)) < 1e-12
@@ -299,32 +240,29 @@ def selfcheck(r1, r2, r3):
         m3 = M3(rho)
         nuB = -(rho + 3 * rhoD) / (6 * m3)
         nuC = (rho - 3 * rhoD) / (6 * m3)
-        assert abs(r2[key]["nuB"] - nuB) < 1e-12
-        assert abs(r2[key]["nuC"] - nuC) < 1e-12
-        # the two loci intersect at the closed-form equilibrium
-        assert abs(nuC - (2 * nuB + r2[key]["sB"])) < 1e-12
-        assert abs(nuC - (0.5 * nuB + r2[key]["sC"])) < 1e-12
-        # impact effect on C has the sign of rho - rho_D
-        assert np.sign(r2[key]["sC"]) == np.sign(rho - rhoD)
-        # the decomposition lands on the same equilibrium
-        assert abs(r3[key]["F"][0] - nuB) < 1e-12
-        assert abs(r3[key]["F"][1] - nuC) < 1e-12
+        # the decomposition lands on the closed-form equilibrium
+        assert abs(r2[key]["F"][0] - nuB) < 1e-12
+        assert abs(r2[key]["F"][1] - nuC) < 1e-12
         # the average-protection component carries the whole NEER response
-        assert abs(r3[key]["S"][0] - (-rhoD / (2 * m3))) < 1e-12
+        assert abs(r2[key]["S"][0] - (-rhoD / (2 * m3))) < 1e-12
         # the two components are orthogonal in (nu_B, nu_C) space
-        Sv = np.array(r3[key]["S"])
-        Rv = np.array(r3[key]["F"]) - Sv
+        Sv = np.array(r2[key]["S"])
+        Rv = np.array(r2[key]["F"]) - Sv
         assert abs(float(Sv @ Rv)) < 1e-14
+        # F / j_S from (3c-JF): F = -(m/4)(rho + rho_D, rho_D - rho), j_S = m M_3 / 2
+        FjS = -np.array([rho + rhoD, rhoD - rho]) / (2 * m3)
+        assert np.allclose(r2[key]["D"], FjS, atol=1e-12)
+        assert abs(r2[key]["D"][1] - (rho - rhoD) / (2 * m3)) < 1e-12
+    for key in ("mid", "high"):
+        r = r2[key]
+        print("fig2 %-4s K = (%+.4f, %+.4f)  dnu = (%+.4f, %+.4f)  F/j_S = (%+.4f, %+.4f)"
+              % ((key,) + r["S"] + r["F"] + r["D"]))
     print("rho_D = %.4f,  3 rho_D = %.4f,  M_2 = %.4f" % (rhoD, 3 * rhoD, M2))
-    print("fig2 (a) rho=%.1f: F_C shift = %+.4f, equilibrium nu_C = %+.4f"
-          % (RHO_MID, r2["mid"]["sC"], r2["mid"]["nuC"]))
-    print("fig2 (b) rho=%.1f: F_C shift = %+.4f, equilibrium nu_C = %+.4f"
-          % (RHO_HIGH, r2["high"]["sC"], r2["high"]["nuC"]))
     print("all figure self-checks passed")
 
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
-    r1, r2, r3 = figure1(), figure2(), figure3()
-    selfcheck(r1, r2, r3)
+    r1, r2 = figure1(), figure2()
+    selfcheck(r1, r2)
     print("written to", OUT)
