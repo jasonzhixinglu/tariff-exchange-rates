@@ -491,18 +491,14 @@ Average protection shifts expenditure toward the domestic economy and pushes $A$
 \label{eq:Nthresh}
 \end{equation}
 
-The threshold compares the two diversion margins identified in Section~\ref{sec:ncountry}. A larger $\eta$ strengthens substitution toward the domestic tradable and therefore raises $\rho_D$, while the tariff-rebate channel toward non-tradables also contributes to $\rho_D$. Both make a bystander depreciation less likely. A larger $\rho$, by contrast, strengthens diversion across foreign suppliers and makes it more likely. The factor $N$ reflects the stronger adjustment of relative exchange rates, which gives the relative-treatment response the additional factor $1/N$ in $\lambda_R=-\rho/(N\mathcal M_N)$, so diversion across foreign suppliers must be sufficiently strong to overcome the average-protection effect governed by $\rho_D$. The same threshold applies when $A$ raises its tariff on any $k\leq N-2$ partners, and $A$ depreciates against a partner facing a smaller-than-average tariff increase only if $\rho>N\rho_D$ and the tariff differential is large enough (Appendix~\ref{app:linear}, \eqref{eq:k-targets} and \eqref{eq:reltreat}).
+The threshold compares the two diversion margins identified in Section~\ref{sec:ncountry}. Stronger domestic diversion, through a larger $\eta$ or the tariff-rebate channel, raises $\rho_D$ and makes a bystander depreciation less likely, while stronger diversion across foreign suppliers, a larger $\rho$, makes it more likely. The factor $N$ comes from the additional factor $1/N$ in $\lambda_R=-\rho/(N\mathcal M_N)$, explained in Section~\ref{sec:ncountry}. The same threshold applies when $A$ raises its tariff on any $k\leq N-2$ partners, and $A$ depreciates against a partner facing a smaller-than-average tariff increase only if $\rho>N\rho_D$ and the tariff differential is large enough (Appendix~\ref{app:linear}, \eqref{eq:reltreat}--\eqref{eq:k-targets}).
 
-In particular, the reversal cannot occur when the two substitution elasticities coincide and $\alpha_D\geq1/N$. If $\rho=\eta=\sigma$, then
+For $\alpha_D\geq1/N$,
 \begin{equation}
-N\rho_D-\sigma=\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T),
+N\rho_D-\eta=\eta(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)\geq0,
 \label{eq:single}
 \end{equation}
-which is nonnegative for $\alpha_D\geq1/N$. Hence $\rho\leq N\rho_D$ and the reversal condition cannot hold.\footnote{Equality in \eqref{eq:single} requires $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$ with $\rho=\eta=\sigma$, $d\nu_C/d\tau=-(1-\alpha_T)/(N\sigma)$, which approaches zero from below as $\alpha_T\to1$; see Appendix~\ref{app:linear}.} More generally, for $\alpha_D\geq1/N$,
-\[
-N\rho_D-\eta=\eta(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)\geq0,
-\]
-so $\rho>\eta$ is necessary, but not sufficient, for a bystander depreciation. Appendix~\ref{app:real} gives the corresponding real exchange-rate results.
+so $\rho>\eta$ is necessary, but not sufficient, for a bystander depreciation. In particular, the reversal cannot occur when the two substitution elasticities coincide.\footnote{Equality in \eqref{eq:single} requires $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$ with $\rho=\eta=\sigma$, $d\nu_C/d\tau=-(1-\alpha_T)/(N\sigma)$, which approaches zero from below as $\alpha_T\to1$; see Appendix~\ref{app:linear}.} Appendix~\ref{app:real} gives the corresponding real exchange-rate results.
 
 The bystander's trade balance can nevertheless improve at unchanged exchange rates even when its bilateral exchange rate does not reverse. From \eqref{eq:impact-chain},
 \begin{equation}
@@ -514,7 +510,7 @@ F_C>0 \iff \rho>\rho_D,
 \qquad\text{whereas}\qquad
 d\nu_C>0 \iff \rho>N\rho_D.
 \]
-The first condition concerns only the initial tariff-induced trade-balance disturbance: diversion toward $C$ exceeds diversion toward the domestic economy once $\rho>\rho_D$. The exchange-rate response must also account for how effectively relative exchange-rate movements restore trade balance. Because the relative-treatment response carries the additional factor $1/N$, an improvement in $C$'s trade balance at unchanged exchange rates need not be large enough to reverse the bilateral exchange-rate response. Figure~\ref{fig:decomposition} illustrates the distinction. Because $G$ and $(-J)^{-1}$ share the common and zero-sum eigenspaces, the disturbance can be expressed in the same coordinates as the response: $\boldsymbol{F}/j_S=\lambda_A\,\bar t\,\mathbf{1}+N\lambda_R\,\widetilde{\mathbf{t}}$ is the exchange-rate response that would obtain if relative exchange-rate movements were no more effective than common ones. Since $j_D=Nj_S$, the relative-treatment component of the equilibrium response is only $1/N$ as large. In panel~(a), relative treatment is strong enough to improve $C$'s trade balance at unchanged exchange rates, but once scaled down by $1/N$ it no longer offsets the common appreciation.
+The first condition concerns only the initial tariff-induced trade-balance disturbance: diversion toward $C$ exceeds diversion toward the domestic economy once $\rho>\rho_D$. The second also depends on how effectively exchange-rate movements restore trade balance. Because $G$ and $(-J)^{-1}$ share the common and zero-sum eigenspaces, the disturbance can be expressed in the same coordinates as the response: $\boldsymbol{F}/j_S=\lambda_A\,\bar t\,\mathbf{1}+N\lambda_R\,\widetilde{\mathbf{t}}$ is the exchange-rate response that would obtain if relative exchange-rate movements were no more effective than common ones. Since $j_D=Nj_S$, the relative-treatment component of the equilibrium response is only $1/N$ as large. Figure~\ref{fig:decomposition} illustrates the distinction: in panel~(a), relative treatment is strong enough to improve $C$'s trade balance at unchanged exchange rates, but once scaled down by $1/N$ it no longer offsets the common appreciation.
 
 \begin{figure}[htbp]
 \centering
@@ -757,11 +753,11 @@ d\nu_C=\frac{\lambda_A-\lambda_R}{N-1}\,d\tau=\frac{\rho-N\rho_D}{N(N-1)\mathcal
 while $d\log e_{BC}=d\nu_C-d\nu_B=-\lambda_R\,d\tau$ and $d\nu_A^E=\lambda_A\,d\tau/(N-1)=-\rho_D\,d\tau/[(N-1)\mathcal M_N]$. Since $\rho_D>0$ by \eqref{eq:rhoD} and $\mathcal M_N>0$ under MML, these give \eqref{eq:N-slopes}--\eqref{eq:Nthresh}.
 
 \paragraph{Derivation of \eqref{eq:single}.}
-With $\rho=\eta=\sigma$,
+By \eqref{eq:rhoD},
 \[
-N\rho_D = N\big[ 1+\alpha_D(\sigma-1)-\alpha_T(1-\alpha_D) \big],
+N\rho_D = N\big[ 1+\alpha_D(\eta-1)-\alpha_T(1-\alpha_D) \big],
 \]
-which rearranges to \eqref{eq:single}. Since $\rho_D$ does not involve $\rho$, the same algebra with $\eta$ in place of $\sigma$ gives the expression for $N\rho_D-\eta$ in Section~\ref{sec:unilateral}. At $\alpha_D=1/N$,
+which rearranges to \eqref{eq:single}, and both terms on its right-hand side are nonnegative for $\alpha_D\geq1/N$. At $\alpha_D=1/N$ with $\rho=\eta=\sigma$,
 \[
 N\rho_D-\sigma = (N-1)(1-\alpha_T),
 \qquad
