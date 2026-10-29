@@ -1,19 +1,42 @@
-# Trade Tariffs and Exchange Rates
+# Understanding Multilateral Tariffs and Exchange Rates
 
-Replication code for *Trade Tariffs and Exchange Rates: Revisiting Conventional Wisdom in a Three-Country Framework* (Lu & Milkov 2026).
+Replication code for *Understanding Multilateral Tariffs and Exchange Rates* (Jason Lu and Dimitre Milkov, IMF Research Department, 2026). The paper is in [`paper/main.pdf`](paper/main.pdf), with LaTeX sources in `paper/`. Everything in it is rebuilt by `python code/run_all.py`, which runs the tests, numerical checks, tables, figures and LaTeX build.
 
-**Live dashboard:** https://jasonzhixinglu.github.io/tariff-exchange-rates/
+**Live dashboard:** https://jasonzhixinglu.github.io/tariff-exchange-rates/ (built from the earlier three-country draft; see below).
 
-## Overview
+## Results
 
-The paper develops a three-country, two-sector, one-factor general equilibrium model to study how tariffs affect bilateral exchange rates. Two results (paper under revision — see `REVISION_PLAN.md`):
+The paper studies the long-run exchange-rate response to arbitrary tariff vectors in an N-country trade model.
 
-1. **Impossibility.** In a flat single-elasticity CES, the conventional two-country prediction — the tariff-imposing country appreciates — survives the move to three countries *as a theorem*: an isolated tariff cannot depreciate country A against the untariffed third country at any σ when home bias is realistic. Raising σ strengthens trade diversion and home-vs-import expenditure switching in lockstep, so diversion never dominates.
-2. **Threshold.** Once the home-vs-import elasticity η and the cross-origin elasticity ρ are separated in a two-layer nest, the reversal exists, with closed-form threshold **ρ\* = 3[1 + α_D(η−1) − α_T(1−α_D)]**: A's currency depreciates against the untariffed third country iff ρ > ρ\*. At US-realistic parameters ρ\* ≈ 4, inside measured cross-origin elasticities. A near-symmetric bilateral trade war unambiguously depreciates both belligerents against the bystander, with magnitude increasing in ρ.
+1. **Disturbance–adjustment representation.** To first order, dν = (−J)⁻¹F: the tariff's trade-balance disturbance at unchanged exchange rates, F, times the inverse of the exchange-rate adjustment matrix. A *multilateral Marshall–Lerner* (MML) condition (−J a nonsingular M-matrix) makes adjustment well behaved but does not fix the sign of any bilateral response.
+2. **Average protection and relative treatment.** Under partner symmetry, any tariff vector splits into average protection, which alone moves the trade-weighted NEER, and relative treatment, which alone moves bilateral rates around it.
+3. **Thresholds (nested CES).** With a home–import elasticity η, a cross-origin elasticity ρ and the domestic diversion margin ρ_D = α_D η + (1−α_D)(1−α_T):
+   - a unilateral tariff always appreciates the tariffing country's NEER and its currency against the target, and depreciates it against every untariffed bystander iff **ρ > Nρ_D** (3ρ_D = 3.96 at US-like parameters with N = 3);
+   - under bilateral retaliation the belligerents' bilateral rate is unchanged and the bystander threshold falls to **ρ > ρ_D**, so both belligerents depreciate against bystanders and in effective terms;
+   - with realistic home bias the reversal requires ρ > η, so it cannot arise when a single elasticity governs both margins.
+4. **Composite bystander.** The symmetric N-country economy reduces exactly to a three-country economy with a composite bystander.
+5. **Asymmetry and welfare.** A uniform tariff appreciates the currency against every partner and raises welfare at any balanced baseline under MML. A tariff on a single small, low-weight partner can instead worsen the aggregate terms of trade, and hence welfare, when ρ is high.
+6. **2025.** A stylized reading of the 2025 episode (no calibration): the retaliation phase is consistent with the trade channel; the dollar's effective weakness under unilateral and near-uniform tariffs is not explained by it.
 
-The paper calibrates the model to the 2025 US–China tariff episode across three main configurations and eight additional country-C pairings.
+## Code for the paper
 
-## Repository structure
+```
+code/model/      nested_ces (exact N-country model), linear (Appendix A),
+                 closed_forms (symmetric benchmark), asymmetry, extensions
+                 (Ricardo–Viner tradables, transfer-financed imbalances)
+code/tests/      pytest suite (linearization vs finite differences, closed forms,
+                 composite bystander, welfare lemma, uniform tariffs, extensions)
+code/checks/     scripts that recompute every number in the paper (code/results/*.json)
+code/figures/    one script per figure;  code/tables/  generated table rows
+code/data/       fetch_fx_2025.py (FRED, BIS, Fed H.10 weights; cached in data/raw/)
+paper/           main.tex, sections/, refs.bib, figures/, tables/, main.pdf
+```
+
+## Legacy code (earlier three-country draft)
+
+The package, notebooks, scripts and dashboard below belong to an earlier draft that used a flat single-elasticity CES and calibrated a three-country model to the 2025 episode. They are kept for reference and are not used by the current paper.
+
+### Repository structure
 
 ```
 src/tariff_exchange_rates/          Core Python package
@@ -60,7 +83,7 @@ Exchange_Rate_Tariffs/              LaTeX paper source
     *.pdf                           Model equilibrium figures referenced in paper
 ```
 
-## Installation
+### Installation
 
 ```bash
 pip install -e .
@@ -76,7 +99,7 @@ npm install
 npm run dev
 ```
 
-## Reproducing results
+### Reproducing results
 
 **Paper figures** (Sections 2–3): run `notebooks/section3_three_country_model.ipynb`. Figures are written to `Exchange_Rate_Tariffs/`.
 
@@ -90,7 +113,7 @@ python scripts/precompute_calibration_panel.py
 python scripts/fetch_fx_data.py                # requires internet
 ```
 
-## Calibration (Section 4)
+### Calibration (Section 4)
 
 Three main configurations appear in the paper body; eight appear in the dashboard and Appendix B. Parameters are calibrated as follows:
 
@@ -120,7 +143,7 @@ Extended calibration parameters (Appendix B / dashboard):
 | Taiwan | 3 | 0.035 | 0.058 | Semiconductor-dominant; low aggregate substitutability |
 | India | 3 | 0.031 | 0.497 | Growing manufacturing; limited current overlap |
 
-## Usage
+### Usage
 
 ```python
 from tariff_exchange_rates import CALIBRATIONS, TARIFF_REGIMES, solve_3country, free_trade

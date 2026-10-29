@@ -1,8 +1,10 @@
 """Rebuild every paper number, table, figure and the PDF, in order.
 
-    python code/run_all.py            # everything (FX data must be cached)
-    python code/run_all.py --fetch    # also (re)download the 2025 FX data
+    python code/run_all.py
 
+The FX script downloads only raw files missing from data/raw/fx2025 and
+rebuilds the processed files from the cache, so the run is offline once the
+cache exists.
 Steps: unit tests -> numerical checks (code/results/*.json) -> tables
 (paper/tables) -> figures (paper/figures) -> latexmk (paper/main.pdf).
 """
@@ -21,13 +23,14 @@ def run(args, cwd):
 
 def main():
     py = sys.executable
-    if "--fetch" in sys.argv:
-        run([py, os.path.join("data", "fetch_fx_2025.py")], CODE)
     run([py, "-m", "pytest", "-q", "tests"], CODE)
     run([py, os.path.join("checks", "appendix_c.py")], CODE)
     run([py, os.path.join("checks", "appendix_c.py"), "--kappa-grid"], CODE)
     run([py, os.path.join("checks", "asymmetry_checks.py")], CODE)
     run([py, os.path.join("checks", "us_china_row.py")], CODE)
+    run([py, os.path.join("checks", "appendix_d.py")], CODE)
+    run([py, os.path.join("data", "fetch_fx_2025.py")], CODE)
+    run([py, os.path.join("checks", "episode2025.py")], CODE)
     run([py, os.path.join("tables", "make_tables.py")], CODE)
     figs = os.path.join(CODE, "figures")
     for f in sorted(os.listdir(figs)):
