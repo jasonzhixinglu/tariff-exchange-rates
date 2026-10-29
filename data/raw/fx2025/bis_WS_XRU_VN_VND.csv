@@ -1,0 +1,68 @@
+FREQ,REF_AREA,CURRENCY,COLLECTION,UNIT_MULT,DECIMALS,AVAILABILITY,TITLE,TIME_PERIOD,OBS_VALUE,OBS_STATUS,OBS_PRE_BREAK,OBS_CONF
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-01,23983.08,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-02,23976.09,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-03,23994.88,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-04,24140.24,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-05,24216.46,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-06,24252.8,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-07,24251.56,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-08,24245.85,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-09,24163.54,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-10,24192.52,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-11,24276.42,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2024-12,24285.19,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-01,24336.1,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-02,24546.75,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-03,24787.92,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-04,24905.72,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-05,24955.72,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-06,25009.92,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-07,25150.96,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-09,25204.93,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-10,25118.7,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-11,25123.6,A,,F
+M,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - Average of observations through period,2025-12,25144.67,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2024-Q1,23984.683333,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2024-Q2,24203.166667,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2024-Q3,24220.316667,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2024-Q4,24251.376667,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2025-Q1,24556.923333,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2025-Q2,24957.12,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2025-Q3,25177.945,A,,F
+Q,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - Average of observations through period,2025-Q4,25128.99,A,,F
+A,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Annual - Average of observations through period,2024,24164.885833,A,,F
+A,VN,VND,A,0,6,A, Exchange rates against USD Viet Nam - Dong - Annual - Average of observations through period,2025,24934.999091,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-01,23991,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-02,24002,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-03,24003,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-04,24246,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-05,24261,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-06,24260,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-07,24255,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-08,24224,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-09,24093,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-10,24243,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-11,24251,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2024-12,24335,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-01,24325,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-02,24726,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-03,24837,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-04,24956,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-05,24978,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-06,25052,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-07,25240,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-08,25240,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-09,25187,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-10,25093,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-11,25155,A,,F
+M,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Monthly - End of period,2025-12,25121,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2024-Q1,24003,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2024-Q2,24260,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2024-Q3,24093,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2024-Q4,24335,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2025-Q1,24837,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2025-Q2,25052,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2025-Q3,25187,A,,F
+Q,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Quarterly - End of period,2025-Q4,25121,A,,F
+A,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Annual - End of period,2024,24335,A,,F
+A,VN,VND,E,0,6,A, Exchange rates against USD Viet Nam - Dong - Annual - End of period,2025,25121,A,,F

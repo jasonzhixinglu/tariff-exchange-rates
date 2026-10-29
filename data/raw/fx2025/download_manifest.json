@@ -1,0 +1,32 @@
+{
+  "fred_DEXUSEU.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2023-12-01&coed=2025-12-31",
+    "retrieved": "2026-10-29",
+    "bytes": 9679
+  },
+  "fred_DEXCHUS.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS&cosd=2023-12-01&coed=2025-12-31",
+    "retrieved": "2026-10-29",
+    "bytes": 9679
+  },
+  "fred_DTWEXBGS.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2023-12-01&coed=2025-12-31",
+    "retrieved": "2026-10-29",
+    "bytes": 10722
+  },
+  "bis_WS_XRU_VN_VND.csv": {
+    "url": "https://stats.bis.org/api/v1/data/WS_XRU/.VN.VND.?startPeriod=2024-01-01&endPeriod=2025-12-31&format=csv",
+    "retrieved": "2026-10-29",
+    "bytes": 8195
+  },
+  "h10_weights_current.htm": {
+    "url": "https://www.federalreserve.gov/releases/h10/weights/default.htm",
+    "retrieved": "2026-10-29",
+    "bytes": 116598
+  },
+  "h10_weights_previous.htm": {
+    "url": "https://www.federalreserve.gov/releases/h10/weights/previousweights.htm",
+    "retrieved": "2026-10-29",
+    "bytes": 118748
+  }
+}

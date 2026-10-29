@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "description": "Raw 2024 goods-trade and GDP inputs for a US/China/ROW baseline. Values transcribed from the raw files in this directory; no model construction.",
+    "year": 2024,
+    "retrieved": "2026-10-29",
+    "units_default": "billions of current USD"
+  },
+  "us_census": {
+    "note": "Census basis. Preferred = current revised figures (after June 2025 annual revision).",
+    "imports_total": {
+      "value": 3266.41,
+      "units": "billions of current USD",
+      "source_url": "https://www.census.gov/foreign-trade/statistics/historical/goods.xlsx",
+      "table_or_series": "U.S. Trade in Goods - BOP Basis vs. Census Basis; Imports, Census Basis, 2024 (NSA annual)",
+      "retrieved": "2026-10-29",
+      "raw_file": "census_hist_goods.xlsx"
+    },
+    "exports_total": {
+      "value": 2061.691,
+      "units": "billions of current USD",
+      "source_url": "https://www.census.gov/foreign-trade/statistics/historical/goods.xlsx",
+      "table_or_series": "U.S. Trade in Goods - BOP Basis vs. Census Basis; Exports, Census Basis, 2024 (NSA annual)",
+      "retrieved": "2026-10-29",
+      "raw_file": "census_hist_goods.xlsx"
+    },
+    "imports_from_china": {
+      "value": 440.3194,
+      "units": "billions of current USD",
+      "source_url": "https://www.census.gov/foreign-trade/balance/c5700.html",
+      "table_or_series": "Trade in Goods with China, 2024 TOTAL, Imports (general imports, customs value, NSA)",
+      "retrieved": "2026-10-29",
+      "raw_file": "census_c5700_china.html"
+    },
+    "exports_to_china": {
+      "value": 143.2717,
+      "units": "billions of current USD",
+      "source_url": "https://www.census.gov/foreign-trade/balance/c5700.html",
+      "table_or_series": "Trade in Goods with China, 2024 TOTAL, Exports (FAS, NSA)",
+      "retrieved": "2026-10-29",
+      "raw_file": "census_c5700_china.html"
+    },
+    "first_release_as_carried_by_IMF_IMTS": {
+      "note": "Pre-revision figures (= FT-900 Dec-2024 release, Feb 2025). IMF labels US imports CIF but values equal Census general imports. These are the values in data/calibration_inputs.json (438.9, 3267.4).",
+      "imports_total": {
+        "value": 3267.389,
+        "units": "billions of current USD",
+        "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+        "table_or_series": "IMF IMTS USA MG_CIF_USD G001 A 2024",
+        "retrieved": "2026-10-29",
+        "raw_file": "imf_imts_2024.csv"
+      },
+      "exports_total": {
+        "value": 2065.411,
+        "units": "billions of current USD",
+        "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+        "table_or_series": "IMF IMTS USA XG_FOB_USD G001 A 2024",
+        "retrieved": "2026-10-29",
+        "raw_file": "imf_imts_2024.csv"
+      },
+      "imports_from_china": {
+        "value": 438.947,
+        "units": "billions of current USD",
+        "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+        "table_or_series": "IMF IMTS USA MG_CIF_USD CHN A 2024",
+        "retrieved": "2026-10-29",
+        "raw_file": "imf_imts_2024.csv"
+      },
+      "exports_to_china": {
+        "value": 143.546,
+        "units": "billions of current USD",
+        "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+        "table_or_series": "IMF IMTS USA XG_FOB_USD CHN A 2024",
+        "retrieved": "2026-10-29",
+        "raw_file": "imf_imts_2024.csv"
+      }
+    },
+    "seasonally_adjusted_totals": {
+      "imports_total": {
+        "value": 3263.8933,
+        "units": "billions of current USD",
+        "source_url": "https://www.census.gov/foreign-trade/balance/c0004.html",
+        "table_or_series": "Trade in Goods with World, Seasonally Adjusted, 2024 TOTAL",
+        "retrieved": "2026-10-29",
+        "raw_file": "census_c0004_world.html"
+      },
+      "exports_total": {
+        "value": 2063.0244,
+        "units": "billions of current USD",
+        "source_url": "https://www.census.gov/foreign-trade/balance/c0004.html",
+        "table_or_series": "Trade in Goods with World, Seasonally Adjusted, 2024 TOTAL",
+        "retrieved": "2026-10-29",
+        "raw_file": "census_c0004_world.html"
+      }
+    }
+  },
+  "china_gacc": {
+    "note": "GACC preliminary, released 2025-01-23. Exports FOB, imports CIF.",
+    "exports_total": {
+      "value": 3577.222028,
+      "units": "billions of current USD",
+      "source_url": "http://english.customs.gov.cn/Statics/a5b4fa86-46e4-4195-a0c0-5c45ade1cb38.html",
+      "table_or_series": "GACC (2) Imports and Exports by Country (Region) of Origin/Destination, 12.2024, Unit US$1,000; TOTAL, Exports 1to12",
+      "retrieved": "2026-10-29",
+      "raw_file": "gacc_2024_12_by_country_usd.html"
+    },
+    "imports_total": {
+      "value": 2585.066668,
+      "units": "billions of current USD",
+      "source_url": "http://english.customs.gov.cn/Statics/a5b4fa86-46e4-4195-a0c0-5c45ade1cb38.html",
+      "table_or_series": "same table; TOTAL, Imports 1to12",
+      "retrieved": "2026-10-29",
+      "raw_file": "gacc_2024_12_by_country_usd.html"
+    },
+    "exports_to_us": {
+      "value": 524.656214,
+      "units": "billions of current USD",
+      "source_url": "http://english.customs.gov.cn/Statics/a5b4fa86-46e4-4195-a0c0-5c45ade1cb38.html",
+      "table_or_series": "same table; United States, Exports 1to12",
+      "retrieved": "2026-10-29",
+      "raw_file": "gacc_2024_12_by_country_usd.html"
+    },
+    "imports_from_us": {
+      "value": 163.624122,
+      "units": "billions of current USD",
+      "source_url": "http://english.customs.gov.cn/Statics/a5b4fa86-46e4-4195-a0c0-5c45ade1cb38.html",
+      "table_or_series": "same table; United States, Imports 1to12",
+      "retrieved": "2026-10-29",
+      "raw_file": "gacc_2024_12_by_country_usd.html"
+    }
+  },
+  "china_imf_imts": {
+    "note": "China-reported, revised, as in IMF IMTS (dataset update 2026-10-01).",
+    "exports_total": {
+      "value": 3580.263,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "IMF IMTS CHN XG_FOB_USD G001 A 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_imts_2024.csv"
+    },
+    "imports_total": {
+      "value": 2587.04,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "IMF IMTS CHN MG_CIF_USD G001 A 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_imts_2024.csv"
+    },
+    "exports_to_us": {
+      "value": 525.225,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "IMF IMTS CHN XG_FOB_USD USA A 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_imts_2024.csv"
+    },
+    "imports_from_us": {
+      "value": 165.376,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "IMF IMTS CHN MG_CIF_USD USA A 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_imts_2024.csv"
+    }
+  },
+  "world_trade": {
+    "wto_world_merchandise_exports": {
+      "value": 24430.0,
+      "units": "billions of current USD",
+      "source_url": "https://www.wto.org/english/res_e/booksp_e/trade_outlook25_e.pdf",
+      "table_or_series": "WTO Global Trade Outlook and Statistics, April 2025, pp.4-5: world merchandise exports 2024 US$24.43 trillion (incl. intra-EU)",
+      "retrieved": "2026-10-29",
+      "raw_file": "wto_trade_outlook25.pdf"
+    },
+    "imf_imts_world_exports_fob": {
+      "value": 24004.508,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "IMF IMTS G001 XG_FOB_USD G001 A 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_imts_2024.csv"
+    },
+    "imf_imts_world_imports_cif": {
+      "value": 24501.511,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.STA,IMTS/CHN+USA+G001.XG_FOB_USD+MG_CIF_USD+MG_FOB_USD.G001+CHN+USA.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "IMF IMTS G001 MG_CIF_USD G001 A 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_imts_2024.csv"
+    }
+  },
+  "gdp_imf_weo": {
+    "vintage": "IMF WEO October 2026 (SDMX dataflow IMF.RES:WEO(9.0.0), publication date 2026-10-13)",
+    "ppp_usa": {
+      "value": 29381.025,
+      "units": "billions of current international dollars (PPP, ICP 2017-2021 benchmarks)",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/USA+CHN+G001.NGDPD+PPPGDP.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "WEO PPPGDP USA 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_weo_gdp_2024.csv"
+    },
+    "ppp_chn": {
+      "value": 38289.661,
+      "units": "billions of current international dollars (PPP, ICP 2017-2021 benchmarks)",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/USA+CHN+G001.NGDPD+PPPGDP.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "WEO PPPGDP CHN 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_weo_gdp_2024.csv"
+    },
+    "ppp_world": {
+      "value": 198532.476,
+      "units": "billions of current international dollars (PPP, ICP 2017-2021 benchmarks)",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/USA+CHN+G001.NGDPD+PPPGDP.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "WEO PPPGDP G001 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_weo_gdp_2024.csv"
+    },
+    "nominal_usa": {
+      "value": 29381.025,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/USA+CHN+G001.NGDPD+PPPGDP.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "WEO NGDPD USA 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_weo_gdp_2024.csv"
+    },
+    "nominal_chn": {
+      "value": 18928.994,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/USA+CHN+G001.NGDPD+PPPGDP.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "WEO NGDPD CHN 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_weo_gdp_2024.csv"
+    },
+    "nominal_world": {
+      "value": 111906.375,
+      "units": "billions of current USD",
+      "source_url": "https://api.imf.org/external/sdmx/2.1/data/IMF.RES,WEO/USA+CHN+G001.NGDPD+PPPGDP.A?startPeriod=2024&endPeriod=2024",
+      "table_or_series": "WEO NGDPD G001 2024",
+      "retrieved": "2026-10-29",
+      "raw_file": "imf_weo_gdp_2024.csv"
+    }
+  },
+  "us_bea_goods_aggregates": {
+    "note": "BEA NIPA annual flat file, vintage as of retrieval. No China analogue collected.",
+    "gdp": {
+      "value": 29380.991,
+      "units": "billions of current USD",
+      "source_url": "https://apps.bea.gov/national/Release/TXT/NipaDataA.txt",
+      "table_or_series": "A191RC Gross domestic product",
+      "retrieved": "2026-10-29",
+      "raw_file": "bea_NipaDataA.txt"
+    },
+    "pce_total": {
+      "value": 19822.499,
+      "units": "billions of current USD",
+      "source_url": "https://apps.bea.gov/national/Release/TXT/NipaDataA.txt",
+      "table_or_series": "DPCERC Personal consumption expenditures",
+      "retrieved": "2026-10-29",
+      "raw_file": "bea_NipaDataA.txt"
+    },
+    "pce_goods": {
+      "value": 6263.41,
+      "units": "billions of current USD",
+      "source_url": "https://apps.bea.gov/national/Release/TXT/NipaDataA.txt",
+      "table_or_series": "DGDSRC PCE: Goods",
+      "retrieved": "2026-10-29",
+      "raw_file": "bea_NipaDataA.txt"
+    },
+    "gdp_goods_product_side": {
+      "value": 8766.759,
+      "units": "billions of current USD",
+      "source_url": "https://apps.bea.gov/national/Release/TXT/NipaDataA.txt",
+      "table_or_series": "A353RC GDP by major type of product: Goods",
+      "retrieved": "2026-10-29",
+      "raw_file": "bea_NipaDataA.txt"
+    },
+    "nipa_goods_exports": {
+      "value": 2057.954,
+      "units": "billions of current USD",
+      "source_url": "https://apps.bea.gov/national/Release/TXT/NipaDataA.txt",
+      "table_or_series": "A253RC Exports of goods",
+      "retrieved": "2026-10-29",
+      "raw_file": "bea_NipaDataA.txt"
+    },
+    "nipa_goods_imports": {
+      "value": 3265.714,
+      "units": "billions of current USD",
+      "source_url": "https://apps.bea.gov/national/Release/TXT/NipaDataA.txt",
+      "table_or_series": "A255RC Imports of goods",
+      "retrieved": "2026-10-29",
+      "raw_file": "bea_NipaDataA.txt"
+    }
+  },
+  "derived": {
+    "note": "Simple arithmetic on the values above (billions USD); mixes FOB/CIF/customs-value bases and reporter sides. Convenience only.",
+    "us_goods_absorption = A353RC + A255RC - A253RC": 9974.519,
+    "row_exports_to_us = Census imports total - imports from China": 2826.091,
+    "row_exports_to_china = GACC imports total - imports from US": 2421.443,
+    "row_to_row = WTO world exports - US exports - China exports - ROW->US - ROW->CHN": 13543.554,
+    "ppp_row = world - US - China": 130861.79,
+    "nominal_row = world - US - China": 63596.356
+  },
+  "check_3p8_vs_28_claim": {
+    "pairs_are": "[China share, all-foreign share]",
+    "finding": "Reproduced by imports / (alpha_T * nominal GDP) with alpha_T = 0.40 (scripts/calibrate_nested.py ALPHA_T) and the older US GDP 29,184.9 in data/calibration_inputs.json. The denominator is an assumed tradable share of GDP, not a measured goods-absorption aggregate.",
+    "draft_definition_old_inputs (438.9, 3267.4, 0.4*29184.9)": [
+      0.0376,
+      0.2799
+    ],
+    "same_definition_latest (Census revised, WEO Oct-2026)": [
+      0.0375,
+      0.2779
+    ],
+    "goods_absorption (A353RC+M-X)": [
+      0.0441,
+      0.3275
+    ],
+    "pce_goods": [
+      0.0703,
+      0.5215
+    ],
+    "gdp": [
+      0.015,
+      0.1112
+    ]
+  }
+}

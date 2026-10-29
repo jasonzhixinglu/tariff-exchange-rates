@@ -1,0 +1,131 @@
+{
+  "description": "Federal Reserve H.10 broad dollar index total trade weight for China (percent). 'used' = weights applied to construct broad_exCN_index (current vintage; the Fed states superseded vintages are no longer used for historical index values).",
+  "used": {
+    "vintage": "Trade Weights as of February 2, 2026",
+    "source_url": "https://www.federalreserve.gov/releases/h10/weights/default.htm",
+    "retrieval_date": "2026-10-29",
+    "china_weight_pct": {
+      "2024": 10.897,
+      "2025": 10.897
+    }
+  },
+  "previous_vintage_for_reference": {
+    "vintage": "Trade Weights as of March 24, 2025 (in use Mar 24, 2025 - Jan 30, 2026)",
+    "source_url": "https://www.federalreserve.gov/releases/h10/weights/previousweights.htm",
+    "retrieval_date": "2026-10-29",
+    "china_weight_pct": {
+      "2024": 11.212,
+      "2025": 11.212
+    }
+  },
+  "full_table_current_vintage_2024_2025_pct": {
+    "Australia": {
+      "2024": 1.437,
+      "2025": 1.437
+    },
+    "Argentina": {
+      "2024": 0.377,
+      "2025": 0.377
+    },
+    "Brazil": {
+      "2024": 1.89,
+      "2025": 1.89
+    },
+    "Canada": {
+      "2024": 12.776,
+      "2025": 12.776
+    },
+    "China": {
+      "2024": 10.897,
+      "2025": 10.897
+    },
+    "Chile": {
+      "2024": 0.691,
+      "2025": 0.691
+    },
+    "Colombia": {
+      "2024": 0.664,
+      "2025": 0.664
+    },
+    "Hong Kong": {
+      "2024": 1.071,
+      "2025": 1.071
+    },
+    "Indonesia": {
+      "2024": 0.689,
+      "2025": 0.689
+    },
+    "India": {
+      "2024": 3.352,
+      "2025": 3.352
+    },
+    "Israel": {
+      "2024": 0.874,
+      "2025": 0.874
+    },
+    "Japan": {
+      "2024": 5.185,
+      "2025": 5.185
+    },
+    "Korea": {
+      "2024": 3.623,
+      "2025": 3.623
+    },
+    "Malaysia": {
+      "2024": 1.44,
+      "2025": 1.44
+    },
+    "Mexico": {
+      "2024": 14.809,
+      "2025": 14.809
+    },
+    "Philippines": {
+      "2024": 0.622,
+      "2025": 0.622
+    },
+    "Russia": {
+      "2024": 0.087,
+      "2025": 0.087
+    },
+    "Saudi Arabia": {
+      "2024": 0.462,
+      "2025": 0.462
+    },
+    "Sweden": {
+      "2024": 0.625,
+      "2025": 0.625
+    },
+    "Singapore": {
+      "2024": 2.214,
+      "2025": 2.214
+    },
+    "Switzerland": {
+      "2024": 2.977,
+      "2025": 2.977
+    },
+    "Taiwan": {
+      "2024": 2.985,
+      "2025": 2.985
+    },
+    "Thailand": {
+      "2024": 1.427,
+      "2025": 1.427
+    },
+    "United Kingdom": {
+      "2024": 5.249,
+      "2025": 5.249
+    },
+    "Vietnam": {
+      "2024": 2.616,
+      "2025": 2.616
+    },
+    "Euro Area": {
+      "2024": 20.962,
+      "2025": 20.962
+    },
+    "TOTAL": {
+      "2024": 100.0,
+      "2025": 100.0
+    }
+  }
+}
