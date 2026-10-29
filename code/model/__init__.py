@@ -9,3 +9,4 @@ Exchange Rates" (Lu and Milkov).
 Scripts put the `code/` directory on sys.path and `import model`.
 """
 from . import asymmetry, closed_forms, linear, nested_ces  # noqa: F401
+from . import extensions  # noqa: F401,E402

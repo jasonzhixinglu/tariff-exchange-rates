@@ -1,0 +1,535 @@
+{
+ "calibration": {
+  "aD": 0.8,
+  "aT": 0.4,
+  "eta": 1.5
+ },
+ "rho_D": 1.32,
+ "three_rho_D": 3.96,
+ "D2a_symmetric": {
+  "1": {
+   "roots": [
+    {
+     "rho": 3.960000000000001,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.4285714285714286,
+     "neer_equal_weight": -0.2142857142857143,
+     "dlogV_A": 0.01714285714285714
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "0.9": {
+   "roots": [
+    {
+     "rho": 3.9374999999999987,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.42769857433808545,
+     "neer_equal_weight": -0.21384928716904272,
+     "dlogV_A": 0.017107942973523416
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "0.75": {
+   "roots": [
+    {
+     "rho": 3.8999999999999995,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.42622950819672123,
+     "neer_equal_weight": -0.21311475409836061,
+     "dlogV_A": 0.017049180327868844
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "0.6667": {
+   "roots": [
+    {
+     "rho": 3.8769230769228162,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.4253164556962065,
+     "neer_equal_weight": -0.21265822784811042,
+     "dlogV_A": 0.01701265822784884
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "0.5": {
+   "roots": [
+    {
+     "rho": 3.8250000000000015,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.42323651452282157,
+     "neer_equal_weight": -0.2116182572614107,
+     "dlogV_A": 0.016929460580912856
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  }
+ },
+ "D2a_diag_rho4": {
+  "1": {
+   "nu": [
+    0.0,
+    0.0
+   ],
+   "LT": [
+    0.4,
+    0.4,
+    0.4
+   ],
+   "T": null,
+   "expenditure_A_currency": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "import_share_of_expenditure": [
+    0.07999999999999995,
+    0.07999999999999995,
+    0.07999999999999995
+   ],
+   "home_share_in_tradables": [
+    0.8000000000000002,
+    0.8000000000000002,
+    0.8000000000000002
+   ],
+   "A_import_origin_share_C": 0.5,
+   "C_exports_to_A_over_C_exports": 0.5,
+   "J_reduced": [
+    [
+     -0.24799999999999994,
+     0.124
+    ],
+    [
+     0.124,
+     -0.24799999999999994
+    ]
+   ],
+   "G_reduced": [
+    -0.10639999999999998,
+    0.053599999999999995
+   ],
+   "dlogE_A_fixed_nu": 0.039999999999999994
+  },
+  "0.5": {
+   "nu": [
+    0.0,
+    0.0
+   ],
+   "LT": [
+    0.2499999999999999,
+    0.2499999999999999,
+    0.2499999999999999
+   ],
+   "T": null,
+   "expenditure_A_currency": [
+    1.2500000000000002,
+    1.2500000000000002,
+    1.2500000000000002
+   ],
+   "import_share_of_expenditure": [
+    0.07999999999999995,
+    0.07999999999999995,
+    0.07999999999999995
+   ],
+   "home_share_in_tradables": [
+    0.8000000000000002,
+    0.8000000000000002,
+    0.8000000000000002
+   ],
+   "A_import_origin_share_C": 0.5,
+   "C_exports_to_A_over_C_exports": 0.5,
+   "J_reduced": [
+    [
+     -0.31,
+     0.155
+    ],
+    [
+     0.155,
+     -0.31
+    ]
+   ],
+   "G_reduced": [
+    -0.13187500000000002,
+    0.06812500000000002
+   ],
+   "dlogE_A_fixed_nu": 0.0625
+  }
+ },
+ "D2b_small_bystander_LC_0.1": {
+  "1": {
+   "roots": [
+    {
+     "rho": 4.975379419248961,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.6540599242483623,
+     "neer_equal_weight": -0.3270299621241812,
+     "dlogV_A": 0.04392432363766301
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "0.6667": {
+   "roots": [
+    {
+     "rho": 4.433689838363806,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.5947698942691282,
+     "neer_equal_weight": -0.29738494713456404,
+     "dlogV_A": 0.0360332065179294
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "0.5": {
+   "roots": [
+    {
+     "rho": 4.192053350710878,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.5575848616710922,
+     "neer_equal_weight": -0.2787924308355467,
+     "dlogV_A": 0.031366328975181566
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  }
+ },
+ "D3a_deficit_marginal": {
+  "balanced": {
+   "roots": [
+    {
+     "rho": 3.960000000000001,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.4285714285714286,
+     "neer_equal_weight": -0.2142857142857143,
+     "dlogV_A": 0.01714285714285714
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "payer_B": {
+   "roots": [
+    {
+     "rho": 4.938544860707039,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.5217034186997003,
+     "neer_equal_weight": -0.2608517093498501,
+     "dlogV_A": 0.024410390014801463
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  },
+  "payer_C": {
+   "roots": [
+    {
+     "rho": 4.6149249143015325,
+     "crossing": "neg_to_pos",
+     "mml": true,
+     "dnu_B": -0.473227992052984,
+     "neer_equal_weight": -0.23661399602649197,
+     "dlogV_A": 0.017424092501265222
+    }
+   ],
+   "n_roots": 1,
+   "sign_at_lo": -1.0,
+   "sign_at_hi": 1.0
+  }
+ },
+ "D3a_deficit_size_sensitivity": {
+  "+0.01": {
+   "payer_B": 4.206349714965863,
+   "payer_C": 4.143214702043844
+  },
+  "-0.01": {
+   "payer_B": 3.7609418496589124,
+   "payer_C": 3.804006200948806
+  },
+  "-0.03": {
+   "payer_B": 3.4581415857764712,
+   "payer_C": 3.556707447641398
+  }
+ },
+ "D3a_diag_rho4": {
+  "balanced": {
+   "nu": [
+    0.0,
+    0.0
+   ],
+   "LT": [
+    0.4,
+    0.4,
+    0.4
+   ],
+   "T": null,
+   "expenditure_A_currency": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "import_share_of_expenditure": [
+    0.07999999999999995,
+    0.07999999999999995,
+    0.07999999999999995
+   ],
+   "home_share_in_tradables": [
+    0.8000000000000002,
+    0.8000000000000002,
+    0.8000000000000002
+   ],
+   "A_import_origin_share_C": 0.5,
+   "C_exports_to_A_over_C_exports": 0.5,
+   "J_reduced": [
+    [
+     -0.24799999999999994,
+     0.124
+    ],
+    [
+     0.124,
+     -0.24799999999999994
+    ]
+   ],
+   "G_reduced": [
+    -0.10639999999999998,
+    0.053599999999999995
+   ],
+   "dlogE_A_fixed_nu": 0.039999999999999994
+  },
+  "payer_B": {
+   "nu": [
+    -0.15399739580710745,
+    -0.08079597369587191
+   ],
+   "LT": [
+    0.382,
+    0.4209967812822722,
+    0.4
+   ],
+   "T": [
+    0.03,
+    -0.03,
+    0.0
+   ],
+   "expenditure_A_currency": [
+    1.03,
+    0.8272742535160684,
+    0.9223818624104244
+   ],
+   "import_share_of_expenditure": [
+    0.08388937120252989,
+    0.07650218530316262,
+    0.08016069500962662
+   ],
+   "home_share_in_tradables": [
+    0.7902765719936753,
+    0.8087445367420935,
+    0.7995982624759335
+   ],
+   "A_import_origin_share_C": 0.44531851292348706,
+   "C_exports_to_A_over_C_exports": 0.38651332816601447,
+   "J_reduced": [
+    [
+     -0.22943234834617948,
+     0.13343074809703295
+    ],
+    [
+     0.12481678377503509,
+     -0.22910973011347782
+    ]
+   ],
+   "G_reduced": [
+    -0.12023175182947614,
+    0.05738642678333241
+   ],
+   "dlogE_A_fixed_nu": 0.04653188116853288
+  },
+  "payer_C": {
+   "nu": [
+    -0.08079597369587191,
+    -0.15399739580710745
+   ],
+   "LT": [
+    0.382,
+    0.4,
+    0.4209967812822722
+   ],
+   "T": [
+    0.03,
+    0.0,
+    -0.03
+   ],
+   "expenditure_A_currency": [
+    1.03,
+    0.9223818624104244,
+    0.8272742535160684
+   ],
+   "import_share_of_expenditure": [
+    0.08388937120252989,
+    0.08016069500962662,
+    0.07650218530316262
+   ],
+   "home_share_in_tradables": [
+    0.7902765719936753,
+    0.7995982624759335,
+    0.8087445367420935
+   ],
+   "A_import_origin_share_C": 0.5546814870765129,
+   "C_exports_to_A_over_C_exports": 0.4396979692964344,
+   "J_reduced": [
+    [
+     -0.22910973011347782,
+     0.12481678377503509
+    ],
+    [
+     0.13343074809703295,
+     -0.22943234834617948
+    ]
+   ],
+   "G_reduced": [
+    -0.10784094409784566,
+    0.05738642678333243
+   ],
+   "dlogE_A_fixed_nu": 0.03735749003399699
+  }
+ },
+ "D3b_discrete_tau_1.45": {
+  "balanced": {
+   "real_discrete": {
+    "roots": [
+     {
+      "rho": 3.1878396551855124,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   },
+   "nominal_discrete": {
+    "roots": [
+     {
+      "rho": 2.7004127363224133,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   },
+   "real_marginal": {
+    "roots": [
+     {
+      "rho": 4.932631578947369,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   }
+  },
+  "payer_B": {
+   "real_discrete": {
+    "roots": [
+     {
+      "rho": 3.637377738629013,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   },
+   "nominal_discrete": {
+    "roots": [
+     {
+      "rho": 3.0697160999465867,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   },
+   "real_marginal": {
+    "roots": [
+     {
+      "rho": 6.333212464750342,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   }
+  },
+  "payer_C": {
+   "real_discrete": {
+    "roots": [
+     {
+      "rho": 3.421201016161773,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   },
+   "nominal_discrete": {
+    "roots": [
+     {
+      "rho": 2.936650640050447,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   },
+   "real_marginal": {
+    "roots": [
+     {
+      "rho": 5.639124181810303,
+      "crossing": "neg_to_pos"
+     }
+    ],
+    "n_roots": 1,
+    "sign_at_lo": -1.0,
+    "sign_at_hi": 1.0
+   }
+  },
+  "rho_q_star_closed_form_balanced": 4.932631578947369,
+  "appendix_c_nominal_1.45_reference": 2.7004127363225012
+ }
+}
