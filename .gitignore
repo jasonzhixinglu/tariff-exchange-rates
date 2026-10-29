@@ -49,3 +49,12 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Paper build (paper/main.pdf is tracked; intermediate files are not)
+paper/*.bbl
+paper/*.blg
+paper/*.toc
+
+# Large raw downloads kept locally only (see data/raw/trade2024/README.md)
+data/raw/trade2024/bea_NipaDataA.txt
+.pytest_cache/
