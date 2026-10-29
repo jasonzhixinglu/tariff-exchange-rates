@@ -1,0 +1,64 @@
+\begin{center}
+{\large\bfseries Online Appendix}
+\end{center}
+
+\section{Further Robustness}
+\label{app:online}
+
+\subsection{Robustness of the two-country result}
+\label{app:online-twocountry}
+
+This subsection collects the monotonicity results behind \cref{rem:robustness}. Equilibrium is balanced trade for $A$, $\TB_A(e,\tau)\equiv X_A(e,\tau)-M_A(e,\tau)=0$, where $e$ is units of $A$'s currency per unit of $B$'s, $\tau$ is $A$'s ad valorem tariff on imports from $B$, and $X_A$ and $M_A$ are the values of exports and imports in $A$'s currency. Assume $\TB_A$ is continuously differentiable with $\TB_{A,e}\neq0$ locally. By the implicit function theorem there is a locally unique mapping $e(\tau)$ with
+\begin{equation*}
+\frac{de}{d\tau}=-\frac{\TB_{A,\tau}(e(\tau),\tau)}{\TB_{A,e}(e(\tau),\tau)}.
+\end{equation*}
+Under the producer-price normalization the consumer price of imports in $A$ is $p_M(e,\tau)=(1+\tau)e$ and the price of $A$'s exports in $B$ is $p_X(e)=1/e$.
+
+\begin{lemma}[Tariff monotonicity]
+\label{lem:tariffmono}
+Fix $e$. Suppose (i) $p_M(e,\tau)$ is increasing in $\tau$, and (ii) import expenditure $M_A(e,\tau)$ is decreasing in the consumer import price. Suppose in addition that any induced effect of $\tau$ on export revenue satisfies $X_{A,\tau}\geq0$, or the weaker condition $X_{A,\tau}>M_{A,\tau}$. Then $\TB_{A,\tau}>0$.
+\end{lemma}
+
+\begin{proof}
+$\TB_{A,\tau}=X_{A,\tau}-M_{A,\tau}$, and by (i)--(ii) $M_{A,\tau}=(\partial M_A/\partial p_M)(\partial p_M/\partial\tau)<0$. Either condition on $X_{A,\tau}$ then gives $\TB_{A,\tau}>0$.
+\end{proof}
+
+In the baseline model the tariff applies only to imports and there is no policy response abroad, so $X_{A,\tau}=0$ at fixed $e$ and the condition holds trivially.
+
+\begin{lemma}[Exchange-rate monotonicity]
+\label{lem:ermono}
+Fix $\tau$. If $M_{A,e}<0$ and $X_{A,e}\geq0$, with at least one inequality strict, then $\TB_{A,e}>0$.
+\end{lemma}
+
+\begin{proof}
+$\TB_{A,e}=X_{A,e}-M_{A,e}>0$ under the stated conditions.
+\end{proof}
+
+\begin{proposition}[Sign of the two-country response]
+\label{prop:twosign}
+If the conditions of \cref{lem:tariffmono,lem:ermono} hold in a neighborhood of an equilibrium $(e^*,\tau)$, then $e(\tau)$ exists locally and $de/d\tau<0$.
+\end{proposition}
+
+\begin{proof}
+By the implicit function theorem and \cref{lem:tariffmono,lem:ermono}, $de/d\tau=-\TB_{A,\tau}/\TB_{A,e}<0$.
+\end{proof}
+
+The condition of \cref{lem:ermono} is the Marshall--Lerner condition, and that of \cref{lem:tariffmono} is its tariff analogue: import expenditure falls as the consumer import price rises. Both hold across standard specifications.
+
+\paragraph{Demand.} Tariffs and exchange rates affect demand only through relative prices. Under CES (Armington) preferences over tradables with any elasticity $\sigma>0$, separable from non-tradables, Marshallian import demand is strictly decreasing in $p_M$, so at fixed $e$ a higher tariff lowers import expenditure while export revenue is locally unaffected; holding $\tau$ fixed, a depreciation raises the domestic-currency price of imports and lowers the foreign-currency price of exports. The same holds under nested CES with separate elasticities between tradables and non-tradables and across tradable varieties: tariff-induced income effects may reallocate expenditure between tradables and non-tradables, but the monotone relation between import demand and its consumer price is preserved. Under quasi-linear preferences income effects from tariff revenue vanish and the conditions hold by construction.
+
+\paragraph{Production.} With diminishing returns or sector-specific factors, wages and output adjust to demand. At fixed $e$ a higher tariff still raises the consumer price of imports and reduces import expenditure, and since the tariff introduces no export-side wedge, export revenue is not adversely affected. Holding the tariff fixed, a depreciation raises import prices and lowers export prices; provided export supply is weakly increasing in the export price, import expenditure falls and export revenue weakly rises, so $\TB_{A,e}>0$ continues to hold locally.
+
+\paragraph{Fiscal closure and pricing.} Whether tariff revenue is rebated lump-sum, wasted, transferred abroad or used to finance government spending, a tariff raises the consumer price of imports at a fixed exchange rate, so the conditions of \cref{lem:tariffmono,lem:ermono} hold under standard fiscal closures. Local- or dominant-currency pricing and monopolistic competition mainly affect the degree and timing of pass-through; in the flexible-price equilibrium that our analysis describes, consumer prices reflect both the tariff wedge and the exchange rate, and the monotonicity conditions remain valid. While the magnitude of the response varies across specifications, its sign does not, wherever Marshall--Lerner holds.
+
+\subsection{Sector-specific factors}
+\label{app:online-rv}
+
+The linear technology makes export supply infinitely elastic at the going wage. To formalize the supply side, replace $Y_{Ti}=A_{Ti}L_{Ti}$ with $Y_{Ti}=A_{Ti}L_{Ti}^\gamma$, $\gamma\leq1$, as in the Ricardo--Viner model, with non-tradables linear as before and labor mobile across sectors within each country. Competitive pricing gives $w_i=\gamma A_{Ti}L_{Ti}^{\gamma-1}$ under the producer-price normalization, and the fixed factor earns rents $(1-\gamma)Y_{Ti}$ that are distributed lump-sum to households. The sectoral labor allocation now responds to the tariff, and $\gamma=1$ recovers the baseline exactly.
+
+Upward-sloping export supply loads diverted demand onto the bystander's price, which under the producer-price normalization is its currency. Diminishing returns therefore lower the bystander threshold rather than raise it. At the symmetric point the effect is modest: the threshold falls from $3.96$ to \todo{3.83 (earlier draft; not recomputed with the current code)} at $\gamma=0.5$. It is larger for small bystanders, which cannot expand export quantities cheaply: for a bystander of Vietnam's relative size the threshold falls from \todo{8.76} to \todo{5.27} at $\gamma=2/3$ (earlier draft, under that draft's calibration; not recomputed). None of the sign results of the paper requires diminishing returns; the linear baseline delivers them.
+
+\subsection{Permanent trade imbalances}
+\label{app:online-imbalance}
+
+Balanced trade is a modelling choice, not a requirement of the representation \cref{eq:response}, which applies at any baseline. With a permanent transfer that finances a trade deficit for $A$, the threshold structure is unchanged but its location moves with the baseline. A US-scale deficit of 3 percent of income raises the symmetric-point bystander threshold from $3.96$ to \todo{4.6--5.1, depending on whether the counterpart surplus is $B$'s or $C$'s (earlier computations; not recomputed)}. At 2025 tariff levels, however, the effect of tariff size dominates: a finite unilateral tariff of $\tau=1.45$ lowers the threshold to $2.70$ at a balanced baseline (\cref{app:asym-finite}), and the earlier computations put the combined real-rate, deficit-adjusted, discrete-tariff threshold at \todo{about 3.5 (3.55 for a 3\% deficit at $\tau=1.45$; not recomputed)}.

@@ -1,0 +1,214 @@
+\section{Asymmetry}
+\label{sec:asymmetry}
+
+The symmetric case delivers clean geometry: the NEER and the bilateral rates separate exactly, and thresholds are linear in $\rho$. Asymmetry breaks the eigen-structure. This section does not aim at a general theory of asymmetric trade networks. Its purpose is to show which intuitive conclusions of the symmetric case are structural and which are artefacts of symmetry. The most consequential casualty is the result that a unilateral tariff always improves the tariffing country's aggregate terms of trade.
+
+Two weighted averages of bilateral responses appear in this section and should be kept apart. The \emph{effective exchange rate} is, as throughout the paper, the trade-weighted NEER, with weights $w_{Aj}$ that combine $A$'s imports from and exports to $j$. The \emph{aggregate terms of trade} weight the same bilateral responses by $A$'s import shares $b_{Aj}$. At the symmetric benchmark the two weightings coincide; away from it they do not, and it is the import-weighted aggregate terms of trade that is welfare-relevant.
+
+\subsection{The aggregate terms of trade and welfare}
+\label{sec:welfare}
+
+Let $b_{Aj}$ be partner $j$'s share in $A$'s import bundle, and $R^B_j\equiv\partial\nu_j/\partial\tau_{AB}$. Define the import-weighted foreign-price response
+\begin{equation}
+R_{A|B}\equiv\sum_{j\neq A}b_{Aj}R^B_j.
+\label{eq:RAB}
+\end{equation}
+Under the producer-price normalization, a rise in $e_{Aj}$ raises the price of $j$'s good relative to $A$'s, so $A$'s aggregate terms of trade improve if and only if $R_{A|B}<0$.
+
+\begin{lemma}[First-order welfare]
+\label{lem:welfare}
+At a free-trade baseline, for any tariff vector, the first-order change in $A$'s welfare, in units of income, is
+\begin{equation}
+\frac{dU_A}{U_A'\,I_A}=-\,m_A\sum_{j\neq A}b_{Aj}\,d\nu_j,
+\label{eq:welfare}
+\end{equation}
+where $m_A$ is $A$'s import share of income. A marginal tariff thus raises $A$'s welfare if and only if it improves $A$'s aggregate terms of trade.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+$A$'s wage and non-tradable price are fixed in $A$'s currency. By the envelope theorem, $\lambda\,dU_A=dT^{rev}_A-\sum_jC_{Aj}\,dp_{Aj}$. At free trade $dT^{rev}_A=\sum_jf_{Aj}\,d\tau_{Aj}$ and $dp_{Aj}=p_{Aj}(d\nu_j+d\tau_{Aj})$. The tariff terms cancel, leaving $-\sum_jf_{Aj}d\nu_j$. Foreign tariffs affect $A$ only through $d\nu$. The full proof is in \cref{app:proofs}.
+\end{proof}
+
+At the symmetric benchmark import weights equal trade weights, so $R_{A|B}=d\nu^E_A/d\tau<0$ (\cref{prop:unilateral}). \textbf{A unilateral tariff always improves the tariffing country's aggregate terms of trade and raises its welfare to first order, even when it depreciates against every bystander.} Under bilateral retaliation the sign flips when $\rho>\rho_D$. For $N=3$,
+\begin{equation*}
+\frac{R^B_B+R^B_C}{2}=-\frac{\rho_D}{2M_3}:
+\end{equation*}
+the favorable move against the target always dominates the adverse move against the bystander when weights are equal.
+
+\subsection{The aggregate terms-of-trade condition}
+\label{sec:totcondition}
+
+Separate the target from the remaining suppliers, and let $\bar R^B_{-B}=\sum_{j\neq A,B}b_{Aj}R^B_j/(1-b_{AB})$ be the conditional import-weighted bystander response. Then $R_{A|B}=b_{AB}R^B_B+(1-b_{AB})\bar R^B_{-B}$.
+
+\begin{definition}[Aggregate terms-of-trade condition]
+\label{def:tot}
+Unilateral tariffs by $A$ have the conventional aggregate terms-of-trade effect if, for every target $B$,
+\begin{equation}
+b_{AB}R^B_B+(1-b_{AB})\bar R^B_{-B}<0.
+\label{eq:totcondition}
+\end{equation}
+\end{definition}
+
+If $R^B_B<0$ and $\bar R^B_{-B}>0$, the condition fails if and only if
+\begin{equation}
+\frac{\bar R^B_{-B}}{-R^B_B}>\frac{b_{AB}}{1-b_{AB}}.
+\label{eq:totfail}
+\end{equation}
+The left side is equilibrium incidence: the adverse bystander move relative to the favorable move against the target. The right side is exposure: $A$'s import dependence on the target relative to other suppliers. A bilateral bystander reversal is therefore \textbf{necessary but not sufficient} for an aggregate reversal. The adverse moves must also be large enough and carry enough weight in $A$'s basket.
+
+The aggregate condition always reduces to a three-country form, with one weight $b_{AC}=1-b_{AB}$ and one aggregate response. This reduction is exact for \emph{any} configuration of bystanders. What fails under heterogeneous bystanders is the representation of the bloc as an ordinary country with primitive parameters (\cref{sec:heterogeneous}).
+
+\subsection{Asymmetric partners in the three-country model}
+\label{sec:threecountry}
+
+In the three-country model the local system is $A(\rho)R=F(\rho)$ with $A\equiv-J$. At a given baseline every entry of $A$ and $F$ is affine in $\rho$, because $\rho$ enters share responses only through $(1-\rho)$. Since $A$ is $2\times2$, its adjugate is affine too, and
+\begin{equation}
+R_{A|B}(\rho)=\frac{b'\adj(A(\rho))F(\rho)}{\det A(\rho)},\qquad
+b'\adj(A(\rho))F(\rho)=q_2\rho^2+q_1\rho+q_0\equiv Q_{A|B}(\rho).
+\label{eq:Q}
+\end{equation}
+Under MML $\det A>0$, so the aggregate condition is $Q_{A|B}(\rho)<0$. The same structure governs the bilateral bystander response, whose numerator has leading coefficient
+\begin{equation*}
+\alpha_T^2\,b_{AB}b_{AC}b_{CA}b_{CB}(1-h_A)(1-h_C)y_Ay_C>0
+\end{equation*}
+(with a common $\alpha_T$), where $h_i$ are home shares of tradable spending and $y_i$ incomes.
+
+\begin{proposition}[Three qualitative cases]
+\label{prop:threecases}
+Holding the baseline fixed:
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{Symmetric:} $q_2=0$ and $Q<0$ for all $\rho$. The condition always holds.
+\item \textbf{$q_2>0$, $q_0<0$:} exactly one positive root $\rho^*$. The condition holds for $\rho<\rho^*$ and fails for $\rho>\rho^*$.
+\item \textbf{$q_2<0$, $q_1>0$, $q_0<0$, positive discriminant:} two positive roots. The condition fails only for intermediate $\rho$.
+\end{enumerate}
+\end{proposition}
+
+\paragraph{Examples.} All use $\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$ unless stated, with the free-trade baseline computed from primitives at $\bar\rho=3\rho_D=3.96$ and then held fixed; $\hat Q$ denotes $Q$ normalized by $|q_2|$ (or by $|q_1|$ when $q_2=0$).
+\begin{itemize}
+\item[(a)] Symmetric benchmark: $\hat Q=-(\rho+2.2)$.
+\item[(b)] Sizes $(S_A,S_B,S_C)=(1,0.22,1)$, $\beta_{AB}=0.2$, $\beta_{AC}=0.8$, other origin weights symmetric: $\hat Q=\rho^2-2.6695\rho-2.2568$, so $\rho^*=3.344$.
+\item[(c)] A strongly asymmetric network, specified directly in baseline shares: $\alpha_T=0.862$, $\eta=3.007$, home shares $(0.201,0.854,0.360)$, origin shares $(b_{AB},b_{AC})=(0.525,0.475)$, $(b_{BA},b_{BC})=(0.766,0.234)$, $(b_{CA},b_{CB})=(0.407,0.593)$, and incomes $(1,5.126,0.867)$, which balance trade at these shares. Then $\hat Q=-\rho^2+31.53\rho-198.04$, so the condition fails for $8.66<\rho<22.86$.
+\end{itemize}
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}[t]{0.32\textwidth}\centering
+\includegraphics[width=\textwidth]{fig6a_aggregate_tot.pdf}
+\caption{Symmetric}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+\includegraphics[width=\textwidth]{fig6b_aggregate_tot.pdf}
+\caption{Small, low-weight target}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.32\textwidth}\centering
+\includegraphics[width=\textwidth]{fig6c_aggregate_tot.pdf}
+\caption{Asymmetric network}
+\end{subfigure}
+\caption{Three relationships between $\rho$ and the aggregate terms-of-trade condition. Each panel plots the normalized numerator $\hat Q_{A|B}(\rho)$ of \cref{eq:Q} at a fixed baseline; the condition fails where $\hat Q>0$ (shaded). (a) Symmetric benchmark: never crosses. (b) Example (b): single crossing at $3.34$. (c) Example (c): crossings at $8.66$ and $22.86$. Signs verified against the linear solver.}
+\label{fig:tot}
+\end{figure}
+
+\paragraph{Which asymmetries matter.} Fix $S_A=S_C=1$ and symmetric foreign-origin preferences for $B$ and $C$. Vary the target's relative size $S_B/S_C$ and its weight $\beta_{AB}$ in $A$'s imports, recomputing the free-trade equilibrium at $\bar\rho=3\rho_D=3.96$. In this family $q_0<0$ throughout and the two-root case never appears. The sign of $q_2$ therefore classifies whether a high enough $\rho$ eventually overturns the condition (\cref{tab:q2}). Positive entries fill the upper-left region, where the target is small, has a low import weight, or both, with an approximate trade-off between size and weight.
+
+\begin{table}[t]
+\centering
+\caption{Sign of $q_2$ under size and import-weight asymmetry}
+\label{tab:q2}
+\small
+\begin{tabular}{c*{7}{c}}
+\toprule
+ & \multicolumn{7}{c}{$\beta_{AB}$} \\
+\cmidrule(lr){2-8}
+$S_B/S_C$ & 0.10 & 0.20 & 0.35 & 0.50 & 0.65 & 0.80 & 0.90 \\
+\midrule
+\tabinput{tables/tab2_q2grid.tex}
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\textit{Notes:} $N=3$, US-like parameters, $S_A=S_C=1$, $\beta_{BA}=\beta_{CA}=0.5$. The free-trade baseline is computed from primitives at $\bar\rho=3.96$ and held fixed. ``$+$'' means $q_2>0$: the aggregate terms-of-trade condition eventually fails as $\rho$ rises; the small number is the root $\rho^*$ beyond which it fails. ``$-$'' means $q_2<0$, so the condition holds for all $\rho$ in this family. ``$0$'' is the symmetric benchmark. $q_0<0$ and MML hold in every cell.
+\end{minipage}
+\end{table}
+
+\paragraph{Takeaway.} The aggregate terms of trade, and hence the first-order welfare gain from a tariff, are most likely to \emph{deteriorate} when three forces align:
+\begin{enumerate}
+\item the target is small relative to the untariffed suppliers;
+\item the target has a small weight in the tariffing country's imports;
+\item foreign suppliers are close substitutes (high $\rho$).
+\end{enumerate}
+In that region the bystander depreciation is both large and heavily weighted, while the gain against the target is small and lightly weighted. \textbf{A country can lower its own welfare by tariffing a small partner whose goods are easily replaced by others'.} This happens not because the tariff fails to divert expenditure, but because the diversion is so complete that the price of the replacements rises. The two-root case requires richer network asymmetry: in a representative example, $S_B/S_C=2$, $\beta_{AB}=0.2$, $\beta_{BA}=0.9$ and $\beta_{CA}=0.1$, the condition fails for $6.29<\rho<15.03$.
+
+\paragraph{The trade-weighted NEER.} The same logic applies to the NEER with trade weights. When the bystander carries most of $A$'s trade, the NEER can depreciate under a \emph{unilateral} tariff. \Cref{tab:neer} fixes $\beta_{AB}=0.2$ and sets $L_B$ so that $w_{AC}$ takes the stated value. Its last column shows that the trade-weighted and import-weighted thresholds differ substantially in the same economy. In the second row, whose primitives are nearly those of example (b), the NEER depreciates only for $\rho>3.97$, whereas the aggregate terms of trade deteriorate for $\rho>3.40$ (3.34 at the fixed baseline of example (b)). The gap is a matter of weighting, not of method. $A$ buys little from $B$ but $B$ buys a good deal from $A$, so the target's weight in $A$'s trade ($w_{AB}=0.15$) exceeds its weight in $A$'s imports ($b_{AB}=0.095$). The favorable move against the target therefore counts for more in the NEER than in the welfare-relevant terms of trade.
+
+\begin{table}[t]
+\centering
+\caption{Bystander reversal, NEER depreciation and aggregate terms of trade under a unilateral tariff, $N=3$}
+\label{tab:neer}
+\begin{tabular}{ccccc}
+\toprule
+$w_{AC}$ & $L_B$ & $d\nu_C>0$ for $\rho>$ & $d\nu^E_A>0$ for $\rho>$ & $R_{A|B}>0$ for $\rho>$ \\
+\midrule
+\tabinput{tables/tab3_neer.tex}
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\textit{Notes:} US-like parameters common to all countries, $\beta_{AB}=0.2$, all other primitives symmetric. $L_B$ is set so that $A$'s baseline trade weight on $C$ equals $w_{AC}$ at $\rho=3\rho_D$. Primitives are then held fixed and the free-trade baseline is re-solved at each $\rho$. $d\nu^E_A$ is the trade-weighted NEER; $R_{A|B}$ is the import-weighted aggregate terms of trade of \cref{eq:RAB}. MML holds for all $\rho\leq20$.
+\end{minipage}
+\end{table}
+
+\paragraph{Other casualties of asymmetry} (\cref{app:departures}).
+\begin{itemize}
+\item \emph{Thresholds move.} Near the symmetric point the bystander threshold rises with the target's import weight ($d\rho^*/d\beta_{AB}=+3.70$), with its size ($+0.99$) and with $A$'s home bias ($+5.31$), and falls slightly with bystander size ($-0.20$), at the calibration $\alpha_D=0.7$, $\alpha_T=0.6$, $\eta=1.5$ of \cref{fig:geometry}; the US-like values have the same signs (\cref{tab:sens}).
+\item \emph{Thresholds can disappear.} With primitives rather than shares held fixed, a higher $\rho$ also shifts baseline shares toward the cheapest origin, and a large target can crowd the bystander out of $A$'s imports. At the same calibration, with $L_B=2.2$ the bystander reverses only for $5.99<\rho<53.8$, and with $L_B\geq2.6$ it never reverses for $\rho\leq1000$.
+\item \emph{The ordering $d\nu_B<d\nu_C$ can fail}, but in every case found only with $\rho<\eta$.
+\end{itemize}
+
+\subsection{Heterogeneous bystanders}
+\label{sec:heterogeneous}
+
+With asymmetric bystanders the composite of \cref{prop:composite} no longer exists. Partition the system into the target and the remaining countries $R$. With $q$ denoting $A$'s import weights within $R$,
+\begin{equation}
+d\nu^A_C\equiv q'd\nu_R=-q'J_{RR}^{-1}J_{RB}\,d\nu_B-q'J_{RR}^{-1}F_R\,d\tau,
+\label{eq:hetero}
+\end{equation}
+which depends on the full internal adjustment structure of the bloc. The aggregate terms-of-trade condition still reduces to three-country form, but the bloc cannot generally be represented by a country with primitive parameters. Reversal and the failure of aggregation share an origin. The nested structure that lets $\rho$ direct expenditure toward other foreign suppliers is exactly what makes it matter \emph{which} suppliers receive it. With a single, unnested elasticity the bloc aggregates exactly, but bystander reversal disappears.
+
+\subsection{A stylized reading of the 2025 episode}
+\label{sec:2025}
+
+We do not calibrate. A static, long-run, balanced-trade model compared against monthly exchange-rate data is not a test, and \cref{sec:threecountry} shows that the answer under realistic asymmetry depends on network details that a three-country stylization cannot capture. Instead we ask which way each feature of the 2025 episode pushes the trade channel. \Cref{fig:episode} shows the exchange rates and the tariff timeline. Throughout, exchange-rate changes are monthly averages relative to the 2024 average, signed so that a positive number is a dollar depreciation.
+
+\paragraph{Phase 1: unilateral tariffs (February--March 2025).} The United States raised tariffs on China by 20 percentage points in two steps, on February~4 and March~4, without across-the-board retaliation (China's countermeasures in this phase were product-specific) and without tariffs on third countries. The configuration is a unilateral, discriminatory tariff, so average protection dominates. The model predicts dollar appreciation in effective terms, concentrated against the renminbi. In March the dollar was modestly stronger against the renminbi ($-0.8$ percent) and roughly unchanged against the euro ($-0.1$ percent).
+
+\paragraph{Phase 2: retaliation (April 2025).} China retaliated nearly one-for-one (US 145 percent, China 125 percent), while the United States imposed only a 10 percent baseline tariff on others. The configuration moves toward bilateral retaliation, and the bystander threshold falls from about $N\rho_D$ to $\rho_D$:
+\begin{itemize}
+\item \emph{Retaliation points to dollar depreciation against bystanders.} At US-like parameters $\rho_D\approx1.3$, below almost all cross-origin estimates. The model predicts a roughly stable USD/RMB rate together with dollar weakness against bystanders. This matches both the April pattern (the dollar $1.4$ percent stronger against the renminbi but $3.8$ percent weaker against the euro) and the event-study regularity of \citet{ostry2025}.
+\item \emph{Expected retaliation works the same way, as a matter of interpretation.} Our model is static, so expectations enter only through the tariff structure agents expect to persist. If markets price the long-run configuration as retaliatory, the relevant comparative static is \cref{prop:retaliation}, not \cref{prop:unilateral}. In a forward-looking extension, credible threats of retaliation would then move exchange rates before retaliation occurs. This is an interpretation, not a result of the model.
+\item \emph{High cross-origin substitutability points the same way.} Trade between China and other suppliers, especially Vietnam, Mexico and other Asian producers, reallocated quickly \citep{fajgelbaum2024,freund2024,alfaro2023}. That is the high-$\rho$ environment in which diversion is strong.
+\item \emph{China's size does not.} China is large in absolute terms and a substantial US supplier. Near the symmetric point, a larger target and a larger import weight on the target both \emph{raise} the bystander threshold (\cref{sec:threecountry}). They also move the aggregate terms-of-trade condition toward its conventional sign. The configuration is therefore not clear-cut. Retaliation and $\rho$ lean toward dollar depreciation against bystanders, while China's weight leans against it. Where the balance falls depends on bilateral shares and sizes that a three-country stylization summarizes too crudely.
+\end{itemize}
+
+\paragraph{Phase 3: near-uniform tariffs (late 2025).} After the Geneva truce (effective May~14) and the November~10 reduction, US tariffs were about 20 percent on China and, under the framework agreements in force from August~7, 15 percent on the EU and 10--20 percent on most others. Relative treatment had largely disappeared, and the model's relevant experiment becomes average protection, which predicts mild dollar appreciation in effective terms. The dollar instead remained weak against the euro ($+8.2$ percent in December) and against the broad index excluding China ($+2.3$ percent). \textbf{The framework thus gives a reason to attribute the April pattern to trade fundamentals and refuses to attribute the December pattern to them.} Whatever drove late-2025 dollar weakness lies outside the trade channel: risk premia and tariff uncertainty, erosion of convenience yields, valuation effects, monetary policy, or expectations of renewed escalation.
+
+\paragraph{Vietnam} illustrates the classification point. The dollar strengthened against the dong throughout 2025 (by $3.9$ percent in December), which looks inconsistent with a bystander-depreciation story. But Vietnam was itself a principal target: a 46 percent rate was announced in April, and a 20 percent rate applied from August~7, about equal to the late-2025 rate on China. With near-equal tariffs on China and Vietnam there is little relative treatment between them, so the model predicts the conventional own-tariff result.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}[t]{0.9\textwidth}\centering
+\includegraphics[width=\textwidth]{fig7a_fx2025.pdf}
+\caption{Exchange rates, \% deviation from the 2024 average (positive = dollar depreciation)}
+\end{subfigure}
+
+\vspace{6pt}
+\begin{subfigure}[t]{0.9\textwidth}\centering
+\includegraphics[width=\textwidth]{fig7b_tariffs2025.pdf}
+\caption{Headline tariff increases above the pre-2025 baseline (percentage points)}
+\end{subfigure}
+\caption{The 2025 episode through the lens of the decomposition (stylized). Shading marks the unilateral phase (February~4--April~4), the retaliation phase (April~5--May~13) and the near-uniform phase (framework rates in force from August~7). (a) Monthly averages of USD per EUR, CNY and VND, and the Federal Reserve H.10 nominal broad dollar index with the renminbi removed using its published H.10 weight and renormalized (inverted so that a rise is a dollar depreciation). The August VND average is missing in the source. (b) Effective dates of headline rates: the US tariff on China, China's across-the-board tariff on the United States (China's product-specific countermeasures of February and March are not shown), the US tariff on the EU (the August rate is the 15 percent all-in rate) and the US baseline on other partners. No model magnitudes are plotted. Sources: FRED (DEXUSEU, DEXCHUS, DTWEXBGS), Federal Reserve H.10 weights, BIS (VND), Federal Register and China's State Council Tariff Commission announcements.}
+\label{fig:episode}
+\end{figure}
+
+\paragraph{What a quantitative general trade model would need.} The analysis says what to look for in richer models. Retaliation lowers the threshold for multilateral depreciation. High cross-origin substitutability raises the diversion force. Large, heavily weighted targets work against both. Near-uniform tariffs collapse the problem back to average protection. Quantitative multi-country models with input--output linkages \citep[e.g.,][]{ignatenko2025,darracqparies2026} can contain all of these features. Our results identify which combinations of them determine the sign.

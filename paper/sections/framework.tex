@@ -1,0 +1,74 @@
+\section{Tariffs and Exchange-Rate Adjustment: A General Framework}
+\label{sec:framework}
+
+\subsection{The bilateral case}
+\label{sec:bilateral}
+
+Consider two countries, $A$ and $B$. Let $e_{AB}$ denote units of $A$'s currency per unit of $B$'s, so that a rise is a depreciation of $A$, and write $\nu\equiv\log e_{AB}$. Country $A$ levies an ad valorem tariff $\tau$ on imports from $B$. Equilibrium with balanced trade is $\TB_A(\nu,\tau)=0$. Linearizing,
+\begin{equation}
+d\,\TB_A=\TB_{A\nu}\,d\nu+\TB_{A\tau}\,d\tau=0
+\quad\Longrightarrow\quad
+d\nu^*=-\frac{\TB_{A\tau}}{\TB_{A\nu}}\,d\tau,
+\label{eq:bilat}
+\end{equation}
+where $\TB_{A\nu}\equiv\partial\TB_A/\partial\nu$ and $\TB_{A\tau}\equiv\partial\TB_A/\partial\tau$ at fixed $\nu$. A tariff raises the domestic price of imports and, at unchanged exchange rates, improves $A$'s trade balance ($\TB_{A\tau}>0$). The response is then an appreciation if and only if $\TB_{A\nu}>0$, that is, if and only if a depreciation improves the trade balance. At a balanced baseline $\TB_{A\nu}=X(\varepsilon_X+\varepsilon_M-1)$, where $X$ is the value of exports and $\varepsilon_X,\varepsilon_M$ are the export and import demand elasticities, so this is the Marshall--Lerner condition $\varepsilon_X+\varepsilon_M>1$. \Cref{fig:bilateral} illustrates.
+
+\begin{remark}[Robustness of the two-country result]
+\label{rem:robustness}
+The sign $d\nu^*/d\tau<0$ requires only that (i) import expenditure falls with its consumer price and the tariff does not reduce export revenue by more at fixed $\nu$, and (ii) Marshall--Lerner holds. These conditions are satisfied under CES, nested-CES and quasi-linear preferences, under diminishing returns or sector-specific factors with upward-sloping export supply, and under any standard treatment of tariff revenue (Online \cref{app:online-twocountry}). The correct reading is not that appreciation holds in every model, but that \textbf{the two-country result holds wherever Marshall--Lerner holds}. The rest of the paper shows that with three or more countries this is no longer enough.
+\end{remark}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.65\textwidth]{fig1_bilateral.pdf}
+\caption{Bilateral tariff and exchange-rate adjustment. The solid line is $A$'s trade balance as a function of the exchange rate at the initial tariff, with slope $\TB_{A\nu}>0$ under Marshall--Lerner. The tariff shifts it up by $\TB_{A\tau}\,d\tau$ at unchanged exchange rates (dashed line), and balance is restored at $d\nu^*=-\TB_{A\tau}\,d\tau/\TB_{A\nu}<0$, an appreciation of $A$. Schematic.}
+\label{fig:bilateral}
+\end{figure}
+
+\subsection{The disturbance--adjustment representation}
+\label{sec:representation}
+
+Now consider $N$ countries. Take $A$'s currency as numeraire. The $N-1$ bilateral rates $e_{Aj}$, $j\neq A$, span all exchange-rate changes, and Walras' law leaves $N-1$ independent trade-balance conditions:
+\begin{equation*}
+\TB_i\big(\{e_{Aj}\}_{j\neq A},\{\tau_{jk}\}_{j\neq k}\big)=0,\qquad i\neq A.
+\end{equation*}
+Stack $\nu=(\nu_j)_{j\neq A}$ with $\nu_j=\log e_{Aj}$, and the bilateral tariff changes as $d\tau=(d\tau_{jk})$. Linearizing,
+\begin{equation}
+J\,d\nu+G\,d\tau=0,\qquad J_{il}\equiv\frac{\partial\TB_i}{\partial\nu_l},\qquad G_{i,(jk)}\equiv\frac{\partial\TB_i}{\partial\tau_{jk}}\bigg|_{\nu}.
+\label{eq:JG}
+\end{equation}
+Write a tariff change as a direction $a$ ($\|a\|=1$) times a scale $ds$, and let $F\equiv Ga$. Then
+\begin{equation}
+\boxed{\;\frac{d\nu}{ds}=(-J)^{-1}F.\;}
+\label{eq:response}
+\end{equation}
+This separates two conceptually distinct objects. $F$ is the \textbf{tariff incidence}: the vector of trade-balance disturbances at unchanged exchange rates, including expenditure switching, tariff revenue and income effects. $(-J)^{-1}$ is the \textbf{exchange-rate adjustment}: the movements needed to offset any given vector of disturbances. In the bilateral case both are scalars, and \cref{eq:response} reduces to \cref{eq:bilat}. With $N\geq3$, $F$ can have entries of different signs, because a tariff on one partner may \emph{improve} another partner's trade balance.
+
+\subsection{The multilateral Marshall--Lerner condition}
+\label{sec:mml}
+
+\begin{definition}[Multilateral Marshall--Lerner condition, MML]
+\label{def:mml}
+The adjustment mechanism satisfies MML if $J_{il}\geq0$ for $l\neq i$ and $(-J)^{-1}$ exists with $(-J)^{-1}\geq0$ elementwise. Equivalently, $-J$ is a nonsingular M-matrix.
+\end{definition}
+
+Under MML, writing $\vartheta_{ij}\equiv[(-J)^{-1}]_{ij}\geq0$,
+\begin{equation}
+\frac{d\nu_i}{ds}=\sum_j\vartheta_{ij}F_j.
+\label{eq:signrule}
+\end{equation}
+A positive disturbance in any country contributes weakly positively to every bilateral response. So \textbf{a uniformly signed $F$ cannot generate responses of the opposite sign}, which is the multilateral version of the two-country logic. When $F$ has mixed signs, the response of any bilateral rate depends on the whole vector of disturbances, not on its own entry.
+
+A more primitive sufficient condition uses the full $N\times N$ Jacobian $\tilde J_{il}=\partial\TB_i/\partial\nu_l$ in terms of currency values, where now $\nu_l$ is the log value of currency $l$ in a common unit of account. Homogeneity of degree one gives $\sum_l\tilde J_{il}=\TB_i=0$ at a balanced baseline, and Walras' law gives $\sum_i\tilde J_{il}=0$.
+
+\begin{assumption}[Gross substitutability of trade balances]
+\label{ass:gs}
+$\tilde J_{il}\geq0$ for all $l\neq i$: an appreciation of currency $l$ weakly improves every other country's trade balance.
+\end{assumption}
+
+\begin{lemma}
+\label{lem:gs}
+If each trade balance is homogeneous of degree one in currency values, \cref{ass:gs} holds, $J$ is irreducible, and $\tilde J_{iA}>0$ for some $i$, then MML holds.
+\end{lemma}
+
+This is the trade-balance analogue of the gross-substitutes stability results of \citet{hicks1939}, \citet{mosak1944}, \citet{metzler1945} and \citet{arrow1959}. We use it as the multilateral counterpart of the Marshall--Lerner condition. The point to stress is that \textbf{MML does not pin down the sign of any individual exchange-rate response.} Every bilateral Marshall--Lerner condition can hold and the multilateral response can still go either way. What decides it is the structure of $F$.

@@ -1,0 +1,133 @@
+\section{The Linearized System}
+\label{app:linear}
+
+At a balanced free-trade baseline, let $b_{ij}$ be origin shares within $i$'s import bundle, $h_i$ home shares of $i$'s tradable spending, $y_i\equiv\tilde I_i$ incomes in the common currency, $s_{ij}=\alpha_T(1-h_i)b_{ij}$ the share of $i$'s income spent on $j$'s good, and $f_{ij}=s_{ij}\tilde I_i$; at the symmetric point $h_i=\alpha_D$ and $m=\alpha_T(1-\alpha_D)$. Log-differentiating the demand system, \cref{eq:income} and \cref{eq:tb}, with $\eta$ (and, if desired, $\rho$) allowed to differ by country,
+\begin{equation}
+\begin{aligned}
+dp_{ij}&=d\nu_j-d\nu_i+d\tau_{ij},\qquad dp_{ii}=0,\\
+d\log P_{Mi}&=\textstyle\sum_{j\neq i}b_{ij}\,dp_{ij},\qquad d\log P_{Ti}=(1-h_i)\,d\log P_{Mi},\\
+d\log s_{ii}&=-(1-\eta)(1-h_i)\,d\log P_{Mi},\\
+d\log s_{ij}&=(1-\rho)(dp_{ij}-d\log P_{Mi})+(1-\eta)h_i\,d\log P_{Mi},\\
+d\log\tilde I_i&=d\nu_i+\textstyle\sum_{j\neq i}s_{ij}\,d\tau_{ij},\\
+d\TB_i&=\textstyle\sum_{k\neq i}f_{ki}(d\log s_{ki}+d\log\tilde I_k-d\tau_{ki})-\sum_{j\neq i}f_{ij}(d\log s_{ij}+d\log\tilde I_i-d\tau_{ij}).
+\end{aligned}
+\label{eq:linear}
+\end{equation}
+The income equation uses that at free trade $d[\tau_{ij}/(1+\tau_{ij})]=d\tau_{ij}$ and that changes in realized shares are multiplied by zero tariffs, so only the direct revenue term survives. These equations determine the matrices $J$ and $G$ of \cref{eq:JG} at any free-trade baseline, as general functions of $(y_i,h_i,b_{ij})$, the elasticities and an arbitrary matrix of tariff changes. In the replication code they are implemented directly and checked against central finite differences of the nonlinear $N$-country solver at tariffs of $\pm10^{-4}$, with agreement to better than $10^{-6}$ at symmetric and asymmetric baselines.
+
+\begin{lemma}[Jacobian at the symmetric baseline]
+\label{lem:jacobian}
+At the symmetric balanced baseline, where $b_{ij}=1/(N-1)$ and $f_{ij}=m/(N-1)$, the full Jacobian is $\tilde J_{il}=mM_N/(N-1)$ for $l\neq i$ and $\tilde J_{ii}=-mM_N$. Deleting $A$ gives
+\begin{equation}
+-J=c\,(NI-\bone\bone'),\qquad c\equiv\frac{mM_N}{N-1},\qquad j_S=c,\qquad j_D=Nc.
+\label{eq:Jsym}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Set $d\tau=0$, so $dp_{ij}=d\nu_j-d\nu_i$ and $d\log\tilde I_i=d\nu_i$. Writing $\Sigma\equiv\sum_jd\nu_j$,
+\begin{equation*}
+d\log P_{Mk}=\frac{\Sigma-N\,d\nu_k}{N-1},\qquad\frac{\partial\log P_{Mk}}{\partial\nu_l}=\frac{1-N\delta_{kl}}{N-1}.
+\end{equation*}
+On the import side $\sum_{j\neq i}(dp_{ij}-d\log P_{Mi})=0$, so the $(1-\rho)$ terms cancel when $d\log s_{ij}$ is summed over $j\neq i$, leaving $\sum_{j\neq i}d\log s_{ij}=(N-1)(1-\eta)\alpha_D\,d\log P_{Mi}$. Substituting into the trade-balance equation,
+\begin{equation*}
+d\TB_i=\frac{m}{N-1}\Big[\sum_{k\neq i}(d\log s_{ki}+d\nu_k)-(N-1)(1-\eta)\alpha_D\,d\log P_{Mi}-(N-1)\,d\nu_i\Big].
+\end{equation*}
+Fix $l\neq i$ and differentiate term by term:
+\begin{equation*}
+\frac{\partial}{\partial\nu_l}\sum_{k\neq i}\log s_{ki}=-(1-\rho)\frac{N-2}{N-1}-\frac{(1-\eta)\alpha_D}{N-1}.
+\end{equation*}
+The export income terms contribute one, the import-side price-index term contributes $-(1-\eta)\alpha_D$, and the import income term contributes zero. Collecting terms,
+\begin{equation*}
+\tilde J_{il}=\frac{m}{(N-1)^2}\Big[(N-1)-(1-\rho)(N-2)+N\alpha_D(\eta-1)\Big]=\frac{mM_N}{N-1}.
+\end{equation*}
+The diagonal follows from homogeneity, $\tilde J_{ii}=-(N-1)\tilde J_{il}=-mM_N$. Deleting row and column $A$ leaves diagonal entries $c(N-1)$ and off-diagonal entries $-c$, which is \cref{eq:Jsym}; its eigenvalues are $c$ on $\operatorname{span}\{\bone\}$ and $Nc$ on the zero-sum subspace.
+\end{proof}
+
+\paragraph{The tariff disturbance.} At unchanged exchange rates only partner $i$'s exports to $A$ are directly affected by a change in $A$'s tariffs $t$, so
+\begin{equation}
+d\TB_i\big|_{\nu}=f_{Ai}\big(d\log s_{Ai}+d\log\tilde I_A-t_i\big)=\frac{m}{N-1}\Big[-\rho_D\,\bar t-\rho\,(t_i-\bar t)\Big].
+\label{eq:disturbance}
+\end{equation}
+Indeed, $d\log P_{MA}=\bar t$, $d\log s_{Ai}=(1-\rho)(t_i-\bar t)+(1-\eta)\alpha_D\bar t$ and $d\log\tilde I_A=m\bar t$, and $1-(1-\eta)\alpha_D-m=\rho_D$. Reading off the coefficients on $\bar t$ and $\tilde t_i$,
+\begin{equation}
+g_S=-\frac{m\rho_D}{N-1},\qquad g_D=-\frac{m\rho}{N-1},
+\label{eq:geigen}
+\end{equation}
+and dividing by the eigenvalues in \cref{eq:Jsym} gives $\lambda_A=-\rho_D/M_N$ and $\lambda_R=-\rho/(NM_N)$, the coefficients of \cref{thm:main}.
+
+\paragraph{The two-country case.} At $N=2$ each country has a single import origin, so $dp_{AB}=d\log P_{MA}=d\nu_B+d\tau$ and $dp_{BA}=d\log P_{MB}=-d\nu_B$. Then
+\begin{equation*}
+\begin{aligned}
+d\log s_{AB}&=(1-\eta)\alpha_D(d\nu_B+d\tau),&\qquad d\log s_{BA}&=-(1-\eta)\alpha_D\,d\nu_B,\\
+d\log\tilde I_A&=m\,d\tau,&\qquad d\log\tilde I_B&=d\nu_B.
+\end{aligned}
+\end{equation*}
+Substituting into the trade balance, and using that the tariff wedge lowers the border value of $A$'s imports by $d\tau$,
+\begin{equation*}
+d\TB_A=m\Big[\big(1+2\alpha_D(\eta-1)\big)d\nu_B+\big(1-m+\alpha_D(\eta-1)\big)d\tau\Big],
+\end{equation*}
+which is the two-country system with $M_2=1+2\alpha_D(\eta-1)$ and $\rho_D=1-m+\alpha_D(\eta-1)=\alpha_D\eta+(1-\alpha_D)(1-\alpha_T)$; \cref{eq:twocountry} follows.
+
+For the elasticity form, hold income fixed and let $M(p)$ be import volume at consumer price $p=p_{AB}$. Since import value is $s_{AB}I_A$,
+\begin{equation*}
+\varepsilon_M\equiv-\frac{\partial\log M}{\partial\log p}=1-\frac{\partial\log s_{AB}}{\partial\log p}=1+\alpha_D(\eta-1),
+\end{equation*}
+and by symmetry $\varepsilon_X=1+\alpha_D(\eta-1)$. Differentiating $\TB_A(e,\tau)=X(1/e)-e\,M((1+\tau)e)$ at $\tau=0$ and using balanced trade, $X=eM$, gives $\partial\TB_A/\partial e=M(\varepsilon_X+\varepsilon_M-1)$. Hence $\varepsilon_X+\varepsilon_M-1=M_2$, and the stability condition $M_2>0$ is exactly $\varepsilon_X+\varepsilon_M>1$.
+
+\paragraph{The unilateral tariff.} For $t=d\tau\,e_B$, $\bar t=d\tau/(N-1)$, $\tilde t_B=\frac{N-2}{N-1}d\tau$ and $\tilde t_C=-\frac{d\tau}{N-1}$. By \cref{thm:main},
+\begin{equation*}
+\begin{aligned}
+d\nu_B&=\frac{\lambda_A+(N-2)\lambda_R}{N-1}\,d\tau=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}\,d\tau,\\
+d\nu_C&=\frac{\lambda_A-\lambda_R}{N-1}\,d\tau=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau,
+\end{aligned}
+\end{equation*}
+while $d\log e_{BC}=d\nu_C-d\nu_B=-\lambda_R\,d\tau$ and $d\nu^E_A=\lambda_A\,d\tau/(N-1)$. The bystander's disturbance follows from \cref{eq:disturbance} with $t_C=0$: $F_C=\frac{m}{N-1}\big[-\frac{\rho_D}{N-1}+\frac{\rho}{N-1}\big]$, which is \cref{eq:FC}.
+
+\paragraph{The single-elasticity case.} By the definition of $\rho_D$, $N\rho_D=N[1+\alpha_D(\eta-1)-\alpha_T(1-\alpha_D)]$, which rearranges to \cref{eq:single}; both terms on its right-hand side are nonnegative for $\alpha_D\geq1/N$, and equality requires $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$ with $\rho=\eta=\sigma$, $N\rho_D-\sigma=(N-1)(1-\alpha_T)$ and $M_N=\sigma$, so $d\nu_C/d\tau=-(1-\alpha_T)/(N\sigma)$.
+
+\paragraph{Relative treatment across partners.} With $\bar t>0$, $A$ depreciates against partner $j$ if and only if
+\begin{equation}
+\frac{\rho}{N}(\bar t-t_j)>\rho_D\,\bar t\qquad\Longleftrightarrow\qquad\frac{t_j}{\bar t}<1-\frac{N\rho_D}{\rho},
+\label{eq:reltreat}
+\end{equation}
+which follows by substituting $\lambda_A$ and $\lambda_R$ into $d\nu_j=\lambda_A\bar t+\lambda_R(t_j-\bar t)$. The right-hand side is positive only if $\rho>N\rho_D$, so depreciation against a relatively lightly taxed partner requires both $\rho>N\rho_D$ and a sufficiently large tariff differential.
+
+\paragraph{Tariffs on several partners.} If $A$ raises its tariff by $d\tau$ on a set of $k$ partners, $1\leq k\leq N-1$, then for every untargeted partner $C$ and every targeted partner $B$,
+\begin{equation}
+\begin{gathered}
+\frac{d\log e_{AC}}{d\tau}=\frac{k(\rho-N\rho_D)}{N(N-1)M_N},\qquad
+\frac{d\log e_{AB}}{d\tau}=-\frac{Nk\rho_D+(N-1-k)\rho}{N(N-1)M_N},\\
+\frac{d\nu^E_A}{d\tau}=-\frac{k\rho_D}{(N-1)M_N}.
+\end{gathered}
+\label{eq:kpartners}
+\end{equation}
+This follows by substituting $\bar t=k\,d\tau/(N-1)$, $\tilde t_B=(N-1-k)\,d\tau/(N-1)$ and $\tilde t_C=-k\,d\tau/(N-1)$ into \cref{eq:lambdas}. For every $k\leq N-2$ the bystander response has the same threshold, $\rho>N\rho_D$.
+
+\paragraph{Real exchange rates.} From $q_{Aj}=e_{Aj}P_j/P_A$, with $P_i$ the consumer price index in own currency and $P_{Ni}$ fixed, $d\log q_{Aj}=d\nu_j+\alpha_T(1-\alpha_D)(d\log P_{Mj}-d\log P_{MA})$. For a tariff vector $t$ imposed by $A$ alone, symmetry gives $d\log P_{MA}=d\nu^E_A+\bar t$ and $d\log P_{Mj}=d\nu^E_A-\frac{N}{N-1}d\nu_j$ for a partner that imposes no tariff. Hence
+\begin{equation}
+d\log q_{Aj}=\Big(1-\frac{mN}{N-1}\Big)d\nu_j-m\bar t,\qquad
+d\log q_{Aj}-dq^E_A=\Big(1-\frac{mN}{N-1}\Big)\lambda_R\tilde t_j,
+\label{eq:realapp}
+\end{equation}
+which with \cref{eq:lambdas} gives \cref{eq:real}. For a unilateral tariff, $d\log q_{Aj}=(1-\frac{mN}{N-1})d\nu_j-\frac{m}{N-1}d\tau$ for $j=B,C$, and averaging,
+\begin{equation}
+\frac{dq^E_A}{d\tau}=-\Big(1-\frac{mN}{N-1}\Big)\frac{\rho_D}{(N-1)M_N}-\frac{m}{N-1}.
+\label{eq:reer}
+\end{equation}
+
+\paragraph{Three-country illustration.} At $N=3$, \cref{eq:Jsym,eq:disturbance} give the unilateral-tariff system explicitly:
+\begin{equation}
+J=-\frac{mM_3}{2}\begin{pmatrix}2&-1\\-1&2\end{pmatrix},\qquad
+F=-\frac{m}{4}\begin{pmatrix}\rho+\rho_D\\\rho_D-\rho\end{pmatrix},\qquad
+M_3=\frac{3\alpha_D(\eta-1)+\rho+1}{2}.
+\label{eq:threecountry}
+\end{equation}
+With $M_3>0$,
+\begin{equation}
+\frac{d\log e_{AB}}{d\tau}=-\frac{\rho+3\rho_D}{6M_3}<0,\qquad
+\frac{d\log e_{AC}}{d\tau}=\frac{\rho-3\rho_D}{6M_3},\qquad
+\frac{d\log e_{BC}}{d\tau}=\frac{\rho}{3M_3}>0.
+\label{eq:threecountryslopes}
+\end{equation}
+Thus $A$ appreciates against $B$, $B$ depreciates against $C$, and $A$ depreciates against $C$ if and only if $\rho>3\rho_D$. By \cref{eq:signrule}, $d\nu_C/d\tau\propto F_B+2F_C\propto\rho-3\rho_D$, so the sign of $C$'s own disturbance $F_C$, which is positive once $\rho>\rho_D$, does not settle the sign of $d\nu_C$; \cref{fig:geometry-a} illustrates the intermediate case.

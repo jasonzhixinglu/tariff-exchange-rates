@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage[round]{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+\onehalfspacing
+\graphicspath{{figures/}}
+\captionsetup{font=small,labelfont=bf}
+\captionsetup[sub]{font=small}
+\numberwithin{equation}{section}
+\setlist{itemsep=2pt,topsep=4pt}
+
+% Theorem environments, numbered within section (cleveref is loaded first so
+% that shared counters keep their own names in \cref).
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}{Assumption}[section]
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{assumption}{Assumption}{Assumptions}
+\crefname{remark}{Remark}{Remarks}
+
+% Unresolved numbers and open items
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+% Expandable input for generated table rows (LaTeX's \input is not
+% expandable inside an alignment).
+\makeatletter
+\newcommand*{\tabinput}[1]{\@@input #1 }
+\makeatother
+
+% Notation
+\newcommand{\bone}{\mathbf{1}}
+\newcommand{\TB}{\mathrm{TB}}
+\newcommand{\ToT}{\mathrm{ToT}}
+\DeclareMathOperator{\adj}{adj}
+
+\title{\textbf{Understanding Multilateral Tariffs and Exchange Rates}\thanks{Preliminary draft; this version October 29, 2026. The views expressed are those of the authors and do not necessarily represent the views of the IMF, its Executive Board, or IMF management.}}
+\author{Jason Lu\\[2pt]
+  {\small International Monetary Fund}\\
+  {\small Research Department}\\
+  {\small\href{mailto:jlu2@imf.org}{jlu2@imf.org}}
+  \and
+  Dimitre Milkov\\[2pt]
+  {\small International Monetary Fund}\\
+  {\small Research Department}\\
+  {\small\href{mailto:dmilkov@imf.org}{dmilkov@imf.org}}}
+\date{\vspace{-1.5em}}
+
+\begin{document}
+
+\begingroup
+\singlespacing
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+\small\noindent\input{sections/abstract}
+\end{abstract}
+
+\vspace{4pt}
+\noindent\textbf{Keywords:} tariffs, exchange rates, trade diversion, terms of trade, multilateral Marshall--Lerner condition.
+
+\noindent\textbf{JEL codes:} F13, F31, F41.
+\clearpage
+\endgroup
+\setcounter{page}{1}
+\onehalfspacing
+
+\input{sections/intro}
+\input{sections/framework}
+\input{sections/symmetric}
+\input{sections/asymmetry}
+\input{sections/conclusion}
+
+\clearpage
+\singlespacing
+\bibliographystyle{aer}
+\bibliography{refs}
+\onehalfspacing
+
+\clearpage
+\appendix
+\input{sections/appendix_A}
+\input{sections/appendix_B}
+\input{sections/appendix_C}
+
+\clearpage
+\input{sections/appendix_D_online}
+
+\end{document}
