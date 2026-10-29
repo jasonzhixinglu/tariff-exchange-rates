@@ -79,9 +79,32 @@ def q2_grid():
             roots = asy.positive_roots(q) if sign != 0 else asy.positive_roots(q[1:])
             row.append(dict(S_B=sb, beta_AB=bab, sign_q2=sign, qhat=qh.tolist(),
                             roots=roots.tolist(), mml=lin.mml(lin.reduced_jacobian(base)),
-                            two_root=bool(qh[0] < 0 and qh[1] > 0 and qh[1] ** 2 - 4 * qh[0] * qh[2] > 0)))
+                            two_root=bool(qh[0] < 0 and qh[1] > 0 and qh[1] ** 2 - 4 * qh[0] * qh[2] > 0),
+                            **bystander_gradient(base, roots)))
         rows.append(row)
     return rows
+
+
+DC = asy.unilateral_direction(3, target=2)
+DU = D + DC
+
+
+def bystander_gradient(base, rootsB):
+    """Optional check (report only): the sign of g_C = -m_A R_{A|C}, the
+    welfare gain from a marginal tariff on the bystander C instead of B, at the
+    same fixed baseline.  g_C > 0 iff Q_{A|C}(rho) < 0.  Also checks the
+    uniform tariff (Proposition 4.2): Q_{A|B} + Q_{A|C} < 0 for all rho tested."""
+    w = lin.import_weights(base)
+    qC = asy.poly_coeffs(base, w, DC)
+    qU = asy.poly_coeffs(base, w, DU)
+    rhos = np.linspace(1.0, 60.0, 237)
+    gC_pos = [bool(np.polyval(qC, r) < 0) for r in rhos]
+    out = dict(qC=qC.tolist(), gC_positive_all_rho=all(gC_pos),
+               gC_roots=asy.positive_roots(qC).tolist(),
+               uniform_negative_all_rho=bool(all(np.polyval(qU, r) < 0 for r in rhos)))
+    if len(rootsB):
+        out["gC_positive_beyond_rhoB"] = all(np.polyval(qC, r) < 0 for r in rhos if r > rootsB[-1])
+    return out
 
 
 # ------------------------------------------------- Table 3 and reconciliation

@@ -168,3 +168,31 @@ def balanced_incomes(h, b, aT, y0=0):
     x = np.real(V[:, np.argmin(np.abs(w - 1.0))])
     y = x / (aT * (1.0 - np.asarray(h, float)))
     return y / y[y0]
+
+
+def own_rhoD(base, i=0):
+    """Country i's domestic diversion margin at a general baseline,
+    rho_D^i = eta_i h_i + (1 - h_i)(1 - aT_i); equals rho_D at symmetry."""
+    B = unpack(base)
+    return B["eta"][i] * B["h"][i] + (1.0 - B["h"][i]) * (1.0 - B["aT"][i])
+
+
+def uniform_tariff(base, i=0):
+    """Direction dtau_ij = 1 for all j != i (a uniform marginal tariff by i)."""
+    N = unpack(base)["N"]
+    d = np.zeros((N, N))
+    d[i, :] = 1.0
+    d[i, i] = 0.0
+    return d
+
+
+def welfare_gradient(base):
+    """g_j = d log V_A / d tau_Aj at free trade, j != A (Lemma 4.1:
+    g_j = -m_A R_{A|j}).  The uniform tariff's welfare effect is sum_j g_j."""
+    N = unpack(base)["N"]
+    g = []
+    for j in range(1, N):
+        d = np.zeros((N, N))
+        d[0, j] = 1.0
+        g.append(welfare_change(base, d))
+    return np.array(g)
