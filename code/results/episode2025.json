@@ -1,0 +1,251 @@
+{
+ "unilateral": {
+  "usd_per_eur": {
+   "monthly": 4.415239421373607,
+   "daily": 4.499999999999993,
+   "daily_dates": [
+    "2025-01-31",
+    "2025-04-02"
+   ]
+  },
+  "usd_per_cny": {
+   "monthly": 0.6384809119617474,
+   "daily": -0.34812530946826126,
+   "daily_dates": [
+    "2025-01-31",
+    "2025-04-02"
+   ]
+  },
+  "usd_per_vnd": {
+   "monthly": -1.8227422706233787,
+   "daily": -2.061439160900358,
+   "daily_dates": [
+    "end-2025-01",
+    "end-2025-03"
+   ],
+   "daily_is_eom": true
+  },
+  "broad_index": {
+   "monthly": 2.054695450933375,
+   "daily": 1.6629860002800978,
+   "daily_dates": [
+    "2025-01-31",
+    "2025-04-02"
+   ]
+  },
+  "broad_exCN_index": {
+   "monthly": 2.228957358778527,
+   "daily": 1.911707890064407,
+   "daily_dates": [
+    "2025-01-31",
+    "2025-04-02"
+   ]
+  }
+ },
+ "retaliation": {
+  "usd_per_eur": {
+   "monthly": 3.871492312642122,
+   "daily": 2.1899153478100786,
+   "daily_dates": [
+    "2025-04-02",
+    "2025-05-12"
+   ]
+  },
+  "usd_per_cny": {
+   "monthly": -0.6509584233173271,
+   "daily": 0.9122747347544147,
+   "daily_dates": [
+    "2025-04-02",
+    "2025-05-12"
+   ]
+  },
+  "usd_per_vnd": {
+   "monthly": -0.4729832616346852,
+   "daily": -0.47684059057219175,
+   "daily_dates": [
+    "end-2025-03",
+    "end-2025-04"
+   ],
+   "daily_is_eom": true
+  },
+  "broad_index": {
+   "monthly": 1.6939234832874517,
+   "daily": 2.34422765926261,
+   "daily_dates": [
+    "2025-04-02",
+    "2025-05-12"
+   ]
+  },
+  "broad_exCN_index": {
+   "monthly": 1.9835422644479683,
+   "daily": 2.520738233320796,
+   "daily_dates": [
+    "2025-04-02",
+    "2025-05-12"
+   ]
+  }
+ },
+ "near_uniform": {
+  "usd_per_eur": {
+   "monthly": 0.3388451435023532,
+   "daily": 0.7641452734609588,
+   "daily_dates": [
+    "2025-08-06",
+    "2025-12-31"
+   ]
+  },
+  "usd_per_cny": {
+   "monthly": 1.859455040230773,
+   "daily": 2.704098378905595,
+   "daily_dates": [
+    "2025-08-06",
+    "2025-12-31"
+   ]
+  },
+  "usd_per_vnd": {
+   "monthly": 0.025015144650475385,
+   "daily": 0.4737093721496777,
+   "daily_dates": [
+    "end-2025-07",
+    "end-2025-12"
+   ],
+   "daily_is_eom": true
+  },
+  "broad_index": {
+   "monthly": -0.06292624774187905,
+   "daily": 0.6368501222592027,
+   "daily_dates": [
+    "2025-08-06",
+    "2025-12-31"
+   ]
+  },
+  "broad_exCN_index": {
+   "monthly": -0.29528408479856383,
+   "daily": 0.3869061816823116,
+   "daily_dates": [
+    "2025-08-06",
+    "2025-12-31"
+   ]
+  }
+ },
+ "vs_january": {
+  "2025-01": {
+   "usd_per_eur": 0.0,
+   "usd_per_cny": 2.220446e-14,
+   "usd_per_vnd": 0.0,
+   "broad_index": 0.0,
+   "broad_exCN_index": -2.220446e-14
+  },
+  "2025-02": {
+   "usd_per_eur": 0.55133027,
+   "usd_per_cny": 0.30442866,
+   "usd_per_vnd": -0.85815841,
+   "broad_index": 0.75160473,
+   "broad_exCN_index": 0.80616869
+  },
+  "2025-03": {
+   "usd_per_eur": 4.4152404,
+   "usd_per_cny": 0.63848274,
+   "usd_per_vnd": -1.8227427,
+   "broad_index": 2.054695,
+   "broad_exCN_index": 2.2289593
+  },
+  "2025-04": {
+   "usd_per_eur": 8.4576672,
+   "usd_per_cny": -0.01663168,
+   "usd_per_vnd": -2.2871051,
+   "broad_index": 3.7834258,
+   "broad_exCN_index": 4.2567141
+  },
+  "2025-05": {
+   "usd_per_eur": 8.8622088,
+   "usd_per_cny": 1.0953103,
+   "usd_per_vnd": -2.4828777,
+   "broad_index": 5.3087099,
+   "broad_exCN_index": 5.8356515
+  },
+  "2025-06": {
+   "usd_per_eur": 11.372693,
+   "usd_per_cny": 1.6039235,
+   "usd_per_vnd": -2.6942109,
+   "broad_index": 6.8354075,
+   "broad_exCN_index": 7.4930455
+  },
+  "2025-07": {
+   "usd_per_eur": 12.697234,
+   "usd_per_cny": 1.6926876,
+   "usd_per_vnd": -3.2398763,
+   "broad_index": 7.2633969,
+   "broad_exCN_index": 7.9649011
+  },
+  "2025-08": {
+   "usd_per_eur": 12.471836,
+   "usd_per_cny": 1.7129245,
+   "usd_per_vnd": NaN,
+   "broad_index": 6.8513803,
+   "broad_exCN_index": 7.4971268
+  },
+  "2025-09": {
+   "usd_per_eur": 13.352861,
+   "usd_per_cny": 2.4154815,
+   "usd_per_vnd": -3.4470637,
+   "broad_index": 7.3381316,
+   "broad_exCN_index": 7.9558808
+  },
+  "2025-10": {
+   "usd_per_eur": 12.406666,
+   "usd_per_cny": 2.4656193,
+   "usd_per_vnd": -3.1156071,
+   "broad_index": 6.6868433,
+   "broad_exCN_index": 7.2145694
+  },
+  "2025-11": {
+   "usd_per_eur": 11.608897,
+   "usd_per_cny": 2.6545998,
+   "usd_per_vnd": -3.134503,
+   "broad_index": 6.1105051,
+   "broad_exCN_index": 6.5407936
+  },
+  "2025-12": {
+   "usd_per_eur": 13.079097,
+   "usd_per_cny": 3.5836181,
+   "usd_per_vnd": -3.2156716,
+   "broad_index": 7.1958985,
+   "broad_exCN_index": 7.6460942
+  }
+ },
+ "us_on_china_timeline": [
+  [
+   "2025-01-01",
+   0.0
+  ],
+  [
+   "2025-02-04",
+   10.0
+  ],
+  [
+   "2025-03-04",
+   20.0
+  ],
+  [
+   "2025-04-05",
+   30.0
+  ],
+  [
+   "2025-04-09",
+   104.0
+  ],
+  [
+   "2025-04-10",
+   145.0
+  ],
+  [
+   "2025-05-14",
+   30.0
+  ],
+  [
+   "2025-11-10",
+   20.0
+  ]
+ ]
+}

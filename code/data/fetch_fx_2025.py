@@ -39,14 +39,17 @@ Monthly aggregation
       series are inverted DAILY before averaging (1/DEXCHUS); VND is only
       available as a monthly average, so usd_per_vnd = 1 / (monthly avg VND/USD).
   *_eom: last available daily observation in the month (BIS end-of-period for VND).
-  2024 baseline: mean of all 2024 daily observations (VND: mean of the twelve
-      2024 monthly averages of USD per VND).
+  Base: the JANUARY 2025 average, the last month before the first tariff
+      executive order (Feb 1, 2025): mean of the January 2025 daily
+      observations (VND: the BIS January 2025 monthly average).
 
 Deviation columns (positive = DOLLAR DEPRECIATION):
-  USD-per-foreign series: 100 * (x / avg2024 - 1)
-  broad indices:          100 * (avg2024 / x - 1)
+  USD-per-foreign series: 100 * (x / base - 1)
+  broad indices:          100 * (base / x - 1)
 
-Output: data/processed/fx2025_monthly.csv
+Outputs: data/processed/fx2025_monthly.csv (monthly averages, end-of-month
+values and deviations) and data/processed/fx2025_daily.csv (daily USD/EUR,
+USD/CNY, broad index and broad index ex. China).
 """
 
 from __future__ import annotations
@@ -64,6 +67,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "data" / "raw" / "fx2025"
 OUT = ROOT / "data" / "processed" / "fx2025_monthly.csv"
+OUT_DAILY = ROOT / "data" / "processed" / "fx2025_daily.csv"
+BASE_MONTH = "2025-01"
 
 START, END = "2023-12-01", "2025-12-31"
 FRED_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd={s}&coed={e}"
@@ -217,12 +222,12 @@ def main() -> None:
         g = s.groupby(s.index.to_period("M"))
         out[k] = g.mean().reindex(months).values
         eom[k] = g.last().reindex(months).values
-        base[k] = s.loc["2024"].mean()
+        base[k] = s.loc[BASE_MONTH].mean()
 
     vavg, veop = read_bis_vnd()
     out["usd_per_vnd"] = (1.0 / vavg).reindex(out.index)
     eom["usd_per_vnd"] = (1.0 / veop).reindex(out.index)
-    base["usd_per_vnd"] = out.loc[out.index.str.startswith("2024"), "usd_per_vnd"].mean()
+    base["usd_per_vnd"] = out.loc[BASE_MONTH, "usd_per_vnd"]
 
     cols = ["usd_per_eur", "usd_per_cny", "usd_per_vnd", "broad_index", "broad_exCN_index"]
     out = out[cols]
@@ -250,11 +255,15 @@ def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     final.to_csv(OUT, float_format="%.8g")
     print(f"wrote {OUT}")
+    dd = pd.concat(daily, axis=1)
+    dd.index.name = "date"
+    dd.to_csv(OUT_DAILY, float_format="%.8g")
+    print(f"wrote {OUT_DAILY}")
     print(f"China weights used: {w}")
     show = ["2025-03", "2025-04", "2025-12"]
-    print("\n(a) monthly average vs 2024 average (%, + = USD depreciation)")
+    print("\n(a) monthly average vs January 2025 average (%, + = USD depreciation)")
     print(d_avg.loc[show].round(2).to_string())
-    print("\n(b) end-of-month vs 2024 average (%, + = USD depreciation)")
+    print("\n(b) end-of-month vs January 2025 average (%, + = USD depreciation)")
     print(d_eom.loc[show].round(2).to_string())
 
 

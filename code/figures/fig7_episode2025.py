@@ -1,13 +1,14 @@
 """Figure 7: the 2025 episode (stylized; no model magnitudes).
 
-(a) Monthly-average USD/EUR, USD/CNY, USD/VND and the Fed H.10 broad dollar
-    index excluding China, % deviation from the 2024 average; positive = dollar
-    depreciation.  Data cached by code/data/fetch_fx_2025.py.
+(a) Monthly-average USD/EUR, USD/CNY, USD/VND, the Fed H.10 broad dollar index
+    and the broad index excluding China, % deviation from the January 2025
+    average (pre-announcement); positive = dollar depreciation.  Data cached by
+    code/data/fetch_fx_2025.py.
 (b) Headline incremental tariff rates (pp above the pre-2025 baseline): US on
     China, China on US (across the board), US on EU, US baseline on others.
-Phases: unilateral (US tariffs on China, Feb 4 - Apr 4), retaliation (from the
-universal baseline and China's counter-tariffs, Apr 5 - May 13), near-uniform
-(framework rates in force from Aug 7; the Nov 10 cut on China completes it)."""
+Phases, dated by announcements as in code/checks/episode2025.py: unilateral
+(Feb 1 - Apr 2), retaliation (Apr 3 - May 12, to the Geneva statement),
+near-uniform (framework rates in force from Aug 7)."""
 import os
 from datetime import date
 
@@ -21,8 +22,8 @@ from style import GREY, plt
 FX = os.path.join(style.ROOT, "data", "processed", "fx2025_monthly.csv")
 TAR = os.path.join(style.ROOT, "data", "raw", "tariffs2025", "tariff_timeline.csv")
 START, END = pd.Timestamp("2025-01-01"), pd.Timestamp("2025-12-31")
-PHASES = [(pd.Timestamp("2025-02-04"), pd.Timestamp("2025-04-04"), "unilateral"),
-          (pd.Timestamp("2025-04-05"), pd.Timestamp("2025-05-13"), "retaliation"),
+PHASES = [(pd.Timestamp("2025-02-01"), pd.Timestamp("2025-04-02"), "unilateral"),
+          (pd.Timestamp("2025-04-03"), pd.Timestamp("2025-05-12"), "retaliation"),
           (pd.Timestamp("2025-08-07"), END, "near-uniform")]
 SHADES = ["#eeeeee", "#dcdcdc", "#eeeeee"]
 SIZE = (style.FULL_W, 2.35)
@@ -55,9 +56,12 @@ shade(ax, label=True)
 ax.axhline(0, color=style.MUTED, lw=0.6)
 series = [("dev_usd_per_eur", 1, "USD/EUR"), ("dev_usd_per_cny", 2, "USD/CNY"),
           ("dev_usd_per_vnd", 3, "USD/VND"), ("dev_broad_exCN_index", 4, "Broad index ex. China")]
-for col, slot, lab in series:
+for col, slot, lab in series[:3]:
     style.line(ax, fx["date"], fx[col], slot, lab, marker="o", ms=2.5)
-ax.set_ylabel("% vs 2024 average\n(+ = dollar depreciation)", fontsize=8)
+ax.plot(fx["date"], fx["dev_broad_index"], color=style.INK, lw=1.2, marker="s", ms=2.5,
+        label="Broad index")
+style.line(ax, fx["date"], fx[series[3][0]], 4, series[3][2], marker="o", ms=2.5)
+ax.set_ylabel("% vs January 2025\n(+ = dollar depreciation)", fontsize=8)
 finish(ax)
 ax.legend(loc="center left", bbox_to_anchor=(1.01, 0.5), fontsize=7)
 style.os.makedirs(style.OUT, exist_ok=True)
