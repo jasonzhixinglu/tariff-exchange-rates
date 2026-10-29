@@ -104,6 +104,32 @@ with $m_A=\sum_js_{Aj}=\alpha_T(1-h_A)$ and $b_{Aj}=s_{Aj}/m_A$. The tariff term
 
 \noindent The replication code checks \cref{lem:welfare} against central finite differences of $A$'s log indirect utility in the nonlinear model, at symmetric and asymmetric free-trade baselines ($N=3,4,5$) and under unilateral, retaliatory, multilateral-war, foreign-only and random tariff shocks; the two agree to within $10^{-6}$.
 
+\begin{proof}[Proof of \cref{prop:uniform}]
+Work with the linearized system \cref{eq:linear} at a balanced free-trade baseline, with country-specific $\eta_i$, $\rho_i$ and $\alpha_T^i$, so that $s_{Aj}=\alpha_T^A(1-h_A)b_{Aj}$ and $m_A=\sum_{j\neq A}s_{Aj}=\alpha_T^A(1-h_A)$.
+
+\emph{Step 1: only $A$'s import flows are disturbed.} Set $d\nu=0$ and $d\tau_{Aj}=dt$ for all $j\neq A$, with all other tariff changes zero. For $i\neq A$, $d\tau_{ij}=0$, so $dp_{ij}=0$ for every $j$, $d\log P_{Mi}=0$, $d\log s_{ij}=0$ and $d\log\tilde I_i=0$. Every flow $f_{ij}$ with $i\neq A$ is therefore unchanged. In the trade balance of partner $j$, the only term that moves is its exports to $A$:
+\begin{equation*}
+F_j=d\TB_j\big|_{d\nu=0}=f_{Aj}\big(d\log s_{Aj}+d\log\tilde I_A-dt\big).
+\end{equation*}
+
+\emph{Step 2: the cross-origin margin drops out.} In $A$, $dp_{Aj}=dt$ for every $j$, so $d\log P_{MA}=\sum_jb_{Aj}dt=dt$ and $dp_{Aj}-d\log P_{MA}=0$ for every $j$. The term multiplying $(1-\rho_A)$ vanishes, and
+\begin{equation*}
+d\log s_{Aj}=(1-\eta_A)h_A\,dt\quad\text{for every }j,\qquad d\log\tilde I_A=\sum_js_{Aj}\,dt=m_A\,dt.
+\end{equation*}
+
+\emph{Step 3: the disturbance.} Substituting,
+\begin{equation*}
+F_j=f_{Aj}\big[(1-\eta_A)h_A+\alpha_T^A(1-h_A)-1\big]dt=-f_{Aj}\big[\eta_Ah_A+(1-h_A)(1-\alpha_T^A)\big]dt=-f_{Aj}\,\rho_D^A\,dt,
+\end{equation*}
+which is \cref{eq:uniformF}. Since $\eta_A>0$, $0<h_A\leq1$ and $\alpha_T^A\leq1$, $\rho_D^A>0$, so $F_j\leq0$ for every $j$, with $F_j<0$ whenever $f_{Aj}>0$.
+
+\emph{Step 4: exchange rates.} Under MML, $(-J)^{-1}\geq0$, so by \cref{eq:signrule} $d\nu_i=\sum_j\vartheta_{ij}F_j\leq0$ for every $i$: $A$ appreciates weakly against every partner. If $A$ imports from every partner, then $F_j<0$ for all $j$; since $(-J)^{-1}$ is nonsingular and nonnegative, each of its rows has a strictly positive entry, so $d\nu_i<0$ for every $i$. If instead $J$ is irreducible, $-J$ is an irreducible nonsingular M-matrix and $(-J)^{-1}>0$ entrywise, so $d\nu_i<0$ for every $i$ as long as $F\neq0$, that is, as long as $A$ imports at all.
+
+\emph{Step 5: welfare.} By \cref{lem:welfare}, $dU_A/(U_A'I_A)=-m_A\sum_jb_{Aj}d\nu_j\geq0$, and it is strictly positive whenever some $d\nu_j<0$ with $b_{Aj}>0$, which holds in either case of Step 4 because the $b_{Aj}$ sum to one. Since $A$'s aggregate terms of trade improve if and only if $\sum_jb_{Aj}d\nu_j<0$, they improve. Finally, the response is linear in the tariff vector, so the welfare effect of the uniform tariff is $\sum_jg_j\,dt$ with $g_j$ as in \cref{eq:gradient}, and $\sum_jg_j>0$.
+\end{proof}
+
+\noindent The replication code checks \cref{eq:uniformF} against the linear system to $10^{-12}$ and against complex-step derivatives of the exact model's trade balances, and verifies the signs of $F$, $d\nu$ and the welfare change on 60 random asymmetric baselines with country-specific parameters ($N=3,4,5$).
+
 \begin{proof}[Proof of \cref{prop:threecases}]
 Under MML $\det A(\rho)>0$, so $R_{A|B}$ has the sign of $Q_{A|B}(\rho)$. (a) At the symmetric benchmark, \cref{eq:threecountry} gives $\det A=3(mM_3/2)^2$ and $R_{A|B}=d\nu^E_A/d\tau=-\rho_D/(2M_3)$, so $Q=-\tfrac38m^2\rho_DM_3$, which is affine in $\rho$ ($q_2=0$) and negative for all $\rho$ under MML. (b) If $q_2>0$ and $q_0<0$, the product of the roots is $q_0/q_2<0$, so there is exactly one positive root $\rho^*$, with $Q<0$ on $(0,\rho^*)$ and $Q>0$ beyond. (c) If $q_2<0$, $q_1>0$, $q_0<0$ and the discriminant is positive, both roots are real with positive sum $-q_1/q_2$ and positive product $q_0/q_2$, so both are positive, and the downward parabola is positive only between them.
 \end{proof}
