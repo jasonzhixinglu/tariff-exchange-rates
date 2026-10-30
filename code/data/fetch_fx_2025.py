@@ -9,6 +9,8 @@ Raw sources (see data/raw/fx2025/README.md for full documentation)
 ------------------------------------------------------------------
   FRED DEXUSEU   USD per EUR, daily (H.10 noon buying rates, NY)
   FRED DEXCHUS   CNY per USD, daily (H.10)
+  FRED DEXCAUS   CAD per USD, daily (H.10)
+  FRED DEXMXUS   MXN per USD, daily (H.10)
   FRED DTWEXBGS  Nominal broad dollar index, goods & services, Jan 2006 = 100,
                  daily (H.10); a rise = dollar appreciation
   BIS  WS_XRU    VND per USD, Viet Nam, monthly average (collection A) and
@@ -49,7 +51,7 @@ Deviation columns (positive = DOLLAR DEPRECIATION):
 
 Outputs: data/processed/fx2025_monthly.csv (monthly averages, end-of-month
 values and deviations) and data/processed/fx2025_daily.csv (daily USD/EUR,
-USD/CNY, broad index and broad index ex. China).
+USD/CNY, USD/CAD, USD/MXN, broad index and broad index ex. China).
 """
 
 from __future__ import annotations
@@ -80,6 +82,8 @@ H10_PREVIOUS_URL = "https://www.federalreserve.gov/releases/h10/weights/previous
 SOURCES = {
     "fred_DEXUSEU.csv": FRED_URL.format(sid="DEXUSEU", s=START, e=END),
     "fred_DEXCHUS.csv": FRED_URL.format(sid="DEXCHUS", s=START, e=END),
+    "fred_DEXCAUS.csv": FRED_URL.format(sid="DEXCAUS", s=START, e=END),
+    "fred_DEXMXUS.csv": FRED_URL.format(sid="DEXMXUS", s=START, e=END),
     "fred_DTWEXBGS.csv": FRED_URL.format(sid="DTWEXBGS", s=START, e=END),
     "bis_WS_XRU_VN_VND.csv": BIS_URL,
     "h10_weights_current.htm": H10_CURRENT_URL,
@@ -211,7 +215,10 @@ def main() -> None:
     cny = read_fred("DEXCHUS")              # CNY per USD
     broad = read_fred("DTWEXBGS")
     exc = broad_ex_china(broad, cny, w)
+    cad = read_fred("DEXCAUS")              # CAD per USD
+    mxn = read_fred("DEXMXUS")              # MXN per USD
     daily = {"usd_per_eur": eur, "usd_per_cny": 1.0 / cny,
+             "usd_per_cad": 1.0 / cad, "usd_per_mxn": 1.0 / mxn,
              "broad_index": broad, "broad_exCN_index": exc}
 
     months = pd.period_range("2024-01", "2025-12", freq="M")
@@ -229,7 +236,8 @@ def main() -> None:
     eom["usd_per_vnd"] = (1.0 / veop).reindex(out.index)
     base["usd_per_vnd"] = out.loc[BASE_MONTH, "usd_per_vnd"]
 
-    cols = ["usd_per_eur", "usd_per_cny", "usd_per_vnd", "broad_index", "broad_exCN_index"]
+    cols = ["usd_per_eur", "usd_per_cny", "usd_per_cad", "usd_per_mxn", "usd_per_vnd",
+            "broad_index", "broad_exCN_index"]
     out = out[cols]
     eom = eom[cols]
 
@@ -255,7 +263,8 @@ def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     final.to_csv(OUT, float_format="%.8g")
     print(f"wrote {OUT}")
-    dd = pd.concat(daily, axis=1)
+    dd = pd.concat(daily, axis=1)[["usd_per_eur", "usd_per_cny", "broad_index",
+                                   "broad_exCN_index", "usd_per_cad", "usd_per_mxn"]]
     dd.index.name = "date"
     dd.to_csv(OUT_DAILY, float_format="%.8g")
     print(f"wrote {OUT_DAILY}")

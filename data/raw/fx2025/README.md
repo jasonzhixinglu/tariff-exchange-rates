@@ -6,6 +6,8 @@ The files are downloaded by `code/data/fetch_fx_2025.py` and saved exactly as se
 |---|---|---|---|---|
 | `fred_DEXUSEU.csv` | FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU&cosd=2023-12-01&coed=2025-12-31 | DEXUSEU (Fed H.10) | U.S. dollars per euro, noon buying rates in New York | Daily (business days; "." = missing) |
 | `fred_DEXCHUS.csv` | FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS&cosd=2023-12-01&coed=2025-12-31 | DEXCHUS (Fed H.10) | Chinese yuan renminbi per U.S. dollar | Daily |
+| `fred_DEXCAUS.csv` | FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCAUS&cosd=2023-12-01&coed=2025-12-31 | DEXCAUS (Fed H.10) | Canadian dollars per U.S. dollar | Daily |
+| `fred_DEXMXUS.csv` | FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXMXUS&cosd=2023-12-01&coed=2025-12-31 | DEXMXUS (Fed H.10) | Mexican pesos per U.S. dollar | Daily |
 | `fred_DTWEXBGS.csv` | FRED, https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2023-12-01&coed=2025-12-31 | DTWEXBGS (Fed H.10) | Nominal broad U.S. dollar index, goods and services, Jan 2006 = 100. A rise means dollar appreciation | Daily |
 | `bis_WS_XRU_VN_VND.csv` | BIS SDMX API, https://stats.bis.org/api/v1/data/WS_XRU/.VN.VND.?startPeriod=2024-01-01&endPeriod=2025-12-31&format=csv | BIS dataflow WS_XRU ("US dollar exchange rates"), keys M.VN.VND.A (monthly average) and M.VN.VND.E (end of period); Q and A rows are also in the file | Viet Nam dong per U.S. dollar | Monthly |
 | `h10_weights_current.htm` | https://www.federalreserve.gov/releases/h10/weights/default.htm | H.10 broad index total trade weights, "Trade Weights as of February 2, 2026" | Percent | Annual weights |

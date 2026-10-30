@@ -5,7 +5,9 @@
     average (pre-announcement); positive = dollar depreciation.  Data cached by
     code/data/fetch_fx_2025.py.
 (b) Headline incremental tariff rates (pp above the pre-2025 baseline): US on
-    China, China on US (across the board), US on EU, US baseline on others.
+    China, China on US (across the board), US on EU, US baseline on others,
+    US on Canada (non-USMCA goods; Mexico identical until Aug 1, then 25) and
+    Canada's surtax on covered US goods.
 Phases, dated by announcements as in code/checks/episode2025.py: unilateral
 (Feb 1 - Apr 2), retaliation (Apr 3 - May 12, to the Geneva statement),
 near-uniform (framework rates in force from Aug 7)."""
@@ -89,6 +91,10 @@ for (name, slot, lab) in (("us_on_china", 1, "US on China"), ("china_on_us", 2, 
     x, y = steps(name)
     color, dash = style.STYLES[slot]
     ax.step(x, y, where="post", color=color, linestyle=dash, label=lab, lw=1.5)
+for (name, color, dash, lab) in (("us_on_canada", style.INK, "-", "US on Canada (non-USMCA)"),
+                                 ("canada_on_us", GREY, (0, (3, 1, 1, 1, 1, 1)), "Canada on US (covered goods)")):
+    x, y = steps(name)
+    ax.step(x, y, where="post", color=color, linestyle=dash, label=lab, lw=1.0)
 ax.set_ylabel("tariff increase (pp)", fontsize=8)
 ax.set_ylim(0, 155)
 finish(ax)

@@ -28,5 +28,15 @@
     "url": "https://www.federalreserve.gov/releases/h10/weights/previousweights.htm",
     "retrieved": "2026-10-29",
     "bytes": 118748
+  },
+  "fred_DEXCAUS.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCAUS&cosd=2023-12-01&coed=2025-12-31",
+    "retrieved": "2026-10-29",
+    "bytes": 9679
+  },
+  "fred_DEXMXUS.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXMXUS&cosd=2023-12-01&coed=2025-12-31",
+    "retrieved": "2026-10-29",
+    "bytes": 10200
   }
 }
