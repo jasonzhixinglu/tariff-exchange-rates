@@ -1,4 +1,4 @@
-"""Figure 5: the composite bystander.  (a) N rho_D and the threshold of the
+"""Figure 4: the composite bystander.  (a) N rho_D and the threshold of the
 'ordinary-eta' composite against N; (b) eta_C against N for rho in {2, 4, 8}.
 US-like parameters.  Thresholds are computed from the composite economy with
 the linear solver and checked against N rho_D."""
@@ -31,7 +31,7 @@ style.line(ax, Ns, true, 1, r"$N\rho_D$ (true, composite with $\eta_C$)", marker
 style.line(ax, Ns, ordinary, 2, r"composite with ordinary $\eta$", marker="s", ms=3)
 ax.set_xlabel(r"$N$"); ax.set_ylabel(r"bystander threshold in $\rho$")
 ax.set_ylim(0, 14); ax.legend(loc="upper left", fontsize=7)
-style.save(fig, "fig5a_composite_threshold.pdf")
+style.save(fig, "fig4a_composite_threshold.pdf")
 
 fig, ax = plt.subplots(figsize=(style.PANEL_W, 2.4))
 for slot, rho in zip((1, 2, 3), (2.0, 4.0, 8.0)):
@@ -42,4 +42,4 @@ ax.axhline(CAL["eta"], color=style.GREY, lw=0.6)
 ax.text(10.1, CAL["eta"], r"$\eta$", va="center", fontsize=8)
 ax.set_xlabel(r"$N$"); ax.set_ylabel(r"$\eta_C$")
 ax.set_ylim(0, 8.6); ax.legend(loc="center right", fontsize=7)
-style.save(fig, "fig5b_eta_C.pdf")
+style.save(fig, "fig4b_eta_C.pdf")

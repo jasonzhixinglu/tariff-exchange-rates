@@ -1,4 +1,4 @@
-"""Figure 4: configuration dependence, US-like parameters, N = 3.
+"""Figure 5: configuration dependence, US-like parameters, N = 3.
 NEER under unilateral tariff, bilateral retaliation and multilateral war, and
 the bystander response under unilateral tariff and retaliation."""
 import numpy as np
@@ -42,4 +42,4 @@ for x, lab in ((rD, r"$\rho_D=%.2f$" % rD), (3 * rD, r"$3\rho_D=%.2f$" % (3 * rD
 ax.set_xlim(1, 10)
 ax.set_xlabel(r"$\rho$"); ax.set_ylabel(r"response per unit $d\tau$")
 ax.legend(loc="center left", bbox_to_anchor=(1.0, 0.5), fontsize=7)
-style.save(fig, "fig4_configurations.pdf")
+style.save(fig, "fig5_configurations.pdf")
