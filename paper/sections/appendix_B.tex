@@ -33,24 +33,6 @@ The three responses are derived in \cref{app:linear}. Under MML $M_N>0$, and $\r
 See the single-elasticity paragraph of \cref{app:linear}. Since $N\rho_D\geq\eta$ when $\alpha_D\geq1/N$, $\rho>N\rho_D$ implies $\rho>\eta$, and with $\rho=\eta$ the condition $\rho>N\rho_D$ cannot hold.
 \end{proof}
 
-\begin{proof}[Proof of \cref{prop:retaliation}]
-(i) Let primes denote responses to the mirror shock $t_{BA}=d\tau$. Relabeling $A\leftrightarrow B$ in \cref{eq:unilateral} gives
-\begin{equation*}
-d\log e'_{BA}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}\,d\tau,\qquad d\log e'_{BC}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau.
-\end{equation*}
-Since $e_{AB}=1/e_{BA}$ and $e_{AC}=e_{AB}e_{BC}$, $d\log e'_{AB}=\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}d\tau$ and $d\log e'_{AC}=\frac{\rho}{NM_N}d\tau$. By linearity the combined response is $d\log e_{AB}=0$ and
-\begin{equation*}
-d\log e_{AC}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau+\frac{\rho}{NM_N}\,d\tau=\frac{\rho-\rho_D}{(N-1)M_N}\,d\tau.
-\end{equation*}
-The three components are $A$'s average protection, $-\rho_D/[(N-1)M_N]$, $A$'s relative treatment, $\rho/[N(N-1)M_N]$, and $B$'s relative treatment, $\rho/(NM_N)$. By symmetry between $A$ and $B$ the same expression applies to $d\log e_{BC}$, every bystander moves identically, so cross rates among bystanders are unchanged, and averaging over $A$'s $N-1$ partners gives $d\nu^E_A$ in \cref{eq:retaliation}.
-
-(ii) Superpose the $N$ tariff vectors. $A$'s tariff vector is uniform, $\bar t^{(A)}=d\tau$ and $\tilde t^{(A)}=0$, and contributes $\lambda_Ad\tau$ to every $d\log e_{Aj}$. Partner $j$ taxes only $A$; its contribution to $d\log e_{Aj}$ is $-[\lambda_A+(N-2)\lambda_R]\frac{d\tau}{N-1}$, while each of the $N-2$ other partners $k$ contributes $-\lambda_Rd\tau=\frac{\rho}{NM_N}d\tau$, computed as in part (i) from $e_{Aj}=e_{Ak}e_{kj}$. Summing,
-\begin{equation*}
-d\log e_{Aj}=\lambda_Ad\tau-\big[\lambda_A+(N-2)\lambda_R\big]\frac{d\tau}{N-1}-(N-2)\lambda_Rd\tau=\frac{(N-2)(\rho-\rho_D)}{(N-1)M_N}\,d\tau.
-\end{equation*}
-The expression is the same for every $j$, so it equals the effective response, and all cross rates among $A$'s partners are unchanged. Under MML the signs are those of $\rho-\rho_D$.
-\end{proof}
-
 \begin{proof}[Proof of \cref{prop:composite}]
 Label the countries $A$, $B$ and bystanders $c=1,\dots,N-2$. Consider any tariff change in the class described in the proposition, and write the composite economy's variables with a capital $C$.
 
@@ -88,6 +70,24 @@ Equations \cref{eq:realapp,eq:reer} are derived in \cref{app:linear}. For (i), s
 \big[(N-1)-mN\big]\frac{\rho-N\rho_D}{N}=m(N-1)M_N(\rho).
 \end{equation*}
 Since $M_N$ is affine in $\rho$, this is linear in $\rho$; for $m<1/N$, solving gives $\rho^*_q(N)$. The coefficient $(N-1)-mN$ is then positive, and MML at $\rho^*_q$ gives $M_N>0$ on the right, so $\rho^*_q(N)>N\rho_D$. For (ii), under MML $M_N>0$, and for $m<(N-1)/N$ both terms in \cref{eq:reer} are negative.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:retaliation}]
+(i) Let primes denote responses to the mirror shock $t_{BA}=d\tau$. Relabeling $A\leftrightarrow B$ in \cref{eq:unilateral} gives
+\begin{equation*}
+d\log e'_{BA}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}\,d\tau,\qquad d\log e'_{BC}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau.
+\end{equation*}
+Since $e_{AB}=1/e_{BA}$ and $e_{AC}=e_{AB}e_{BC}$, $d\log e'_{AB}=\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}d\tau$ and $d\log e'_{AC}=\frac{\rho}{NM_N}d\tau$. By linearity the combined response is $d\log e_{AB}=0$ and
+\begin{equation*}
+d\log e_{AC}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau+\frac{\rho}{NM_N}\,d\tau=\frac{\rho-\rho_D}{(N-1)M_N}\,d\tau.
+\end{equation*}
+The three components are $A$'s average protection, $-\rho_D/[(N-1)M_N]$, $A$'s relative treatment, $\rho/[N(N-1)M_N]$, and $B$'s relative treatment, $\rho/(NM_N)$. By symmetry between $A$ and $B$ the same expression applies to $d\log e_{BC}$, every bystander moves identically, so cross rates among bystanders are unchanged, and averaging over $A$'s $N-1$ partners gives $d\nu^E_A$ in \cref{eq:retaliation}.
+
+(ii) Superpose the $N$ tariff vectors. $A$'s tariff vector is uniform, $\bar t^{(A)}=d\tau$ and $\tilde t^{(A)}=0$, and contributes $\lambda_Ad\tau$ to every $d\log e_{Aj}$. Partner $j$ taxes only $A$; its contribution to $d\log e_{Aj}$ is $-[\lambda_A+(N-2)\lambda_R]\frac{d\tau}{N-1}$, while each of the $N-2$ other partners $k$ contributes $-\lambda_Rd\tau=\frac{\rho}{NM_N}d\tau$, computed as in part (i) from $e_{Aj}=e_{Ak}e_{kj}$. Summing,
+\begin{equation*}
+d\log e_{Aj}=\lambda_Ad\tau-\big[\lambda_A+(N-2)\lambda_R\big]\frac{d\tau}{N-1}-(N-2)\lambda_Rd\tau=\frac{(N-2)(\rho-\rho_D)}{(N-1)M_N}\,d\tau.
+\end{equation*}
+The expression is the same for every $j$, so it equals the effective response, and all cross rates among $A$'s partners are unchanged. Under MML the signs are those of $\rho-\rho_D$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{lem:welfare}]
