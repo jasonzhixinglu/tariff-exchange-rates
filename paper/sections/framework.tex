@@ -72,3 +72,37 @@ If each trade balance is homogeneous of degree one in currency values, \cref{ass
 \end{lemma}
 
 This is the trade-balance analogue of the gross-substitutes stability results of \citet{hicks1939}, \citet{mosak1944}, \citet{metzler1945} and \citet{arrow1959}. We use it as the multilateral counterpart of the Marshall--Lerner condition. The point to stress is that \textbf{MML does not pin down the sign of any individual exchange-rate response.} Every bilateral Marshall--Lerner condition can hold and the multilateral response can still go either way. What decides it is the structure of $F$.
+
+\subsection{Symmetric partners}
+\label{sec:decomposition}
+
+The representation \cref{eq:response} holds at any balanced baseline. When the tariffing country's partners are symmetric, it can be solved in closed form in terms of four eigenvalues.
+
+Restrict attention to tariff changes imposed by $A$, $t=(t_j)_{j\neq A}$ with $t_j\equiv d\tau_{Aj}$, and let $G$ now denote the $(N-1)\times(N-1)$ restriction of the tariff-incidence matrix. Suppose $A$'s partners are \textbf{symmetric}: $PJP'=J$ and $PGP'=G$ for every permutation $P$ of the partners, as at free trade or under a common external tariff. Decompose
+\begin{equation}
+t=\bar t\,\bone+\tilde t,\qquad \bar t=\tfrac{1}{N-1}\bone't,\qquad \bone'\tilde t=0.
+\label{eq:tsplit}
+\end{equation}
+We call $\bar t$ \textbf{average protection} and $\tilde t$ \textbf{relative treatment}. Any permutation-invariant matrix has the form $aI+b\bone\bone'$, so $\bone$ and every zero-sum vector are eigenvectors of both $G$ and $-J$:
+\begin{equation*}
+G\bone=g_S\bone,\quad Gv=g_Dv;\qquad (-J)\bone=j_S\bone,\quad (-J)v=j_Dv\qquad(\bone'v=0).
+\end{equation*}
+
+\begin{proposition}[Average protection and relative treatment]
+\label{prop:decomposition}
+Let partners be symmetric, $N\geq3$, and $j_S,j_D\neq0$. For any tariff vector $t$,
+\begin{equation}
+d\nu=\lambda_A\,\bar t\,\bone+\lambda_R\,\tilde t,\qquad \lambda_A=g_S/j_S,\quad \lambda_R=g_D/j_D.
+\label{eq:decomp}
+\end{equation}
+Hence, with $d\nu^E_A\equiv\frac{1}{N-1}\sum_{j\neq A}d\nu_j$ (the NEER at symmetric weights),
+\begin{equation}
+d\nu^E_A=\lambda_A\bar t,\qquad d\nu_j-d\nu^E_A=\lambda_R\tilde t_j,\qquad d\log e_{jk}=\lambda_R(t_k-t_j).
+\label{eq:decompparts}
+\end{equation}
+Moreover, MML is equivalent to $j_S>0$ and $j_D\geq j_S$.
+\end{proposition}
+
+\textbf{Average protection alone moves the NEER; relative treatment alone moves bilateral rates around it and the cross rates among partners.} The geometry is simple. The response vector lives in the plane spanned by the common direction $\bone$ and the zero-sum directions, and each component is scaled by its own coefficient (\cref{fig:geometry}).
+
+\Cref{sec:nestedces} gives these eigenvalues economic content.

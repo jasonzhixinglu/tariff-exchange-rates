@@ -1,0 +1,44 @@
+\section{Trade Wars and Preferential Tariffs}
+\label{sec:tradewars}
+
+So far only $A$ has changed its tariffs. This section lets partners respond, and then relates the bystander result to the literature on preferential tariffs.
+
+\subsection{Trade wars}
+\label{sec:retaliation}
+
+Since the analysis is local, simultaneous tariff changes by several countries add up.
+
+\begin{proposition}[Retaliation and trade wars]
+\label{prop:retaliation}
+At the symmetric benchmark with $N\geq3$ under MML:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Bilateral retaliation} ($A$ tariffs $B$ and $B$ tariffs $A$ by $d\tau$): $d\nu_B=0$, and
+\begin{equation}
+\frac{d\nu_C}{d\tau}=\frac{\rho-\rho_D}{(N-1)M_N},\qquad
+\frac{d\nu^E_A}{d\tau}=\frac{N-2}{N-1}\cdot\frac{\rho-\rho_D}{(N-1)M_N}.
+\label{eq:retaliation}
+\end{equation}
+Both belligerents depreciate against every bystander, and in effective terms, \textbf{if and only if $\rho>\rho_D$.} Cross rates among bystanders are unchanged.
+\item \textbf{Multilateral trade war} ($A$ tariffs every partner, and every partner retaliates against $A$): $d\nu_j=d\nu^E_A=\frac{(N-2)(\rho-\rho_D)}{(N-1)M_N}\,d\tau$ for all $j$, so $A$ depreciates against everyone if and only if $\rho>\rho_D$.
+\end{enumerate}
+\end{proposition}
+
+$B$'s retaliation adds a second relative-treatment effect in the bystander's favor, which offsets the $1/N$ dilution. The threshold drops from $N\rho_D$ to $\rho_D$, the point at which the bystander's trade balance improves at unchanged exchange rates. At US-like parameters $\rho_D=1.32$, below essentially all cross-origin estimates. \textbf{Retaliation therefore makes multilateral depreciation of the tariffing country's currency the generic outcome, while leaving the belligerents' bilateral rate unchanged.} This is the pattern documented by \citet{ostry2025}, including the near-stability of the dollar against the renminbi in tit-for-tat episodes. Here it arises with flexible prices, balanced trade and no financial channel.
+
+The two experiments differ in where adjustment falls. Under bilateral retaliation the belligerents' rate is fixed and adjustment runs against bystanders. In a multilateral war there are no bystanders, and all of $A$'s rates move together (\cref{fig:configurations}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\textwidth]{fig4_configurations.pdf}
+\caption{Configuration dependence, $N=3$, US-like parameters. NEER responses $d\nu^E_A/d\tau$ under a unilateral tariff (always negative), bilateral retaliation and a multilateral war (both crossing zero at $\rho_D=1.32$), and the bilateral response against a bystander under a unilateral tariff (crossing at $3\rho_D=3.96$) and under retaliation (crossing at $\rho_D$). At $N=3$ the multilateral-war response coincides with the bystander response under bilateral retaliation, so those two lines overlap. Shaded: the central empirical range for cross-origin elasticities, $\rho\in[2,4]$.}
+\label{fig:configurations}
+\end{figure}
+
+\subsection{Preferential tariffs and competing exporters}
+\label{sec:pta}
+
+In our model class the bystander's exchange rate is its terms of trade: $\ToT_{CA}=e_{AC}$. The response in \cref{eq:unilateral} is therefore the third-country terms-of-trade effect of a discriminatory tariff, the central object of the preferential-trade-agreement literature since \citet{viner1950} and \citet{mundell1964}. In the canonical competing-exporter model, an importer $A$ that does not produce the good buys it from $B$ and $C$ under quasi-linear preferences. With $q_j$ exporter $j$'s price, $E_j$ its export supply and $M_A$ the importer's demand, a tariff on $B$ then \emph{always} improves $C$'s terms of trade, since
+\begin{equation*}
+\frac{dq_C}{dt_B}=\frac{E'_B}{E'_B+E'_C-M'_A}>0,
+\end{equation*}
+and preferential liberalization toward $B$ always hurts the excluded country. In our model the same effects hold \textbf{only if $\rho>N\rho_D$}. The difference is that $A$ produces a competing tradable. Part of the demand diverted from $B$ goes to $A$'s own good, along with the rebate's income effect, so the third-country effect survives only when cross-origin substitution is strong relative to domestic diversion. The two environments are not formally nested. The competing-exporter model can be read as switching off $\rho_D$ in order to isolate substitution across foreign suppliers. \Cref{app:asym-tariff} shows that at a positive common external tariff the threshold rises, and that a discrete preferential cut requires a higher $\rho$ than the local threshold suggests.
