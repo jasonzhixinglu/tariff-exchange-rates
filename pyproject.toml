@@ -4,18 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tariff-exchange-rates"
-version = "0.1.0"
-description = "Analysis of tariff effects on exchange rates"
+version = "0.2.0"
+description = "Code and data for 'Understanding Multilateral Tariffs and Exchange Rates'"
 requires-python = ">=3.9"
 dependencies = [
     "numpy",
     "scipy",
     "pandas",
-    "statsmodels",
     "matplotlib",
-    "seaborn",
-    "tqdm",
 ]
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[project.optional-dependencies]
+test = ["pytest"]
+
+# The production code under code/ is run as scripts (python code/run_all.py)
+# and is not an installable package; this file only declares dependencies.
+[tool.setuptools]
+packages = []

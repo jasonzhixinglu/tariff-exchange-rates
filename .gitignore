@@ -15,21 +15,18 @@ venv/
 # Data (keep structure, ignore contents if sensitive)
 # data/raw/
 
-# Output
-output/
+# Archived output (the tracked Liberation Day figures stay tracked;
+# everything else generated there stays local)
+archive/data/output/
 
 # Google Drive synced files
 gdrive_files/
 
-# Paper directory: LaTeX sources and figures ARE tracked (revision is
-# diffed through git). Only third-party literature PDFs and the compiled
-# output PDFs stay untracked; LaTeX build artifacts are covered below.
-Exchange_Rate_Tariffs/literature_review/
-Exchange_Rate_Tariffs/main.pdf
-# paper_draft.pdf is tracked so the current compiled draft is downloadable from GitHub
-Exchange_Rate_Tariffs/paper_draft_original.pdf
-Exchange_Rate_Tariffs/*.bbl
-Exchange_Rate_Tariffs/*.blg
+# Archived August draft: third-party literature PDFs and compiled outputs
+# stay local (paper_draft.pdf is tracked)
+archive/writeups/Exchange_Rate_Tariffs/literature_review/
+archive/writeups/Exchange_Rate_Tariffs/main.pdf
+archive/writeups/Exchange_Rate_Tariffs/paper_draft_original.pdf
 
 # LaTeX build artifacts
 *.aux
@@ -38,6 +35,10 @@ Exchange_Rate_Tariffs/*.blg
 *.synctex.gz
 *.fls
 *.fdb_latexmk
+*.bbl
+*.blg
+*.toc
+texput.log
 
 # OS
 .DS_Store
@@ -49,11 +50,6 @@ Thumbs.db
 
 # Claude
 .claude/
-
-# Paper build (paper/main.pdf is tracked; intermediate files are not)
-paper/*.bbl
-paper/*.blg
-paper/*.toc
 
 # Large raw downloads kept locally only (see data/raw/trade2024/README.md)
 data/raw/trade2024/bea_NipaDataA.txt
