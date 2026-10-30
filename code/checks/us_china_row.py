@@ -1,5 +1,7 @@
 """Where does a US-China-ROW configuration sit in the q2 sign grid (Table 2)?
-For archive/build-reports/BUILD_REPORT.md only; not a claim in the paper.
+Backs the US-China-ROW footnote in the 2025 section of the paper (Phase 2,
+the "China's size does not" bullet): grid position, aggregate terms-of-trade
+threshold and bystander threshold.
 
 Data (2024, data/raw/trade2024/trade_2024.json): US-reported imports by origin
 (Census), China-reported imports by origin (GACC), ROW imports from the US and
