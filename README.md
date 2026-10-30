@@ -16,7 +16,7 @@ The paper studies the long-run exchange-rate response to arbitrary tariff vector
    - with realistic home bias the reversal requires ρ > η, so it cannot arise when a single elasticity governs both margins.
 4. **Composite bystander.** The symmetric N-country economy reduces exactly to a three-country economy with a composite bystander.
 5. **Asymmetry and welfare.** A uniform tariff appreciates the currency against every partner and raises welfare at any balanced baseline under MML. A tariff on a single small, low-weight partner can instead worsen the aggregate terms of trade, and hence welfare, when ρ is high.
-6. **2025.** A stylized reading of the 2025 episode (no calibration): the retaliation phase is consistent with the trade channel; the dollar's effective weakness under unilateral and near-uniform tariffs is not explained by it.
+6. **2025.** A stylized reading of the 2025 episode (no calibration): the retaliation phase is consistent with the trade channel, and the near-uniform phase shows none of the predicted effective appreciation. No phase was a clean single configuration (Phase 1 mixed the China tariffs with North American tariffs and Canadian retaliation), so the reading classifies phases only as far as they approximate one.
 
 ## Code for the paper
 
