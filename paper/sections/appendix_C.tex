@@ -5,15 +5,11 @@ This appendix states sufficient conditions for the two-country sign result of \c
 \subsection{Two-country sufficient conditions}
 \label{app:online-twocountry}
 
-Let $e\equiv e_{AB}$ and let $\tau$ be $A$'s tariff on imports from $B$. Border prices are one in the producer's currency, so with import and export quantities $Q_M$ and $Q_X$, $A$'s import payments are $M_A=eQ_M$, its export receipts are $X_A=Q_X$, and $\TB_A(e,\tau)\equiv X_A(e,\tau)-M_A(e,\tau)$, where $X_A$ and $M_A$ include all induced effects, including income effects of tariff revenue. If $\TB_A$ is continuously differentiable with $\TB_{A,e}\neq0$ at an equilibrium, the implicit function theorem gives a locally unique $e(\tau)$ with $de/d\tau=-\TB_{A,\tau}/\TB_{A,e}$.
-
-The first condition is $\TB_{A,\tau}>0$. Because $M_A=eQ_M$ is measured at border prices, import payments fall at fixed $e$ if and only if the import quantity falls. Under a lump-sum rebate of revenue, with $\varepsilon^H$ the compensated own-price elasticity of import demand, $\eta_I$ its income elasticity and $\theta$ the revenue share of income,
+Let $e\equiv e_{AB}$ and let $\tau$ be $A$'s tariff on imports from $B$. If $\TB_A(e,\tau)$ is continuously differentiable and $\TB_{A,e}\neq0$, the implicit-function theorem gives
 \begin{equation*}
-\frac{d\log Q_M}{d\log(1+\tau)}\bigg|_e=-\frac{\varepsilon^H}{1-\eta_I\theta},
+\frac{de}{d\tau}=-\frac{\TB_{A,\tau}}{\TB_{A,e}}.
 \end{equation*}
-so at free trade ($\theta=0$) the import quantity falls if and only if $\varepsilon^H>0$. In the nested-CES model at free trade, $\varepsilon^H=\rho_D>0$, the domestic diversion margin of \cref{eq:twocountry}, and $X_{A,\tau}=0$ because $B$'s income and demand are unchanged at a fixed exchange rate. The second condition is $\TB_{A,e}>0$, which at a balanced baseline is equivalent to the Marshall--Lerner condition $\varepsilon_X+\varepsilon_M>1$ (\cref{sec:bilateral}).
-
-When both conditions hold, $de/d\tau<0$. These are sufficient conditions, not properties of every model: the fiscal closure (revenue wasted, spent by the government or transferred abroad) and the pricing convention (local- or dominant-currency pricing, incomplete pass-through, markups) change the quantity responses and can reverse either sign.
+A tariff therefore appreciates $A$'s currency locally when $\TB_{A,\tau}>0$ and $\TB_{A,e}>0$. At the balanced baseline, the second condition is the Marshall--Lerner condition $\varepsilon_X+\varepsilon_M>1$. In the nested-CES model at free trade, $\TB_{A,\tau}>0$ because the domestic diversion margin $\rho_D$ is strictly positive. These are sufficient conditions rather than universal properties: alternative fiscal closures, pricing conventions, incomplete pass-through, or endogenous markups can change the underlying quantity responses and either sign.
 
 \subsection{Real exchange rates}
 \label{sec:real}
@@ -51,39 +47,23 @@ Where MML holds, $A$ appreciates in real terms against $c$ for $\rho<\rho^*_q(N)
 
 At the US-like calibration and $N=3$, $m=0.08<1/3$ and $\rho^*_q=4.93$, against the nominal threshold $3\rho_D=3.96$.
 
-At the US-like calibration and $N=3$, $m=0.08<1/3$ and $\rho^*_q=4.93$, against the nominal threshold $3\rho_D=3.96$.
-
 \begin{proof}[Proof of \cref{prop:real}]
-MML is used only for the sign statements in (i), (iii) and (v) and for the comparison in (i); in (iv) it follows from $\eta\geq1$. By \cref{eq:realapp} with $\bar t=d\tau/(N-1)$, $d\log q_{Ac}/d\tau=(1-\frac{mN}{N-1})\,d\nu_c/d\tau-\frac{m}{N-1}$. Substituting $d\nu_c/d\tau$ from \cref{eq:unilateral} and writing $\frac{m}{N-1}=\frac{mN\,M_N}{N(N-1)M_N}$ gives the stated response. Under MML $M_N>0$, so the response has the sign of $H_N$. Since $M_N$ in \cref{eq:MN} has slope $(N-2)/(N-1)$, $H_N$ is affine in $\rho$ with slope $1-\frac{mN}{N-1}-\frac{mN(N-2)}{N-1}=1-mN$.
+Let $\bar t=d\tau/(N-1)$. Substituting \cref{eq:unilateral} into \cref{eq:realapp} gives the stated response $H_N/[N(N-1)M_N]$, which has the sign of $H_N$ under MML. Since $M_N$ has slope $(N-2)/(N-1)$ in $\rho$, $dH_N/d\rho=1-\frac{mN}{N-1}-\frac{mN(N-2)}{N-1}$, which equals $1-mN$.
 
-(i) For $m<1/N$ the slope is positive. Multiplying $H_N=0$ by $N-1$ gives $[(N-1)-mN](\rho-N\rho_D)=mN[1+N\alpha_D(\eta-1)+(N-2)\rho]$; the coefficient on $\rho$ is $(N-1)-mN-mN(N-2)=(N-1)(1-mN)$, which yields $\rho^*_q(N)$. At the root $[(N-1)-mN](\rho^*_q-N\rho_D)=mN(N-1)M_N(\rho^*_q)$. For $m<1/N$ the coefficient $(N-1)-mN$ exceeds $N-2\geq1$, and if MML holds at $\rho^*_q$ the right-hand side is strictly positive because $m>0$ and $M_N(\rho^*_q)>0$; hence $\rho^*_q(N)>N\rho_D$.
+(i) Solving $(N-1)H_N=0$, the coefficient on $\rho$ is $(N-1)(1-mN)$, which yields $\rho^*_q(N)$. At the root $[(N-1)-mN](\rho^*_q-N\rho_D)=mN(N-1)M_N(\rho^*_q)$, which is positive if MML holds there; since $(N-1)-mN>N-2>0$ for $m<1/N$, $\rho^*_q(N)>N\rho_D$. (ii) and (iii) follow from the sign of the slope, with the constant in (ii) obtained by substituting $m=1/N$ into $H_N$.
 
-(ii) For $m=1/N$ the slope is zero, and $H_N=\frac{N-2}{N-1}(\rho-N\rho_D)-\frac{1+N\alpha_D(\eta-1)+(N-2)\rho}{N-1}$, which reduces to the stated constant.
+(iv) If $\eta\geq1$, every term of $M_N$ is nonnegative and the first is positive, so MML holds for every $\rho>0$, and $\rho_D-m\geq1-2m$ implies $H_N(0)<0$ (online supplement); for $m\geq1/N$, $H_N(\rho)\leq H_N(0)<0$.
 
-(iii) For $m>1/N$ the slope is negative.
-
-(iv) If $\eta\geq1$, every term of $M_N$ in \cref{eq:MN} is nonnegative and the first is positive, so MML holds for every $\rho>0$. Since $(N-1)M_N(0)=1+N\alpha_D(\eta-1)$ and $\rho_D=1+\alpha_D(\eta-1)-m$,
-\begin{equation*}
-(N-1)H_N(0)=-[(N-1)-mN]N\rho_D-mN[1+N\alpha_D(\eta-1)]=-N\big[(N-1)(\rho_D-m)+Nm^2\big].
-\end{equation*}
-With $\eta\geq1$, $\rho_D-m\geq1-2m$, so
-\begin{equation*}
-(N-1)(\rho_D-m)+Nm^2\geq Nm^2-2(N-1)m+(N-1)=N\Big(m-\frac{N-1}{N}\Big)^2+\frac{N-1}{N}>0.
-\end{equation*}
-Hence $H_N(0)<0$. For $m\geq1/N$, $dH_N/d\rho\leq0$, so $H_N(\rho)\leq H_N(0)<0$ for every $\rho>0$.
-
-(v) Under MML $M_N>0$, and $\rho_D>0$. In \cref{eq:reer}, the first term is nonpositive if and only if $m\leq(N-1)/N$, and the second, $-m/(N-1)$, is strictly negative because $m>0$. Under weak home bias, $1-\alpha_D\leq(N-1)/N$ and $\alpha_T\leq1$, so $m=\alpha_T(1-\alpha_D)\leq(N-1)/N$.
+(v) In \cref{eq:reer} the first term is nonpositive if and only if $m\leq(N-1)/N$, and the second is strictly negative. Under weak home bias, $m=\alpha_T(1-\alpha_D)\leq1-\alpha_D\leq(N-1)/N$.
 \end{proof}
 
 \subsection{Data notes for the 2025 episode}
 \label{app:episode-data}
 
-\paragraph{Exchange-rate data.} Bilateral rates are Federal Reserve H.10 noon buying rates, expressed in dollars per unit of foreign currency (the CNY, CAD and MXN quotes are inverted). The broad index is the H.10 nominal broad dollar index (goods and services), which rises when the dollar appreciates; it is inverted. The index excluding China removes the renminbi from the daily log change of the broad index using China's 2025 H.10 weight (10.9 percent) and divides by one minus that weight, so the remaining weights are renormalized to sum to one. No daily dong series is available from the H.10 release or from the BIS; the VND row of \cref{tab:phases} uses BIS monthly averages in the monthly columns and, in the daily columns (marked $^{a}$), BIS end-of-month rates for the same months (end-January to end-March, end-March to end-April, end-July to end-December). Sources: FRED (DEXUSEU, DEXCHUS, DEXCAUS, DEXMXUS, DTWEXBGS), Federal Reserve H.10 trade weights and BIS (VND). ``Monthly'' compares monthly averages, January with March (Phase~1), March with April (Phase~2) and July with December (Phase~3), windows that do not coincide with the phase dates; ``daily'' runs from January~31 to April~2, April~2 to May~12 and August~6 to December~31. Panel~(a) of \cref{fig:episode} plots monthly averages, at mid-month, relative to each series' January~2025 average; the August dong average is missing in the source.
+\paragraph{Exchange-rate data.} Bilateral rates and the nominal broad dollar index (goods and services) are from the Federal Reserve H.10 release. Rates are expressed in dollars per unit of foreign currency (the CNY, CAD and MXN quotes are inverted), and the broad index is inverted, so a rise is a dollar depreciation. The index excluding China removes the renminbi from the daily log change of the broad index using China's 2025 H.10 weight (10.9 percent) and divides by one minus that weight. No daily dong series is available; the VND row of \cref{tab:phases} uses BIS monthly averages in the monthly columns and BIS end-of-month rates in the daily columns (marked $^{a}$). ``Monthly'' compares monthly averages, January with March (Phase~1), March with April (Phase~2) and July with December (Phase~3); ``daily'' runs from January~31 to April~2, April~2 to May~12 and August~6 to December~31. Panel~(a) of \cref{fig:episode} plots monthly averages relative to each series' January~2025 average; the August dong average is missing in the source.
 
-\paragraph{Tariff data.} Panel~(b) of \cref{fig:episode} plots statutory headline tariffs above the pre-2025 baseline by effective date: US tariffs on China, which reached 145 percent on April~10 and were reduced to 30 percent on May~14; China's across-the-board tariffs on the United States, which reached 125 percent on April~12; US tariffs on the European Union; the 10 percent US baseline on unlisted partners from April~5; US tariffs on Canada; and Canada's tariffs on covered US goods. Section~232 product tariffs, exclusions and de minimis changes are omitted, and rates are not trade-weighted. US measures are from Federal Register executive orders and Canadian measures from the Department of Finance Canada; Chinese measures are as reported in USDA Foreign Agricultural Service summaries of State Council Tariff Commission announcements. The complete chronology of effective dates and rates is in the online supplement.
+\paragraph{Tariff data.} Panel~(b) of \cref{fig:episode} plots statutory headline tariffs above the pre-2025 baseline by effective date: US tariffs on China, China's across-the-board tariffs on the United States, US tariffs on the European Union, the 10 percent US baseline on unlisted partners, US tariffs on Canada, and Canada's tariffs on covered US goods. Rates are statutory headline rates, not trade-weighted measures. Sources are Federal Register executive orders, the Department of Finance Canada, and USDA Foreign Agricultural Service summaries of State Council Tariff Commission announcements. The complete chronology is in the online supplement.
 
 \paragraph{Phase definitions.} Phase~1 (February~1--April~2) covers the two US tariff increases on China and China's product-specific responses. Phase~2 (April~3--May~12) covers the US--China escalation, the 10 percent baseline of April~5, from which Canada and Mexico were excluded, and the higher country-specific rates of April~9, which were suspended for every partner except China on April~10. Phase~3 (August~7--December~31) begins with the August framework rates.
 
-\paragraph{Classification caveats.} The phase classifications are approximate. Tariffs on Canada and Mexico, partial retaliation, exclusions, and contemporaneous policy announcements mean that none of the phases is a clean experiment. Vietnam also shifted between bystander-like and targeted treatment during the year. The online supplement documents these complications and the complete tariff chronology.
-
-The online supplement also considers sector-specific factors and permanent trade imbalances. These extensions shift quantitative thresholds without changing the central mechanism.
+\paragraph{Classification caveats.} The phase classifications are approximate. Tariffs on Canada and Mexico, partial retaliation, exclusions, and contemporaneous policy announcements mean that none of the phases is a clean experiment. Vietnam also shifted between bystander-like and targeted treatment during the year. The online supplement documents these complications, the complete tariff chronology, sector-specific factors, and permanent trade imbalances.

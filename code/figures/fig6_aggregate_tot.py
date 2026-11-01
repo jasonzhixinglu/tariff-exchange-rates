@@ -14,7 +14,7 @@ import sys
 import numpy as np
 
 import style
-from style import BLUE, GREY, MUTED, SHADE, plt
+from style import AQUA, BLUE, GREY, MUTED, ORANGE, SHADE, plt
 
 sys.path.insert(0, os.path.join(style.ROOT, "code", "checks"))
 import asymmetry_checks as ac  # noqa: E402
@@ -55,12 +55,16 @@ for name, (fn, xr) in panels.items():
         assert agg.min() > YLIM[0] and agg.max() < YLIM[1]
         style.zero_line(ax)
         if name == "b":
-            style.line(ax, rho, contrib[:, 0], 2, "Target contribution", lw=1.0)
-            style.line(ax, rho, contrib[:, 1], 3, "Bystander contribution", lw=1.0)
+            ax.plot(rho, contrib[:, 0], color=ORANGE, lw=1.1, ls=(0, (5, 2)), label="Target contribution")
+            ax.plot(rho, contrib[:, 1], color=AQUA, lw=1.1, ls=(0, (6, 1.5, 1, 1.5)),
+                    label="Bystander contribution")
             ax.axvline(roots[0], color=MUTED, lw=0.6, ls=(0, (1, 1.5)))
             ax.text(roots[0] + 0.15, 0.12, r"$\rho^*=%.2f$" % roots[0], fontsize=8.5, va="top")
-            ax.text(9.8, 0.012, "ToT deterioration", fontsize=7.5, color=MUTED, ha="right", va="bottom")
-            ax.text(9.8, -0.045, "ToT improvement", fontsize=7.5, color=MUTED, ha="right", va="top")
+            # sign labels hug the zero line at the right edge, clear of the curves
+            ax.text(0.995, 0.005, "ToT deterioration", fontsize=7, color=MUTED, ha="right", va="bottom",
+                    transform=ax.get_yaxis_transform())
+            ax.text(0.995, -0.035, "ToT improvement", fontsize=7, color=MUTED, ha="right", va="top",
+                    transform=ax.get_yaxis_transform())
         ax.plot(rho, agg, color=BLUE, lw=2.2, label="Aggregate response")
         if name == "b":
             ax.legend(loc="lower right", handlelength=2.4)

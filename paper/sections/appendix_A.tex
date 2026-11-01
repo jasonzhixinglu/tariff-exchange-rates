@@ -19,7 +19,7 @@ d\TB_i&=\textstyle\sum_{k\neq i}f_{ki}(d\log s_{ki}+d\log\tilde I_k-d\tau_{ki})-
 \end{aligned}
 \label{eq:linear}
 \end{equation}
-where $dp_{ij}$ is the log change in $i$'s consumer price of $j$'s good in $i$'s currency. At free trade only the direct revenue term survives in $d\log\tilde I_i$, and $d\log f_{ij}=d\log s_{ij}+d\log\tilde I_i-d\tau_{ij}$. Stacking $d\TB_i$ for $i\in\mathcal I_{-A}$ in the order of \cref{eq:JG} gives $J$ and $G$, and hence $G^{(A)}$, at any balanced free-trade baseline. The $N\times N$ Jacobian $\widetilde J$ with respect to $(\chi_l)_{l\in\mathcal I}$ of \cref{sec:mml} follows with each $d\nu_i$ replaced by $d\chi_i$.
+where $dp_{ij}$ is the log change in $i$'s consumer price of $j$'s good in $i$'s currency. At free trade, only the direct revenue term survives in $d\log\tilde I_i$, and $d\log f_{ij}=d\log s_{ij}+d\log\tilde I_i-d\tau_{ij}$. Stacking the trade-balance equations gives the matrices $J$ and $G$ in \cref{eq:JG}.
 
 \subsection{The symmetric benchmark}
 
@@ -35,18 +35,7 @@ At the symmetric balanced baseline, $\widetilde J_{il}=mM_N/(N-1)$ for $i,l\in\m
 \end{lemma}
 
 \begin{proof}
-Set $d\tau=0$ in the $\widetilde J$ version of \cref{eq:linear}, so $dp_{ij}=d\chi_j-d\chi_i$ and $d\log\tilde I_i=d\chi_i$. With equal weights and $l\neq i$,
-\begin{gather*}
-\frac{\partial\log P_{Mk}}{\partial\chi_l}=\frac{1-N\delta_{kl}}{N-1},\qquad
-\sum_{j\neq i}d\log s_{ij}=(N-1)(1-\eta)\alpha_D\,d\log P_{Mi},\\
-\frac{\partial}{\partial\chi_l}\sum_{k\neq i}\log s_{ki}=-(1-\rho)\frac{N-2}{N-1}-\frac{(1-\eta)\alpha_D}{N-1},\\
-d\TB_i=\frac{m}{N-1}\Big[\sum_{k\neq i}(d\log s_{ki}+d\chi_k)-(N-1)(1-\eta)\alpha_D\,d\log P_{Mi}-(N-1)\,d\chi_i\Big],
-\end{gather*}
-so that
-\begin{equation*}
-\widetilde J_{il}=\frac{m}{(N-1)^2}\Big[(N-1)-(1-\rho)(N-2)+N\alpha_D(\eta-1)\Big]=\frac{mM_N}{N-1}.
-\end{equation*}
-Homogeneity of degree one and $\TB_i=0$ give zero row sums, so $\widetilde J_{ii}=-mM_N$. Deleting row and column $A$ gives \cref{eq:Jsym}, with eigenvalue $j_S$ on $\operatorname{span}\{\bone\}$ and $Nj_S$ on the zero-sum subspace.
+Substituting the symmetric baseline into \cref{eq:linear} gives $\widetilde J_{il}=mM_N/(N-1)$ for $i\neq l$. Homogeneity and balanced trade imply zero row sums, giving $\widetilde J_{ii}=-mM_N$. Deleting the numeraire row and column yields \cref{eq:Jsym}. The corresponding tariff disturbance follows from \cref{eq:linear} at $d\nu=0$, giving \cref{eq:disturbance} and the eigenvalues in \cref{eq:geigen}. Detailed differentiation is reported in the online supplement.
 \end{proof}
 
 At $d\nu=0$, a change $t=(t_j)_{j\in\mathcal I_{-A}}$, $t_j=d\tau_{Aj}$, in $A$'s tariffs moves only $A$'s import prices and income, so among $A$'s partners only $i$'s exports to $A$ change:
@@ -62,6 +51,7 @@ g_S=-\frac{m\rho_D}{N-1},\qquad g_D=-\frac{m\rho}{N-1},
 on $\operatorname{span}\{\bone\}$ and on the zero-sum subspace.
 
 \subsection{The two-country case}
+\label{app:linear-twocountry}
 
 At $N=2$ the margin $(1-\rho)$ is inactive, $dp_{AB}=d\log P_{MA}=d\nu_B+d\tau$ and $dp_{BA}=d\log P_{MB}=-d\nu_B$, so
 \begin{equation*}
@@ -76,11 +66,7 @@ d\TB_A=m\Big[\big(1+2\alpha_D(\eta-1)\big)d\nu_B+\big(1-m+\alpha_D(\eta-1)\big)d
 \end{equation*}
 with $M_2=1+2\alpha_D(\eta-1)$ and $\rho_D=1-m+\alpha_D(\eta-1)=\alpha_D\eta+(1-\alpha_D)(1-\alpha_T)$. Setting $d\TB_A=0$ gives \cref{eq:twocountry}.
 
-For the elasticity form, let $p=p_{AB}=(1+\tau)e_{AB}$. At $\tau=0$ incomes are fixed in own currency when $\nu$ moves, and import spending is $s_{AB}I_A=pQ_M$, so at fixed $\tau$
-\begin{equation*}
-\varepsilon_M=-\frac{\partial\log Q_M}{\partial\log p}=1-\frac{\partial\log s_{AB}}{\partial\log p}=1+\alpha_D(\eta-1),
-\end{equation*}
-and by symmetry $\varepsilon_X=1+\alpha_D(\eta-1)$. Hence $\varepsilon_X+\varepsilon_M-1=M_2$.
+At the balanced free-trade baseline, the corresponding import and export elasticities satisfy $\varepsilon_X+\varepsilon_M-1=M_2$, so $M_2>0$ is the Marshall--Lerner condition used in \cref{sec:twocountry}.
 
 \subsection{Unilateral tariffs}
 \label{app:linear-unilateral}

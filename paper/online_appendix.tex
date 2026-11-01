@@ -77,6 +77,36 @@ With $M_3>0$,
 \end{equation}
 Since $(-J)^{-1}=\frac{2}{3mM_3}\begin{psmallmatrix}2&1\\1&2\end{psmallmatrix}$ is entrywise positive under MML, \cref{M-eq:signrule} gives $d\nu_c/d\tau=\frac{2}{3mM_3}(F_B+2F_c)$, with $F_c=m(\rho-\rho_D)/4$ and $F_B=-m(\rho+\rho_D)/4<0$. For $\rho_D<\rho<3\rho_D$, $F_c>0$ but $F_B+2F_c=m(\rho-3\rho_D)/4<0$: $c$'s trade balance improves at the initial exchange rates, yet $A$ appreciates against $c$ (\cref{M-fig:geometry-a}).
 
+\paragraph{Symmetric Jacobian.} This completes the proof of \cref{M-lem:jacobian}. Set $d\tau=0$ in the $\widetilde J$ version of \cref{M-eq:linear}, so $dp_{ij}=d\chi_j-d\chi_i$ and $d\log\tilde I_i=d\chi_i$. With equal weights and $l\neq i$,
+\begin{gather*}
+\frac{\partial\log P_{Mk}}{\partial\chi_l}=\frac{1-N\delta_{kl}}{N-1},\qquad
+\sum_{j\neq i}d\log s_{ij}=(N-1)(1-\eta)\alpha_D\,d\log P_{Mi},\\
+\frac{\partial}{\partial\chi_l}\sum_{k\neq i}\log s_{ki}=-(1-\rho)\frac{N-2}{N-1}-\frac{(1-\eta)\alpha_D}{N-1},\\
+d\TB_i=\frac{m}{N-1}\Big[\sum_{k\neq i}(d\log s_{ki}+d\chi_k)-(N-1)(1-\eta)\alpha_D\,d\log P_{Mi}-(N-1)\,d\chi_i\Big],
+\end{gather*}
+so that
+\begin{equation*}
+\widetilde J_{il}=\frac{m}{(N-1)^2}\Big[(N-1)-(1-\rho)(N-2)+N\alpha_D(\eta-1)\Big]=\frac{mM_N}{N-1}.
+\end{equation*}
+Homogeneity of degree one and $\TB_i=0$ give zero row sums, so $\widetilde J_{ii}=-mM_N$. Deleting row and column $A$ gives \cref{M-eq:Jsym}, with eigenvalue $j_S$ on $\operatorname{span}\{\bone\}$ and $Nj_S$ on the zero-sum subspace.
+
+\paragraph{Real exchange rates: case (iv).} This completes the proof of \cref{M-prop:real}(iv). If $\eta\geq1$, $\rho_D-m\geq1-2m$. Using $\rho_D=1+\alpha_D(\eta-1)-m$,
+\begin{equation*}
+(N-1)H_N(0)=-N\big[(N-1)(\rho_D-m)+Nm^2\big]\leq-N\big[(N-1)(1-m)^2+m^2\big]<0.
+\end{equation*}
+
+\paragraph{Two-country elasticities.} This completes \cref{M-app:linear-twocountry}. Let $p=p_{AB}=(1+\tau)e_{AB}$. At $\tau=0$ incomes are fixed in own currency when $\nu$ moves, and import spending is $s_{AB}I_A=pQ_M$, so at fixed $\tau$
+\begin{equation*}
+\varepsilon_M=-\frac{\partial\log Q_M}{\partial\log p}=1-\frac{\partial\log s_{AB}}{\partial\log p}=1+\alpha_D(\eta-1),
+\end{equation*}
+and by symmetry $\varepsilon_X=1+\alpha_D(\eta-1)$. Hence $\varepsilon_X+\varepsilon_M-1=M_2$.
+
+\paragraph{Two-country sign conditions.} This completes \cref{M-app:online-twocountry}. Border prices are one in the producer's currency, so with import and export quantities $Q_M$ and $Q_X$, $A$'s import payments are $M_A=eQ_M$, its export receipts are $X_A=Q_X$, and $\TB_A(e,\tau)\equiv X_A(e,\tau)-M_A(e,\tau)$, where $X_A$ and $M_A$ include all induced effects, including income effects of tariff revenue. Because $M_A=eQ_M$ is measured at border prices, import payments fall at fixed $e$ if and only if the import quantity falls. Under a lump-sum rebate of revenue, with $\varepsilon^H$ the compensated own-price elasticity of import demand, $\eta_I$ its income elasticity and $\theta$ the revenue share of income,
+\begin{equation*}
+\frac{d\log Q_M}{d\log(1+\tau)}\bigg|_e=-\frac{\varepsilon^H}{1-\eta_I\theta},
+\end{equation*}
+so at free trade ($\theta=0$) the import quantity falls if and only if $\varepsilon^H>0$. In the nested-CES model at free trade, $\varepsilon^H=\rho_D>0$, and $X_{A,\tau}=0$ because $B$'s income and demand are unchanged at a fixed exchange rate. The fiscal closure (revenue wasted, spent by the government or transferred abroad) and the pricing convention (local- or dominant-currency pricing, incomplete pass-through, markups) change these quantity responses.
+
 \section{The representative bystander: derivation and counterfactual}
 
 This section completes the proof of \cref{M-prop:composite} in \cref{M-app:proofs}. The mapping sets $d\tau_{AC}=d\tau_{Ac}$, $d\tau_{CA}=d\tau_{cA}$, $d\tau_{BC}=d\tau_{Bc}$, $d\tau_{CB}=d\tau_{cB}$ (the common values) and retains $d\tau_{AB},d\tau_{BA}$. Admissible shocks are tariffs by $A$ or $B$ common across bystanders, tariffs by all bystanders on $A$ or on $B$ common across bystanders, and tariffs between $A$ and $B$.
@@ -193,6 +223,8 @@ The bilateral bystander threshold, above which the dollar depreciates against th
 Two features of the US--China configuration push in opposite directions. The rapid reallocation of trade between China and other suppliers in the earlier US--China trade war \citep{fajgelbaum2024,freund2024,alfaro2023} suggests high cross-origin substitutability in trade flows, which pushes toward dollar weakness against bystanders. China's size and import weight push against the depreciation mechanism: a larger and more heavily weighted target raises the bystander threshold and moves the aggregate terms-of-trade condition toward its conventional sign. A quantitative network model is needed to determine the net sign and the magnitudes. As an interpretation outside the static model, markets may price the tariff configuration expected to persist, in which case expected retaliation would push the dollar in the same direction as realized retaliation.
 
 \section{The 2025 tariff chronology and classification details}
+
+\paragraph{Data series.} \sloppy The FRED series are DEXUSEU, DEXCHUS, DEXCAUS, DEXMXUS and DTWEXBGS; the index excluding China uses the Federal Reserve H.10 trade weights, with the remaining weights renormalized to sum to one, and the dong is from the BIS. The VND end-of-month comparisons run from end-January to end-March, end-March to end-April and end-July to end-December. The monthly windows do not coincide with the phase dates. Panel~(a) of \cref{M-fig:episode} plots monthly averages at mid-month. Panel~(b) omits Section~232 product tariffs, exclusions and de minimis changes. The US tariff on China reached 145 percent on April~10 and was reduced to 30 percent on May~14, and China's across-the-board tariff on the United States reached 125 percent on April~12; the 10 percent US baseline took effect on April~5.
 
 \paragraph{Tariff chronology.} Statutory headline tariffs above the pre-2025 baseline, by effective date (2025), in percent: US on China 10 (February~4), 20 (March~4), 30 (April~5), 104 (April~9), 145 (April~10), 30 (May~14), 20 (November~10); China on US, across the board, 84 (April~10), 125 (April~12), 10 (May~14), with the product-specific measures of February~10 and March~10 not shown in \cref{M-fig:episode}; US on EU 10 (April~5), 20 (April~9 only), 10 (April~10), 15 inclusive of MFN duties (August~7); US baseline on unlisted partners 10 (April~5); US on Canada 25 (March~4), non-USMCA goods only from March~7, 35 (August~1), with the rate on Mexico at 25 from March~4 to year-end (not shown); Canada on US 25 on covered goods (March~4), with coverage widened on March~13 and April~9 and narrowed to steel, aluminium and autos on September~1.
 

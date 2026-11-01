@@ -50,7 +50,7 @@ The argument compares the two linearized systems at the benchmark; it does not c
 
 \emph{Common bystander response.} By \cref{lem:jacobian}, $-J=j_S(NI-\bone\bone')$ with $j_S=mM_N/(N-1)\neq0$, so \cref{eq:JG} has a unique solution. Baseline and shock are invariant to permutations of the bystanders, hence so is the solution: $d\nu_c=d\nu_C$ for all $c$. The equilibrium is then given by $d\TB_B=0$ and $\sum_cd\TB_c=0$ in $(d\nu_B,d\nu_C)$.
 
-\emph{Composite structure.} Summing \cref{eq:tb} over bystanders, intra-bloc flows cancel, so $\sum_c\TB_c$ has the form of $\TB_C=f_{AC}+f_{BC}-f_{CA}-f_{CB}$. The mapped income, home share and import weights reproduce the baseline flows between the bloc and each of $A$ and $B$, and since all bystander goods face a common price change in $A$ and in $B$, $A$'s and $B$'s demand for the bloc's goods responds as their demand for $C$'s good. It remains to match the bloc's demand for $A$'s and $B$'s goods.
+\emph{Composite structure.} Summing \cref{eq:tb} over bystanders, intra-bloc flows cancel, so $\sum_c\TB_c$ has the form of $\TB_C=f_{AC}+f_{BC}-f_{CA}-f_{CB}$. Since all bystander goods face a common price change in $A$ and in $B$, $A$'s and $B$'s demand for the bloc's goods responds as their demand for $C$'s good. It remains to match the bloc's demand for $A$'s and $B$'s goods.
 
 \emph{Internal elasticity.} Measure prices in bystander currency, so other bystanders' goods have $dp=0$, and write $S\equiv dp_{cA}+dp_{cB}$ and $D\equiv dp_{cA}-dp_{cB}$. A bystander's import index moves by $S/(N-1)$ and the composite's by $S/2$, so
 \begin{equation*}
@@ -61,7 +61,7 @@ d\log s_{CA}&=(1-\rho)\frac D2+(1-\eta_C)h_C\frac S2.
 \end{equation*}
 The $D$ terms coincide; the $S$ terms coincide if and only if $(1-\eta_C)(N-1)h_C=(1-\rho)(N-3)+2\alpha_D(1-\eta)$, which, with $(N-1)h_C=N-3+2\alpha_D$, is \cref{eq:etaC}. The argument for $B$'s good replaces $D$ by $-D$.
 
-\emph{Equivalence.} The two equilibrium conditions, including tariff terms, are therefore identical to the composite's. Their restricted Jacobian has determinant $j_S^2N(N-2)\neq0$, so both systems have the same unique solution for $(d\nu_B,d\nu_C)$, and the composite's trade weights $\frac{1}{N-1}$ and $\frac{N-2}{N-1}$ reproduce $A$'s NEER. For $N=3$, $h_C=\alpha_D$ and $\eta_C=\eta$, so $C$ is the single bystander. The flow-by-flow verification and the restricted system are in the online supplement.
+\emph{Equivalence.} The mapped baseline flows and demand responses therefore reproduce the two independent equilibrium conditions for $(d\nu_B,d\nu_C)$. Nonsingularity gives the same unique solution in the original and composite economies, and the composite trade weights reproduce $A$'s NEER. For $N=3$, $C$ is the single bystander. Additional flow-by-flow verification is reported in the online supplement.
 \end{proof}
 
 \subsection{Retaliation, welfare, and asymmetry}
@@ -101,10 +101,8 @@ so $F_j\leq0$, strictly if $f_{Aj}>0$. Under MML, \cref{eq:signrule} gives $d\nu
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:reversal}]
-By \cref{lem:welfare}, a marginal tariff on $B$ worsens $A$'s aggregate terms of trade, and lowers its welfare to first order, if and only if $R_{A|B}>0$. It suffices to exhibit one baseline. Take the three-country model at the US-like parameters with sizes $L=(1,0.22,1)$, origin weights $\beta_{AB}=0.2$ and $\beta_{AC}=0.8$, other origin weights symmetric, and the free-trade baseline solved at $\bar\rho=3\rho_D=3.96$ and then held fixed ($b_{AB}=0.094$); this is panel (b) of \cref{fig:tot}, and panel (a) is the symmetric benchmark at the same parameters. MML holds at this baseline for $\rho\in[0.01,200]$. Since $\rho$ enters \cref{eq:linear} only through the factor $(1-\rho)$, $R_{A|B}=b'\adj(-J)F/\det(-J)$ with $\det(-J)>0$ under MML and a numerator quadratic in $\rho$. At this baseline the numerator is a positive multiple of $\rho^2-2.6695\rho-2.2568$, which has the single positive root $\rho^*=3.344$. Hence $R_{A|B}>0$ for $\rho^*<\rho\leq200$: the tariff on $B$ worsens $A$'s aggregate terms of trade and reduces its welfare to first order.
+By \cref{lem:welfare}, a marginal tariff on $B$ worsens $A$'s aggregate terms of trade and lowers its welfare to first order if and only if $R_{A|B}>0$. Consider the three-country baseline used in panel (b) of \cref{fig:tot}, with the US-like parameters, $L=(1,0.22,1)$, $\beta_{AB}=0.2$, $\beta_{AC}=0.8$, and the remaining origin weights symmetric. The free-trade baseline is solved at $\bar\rho=3\rho_D=3.96$ and then held fixed, giving $b_{AB}=0.094$. MML holds over the range used in the figure. The aggregate response crosses zero at $\rho^*=3.344$ and is positive above that threshold over the reported range. Hence a discriminatory tariff can worsen $A$'s aggregate terms of trade and reduce its welfare to first order. The general analytical characterization and additional asymmetric configurations are reported in the online supplement.
 \end{proof}
-
-Additional asymmetric configurations, including the general quadratic characterization, non-monotonic cases, heterogeneous bystanders, and the distinction between NEER and aggregate terms-of-trade thresholds, are reported in the online supplement.
 
 \subsection{Verification}
 
