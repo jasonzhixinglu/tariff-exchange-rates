@@ -220,6 +220,47 @@
    "sign_at_hi": 1.0
   }
  },
+ "D2_analytics": {
+  "0.9": {
+   "kappa": 1.09375,
+   "dlogE_closed": 0.04374999999999999,
+   "dlogE_exact": 0.04374999999999999,
+   "threshold_closed": 3.937500000000001
+  },
+  "0.75": {
+   "kappa": 1.25,
+   "dlogE_closed": 0.04999999999999999,
+   "dlogE_exact": 0.04999999999999999,
+   "threshold_closed": 3.9000000000000004
+  },
+  "0.6667": {
+   "kappa": 1.3461538461538463,
+   "dlogE_closed": 0.05384615384615384,
+   "dlogE_exact": 0.05384615384615384,
+   "threshold_closed": 3.8769230769230774
+  },
+  "0.5": {
+   "kappa": 1.5625,
+   "dlogE_closed": 0.06249999999999999,
+   "dlogE_exact": 0.0625,
+   "threshold_closed": 3.825
+  },
+  "J_equivalence_LC0.1_gamma0.5": {
+   "max_abs_diff": 5.551115123125783e-17,
+   "nu_diff": 2.1520345788537388e-16,
+   "income_ratio_C_to_A": 0.3162277660168379
+  },
+  "small_bystander_size_only": {
+   "0.6667": {
+    "LC_equiv": 0.2154434690031884,
+    "threshold_linear": 4.600427380474762
+   },
+   "0.5": {
+    "LC_equiv": 0.3162277660168379,
+    "threshold_linear": 4.417855728728283
+   }
+  }
+ },
  "D3a_deficit_marginal": {
   "balanced": {
    "roots": [
@@ -429,7 +470,9 @@
     "roots": [
      {
       "rho": 3.1878396551855124,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true,
+      "mml_at_tau": true
      }
     ],
     "n_roots": 1,
@@ -440,7 +483,9 @@
     "roots": [
      {
       "rho": 2.7004127363224133,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true,
+      "mml_at_tau": true
      }
     ],
     "n_roots": 1,
@@ -451,20 +496,24 @@
     "roots": [
      {
       "rho": 4.932631578947369,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true
      }
     ],
     "n_roots": 1,
     "sign_at_lo": -1.0,
     "sign_at_hi": 1.0
-   }
+   },
+   "mml_baseline_on_grid": true
   },
   "payer_B": {
    "real_discrete": {
     "roots": [
      {
       "rho": 3.637377738629013,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true,
+      "mml_at_tau": true
      }
     ],
     "n_roots": 1,
@@ -475,7 +524,9 @@
     "roots": [
      {
       "rho": 3.0697160999465867,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true,
+      "mml_at_tau": true
      }
     ],
     "n_roots": 1,
@@ -486,20 +537,24 @@
     "roots": [
      {
       "rho": 6.333212464750342,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true
      }
     ],
     "n_roots": 1,
     "sign_at_lo": -1.0,
     "sign_at_hi": 1.0
-   }
+   },
+   "mml_baseline_on_grid": true
   },
   "payer_C": {
    "real_discrete": {
     "roots": [
      {
       "rho": 3.421201016161773,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true,
+      "mml_at_tau": true
      }
     ],
     "n_roots": 1,
@@ -510,7 +565,9 @@
     "roots": [
      {
       "rho": 2.936650640050447,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true,
+      "mml_at_tau": true
      }
     ],
     "n_roots": 1,
@@ -521,13 +578,15 @@
     "roots": [
      {
       "rho": 5.639124181810303,
-      "crossing": "neg_to_pos"
+      "crossing": "neg_to_pos",
+      "mml_baseline": true
      }
     ],
     "n_roots": 1,
     "sign_at_lo": -1.0,
     "sign_at_hi": 1.0
-   }
+   },
+   "mml_baseline_on_grid": true
   },
   "rho_q_star_closed_form_balanced": 4.932631578947369,
   "appendix_c_nominal_1.45_reference": 2.7004127363225012

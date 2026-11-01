@@ -1,0 +1,56 @@
+\subsection{A stylized reading of the 2025 episode}
+\label{sec:2025}
+
+The 2025 exercise is neither a calibration nor a causal test. The model is static and has flexible prices, its central analysis assumes balanced trade, and observed exchange rates are high-frequency asset prices. We use the model only to classify the signs associated with different tariff configurations and do not attempt to match magnitudes. A movement is \emph{consistent with} the trade channel when the model predicts its sign in the configuration that best approximates the phase, and \emph{not explained by} the trade channel when the model predicts the opposite sign for every admissible $\rho$; sign consistency is not causal identification. \Cref{tab:phases} and \cref{fig:episode} report the data, with a positive number a depreciation of the dollar; the Federal Reserve's broad dollar index is the closest counterpart of the model's trade-weighted NEER, and the index excluding China isolates the bystanders.
+
+\begin{table}[t]
+\centering
+\caption{Exchange-rate changes within the three phases of the 2025 episode (percent; positive = dollar depreciation)}
+\label{tab:phases}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+ & \multicolumn{2}{c}{Phase 1} & \multicolumn{2}{c}{Phase 2} & \multicolumn{2}{c}{Phase 3} \\
+ & \multicolumn{2}{c}{Feb~1--Apr~2} & \multicolumn{2}{c}{Apr~3--May~12} & \multicolumn{2}{c}{Aug~7--Dec~31} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+ & Monthly & Daily & Monthly & Daily & Monthly & Daily \\
+\midrule
+\tabinput{tables/tab6_phases.tex}
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{minipage}{0.95\textwidth}\footnotesize
+\textit{Notes:} Positive values denote dollar depreciation. Monthly columns compare monthly averages (January with March, March with April, July with December); daily columns compare the last available observations at the phase boundaries (January~31 to April~2, April~2 to May~12, August~6 to December~31). VND daily entries (marked $^{a}$) use BIS end-of-month rates. Sources: Federal Reserve H.10 and BIS. See \cref{app:episode-data} for construction and data details.
+\end{minipage}
+\end{table}
+
+\paragraph{Phase 1: China-focused escalation (February~1--April~2).} The United States raised its tariff on China by 20 percentage points in two steps, and China responded only with product-specific tariffs. At the same time the United States imposed tariffs on Canada and Mexico and Canada retaliated, so the phase is not a clean unilateral experiment. The dollar was roughly unchanged against the renminbi ($-0.3$ percent on daily data, $+0.6$ percent on monthly averages), which does not contradict the unilateral sign restriction, and weakened against bystanders, by $4.5$ percent against the euro and $1.9$ percent against the broad index excluding China on daily data. If the phase is approximated by a unilateral tariff on China, this weakness is consistent with the high-$\rho$ bystander mechanism of \cref{prop:unilateral}.
+
+The $1.7$ percent fall of the dollar against the full broad index cannot separate unilateral from retaliation effects and may also reflect other contemporaneous shocks, so the data do not identify the trade channel.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}[t]{0.9\textwidth}\centering
+\includegraphics[width=\textwidth]{fig7a_fx2025.pdf}
+\caption{Exchange rates, percent deviation from the January~2025 average (positive = dollar depreciation)}
+\end{subfigure}
+
+\vspace{6pt}
+\begin{subfigure}[t]{0.9\textwidth}\centering
+\includegraphics[width=\textwidth]{fig7b_tariffs2025.pdf}
+\caption{Headline tariff increases above the pre-2025 baseline (percentage points)}
+\end{subfigure}
+\caption{Exchange rates and headline tariff increases during 2025. Panel (a) reports exchange-rate movements relative to January 2025; panel (b) reports tariff increases above the pre-2025 baseline. Shading denotes the three policy phases. Sources: Federal Reserve, BIS, Federal Register, Department of Finance Canada, and China's State Council Tariff Commission.}
+\label{fig:episode}
+\end{figure}
+
+\paragraph{Phase 2: US--China retaliation (April~3--May~12).} The United States and China raised tariffs on each other in a mirror escalation, to 145 and 125 percent, while other partners faced a common 10 percent baseline tariff. The phase is therefore close to the bilateral-retaliation experiment of \cref{prop:retaliation} with a near-uniform component added. For bilateral retaliation the model predicts a nearly stable bilateral rate between the belligerents, dollar weakness against bystanders, and effective depreciation when $\rho>\rho_D$. The phase displayed this pattern: the dollar moved little against the renminbi ($+0.9$ percent on daily data, $-0.7$ percent on monthly averages) but fell by $2.2$--$3.9$ percent against the euro, $2.0$--$2.5$ percent against the broad index excluding China and $1.7$--$2.3$ percent against the full broad index. The model can thus reproduce the configuration documented by \citet{ostry2025}. As an interpretation outside the static model, markets may price the tariff configuration expected to persist, in which case expected retaliation would push in the same direction.
+
+Two features of the configuration push in opposite directions. High cross-origin substitutability, suggested by the rapid reallocation of trade between China and other suppliers in the earlier US--China trade war \citep{fajgelbaum2024,freund2024,alfaro2023}, pushes toward dollar weakness against bystanders. China's size and import weight push against the depreciation mechanism: a larger and more heavily weighted target raises the bystander threshold and moves the aggregate terms-of-trade condition toward its conventional sign. In the illustrative mapping of \cref{app:usmap}, the bilateral bystander threshold for a US tariff on China is about $3.9$--$4.0$ and the aggregate terms-of-trade threshold about $4.5$--$4.7$. A quantitative network model is needed to determine the net sign and the magnitudes.
+
+\paragraph{Phase 3: Near-uniform tariffs with residual retaliation (August~7--December~31).} After the Geneva truce and the August framework rates, US tariffs became more nearly uniform across partners, which raised the average-protection component, while residual gaps against China and Canada, met by retaliation, remained. In the model the average-protection component pushes toward effective dollar appreciation (\cref{prop:decomposition,prop:uniform}), whereas the residual gaps can push toward depreciation if $\rho>\rho_D$. Within the phase the broad index was nearly flat ($-0.1$ percent on monthly averages, $+0.6$ percent on daily data), with no corresponding broad effective appreciation. Over the year as a whole, the dollar was $7.2$ percent weaker against the broad index and $7.6$ percent weaker against the index excluding China in December than in January, on monthly averages, most of it accumulated before August. The static trade channel alone does not explain the full effective depreciation.\footnote{Vietnam illustrates why classification matters: the dollar strengthened against the dong by $3.2$ percent over the year, but Vietnam moved during 2025 from a bystander-like position to a direct target (\cref{app:episode-data}).}
+
+A quantitative assessment would require the retaliation structure, cross-origin substitution elasticities, partner size and trade weights, the degree to which protection is uniform or discriminatory, and a dynamic mechanism linking policy expectations to asset prices.
+
+\FloatBarrier

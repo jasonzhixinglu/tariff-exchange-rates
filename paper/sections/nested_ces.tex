@@ -156,7 +156,7 @@ The bystander threshold $N\rho_D$ rises with the number of countries. To see why
 
 \begin{proposition}[Three-region representation]
 \label{prop:composite}
-At the symmetric benchmark with $N\geq3$, consider a tariff shock that treats the $N-2$ bystanders symmetrically, and suppose $M_N\neq0$ (MML is sufficient). To first order, the response of $\nu_B$, the common response of each bystander, and $A$'s NEER are exactly reproduced by a three-region economy consisting of $A$, $B$ and a composite bystander $C$ with income $N-2$, home share of tradables $h_C=\alpha_D+(1-\alpha_D)\frac{N-3}{N-1}$, and home--import elasticity
+At the symmetric benchmark with $N\geq3$, consider a tariff shock that treats the $N-2$ bystanders symmetrically and leaves tariffs among them unchanged, and suppose $M_N\neq0$ (MML is sufficient). To first order, the response of $\nu_B$, the common response of each bystander, and $A$'s NEER are exactly reproduced by a three-region economy consisting of $A$, $B$ and a composite bystander $C$ with income $N-2$, home share of tradables $h_C=\alpha_D+(1-\alpha_D)\frac{N-3}{N-1}$, and home--import elasticity
 \begin{equation}
 \boxed{\;\eta_C=\frac{(N-3)\rho+2\alpha_D\,\eta}{N-3+2\alpha_D}.\;}
 \label{eq:etaC}
@@ -170,40 +170,8 @@ Trade among the original bystanders becomes the composite's ``home'' trade, so $
 
 The higher threshold $N\rho_D$ is therefore not simply a consequence of making the bystander bloc larger. As $N$ rises, a greater share of what the composite treats as ``home'' activity consists of trade among the original bystanders, and that trade adjusts at the cross-origin elasticity $\rho$. This changes the internal adjustment structure of the bloc and gives relative exchange-rate movements their $N$-fold effectiveness at the symmetric benchmark (\cref{thm:main}). \Cref{app:proofs} shows that holding the composite's internal elasticity fixed at $\eta$ eliminates this steep $N$-dependence, confirming that the result reflects the bloc's internal trade structure rather than its size alone.
 
-\FloatBarrier
-\subsection{Nominal and real exchange rates}
-\label{sec:real}
+The nominal bystander reversal need not imply a real reversal because the tariff also raises $A$'s consumer price index. In the low-import-share case, the real reversal therefore requires stronger cross-origin substitution than the nominal reversal; at the US-like calibration with $N=3$, the nominal threshold is $3\rho_D=3.96$ and the real threshold is $4.93$. The real effective exchange rate continues to appreciate under the conditions given in \cref{sec:real}, which provides the full derivation and qualifications.
 
-Let partners impose no tariffs, and define the real effective exchange rate at the symmetric benchmark as $d\log q^E_A\equiv\frac{1}{N-1}\sum_{j\neq A}d\log q_{Aj}$. To first order,
-\begin{equation}
-d\log q_{Aj}=\Big(1-\tfrac{mN}{N-1}\Big)d\nu_j-m\bar t,\qquad
-d\log q^E_A=\Big[\Big(1-\tfrac{mN}{N-1}\Big)\lambda_{\mathrm{avg}}-m\Big]\bar t.
-\label{eq:real}
-\end{equation}
-The tariff raises $A$'s consumer price index directly, which offsets part of a nominal bystander depreciation. When $m<1/N$ and the real reversal threshold lies in the MML region, it therefore exceeds the nominal threshold; if $\eta\geq1$, MML holds for every $\rho>0$, so this qualification is automatic for a positive threshold.
-
-\begin{proposition}[Real exchange rates]
-\label{prop:real}
-Consider a unilateral tariff by $A$ on $B$ at the symmetric benchmark, $N\geq3$, and define
-\begin{equation*}
-H_N(\rho)\equiv\Big(1-\frac{mN}{N-1}\Big)(\rho-N\rho_D)-mN\,M_N(\rho).
-\end{equation*}
-For every untariffed bystander $c$, $d\log q_{Ac}/d\tau=H_N(\rho)/[N(N-1)M_N(\rho)]$, so wherever MML holds the real bilateral response has the sign of $H_N(\rho)$. Since $\rho_D$ does not depend on $\rho$, $dH_N/d\rho=1-mN$.
-\begin{enumerate}[label=(\roman*)]
-\item If $m<1/N$, $H_N$ has the unique root
-\begin{equation*}
-\rho^*_q(N)=\frac{[(N-1)-mN]N\rho_D+mN[N\alpha_D(\eta-1)+1]}{(N-1)(1-mN)}.
-\end{equation*}
-Where MML holds, $A$ appreciates in real terms against $c$ for $\rho<\rho^*_q(N)$ and depreciates for $\rho>\rho^*_q(N)$; if MML holds at $\rho^*_q(N)$, then $\rho^*_q(N)>N\rho_D$.
-\item If $m=1/N$, $H_N$ does not depend on $\rho$: $H_N=-[1+N\alpha_D(\eta-1)+N(N-2)\rho_D]/(N-1)$.
-\item If $m>1/N$, $H_N$ is decreasing in $\rho$, so any crossing has the reverse orientation.
-\item If $\eta\geq1$, so that MML holds for every $\rho>0$, and $m\geq1/N$, then $H_N(\rho)<0$ for every $\rho>0$: no positive $\rho$ produces a real depreciation against an untariffed bystander.
-\item Under MML, if $m\leq(N-1)/N$, $A$'s REER appreciates. Under weak home bias this condition holds automatically, since $m=\alpha_T(1-\alpha_D)\leq(N-1)/N$.
-\end{enumerate}
-\end{proposition}
-
-At the US-like calibration and $N=3$, $m=0.08<1/3$ and $\rho^*_q=4.93$, against the nominal threshold $3\rho_D=3.96$. In the empirically relevant case $m<1/N$, a nominal bilateral reversal against bystanders is possible, the real reversal requires a higher $\rho$, and the effective rate, nominal and real, still appreciates.
-
-The nested-CES model therefore gives economic content to the two components identified in \cref{sec:framework}. Average protection operates through the domestic diversion margin $\rho_D$, and relative treatment through cross-origin substitution $\rho$. Under a unilateral tariff, relative treatment overturns the conventional bilateral result against untariffed partners only when $\rho>N\rho_D$, while the effective exchange rate continues to appreciate, and in the low-import-share case a real bilateral reversal requires a still stronger cross-origin response. We next consider how these conclusions change when trading partners retaliate.
+The nested-CES model therefore gives economic content to the decomposition in \cref{sec:framework}. Average protection operates through the domestic diversion margin $\rho_D$, while relative treatment operates through cross-origin substitution $\rho$. Under a unilateral tariff, relative treatment can overturn the conventional bilateral result against untariffed partners, but not the effective-rate result at the symmetric benchmark. We next ask how retaliation changes these conclusions.
 
 \FloatBarrier

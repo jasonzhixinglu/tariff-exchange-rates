@@ -60,7 +60,7 @@ for row in grid:
     cells = []
     for c in row:
         if c["sign_q2"] == 0:
-            cells.append(r"$0$")
+            cells.append(r"$\mathbf{0}$")   # symmetric benchmark cell, set in bold
         elif c["sign_q2"] > 0:
             cells.append(r"$+$\,{\footnotesize %.1f}" % c["roots"][-1] if c["roots"][-1] < 100
                          else r"$+$\,{\footnotesize $>$100}")

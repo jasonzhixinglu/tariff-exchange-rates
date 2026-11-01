@@ -8,9 +8,11 @@
     China, China on US (across the board), US on EU, US baseline on others,
     US on Canada (non-USMCA goods; Mexico identical until Aug 1, then 25) and
     Canada's surtax on covered US goods.
-Phases, dated by announcements as in code/checks/episode2025.py: unilateral
-(Feb 1 - Apr 2), retaliation (Apr 3 - May 12, to the Geneva statement),
-near-uniform (framework rates in force from Aug 7)."""
+Phases, dated by announcements as in code/checks/episode2025.py: Phase 1,
+China-focused escalation with North American retaliation (Feb 1 - Apr 2);
+Phase 2, US-China retaliation with a uniform baseline (Apr 3 - May 12, to the
+Geneva statement); Phase 3, narrower tariff dispersion with residual
+retaliation (framework rates in force from Aug 7)."""
 import os
 from datetime import date
 
@@ -24,9 +26,9 @@ from style import GREY, plt
 FX = os.path.join(style.ROOT, "data", "processed", "fx2025_monthly.csv")
 TAR = os.path.join(style.ROOT, "data", "raw", "tariffs2025", "tariff_timeline.csv")
 START, END = pd.Timestamp("2025-01-01"), pd.Timestamp("2025-12-31")
-PHASES = [(pd.Timestamp("2025-02-01"), pd.Timestamp("2025-04-02"), "unilateral"),
-          (pd.Timestamp("2025-04-03"), pd.Timestamp("2025-05-12"), "retaliation"),
-          (pd.Timestamp("2025-08-07"), END, "near-uniform")]
+PHASES = [(pd.Timestamp("2025-02-01"), pd.Timestamp("2025-04-02"), "Phase 1"),
+          (pd.Timestamp("2025-04-03"), pd.Timestamp("2025-05-12"), "Phase 2"),
+          (pd.Timestamp("2025-08-07"), END, "Phase 3")]
 SHADES = ["#eeeeee", "#dcdcdc", "#eeeeee"]
 SIZE = (style.FULL_W, 2.35)
 MARGINS = dict(left=0.09, right=0.80, top=0.93, bottom=0.14)
@@ -63,7 +65,7 @@ for col, slot, lab in series[:3]:
 ax.plot(fx["date"], fx["dev_broad_index"], color=style.INK, lw=1.2, marker="s", ms=2.5,
         label="Broad index")
 style.line(ax, fx["date"], fx[series[3][0]], 4, series[3][2], marker="o", ms=2.5)
-ax.set_ylabel("% vs January 2025\n(+ = dollar depreciation)", fontsize=8)
+ax.set_ylabel("% vs January 2025 average\n(+ = dollar depreciation)", fontsize=8)
 finish(ax)
 ax.legend(loc="center left", bbox_to_anchor=(1.01, 0.5), fontsize=7)
 style.os.makedirs(style.OUT, exist_ok=True)
@@ -95,7 +97,7 @@ for (name, color, dash, lab) in (("us_on_canada", style.INK, "-", "US on Canada 
                                  ("canada_on_us", GREY, (0, (3, 1, 1, 1, 1, 1)), "Canada on US (covered goods)")):
     x, y = steps(name)
     ax.step(x, y, where="post", color=color, linestyle=dash, label=lab, lw=1.0)
-ax.set_ylabel("tariff increase (pp)", fontsize=8)
+ax.set_ylabel("pp above pre-2025\nbaseline", fontsize=8)
 ax.set_ylim(0, 155)
 finish(ax)
 ax.legend(loc="center left", bbox_to_anchor=(1.01, 0.5), fontsize=7)

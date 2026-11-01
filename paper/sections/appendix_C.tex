@@ -1,12 +1,13 @@
-\section{Away from the Symmetric Free-Trade Benchmark}
+\section{Departures from the Symmetric Free-Trade Benchmark}
 \label{app:departures}
 
-The results of \cref{sec:decomposition,sec:nestedces,sec:tradewars} are local to the symmetric free-trade benchmark. This appendix examines four departures from it: a positive common external tariff, finite tariff changes, asymmetric primitives, and the trade-weighted effective rate. \Cref{eq:response} and the MML condition apply at any balanced baseline. What changes is the mapping from primitives to the eigenvalues of \cref{prop:decomposition} and, once partner symmetry fails, whether the common and zero-sum subspaces remain eigenspaces at all. In every case the baseline equilibrium is recomputed from primitives rather than by perturbing shares, and MML holds at every point reported. Unless stated otherwise, numerical values use the calibration of \cref{fig:geometry}, $\alpha_D=0.7$, $\alpha_T=0.6$ and $\eta=1.5$ ($\rho_D=1.17$); US-like values are reported where they are discussed in the main text.
+This appendix extends the local results of \cref{sec:decomposition,sec:nestedces,sec:tradewars} to common and finite tariffs, real exchange rates and asymmetric primitives, and documents the U.S.--China--rest-of-world mapping and the 2025 data. \Cref{eq:response} and the MML condition apply at any balanced baseline. Values not derived analytically are numerical comparative statics computed from the exact model, with the baseline solved from primitives; they are not global theorems. MML holds at every reported root and point. Numerical values use the US-like parameters $(\alpha_D,\alpha_T,\eta)=(0.8,0.4,1.5)$, $\rho_D=1.32$.
 
-\subsection{A positive common external tariff}
+\subsection{Common and finite tariffs}
 \label{app:asym-tariff}
+\label{app:asym-finite}
 
-Suppose $A$ levies a common tariff $\tau_0$ on all $N-1$ partners, which impose no tariffs of their own. Because the partner primitives are also symmetric here, this baseline is invariant to every relabeling of $A$'s partners, so partner symmetry holds and \cref{prop:decomposition} applies; with heterogeneous partners a common tariff alone would not deliver it. Relative to free trade, $A$'s currency appreciates by the same amount against every partner, so $A$'s goods are more expensive abroad and baseline shares differ from their free-trade values. We measure tariff changes as $t_j=d\log(1+\tau_{Aj})$, which coincides with $t_j=d\tau_{Aj}$ at free trade. Let $\theta\equiv\tau_0/(1+\tau_0)$ denote the tariff wedge, $\mu_A$ the import share of $A$'s tradable expenditure, $\mu_P$ the import share of a partner's tradable expenditure, and $\omega$ the share of $A$'s good in a partner's import bundle. The rebate channel enters through $\phi\equiv\alpha_T\mu_A/(1-\theta\alpha_T\mu_A)$, the response of $A$'s income to its import expenditure. Trade between $A$ and each partner is balanced at the baseline, so $X\equiv f_{Aj}=f_{jA}$ denotes this bilateral flow, and $Y\equiv f_{jk}$ the flow between any two partners. Linearizing at this baseline gives
+Suppose $A$ levies a common tariff $\tau_0$ on all $N-1$ partners, which impose no tariffs of their own. With symmetric partner primitives this baseline is invariant to every relabeling of $A$'s partners, so partner symmetry holds and \cref{prop:decomposition} applies. Tariff changes are measured as $t_j=d\log(1+\tau_{Aj})$. Let $\theta\equiv\tau_0/(1+\tau_0)$, $\mu_A$ and $\mu_P$ be the import shares of $A$'s and of a partner's tradable expenditure, $\omega$ the share of $A$'s good in a partner's import bundle, $\phi\equiv\alpha_T\mu_A/(1-\theta\alpha_T\mu_A)$ the response of $A$'s income to its import expenditure, $X\equiv f_{Aj}=f_{jA}$ the balanced bilateral flow between $A$ and each partner, and $Y\equiv f_{jk}$ the flow between two partners. Linearizing at this baseline gives
 \begin{equation}
 g_S=-X\rho_D(\tau_0),\qquad g_D=-X\rho,\qquad j_S=XM_S,\qquad j_D=\big(X+(N-1)Y\big)M_D,
 \label{eq:tau0eigen}
@@ -17,95 +18,96 @@ where
 M_S&=1+(\eta-1)(1-\mu_A)(1+\phi\theta)+(\rho-1)(1-\omega)+(\eta-1)(1-\mu_P)\,\omega,\\
 M_D&=1+(\rho-1)\frac{N-3+\omega}{N-2}+(\eta-1)(1-\mu_P)\frac{N-1-\omega}{N-2}.
 \end{align*}
-At free trade $\theta=0$, $\phi=m$, $\mu_A=\mu_P=1-\alpha_D$ and $\omega=1/(N-1)$, so $\rho_D(0)=\rho_D$ and $M_S=M_D=M_N$.
-
-The eigenvalues in \cref{eq:tau0eigen} differ in the trade flows on which they act. Tariff disturbances along both components fall only on partners' trade with $A$, so $g_S$ and $g_D$ are proportional to $X$. A common exchange-rate movement leaves cross rates among partners unchanged and also shifts only partners' trade with $A$, so $j_S$ is proportional to $X$, and $X$ cancels from $\lambda_{\mathrm{avg}}=-\rho_D(\tau_0)/M_S$. A relative movement also shifts trade among partners. Under a zero-sum movement $v$, partner $j$'s rate moves by $v_j$ against $A$ and by $v_j-v_k$ against partner $k$; since $\sum_{k\neq j}v_k=-v_j$, its average movement against the other partners is $(N-1)/(N-2)$ times $v_j$. The base $X+(N-1)Y$ is therefore partner $j$'s trade with $A$ plus its trade with the other partners, the latter weighted by this factor. Define $x\equiv X/(X+(N-1)Y)$, $A$'s share of the trade on which relative exchange-rate movements act. Then $\lambda_{\mathrm{rel}}=-x\rho/M_D$ and $j_D/j_S=(1/x)(M_D/M_S)$. At free trade $X=Y$, so $x=1/N$ and $j_D=Nj_S$: the factor $N$ in the bystander threshold is $1/x$ evaluated at the free-trade baseline.
-
-For a further tariff on $B$, $t=dt\,e_B$, the bystander response is $d\nu_C=(\lambda_{\mathrm{avg}}-\lambda_{\mathrm{rel}})\,dt/(N-1)$, so $A$ depreciates against $C$ if and only if
+At free trade $\theta=0$, $\phi=m$, $\mu_A=\mu_P=1-\alpha_D$ and $\omega=1/(N-1)$, so $\rho_D(0)=\rho_D$ and $M_S=M_D=M_N$. Tariff disturbances and common exchange-rate movements act only on partners' trade with $A$, whereas a zero-sum movement $v$ also moves partner $j$'s rate against the other partners, on average by $(N-1)/(N-2)$ times $v_j$; hence the bases $X$ and $X+(N-1)Y$. With $x\equiv X/(X+(N-1)Y)$, $\lambda_{\mathrm{avg}}=-\rho_D(\tau_0)/M_S$ and $\lambda_{\mathrm{rel}}=-x\rho/M_D$. For a further tariff on $B$, $t=dt\,e_B$, the bystander response is $d\nu_C=(\lambda_{\mathrm{avg}}-\lambda_{\mathrm{rel}})\,dt/(N-1)$, so $A$ depreciates against $C$ if and only if
 \begin{equation}
 \rho>\rho^*(\tau_0)\equiv\frac{\rho_D(\tau_0)}{x}\,\frac{M_D}{M_S}.
 \label{eq:tau0thresh}
 \end{equation}
-The condition is implicit in $\rho$, because $\omega$, $\mu_P$, $x$ and $M_S$ depend on baseline shares that themselves depend on $\rho$; we compute it by root-finding with the baseline re-solved at each $\rho$. Since the response is linear in $t$, a marginal preferential cut for $B$, $t=-dt\,e_B$, worsens $C$'s terms of trade under the same condition. \Cref{tab:tau0} reports the threshold relative to its free-trade value.
+At free trade $x=1/N$, so the factor $N$ in the bystander threshold is $1/x$ at the free-trade baseline. Because $\omega$, $\mu_P$, $x$ and $M_S$ depend on baseline shares that depend on $\rho$, \cref{eq:tau0thresh} is implicit in $\rho$ and is solved numerically with the tariff-ridden baseline re-solved at each $\rho$. By linearity in $t$, a marginal preferential cut for $B$, $t=-dt\,e_B$, worsens $C$'s terms of trade under the same condition.
 
-\begin{table}[ht]
-\centering
-\caption{Bystander threshold at a common external tariff, $\rho^*(\tau_0)/N\rho_D$}
-\label{tab:tau0}
-\begin{tabular}{lccc}
-\toprule
- & $\tau_0=0.25$ & $\tau_0=0.5$ & $\tau_0=1$ \\
-\midrule
-\tabinput{tables/tabC1_tau0.tex}
-\bottomrule
-\end{tabular}
+In the reported exercises a common external tariff raises the threshold. At $N=3$, $\rho^*(\tau_0)$ is about 10 percent above its free-trade value $N\rho_D$ at $\tau_0=0.25$ and about 36 percent above it at $\tau_0=1$. The main reason is that $x$ falls: the common appreciation of $A$'s currency lowers $A$'s share of each partner's imports, so relative treatment disturbs a smaller part of the trade on which relative exchange-rate movements act. The local threshold applies to marginal cuts; in the exact model, removing the tariff on $B$ entirely requires a higher $\rho$ than a marginal cut at the same baseline.
 
-\vspace{4pt}
-\begin{minipage}{0.7\textwidth}\footnotesize
-\textit{Notes:} $\alpha_D=0.7$, $\alpha_T=0.6$, $\eta=1.5$. Computed from \cref{eq:tau0thresh} with the baseline re-solved at each $\rho$. At US-like parameters the ratios are $1.10$, $1.19$, $1.36$ ($N=3$) and $1.23$, $1.48$, $2.07$ ($N=5$).
-\end{minipage}
-\end{table}
+A concentrated finite tariff works in the opposite direction. At $N=3$, starting from the symmetric free-trade benchmark and re-solving the equilibrium at each tariff, the unilateral bystander threshold falls with the size of the tariff in the computed cases: at the 2025 peak rate $\tau=1.45$ it is $2.70$, against $3\rho_D=3.96$. A larger tariff shrinks $B$'s share of $A$'s imports, so a further increase adds less average protection while continuing to divert expenditure toward $C$.
 
-The threshold rises with $\tau_0$, mainly because $x$ falls. The common appreciation makes $A$'s goods more expensive, so $A$'s share of each partner's imports falls. At $N=3$ and $\tau_0=1$, $\omega$ falls from $1/2$ to $0.29$ and $x$ from $1/3$ to $0.17$. Relative treatment then disturbs a smaller part of the trade on which relative exchange-rate movements act. A rise in $M_S$ relative to $M_D$ offsets part of this effect. The local threshold also understates what a discrete preferential cut requires. In the exact model at $N=3$, removing the tariff on $B$ from $\tau_0=0.5$ worsens $C$'s terms of trade only if $\rho>6.23$, compared with $4.28$ for a marginal cut at the same baseline and $3\rho_D=3.51$ at free trade.
+\subsection{Real exchange rates}
+\label{sec:real}
 
-\subsection{Finite tariffs}
-\label{app:asym-finite}
-
-The thresholds of \cref{prop:unilateral,prop:retaliation} concern marginal tariffs at free trade. In one case the finite-tariff sign is exact. At $N=2$ and $\eta=1$, expenditure shares are fixed at their weights, and $I_A=w_AL_A/[1-\tfrac{\tau}{1+\tau}m]$, so $\TB_A=0$ becomes $e\,m\,w_BL_B=mI_A/(1+\tau)$:
-\begin{equation*}
-e(\tau)=\frac{w_AL_A}{w_BL_B}\cdot\frac{1}{1+(1-m)\tau},\qquad
-\frac{d\log e}{d\tau}\bigg|_{\tau=0}=-(1-m)=-\frac{\rho_D}{M_2}\bigg|_{\eta=1}.
-\end{equation*}
-Thus $e(\tau)$ is decreasing in $\tau$, and the sign of the linearized response is exact for all tariff levels in this case.
-
-For finite tariffs at $N=3$, starting from the symmetric free-trade benchmark, let $\rho^*(\tau)$ denote the value of $\rho$ at which $\log e_{AC}(\tau)=0$ in the exact model. Writing $\log e_{AC}(\tau)=a(\rho)\tau+\tfrac12b_C\tau^2+O(\tau^3)$, where $a$ is the first-order slope and $b_C$ the second derivative along the tariff path,
-\begin{equation*}
-\rho^*(\tau)=\rho^*_0+\kappa\,\tau+O(\tau^2),\qquad\kappa=-\frac{b_C}{2a'(\rho^*_0)}.
-\end{equation*}
-For a unilateral tariff, $a=(\rho-3\rho_D)/(6M_3)$ by \cref{eq:threecountryslopes}, so $\kappa_{\mathrm{uni}}=-3M_3b_C$. For bilateral retaliation, $\tau_{AB}=\tau_{BA}=\tau$ and $a=(\rho-\rho_D)/(2M_3)$ by \cref{eq:retaliation}, so $\kappa_{\mathrm{war}}=-M_3b_C$. Both are evaluated at the symmetric benchmark, where $b_C$ follows from a second-order expansion of the equilibrium conditions.
-
-The unilateral threshold falls with the size of the tariff. On a grid over $\alpha_D\in[1/3,1)$, $\alpha_T\in(0,1]$ and $\eta\in[1,10]$, the exact finite-difference slope $(\rho^*(0.01)-3\rho_D)/0.01$ is negative at every point. At $\tau=1$ the exact threshold is $0.76$ times $3\rho_D$ at the calibration of this appendix and $0.72$ times $3\rho_D$ at US-like parameters; at the 2025 peak rate $\tau=1.45$ it is $2.70$ at US-like parameters, against $3\rho_D=3.96$. A larger tariff shrinks $B$'s share of $A$'s imports, so a further increase adds less average protection while continuing to divert expenditure toward $C$. The retaliation threshold instead rises slightly, with
-\begin{equation*}
-\kappa_{\mathrm{war}}=\frac{1-\alpha_D}{4}\Big[\alpha_D(\eta-1)^2+3\alpha_D\alpha_T(\eta-1)+2\alpha_T(1-m)\Big]>0\qquad(\eta\geq1),
-\end{equation*}
-and at $\tau=1$ the exact threshold is $1.07$ times $\rho_D$ ($1.03$ at US-like parameters).
-
-These two subsections illustrate a common principle. The threshold depends on the share structure on which the tariff acts. A common tariff shrinks $A$'s footprint in its partners' trade and raises the threshold, while a concentrated tariff shrinks the target's share of $A$'s imports and lowers it.
-
-\subsection{Asymmetric primitives}
-\label{app:asym-primitives}
-
-At a general balanced baseline the coefficients of \cref{eq:linear} are the baseline shares $b_{ij}$, the home shares $h_i$ and the incomes $y_i$. The elasticity $\rho$ enters the share responses only through $(1-\rho)$, so every entry of $J$ and $F$ is affine in $\rho$. Each entry of $\adj(-J)$ is therefore a polynomial of degree at most $N-2$ in $\rho$, and each numerator $[\adj(-J)F]_i$ a polynomial of degree at most $N-1$. Since $\det(-J)>0$ under MML, a bilateral response can change sign only at a root of this numerator. Symmetry reduces the problem to the two coefficients of \cref{prop:decomposition}, yielding linear thresholds. At a general asymmetric baseline the $N=3$ numerator is already quadratic in $\rho$:
+Let $P_i$ be $i$'s consumer price index in its own currency and $q_{Aj}\equiv e_{Aj}P_j/P_A$ the real exchange rate, so that a rise is a real depreciation of $A$. At the symmetric benchmark the real effective exchange rate is $d\log q^E_A\equiv\frac{1}{N-1}\sum_{j\neq A}d\log q_{Aj}$. With partners imposing no tariffs, to first order (\cref{app:linear-real})
 \begin{equation}
-\operatorname{sign}\frac{d\log e_{AC}}{d\tau}=\operatorname{sign}\big(c_2\rho^2+c_1\rho+c_0\big),\qquad c_2=\alpha_T^2\,b_{AB}b_{AC}b_{CA}b_{CB}(1-h_A)(1-h_C)y_Ay_C.
+d\log q_{Aj}=\Big(1-\tfrac{mN}{N-1}\Big)d\nu_j-m\bar t,\qquad
+d\log q^E_A=\Big[\Big(1-\tfrac{mN}{N-1}\Big)\lambda_{\mathrm{avg}}-m\Big]\bar t.
+\label{eq:real}
+\end{equation}
+The term $-m\bar t$ is the direct effect of the tariff on $A$'s consumer price index, which offsets part of a nominal depreciation.
+
+\begin{proposition}[Real exchange rates]
+\label{prop:real}
+Consider a marginal unilateral tariff $d\tau>0$ by $A$ on $B$ at the symmetric benchmark, $N\geq3$, $m>0$, partners imposing no tariffs, and define
+\begin{equation*}
+H_N(\rho)\equiv\Big(1-\frac{mN}{N-1}\Big)(\rho-N\rho_D)-mN\,M_N(\rho).
+\end{equation*}
+For every untariffed bystander $c$, if $M_N(\rho)\neq0$, $d\log q_{Ac}/d\tau=H_N(\rho)/[N(N-1)M_N(\rho)]$, so wherever MML holds the real bilateral response has the sign of $H_N(\rho)$. Since $\rho_D$ does not depend on $\rho$, $dH_N/d\rho=1-mN$.
+\begin{enumerate}[label=(\roman*)]
+\item If $m<1/N$, $H_N$ has the unique root
+\begin{equation*}
+\rho^*_q(N)=\frac{[(N-1)-mN]N\rho_D+mN[N\alpha_D(\eta-1)+1]}{(N-1)(1-mN)}.
+\end{equation*}
+Where MML holds, $A$ appreciates in real terms against $c$ for $\rho<\rho^*_q(N)$ and depreciates for $\rho>\rho^*_q(N)$; if MML holds at $\rho^*_q(N)$, then $\rho^*_q(N)>N\rho_D$.
+\item If $m=1/N$, $H_N$ does not depend on $\rho$: $H_N=-[1+N\alpha_D(\eta-1)+N(N-2)\rho_D]/(N-1)$.
+\item If $m>1/N$, $H_N$ is decreasing in $\rho$, so any crossing has the reverse orientation.
+\item If $\eta\geq1$, so that MML holds for every $\rho>0$, and $m\geq1/N$, then $H_N(\rho)<0$ for every $\rho>0$: no positive $\rho$ produces a real depreciation against an untariffed bystander.
+\item Under MML, if $m\leq(N-1)/N$, $A$'s REER appreciates. Under weak home bias this condition holds automatically, since $m=\alpha_T(1-\alpha_D)\leq(N-1)/N$.
+\end{enumerate}
+\end{proposition}
+
+At the US-like calibration and $N=3$, $m=0.08<1/3$ and $\rho^*_q=4.93$, against the nominal threshold $3\rho_D=3.96$.
+
+\begin{proof}[Proof of \cref{prop:real}]
+MML is used only for the sign statements in (i), (iii) and (v) and for the comparison in (i); in (iv) it follows from $\eta\geq1$. By \cref{eq:realapp} with $\bar t=d\tau/(N-1)$, $d\log q_{Ac}/d\tau=(1-\frac{mN}{N-1})\,d\nu_c/d\tau-\frac{m}{N-1}$. Substituting $d\nu_c/d\tau$ from \cref{eq:unilateral} and writing $\frac{m}{N-1}=\frac{mN\,M_N}{N(N-1)M_N}$ gives the stated response. Under MML $M_N>0$, so the response has the sign of $H_N$. Since $M_N$ in \cref{eq:MN} has slope $(N-2)/(N-1)$, $H_N$ is affine in $\rho$ with slope $1-\frac{mN}{N-1}-\frac{mN(N-2)}{N-1}=1-mN$.
+
+(i) For $m<1/N$ the slope is positive, so $H_N$ has a unique root, is negative below it and positive above it. Multiplying $H_N=0$ by $N-1$ gives $[(N-1)-mN](\rho-N\rho_D)=mN[1+N\alpha_D(\eta-1)+(N-2)\rho]$; the coefficient on $\rho$ is $(N-1)-mN-mN(N-2)=(N-1)(1-mN)$, which yields $\rho^*_q(N)$. At the root $[(N-1)-mN](\rho^*_q-N\rho_D)=mN(N-1)M_N(\rho^*_q)$. For $m<1/N$ the coefficient $(N-1)-mN$ exceeds $N-2\geq1$, and if MML holds at $\rho^*_q$ the right-hand side is strictly positive because $m>0$ and $M_N(\rho^*_q)>0$; hence $\rho^*_q(N)>N\rho_D$, strictly.
+
+(ii) For $m=1/N$ the slope is zero, and $H_N=\frac{N-2}{N-1}(\rho-N\rho_D)-\frac{1+N\alpha_D(\eta-1)+(N-2)\rho}{N-1}$, which reduces to the stated constant.
+
+(iii) For $m>1/N$ the slope is negative, so $H_N$ has at most one root and is positive below it and negative above it.
+
+(iv) If $\eta\geq1$, every term of $M_N$ in \cref{eq:MN} is nonnegative and the first is positive, so MML holds for every $\rho>0$. Since $(N-1)M_N(0)=1+N\alpha_D(\eta-1)$ and $\rho_D=1+\alpha_D(\eta-1)-m$,
+\begin{equation*}
+(N-1)H_N(0)=-[(N-1)-mN]N\rho_D-mN[1+N\alpha_D(\eta-1)]=-N\big[(N-1)(\rho_D-m)+Nm^2\big].
+\end{equation*}
+With $\eta\geq1$, $\rho_D-m\geq1-2m$, so
+\begin{equation*}
+(N-1)(\rho_D-m)+Nm^2\geq Nm^2-2(N-1)m+(N-1)=N\Big(m-\frac{N-1}{N}\Big)^2+\frac{N-1}{N}>0.
+\end{equation*}
+Hence $H_N(0)<0$. For $m\geq1/N$, $dH_N/d\rho\leq0$, so $H_N(\rho)\leq H_N(0)<0$ and $d\log q_{Ac}/d\tau<0$ for every $\rho>0$.
+
+(v) Under MML $M_N>0$, and $\rho_D>0$. In \cref{eq:reer}, the first term is nonpositive if and only if $1-mN/(N-1)\geq0$, that is, $m\leq(N-1)/N$, and the second, $-m/(N-1)$, is strictly negative because $m>0$. Hence the REER strictly appreciates whenever $m\leq(N-1)/N$, including at $m=(N-1)/N$. Under weak home bias, $1-\alpha_D\leq(N-1)/N$ and $\alpha_T\leq1$, so $m=\alpha_T(1-\alpha_D)\leq(N-1)/N$.
+\end{proof}
+
+\subsection{Asymmetric primitives and effective rates}
+\label{app:asym-primitives}
+\label{app:asym-neer}
+\label{app:asym-tot}
+
+At a general balanced baseline the coefficients of \cref{eq:linear} are the baseline shares $b_{ij}$, the home shares $h_i$ and the incomes $y_i$. The elasticity $\rho$ enters the share responses only through $(1-\rho)$, so every entry of $J$ and $F$ is affine in $\rho$, each entry of $\adj(-J)$ is a polynomial of degree at most $N-2$ in $\rho$, and each numerator $[\adj(-J)F]_i$ a polynomial of degree at most $N-1$. Since $\det(-J)>0$ under MML, a bilateral response can change sign only at a root of this numerator. At a general asymmetric baseline the $N=3$ numerator is already quadratic in $\rho$:
+\begin{equation}
+\operatorname{sign}\frac{d\log e_{AC}}{d\tau}=\operatorname{sign}\big(c_2\rho^2+c_1\rho+c_0\big),\quad c_2=\alpha_T^2\,b_{AB}b_{AC}b_{CA}b_{CB}(1-h_A)(1-h_C)y_Ay_C,
 \label{eq:quadratic}
 \end{equation}
-The coefficients $c_1$ and $c_0$ depend on the full pattern of trade shares and country sizes. Provided MML holds, $c_2>0$ whenever $A$ and $C$ each import from both foreign origins, so at given shares the response is positive beyond the largest positive root, which equals $3\rho_D$ at the symmetric point.
+where $c_1$ and $c_0$ depend on the full pattern of shares and sizes. Provided MML holds, $c_2>0$ whenever $A$ and $C$ each import from both foreign origins, so at given shares the response is positive beyond the largest positive root, which equals $3\rho_D$ at the symmetric point.
 
-The quadratic holds at given shares, however, and the shares themselves depend on $\rho$ once primitives are held fixed. At an asymmetric baseline relative prices differ across origins, and a higher $\rho$ also reallocates expenditure toward the cheapest origin. A large target, whose currency must depreciate to balance its trade, can then crowd $C$ out of $A$'s imports and prevent the reversal. With $L_B=2.2$ and all other primitives symmetric, $e_{AC}$ reverses only for $5.99<\rho<53.8$, as $A$'s import share from $B$ rises from $0.74$ at $\rho=5$ to $0.997$ at $\rho=100$; with $L_B\geq2.6$ it does not reverse for any $\rho\leq1000$. Away from symmetry there may therefore be no bilateral threshold, one, or several, and for $N\geq4$ the numerator is of higher degree in $\rho$.
+Once primitives rather than shares are held fixed, the shares themselves depend on $\rho$: at an asymmetric baseline relative prices differ across origins, and a higher $\rho$ reallocates expenditure toward the cheapest origin. A large target, whose currency depreciates to balance its trade, can then crowd $C$ out of $A$'s imports. With all other primitives symmetric and the baseline re-solved at each $\rho\in[1.02,1000]$, $e_{AC}$ reverses only for $5.99<\rho<53.8$ when $L_B=2.2$ and nowhere when $L_B=2.6$. Away from symmetry there may therefore be no bilateral threshold, one or several. Near the symmetric benchmark, the bilateral threshold rises with $A$'s origin weight on the target (a larger average-protection shock), with the target's size (which raises its share in $A$'s imports) and with home bias in $A$ alone (stronger domestic diversion), and is nearly insensitive to the bystander's size.
 
-The threshold also moves with asymmetric primitives near the symmetric benchmark. \Cref{tab:sens} reports local, calibration-dependent comparative statics: $d\rho^*/dx$ at $\rho=3\rho_D$, where $\rho^*$ solves $d\log e_{AC}/d\tau=0$ after perturbing a single primitive $x$ and recomputing the free-trade baseline. Derivatives are evaluated at $L_i=1$ and $\beta_{AB}=1/2$. Here $\beta_{AB}$ is $A$'s weight on $B$, with $\beta_{AC}=1-\beta_{AB}$, and $\alpha_D^A$ is the home weight in $A$ alone.
+The trade-weighted NEER is $d\nu^E_A=\sum_{j\neq A}w_{Aj}\,d\nu_j$. At the symmetric benchmark the zero-sum component averages to zero and under MML a marginal unilateral tariff appreciates the NEER. For $N=3$ with asymmetric weights, $d\nu^E_A=w_{AB}\,d\nu_B+w_{AC}\,d\nu_C$, so the NEER can depreciate when the bystander reversal occurs and the bystander carries most of $A$'s trade. The symmetric ordering $d\nu_B<d\nu_C$ can also fail: with $L=(5.12,4.26,2.28)$, $\beta_{AB}=0.86$, $\beta_{BA}=0.65$, $\beta_{CA}=0.19$, $\alpha_D=0.89$, $\alpha_T=0.6$, $\eta=3.74$ and $\rho=1.20$, $d\nu_B-d\nu_C=0.08\,d\tau$.
 
-\begin{table}[ht]
-\centering
-\caption{Sensitivity of the bystander threshold to asymmetric primitives, $N=3$}
-\label{tab:sens}
-\begin{tabular}{ccc}
-\toprule
- & \multicolumn{2}{c}{$d\rho^*/dx$} \\
-\cmidrule(lr){2-3}
-$x$ & $(\alpha_D,\alpha_T,\eta)=(0.7,0.6,1.5)$ & US-like $(0.8,0.4,1.5)$ \\
-\midrule
-\tabinput{tables/tabC3_sens.tex}
-\bottomrule
-\end{tabular}
-\end{table}
+The three panels of \cref{fig:tot} use the US-like parameters. In (a) and (b) the free-trade baseline is solved from primitives at $\bar\rho=3\rho_D=3.96$ and then held fixed; $\hat Q$ is $Q_{A|B}$ in \cref{eq:Q} scaled by $|q_2|$ (by $|q_1|$ when $q_2=0$), which preserves its sign and roots, and MML holds at all three baselines for $\rho\in[0.01,200]$. (a) Symmetric benchmark: $\hat Q=-(\rho+2.2)$. (b) $L=(1,0.22,1)$, $\beta_{AB}=0.2$, $\beta_{AC}=0.8$, other origin weights symmetric ($b_{AB}=0.094$): $\hat Q=\rho^2-2.6695\rho-2.2568$, with root $\rho^*=3.344$. (c) A network specified in baseline shares, with $\alpha_T=0.862$, $\eta=3.007$, home shares $(0.201,0.854,0.360)$, $(b_{AB},b_{AC})=(0.525,0.475)$, $(b_{BA},b_{BC})=(0.766,0.234)$, $(b_{CA},b_{CB})=(0.407,0.593)$ and balancing incomes $(1,5.126,0.867)$: $\hat Q=-\rho^2+31.53\rho-198.04$, so the condition fails for $8.66<\rho<22.86$.
 
-\noindent The interpretations are as follows. \emph{$\beta_{AB}$:} a tariff on a larger supplier is a larger average-protection shock, so $B$'s loss rises relative to $C$'s gain. \emph{$L_B$:} a larger target depreciates to balance its trade, which raises $A$'s import share from $B$. \emph{$L_C$:} a larger bystander depreciates and gains import share in $A$, but also absorbs its own disturbance more easily; the two effects nearly offset. \emph{$\alpha_D^A$:} stronger home bias in $A$ raises domestic diversion and makes $C$'s rate respond more to $B$'s loss.
+In the family containing example (b), with $L_A=L_C=1$ and $\beta_{BA}=\beta_{CA}=0.5$, and with baselines fixed at $\bar\rho$, $q_0<0$ throughout. A positive $q_2$, and hence case (b) of \cref{prop:threecases}, arises when the target is small, has a low import weight, or both, with an approximate trade-off between the two; the root rises as the target becomes larger or more heavily weighted. For a large or heavily weighted target $q_2<0$ and $Q_{A|B}$ has no positive root, so the condition holds at every $\rho$ at which MML holds.
 
-\subsection{The effective rate and the ordering of bilateral responses}
-\label{app:asym-neer}
+The three thresholds are distinct. With $\beta_{AB}=0.2$, $L_B=0.223$ (so that $w_{AC}=0.85$ at $\rho=3\rho_D$), all other primitives symmetric and the baseline re-solved at each $\rho$, $A$ depreciates against the bystander for $\rho>2.59$, its aggregate terms of trade deteriorate ($R_{A|B}>0$) for $\rho>3.40$, and its NEER depreciates for $\rho>3.97$. The bystander threshold lies below $3\rho_D$ because the target is small and lightly weighted. The NEER threshold is highest because the target's weight in $A$'s trade, $w_{AB}=0.15$, exceeds its weight in $A$'s imports, $b_{AB}=0.095$, so the favorable move against the target counts for more in the NEER. A larger bystander weight $w_{AC}$, obtained with a smaller target, lowers all three thresholds.
 
-At the symmetric benchmark the trade weights of \cref{sec:decomposition} are equal, $w_{Aj}=1/(N-1)$, so the trade-weighted NEER is the equally weighted average of $A$'s bilateral responses, on which relative treatment has no effect. A unilateral tariff therefore always appreciates $A$'s effective exchange rate. Relative treatment drops out of the effective rate only when the trade weights and the adjustment structure are symmetric. With asymmetric trade weights the same definition gives, for $N=3$, $d\nu^E_A=w_{AB}\,d\nu_B+w_{AC}\,d\nu_C$, and a bystander depreciation $d\nu_C>0$ enters with weight $w_{AC}$. The trade-weighted NEER can then depreciate when the bystander reversal occurs and the bystander carries most of $A$'s trade weight. \Cref{tab:neer} illustrates this at US-like parameters. The reversal starts below $3\rho_D$ because a small target with a small import weight lowers the threshold, as in \cref{tab:sens}. The exact model at $\tau=0.01$ confirms the signs.
-
-The ordering $d\nu_B<d\nu_C$, which holds at the symmetric benchmark because $\lambda_{\mathrm{rel}}<0$, can also fail. This requires $\rho$ near one and a high $\eta$, and $\rho<\eta$ in every case we examined. For example, with $L=(5.12,4.26,2.28)$ for $(A,B,C)$, $\beta_{AB}=0.86$, $\beta_{BA}=0.65$, $\beta_{CA}=0.19$, $\alpha_D=0.89$, $\alpha_T=0.6$, $\eta=3.74$ and $\rho=1.20$, $d\nu_B-d\nu_C=0.08\,d\tau$ (MML holds; the exact model at $\tau=0.01$ gives $0.079$).
+With $N\geq4$ and bystanders that differ from one another, partition the reduced system into the target $B$ and the set $R$ of the $N-2$ bystanders. Correspondingly, $J_{RR}$ is the block of $J$ giving the bystanders' trade-balance responses to their own rates, $J_{RB}$ the column giving their responses to $d\nu_B$, $F_R$ their tariff disturbances per unit of $d\tau$, and $d\nu_R$ the vector of $A$'s bilateral rates against the bloc. Let $q_j\equiv b_{Aj}/(1-b_{AB})$, $j\in R$, be bystander $j$'s share in $A$'s imports from the bloc, so that $q'\bone=1$ and $q'd\nu_R/d\tau=\bar R^B_{-B}$. The bystanders' rows of the local system read $J_{RB}\,d\nu_B+J_{RR}\,d\nu_R+F_R\,d\tau=0$. Under MML $-J$ is a nonsingular M-matrix, so its principal block $-J_{RR}$ is nonsingular as well. Solving for $d\nu_R$ and weighting by $q$ gives the bloc's import-weighted response,
+\begin{equation}
+d\bar\nu_R\equiv q'd\nu_R=-q'J_{RR}^{-1}J_{RB}\,d\nu_B-q'J_{RR}^{-1}F_R\,d\tau.
+\label{eq:hetero}
+\end{equation}
