@@ -1,38 +1,40 @@
 \section{The Nested-CES Model}
 \label{sec:nestedces}
 
-We now give economic content to these two components in a nested-CES trade model.
+This section specializes the decomposition of \cref{sec:decomposition} into average protection and relative treatment to a nested-CES trade model. In the model, $\eta$ governs substitution between the domestic tradable and the import composite, and $\rho$ governs substitution across foreign origins. We work locally, to first order around a symmetric, balanced, free-trade benchmark. The central result is that a unilateral tariff always appreciates the tariffing country's NEER and its currency against the target, but depreciates it against untariffed bystanders only when $\rho>N\rho_D$, where $\rho_D$ is a domestic diversion margin defined below. With weak home bias, $\alpha_D\geq1/N$, a specification with a single elasticity, $\rho=\eta$, cannot produce this reversal.
 
 \subsection{Production, preferences and equilibrium}
 \label{sec:model}
 
-Each country $i\in\{1,\dots,N\}$ is endowed with $L_i$ units of labor, its size, which is mobile across sectors. It produces a country-specific tradable and a non-tradable with labor only, $Y_{Ti}=A_{Ti}L_{Ti}$ and $Y_{Ni}=A_{Ni}L_{Ni}$, with $L_{Ti}+L_{Ni}=L_i$. Normalizing each tradable's producer price to one in its own currency, $w_i=A_{Ti}$ and $P_{Ni}=A_{Ti}/A_{Ni}$. Relative international producer prices therefore move only through exchange rates, and \textbf{the bilateral exchange rate equals the bilateral terms of trade and the relative wage in a common currency.}
+There are $N\geq2$ countries, $i\in\{1,\dots,N\}$. Country $A$ is the tariffing country, $B$ is the targeted partner, and lowercase $c$ denotes an individual untariffed bystander; uppercase $C$ is reserved for the composite bystander of \cref{sec:composite}. Each country is endowed with $L_i$ units of labor, mobile across sectors, and produces a country-specific tradable and a non-tradable with labor only, $Y_{Ti}=A_{Ti}L_{Ti}$ and $Y_{Ni}=A_{Ni}L_{Ni}$, with $L_{Ti}+L_{Ni}=L_i$. Normalizing each tradable's producer price to one in its own currency gives $w_i=A_{Ti}$ and $P_{Ni}=A_{Ti}/A_{Ni}$. Relative international producer prices therefore move only through exchange rates, and the bilateral exchange rate equals the bilateral terms of trade and the relative wage in a common currency.
 
 Preferences are
 \begin{equation}
 C_i=C_{Ti}^{\alpha_T}C_{Ni}^{1-\alpha_T},\quad
 C_{Ti}=\Big[\alpha_D^{1/\eta}C_{Tii}^{\frac{\eta-1}{\eta}}+(1-\alpha_D)^{1/\eta}M_i^{\frac{\eta-1}{\eta}}\Big]^{\frac{\eta}{\eta-1}},\quad
-M_i=\Big[\textstyle\sum_{j\neq i}\beta_{ij}^{1/\rho}C_{Tji}^{\frac{\rho-1}{\rho}}\Big]^{\frac{\rho}{\rho-1}}.
+M_i=\Big[\textstyle\sum_{j\neq i}\beta_{ij}^{1/\rho}C_{Tji}^{\frac{\rho-1}{\rho}}\Big]^{\frac{\rho}{\rho-1}},
 \label{eq:prefs}
 \end{equation}
-Here $\eta$ governs substitution between domestic tradables and the import composite, and $\rho$ substitution across foreign origins; the latter is inactive when $N=2$. Country $i$ levies $\tau_{ij}$ on imports from $j$, so the consumer price is $p_{ij}=(1+\tau_{ij})e_{ij}$, and the import and tradable price indices are $P_{Mi}=[\sum_{j\neq i}\beta_{ij}p_{ij}^{1-\rho}]^{1/(1-\rho)}$ and $P_{Ti}=[\alpha_D+(1-\alpha_D)P_{Mi}^{1-\eta}]^{1/(1-\eta)}$. Tariff revenue is rebated lump-sum, so income is
+with $0<\alpha_D<1$, $0<\alpha_T\leq1$, $\eta,\rho>0$ (read as Cobb--Douglas at unit elasticity), $\beta_{ij}>0$ and $\sum_{j\neq i}\beta_{ij}=1$. Country $i$ levies an ad valorem tariff $\tau_{ij}$ on imports from $j$, so the consumer price is $p_{ij}=(1+\tau_{ij})e_{ij}$, and the import and tradable price indices are $P_{Mi}=[\sum_{j\neq i}\beta_{ij}p_{ij}^{1-\rho}]^{1/(1-\rho)}$ and $P_{Ti}=[\alpha_D+(1-\alpha_D)P_{Mi}^{1-\eta}]^{1/(1-\eta)}$. Income is
 \begin{equation}
 I_i=\frac{w_iL_i}{1-\sum_{j\neq i}\frac{\tau_{ij}}{1+\tau_{ij}}s_{ij}},
 \label{eq:income}
 \end{equation}
-with $s_{ij}$ the realized tariff-inclusive expenditure share of income on $j$'s good. Trade balances are measured at border prices,
+where $s_{ij}$ is the tariff-inclusive expenditure share of income on $j$'s good. Tariff revenue is rebated lump-sum and is a domestic transfer, so the external-balance conditions use flows at border prices:
 \begin{equation}
 \TB_i=\sum_{k\neq i}f_{ki}-\sum_{j\neq i}f_{ij},\qquad f_{ij}=\frac{s_{ij}\tilde I_i}{1+\tau_{ij}},
 \label{eq:tb}
 \end{equation}
-with $\tilde I_i=e_{Ai}I_i$ income in $A$'s currency. Under the normalization $v_A=1$ of \cref{sec:bilateral}, values in $A$'s currency equal values in the common unit of account, so \cref{eq:tb} is the trade-balance measure of \cref{sec:framework}: flows at border prices, with tariff revenue a domestic transfer. The NEER is the one defined in \cref{sec:decomposition}, written here for any country $i$: $E_i=\prod_{j\neq i}e_{ij}^{w_{ij}}$ with baseline trade weights $w_{ij}=(f_{ij}+f_{ji})/\sum_{k\neq i}(f_{ik}+f_{ki})$; throughout, ``effective exchange rate'' refers to this trade-weighted NEER. The real exchange rate is $q_{ij}=e_{ij}P_j/P_i$, with $P_i$ the consumer price index.
+with $\tilde I_i=e_{Ai}I_i$ income in $A$'s currency. Under the normalization $v_A=1$ of \cref{sec:bilateral}, values in $A$'s currency equal values in the common unit of account, so \cref{eq:tb} is the trade-balance measure of \cref{sec:framework}. With $A$'s currency as numeraire, the $N-1$ independent conditions $\TB_i=0$, $i\neq A$, determine the $N-1$ bilateral rates; wages, prices and expenditure shares follow from the technologies and the demand system \cref{eq:prefs}.
 
-The \textbf{symmetric benchmark} is free trade with $\beta_{ij}=1/(N-1)$, common parameters, and equal endowments and productivities. It retains home bias $\alpha_D$. Write $m\equiv\alpha_T(1-\alpha_D)$ for the import share of income.
+We write $\nu_j=\log e_{Aj}$, with $\nu_A=0$. The NEER is that of \cref{sec:decomposition}, $d\nu^E_A=\sum_{j\neq A}w_{Aj}\,d\nu_j$ with baseline trade weights $w_{Aj}=(f_{Aj}+f_{jA})/\sum_{k\neq A}(f_{Ak}+f_{kA})$. The real exchange rate is $q_{Aj}=e_{Aj}P_j/P_A$, with $P_i$ the consumer price index in own currency. A fall in $\nu_j$ is an appreciation of $A$ against $j$ and a rise a depreciation; a rise in $\log q_{Aj}$ is a real depreciation of $A$ against $j$.
 
-\subsection{The two-country case}
+The symmetric benchmark is free trade with $\beta_{ij}=1/(N-1)$, common parameters, and equal endowments and productivities. It retains home bias $\alpha_D$. Bilateral trade weights then equal $1/(N-1)$, and $m\equiv\alpha_T(1-\alpha_D)$ denotes the import share of income.
+
+\subsection{The two-country benchmark}
 \label{sec:twocountry}
 
-With one foreign supplier, linearizing gives $d\TB_A=mM_2\,d\nu_B+m\rho_D\,d\tau$, so
+With $N=2$ there is a single foreign origin, so $\rho$ is inactive. Linearizing gives $d\TB_A=mM_2\,d\nu_B+m\rho_D\,d\tau$, so
 \begin{equation}
 \begin{gathered}
 \frac{d\log e_{AB}}{d\tau}\bigg|_{\tau=0}=-\frac{\rho_D}{M_2},\\
@@ -41,12 +43,12 @@ M_2\equiv1+2\alpha_D(\eta-1)=\varepsilon_X+\varepsilon_M-1.
 \end{gathered}
 \label{eq:twocountry}
 \end{equation}
-$\rho_D$ is the \textbf{domestic diversion margin}. It measures how strongly a tariff pulls expenditure toward the domestic economy, through substitution toward the domestic tradable and through the rebate's income effect on non-tradables. An exchange-rate movement generates no revenue, so it has no rebate term. This is why $\rho_D\neq M_2$.
+We call $\rho_D$ the domestic diversion margin. A tariff shifts expenditure toward the domestic economy in two ways: through substitution toward the domestic tradable, and through the income effect of the rebated revenue, part of which is spent on non-tradables. An exchange-rate movement raises no revenue and so has no rebate term, which is why $\rho_D$ differs from $M_2$. With more than two countries, adjustment also separates into a common movement against all foreign suppliers and relative movements across them.
 
 \subsection{The \texorpdfstring{$N$}{N}-country case}
 \label{sec:theorem}
 
-We now evaluate the eigenvalues of \cref{sec:decomposition} in this model.
+The following theorem maps the model's primitives into the coefficients of \cref{prop:decomposition}.
 
 \begin{theorem}[Exchange-rate responses in the symmetric nested-CES model]
 \label{thm:main}
@@ -55,7 +57,7 @@ At the symmetric benchmark define
 M_N\equiv\frac{1}{N-1}\Big[\,1+\underbrace{N\alpha_D(\eta-1)}_{\text{domestic--import adjustment}}+\underbrace{(N-2)\rho}_{\text{foreign-origin adjustment}}\Big].
 \label{eq:MN}
 \end{equation}
-The eigenvalues of \cref{prop:decomposition} are (\cref{lem:jacobian} and \cref{eq:geigen})
+The eigenvalues of \cref{prop:decomposition} are
 \begin{equation}
 g_S=-\frac{m\rho_D}{N-1},\qquad g_D=-\frac{m\rho}{N-1},\qquad j_S=\frac{mM_N}{N-1},\qquad j_D=Nj_S.
 \label{eq:eigenvalues}
@@ -67,189 +69,141 @@ MML holds if and only if $M_N>0$, and $\eta\geq1$ suffices. When it holds,
 \end{equation}
 \end{theorem}
 
-$M_N$ measures how sensitive $A$'s trade balance with the rest of the world is to its effective exchange rate: $d\TB_A=mM_N\,d\nu^E_A$, with the equal weights of the symmetric benchmark. When $N>2$ it includes $\rho$, because foreign buyers can substitute between $A$'s goods and other foreign goods. For $N=2$ it reduces to $M_2$. Average protection works as in the two-country case. Relative treatment is zero-sum, so to first order it leaves revenue, income and the tradable/non-tradable split unchanged, and its disturbance is governed by $\rho$ alone.
+\noindent The eigenvalues are derived in \cref{lem:jacobian} and \cref{eq:geigen}, and the proof is in \cref{app:proofs}. $M_N$ is affine in $\rho$; we write $M_N\equiv M_N(\rho)$ and suppress the argument except in \cref{sec:real}, where the dependence on $\rho$ matters.
 
-The factor $1/N$ in $\lambda_{\mathrm{rel}}$ is central. A common exchange-rate move shifts only partners' trade with $A$. A relative move also shifts partners' trade with \emph{each other}. At the symmetric benchmark $A$ accounts for a share $1/N$ of the trade on which relative movements act, so $j_D=Nj_S$. \textbf{Relative exchange-rate adjustment is $N$ times as effective as common adjustment}, and a given relative disturbance requires only $1/N$ as much exchange-rate movement.
+$M_N$ is the sensitivity of $A$'s aggregate trade balance to its effective exchange rate: $d\TB_A=mM_N\,d\nu^E_A$ at the equal weights of the symmetric benchmark. For $N=2$ it reduces to $M_2$. For $N>2$ it includes $\rho$, because foreign buyers can switch between $A$'s goods and those of other foreign suppliers.
+
+The equality $j_D=Nj_S$ means that zero-sum relative exchange-rate movements are $N$ times as effective as common movements in closing trade imbalances, which is why $\lambda_{\mathrm{rel}}$ carries the factor $1/N$. A common movement shifts only partners' trade with $A$, whereas a relative movement also shifts partners' trade with \emph{each other}, and at the symmetric benchmark $A$ accounts for a share $1/N$ of the trade on which relative movements act. Because relative treatment is zero-sum, to first order at the symmetric benchmark it leaves tariff revenue, income and the tradable/non-tradable split unchanged, so its disturbance is governed by $\rho$ alone.
 
 \subsection{A unilateral tariff}
 \label{sec:unilateral}
 
+Let $A$ raise its tariff on $B$ alone, $t=d\tau\,e_B$. Its mean component is $\bar t=d\tau/(N-1)$, $B$'s relative component is $\widetilde t_B=\frac{N-2}{N-1}d\tau$, and each bystander's relative component is $\widetilde t_c=-\frac{d\tau}{N-1}$.
+
+\begin{proposition}[Unilateral tariff]
+\label{prop:unilateral}
+At the symmetric benchmark under MML, to first order,
+\begin{equation}
+\frac{d\nu^E_A}{d\tau}=-\frac{\rho_D}{(N-1)M_N}<0,\qquad
+\frac{d\nu_B}{d\tau}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}<0,\qquad
+\frac{d\nu_c}{d\tau}=\frac{\rho-N\rho_D}{N(N-1)M_N}
+\label{eq:unilateral}
+\end{equation}
+for every untariffed bystander $c$. Hence:
+\begin{enumerate}[label=(\roman*)]
+\item $A$'s NEER appreciates for every $N$ and $\rho$.
+\item $A$ appreciates against the target.
+\item $A$ depreciates against each untariffed bystander if and only if $\rho>N\rho_D$.
+\item The same threshold applies when $A$ tariffs any $k\leq N-2$ partners. More generally, for a tariff vector with $\bar t>0$, $A$ depreciates against a partner $j$ receiving a below-average tariff increase, $t_j<\bar t$, if and only if $t_j/\bar t<1-N\rho_D/\rho$, which requires $\rho>N\rho_D$.
+\end{enumerate}
+\end{proposition}
+
 \begin{figure}[t]
 \centering
-\begin{subfigure}[t]{0.45\textwidth}\centering
+\begin{subfigure}[t]{0.47\textwidth}\centering
 \includegraphics[width=\textwidth]{fig2a_geometry.pdf}
 \caption{$\rho=2.2$: $\rho_D<\rho<3\rho_D$}
 \label{fig:geometry-a}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.45\textwidth}\centering
+\begin{subfigure}[t]{0.47\textwidth}\centering
 \includegraphics[width=\textwidth]{fig2b_geometry.pdf}
 \caption{$\rho=5$: $\rho>3\rho_D$}
 \label{fig:geometry-b}
 \end{subfigure}
-\caption{Average protection and relative treatment, $N=3$. A unilateral tariff on $B$, $t=(1,0)$, moves exchange rates through a common component (blue) and a relative component (solid orange); the black arrow is the equilibrium response $d\nu$, and the dashed arrow $F/j_S$ is the response if relative adjustment were no more effective than common adjustment. In (a), $C$'s trade balance improves at unchanged exchange rates, yet $A$ still appreciates against $C$. In (b), $A$ depreciates against $C$. The NEER appreciates in both. \textit{Notes:} $\alpha_D=0.7$, $\alpha_T=0.6$, $\eta=1.5$, so $\rho_D=1.17$ and $3\rho_D=3.51$.}
+\caption{Average protection and relative treatment. Exchange-rate adjustment under a unilateral tariff for $N=3$. Panel (a) shows the intermediate case, $\rho_D<\rho<3\rho_D$; panel (b) shows the bystander reversal, $\rho>3\rho_D$. The dashed arrow imposes equal effectiveness of common and relative adjustment. \textit{Notes:} $\alpha_D=0.7$, $\alpha_T=0.6$, $\eta=1.5$.}
 \label{fig:geometry}
 \end{figure}
 
-Let $A$ raise its tariff on $B$ alone, $t=d\tau\,e_B$. Then $\bar t=d\tau/(N-1)$, $\widetilde t_B=\frac{N-2}{N-1}d\tau$ and $\widetilde t_C=-\frac{d\tau}{N-1}$ for every bystander $C$.
+Against the target, average protection and relative treatment push in the same direction. Against a bystander they are offsetting pressures: average protection pushes toward an appreciation of $A$, while the bystander's favorable relative treatment pushes toward a depreciation.
 
-\begin{proposition}[Unilateral tariff]
-\label{prop:unilateral}
-At the symmetric benchmark under MML,
-\begin{equation}
-\frac{d\nu^E_A}{d\tau}=-\frac{\rho_D}{(N-1)M_N}<0,\qquad
-\frac{d\nu_B}{d\tau}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}<0,\qquad
-\frac{d\nu_C}{d\tau}=\frac{\rho-N\rho_D}{N(N-1)M_N}.
-\label{eq:unilateral}
-\end{equation}
-\begin{enumerate}[label=(\roman*)]
-\item $A$'s NEER appreciates for every $N$ and $\rho$.
-\item $A$ appreciates against the target.
-\item $A$ \textbf{depreciates against each untariffed bystander if and only if $\rho>N\rho_D$.}
-\item The same threshold applies when $A$ tariffs any $k\leq N-2$ partners. More generally, $A$ depreciates against a partner $j$ facing a below-average tariff increase if and only if $t_j/\bar t<1-N\rho_D/\rho$, which requires $\rho>N\rho_D$.
-\end{enumerate}
-\end{proposition}
-
-Against the target, average protection and relative treatment reinforce each other. Against a bystander they pull apart. Average protection shifts expenditure toward the domestic economy (appreciation), while the bystander's favorable relative treatment redirects expenditure toward it (depreciation).
-
-\begin{corollary}[Why a single elasticity cannot deliver reversal]
+\begin{corollary}[No reversal with a single elasticity under weak home bias]
 \label{cor:single}
-With home bias $\alpha_D\geq1/N$,
+Suppose weak home bias, $\alpha_D\geq1/N$. Then
 \begin{equation}
 N\rho_D-\eta=\eta(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)\geq0,
 \label{eq:single}
 \end{equation}
-so $\rho>\eta$ is \textbf{necessary} for a bystander depreciation. In any specification with a single elasticity across all tradable varieties ($\rho=\eta=\sigma$), $A$ appreciates against every bystander at every $\sigma$. At $\alpha_D=1/N$ the response is $-(1-\alpha_T)/(N\sigma)$, which approaches zero from below but never crosses it.
+so $\rho>\eta$ is necessary for a bystander depreciation. In any specification with a single elasticity across all tradable varieties ($\rho=\eta=\sigma$), $\rho-N\rho_D=-[\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)]\leq0$, so wherever MML holds $d\nu_c/d\tau\leq0$: $A$ never depreciates against a bystander. The response is strictly negative except at the knife edge $\alpha_D=1/N$, $\alpha_T=1$, where it is zero for every $\sigma>0$. More generally, at $\alpha_D=1/N$ the response is $-(1-\alpha_T)/(N\sigma)$: if $\alpha_T<1$ it approaches zero from below as $\sigma\to\infty$, and if $\alpha_T=1$ it is identically zero.
 \end{corollary}
 
-This explains why the natural first extension of the two-country model, a third country under a single CES elasticity, has not surfaced the reversal. The reversal requires that cross-origin substitution exceed home--import substitution, an ordering supported by the macro--micro elasticity evidence \citep{feenstra2018,li2022}. At US-like parameters ($\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$, so $\rho_D=1.32$), $N\rho_D=3.96$ for $N=3$.
-
-\paragraph{Disturbance versus equilibrium.} At unchanged exchange rates the bystander's trade balance improves if and only if $\rho>\rho_D$:
-\begin{equation}
-F_C=\frac{m(\rho-\rho_D)}{(N-1)^2}.
-\label{eq:FC}
-\end{equation}
-The equilibrium bystander depreciation requires the stronger condition $\rho>N\rho_D$. The gap is the $1/N$ effectiveness of relative adjustment. For $\rho_D<\rho<N\rho_D$, $C$ gains at the old exchange rates yet ends up with a weaker currency against $A$ (\cref{fig:geometry-a}). \Cref{fig:unilateral} plots the three responses against $\rho$.
+Under weak home bias, the reversal therefore requires cross-origin substitution to exceed home--import substitution. Evidence in \citet{feenstra2018} and \citet{li2022} supports allowing $\rho$ and $\eta$ to differ. At an illustrative US-like calibration ($\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$, so $\rho_D=1.32$), the threshold is $N\rho_D=3.96$ for $N=3$ and $6.60$ for $N=5$.
 
 \begin{figure}[t]
 \centering
-\begin{subfigure}[t]{0.45\textwidth}\centering
+\begin{subfigure}[t]{0.47\textwidth}\centering
 \includegraphics[width=\textwidth]{fig3a_unilateral.pdf}
 \caption{$N=3$}
 \end{subfigure}\hfill
-\begin{subfigure}[t]{0.45\textwidth}\centering
+\begin{subfigure}[t]{0.47\textwidth}\centering
 \includegraphics[width=\textwidth]{fig3b_unilateral.pdf}
 \caption{$N=5$}
 \end{subfigure}
-\caption{Bilateral and effective responses to a unilateral tariff, per unit $d\tau$, US-like parameters ($\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$). $d\nu_B$ and $d\nu^E_A$ are negative for every $\rho$; $d\nu_C$ crosses zero at $N\rho_D$ ($3.96$ for $N=3$, $6.60$ for $N=5$), and the shaded region is $\rho>N\rho_D$. The grey dotted line is the single-elasticity case $\rho=\eta=\sigma$, plotting $d\nu_C$ against $\sigma$; it never crosses zero (\cref{cor:single}). Closed forms of \cref{prop:unilateral}, verified against the linear solver.}
+\caption{Exchange-rate responses to a unilateral tariff. The bystander response changes sign at $\rho=N\rho_D$, while the target and NEER continue to appreciate. The line marked with crosses imposes a single tradable elasticity, $\rho=\eta=\sigma$. \textit{Notes:} US-like calibration, $\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$.}
 \label{fig:unilateral}
 \end{figure}
 
-\subsection{The three-country representation}
+At unchanged exchange rates, the trade balance of an individual bystander improves once $\rho>\rho_D$:
+\begin{equation}
+F_c=\frac{m(\rho-\rho_D)}{(N-1)^2}.
+\label{eq:FC}
+\end{equation}
+This is not sufficient for $A$ to depreciate against the bystander in equilibrium. Under MML the exchange-rate response depends on the full vector of trade-balance disturbances, including the target's negative disturbance, and reverses only under the stronger condition $\rho>N\rho_D$. Thus, for $\rho_D<\rho<N\rho_D$, the bystander gains at the initial exchange rates even though $A$ ultimately appreciates against it (\cref{fig:geometry-a}). The gap between the two thresholds reflects the greater effectiveness of relative exchange-rate adjustment identified in \cref{thm:main}: if relative and common movements were equally effective, the bystander's equilibrium response would instead change sign when its own disturbance does. \Cref{fig:unilateral} plots the three responses against $\rho$.
+
+\subsection{The role of the bystander bloc}
 \label{sec:composite}
 
-The $N$-country results can be read through a three-country economy, which we use as the workhorse for intuition. When the $N-2$ bystanders are symmetric and the tariff shock preserves that symmetry, no relative-price movement within the bystander bloc is activated. The bloc then has a single active direction, and the tariff experiment reduces exactly to three regions: $A$, $B$ and a composite bystander $C$. We now show that this composite is itself a nested-CES country, and we identify its parameters.
+The bystander threshold $N\rho_D$ rises with the number of countries. To see why, note that when the bystanders are symmetric and a tariff shock treats them alike, no relative price within the bystander bloc moves, so the bloc can be collapsed into a single region.
 
-\begin{proposition}[Exact three-country reduction]
+\begin{proposition}[Three-region representation]
 \label{prop:composite}
-At the symmetric benchmark, consider any tariff change among $A$, $B$ and the bystanders that is common across bystanders: tariffs by $A$ or $B$ on all bystanders, by all bystanders on $A$ or $B$, or between $A$ and $B$. To first order, the responses of $\nu_B$, of every bystander rate $\nu_C$ and of $A$'s NEER coincide with those of a three-country nested-CES economy $\{A,B,C\}$ in which:
-\begin{itemize}
-\item $C$ has income $y_C=N-2$;
-\item $A$ and $B$ place import weight $\frac{N-2}{N-1}$ on $C$ and $\frac{1}{N-1}$ on each other;
-\item $C$ places import weight $\tfrac12$ on each of $A$ and $B$, with cross-origin elasticity $\rho$;
-\item $C$'s home share of tradables is $h_C=\alpha_D+(1-\alpha_D)\frac{N-3}{N-1}$, equivalently $(N-1)h_C=N-3+2\alpha_D$;
-\item $C$'s home--import elasticity is
+At the symmetric benchmark with $N\geq3$, consider a tariff shock that treats the $N-2$ bystanders symmetrically, and suppose $M_N\neq0$ (MML is sufficient). To first order, the response of $\nu_B$, the common response of each bystander, and $A$'s NEER are exactly reproduced by a three-region economy consisting of $A$, $B$ and a composite bystander $C$ with income $N-2$, home share of tradables $h_C=\alpha_D+(1-\alpha_D)\frac{N-3}{N-1}$, and home--import elasticity
 \begin{equation}
 \boxed{\;\eta_C=\frac{(N-3)\rho+2\alpha_D\,\eta}{N-3+2\alpha_D}.\;}
 \label{eq:etaC}
 \end{equation}
-\end{itemize}
+The complete mapping of trade weights and tariff shocks is given in \cref{app:proofs}.
 \end{proposition}
 
-\begin{proof}[Proof sketch]
-All bystander goods have the same price change, so CES aggregation of $A$'s and $B$'s demand over bystander goods is exact. Trade within the bloc cancels from the bloc's trade balance; what remains is the bloc's demand for $A$'s and $B$'s goods. Measure prices in bystander currency, so bloc goods have $dp=0$, and write $S=dp_A+dp_B$ and $D=dp_A-dp_B$. A bystander's import price index moves by $S/(N-1)$, since $A$ and $B$ are 2 of its $N-1$ import origins. Hence
-\begin{equation*}
-d\log s_{cA}=(1-\rho)\tfrac{D}{2}+\Big[(1-\rho)\tfrac{N-3}{2(N-1)}+(1-\eta)\tfrac{\alpha_D}{N-1}\Big]S.
-\end{equation*}
-In the composite the import index moves by $S/2$, so $d\log s_{CA}=(1-\rho)\frac D2+(1-\eta_C)h_C\frac S2$. The $D$ terms coincide. Matching the $S$ terms gives $(1-\eta_C)(N-1)h_C=(1-\rho)(N-3)+2\alpha_D(1-\eta)$, which is \cref{eq:etaC}. The full proof is in \cref{app:proofs}.
-\end{proof}
+\noindent The equivalence holds for the linearized systems; it is not an aggregation result for finite tariffs.
 
-The reduction is first-order. At finite tariffs a CES with constant $\eta_C$ does not replicate the bloc. The shocks it covers include the retaliation and trade-war experiments of \cref{sec:tradewars}.
+Trade among the original bystanders becomes the composite's ``home'' trade, so $h_C$ rises toward one as $N$ grows. In the $N$-country economy that trade is governed by the cross-origin elasticity $\rho$, which is why $\eta_C$ is a weighted average of $\eta$ and $\rho$. As $N$ increases, $\eta_C$ converges to $\rho$; it rises with $N$ if $\rho>\eta$, falls if $\rho<\eta$, and is constant if $\rho=\eta$. Under weak home bias the bystander-reversal region $\rho>N\rho_D$ lies inside $\rho>\eta$.
 
-\paragraph{Interpretation.} The composite bystander differs from an ordinary large country in one respect. Most of each bystander's trade is with \emph{other bystanders}, whose goods sit in the same $\rho$-nest as $A$'s and $B$'s. Once collapsed, this internal trade becomes the composite's ``home'' trade, and it is substitutable at a blend of $\rho$ and $\eta$. When $\rho>\eta$, $\eta_C$ rises toward $\rho$ as $N$ grows. The bystander bloc becomes inward-looking ($h_C\to1$) and highly substitutable.
+The higher threshold $N\rho_D$ is therefore not simply a consequence of making the bystander bloc larger. As $N$ rises, a greater share of what the composite treats as ``home'' activity consists of trade among the original bystanders, and that trade adjusts at the cross-origin elasticity $\rho$. This changes the internal adjustment structure of the bloc and gives relative exchange-rate movements their $N$-fold effectiveness at the symmetric benchmark (\cref{thm:main}). \Cref{app:proofs} shows that holding the composite's internal elasticity fixed at $\eta$ eliminates this steep $N$-dependence, confirming that the result reflects the bloc's internal trade structure rather than its size alone.
 
-\paragraph{The reduced system.} In the composite economy the $2\times2$ system for $(\nu_B,\nu_C)$ is, with $c=mM_N/(N-1)$,
-\begin{equation}
--J=c\begin{pmatrix}N-1&-(N-2)\\-(N-2)&2(N-2)\end{pmatrix},\qquad \det(-J)=c^2N(N-2),
-\label{eq:reducedJ}
-\end{equation}
-and
-\begin{equation}
-d\nu_C=\frac{F_B+(N-1)F_c}{cN},\qquad d\nu_B=\frac{2F_B+(N-2)F_c}{cN},
-\label{eq:reducedsol}
-\end{equation}
-where $F_B$ is the target's disturbance and $F_c$ each bystander's ($F_C=(N-2)F_c$). Under a unilateral tariff, $F_B=-m[\rho_D+(N-2)\rho]/(N-1)^2<0$ and $F_c=m(\rho-\rho_D)/(N-1)^2$. \Cref{eq:reducedsol} recovers \cref{eq:unilateral} and gives the bystander response a two-force reading:
-\begin{itemize}
-\item \textbf{diversion}, $(N-1)F_c$: expenditure diverted toward bystanders improves their position and strengthens their currencies;
-\item \textbf{redirection}, $F_B$: the target loses access to $A$'s market and its currency must fall. This makes the target's goods cheaper for bystanders and drags bystander currencies down with it.
-\end{itemize}
-$A$ depreciates against the bystander if and only if diversion outweighs redirection, $(N-1)(\rho-\rho_D)>\rho_D+(N-2)\rho$, which is $\rho>N\rho_D$. These are the ``trade diversion'' and ``trade redirection'' forces of earlier versions of this paper, now with exact weights.
-
-\paragraph{Why $N$ raises the threshold, and why size alone does not.} One might expect that adding countries is equivalent to enlarging the bystander. It is not. Hold the composite's flows fixed at their $N$-country values but give it an ordinary home--import elasticity $\eta$ instead of $\eta_C$. The bystander threshold then \emph{falls} slightly with $N$, consistent with the general result (\cref{app:asym-primitives}) that a larger bystander lowers the threshold. The true threshold $N\rho_D$ rises steeply (\cref{tab:composite,fig:composite}). What drives the $N$-dependence is the bloc's internal, highly substitutable trade, which makes relative exchange-rate adjustment $N$ times as effective as common adjustment and dilutes $A$'s footprint to $1/N$.
-
-\begin{table}[t]
-\centering
-\caption{$N$ versus bystander size}
-\label{tab:composite}
-\begin{tabular}{ccccc}
-\toprule
- & & \multicolumn{2}{c}{Composite bystander threshold} & \\
-\cmidrule(lr){3-4}
-$N$ & $N\rho_D$ (true) & with $\eta_C$ \cref{eq:etaC} & with ordinary $\eta$ & $\eta_C$ at $\rho=4$ \\
-\midrule
-\tabinput{tables/tab1_composite.tex}
-\bottomrule
-\end{tabular}
-
-\vspace{4pt}
-\begin{minipage}{0.92\textwidth}\footnotesize
-\textit{Notes:} US-like parameters ($\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$). Thresholds are the values of $\rho$ at which the bystander response to a unilateral tariff changes sign in the composite economy of \cref{prop:composite}, computed with the linear system of \cref{app:linear}. The ``ordinary $\eta$'' column keeps the composite's flows but replaces $\eta_C$ by $\eta$.
-\end{minipage}
-\end{table}
-
-\begin{figure}[t]
-\centering
-\begin{subfigure}[t]{0.45\textwidth}\centering
-\includegraphics[width=\textwidth]{fig4a_composite_threshold.pdf}
-\caption{Bystander threshold}
-\end{subfigure}\hfill
-\begin{subfigure}[t]{0.45\textwidth}\centering
-\includegraphics[width=\textwidth]{fig4b_eta_C.pdf}
-\caption{Effective elasticity $\eta_C$}
-\end{subfigure}
-\caption{The composite bystander, US-like parameters. (a) The true threshold $N\rho_D$ for $N=3,\dots,10$, which the composite with $\eta_C$ reproduces exactly, and the threshold of the ``ordinary-$\eta$'' composite, which is nearly flat and slightly declining. (b) $\eta_C$ from \cref{eq:etaC} against $N$ for $\rho\in\{2,4,8\}$, converging toward $\rho$ (thin horizontal lines); the grey line is $\eta=1.5$.}
-\label{fig:composite}
-\end{figure}
-
-\subsection{Real exchange rates}
+\FloatBarrier
+\subsection{Nominal and real exchange rates}
 \label{sec:real}
 
-Real rates add a price-index wedge: the tariff raises $A$'s consumer prices directly. With $\bar t$ the average tariff and partners imposing no tariffs,
+Let partners impose no tariffs, and define the real effective exchange rate at the symmetric benchmark as $d\log q^E_A\equiv\frac{1}{N-1}\sum_{j\neq A}d\log q_{Aj}$. To first order,
 \begin{equation}
 d\log q_{Aj}=\Big(1-\tfrac{mN}{N-1}\Big)d\nu_j-m\bar t,\qquad
-dq^E_A=\Big[\Big(1-\tfrac{mN}{N-1}\Big)\lambda_{\mathrm{avg}}-m\Big]\bar t.
+d\log q^E_A=\Big[\Big(1-\tfrac{mN}{N-1}\Big)\lambda_{\mathrm{avg}}-m\Big]\bar t.
 \label{eq:real}
 \end{equation}
+The tariff raises $A$'s consumer price index directly, which offsets part of a nominal bystander depreciation. When $m<1/N$ and the real reversal threshold lies in the MML region, it therefore exceeds the nominal threshold; if $\eta\geq1$, MML holds for every $\rho>0$, so this qualification is automatic for a positive threshold.
 
 \begin{proposition}[Real exchange rates]
 \label{prop:real}
-Consider a unilateral tariff at the symmetric benchmark.
-\begin{enumerate}[label=(\roman*)]
-\item If $m<1/N$ and MML holds at the relevant $\rho$, the real bilateral threshold exceeds the nominal one:
+Consider a unilateral tariff by $A$ on $B$ at the symmetric benchmark, $N\geq3$, and define
 \begin{equation*}
-\rho^*_q(N)=\frac{[(N-1)-mN]N\rho_D+mN[N\alpha_D(\eta-1)+1]}{(N-1)(1-mN)}>N\rho_D.
+H_N(\rho)\equiv\Big(1-\frac{mN}{N-1}\Big)(\rho-N\rho_D)-mN\,M_N(\rho).
 \end{equation*}
-\item If $m<(N-1)/N$, the REER appreciates.
+For every untariffed bystander $c$, $d\log q_{Ac}/d\tau=H_N(\rho)/[N(N-1)M_N(\rho)]$, so wherever MML holds the real bilateral response has the sign of $H_N(\rho)$. Since $\rho_D$ does not depend on $\rho$, $dH_N/d\rho=1-mN$.
+\begin{enumerate}[label=(\roman*)]
+\item If $m<1/N$, $H_N$ has the unique root
+\begin{equation*}
+\rho^*_q(N)=\frac{[(N-1)-mN]N\rho_D+mN[N\alpha_D(\eta-1)+1]}{(N-1)(1-mN)}.
+\end{equation*}
+Where MML holds, $A$ appreciates in real terms against $c$ for $\rho<\rho^*_q(N)$ and depreciates for $\rho>\rho^*_q(N)$; if MML holds at $\rho^*_q(N)$, then $\rho^*_q(N)>N\rho_D$.
+\item If $m=1/N$, $H_N$ does not depend on $\rho$: $H_N=-[1+N\alpha_D(\eta-1)+N(N-2)\rho_D]/(N-1)$.
+\item If $m>1/N$, $H_N$ is decreasing in $\rho$, so any crossing has the reverse orientation.
+\item If $\eta\geq1$, so that MML holds for every $\rho>0$, and $m\geq1/N$, then $H_N(\rho)<0$ for every $\rho>0$: no positive $\rho$ produces a real depreciation against an untariffed bystander.
+\item Under MML, if $m\leq(N-1)/N$, $A$'s REER appreciates. Under weak home bias this condition holds automatically, since $m=\alpha_T(1-\alpha_D)\leq(N-1)/N$.
 \end{enumerate}
 \end{proposition}
 
-At US-like parameters and $N=3$, $\rho^*_q=4.93$, against $3\rho_D=3.96$.
+At the US-like calibration and $N=3$, $m=0.08<1/3$ and $\rho^*_q=4.93$, against the nominal threshold $3\rho_D=3.96$. In the empirically relevant case $m<1/N$, a nominal bilateral reversal against bystanders is possible, the real reversal requires a higher $\rho$, and the effective rate, nominal and real, still appreciates.
+
+The nested-CES model therefore gives economic content to the two components identified in \cref{sec:framework}. Average protection operates through the domestic diversion margin $\rho_D$, and relative treatment through cross-origin substitution $\rho$. Under a unilateral tariff, relative treatment overturns the conventional bilateral result against untariffed partners only when $\rho>N\rho_D$, while the effective exchange rate continues to appreciate, and in the low-import-share case a real bilateral reversal requires a still stronger cross-origin response. We next consider how these conclusions change when trading partners retaliate.
+
+\FloatBarrier

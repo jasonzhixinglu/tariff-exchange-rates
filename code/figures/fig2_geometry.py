@@ -47,28 +47,31 @@ for panel, rho in (("a", 2.2), ("b", 5.0)):
         assert F[1] > 0 and eq[1] < 0      # C gains at old rates, yet A appreciates against C
     else:
         assert eq[1] > 0
-    fig, ax = plt.subplots(figsize=(style.PANEL_W, style.PANEL_W))
-    lim = 0.85
+    fig, ax = plt.subplots(figsize=(style.PANEL_W, 3.3))
+    lim = 0.95
     s = np.linspace(-lim, lim, 2)
     ax.plot(s, s, color=GREY, lw=0.7, ls=(0, (4, 2)))
-    ax.plot(s, -s, color=GREY, lw=0.7, ls=(0, (1, 1.5)))
+    z = np.linspace(-0.42, 0.45, 2)
+    ax.plot(z, -z, color=GREY, lw=0.7, ls=(0, (1, 1.5)))
     ax.axhline(0, color=MUTED, lw=0.5); ax.axvline(0, color=MUTED, lw=0.5)
-    ax.text(0.12, 0.22, r"common ($\mathbf{1}$)", color=GREY, fontsize=7, rotation=45,
+    ax.text(0.24, 0.40, r"$\mathbf{1}$ direction", color=MUTED, fontsize=8.5, rotation=45,
             ha="center", va="center")
-    ax.text(-0.52, 0.62, "zero-sum", color=GREY, fontsize=7, rotation=-45,
-            ha="center", va="center")
+    ax.text(0.37, -0.17, "zero-sum", color=MUTED, fontsize=8.5, rotation=-45, ha="center", va="center")
     tip_ext = common + N * rel
-    arrow(ax, common, tip_ext, ORANGE, ls=(0, (3, 2)), lw=1.0)
-    arrow(ax, (0, 0), common, BLUE)
-    arrow(ax, common, eq, ORANGE)
-    arrow(ax, (0, 0), eq, INK, lw=1.6)
-    ax.plot(*eq, "o", color=INK, ms=3.5)
-    ax.annotate(r"$\lambda_{\mathrm{avg}}\bar t\,\mathbf{1}$", xy=common, xytext=(common[0] - 0.52, common[1] - 0.12),
-                fontsize=8, color=BLUE)
-    ax.annotate(r"$d\nu$", xy=eq, xytext=(eq[0] + 0.03, eq[1] + 0.05), fontsize=8)
-    ax.text(tip_ext[0] + 0.02, tip_ext[1] + 0.02, r"$F/j_S$", fontsize=8, color=ORANGE)
-    ax.set_xlim(-0.95, 0.45); ax.set_ylim(-0.6, lim)
+    arrow(ax, common, tip_ext, ORANGE, ls=(0, (3, 2)), lw=1.1)
+    arrow(ax, (0, 0), common, BLUE, lw=1.8)
+    arrow(ax, common, eq, ORANGE, lw=1.8)
+    arrow(ax, (0, 0), eq, INK, lw=2.0)
+    ax.plot(*eq, "o", color=INK, ms=4)
+    # direct labels, so the arrows read without colour
+    ax.text(-0.04, -0.29, "common", fontsize=9, color=BLUE, ha="left", va="top")
+    mid = (common + eq) / 2
+    ax.text(mid[0] - 0.06, mid[1] - 0.02, "relative", fontsize=9, color=ORANGE, ha="right", va="top")
+    ax.text(eq[0] + 0.05, eq[1] + 0.05, r"$d\nu$", fontsize=10, color=INK, ha="left", va="bottom")
+    ax.text(-0.93, 1.13, "counterfactual (dashed):\nrelative adjustment no\nmore effective than\ncommon adjustment",
+            fontsize=7.5, color=ORANGE, ha="left", va="top", linespacing=1.15)
+    ax.set_xlim(-0.95, 0.45); ax.set_ylim(-0.6, 1.15)
     ax.set_aspect("equal")
-    ax.set_xlabel(r"$d\nu_B$"); ax.set_ylabel(r"$d\nu_C$")
-    ax.set_title(r"$\rho=%.1f$:  $d\nu=(%.3f,\ %+.3f)$" % (rho, eq[0], eq[1]), fontsize=8)
+    ax.set_xlabel(r"$d\nu_B$"); ax.set_ylabel(r"$d\nu_c$")
+    ax.set_title(r"$\rho=%.1f$:  $d\nu=(%.3f,\ %+.3f)$" % (rho, eq[0], eq[1]), fontsize=9)
     style.save(fig, "fig2%s_geometry.pdf" % panel)

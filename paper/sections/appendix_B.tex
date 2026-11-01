@@ -26,17 +26,27 @@ At the symmetric benchmark the primitives and the balanced baseline are invarian
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:unilateral}]
-The three responses are derived in \cref{app:linear}. Under MML $M_N>0$, and $\rho_D>0$, so $d\nu^E_A<0$ and $d\nu_B<0$, and $d\nu_C>0$ if and only if $\rho>N\rho_D$. Part (iv) is \cref{eq:kpartners,eq:reltreat}.
+The three responses are derived in \cref{app:linear}. Under MML $M_N>0$, and $\rho_D>0$, so $d\nu^E_A<0$ and $d\nu_B<0$, and, for every individual bystander $c$, $d\nu_c>0$ if and only if $\rho>N\rho_D$. Part (iv) is \cref{eq:kpartners,eq:reltreat}.
 \end{proof}
 
 \begin{proof}[Proof of \cref{cor:single}]
-See the single-elasticity paragraph of \cref{app:linear}. Since $N\rho_D\geq\eta$ when $\alpha_D\geq1/N$, $\rho>N\rho_D$ implies $\rho>\eta$, and with $\rho=\eta$ the condition $\rho>N\rho_D$ cannot hold.
+Let $\alpha_D\geq1/N$. Both terms on the right of \cref{eq:single} are nonnegative, so $N\rho_D\geq\eta$, and $\rho>N\rho_D$ implies $\rho>\eta$. With $\rho=\eta=\sigma$, \cref{eq:unilateral} gives $d\nu_c/d\tau=(\sigma-N\rho_D)/[N(N-1)M_N]$, and by \cref{eq:single}, $\sigma-N\rho_D=-[\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)]\leq0$. Under MML $M_N>0$, so $d\nu_c/d\tau\leq0$. The bracket is a sum of two nonnegative terms, and since $\sigma>0$ and $\alpha_D<1$ it vanishes if and only if $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$, $M_N=\sigma$ and $d\nu_c/d\tau=-(1-\alpha_T)/(N\sigma)$ (\cref{app:linear}), which is identically zero when $\alpha_T=1$.
 \end{proof}
 
-\begin{proof}[Proof of \cref{prop:composite}]
-Label the countries $A$, $B$ and bystanders $c=1,\dots,N-2$. Consider any tariff change in the class described in the proposition, and write the composite economy's variables with a capital $C$.
+\paragraph{The complete three-region mapping.} \Cref{prop:composite} applies to any tariff change that is invariant to permutations of the $N-2$ bystanders, that is, any combination of tariffs by $A$ or $B$ that are common across all bystanders, tariffs by all bystanders on $A$ or on $B$ that are common across bystanders, and tariffs between $A$ and $B$. Such a shock maps into the three-region economy by $d\tau_{AC}=d\tau_{Ac}$, $d\tau_{CA}=d\tau_{cA}$, $d\tau_{BC}=d\tau_{Bc}$ and $d\tau_{CB}=d\tau_{cB}$, the common values across bystanders, with $d\tau_{AB}$ and $d\tau_{BA}$ retained. The three-region economy $\{A,B,C\}$ is a nested-CES economy in which:
+\begin{itemize}
+\item $C$ has income $y_C=N-2$;
+\item $A$ and $B$ place import weight $\frac{1}{N-1}$ on each other and $\frac{N-2}{N-1}$ on $C$;
+\item $C$ places weight $\tfrac12$ on each of $A$ and $B$ within its import nest, and retains the tradable expenditure share $\alpha_T$ and the cross-origin elasticity $\rho$;
+\item $C$'s home share of tradables is $h_C=\alpha_D+(1-\alpha_D)\frac{N-3}{N-1}$, equivalently $(N-1)h_C=N-3+2\alpha_D$;
+\item $C$'s home--import elasticity is $\eta_C$ in \cref{eq:etaC}.
+\end{itemize}
+Given $M_N\neq0$, equivalently $j_S=mM_N/(N-1)\neq0$, the linearized systems of the two economies have the same solution for $d\nu_B$, the common bystander response $d\nu_c=d\nu_C$, and $A$'s NEER. The equivalence is first-order: it concerns the linearized systems and need not hold along nonlinear paths at finite tariffs. For $N=3$, $C$ is the single bystander, with $y_C=1$, $h_C=\alpha_D$ and $\eta_C=\eta$.
 
-\emph{Step 1: bystanders move together.} The baseline and the shock are invariant to permutations of the bystanders, and under MML the linear system \cref{eq:JG} has a unique solution. That solution is therefore invariant to the same permutations, so $d\nu_c=d\nu_C$ for every bystander. The equilibrium is then characterized by two conditions, $d\TB_B=0$ and $\sum_cd\TB_c=0$ (each $d\TB_c$ is equal across bystanders), in the two unknowns $(d\nu_B,d\nu_C)$.
+\begin{proof}[Proof of \cref{prop:composite}]
+Let $N\geq3$ and label the countries $A$, $B$ and bystanders $c=1,\dots,N-2$. Consider any tariff change in the class described in the proposition, and write the composite economy's variables with a capital $C$. The argument compares the two linearized systems at the symmetric benchmark; it establishes that they are identical, not that the nonlinear economies coincide at finite tariffs.
+
+\emph{Step 1: bystanders move together.} The baseline and the shock are invariant to permutations of the bystanders. By \cref{lem:jacobian}, $-J=j_S(NI-\bone\bone')$ has eigenvalues $j_S$ and $Nj_S$, so for $j_S\neq0$ the linearized system \cref{eq:JG} is nonsingular and has a unique solution. That solution is therefore invariant to the same permutations, so $d\nu_c=d\nu_C$ for every bystander. The equilibrium is then characterized by two conditions, $d\TB_B=0$ and $\sum_cd\TB_c=0$ (each $d\TB_c$ is equal across bystanders), in the two unknowns $(d\nu_B,d\nu_C)$.
 
 \emph{Step 2: the baseline flows coincide.} In the $N$-country economy $f_{Ac}=f_{cA}=m/(N-1)$ for each bystander, so $\sum_cf_{Ac}=\sum_cf_{cA}=m(N-2)/(N-1)$. In the composite, $f_{AC}=\alpha_T(1-\alpha_D)\frac{N-2}{N-1}=m\frac{N-2}{N-1}$, and, since $1-h_C=2(1-\alpha_D)/(N-1)$, $f_{CA}=\alpha_T(1-h_C)\cdot\frac12\cdot(N-2)=m\frac{N-2}{N-1}$. The same holds for $B$, and $f_{AB}=f_{BA}=m/(N-1)$ in both economies. In particular the composite is balanced, and $s_{CA}=\alpha_T(1-h_C)/2=m/(N-1)=s_{cA}$.
 
@@ -57,31 +67,107 @@ d\log s_{cA}&=(1-\rho)\Big(\frac{S+D}{2}-\frac{S}{N-1}\Big)+(1-\eta)\alpha_D\fra
 \end{equation*}
 In the composite the import index moves by $S/2$, so $d\log s_{CA}=(1-\rho)\frac D2+(1-\eta_C)h_C\frac S2$. The $D$ terms coincide for any $(S,D)$, and the $S$ terms coincide if and only if $(1-\eta_C)(N-1)h_C=(1-\rho)(N-3)+2\alpha_D(1-\eta)$. Using $(N-1)h_C=N-3+2\alpha_D$, this is \cref{eq:etaC}. The argument for $B$'s good is identical with $D$ replaced by $-D$. The residual share on bloc goods matches as well, because shares sum to one in both economies.
 
-\emph{Step 6: equilibrium and NEER.} By Steps 2--5, the two equations $(d\TB_B,\sum_cd\TB_c)=0$ of the $N$-country economy, evaluated at $d\nu_c=d\nu_C$, are identical to the composite's equations $(d\TB_B,d\TB_C)=0$, including the tariff terms. The composite system is nonsingular (its determinant is computed below), so the two economies have the same $(d\nu_B,d\nu_C)$. The composite's trade weights are $w_{AB}=1/(N-1)$ and $w_{AC}=(N-2)/(N-1)$, so its NEER response $\frac{1}{N-1}d\nu_B+\frac{N-2}{N-1}d\nu_C$ equals the $N$-country NEER at symmetric weights.
+\emph{Step 6: equilibrium and NEER.} By Steps 2--5, the two equations $(d\TB_B,\sum_cd\TB_c)=0$ of the $N$-country economy, evaluated at $d\nu_c=d\nu_C$, are identical to the composite's equations $(d\TB_B,d\TB_C)=0$, including the tariff terms. For $j_S\neq0$ the composite system is nonsingular (its determinant is computed in Step 7), so the two linearized systems have the same solution $(d\nu_B,d\nu_C)$. The composite's trade weights are $w_{AB}=1/(N-1)$ and $w_{AC}=(N-2)/(N-1)$, so its NEER response $\frac{1}{N-1}d\nu_B+\frac{N-2}{N-1}d\nu_C$ equals the $N$-country NEER at symmetric weights.
 
-\emph{Step 7: the reduced system.} By \cref{lem:jacobian}, row $B$ of $-J$ in the $N$-country economy is $c(N-1)$ on $\nu_B$ and $-c$ on each bystander's rate; imposing $d\nu_c=d\nu_C$ gives $(c(N-1),-c(N-2))$. Each bystander row has $-c$ on $\nu_B$, $c(N-1)$ on its own rate and $-c$ on each of the other $N-3$ bystanders' rates; summing the $N-2$ bystander rows and imposing $d\nu_c=d\nu_C$ gives $(-c(N-2),\,(N-2)[c(N-1)-c(N-3)])=(-c(N-2),2c(N-2))$. This is \cref{eq:reducedJ}, with determinant $c^2[2(N-1)(N-2)-(N-2)^2]=c^2N(N-2)>0$. Inverting and applying it to $(F_B,(N-2)F_c)$ gives \cref{eq:reducedsol}, and the unilateral disturbances follow from \cref{eq:disturbance}.
+\emph{Step 7: the reduced system.} By \cref{lem:jacobian}, row $B$ of $-J$ in the $N$-country economy is $j_S(N-1)$ on $\nu_B$ and $-j_S$ on each bystander's rate; imposing $d\nu_c=d\nu_C$ gives $(j_S(N-1),-j_S(N-2))$. Each bystander row has $-j_S$ on $\nu_B$, $j_S(N-1)$ on its own rate and $-j_S$ on each of the other $N-3$ bystanders' rates; summing the $N-2$ bystander rows and imposing $d\nu_c=d\nu_C$ gives $(-j_S(N-2),\,(N-2)[j_S(N-1)-j_S(N-3)])=(-j_S(N-2),2j_S(N-2))$. The reduced system for $(\nu_B,\nu_C)$ is therefore
+\begin{equation}
+-J=j_S\begin{pmatrix}N-1&-(N-2)\\-(N-2)&2(N-2)\end{pmatrix},\qquad \det(-J)=j_S^2N(N-2),
+\label{eq:reducedJ}
+\end{equation}
+since $j_S^2[2(N-1)(N-2)-(N-2)^2]=j_S^2N(N-2)$; for $N\geq3$ the determinant is positive if and only if $j_S\neq0$. Let $F_B$ be the target's disturbance, $F_c$ that of an individual bystander, and $F_C=\sum_cF_c=(N-2)F_c$ the aggregate disturbance of the composite. For $j_S\neq0$, inverting \cref{eq:reducedJ} and applying it to $(F_B,F_C)$ gives
+\begin{equation}
+d\nu_C=\frac{F_B+(N-1)F_c}{Nj_S},\qquad d\nu_B=\frac{2F_B+(N-2)F_c}{Nj_S},
+\label{eq:reducedsol}
+\end{equation}
+where $d\nu_C$ is the common response $d\nu_c$ of every bystander; the unilateral disturbances follow from \cref{eq:disturbance}. For $N=3$ there is one bystander, $(N-1)h_C=2\alpha_D$ gives $h_C=\alpha_D$, and \cref{eq:etaC} gives $\eta_C=\eta$, so the composite is that bystander.
 \end{proof}
 
-\noindent The replication code verifies the reduction numerically: for $(\alpha_D,\alpha_T,\eta)$ equal to $(0.8,0.4,1.5)$, $(0.6,0.7,1.2)$, $(0.9,0.3,3.0)$ and $(0.5,0.5,2.0)$, $N\in\{4,\dots,10\}$ and $\rho\in\{1.1,4,9\}$, under the four shocks ($A$ on $B$; an $A$--$B$ war; $A$ on all bystanders; all bystanders on $B$), the composite's $(d\nu_B,d\nu_C)$ match the $N$-country responses to within $10^{-12}$.
+Under a unilateral tariff, $F_B=-m[\rho_D+(N-2)\rho]/(N-1)^2<0$, while $F_c$ is given by \cref{eq:FC} and is positive only when $\rho>\rho_D$. In \cref{eq:reducedsol}, the bystanders' positive disturbance pushes toward a depreciation of $A$ against them, while the target's negative disturbance works in the opposite direction, because the target's depreciation makes its goods cheaper to the bystanders. Under MML, $A$ depreciates against the bystanders if and only if
+\begin{equation*}
+(N-1)(\rho-\rho_D)>\rho_D+(N-2)\rho\quad\Longleftrightarrow\quad\rho>N\rho_D.
+\end{equation*}
+
+\paragraph{An ordinary-$\eta$ composite.} As a diagnostic comparison, which is not part of \cref{prop:composite}, consider an ordinary-$\eta$ composite. It holds $y_C$, $h_C$, $A$'s and $B$'s import weights, the baseline external bilateral flows and the trade weights at their mapped $N$-country values, replaces $\eta_C$ by $\eta$, and leaves $\rho$ unchanged. Its bystander threshold falls slightly with $N$, in line with the local, calibration-dependent finding of \cref{app:asym-primitives} that a marginally larger bystander lowers the threshold near the symmetric point, whereas the true threshold $N\rho_D$ rises steeply (\cref{tab:composite,fig:composite}). The $N$-dependence therefore comes from the bloc's internal trade, governed by $\rho$, rather than from the bloc's size.
+
+\noindent The replication code verifies the reduction numerically: for $(\alpha_D,\alpha_T,\eta)$ equal to $(0.8,0.4,1.5)$, $(0.6,0.7,1.2)$, $(0.9,0.3,3.0)$ and $(0.5,0.5,2.0)$, $N\in\{4,\dots,10\}$ and $\rho\in\{1.1,4,9\}$, under the four shocks ($A$ on $B$; an $A$--$B$ war; $A$ on all bystanders; all bystanders on $B$), the composite's $(d\nu_B,d\nu_C)$ match the $N$-country responses to within $10^{-12}$. \Cref{tab:composite} reports the bystander thresholds plotted in \cref{fig:composite}.
+
+\begin{table}[ht]
+\centering
+\caption{$N$ versus bystander size}
+\label{tab:composite}
+\begin{tabular}{ccccc}
+\toprule
+ & & \multicolumn{2}{c}{Composite bystander threshold} & \\
+\cmidrule(lr){3-4}
+$N$ & $N\rho_D$ (true) & with $\eta_C$ \cref{eq:etaC} & with ordinary $\eta$ & $\eta_C$ at $\rho=4$ \\
+\midrule
+\tabinput{tables/tab1_composite.tex}
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{minipage}{0.92\textwidth}\footnotesize
+\textit{Notes:} Illustrative US-like calibration ($\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$). Thresholds are the values of $\rho$ at which the bystander response to a unilateral tariff changes sign in the composite economy of \cref{prop:composite}, computed with the linear system of \cref{app:linear}. The ordinary-$\eta$ column keeps the composite's mapped flows, weights and $\rho$ but replaces $\eta_C$ by $\eta$, as in the ordinary-$\eta$ composite above.
+\end{minipage}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}[t]{0.47\textwidth}\centering
+\includegraphics[width=\textwidth]{fig4a_composite_threshold.pdf}
+\caption{Bystander threshold}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.47\textwidth}\centering
+\includegraphics[width=\textwidth]{fig4b_eta_C.pdf}
+\caption{Effective elasticity $\eta_C$}
+\end{subfigure}
+\caption{The composite bystander. (a) The bystander threshold $N\rho_D$, which the composite with $\eta_C$ reproduces, and the threshold of the ordinary-$\eta$ composite, for $N=3,\dots,10$. (b) $\eta_C$ for $\rho\in\{2,4,8\}$, converging toward $\rho$ (thin horizontal lines); the grey line is $\eta=1.5$. \textit{Notes:} illustrative US-like calibration $\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$.}
+\label{fig:composite}
+\end{figure}
 
 \begin{proof}[Proof of \cref{prop:real}]
-Equations \cref{eq:realapp,eq:reer} are derived in \cref{app:linear}. For (i), setting $d\log q_{AC}=0$ and substituting $d\nu_C$ from \cref{eq:unilateral} gives
+\Cref{eq:realapp,eq:reer} are derived in \cref{app:linear}. For a unilateral tariff $\bar t=d\tau/(N-1)$, so $d\log q_{Ac}/d\tau=(1-\frac{mN}{N-1})\,d\nu_c/d\tau-\frac{m}{N-1}$. Substituting $d\nu_c/d\tau$ from \cref{eq:unilateral} and writing $\frac{m}{N-1}=\frac{mN\,M_N}{N(N-1)M_N}$ gives
 \begin{equation*}
-\big[(N-1)-mN\big]\frac{\rho-N\rho_D}{N}=m(N-1)M_N(\rho).
+\frac{d\log q_{Ac}}{d\tau}=\frac{H_N(\rho)}{N(N-1)M_N(\rho)}.
 \end{equation*}
-Since $M_N$ is affine in $\rho$, this is linear in $\rho$; for $m<1/N$, solving gives $\rho^*_q(N)$. The coefficient $(N-1)-mN$ is then positive, and MML at $\rho^*_q$ gives $M_N>0$ on the right, so $\rho^*_q(N)>N\rho_D$. For (ii), under MML $M_N>0$, and for $m<(N-1)/N$ both terms in \cref{eq:reer} are negative.
+Where MML holds, $M_N>0$, so the response has the sign of $H_N$. Since $\rho_D$ does not depend on $\rho$ and $M_N(\rho)$ in \cref{eq:MN} has slope $dM_N/d\rho=(N-2)/(N-1)$, $H_N$ is affine in $\rho$ with slope
+\begin{equation*}
+\frac{dH_N}{d\rho}=1-\frac{mN}{N-1}-\frac{mN(N-2)}{N-1}=1-mN.
+\end{equation*}
+
+(i) If $m<1/N$, the slope is positive, so $H_N$ has a unique root, is negative below it and positive above it. Multiplying $H_N=0$ by $N-1$ gives $[(N-1)-mN](\rho-N\rho_D)=mN[1+N\alpha_D(\eta-1)+(N-2)\rho]$; the coefficient on $\rho$ is $(N-1)-mN-mN(N-2)=(N-1)(1-mN)$, which yields $\rho^*_q(N)$. At the root $[(N-1)-mN](\rho^*_q-N\rho_D)=mN(N-1)M_N(\rho^*_q)$. For $m<1/N$ the coefficient $(N-1)-mN$ is positive, and if MML holds at $\rho^*_q$ the right-hand side is positive, so $\rho^*_q(N)>N\rho_D$.
+
+(ii) If $m=1/N$, the slope is zero, and
+\begin{equation*}
+H_N=\frac{N-2}{N-1}(\rho-N\rho_D)-\frac{1+N\alpha_D(\eta-1)+(N-2)\rho}{N-1}=-\frac{1+N\alpha_D(\eta-1)+N(N-2)\rho_D}{N-1}.
+\end{equation*}
+
+(iii) If $m>1/N$, the slope is negative.
+
+(iv) If $\eta\geq1$, every term of $M_N$ in \cref{eq:MN} is nonnegative and the first is positive, so MML holds for every $\rho>0$. Since $(N-1)M_N(0)=1+N\alpha_D(\eta-1)$,
+\begin{equation*}
+(N-1)H_N(0)=-[(N-1)-mN]N\rho_D-mN[1+N\alpha_D(\eta-1)]=-N\big[(N-1)(\rho_D-m)+Nm^2\big],
+\end{equation*}
+where the second equality uses $\rho_D=1+\alpha_D(\eta-1)-m$. With $\eta\geq1$, $\rho_D-m=1+\alpha_D(\eta-1)-2m\geq1-2m$, so
+\begin{align*}
+(N-1)(\rho_D-m)+Nm^2&\geq(N-1)(1-2m)+Nm^2=Nm^2-2(N-1)m+(N-1)\\
+&=N\Big(m-\frac{N-1}{N}\Big)^2+\frac{N-1}{N}>0.
+\end{align*}
+Hence $H_N(0)<0$. For $m\geq1/N$, $dH_N/d\rho=1-mN\leq0$, so $H_N(\rho)\leq H_N(0)<0$ and $d\log q_{Ac}/d\tau<0$ for every $\rho>0$.
+
+(v) Under MML $M_N>0$, and $\rho_D>0$. In \cref{eq:reer}, the first term is nonpositive when $m\leq(N-1)/N$ and the second, $-m/(N-1)$, is strictly negative, so the REER strictly appreciates, including at $m=(N-1)/N$. Under weak home bias, $m=\alpha_T(1-\alpha_D)\leq1-1/N=(N-1)/N$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:retaliation}]
 (i) Let primes denote responses to the mirror shock $t_{BA}=d\tau$. Relabeling $A\leftrightarrow B$ in \cref{eq:unilateral} gives
 \begin{equation*}
-d\log e'_{BA}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}\,d\tau,\qquad d\log e'_{BC}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau.
+d\log e'_{BA}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}\,d\tau,\qquad d\log e'_{Bc}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau.
 \end{equation*}
-Since $e_{AB}=1/e_{BA}$ and $e_{AC}=e_{AB}e_{BC}$, $d\log e'_{AB}=\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}d\tau$ and $d\log e'_{AC}=\frac{\rho}{NM_N}d\tau$. By linearity the combined response is $d\log e_{AB}=0$ and
+Since $e_{AB}=1/e_{BA}$ and $e_{Ac}=e_{AB}e_{Bc}$, $d\log e'_{AB}=\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}d\tau$ and $d\log e'_{Ac}=\frac{\rho}{NM_N}d\tau$. By linearity the combined response is $d\log e_{AB}=0$ and
 \begin{equation*}
-d\log e_{AC}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau+\frac{\rho}{NM_N}\,d\tau=\frac{\rho-\rho_D}{(N-1)M_N}\,d\tau.
+d\log e_{Ac}=\frac{\rho-N\rho_D}{N(N-1)M_N}\,d\tau+\frac{\rho}{NM_N}\,d\tau=\frac{\rho-\rho_D}{(N-1)M_N}\,d\tau.
 \end{equation*}
-The three components are $A$'s average protection, $-\rho_D/[(N-1)M_N]$, $A$'s relative treatment, $\rho/[N(N-1)M_N]$, and $B$'s relative treatment, $\rho/(NM_N)$. By symmetry between $A$ and $B$ the same expression applies to $d\log e_{BC}$, every bystander moves identically, so cross rates among bystanders are unchanged, and averaging over $A$'s $N-1$ partners with the equal weights of the symmetric benchmark gives $d\nu^E_A$ in \cref{eq:retaliation}.
+The three components are $A$'s average protection, $-\rho_D/[(N-1)M_N]$, $A$'s relative treatment, $\rho/[N(N-1)M_N]$, and $B$'s relative treatment, $\rho/(NM_N)$. By symmetry between $A$ and $B$ the same expression applies to $d\log e_{Bc}$, every bystander moves identically, so cross rates among bystanders are unchanged, and averaging over $A$'s $N-1$ partners with the equal weights of the symmetric benchmark gives $d\nu^E_A$ in \cref{eq:retaliation}.
 
 (ii) Superpose the $N$ tariff vectors. $A$'s tariff vector is uniform, $\bar t^{(A)}=d\tau$ and $\widetilde t^{(A)}=0$, and contributes $\lambda_{\mathrm{avg}}d\tau$ to every $d\log e_{Aj}$. Partner $j$ taxes only $A$; its contribution to $d\log e_{Aj}$ is $-[\lambda_{\mathrm{avg}}+(N-2)\lambda_{\mathrm{rel}}]\frac{d\tau}{N-1}$, while each of the $N-2$ other partners $k$ contributes $-\lambda_{\mathrm{rel}}d\tau=\frac{\rho}{NM_N}d\tau$, computed as in part (i) from $e_{Aj}=e_{Ak}e_{kj}$. Summing,
 \begin{equation*}
