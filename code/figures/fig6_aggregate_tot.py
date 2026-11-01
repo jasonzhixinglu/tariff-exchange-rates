@@ -1,11 +1,13 @@
 """Paper Figure 6, panels (a)-(b), and online-supplement Figure S4.1, panel (c)
-(files fig6*): three relationships between rho and the
-aggregate terms-of-trade condition.  Normalized Q_{A|B}(rho) at a fixed
-baseline: (a) symmetric benchmark (no crossing), (b) small target with a low
-import weight (single crossing), (c) strongly asymmetric network (two
-crossings).  Baselines from code/checks/asymmetry_checks.py.  MML is checked at
-the fixed baseline over the whole plotted rho range, so every shaded region
-lies inside the MML-valid region."""
+(files fig6*).
+
+Panels (a) and (b) plot the aggregate terms-of-trade response
+R_{A|B} = b_AB R^B_B + (1-b_AB) Rbar^B_{-B} at a fixed baseline: (a) symmetric
+benchmark, (b) small target with a low import weight, with its target and
+bystander contributions.  Panel (c) (supplement) plots the normalized
+numerator Q_{A|B}(rho) for the strongly asymmetric network (two crossings).
+Baselines from code/checks/asymmetry_checks.py.  MML is checked at the fixed
+baseline over the whole plotted rho range."""
 import os
 import sys
 
@@ -20,6 +22,8 @@ from model import asymmetry as asy  # noqa: E402
 from model import linear as lin  # noqa: E402
 
 plt.rcParams["hatch.linewidth"] = 0.4
+YLIM = (-0.45, 0.15)
+XLABEL = r"Cross-origin elasticity, $\rho$"
 panels = {"a": (ac.example_a, (1, 10)), "b": (ac.example_b, (1, 10)), "c": (ac.example_c, (1, 30))}
 for name, (fn, xr) in panels.items():
     base, q = fn()
@@ -41,17 +45,40 @@ for name, (fn, xr) in panels.items():
         assert len(roots) == 1 and abs(roots[0] - 3.344) < 1e-3
     else:
         assert len(roots) == 2
+
     fig, ax = plt.subplots(figsize=(style.PANEL_W, 2.5))
-    # shaded = Q-hat > 0: A's aggregate terms of trade deteriorate (gray + hatch for print)
-    ax.fill_between(rho, vals, 0, where=vals > 0, facecolor=SHADE, edgecolor=GREY, hatch="////",
-                    lw=0, label="condition fails")
-    ax.plot(rho, vals, color=BLUE)
-    ax.axhline(0, color=MUTED, lw=0.6)
-    for r in roots:
-        ax.axvline(r, color=MUTED, lw=0.5, ls=(0, (2, 2)))
-        ax.text(r, 0.03, "%.2f" % r, transform=ax.get_xaxis_transform(), fontsize=8.5, ha="center",
-                bbox=dict(fc="white", ec="none", pad=0.5))
-    ax.set_xlim(*xr)
-    ax.set_xlabel(r"$\rho$")
-    ax.set_ylabel(r"$\hat Q_{A|B}(\rho)$")
+    if name in ("a", "b"):
+        # contributions b_Aj R^B_j: target j = B, bystander j = C (N = 3)
+        b = lin.import_weights(base)
+        contrib = np.array([b * lin.response(lin.with_rho(base, r), ac.D) for r in rho])
+        agg = contrib.sum(axis=1)
+        assert agg.min() > YLIM[0] and agg.max() < YLIM[1]
+        style.zero_line(ax)
+        if name == "b":
+            style.line(ax, rho, contrib[:, 0], 2, "Target contribution", lw=1.0)
+            style.line(ax, rho, contrib[:, 1], 3, "Bystander contribution", lw=1.0)
+            ax.axvline(roots[0], color=MUTED, lw=0.6, ls=(0, (1, 1.5)))
+            ax.text(roots[0] + 0.15, 0.12, r"$\rho^*=%.2f$" % roots[0], fontsize=8.5, va="top")
+            ax.text(9.8, 0.012, "ToT deterioration", fontsize=7.5, color=MUTED, ha="right", va="bottom")
+            ax.text(9.8, -0.045, "ToT improvement", fontsize=7.5, color=MUTED, ha="right", va="top")
+        ax.plot(rho, agg, color=BLUE, lw=2.2, label="Aggregate response")
+        if name == "b":
+            ax.legend(loc="lower right", handlelength=2.4)
+        ax.set_ylim(*YLIM)
+        ax.set_xlim(*xr)
+        ax.set_xlabel(XLABEL)
+        ax.set_ylabel(r"Aggregate ToT response, $R_{A|B}$")
+    else:
+        # shaded = Q-hat > 0: A's aggregate terms of trade deteriorate (gray + hatch for print)
+        ax.fill_between(rho, vals, 0, where=vals > 0, facecolor=SHADE, edgecolor=GREY, hatch="////",
+                        lw=0, label="condition fails")
+        ax.plot(rho, vals, color=BLUE)
+        ax.axhline(0, color=MUTED, lw=0.6)
+        for r in roots:
+            ax.axvline(r, color=MUTED, lw=0.5, ls=(0, (2, 2)))
+            ax.text(r, 0.03, "%.2f" % r, transform=ax.get_xaxis_transform(), fontsize=8.5,
+                    ha="center", bbox=dict(fc="white", ec="none", pad=0.5))
+        ax.set_xlim(*xr)
+        ax.set_xlabel(r"$\rho$")
+        ax.set_ylabel(r"$\hat Q_{A|B}(\rho)$")
     style.save(fig, "fig6%s_aggregate_tot.pdf" % name)
