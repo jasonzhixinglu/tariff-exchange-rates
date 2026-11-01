@@ -1,106 +1,51 @@
 \section{Asymmetry}
 \label{sec:asymmetry}
 
-Partner symmetry makes average protection and relative treatment separate cleanly: the first moves the effective exchange rate, while the second moves bilateral rates around it. Asymmetry in country sizes, trade shares, or preferences breaks this exact decomposition. This section asks which conclusions survive. The central distinction is between uniform and discriminatory protection. Uniform protection preserves the conventional local terms-of-trade and welfare result under general asymmetry, while discriminatory protection can overturn it when the target is small or lightly weighted and substitution toward larger bystanders is sufficiently strong.
+Partner symmetry makes the decomposition between average protection and relative treatment especially transparent. We now ask how the central results change when countries differ in size, trade shares, and preferences. The main distinction is between uniform and discriminatory protection. Uniform protection retains the conventional local aggregate result under general asymmetry. Discriminatory protection need not: when the target is small or lightly weighted and cross-origin substitution is sufficiently strong, adverse movements against larger bystanders can dominate the favorable movement against the target.
 
-Three exchange-rate objects must be distinguished. Bilateral rates describe incidence across individual partners. The trade-weighted NEER summarizes the overall nominal exchange-rate movement. The import-weighted aggregate terms of trade is the welfare-relevant object in the model. These objects coincide at the symmetric benchmark but can differ under asymmetry.
-
-\subsection{Aggregate terms of trade and welfare}
-\label{sec:welfare}
+\subsection{Uniform and Discriminatory Protection}
 
 Let $b_{Aj}$ denote partner $j$'s share in $A$'s baseline import expenditure, and let $R^B_j\equiv\partial\nu_j/\partial\tau_{AB}$ be the response of $A$'s bilateral rate against $j$ to a marginal tariff on $B$. Define
 \begin{equation}
 R_{A|B}\equiv\sum_{j\neq A}b_{Aj}R^B_j.
-\label{eq:RAB}
 \end{equation}
-Because producer prices are fixed in their own currencies, a tariff on $B$ improves $A$'s import-weighted aggregate terms of trade if and only if $R_{A|B}<0$.
-
-The welfare result is stated at a balanced free-trade baseline of the model of \cref{sec:model} with interior shares, lump-sum rebate of tariff revenue, and exchange rates differentiable in tariffs, which holds whenever $J$ is nonsingular.
+Because producer prices are fixed in their own currencies, a tariff on $B$ improves $A$'s import-weighted aggregate terms of trade if and only if $R_{A|B}<0$. The welfare result is stated at a balanced free-trade baseline of the model of \cref{sec:model} with interior shares, lump-sum rebate of tariff revenue, and exchange rates differentiable in tariffs, which holds whenever $J$ is nonsingular.
 
 \begin{lemma}[First-order welfare]
 \label{lem:welfare}
 Under these assumptions, let $d\tau$ be any marginal tariff vector, imposed by $A$ or by other countries. To first order, the change in the welfare of $A$'s representative household, in units of $A$'s income, is
 \begin{equation}
 \frac{dU_A}{U_A'\,I_A}=-\,m_A\sum_{j\neq A}b_{Aj}\,d\nu_j,
-\label{eq:welfare}
 \end{equation}
 where $m_A$ is $A$'s import share of income. A marginal tariff change therefore raises $A$'s own welfare to first order if and only if it improves $A$'s import-weighted aggregate terms of trade.
 \end{lemma}
 
-\noindent At free trade, the first-order tariff-revenue gain offsets the direct increase in import prices, leaving the welfare effect of the induced exchange-rate adjustment. The formal proof is in \cref{app:proofs}. For tariffs imposed by $A$, write
-\begin{equation}
-\frac{dU_A}{U_A'\,I_A}=\sum_{j\neq A}g_j\,d\tau_{Aj},\qquad g_j\equiv-m_A\,R_{A|j},
-\label{eq:gradient}
-\end{equation}
-where $R_{A|j}$ is the response \cref{eq:RAB} to a tariff on $j$ alone, so that $g_j$ is the first-order welfare gain to $A$ from a marginal tariff on $j$.
-
-\subsection{Uniform protection}
-\label{sec:uniform}
+\noindent At free trade, the first-order tariff-revenue gain offsets the direct increase in import prices; the proof is in \cref{app:proofs}.
 
 \begin{proposition}[Uniform protection]
 \label{prop:uniform}
-Consider any balanced free-trade baseline at which MML and the assumptions of \cref{lem:welfare} hold; country sizes, origin shares, home biases and parameters may differ across countries. Let $A$ impose a marginal uniform tariff on all foreign partners, $d\tau_{Aj}=dt>0$ for all $j\neq A$, with all other tariffs unchanged. Then:
-\begin{enumerate}[label=(\roman*)]
-\item the tariff disturbs every partner's trade balance by
-\begin{equation}
-F_j=-f_{Aj}\,\rho_D^A\,dt,\qquad \rho_D^A\equiv\eta_Ah_A+(1-h_A)(1-\alpha_T^A)>0,
-\label{eq:uniformF}
-\end{equation}
-where $h_A$ is $A$'s home share of tradable spending and $\eta_A$, $\alpha_T^A$ are $A$'s own parameters;
-\item $A$'s currency appreciates weakly against every partner, $d\nu_j\leq0$, and strictly against every partner if $A$ imports from all of them or $J$ is irreducible;
-\item $A$'s import-weighted aggregate terms of trade improve and $A$'s own welfare rises to first order: $\sum_{j\neq A}g_j>0$.
-\end{enumerate}
+At any balanced free-trade baseline satisfying MML and the assumptions of \cref{lem:welfare}, with country sizes, origin shares, home biases and parameters free to differ, a marginal uniform tariff by $A$ on all partners, $d\tau_{Aj}=dt>0$ for all $j\neq A$, appreciates $A$'s currency weakly against every partner, strictly if $A$ imports from all of them or $J$ is irreducible, improves $A$'s import-weighted aggregate terms of trade, and raises $A$'s welfare to first order.
 \end{proposition}
 
-Uniform protection leaves relative import prices across foreign suppliers unchanged. Cross-origin substitution therefore creates no differential incidence across partners, and the tariff produces a disturbance of the same sign for every partner. Under MML, $A$'s currency appreciates against every partner, its aggregate terms of trade improve, and its own welfare rises to first order.
+Uniform protection leaves relative import prices across foreign suppliers unchanged. Cross-origin substitution therefore creates no differential incidence across partners. Under MML, the tariffing country appreciates against every partner, its aggregate terms of trade improve, and its welfare rises to first order. Asymmetry alone therefore does not overturn the conventional local result. The possibility of reversal arises from discriminatory protection.
 
-This is a local result at a balanced free-trade baseline. It does not apply to finite tariffs, retaliation, global welfare, or the globally optimal tariff. Its role here is to establish that asymmetry alone does not overturn the conventional aggregate result. The possibility of reversal arises from discriminatory protection.
-
-\subsection{Discriminatory protection}
-\label{sec:totcondition}
-\label{sec:threecountry}
-
-A discriminatory tariff can produce a different aggregate result because the favorable movement against the target and the adverse movements against bystanders receive different weights. Separate the target $B$ from the remaining suppliers and define their import-weighted average response as
-\[
-\bar R^B_{-B}\equiv
-\sum_{j\neq A,B}
-\frac{b_{Aj}}{1-b_{AB}}R^B_j.
-\]
-Then
-\[
+Now let $A$ tariff a single target $B$, and define the import-weighted average response against the remaining suppliers as $\bar R^B_{-B}\equiv\sum_{j\neq A,B}\frac{b_{Aj}}{1-b_{AB}}R^B_j$. Then
+\begin{equation}
 R_{A|B}=b_{AB}R^B_B+(1-b_{AB})\bar R^B_{-B}.
-\]
-
-\begin{definition}[Aggregate terms-of-trade condition]
-\label{def:tot}
-Unilateral tariffs by $A$ have the conventional aggregate terms-of-trade effect if, for every target $B$,
-\begin{equation}
-b_{AB}R^B_B+(1-b_{AB})\bar R^B_{-B}<0.
-\label{eq:totcondition}
+\label{eq:totsplit}
 \end{equation}
-\end{definition}
+If the tariffing country appreciates against the target but depreciates on average against the bystanders, its aggregate terms of trade deteriorate only when the adverse bystander movement is sufficiently large relative to the favorable target movement and the bystanders carry sufficient weight in the import basket. A bilateral bystander reversal is therefore necessary but not sufficient for an aggregate reversal.
 
-When $R^B_B<0$ and $\bar R^B_{-B}>0$, the condition fails if and only if
-\begin{equation}
-\frac{\bar R^B_{-B}}{-R^B_B}>\frac{b_{AB}}{1-b_{AB}}.
-\label{eq:totfail}
-\end{equation}
-If $A$ appreciates against the target but depreciates on average against the bystanders, the aggregate terms of trade deteriorate only when the adverse bystander movement is sufficiently large relative to the favorable target movement and the bystanders carry sufficient weight in $A$'s import basket. A bilateral bystander reversal is therefore necessary but not sufficient for an aggregate reversal.
+\subsection{A Small Target and Large Bystanders}
 
-In the three-country model, fix a balanced free-trade baseline, that is, the import-origin shares $b_{ij}$, the home shares $h_i$, the incomes $y_i$ and all parameters other than $\rho$, and let only $\rho$ vary. Write the local system as $A(\rho)R=F(\rho)$, with $A\equiv-J$ and $R=(R^B_B,R^B_C)'$. Since $\rho$ enters the linearized share responses (\cref{eq:linear}) only through the factor $(1-\rho)$, every entry of $A$ and $F$ is affine in $\rho$, and so is the adjugate of the $2\times2$ matrix $A$. Hence
-\begin{equation}
-R_{A|B}(\rho)=\frac{b'\adj(A(\rho))F(\rho)}{\det A(\rho)},\qquad
-b'\adj(A(\rho))F(\rho)=q_2\rho^2+q_1\rho+q_0\equiv Q_{A|B}(\rho).
-\label{eq:Q}
-\end{equation}
-Under MML $\det A(\rho)>0$, so at every $\rho$ at which MML holds at the fixed baseline, $R_{A|B}$ has the sign of $Q_{A|B}(\rho)$ and the aggregate condition is $Q_{A|B}(\rho)<0$.
+The economically relevant asymmetric case is transparent from the weighted-incidence condition. Suppose the tariff target is small or carries a low weight in the tariffing country's imports, while the untariffed bystanders account for a correspondingly large share of trade. An appreciation against the target then contributes relatively little to the aggregate import price, while depreciation against the bystanders receives greater weight. Strong cross-origin substitution reinforces this asymmetry by redirecting expenditure toward the larger untariffed suppliers.
 
 \begin{proposition}[Aggregate reversal under discriminatory protection]
 \label{prop:reversal}
-Fix a balanced free-trade baseline of the three-country model and consider values of $\rho$ for which MML holds. At the symmetric benchmark, a marginal unilateral tariff improves the tariffing country's aggregate terms of trade for every admissible $\rho$. Under asymmetry, a marginal discriminatory tariff can instead worsen the aggregate terms of trade and reduce the tariffing country's welfare to first order. Such a reversal is more likely when the target is small, carries a low weight in the tariffing country's imports, and foreign suppliers are sufficiently close substitutes.
+Fix a balanced free-trade baseline satisfying MML. Under asymmetry, a marginal discriminatory tariff can worsen the tariffing country's aggregate terms of trade and reduce its welfare to first order.
 \end{proposition}
 
-The mechanism is a weighted-incidence effect. An appreciation against a small or lightly weighted target makes only a limited contribution to the import price index. Strong cross-origin substitution redirects expenditure toward larger untariffed suppliers, whose currencies can appreciate against the tariffing country. If these adverse bystander movements are sufficiently large and sufficiently heavily weighted, they dominate the favorable movement against the target.
+In the numerical comparative statics, reversals arise most readily when the target is small or carries a low weight in the tariffing country's imports and foreign suppliers are sufficiently close substitutes. The mechanism is a weighted-incidence effect: the favorable movement against the target receives little weight, while the adverse movements against larger bystanders receive more. As $\rho$ rises, stronger substitution toward those suppliers can make the latter movements dominate (\cref{fig:tot}).
 
 \begin{figure}[t]
 \centering
@@ -112,16 +57,10 @@ The mechanism is a weighted-incidence effect. An appreciation against a small or
 \includegraphics[width=\textwidth]{fig6b_aggregate_tot.pdf}
 \caption{Small, low-weight target}
 \end{subfigure}
-\caption{Aggregate terms-of-trade effects under asymmetry. At the symmetric benchmark the conventional aggregate effect always holds. With a small, lightly weighted target, sufficiently strong cross-origin substitution can reverse it.}
+\caption{Aggregate terms-of-trade effects under asymmetry. At the symmetric benchmark the conventional aggregate effect holds. With a small, lightly weighted target, sufficiently strong cross-origin substitution can reverse it.}
 \label{fig:tot}
 \end{figure}
 
-\Cref{fig:tot} compares the symmetric benchmark with a small, lightly weighted target, whose parameterization is given in \cref{app:asym-tot}. In the local model, at the same balanced free-trade baseline satisfying MML, a marginal uniform tariff raises $A$'s welfare (\cref{prop:uniform}), while a marginal discriminatory tariff can lower it. The two results are compatible because \cref{prop:uniform} restricts only the sum of the partner-specific welfare gradients in \cref{eq:gradient}, whereas \cref{eq:totcondition} requires each component $g_B$ to be positive. With $N=3$, $g_B+g_C>0$, so $g_B<0$ implies $g_C>0$.
+The bilateral, effective, and aggregate terms-of-trade responses need not reverse at the same value of $\rho$. The NEER uses total-trade weights, while the aggregate terms of trade uses import weights. With heterogeneous bystanders there is also generally no exact representative-bystander aggregation. The corresponding formulas and additional asymmetric cases are reported in the online supplement.
 
-\subsection{Bilateral rates, the NEER, and heterogeneous bystanders}
-\label{sec:neer}
-\label{sec:heterogeneous}
-
-Under asymmetry, bilateral rates, the NEER, and the aggregate terms of trade need not move together. The NEER weights bilateral movements by total trade, including exports, whereas the aggregate terms of trade uses import weights. A favorable movement against the target can therefore receive different weight in the two aggregates, producing different reversal thresholds.
-
-With four or more countries, heterogeneous bystanders generally cannot be collapsed into the exact representative bystander of \cref{prop:composite}. Their average response depends on the internal adjustment structure of the bystander bloc. The three-country model should therefore be interpreted as a diagnostic of the sign mechanism, not as a quantitative representation of a heterogeneous trade network. \Cref{app:asym-primitives} gives the formal block-matrix representation and numerical examples.
+\FloatBarrier

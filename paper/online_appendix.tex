@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
@@ -28,12 +28,17 @@
 \setlist{itemsep=2pt,topsep=4pt}
 \renewcommand{\thesection}{S\arabic{section}}
 \numberwithin{equation}{section}
+\counterwithin{figure}{section}
 \crefname{section}{Section}{Sections}
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[section]
 
 % Notation
 \newcommand{\bone}{\mathbf{1}}
 \newcommand{\TB}{\mathrm{TB}}
 \newcommand{\ToT}{\mathrm{ToT}}
+\DeclareMathOperator{\adj}{adj}
 
 \title{\textbf{Online Supplement to\\ ``Understanding Multilateral Tariffs and Exchange Rates''}}
 \author{Jason Lu \and Dimitre Milkov}
@@ -43,10 +48,19 @@
 
 \maketitle
 
-\noindent This supplement collects derivations, numerical results and data documentation that are referenced in, but not required for, the working paper. Section, equation, proposition, figure and table numbers without the prefix S refer to the working paper. Notation and the sign convention are those of the paper: a rise in $e_{Aj}$ or $\nu_j$ is a depreciation of $A$ against $j$. Numerical values use the US-like parameters $(\alpha_D,\alpha_T,\eta)=(0.8,0.4,1.5)$, $\rho_D=1.32$, unless stated otherwise.
+\noindent This supplement collects derivations, numerical results and data documentation that are referenced in, but not required for, the working paper. Section, equation, proposition, figure and table numbers without the prefix S refer to the working paper. Notation and the sign convention are those of the paper: a rise in $e_{Aj}$ or $\nu_j$ is a depreciation of $A$ against $j$. Values not derived analytically are numerical comparative statics computed from the exact model, with the baseline solved from primitives; they are not global theorems, and MML holds at every reported root and point. Numerical values use the US-like parameters $(\alpha_D,\alpha_T,\eta)=(0.8,0.4,1.5)$, $\rho_D=1.32$, unless stated otherwise. The US--China--rest-of-world mapping in \cref{sup:usmap} is illustrative and is not a calibration of exchange-rate magnitudes.
 
-\section{Three-country illustration}
-\label{sup:three}
+\section{General tariff-vector and multi-target extensions}
+
+At the symmetric benchmark with $N\geq3$ and $M_N\neq0$, let $A$ raise its tariff by $d\tau$ on $k$ partners, $1\leq k\leq N-1$. Then $\bar t=k\,d\tau/(N-1)$, $\widetilde t_B=(N-1-k)\,d\tau/(N-1)$ for every targeted $B$ and $\widetilde t_c=-k\,d\tau/(N-1)$ for every untargeted $c$, and \cref{M-eq:lambdas} gives
+\begin{equation}
+\begin{gathered}
+\frac{d\log e_{Ac}}{d\tau}=\frac{k(\rho-N\rho_D)}{N(N-1)M_N},\qquad
+\frac{d\log e_{AB}}{d\tau}=-\frac{Nk\rho_D+(N-1-k)\rho}{N(N-1)M_N},\\
+\frac{d\nu^E_A}{d\tau}=-\frac{k\rho_D}{(N-1)M_N}.
+\end{gathered}
+\end{equation}
+For $k\leq N-2$, the response against each untargeted partner is $k$ times the unilateral bystander response, so the threshold is again $\rho>N\rho_D$. For a general tariff vector the condition is \cref{M-eq:reltreat}: for a tariff increase on $j$, $t_j\geq0$, depreciation against $j$ requires both $\rho>N\rho_D$ and a tariff differential large enough that $t_j/\bar t$ falls below $1-N\rho_D/\rho$.
 
 At $N=3$ the single bystander $c$ is also the composite $C$ of \cref{M-prop:composite}. With $\nu=(\nu_B,\nu_c)$, \cref{M-eq:Jsym,M-eq:disturbance} give the unilateral-tariff system
 \begin{equation}
@@ -60,44 +74,125 @@ With $M_3>0$,
 \frac{d\log e_{AB}}{d\tau}=-\frac{\rho+3\rho_D}{6M_3}<0,\qquad
 \frac{d\log e_{Ac}}{d\tau}=\frac{\rho-3\rho_D}{6M_3},\qquad
 \frac{d\log e_{Bc}}{d\tau}=\frac{\rho}{3M_3}>0.
-\label{eq:threecountryslopes}
 \end{equation}
 Since $(-J)^{-1}=\frac{2}{3mM_3}\begin{psmallmatrix}2&1\\1&2\end{psmallmatrix}$ is entrywise positive under MML, \cref{M-eq:signrule} gives $d\nu_c/d\tau=\frac{2}{3mM_3}(F_B+2F_c)$, with $F_c=m(\rho-\rho_D)/4$ and $F_B=-m(\rho+\rho_D)/4<0$. For $\rho_D<\rho<3\rho_D$, $F_c>0$ but $F_B+2F_c=m(\rho-3\rho_D)/4<0$: $c$'s trade balance improves at the initial exchange rates, yet $A$ appreciates against $c$ (\cref{M-fig:geometry-a}).
 
-\section{Composite bystander with a fixed internal elasticity}
-\label{sup:composite}
+\section{The representative bystander: derivation and counterfactual}
 
-If the composite bystander of \cref{M-prop:composite} keeps the mapped $y_C$, $h_C$, flows, weights and $\rho$ but replaces $\eta_C$ by $\eta$, it no longer reproduces the $N$-country economy for $N\geq4$, and its bystander threshold, computed from the linear system, falls slightly with $N$: at the US-like calibration, from $3.96$ at $N=3$ to $3.71$ at $N=8$, while $N\rho_D$ rises from $3.96$ to $10.56$. The steep $N$-dependence of $N\rho_D$ therefore comes from the bloc's internal trade, governed by $\rho$, rather than from its size.
+This section completes the proof of \cref{M-prop:composite} in \cref{M-app:proofs}. The mapping sets $d\tau_{AC}=d\tau_{Ac}$, $d\tau_{CA}=d\tau_{cA}$, $d\tau_{BC}=d\tau_{Bc}$, $d\tau_{CB}=d\tau_{cB}$ (the common values) and retains $d\tau_{AB},d\tau_{BA}$. Admissible shocks are tariffs by $A$ or $B$ common across bystanders, tariffs by all bystanders on $A$ or on $B$ common across bystanders, and tariffs between $A$ and $B$.
 
-\section{Common and finite tariffs: numerical results}
-\label{sup:tau0}
+\paragraph{Flows.} In the $N$-country economy $\sum_cf_{Ac}=\sum_cf_{cA}=m\frac{N-2}{N-1}$; in the composite $f_{AC}=m\frac{N-2}{N-1}$ and, since $1-h_C=2(1-\alpha_D)/(N-1)$, $f_{CA}=\alpha_T(1-h_C)\tfrac12(N-2)=m\frac{N-2}{N-1}$; likewise for $B$, and $f_{AB}=f_{BA}=m/(N-1)$ in both, so $s_{CA}=s_{cA}=m/(N-1)$. All bystander goods face the common price change $d\nu_C+d\tau_{Ac}$ in $A$, so $A$'s import price index, its common share change $d\log s_{Ac}$ and its income response coincide with the composite's, and $\sum_cdf_{Ac}=df_{AC}$; the same holds for $B$. Summing \cref{M-eq:tb} over bystanders, the terms $\sum_c\sum_{c'\neq c}(f_{c'c}-f_{cc'})$ cancel identically. Since $d\log f_{cA}=d\log s_{cA}+d\log\tilde I_c-d\tau_{cA}$ is common across $c$, $\sum_cdf_{cA}=f_{CA}\,d\log f_{cA}$, which fixes $y_C=N-2$. Incomes match because $s_{CA}=s_{cA}$ and $s_{CB}=s_{cB}$, and $d\tau_{cA}=d\tau_{CA}$. The residual share matches because shares sum to one.
 
-This section reports the numerical values behind \cref{M-app:asym-tariff}. In the reported exercises a common external tariff raises the threshold $\rho^*(\tau_0)$ of \cref{M-eq:tau0thresh}. At $N=3$, $\rho^*(\tau_0)$ is about 10 percent above its free-trade value $N\rho_D$ at $\tau_0=0.25$ and about 36 percent above it at $\tau_0=1$. The main reason is that $x$ falls: the common appreciation of $A$'s currency lowers $A$'s share of each partner's imports, so relative treatment disturbs a smaller part of the trade on which relative exchange-rate movements act. The local threshold applies to marginal cuts; in the exact model, removing the tariff on $B$ entirely requires a higher $\rho$ than a marginal cut at the same baseline.
+\paragraph{Restricted system.} Imposing $d\nu_c=d\nu_C$ on row $B$ and on the sum of the bystander rows of $-J$,
+\begin{equation}
+-J=j_S\begin{pmatrix}N-1&-(N-2)\\-(N-2)&2(N-2)\end{pmatrix},\qquad \det(-J)=j_S^2N(N-2),
+\end{equation}
+which for $N\geq3$ is nonsingular if and only if $j_S\neq0$, whatever its sign. With disturbances $F_B$, $F_c$ and $F_C=(N-2)F_c$,
+\begin{equation}
+d\nu_C=\frac{F_B+(N-1)F_c}{Nj_S},\qquad d\nu_B=\frac{2F_B+(N-2)F_c}{Nj_S},
+\label{eq:reducedsol}
+\end{equation}
+the unique solution of both systems. For the unilateral tariff, $F_B+(N-1)F_c=m(\rho-N\rho_D)/(N-1)^2$, so \cref{eq:reducedsol} reproduces the threshold of \cref{M-prop:unilateral}.
 
-A concentrated finite tariff works in the opposite direction. At $N=3$, starting from the symmetric free-trade benchmark and re-solving the equilibrium at each tariff, the unilateral bystander threshold falls with the size of the tariff in the computed cases: at the 2025 peak rate $\tau=1.45$ it is $2.70$, against $3\rho_D=3.96$. A larger tariff shrinks $B$'s share of $A$'s imports, so a further increase adds less average protection while continuing to divert expenditure toward $C$.
+\paragraph{Counterfactual internal elasticity.} If the composite bystander keeps the mapped $y_C$, $h_C$, flows, weights and $\rho$ but replaces $\eta_C$ by $\eta$, it no longer reproduces the $N$-country economy for $N\geq4$, and its bystander threshold, computed from the linear system, falls slightly with $N$: at the US-like calibration, from $3.96$ at $N=3$ to $3.71$ at $N=8$, while $N\rho_D$ rises from $3.96$ to $10.56$. The steep $N$-dependence of $N\rho_D$ therefore comes from the bloc's internal trade, governed by $\rho$, rather than from its size.
 
-\section{Asymmetric primitives: further numerical examples}
-\label{sup:asym}
+\section{Preferential trade, common external tariffs, and finite cuts}
 
-Once primitives rather than shares are held fixed, the shares themselves depend on $\rho$: at an asymmetric baseline relative prices differ across origins, and a higher $\rho$ reallocates expenditure toward the cheapest origin. A large target, whose currency depreciates to balance its trade, can then crowd $C$ out of $A$'s imports. With all other primitives symmetric and the baseline re-solved at each $\rho\in[1.02,1000]$, $e_{AC}$ reverses only for $5.99<\rho<53.8$ when $L_B=2.2$ and nowhere when $L_B=2.6$. Away from symmetry there may therefore be no bilateral threshold, one or several. Near the symmetric benchmark, the bilateral threshold rises with $A$'s origin weight on the target (a larger average-protection shock), with the target's size (which raises its share in $A$'s imports) and with home bias in $A$ alone (stronger domestic diversion), and is nearly insensitive to the bystander's size.
+\paragraph{Competing exporters.} In the model class of \cref{M-sec:model} the bystander's exchange rate is its terms of trade with $A$, $\ToT_{cA}=e_{Ac}$, so the response in \cref{M-eq:unilateral} is the third-country terms-of-trade effect of a discriminatory tariff, the central object of the preferential-trade-agreement literature since \citet{viner1950} and \citet{mundell1964}. In the canonical competing-exporter model, an importer $A$ that does not produce the good buys it from $B$ and $C$ under quasi-linear preferences. Let $q_j$ be exporter $j$'s price, $E_j(q_j)$ its export supply and $M_A(p_A)$ the importer's demand at domestic price $p_A$, and let $A$ levy a tariff $t_B$ on imports from $B$. With both exporters active, $p_A=q_B+t_B=q_C$, and market clearing requires $E_B(q_C-t_B)+E_C(q_C)=M_A(q_C)$. Differentiating at $t_B=0$,
+\begin{equation}
+\frac{dq_C}{dt_B}=\frac{E'_B}{E'_B+E'_C-M'_A}>0,
+\end{equation}
+so a tariff on $B$ always improves $C$'s terms of trade. In the nested-CES model the bystander gains only if $\rho>N\rho_D$, because $A$ also produces a competing tradable: part of the demand diverted from $B$ goes to $A$'s own good, along with the rebate's income effect.
 
-The symmetric ordering $d\nu_B<d\nu_C$ can fail away from symmetry: with country sizes $L_A=5.12$, $L_B=4.26$ and $L_C=2.28$, $\beta_{AB}=0.86$, $\beta_{BA}=0.65$, $\beta_{CA}=0.19$, $\alpha_D=0.89$, $\alpha_T=0.6$, $\eta=3.74$ and $\rho=1.20$, the difference $d\nu_B-d\nu_C$ equals $0.08\,d\tau$.
+\paragraph{Common external tariffs.} Suppose $A$ levies a common tariff $\tau_0$ on all $N-1$ partners, which impose no tariffs of their own. With symmetric partner primitives this baseline is invariant to every relabeling of $A$'s partners, so \cref{M-prop:decomposition} applies. Tariff changes are measured as $t_j=d\log(1+\tau_{Aj})$. Let $\theta\equiv\tau_0/(1+\tau_0)$, $\mu_A$ and $\mu_P$ be the import shares of $A$'s and of a partner's tradable expenditure, $\omega$ the share of $A$'s good in a partner's import bundle, $\phi\equiv\alpha_T\mu_A/(1-\theta\alpha_T\mu_A)$ the response of $A$'s income to its import expenditure, $X\equiv f_{Aj}=f_{jA}$ the balanced bilateral flow between $A$ and each partner, and $Y\equiv f_{jk}$ the flow between two partners. Linearizing at this baseline gives
+\begin{equation}
+g_S=-X\rho_D(\tau_0),\qquad g_D=-X\rho,\qquad j_S=XM_S,\qquad j_D=\big(X+(N-1)Y\big)M_D,
+\end{equation}
+where
+\begin{align*}
+\rho_D(\tau_0)&=1-\phi(1-\theta)+(\eta-1)(1-\mu_A)(1+\phi\theta),\\
+M_S&=1+(\eta-1)(1-\mu_A)(1+\phi\theta)+(\rho-1)(1-\omega)+(\eta-1)(1-\mu_P)\,\omega,\\
+M_D&=1+(\rho-1)\frac{N-3+\omega}{N-2}+(\eta-1)(1-\mu_P)\frac{N-1-\omega}{N-2}.
+\end{align*}
+At free trade $\theta=0$, $\phi=m$, $\mu_A=\mu_P=1-\alpha_D$ and $\omega=1/(N-1)$, so $\rho_D(0)=\rho_D$ and $M_S=M_D=M_N$. Tariff disturbances and common exchange-rate movements act only on partners' trade with $A$, whereas a zero-sum movement $v$ also moves partner $j$'s rate against the other partners, on average by $(N-1)/(N-2)$ times $v_j$; hence the bases $X$ and $X+(N-1)Y$. With $x\equiv X/(X+(N-1)Y)$, $\lambda_{\mathrm{avg}}=-\rho_D(\tau_0)/M_S$ and $\lambda_{\mathrm{rel}}=-x\rho/M_D$. For a further tariff on $B$, $t=dt\,e_B$, the bystander response is $d\nu_C=(\lambda_{\mathrm{avg}}-\lambda_{\mathrm{rel}})\,dt/(N-1)$, so $A$ depreciates against $C$ if and only if
+\begin{equation}
+\rho>\rho^*(\tau_0)\equiv\frac{\rho_D(\tau_0)}{x}\,\frac{M_D}{M_S}.
+\label{eq:tau0thresh}
+\end{equation}
+At free trade $x=1/N$, so the factor $N$ in the bystander threshold is $1/x$ at the free-trade baseline. Because $\omega$, $\mu_P$, $x$ and $M_S$ depend on baseline shares that depend on $\rho$, \cref{eq:tau0thresh} is implicit in $\rho$ and is solved numerically with the tariff-ridden baseline re-solved at each $\rho$. By linearity in $t$, a marginal preferential cut for $B$, $t=-dt\,e_B$, worsens $C$'s terms of trade under the same condition.
 
-In the example of \cref{M-app:asym-primitives} with distinct bilateral, aggregate terms-of-trade and NEER thresholds, the bystander threshold lies below $3\rho_D$ because the target is small and lightly weighted. A larger bystander weight $w_{AC}$, obtained with a smaller target, lowers all three thresholds.
+\paragraph{Numerical results.} In the reported exercises a common external tariff raises the threshold. At $N=3$, $\rho^*(\tau_0)$ is about 10 percent above its free-trade value $N\rho_D$ at $\tau_0=0.25$ and about 36 percent above it at $\tau_0=1$. The main reason is that $x$ falls: the common appreciation of $A$'s currency lowers $A$'s share of each partner's imports, so relative treatment disturbs a smaller part of the trade on which relative exchange-rate movements act. The local threshold applies to marginal cuts; in the exact model, removing the tariff on $B$ entirely requires a higher $\rho$ than a marginal cut at the same baseline. A concentrated finite tariff works in the opposite direction. At $N=3$, starting from the symmetric free-trade benchmark and re-solving the equilibrium at each tariff, the unilateral bystander threshold falls with the size of the tariff in the computed cases: at the 2025 peak rate $\tau=1.45$ it is $2.70$, against $3\rho_D=3.96$. A larger tariff shrinks $B$'s share of $A$'s imports, so a further increase adds less average protection while continuing to divert expenditure toward $C$.
+
+\section{General asymmetric characterization and polynomial taxonomy}
+
+\paragraph{Polynomial structure.} At a general balanced baseline the coefficients of \cref{M-eq:linear} are the baseline shares $b_{ij}$, the home shares $h_i$ and the incomes $y_i$. The elasticity $\rho$ enters the share responses only through $(1-\rho)$, so every entry of $J$ and $F$ is affine in $\rho$, each entry of $\adj(-J)$ is a polynomial of degree at most $N-2$ in $\rho$, and each numerator $[\adj(-J)F]_i$ a polynomial of degree at most $N-1$. Since $\det(-J)>0$ under MML, a bilateral response can change sign only at a root of this numerator. At a general asymmetric baseline the $N=3$ numerator is already quadratic in $\rho$:
+\begin{equation}
+\operatorname{sign}\frac{d\log e_{AC}}{d\tau}=\operatorname{sign}\big(c_2\rho^2+c_1\rho+c_0\big),\quad c_2=\alpha_T^2\,b_{AB}b_{AC}b_{CA}b_{CB}(1-h_A)(1-h_C)y_Ay_C,
+\end{equation}
+where $c_1$ and $c_0$ depend on the full pattern of shares and sizes. Provided MML holds, $c_2>0$ whenever $A$ and $C$ each import from both foreign origins, so at given shares the response is positive beyond the largest positive root, which equals $3\rho_D$ at the symmetric point.
+
+\paragraph{The aggregate condition.} Unilateral tariffs by $A$ have the conventional aggregate terms-of-trade effect if $R_{A|B}<0$ for every target $B$, that is, by \cref{M-eq:totsplit}, $b_{AB}R^B_B+(1-b_{AB})\bar R^B_{-B}<0$. With $R^B_B<0$ and $\bar R^B_{-B}>0$, the condition fails if and only if
+\begin{equation}
+\frac{\bar R^B_{-B}}{-R^B_B}>\frac{b_{AB}}{1-b_{AB}}.
+\end{equation}
+The left side is the equilibrium incidence, the average adverse move against bystanders per unit of favorable move against the target; the right side is relative import exposure. For tariffs imposed by $A$, the first-order welfare change is $\sum_{j\neq A}g_j\,d\tau_{Aj}$ with $g_j\equiv-m_AR_{A|j}$. \Cref{M-prop:uniform} restricts only the sum $\sum_jg_j$, whereas the aggregate condition requires each component $g_B$ to be positive; with $N=3$, $g_B+g_C>0$, so $g_B<0$ implies $g_C>0$.
+
+\paragraph{The quadratic.} Fix a balanced free-trade baseline of the three-country model, that is, the import-origin shares $b_{ij}$, the home shares $h_i$, the incomes $y_i$ and all parameters other than $\rho$, and let only $\rho$ vary. Write the local system as $A(\rho)R=F(\rho)$, with $A\equiv-J$ and $R=(R^B_B,R^B_C)'$. Every entry of $A$ and $F$ is affine in $\rho$, and so is the adjugate of the $2\times2$ matrix $A$. Hence
+\begin{equation}
+R_{A|B}(\rho)=\frac{b'\adj(A(\rho))F(\rho)}{\det A(\rho)},\qquad
+b'\adj(A(\rho))F(\rho)=q_2\rho^2+q_1\rho+q_0\equiv Q_{A|B}(\rho).
+\end{equation}
+Under MML $\det A(\rho)>0$, so at every $\rho$ at which MML holds at the fixed baseline, $R_{A|B}$ has the sign of $Q_{A|B}(\rho)$ and the aggregate condition is $Q_{A|B}(\rho)<0$. At the symmetric benchmark, \cref{eq:threecountry} gives $\det A=3(mM_3/2)^2$ and $R_{A|B}=-\rho_D/(2M_3)$, so $Q_{A|B}=-\tfrac38m^2\rho_DM_3$, affine in $\rho$ ($q_2=0$) and negative wherever MML holds.
+
+\begin{proposition}[Three cases]
+\label{prop:threecases}
+Fix a balanced free-trade baseline of the three-country model as above, and consider values $\rho>0$ at which MML holds at that baseline. The following three cases are not an exhaustive classification of the signs of $(q_2,q_1,q_0)$.
+\begin{enumerate}[label=(\alph*)]
+\item Symmetric benchmark: $q_2=0$ and $Q_{A|B}(\rho)<0$ for all $\rho$. The aggregate condition always holds.
+\item $q_2>0$ and $q_0<0$: $Q_{A|B}$ has exactly one positive root $\rho^*$. The condition holds for $\rho<\rho^*$ and fails for $\rho>\rho^*$.
+\item $q_2<0$, $q_1>0$, $q_0<0$ and a positive discriminant: $Q_{A|B}$ has two positive roots $\rho_1<\rho_2$. The condition fails only for $\rho_1<\rho<\rho_2$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) is shown above. (b) If $q_2>0$ and $q_0<0$, the product of the roots $q_0/q_2$ is negative, so there is exactly one positive root $\rho^*$, with $Q<0$ on $(0,\rho^*)$ and $Q>0$ beyond. (c) If $q_2<0$, $q_1>0$, $q_0<0$ and the discriminant is positive, the roots are real with positive sum $-q_1/q_2$ and positive product $q_0/q_2$, and the downward parabola is positive only between them. The cases are not exhaustive: other sign patterns, such as $q_0>0$, or $q_2<0$ with no positive root, are possible; in the latter case with $q_0<0$, $Q_{A|B}<0$ and the condition holds at every $\rho$ at which MML holds.
+\end{proof}
+
+Case (b), panel (b) of \cref{M-fig:tot}, is the economically central asymmetric case: the conventional aggregate effect holds at low cross-origin substitutability and is reversed above a single threshold. Case (c) requires richer network asymmetry. In the examples, $\hat Q$ is $Q_{A|B}$ scaled by $|q_2|$ (by $|q_1|$ when $q_2=0$), which preserves its sign and roots, and MML holds at every baseline for $\rho\in[0.01,200]$. Panel (a) of \cref{M-fig:tot}, the symmetric benchmark, has $\hat Q=-(\rho+2.2)$. Panel (b) has $\hat Q=\rho^2-2.6695\rho-2.2568$, with root $\rho^*=3.344$. \Cref{fig:network} shows case (c): a network specified in baseline shares, with $\alpha_T=0.862$, $\eta=3.007$, home shares $(0.201,0.854,0.360)$, $(b_{AB},b_{AC})=(0.525,0.475)$, $(b_{BA},b_{BC})=(0.766,0.234)$, $(b_{CA},b_{CB})=(0.407,0.593)$ and balancing incomes $(1,5.126,0.867)$, for which $\hat Q=-\rho^2+31.53\rho-198.04$, so the condition fails only for $8.66<\rho<22.86$.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.5\textwidth]{fig6c_aggregate_tot.pdf}
+\caption{Aggregate terms-of-trade effects in an asymmetric network with two thresholds, case (c) of \cref{prop:threecases}. Shading denotes regions in which a marginal discriminatory tariff worsens the aggregate terms of trade.}
+\label{fig:network}
+\end{figure}
+
+\paragraph{Comparative statics.} In the family containing panel (b), with $L_A=L_C=1$ and $\beta_{BA}=\beta_{CA}=0.5$, and with baselines fixed at $\bar\rho$, $q_0<0$ throughout. A positive $q_2$, and hence case (b), arises when the target is small, has a low import weight, or both, with an approximate trade-off between the two; the root rises as the target becomes larger or more heavily weighted. For a large or heavily weighted target $q_2<0$ and $Q_{A|B}$ has no positive root, so the condition holds at every $\rho$ at which MML holds.
+
+\paragraph{Baselines that depend on $\rho$.} Once primitives rather than shares are held fixed, the shares themselves depend on $\rho$: at an asymmetric baseline relative prices differ across origins, and a higher $\rho$ reallocates expenditure toward the cheapest origin. A large target, whose currency depreciates to balance its trade, can then crowd $C$ out of $A$'s imports. With all other primitives symmetric and the baseline re-solved at each $\rho\in[1.02,1000]$, $e_{AC}$ reverses only for $5.99<\rho<53.8$ when $L_B=2.2$ and nowhere when $L_B=2.6$. Away from symmetry there may therefore be no bilateral threshold, one or several. Near the symmetric benchmark, the bilateral threshold rises with $A$'s origin weight on the target, with the target's size and with home bias in $A$ alone, and is nearly insensitive to the bystander's size. The symmetric ordering $d\nu_B<d\nu_C$ can also fail: with country sizes $L_A=5.12$, $L_B=4.26$ and $L_C=2.28$, $\beta_{AB}=0.86$, $\beta_{BA}=0.65$, $\beta_{CA}=0.19$, $\alpha_D=0.89$, $\alpha_T=0.6$, $\eta=3.74$ and $\rho=1.20$, the difference $d\nu_B-d\nu_C$ equals $0.08\,d\tau$.
+
+\section{Heterogeneous bystanders and NEER versus aggregate terms-of-trade thresholds}
+
+\paragraph{NEER and aggregate terms of trade.} The trade-weighted NEER is $d\nu^E_A=\sum_{j\neq A}w_{Aj}\,d\nu_j$. For $N=3$ with asymmetric weights, $d\nu^E_A=w_{AB}\,d\nu_B+w_{AC}\,d\nu_C$, so the NEER can depreciate when the bystander reversal occurs and the bystander carries most of $A$'s trade. With $\beta_{AB}=0.2$, $L_B=0.223$ (so that $w_{AC}=0.85$ at $\rho=3\rho_D$), all other primitives symmetric and the baseline re-solved at each $\rho$, $A$ depreciates against the bystander for $\rho>2.59$, its aggregate terms of trade deteriorate ($R_{A|B}>0$) for $\rho>3.40$, and its NEER depreciates for $\rho>3.97$. The bystander threshold lies below $3\rho_D$ because the target is small and lightly weighted. The NEER threshold is highest because the target's weight in $A$'s trade, $w_{AB}=0.15$, exceeds its weight in $A$'s imports, $b_{AB}=0.095$, so the favorable move against the target counts for more in the NEER. A larger bystander weight $w_{AC}$, obtained with a smaller target, lowers all three thresholds.
+
+\paragraph{Heterogeneous bystanders.} With $N\geq4$ and bystanders that differ from one another, partition the reduced system into the target $B$ and the set $R$ of the $N-2$ bystanders. Correspondingly, $J_{RR}$ is the block of $J$ giving the bystanders' trade-balance responses to their own rates, $J_{RB}$ the column giving their responses to $d\nu_B$, $F_R$ their tariff disturbances per unit of $d\tau$, and $d\nu_R$ the vector of $A$'s bilateral rates against the bloc. Let $q_j\equiv b_{Aj}/(1-b_{AB})$, $j\in R$, be bystander $j$'s share in $A$'s imports from the bloc, so that $q'\bone=1$ and $q'd\nu_R/d\tau=\bar R^B_{-B}$. The bystanders' rows of the local system read $J_{RB}\,d\nu_B+J_{RR}\,d\nu_R+F_R\,d\tau=0$. Under MML $-J$ is a nonsingular M-matrix, so its principal block $-J_{RR}$ is nonsingular as well. Solving for $d\nu_R$ and weighting by $q$ gives the bloc's import-weighted response,
+\begin{equation}
+d\bar\nu_R\equiv q'd\nu_R=-q'J_{RR}^{-1}J_{RB}\,d\nu_B-q'J_{RR}^{-1}F_R\,d\tau.
+\end{equation}
+The identity \cref{M-eq:totsplit} always holds, but the bloc's average response depends on $J_{RR}$, $J_{RB}$ and $F_R$, not only on the bloc's aggregate size and weight, so heterogeneous bystanders generally cannot be collapsed into the exact representative bystander of \cref{M-prop:composite}.
 
 \section{Illustrative U.S.--China--rest-of-world mapping}
 \label{sup:usmap}
 
-This mapping places a unilateral US tariff on China in the three-country model, with $A$ the United States, $B$ China and $C$ the rest of the world. It maps trade shares and country sizes; it is not a calibration of exchange-rate magnitudes.
+This mapping places a unilateral US tariff on China in the three-country model, with $A$ the United States, $B$ China and $C$ the rest of the world. It maps trade shares and country sizes; it is not a calibration of exchange-rate magnitudes, and the working paper does not use it.
 
 All inputs are for 2024, in billions of current dollars. US goods imports are $3{,}266.4$ in total and $440.3$ from China, and US goods exports $2{,}061.7$ in total and $143.3$ to China (US Census Bureau). China's goods imports are $2{,}585.1$ in total and $163.6$ from the United States, and its exports $3{,}577.2$ in total and $524.7$ to the United States (China's General Administration of Customs). This gives $b_{AB}=0.135$ and $b_{BA}=0.063$. The rest of the world's imports from the United States are US exports less US exports to China, and its imports from China are China's exports less China's exports to the United States, which gives $b_{CA}=0.386$ and $b_{CB}=0.614$. Country sizes are GDP at purchasing-power parity (IMF World Economic Outlook, October 2026), with the rest of the world equal to world GDP less that of the United States and China; relative to the United States they are $(1,1.30,4.45)$. The origin weights $\beta_{ij}$ are chosen so that the balanced free-trade baseline, solved at $\bar\rho=3\rho_D=3.96$ and then held fixed as $\rho$ varies, reproduces these six shares exactly. The remaining parameters are $\alpha_T=0.4$ and $\eta=1.5$, with either a common $\alpha_D=0.8$ or, for the United States, $\alpha_D=0.673$, the domestic share of US goods absorption in 2024 (BEA goods output plus imports less exports).
 
-The bilateral bystander threshold, above which the dollar depreciates against the rest of the world, is $4.01$ with the common home bias and $3.87$ with the measured US home share. The aggregate terms-of-trade condition \cref{M-eq:totcondition} fails only for $\rho$ above $4.66$ and $4.50$, respectively. MML holds at both baselines for all $\rho\in[1,20]$. The mapping imposes balanced trade on every country, whereas the observed US goods deficit in 2024 was about $1{,}205$; it ignores the gaps between mirror trade statistics, uses model-implied rather than measured home shares for China and the rest of the world, covers goods only and treats the rest of the world as a single country.
+The bilateral bystander threshold, above which the dollar depreciates against the rest of the world, is $4.01$ with the common home bias and $3.87$ with the measured US home share. The aggregate terms of trade deteriorate, $R_{A|B}>0$, only for $\rho$ above $4.66$ and $4.50$, respectively. MML holds at both baselines for all $\rho\in[1,20]$. The mapping imposes balanced trade on every country, whereas the observed US goods deficit in 2024 was about $1{,}205$; it ignores the gaps between mirror trade statistics, uses model-implied rather than measured home shares for China and the rest of the world, covers goods only and treats the rest of the world as a single country.
 
-Two features of the US--China configuration push in opposite directions. The rapid reallocation of trade between China and other suppliers in the earlier US--China trade war \citep{fajgelbaum2024,freund2024,alfaro2023} suggests high cross-origin substitutability in trade flows, which pushes toward dollar weakness against bystanders. China's size and import weight push against the depreciation mechanism: a larger and more heavily weighted target raises the bystander threshold and moves the aggregate terms-of-trade condition toward its conventional sign. In this mapping, the bilateral bystander threshold for a US tariff on China is about $3.9$--$4.0$ and the aggregate terms-of-trade threshold about $4.5$--$4.7$. A quantitative network model is needed to determine the net sign and the magnitudes. As an interpretation outside the static model, markets may price the tariff configuration expected to persist, in which case expected retaliation would push the dollar in the same direction as realized retaliation.
+Two features of the US--China configuration push in opposite directions. The rapid reallocation of trade between China and other suppliers in the earlier US--China trade war \citep{fajgelbaum2024,freund2024,alfaro2023} suggests high cross-origin substitutability in trade flows, which pushes toward dollar weakness against bystanders. China's size and import weight push against the depreciation mechanism: a larger and more heavily weighted target raises the bystander threshold and moves the aggregate terms-of-trade condition toward its conventional sign. A quantitative network model is needed to determine the net sign and the magnitudes. As an interpretation outside the static model, markets may price the tariff configuration expected to persist, in which case expected retaliation would push the dollar in the same direction as realized retaliation.
 
 \section{The 2025 tariff chronology and classification details}
-\label{sup:episode}
 
 \paragraph{Tariff chronology.} Statutory headline tariffs above the pre-2025 baseline, by effective date (2025), in percent: US on China 10 (February~4), 20 (March~4), 30 (April~5), 104 (April~9), 145 (April~10), 30 (May~14), 20 (November~10); China on US, across the board, 84 (April~10), 125 (April~12), 10 (May~14), with the product-specific measures of February~10 and March~10 not shown in \cref{M-fig:episode}; US on EU 10 (April~5), 20 (April~9 only), 10 (April~10), 15 inclusive of MFN duties (August~7); US baseline on unlisted partners 10 (April~5); US on Canada 25 (March~4), non-USMCA goods only from March~7, 35 (August~1), with the rate on Mexico at 25 from March~4 to year-end (not shown); Canada on US 25 on covered goods (March~4), with coverage widened on March~13 and April~9 and narrowed to steel, aluminium and autos on September~1.
 
@@ -109,10 +204,9 @@ Two features of the US--China configuration push in opposite directions. The rap
 
 \paragraph{Vietnam.} The dollar strengthened against the dong by $3.2$ percent between the January and December averages, all of it by July. Vietnam, however, moved during the year from a bystander-like position to a direct target: a 46 percent rate was announced on April~2 and was in force for one day before the suspension of April~10, and a 20 percent rate applied from August~7. From August~7 to November~10, Vietnam's 20 percent against China's 30 percent was relative treatment in Vietnam's favour; after November~10, when both faced 20 percent, it disappeared. Within Phase~3 the dollar was roughly flat against the dong ($0.0$ percent on monthly averages, $+0.5$ percent between end-of-month rates).
 
-\paragraph{Movements outside the phases.} Between the May~12 and August~6 daily observations, which fall outside the phases, the dollar fell by a further $4.9$ percent against the euro and $2.5$ percent against the broad index; in December it was $13.1$ percent weaker against the euro than in January.
+\paragraph{Movements outside the phases.} Between the May~12 and August~6 daily observations, which fall outside the phases, the dollar fell by a further $4.9$ percent against the euro and $2.5$ percent against the broad index. Over the year, the dollar was $7.2$ percent weaker against the broad index and $7.6$ percent weaker against the index excluding China in December than in January, on monthly averages, and $13.1$ percent weaker against the euro.
 
 \section{Sector-specific factors}
-\label{sup:rv}
 
 Replace the linear tradable technology with a Ricardo--Viner technology, $Y_{Ti}=A_{Ti}L_{Ti}^{\gamma}$ with $0<\gamma\leq1$, where a fixed sector-specific factor owned by domestic households earns rents $(1-\gamma)Y_{Ti}$; non-tradables remain linear in labor, which is mobile across sectors. At a free-trade baseline, tradable employment is $L_{Ti}=\gamma\alpha_TL_i/(1-\alpha_T+\gamma\alpha_T)$ whatever the exchange rates, so the adjustment matrix is that of the linear model with the same nominal incomes. Only the disturbance changes, through the tariff-setter's income: the rebate draws labor out of tradables and raises the wage, so with $s_{AB}$ the share of $A$'s income spent on $B$'s good,
 \begin{equation*}
@@ -126,7 +220,6 @@ with equality if and only if $\gamma=1$. \Cref{M-prop:unilateral} then holds wit
 so the bystander threshold falls to $N\rho_D(\gamma)$, while the NEER still appreciates because $\rho_D(\gamma)>0$. At the US-like parameters and $N=3$, the threshold is $3.96$ with linear technology and $3.83$ at $\gamma=1/2$.
 
 \section{Permanent trade imbalances}
-\label{sup:imbalance}
 
 Let $T_i$ be permanent transfers fixed in $A$'s currency, positive for a receipt, with $\sum_{i\in\mathcal I}T_i=0$. Each country's external-balance condition becomes
 \begin{equation*}

@@ -1,10 +1,9 @@
 \section{Proofs}
 \label{app:proofs}
 
-Notation and the sign convention are those of the main text; $m\equiv\alpha_T(1-\alpha_D)>0$ at the symmetric benchmark. Unless stated otherwise, derivatives are first-order and evaluated at a balanced free-trade baseline, using the linear system of \cref{app:linear}. \Cref{sec:real} gives the real-exchange-rate extension and its proof.
+Notation and the sign convention are those of the main text; $m\equiv\alpha_T(1-\alpha_D)>0$ at the symmetric benchmark. Unless stated otherwise, derivatives are first-order and evaluated at a balanced free-trade baseline, using the linear system of \cref{app:linear}.
 
 \subsection{Multilateral adjustment and symmetric partners}
-\label{app:proofs-framework}
 
 \begin{proof}[Proof of \cref{lem:gs}]
 Free trade is not required. By homogeneity and Euler's theorem, $\sum_{l\in\mathcal I}\widetilde J_{il}=\TB_i=0$ at the balanced baseline. Since $\nu_l=\chi_l-\chi_A$ with $\chi_A$ fixed, $J$ is $\widetilde J$ with row and column $A$ deleted. Its off-diagonal entries are nonnegative, and for each $i\in\mathcal I_{-A}$
@@ -29,7 +28,6 @@ For the MML characterization, the off-diagonal entry of $J$ is $-b_J=(j_D-j_S)/(
 \end{proof}
 
 \subsection{The symmetric nested-CES model}
-\label{app:proofs-nestedces}
 
 The baseline is the symmetric benchmark of \cref{sec:model} with $N\geq3$; for $N=2$, \cref{thm:main} reduces to \cref{eq:twocountry}.
 
@@ -38,51 +36,35 @@ The benchmark is invariant to relabeling $A$'s partners, so \cref{prop:decomposi
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:unilateral}]
-\Cref{eq:unilateral} follows from \cref{eq:lambdas} (\cref{app:linear-unilateral}). Under MML $M_N>0$, and $\rho_D>0$ since $\alpha_D\eta>0$; hence $d\nu^E_A/d\tau<0$ and, since $N\rho_D+(N-2)\rho>0$, $d\nu_B/d\tau<0$. The denominator of $d\nu_c/d\tau$ is positive, so $d\nu_c/d\tau>0$ if and only if $\rho>N\rho_D$, with $d\nu_c=0$ at $\rho=N\rho_D$. For (iv), \cref{eq:kpartners} gives each untargeted partner $k$ times the unilateral response, so the threshold is again $\rho>N\rho_D$. For a general tariff vector with $\bar t>0$, \cref{eq:reltreat} gives the stated condition; when $t_j\geq0$ its left side is nonnegative, so it can hold only if $1-N\rho_D/\rho>0$, that is, $\rho>N\rho_D$, and it then implies $t_j<\bar t$.
+\Cref{eq:unilateral} follows from \cref{eq:lambdas} (\cref{app:linear-unilateral}). Under MML $M_N>0$, and $\rho_D>0$ since $\alpha_D\eta>0$; hence $d\nu^E_A/d\tau<0$ and, since $N\rho_D+(N-2)\rho>0$, $d\nu_B/d\tau<0$. The denominator of $d\nu_c/d\tau$ is positive, so $d\nu_c/d\tau>0$ if and only if $\rho>N\rho_D$, with $d\nu_c=0$ at $\rho=N\rho_D$. For (iv), with $k\leq N-2$ targets the response against each untargeted partner is $k$ times the unilateral response (\cref{app:linear-unilateral}), so the threshold is again $\rho>N\rho_D$. For a general tariff vector with $\bar t>0$, \cref{eq:reltreat} gives the stated condition; when $t_j\geq0$ its left side is nonnegative, so it can hold only if $1-N\rho_D/\rho>0$, that is, $\rho>N\rho_D$, and it then implies $t_j<\bar t$.
 \end{proof}
 
 \begin{proof}[Proof of \cref{cor:single}]
-\Cref{eq:single} is an identity (\cref{app:linear-unilateral}); under $\alpha_D\geq1/N$ both terms on its right are nonnegative, so $N\rho_D\geq\eta$, and since a bystander depreciation requires $\rho>N\rho_D$ (\cref{prop:unilateral}), it requires $\rho>\eta$. With $\rho=\eta=\sigma$, \cref{eq:unilateral} gives $d\nu_c/d\tau=(\sigma-N\rho_D)/[N(N-1)M_N]$ with $\sigma-N\rho_D=-[\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)]\leq0$; MML is used only to give $M_N>0$, so $d\nu_c/d\tau\leq0$. Since $\sigma>0$ and $\alpha_D<1$, the bracket, a sum of two nonnegative terms, vanishes if and only if $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$, $M_N=\sigma>0$, so MML holds for every $\sigma>0$, and $d\nu_c/d\tau=-(1-\alpha_T)/(N\sigma)$, which is negative and tends to zero as $\sigma\to\infty$ if $\alpha_T<1$ and is identically zero if $\alpha_T=1$.
+Since $N\rho_D=N[1+\alpha_D(\eta-1)-\alpha_T(1-\alpha_D)]$, \cref{eq:single} is an identity; under $\alpha_D\geq1/N$ both terms on its right are nonnegative, so $N\rho_D\geq\eta$, and since a bystander depreciation requires $\rho>N\rho_D$ (\cref{prop:unilateral}), it requires $\rho>\eta$. With $\rho=\eta=\sigma$, \cref{eq:unilateral} gives $d\nu_c/d\tau=(\sigma-N\rho_D)/[N(N-1)M_N]$ with $\sigma-N\rho_D=-[\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)]\leq0$; MML is used only to give $M_N>0$, so $d\nu_c/d\tau\leq0$. Since $\sigma>0$ and $\alpha_D<1$, the bracket vanishes if and only if $\alpha_D=1/N$ and $\alpha_T=1$. At $\alpha_D=1/N$, $N\rho_D-\sigma=(N-1)(1-\alpha_T)$ and $M_N=\sigma>0$, so MML holds for every $\sigma>0$, and $d\nu_c/d\tau=-(1-\alpha_T)/(N\sigma)$, which is negative and tends to zero as $\sigma\to\infty$ if $\alpha_T<1$ and is identically zero if $\alpha_T=1$.
 \end{proof}
 
-\Cref{prop:composite} applies to any marginal tariff change that is invariant to permutations of the $N-2$ bystanders and leaves tariffs among bystanders unchanged: tariffs by $A$ or $B$ common across bystanders, tariffs by all bystanders on $A$ or on $B$ common across bystanders, and tariffs between $A$ and $B$. The mapping sets $d\tau_{AC}=d\tau_{Ac}$, $d\tau_{CA}=d\tau_{cA}$, $d\tau_{BC}=d\tau_{Bc}$, $d\tau_{CB}=d\tau_{cB}$ (the common values) and retains $d\tau_{AB},d\tau_{BA}$. In the three-region economy, $C$ has income $y_C=N-2$, home share $h_C$ with $(N-1)h_C=N-3+2\alpha_D$, weight $\tfrac12$ on each of $A$ and $B$ in its import nest, tradable share $\alpha_T$, cross-origin elasticity $\rho$ and home--import elasticity $\eta_C$; $A$ and $B$ place import weight $\frac{1}{N-1}$ on each other and $\frac{N-2}{N-1}$ on $C$.
+\Cref{prop:composite} applies to any marginal tariff change that is invariant to permutations of the $N-2$ bystanders and leaves tariffs among bystanders unchanged; the composite's tariffs are the common bystander values. In the three-region economy, $C$ has income $y_C=N-2$, home share $h_C$ with $(N-1)h_C=N-3+2\alpha_D$, weight $\tfrac12$ on each of $A$ and $B$ in its import nest, tradable share $\alpha_T$, cross-origin elasticity $\rho$ and home--import elasticity $\eta_C$; $A$ and $B$ place import weight $\frac{1}{N-1}$ on each other and $\frac{N-2}{N-1}$ on $C$.
 
 \begin{proof}[Proof of \cref{prop:composite}]
-The argument compares the two linearized systems at the benchmark; it does not claim that the nonlinear economies coincide at finite tariffs. MML is sufficient for $M_N\neq0$ but is not otherwise used.
+The argument compares the two linearized systems at the benchmark; it does not claim that the nonlinear economies coincide at finite tariffs.
 
-\emph{Common bystander response.} By \cref{lem:jacobian}, $-J=j_S(NI-\bone\bone')$ with eigenvalues $j_S$ and $Nj_S$, and $j_S=mM_N/(N-1)\neq0$, so \cref{eq:JG} has a unique solution. Baseline and shock are invariant to permutations of the bystanders, hence so is the solution: $d\nu_c=d\nu_C$ for all $c$. The equilibrium is then given by $d\TB_B=0$ and $\sum_cd\TB_c=0$ in $(d\nu_B,d\nu_C)$.
+\emph{Common bystander response.} By \cref{lem:jacobian}, $-J=j_S(NI-\bone\bone')$ with $j_S=mM_N/(N-1)\neq0$, so \cref{eq:JG} has a unique solution. Baseline and shock are invariant to permutations of the bystanders, hence so is the solution: $d\nu_c=d\nu_C$ for all $c$. The equilibrium is then given by $d\TB_B=0$ and $\sum_cd\TB_c=0$ in $(d\nu_B,d\nu_C)$.
 
-\emph{Flows and $A$'s and $B$'s demand.} In the $N$-country economy $\sum_cf_{Ac}=\sum_cf_{cA}=m\frac{N-2}{N-1}$; in the composite $f_{AC}=m\frac{N-2}{N-1}$ and, since $1-h_C=2(1-\alpha_D)/(N-1)$, $f_{CA}=\alpha_T(1-h_C)\tfrac12(N-2)=m\frac{N-2}{N-1}$; likewise for $B$, and $f_{AB}=f_{BA}=m/(N-1)$ in both, so $s_{CA}=s_{cA}=m/(N-1)$. All bystander goods face the common price change $d\nu_C+d\tau_{Ac}$ in $A$, so $A$'s import price index, its common share change $d\log s_{Ac}$ and its income response coincide with the composite's, and $\sum_cdf_{Ac}=df_{AC}$; the same holds for $B$.
+\emph{Composite structure.} Summing \cref{eq:tb} over bystanders, intra-bloc flows cancel, so $\sum_c\TB_c$ has the form of $\TB_C=f_{AC}+f_{BC}-f_{CA}-f_{CB}$. The mapped income, home share and import weights reproduce the baseline flows between the bloc and each of $A$ and $B$, and since all bystander goods face a common price change in $A$ and in $B$, $A$'s and $B$'s demand for the bloc's goods responds as their demand for $C$'s good. It remains to match the bloc's demand for $A$'s and $B$'s goods.
 
-\emph{Intra-bloc trade cancels.} Summing \cref{eq:tb} over bystanders, the terms $\sum_c\sum_{c'\neq c}(f_{c'c}-f_{cc'})$ cancel identically, so $\sum_c\TB_c$ has the form of $\TB_C=f_{AC}+f_{BC}-f_{CA}-f_{CB}$, and $\TB_B$ has the form of the composite's. It remains to show $\sum_cdf_{cA}=df_{CA}$ and $\sum_cdf_{cB}=df_{CB}$.
-
-\emph{Identification of $y_C$, $h_C$ and $\eta_C$.} Since $d\log f_{cA}=d\log s_{cA}+d\log\tilde I_c-d\tau_{cA}$ is common across $c$, $\sum_cdf_{cA}=f_{CA}\,d\log f_{cA}$, which fixes $y_C=N-2$. Incomes match because $s_{CA}=s_{cA}$ and $s_{CB}=s_{cB}$, and $d\tau_{cA}=d\tau_{CA}$. For shares, measure prices in bystander currency: because bystander currencies move together and tariffs among bystanders do not change, other bystanders' goods have $dp=0$. Write $S\equiv dp_{cA}+dp_{cB}$ and $D\equiv dp_{cA}-dp_{cB}$. A bystander's import index moves by $S/(N-1)$, the composite's by $S/2$, so
+\emph{Internal elasticity.} Measure prices in bystander currency, so other bystanders' goods have $dp=0$, and write $S\equiv dp_{cA}+dp_{cB}$ and $D\equiv dp_{cA}-dp_{cB}$. A bystander's import index moves by $S/(N-1)$ and the composite's by $S/2$, so
 \begin{equation*}
 \begin{aligned}
 d\log s_{cA}&=(1-\rho)\frac D2+\Big[(1-\rho)\frac{N-3}{2(N-1)}+(1-\eta)\frac{\alpha_D}{N-1}\Big]S,\\
 d\log s_{CA}&=(1-\rho)\frac D2+(1-\eta_C)h_C\frac S2.
 \end{aligned}
 \end{equation*}
-The $D$ terms coincide for all $(S,D)$; the $S$ terms coincide if and only if $(1-\eta_C)(N-1)h_C=(1-\rho)(N-3)+2\alpha_D(1-\eta)$, which, with $(N-1)h_C=N-3+2\alpha_D$, is \cref{eq:etaC}. The argument for $B$'s good replaces $D$ by $-D$, and the residual share matches because shares sum to one.
+The $D$ terms coincide; the $S$ terms coincide if and only if $(1-\eta_C)(N-1)h_C=(1-\rho)(N-3)+2\alpha_D(1-\eta)$, which, with $(N-1)h_C=N-3+2\alpha_D$, is \cref{eq:etaC}. The argument for $B$'s good replaces $D$ by $-D$.
 
-\emph{Restricted Jacobian and solution.} Hence the two equilibrium conditions, including tariff terms, are identical to the composite's. Imposing $d\nu_c=d\nu_C$ on row $B$ and on the sum of the bystander rows of $-J$,
-\begin{equation}
--J=j_S\begin{pmatrix}N-1&-(N-2)\\-(N-2)&2(N-2)\end{pmatrix},\qquad \det(-J)=j_S^2N(N-2),
-\label{eq:reducedJ}
-\end{equation}
-which for $N\geq3$ is nonsingular if and only if $j_S\neq0$, whatever its sign. With disturbances $F_B$, $F_c$ and $F_C=(N-2)F_c$,
-\begin{equation}
-d\nu_C=\frac{F_B+(N-1)F_c}{Nj_S},\qquad d\nu_B=\frac{2F_B+(N-2)F_c}{Nj_S},
-\label{eq:reducedsol}
-\end{equation}
-the unique solution of both systems. The composite's trade weights $\frac{1}{N-1}$ and $\frac{N-2}{N-1}$ reproduce $A$'s NEER at symmetric weights. For $N=3$, $h_C=\alpha_D$ and $\eta_C=\eta$, so $C$ is the single bystander.
+\emph{Equivalence.} The two equilibrium conditions, including tariff terms, are therefore identical to the composite's. Their restricted Jacobian has determinant $j_S^2N(N-2)\neq0$, so both systems have the same unique solution for $(d\nu_B,d\nu_C)$, and the composite's trade weights $\frac{1}{N-1}$ and $\frac{N-2}{N-1}$ reproduce $A$'s NEER. For $N=3$, $h_C=\alpha_D$ and $\eta_C=\eta$, so $C$ is the single bystander. The flow-by-flow verification and the restricted system are in the online supplement.
 \end{proof}
 
-For the unilateral tariff, $F_B+(N-1)F_c=m(\rho-N\rho_D)/(N-1)^2$ (\cref{app:linear-unilateral}), so \cref{eq:reducedsol} reproduces the threshold of \cref{prop:unilateral}. If instead the composite keeps the mapped $y_C$, $h_C$, flows, weights and $\rho$ but replaces $\eta_C$ by $\eta$, it no longer reproduces the $N$-country economy for $N\geq4$, and its bystander threshold, computed from the linear system, falls slightly with $N$ instead of rising. The computed thresholds are reported in the online supplement.
-
 \subsection{Retaliation, welfare, and asymmetry}
-\label{app:proofs-tradewars}
-\label{app:proofs-asymmetry}
 
 \begin{proof}[Proof of \cref{prop:retaliation}]
 Under MML $M_N>0$ (\cref{thm:main}), and the response is linear in tariffs, so responses to simultaneous tariffs superpose. (i) Shock~1, $d\tau_{AB}=d\tau$, is \cref{eq:unilateral}. Shock~2, $d\tau_{BA}=d\tau$, is the same experiment with $A$ and $B$ exchanged, so $d\log e_{BA}=-\frac{N\rho_D+(N-2)\rho}{N(N-1)M_N}d\tau$ and $d\log e_{Bc}=\frac{\rho-N\rho_D}{N(N-1)M_N}d\tau$; with $e_{AB}=1/e_{BA}$ and $e_{Ac}=e_{AB}e_{Bc}$,
@@ -111,20 +93,19 @@ with $m_A=\sum_js_{Aj}$ and $b_{Aj}=s_{Aj}/m_A$. The tariff terms cancel because
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:uniform}]
-Use \cref{eq:linear} with country-specific $\eta_i$, $\rho_i$ and $\alpha_T^i$, so $s_{Aj}=\alpha_T^A(1-h_A)b_{Aj}$ and $m_A=\alpha_T^A(1-h_A)$. At $d\nu=0$, no country other than $A$ faces a price change, so every flow $f_{ij}$ with $i\neq A$ is unchanged and $F_j=f_{Aj}(d\log s_{Aj}+d\log\tilde I_A-dt)$. In $A$, $dp_{Aj}=dt$ for every $j$, so $d\log P_{MA}=dt$, the cross-origin term vanishes, $d\log s_{Aj}=(1-\eta_A)h_A\,dt$ and $d\log\tilde I_A=m_A\,dt$. Hence
+Use \cref{eq:linear} with country-specific $\eta_i$, $\rho_i$ and $\alpha_T^i$, so $s_{Aj}=\alpha_T^A(1-h_A)b_{Aj}$ and $m_A=\alpha_T^A(1-h_A)$. At $d\nu=0$, no country other than $A$ faces a price change, so $F_j=f_{Aj}(d\log s_{Aj}+d\log\tilde I_A-dt)$. In $A$, $dp_{Aj}=dt$ for every $j$, so $d\log P_{MA}=dt$, the cross-origin term vanishes, $d\log s_{Aj}=(1-\eta_A)h_A\,dt$ and $d\log\tilde I_A=m_A\,dt$. Hence
 \begin{equation*}
-F_j=f_{Aj}\big[(1-\eta_A)h_A+\alpha_T^A(1-h_A)-1\big]dt=-f_{Aj}\,\rho_D^A\,dt,
+F_j=f_{Aj}\big[(1-\eta_A)h_A+\alpha_T^A(1-h_A)-1\big]dt=-f_{Aj}\,\rho_D^A\,dt,\qquad \rho_D^A\equiv\eta_Ah_A+(1-h_A)(1-\alpha_T^A)>0,
 \end{equation*}
-which is \cref{eq:uniformF}; $\rho_D^A>0$ since $\eta_A>0$, $0<h_A\leq1$ and $\alpha_T^A\leq1$, so $F_j\leq0$, strictly if $f_{Aj}>0$. Under MML, \cref{eq:signrule} gives $d\nu_i\leq0$ for every $i$. If $A$ imports from every partner, $F<0$, and each row of the nonsingular nonnegative $(-J)^{-1}$ has a positive entry, so $d\nu_i<0$ for every $i$; if $J$ is irreducible, $(-J)^{-1}>0$ entrywise (\cref{lem:gs}), so $d\nu_i<0$ for every $i$ whenever $F\neq0$. By \cref{lem:welfare}, the welfare change $-m_A\sum_jb_{Aj}d\nu_j$ is nonnegative, and strictly positive in either case since the $b_{Aj}$ sum to one; the aggregate terms of trade improve for the same reason. By linearity this welfare change is $\sum_jg_j\,dt$, so $\sum_jg_j>0$.
+so $F_j\leq0$, strictly if $f_{Aj}>0$. Under MML, \cref{eq:signrule} gives $d\nu_i\leq0$ for every $i$. If $A$ imports from every partner, $F<0$, and each row of the nonsingular nonnegative $(-J)^{-1}$ has a positive entry, so $d\nu_i<0$ for every $i$; if $J$ is irreducible, $(-J)^{-1}>0$ entrywise (\cref{lem:gs}), so $d\nu_i<0$ for every $i$ whenever $F\neq0$. By \cref{lem:welfare}, the welfare change $-m_A\sum_jb_{Aj}d\nu_j$ is positive, and the aggregate terms of trade improve for the same reason.
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:reversal}]
-By \cref{lem:welfare}, a marginal tariff on $B$ worsens $A$'s aggregate terms of trade, and lowers its welfare to first order, if and only if $R_{A|B}>0$. At any $\rho$ at which MML holds, $-J$ is a nonsingular M-matrix, so $\det A(\rho)>0$ and $R_{A|B}$ has the sign of $Q_{A|B}(\rho)$ in \cref{eq:Q}. At the symmetric benchmark with $N=3$, \cref{eq:Jsym} gives $A=j_S(3I-\bone\bone')$ with $j_S=mM_3/2$, so $\det A=3(mM_3/2)^2$, and with equal import weights $R_{A|B}=d\nu^E_A/d\tau=-\rho_D/(2M_3)$ by \cref{eq:unilateral}. Hence $Q_{A|B}=-\tfrac38m^2\rho_DM_3$, which is affine in $\rho$ ($q_2=0$) and negative wherever MML holds.
-
-Under asymmetry it suffices to exhibit one baseline. In example (b) of \cref{app:asym-tot}, a small, lightly weighted target, $Q_{A|B}/q_2=\rho^2-2.6695\rho-2.2568$ with $q_2>0$, and MML holds for $\rho\in[0.01,200]$. Since $q_0/q_2<0$, there is exactly one positive root, $\rho^*=3.344$, and $R_{A|B}>0$ for $\rho^*<\rho\leq200$: the tariff worsens $A$'s aggregate terms of trade and lowers its welfare to first order. The dependence on the target's size and import weight is established numerically in \cref{app:asym-tot}: $q_2>0$ arises when the target is small, has a low import weight, or both, the root rises as the target becomes larger or more heavily weighted, and a large or heavily weighted target yields no positive root.
+By \cref{lem:welfare}, a marginal tariff on $B$ worsens $A$'s aggregate terms of trade, and lowers its welfare to first order, if and only if $R_{A|B}>0$. It suffices to exhibit one baseline. Take the three-country model at the US-like parameters with sizes $L=(1,0.22,1)$, origin weights $\beta_{AB}=0.2$ and $\beta_{AC}=0.8$, other origin weights symmetric, and the free-trade baseline solved at $\bar\rho=3\rho_D=3.96$ and then held fixed ($b_{AB}=0.094$); this is panel (b) of \cref{fig:tot}, and panel (a) is the symmetric benchmark at the same parameters. MML holds at this baseline for $\rho\in[0.01,200]$. Since $\rho$ enters \cref{eq:linear} only through the factor $(1-\rho)$, $R_{A|B}=b'\adj(-J)F/\det(-J)$ with $\det(-J)>0$ under MML and a numerator quadratic in $\rho$. At this baseline the numerator is a positive multiple of $\rho^2-2.6695\rho-2.2568$, which has the single positive root $\rho^*=3.344$. Hence $R_{A|B}>0$ for $\rho^*<\rho\leq200$: the tariff on $B$ worsens $A$'s aggregate terms of trade and reduces its welfare to first order.
 \end{proof}
 
+Additional asymmetric configurations, including the general quadratic characterization, non-monotonic cases, heterogeneous bystanders, and the distinction between NEER and aggregate terms-of-trade thresholds, are reported in the online supplement.
+
 \subsection{Verification}
-\label{app:verification}
 
 The analytical Jacobians and tariff disturbances were checked against centered finite differences of the nonlinear model at symmetric and asymmetric baselines. Closed-form responses were also checked against direct solutions of the linear system, with MML verified at every reported threshold.
