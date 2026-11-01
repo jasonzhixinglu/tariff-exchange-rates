@@ -84,11 +84,11 @@ d\TB_A=m\Big[\big(1+2\alpha_D(\eta-1)\big)d\nu_B+\big(1-m+\alpha_D(\eta-1)\big)d
 \end{equation*}
 with $M_2=1+2\alpha_D(\eta-1)$ and $\rho_D=1-m+\alpha_D(\eta-1)=\alpha_D\eta+(1-\alpha_D)(1-\alpha_T)$. Setting $d\TB_A=0$ gives \cref{eq:twocountry}.
 
-For the elasticity form, let $Q_M$ be $A$'s import volume, with consumer price $p=p_{AB}=(1+\tau)e_{AB}$, and $Q_X$ its export volume, priced at $1/e_{AB}$ in $B$'s currency. At $\tau=0$ incomes are fixed in own currency when $\nu$ moves, and import spending is $s_{AB}I_A=pQ_M$, so at fixed $\tau$
+For the elasticity form, let $p=p_{AB}=(1+\tau)e_{AB}$. At $\tau=0$ incomes are fixed in own currency when $\nu$ moves, and import spending is $s_{AB}I_A=pQ_M$, so at fixed $\tau$
 \begin{equation*}
-\varepsilon_M\equiv-\frac{\partial\log Q_M}{\partial\nu}=-\frac{\partial\log Q_M}{\partial\log p}=1-\frac{\partial\log s_{AB}}{\partial\log p}=1+\alpha_D(\eta-1),
+\varepsilon_M=-\frac{\partial\log Q_M}{\partial\log p}=1-\frac{\partial\log s_{AB}}{\partial\log p}=1+\alpha_D(\eta-1),
 \end{equation*}
-and by symmetry $\varepsilon_X\equiv\partial\log Q_X/\partial\nu=1+\alpha_D(\eta-1)$. With $\TB_A=Q_X-e^{\nu}Q_M$, $\TB_{A\nu}=X(\varepsilon_X+\varepsilon_M-1)$ (\cref{sec:bilateral}), so $\varepsilon_X+\varepsilon_M-1=M_2$.
+and by symmetry $\varepsilon_X=1+\alpha_D(\eta-1)$. Hence $\varepsilon_X+\varepsilon_M-1=M_2$.
 
 \subsection{Unilateral and discriminatory tariffs}
 \label{app:linear-unilateral}
@@ -115,7 +115,6 @@ For a general tariff vector with $\bar t>0$, substituting $\lambda_{\mathrm{avg}
 \frac{\rho}{N}(\bar t-t_j)>\rho_D\,\bar t\qquad\Longleftrightarrow\qquad\frac{t_j}{\bar t}<1-\frac{N\rho_D}{\rho}.
 \label{eq:reltreat}
 \end{equation}
-For a tariff increase on $j$, $t_j\geq0$, the left side of the second inequality is nonnegative, so depreciation against $j$ requires both $\rho>N\rho_D$ and a tariff differential large enough that $t_j/\bar t$ falls below $1-N\rho_D/\rho$.
 
 If $A$ raises its tariff by $d\tau$ on $k$ partners, $1\leq k\leq N-1$, then $\bar t=k\,d\tau/(N-1)$, $\widetilde t_B=(N-1-k)\,d\tau/(N-1)$ for every targeted $B$ and $\widetilde t_c=-k\,d\tau/(N-1)$ for every untargeted $c$, and \cref{eq:lambdas} gives
 \begin{equation}
@@ -145,22 +144,3 @@ with $d\log q^E_A\equiv\frac{1}{N-1}\sum_{j\neq A}d\log q_{Aj}$. Averaging the f
 \frac{d\log q^E_A}{d\tau}=-\Big(1-\frac{mN}{N-1}\Big)\frac{\rho_D}{(N-1)M_N}-\frac{m}{N-1}.
 \label{eq:reer}
 \end{equation}
-
-\subsection{Three-country illustration}
-\label{app:linear-three}
-
-At $N=3$ the single bystander $c$ is also the composite $C$ of \cref{prop:composite}. With $\nu=(\nu_B,\nu_c)$, \cref{eq:Jsym,eq:disturbance} give the unilateral-tariff system
-\begin{equation}
-J=-\frac{mM_3}{2}\begin{pmatrix}2&-1\\-1&2\end{pmatrix},\qquad
-F=-\frac{m}{4}\begin{pmatrix}\rho+\rho_D\\\rho_D-\rho\end{pmatrix},\qquad
-M_3=\frac{3\alpha_D(\eta-1)+\rho+1}{2}.
-\label{eq:threecountry}
-\end{equation}
-With $M_3>0$,
-\begin{equation}
-\frac{d\log e_{AB}}{d\tau}=-\frac{\rho+3\rho_D}{6M_3}<0,\qquad
-\frac{d\log e_{Ac}}{d\tau}=\frac{\rho-3\rho_D}{6M_3},\qquad
-\frac{d\log e_{Bc}}{d\tau}=\frac{\rho}{3M_3}>0.
-\label{eq:threecountryslopes}
-\end{equation}
-Since $(-J)^{-1}=\frac{2}{3mM_3}\begin{psmallmatrix}2&1\\1&2\end{psmallmatrix}$ is entrywise positive under MML, \cref{eq:signrule} gives $d\nu_c/d\tau=\frac{2}{3mM_3}(F_B+2F_c)$, with $F_c=m(\rho-\rho_D)/4$ and $F_B=-m(\rho+\rho_D)/4<0$. For $\rho_D<\rho<3\rho_D$, $F_c>0$ but $F_B+2F_c=m(\rho-3\rho_D)/4<0$: $c$'s trade balance improves at the initial exchange rates, yet $A$ appreciates against $c$ (\cref{fig:geometry-a}).

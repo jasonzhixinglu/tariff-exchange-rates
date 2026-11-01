@@ -37,6 +37,8 @@ def main():
         if f.startswith("fig") and f.endswith(".py"):
             run([py, f], figs)
     run(["latexmk", "-pdf", "-interaction=nonstopmode", "main.tex"], os.path.join(ROOT, "paper"))
+    # The online supplement resolves references from main.aux, so it builds second.
+    run(["latexmk", "-pdf", "-interaction=nonstopmode", "online_appendix.tex"], os.path.join(ROOT, "paper"))
 
 
 if __name__ == "__main__":

@@ -1,9 +1,11 @@
-\section{Trade Wars and Preferential Tariffs}
+\section{Retaliation and Relative Treatment}
 \label{sec:tradewars}
 
-We now allow trading partners to respond. Since the analysis is local, simultaneous tariff changes by several countries add up.
+How does retaliation change the balance between average protection and relative treatment? Under a unilateral tariff, average protection pushes $A$'s currency toward appreciation, while the favorable relative treatment of bystanders pushes in the opposite direction. Retaliation adds a second relative-treatment effect in the bystanders' favor without adding an equivalent average-protection effect.
 
-\subsection{Trade wars}
+Because the analysis is local, the exchange-rate responses to simultaneous tariff changes can be obtained by superposition. The main result is that retaliation lowers the bystander-depreciation threshold from $\rho>N\rho_D$ under a unilateral tariff to $\rho>\rho_D$.
+
+\subsection{Bilateral retaliation and multilateral trade wars}
 \label{sec:retaliation}
 
 \begin{proposition}[Retaliation and trade wars]
@@ -21,22 +23,20 @@ Both belligerents depreciate against every bystander, and in effective terms, if
 \end{enumerate}
 \end{proposition}
 
-$B$'s retaliation adds a second relative-treatment effect in the bystander's favor, which offsets the $1/N$ dilution. The bystander threshold therefore falls from $N\rho_D$ under a unilateral tariff to $\rho_D$, the point at which the bystander's trade balance improves at unchanged exchange rates. At the US-like calibration, $\rho_D=1.32$, below the illustrative range $\rho\in[2,4]$ shaded in \cref{fig:configurations}. Estimates in \citet{broda2006} and \citet{feenstra2018} place median cross-foreign elasticities around 3--4. For values in this range the model predicts that retaliation depreciates the tariffing country's currency against bystanders and in effective terms while leaving the belligerents' bilateral rate unchanged. The model can thus reproduce the pattern documented by \citet{ostry2025}, including the near-stability of the dollar against the renminbi in tit-for-tat episodes, with flexible prices, balanced trade and no financial channel.
+Under bilateral retaliation, the two average-protection effects on the belligerents' bilateral rate cancel, leaving that rate unchanged. Against a bystander, however, the relative-treatment effects reinforce each other. The bystander threshold therefore falls from $N\rho_D$ under a unilateral tariff to $\rho_D$, the point at which the bystander's trade balance improves at unchanged exchange rates. When $\rho>\rho_D$, both belligerents depreciate against the bystanders and in effective terms. At the US-like calibration, $\rho_D=1.32$, below the illustrative range $\rho\in[2,4]$ shown in \cref{fig:configurations}.
 
-The two experiments differ in where adjustment falls. Under bilateral retaliation the belligerents' rate is fixed and adjustment runs against bystanders. In a multilateral war there are no bystanders, and all of $A$'s rates move together.
+A multilateral trade war produces the same threshold but shifts the location of adjustment. Under bilateral retaliation, the belligerents' bilateral rate is unchanged and adjustment occurs against the bystanders. In a multilateral trade war there are no untreated bystanders, so all of $A$'s bilateral rates move together. In both cases, retaliation increases the importance of relative treatment relative to average protection.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.8\textwidth]{fig5_configurations.pdf}
-\caption{Exchange-rate responses across tariff configurations. Unilateral tariffs, bilateral retaliation, and a multilateral trade war for $N=3$. Retaliation lowers the bystander threshold from $3\rho_D$ to $\rho_D$. \textit{Notes:} US-like calibration; shading denotes $\rho\in[2,4]$.}
+\caption{Tariff configurations and exchange-rate responses. Retaliation lowers the bystander-depreciation threshold from $3\rho_D$ to $\rho_D$ when $N=3$. \textit{Notes:} US-like calibration; shading denotes $\rho\in[2,4]$.}
 \label{fig:configurations}
 \end{figure}
 
-\subsection{Preferential tariffs and competing exporters}
+\subsection{Connection to preferential trade}
 \label{sec:pta}
 
-In our model class the bystander's exchange rate is its terms of trade with $A$, $\ToT_{cA}=e_{Ac}$, so the response in \cref{eq:unilateral} is the third-country terms-of-trade effect of a discriminatory tariff, the central object of the preferential-trade-agreement literature since \citet{viner1950} and \citet{mundell1964}. In the canonical competing-exporter model, an importer $A$ that does not produce the good buys it from $B$ and $C$ under quasi-linear preferences. With $q_j$ exporter $j$'s price, $E_j$ its export supply and $M_A$ the importer's demand, a tariff on $B$ always improves $C$'s terms of trade,
-\begin{equation*}
-\frac{dq_C}{dt_B}=\frac{E'_B}{E'_B+E'_C-M'_A}>0.
-\end{equation*}
-In our model the bystander gains only if $\rho>N\rho_D$. The difference is that $A$ also produces a competing tradable: part of the demand diverted from $B$ goes to $A$'s own good, along with the rebate's income effect, so the third-country effect survives only when cross-origin substitution is strong relative to domestic diversion. \Cref{app:asym-tariff} shows that at a positive common external tariff the threshold rises, and that a discrete preferential cut requires a higher $\rho$ than the local threshold suggests.
+The bystander response is also a third-country terms-of-trade effect of discriminatory protection, connecting the analysis to the preferential-trade literature. In the canonical competing-exporter model, a tariff on one exporter improves the terms of trade of an untariffed exporter because demand is diverted toward it. In the present model, the tariffing country also produces a competing tradable, so diverted expenditure can instead shift toward domestic production.
+
+The bystander therefore gains only when cross-origin substitution is sufficiently strong relative to domestic diversion. The formal comparison with the competing-exporter model, the extension to a positive common external tariff, and the results for discrete preferential cuts are reported in \cref{app:asym-tariff}.
