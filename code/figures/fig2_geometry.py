@@ -47,7 +47,7 @@ for panel, rho in (("a", 2.2), ("b", 5.0)):
         assert F[1] > 0 and eq[1] < 0      # C gains at old rates, yet A appreciates against C
     else:
         assert eq[1] > 0
-    fig, ax = plt.subplots(figsize=(style.PANEL_W, 3.3))
+    fig, ax = plt.subplots(figsize=(style.PANEL_W, 2.65))
     lim = 0.95
     s = np.linspace(-lim, lim, 2)
     ax.plot(s, s, color=GREY, lw=0.7, ls=(0, (4, 2)))
@@ -68,10 +68,9 @@ for panel, rho in (("a", 2.2), ("b", 5.0)):
     mid = (common + eq) / 2
     ax.text(mid[0] - 0.06, mid[1] - 0.02, "relative", fontsize=9, color=ORANGE, ha="right", va="top")
     ax.text(eq[0] + 0.05, eq[1] + 0.05, r"$d\nu$", fontsize=10, color=INK, ha="left", va="bottom")
-    ax.text(-0.93, 1.13, "counterfactual (dashed):\nrelative adjustment no\nmore effective than\ncommon adjustment",
-            fontsize=7.5, color=ORANGE, ha="left", va="top", linespacing=1.15)
-    ax.set_xlim(-0.95, 0.45); ax.set_ylim(-0.6, 1.15)
+    ax.text(tip_ext[0] + 0.06, tip_ext[1], "counterfactual", fontsize=8, color=ORANGE,
+            ha="left", va="center")
+    ax.set_xlim(-0.95, 0.45); ax.set_ylim(-0.48, 0.74)
     ax.set_aspect("equal")
     ax.set_xlabel(r"$d\nu_B$"); ax.set_ylabel(r"$d\nu_c$")
-    ax.set_title(r"$\rho=%.1f$:  $d\nu=(%.3f,\ %+.3f)$" % (rho, eq[0], eq[1]), fontsize=9)
     style.save(fig, "fig2%s_geometry.pdf" % panel)

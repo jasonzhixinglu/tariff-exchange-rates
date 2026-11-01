@@ -7,7 +7,7 @@ bystander response under bilateral retaliation)."""
 import numpy as np
 
 import style
-from style import BLUE, GREY, MUTED, ORANGE, SHADE, plt
+from style import BLUE, GREY, ORANGE, SHADE, plt
 from model import closed_forms as cf
 from model import linear as lin
 
@@ -38,16 +38,13 @@ LW = 1.6
 panels = (("(a) Unilateral tariff", uni[:, 0], uni[:, 2], N * rD, r"$3\rho_D=%.2f$" % (N * rD)),
           ("(b) Bilateral retaliation", ret[:, 2], ret[:, 1], rD, r"$\rho_D=%.2f$" % rD))
 fig, axes = plt.subplots(1, 2, figsize=(style.FULL_W, 2.9), sharey=True)
-for k, (ax, (title, neer, bys, thr, lab)) in enumerate(zip(axes, panels)):
+for ax, (title, neer, bys, thr, lab) in zip(axes, panels):
     ax.axvspan(*RHO_BAND, color=SHADE, lw=0, zorder=0)
     style.zero_line(ax)
     ax.plot(rhos, neer, color=BLUE, lw=LW, ls="-", label="NEER")
     ax.plot(rhos, bys, color=ORANGE, lw=LW, ls=(0, (5, 2)), label="Bystander")
     ax.axvline(thr, color=GREY, lw=0.7, ls=(0, (1, 1.5)))
     ax.text(thr + 0.15, 0.04, lab, transform=ax.get_xaxis_transform(), fontsize=8, ha="left")
-    if k == 1:
-        ax.text(sum(RHO_BAND) / 2, 0.98, "Central\n" r"range of $\rho$", ha="center", va="top",
-                transform=ax.get_xaxis_transform(), fontsize=7.5, color=MUTED, linespacing=1.1)
     ax.set_title(title)
     ax.set_xlim(1, 10)
     ax.set_ylim(-0.5, 0.8)
