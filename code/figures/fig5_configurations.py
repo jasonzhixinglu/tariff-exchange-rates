@@ -1,13 +1,13 @@
 """Figure 5 (the paper's Figure 4, label fig:configurations): configuration
 dependence, US-like parameters, N = 3.  Responses of nu_j = log e_{Aj} per unit
 d tau (positive = depreciation of A): the NEER and the bystander response under
-a unilateral tariff and under bilateral retaliation, and the common response
-under a multilateral war.  Every series differs in line style and markers so
-the figure reads in grayscale."""
+(a) a unilateral tariff and (b) bilateral retaliation.  The multilateral-war
+response is computed and cross-checked but not plotted (at N = 3 it equals the
+bystander response under bilateral retaliation)."""
 import numpy as np
 
 import style
-from style import GREY, SHADE, plt
+from style import BLUE, GREY, MUTED, ORANGE, SHADE, plt
 from model import closed_forms as cf
 from model import linear as lin
 
@@ -34,33 +34,28 @@ assert np.allclose(war, ret[:, 1])
 assert np.allclose(ret[:, 2], 0.5 * ret[:, 1])
 
 rD = cf.rhoD(**CAL)
-fig, ax = plt.subplots(figsize=(style.FULL_W, 3.3))
-ax.axvspan(*RHO_BAND, color=SHADE, lw=0)
-ax.text(sum(RHO_BAND) / 2, 0.98, r"central range of $\rho$", ha="center", va="top",
-        transform=ax.get_xaxis_transform(), fontsize=8, color=style.MUTED)
-style.zero_line(ax)
-# multilateral war: wide pale band with hollow markers, drawn first so that the
-# coincident bystander-under-retaliation line stays visible on top of it
-ax.plot(rhos, war, color=style.AQUA, lw=4.0, alpha=0.35, solid_capstyle="butt",
-        marker="o", markevery=(25, 50), ms=6, mfc="white", mec=style.AQUA, mew=1.0,
-        label=r"Multilateral war: common $d\nu_j=d\nu^E_A$")
-ax.plot(rhos, ret[:, 1], color=style.INK, lw=1.0, ls=(0, (1, 1.2)),
-        label=r"Bilateral retaliation: bystander $d\nu_c$")
-style.line(ax, rhos, ret[:, 2], 2, r"Bilateral retaliation: NEER $d\nu^E_A$")
-# yellow slot, darkened so that it stays visible in grayscale, with markers
-ax.plot(rhos, uni[:, 2], color="#b07800", ls=style.STYLES[4][1], marker="^",
-        markevery=(10, 50), ms=4.5, label=r"Unilateral: bystander $d\nu_c$")
-style.line(ax, rhos, uni[:, 0], 1, r"Unilateral: NEER $d\nu^E_A$")
-for x, lab, dx, ha in ((rD, r"$\rho_D=%.2f$" % rD, 0.12, "left"),
-                       (N * rD, r"$3\rho_D=%.2f$" % (N * rD), 0.12, "left")):
-    ax.axvline(x, color=GREY, lw=0.7, ls=(0, (4, 2)))
-    ax.text(x + dx, 0.04, lab, transform=ax.get_xaxis_transform(), fontsize=8, ha=ha)
-ax.set_xlim(1, 10)
-ax.set_xlabel(r"cross-origin elasticity $\rho$")
-ax.set_ylabel(r"response per unit $d\tau$ ($>0$: $A$ depreciates)")
-handles, labels = ax.get_legend_handles_labels()
-order = [4, 3, 2, 1, 0]  # unilateral, retaliation, war
-ax.legend([handles[i] for i in order], [labels[i] for i in order],
-          loc="upper center", bbox_to_anchor=(0.5, -0.17), ncol=2, fontsize=8,
-          handlelength=3.2, columnspacing=1.6)
+LW = 1.6
+panels = (("(a) Unilateral tariff", uni[:, 0], uni[:, 2], N * rD, r"$3\rho_D=%.2f$" % (N * rD)),
+          ("(b) Bilateral retaliation", ret[:, 2], ret[:, 1], rD, r"$\rho_D=%.2f$" % rD))
+fig, axes = plt.subplots(1, 2, figsize=(style.FULL_W, 2.9), sharey=True)
+for k, (ax, (title, neer, bys, thr, lab)) in enumerate(zip(axes, panels)):
+    ax.axvspan(*RHO_BAND, color=SHADE, lw=0, zorder=0)
+    style.zero_line(ax)
+    ax.plot(rhos, neer, color=BLUE, lw=LW, ls="-", label="NEER")
+    ax.plot(rhos, bys, color=ORANGE, lw=LW, ls=(0, (5, 2)), label="Bystander")
+    ax.axvline(thr, color=GREY, lw=0.7, ls=(0, (1, 1.5)))
+    ax.text(thr + 0.15, 0.04, lab, transform=ax.get_xaxis_transform(), fontsize=8, ha="left")
+    if k == 1:
+        ax.text(sum(RHO_BAND) / 2, 0.98, "Central\n" r"range of $\rho$", ha="center", va="top",
+                transform=ax.get_xaxis_transform(), fontsize=7.5, color=MUTED, linespacing=1.1)
+    ax.set_title(title)
+    ax.set_xlim(1, 10)
+    ax.set_ylim(-0.5, 0.8)
+    ax.set_xticks([2, 4, 6, 8, 10])
+    ax.set_xlabel(r"Cross-origin elasticity, $\rho$")
+axes[0].set_ylabel(r"Response per unit $d\tau$ ($>0$: $A$ depreciates)")
+handles, labels = axes[0].get_legend_handles_labels()
+fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, -0.06), ncol=2,
+           handlelength=3.0, columnspacing=2.0)
+fig.subplots_adjust(wspace=0.12, bottom=0.22)
 style.save(fig, "fig5_configurations.pdf")

@@ -95,17 +95,28 @@ Homogeneity of degree one and $\TB_i=0$ give zero row sums, so $\widetilde J_{ii
 (N-1)H_N(0)=-N\big[(N-1)(\rho_D-m)+Nm^2\big]\leq-N\big[(N-1)(1-m)^2+m^2\big]<0.
 \end{equation*}
 
-\paragraph{Two-country elasticities.} This completes \cref{M-app:linear-twocountry}. Let $p=p_{AB}=(1+\tau)e_{AB}$. At $\tau=0$ incomes are fixed in own currency when $\nu$ moves, and import spending is $s_{AB}I_A=pQ_M$, so at fixed $\tau$
+\subsection{Two-Country Sign Conditions}
+\label{sup:twocountry}
+
+This subsection states sufficient conditions for the two-country sign result of \cref{M-sec:bilateral}. Let $e\equiv e_{AB}$ and let $\tau$ be $A$'s tariff on imports from $B$. Border prices are one in the producer's currency, so with import and export quantities $Q_M$ and $Q_X$, $A$'s import payments are $M_A=eQ_M$, its export receipts are $X_A=Q_X$, and $\TB_A(e,\tau)\equiv X_A(e,\tau)-M_A(e,\tau)$, where $X_A$ and $M_A$ include all induced effects, including income effects of tariff revenue. If $\TB_A(e,\tau)$ is continuously differentiable and $\TB_{A,e}\neq0$, the implicit-function theorem gives
+\begin{equation*}
+\frac{de}{d\tau}=-\frac{\TB_{A,\tau}}{\TB_{A,e}}.
+\end{equation*}
+A tariff therefore appreciates $A$'s currency locally when $\TB_{A,\tau}>0$ and $\TB_{A,e}>0$.
+
+\paragraph{The tariff disturbance.} Because $M_A=eQ_M$ is measured at border prices, import payments fall at fixed $e$ if and only if the import quantity falls. Under a lump-sum rebate of revenue, with $\varepsilon^H$ the compensated own-price elasticity of import demand, $\eta_I$ its income elasticity and $\theta$ the revenue share of income,
+\begin{equation*}
+\frac{d\log Q_M}{d\log(1+\tau)}\bigg|_e=-\frac{\varepsilon^H}{1-\eta_I\theta},
+\end{equation*}
+so at free trade ($\theta=0$) the import quantity falls if and only if $\varepsilon^H>0$. In the nested-CES model at free trade, $\varepsilon^H=\rho_D$, the domestic diversion margin, which is strictly positive, and $X_{A,\tau}=0$ because $B$'s income and demand are unchanged at a fixed exchange rate. Hence $\TB_{A,\tau}>0$.
+
+\paragraph{The Marshall--Lerner condition.} At the balanced baseline, $\TB_{A,e}>0$ is the Marshall--Lerner condition $\varepsilon_X+\varepsilon_M>1$. In the nested-CES two-country case (\cref{M-app:linear-twocountry}), let $p=p_{AB}=(1+\tau)e_{AB}$. At $\tau=0$ incomes are fixed in own currency when $\nu$ moves, and import spending is $s_{AB}I_A=pQ_M$, so at fixed $\tau$
 \begin{equation*}
 \varepsilon_M=-\frac{\partial\log Q_M}{\partial\log p}=1-\frac{\partial\log s_{AB}}{\partial\log p}=1+\alpha_D(\eta-1),
 \end{equation*}
 and by symmetry $\varepsilon_X=1+\alpha_D(\eta-1)$. Hence $\varepsilon_X+\varepsilon_M-1=M_2$.
 
-\paragraph{Two-country sign conditions.} This completes \cref{M-app:online-twocountry}. Border prices are one in the producer's currency, so with import and export quantities $Q_M$ and $Q_X$, $A$'s import payments are $M_A=eQ_M$, its export receipts are $X_A=Q_X$, and $\TB_A(e,\tau)\equiv X_A(e,\tau)-M_A(e,\tau)$, where $X_A$ and $M_A$ include all induced effects, including income effects of tariff revenue. Because $M_A=eQ_M$ is measured at border prices, import payments fall at fixed $e$ if and only if the import quantity falls. Under a lump-sum rebate of revenue, with $\varepsilon^H$ the compensated own-price elasticity of import demand, $\eta_I$ its income elasticity and $\theta$ the revenue share of income,
-\begin{equation*}
-\frac{d\log Q_M}{d\log(1+\tau)}\bigg|_e=-\frac{\varepsilon^H}{1-\eta_I\theta},
-\end{equation*}
-so at free trade ($\theta=0$) the import quantity falls if and only if $\varepsilon^H>0$. In the nested-CES model at free trade, $\varepsilon^H=\rho_D>0$, and $X_{A,\tau}=0$ because $B$'s income and demand are unchanged at a fixed exchange rate. The fiscal closure (revenue wasted, spent by the government or transferred abroad) and the pricing convention (local- or dominant-currency pricing, incomplete pass-through, markups) change these quantity responses.
+\paragraph{Qualifications.} These are sufficient conditions rather than universal properties: alternative fiscal closures (revenue wasted, spent by the government or transferred abroad), pricing conventions (local- or dominant-currency pricing), incomplete pass-through, or endogenous markups can change the underlying quantity responses and either sign.
 
 \section{The representative bystander: derivation and counterfactual}
 
