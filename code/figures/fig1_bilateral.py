@@ -9,9 +9,9 @@ slope, shift = 1.0, 0.6          # TB_{A nu} > 0 and TB_{A tau} d tau > 0 (illus
 x = np.linspace(-1.2, 1.0, 50)
 ax.axhline(0, color=MUTED, lw=0.6)
 ax.axvline(0, color=MUTED, lw=0.6)
-ax.plot(x, slope * x, color=BLUE, label="Marshall–Lerner")
+ax.plot(x, slope * x, color=BLUE, label="initial trade-balance schedule")
 ax.plot(x, slope * x + shift, color=ORANGE, linestyle=(0, (5, 2)),
-        label="tariff at unchanged exchange rates")
+        label="post-tariff trade-balance schedule\n(local linearization)")
 xs = -shift / slope
 ax.plot([xs], [0], "o", color=INK, ms=4)
 ax.annotate(r"$d\nu^*=-\,TB_{A\tau}\,d\tau/TB_{A\nu}<0$", xy=(xs, 0), xytext=(-1.15, -0.75),
@@ -19,7 +19,7 @@ ax.annotate(r"$d\nu^*=-\,TB_{A\tau}\,d\tau/TB_{A\nu}<0$", xy=(xs, 0), xytext=(-1
 ax.annotate("", xy=(0.55, 0.55 + shift), xytext=(0.55, 0.55),
             arrowprops=dict(arrowstyle="->", lw=0.8, color=INK))
 ax.text(0.6, 0.55 + shift / 2, r"$TB_{A\tau}\,d\tau$", fontsize=8, va="center")
-ax.text(0.62, 0.30, r"slope $TB_{A\nu}>0$", fontsize=8, color=BLUE)
+ax.text(0.48, 0.22, r"slope $TB_{A\nu}>0$", fontsize=8, color=BLUE)
 ax.set_xlabel(r"$d\nu$  (rise = depreciation of $A$)")
 ax.set_ylabel(r"$dTB_A$")
 ax.set_xticks([]); ax.set_yticks([])

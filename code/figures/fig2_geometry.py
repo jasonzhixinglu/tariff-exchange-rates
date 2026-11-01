@@ -63,7 +63,7 @@ for panel, rho in (("a", 2.2), ("b", 5.0)):
     arrow(ax, common, eq, ORANGE)
     arrow(ax, (0, 0), eq, INK, lw=1.6)
     ax.plot(*eq, "o", color=INK, ms=3.5)
-    ax.annotate(r"$\lambda_A\bar t\,\mathbf{1}$", xy=common, xytext=(common[0] - 0.42, common[1] - 0.12),
+    ax.annotate(r"$\lambda_{\mathrm{avg}}\bar t\,\mathbf{1}$", xy=common, xytext=(common[0] - 0.52, common[1] - 0.12),
                 fontsize=8, color=BLUE)
     ax.annotate(r"$d\nu$", xy=eq, xytext=(eq[0] + 0.03, eq[1] + 0.05), fontsize=8)
     ax.text(tip_ext[0] + 0.02, tip_ext[1] + 0.02, r"$F/j_S$", fontsize=8, color=ORANGE)

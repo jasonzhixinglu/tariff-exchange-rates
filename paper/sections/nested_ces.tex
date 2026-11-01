@@ -1,7 +1,7 @@
 \section{The Nested-CES Model}
 \label{sec:nestedces}
 
-We now specify an economy in which these eigenvalues, and hence every response in \cref{sec:decomposition}, can be computed from primitives.
+We now give economic content to these two components in a nested-CES trade model.
 
 \subsection{Production, preferences and equilibrium}
 \label{sec:model}
@@ -25,7 +25,7 @@ with $s_{ij}$ the realized tariff-inclusive expenditure share of income on $j$'s
 \TB_i=\sum_{k\neq i}f_{ki}-\sum_{j\neq i}f_{ij},\qquad f_{ij}=\frac{s_{ij}\tilde I_i}{1+\tau_{ij}},
 \label{eq:tb}
 \end{equation}
-with $\tilde I_i=e_{Ai}I_i$ income in $A$'s currency. The NEER uses baseline bilateral trade weights, $E_i=\prod_{j\neq i}e_{ij}^{w_{ij}}$ with $w_{ij}=(f_{ij}+f_{ji})/\sum_k(f_{ik}+f_{ki})$; throughout, ``effective exchange rate'' refers to this trade-weighted NEER. The real exchange rate is $q_{ij}=e_{ij}P_j/P_i$, with $P_i$ the consumer price index.
+with $\tilde I_i=e_{Ai}I_i$ income in $A$'s currency. Under the normalization $v_A=1$ of \cref{sec:bilateral}, values in $A$'s currency equal values in the common unit of account, so \cref{eq:tb} is the trade-balance measure of \cref{sec:framework}: flows at border prices, with tariff revenue a domestic transfer. The NEER is the one defined in \cref{sec:decomposition}, written here for any country $i$: $E_i=\prod_{j\neq i}e_{ij}^{w_{ij}}$ with baseline trade weights $w_{ij}=(f_{ij}+f_{ji})/\sum_{k\neq i}(f_{ik}+f_{ki})$; throughout, ``effective exchange rate'' refers to this trade-weighted NEER. The real exchange rate is $q_{ij}=e_{ij}P_j/P_i$, with $P_i$ the consumer price index.
 
 The \textbf{symmetric benchmark} is free trade with $\beta_{ij}=1/(N-1)$, common parameters, and equal endowments and productivities. It retains home bias $\alpha_D$. Write $m\equiv\alpha_T(1-\alpha_D)$ for the import share of income.
 
@@ -62,14 +62,14 @@ g_S=-\frac{m\rho_D}{N-1},\qquad g_D=-\frac{m\rho}{N-1},\qquad j_S=\frac{mM_N}{N-
 \end{equation}
 MML holds if and only if $M_N>0$, and $\eta\geq1$ suffices. When it holds,
 \begin{equation}
-\lambda_A=-\frac{\rho_D}{M_N},\qquad \lambda_R=-\frac{\rho}{NM_N},\qquad d\nu_j=\lambda_A\bar t+\lambda_R\tilde t_j.
+\lambda_{\mathrm{avg}}=-\frac{\rho_D}{M_N},\qquad \lambda_{\mathrm{rel}}=-\frac{\rho}{NM_N},\qquad d\nu_j=\lambda_{\mathrm{avg}}\bar t+\lambda_{\mathrm{rel}}\widetilde t_j.
 \label{eq:lambdas}
 \end{equation}
 \end{theorem}
 
-$M_N$ measures how sensitive $A$'s trade balance with the rest of the world is to its effective exchange rate: $d\TB_A=mM_N\,d\nu^E_A$. When $N>2$ it includes $\rho$, because foreign buyers can substitute between $A$'s goods and other foreign goods. For $N=2$ it reduces to $M_2$. Average protection works as in the two-country case. Relative treatment is zero-sum, so to first order it leaves revenue, income and the tradable/non-tradable split unchanged, and its disturbance is governed by $\rho$ alone.
+$M_N$ measures how sensitive $A$'s trade balance with the rest of the world is to its effective exchange rate: $d\TB_A=mM_N\,d\nu^E_A$, with the equal weights of the symmetric benchmark. When $N>2$ it includes $\rho$, because foreign buyers can substitute between $A$'s goods and other foreign goods. For $N=2$ it reduces to $M_2$. Average protection works as in the two-country case. Relative treatment is zero-sum, so to first order it leaves revenue, income and the tradable/non-tradable split unchanged, and its disturbance is governed by $\rho$ alone.
 
-The factor $1/N$ in $\lambda_R$ is central. A common exchange-rate move shifts only partners' trade with $A$. A relative move also shifts partners' trade with \emph{each other}. At the symmetric benchmark $A$ accounts for a share $1/N$ of the trade on which relative movements act, so $j_D=Nj_S$. \textbf{Relative exchange-rate adjustment is $N$ times as effective as common adjustment}, and a given relative disturbance requires only $1/N$ as much exchange-rate movement.
+The factor $1/N$ in $\lambda_{\mathrm{rel}}$ is central. A common exchange-rate move shifts only partners' trade with $A$. A relative move also shifts partners' trade with \emph{each other}. At the symmetric benchmark $A$ accounts for a share $1/N$ of the trade on which relative movements act, so $j_D=Nj_S$. \textbf{Relative exchange-rate adjustment is $N$ times as effective as common adjustment}, and a given relative disturbance requires only $1/N$ as much exchange-rate movement.
 
 \subsection{A unilateral tariff}
 \label{sec:unilateral}
@@ -86,11 +86,11 @@ The factor $1/N$ in $\lambda_R$ is central. A common exchange-rate move shifts o
 \caption{$\rho=5$: $\rho>3\rho_D$}
 \label{fig:geometry-b}
 \end{subfigure}
-\caption{The geometry of average protection and relative treatment ($N=3$). A unilateral tariff $t=(1,0)=(\tfrac12,\tfrac12)+(\tfrac12,-\tfrac12)$, with $\alpha_D=0.7$, $\alpha_T=0.6$, $\eta=1.5$ ($\rho_D=1.17$, $3\rho_D=3.51$). Blue: common component $\lambda_A\bar t\,\bone$; solid orange: relative component $\lambda_R\tilde t$; black: equilibrium $d\nu$. The dashed orange arrow scales the relative component by $N$ to show $F/j_S$. In (a), $\rho_D<\rho<3\rho_D$: $C$'s trade balance improves at unchanged exchange rates ($F_C>0$), yet $A$ still appreciates against $C$. In (b), $\rho>3\rho_D$: $A$ depreciates against $C$. In both, the NEER appreciates. Computed from \cref{thm:main}.}
+\caption{Average protection and relative treatment, $N=3$. A unilateral tariff on $B$, $t=(1,0)$, moves exchange rates through a common component (blue) and a relative component (solid orange); the black arrow is the equilibrium response $d\nu$, and the dashed arrow $F/j_S$ is the response if relative adjustment were no more effective than common adjustment. In (a), $C$'s trade balance improves at unchanged exchange rates, yet $A$ still appreciates against $C$. In (b), $A$ depreciates against $C$. The NEER appreciates in both. \textit{Notes:} $\alpha_D=0.7$, $\alpha_T=0.6$, $\eta=1.5$, so $\rho_D=1.17$ and $3\rho_D=3.51$.}
 \label{fig:geometry}
 \end{figure}
 
-Let $A$ raise its tariff on $B$ alone, $t=d\tau\,e_B$. Then $\bar t=d\tau/(N-1)$, $\tilde t_B=\frac{N-2}{N-1}d\tau$ and $\tilde t_C=-\frac{d\tau}{N-1}$ for every bystander $C$.
+Let $A$ raise its tariff on $B$ alone, $t=d\tau\,e_B$. Then $\bar t=d\tau/(N-1)$, $\widetilde t_B=\frac{N-2}{N-1}d\tau$ and $\widetilde t_C=-\frac{d\tau}{N-1}$ for every bystander $C$.
 
 \begin{proposition}[Unilateral tariff]
 \label{prop:unilateral}
@@ -236,7 +236,7 @@ $N$ & $N\rho_D$ (true) & with $\eta_C$ \cref{eq:etaC} & with ordinary $\eta$ & $
 Real rates add a price-index wedge: the tariff raises $A$'s consumer prices directly. With $\bar t$ the average tariff and partners imposing no tariffs,
 \begin{equation}
 d\log q_{Aj}=\Big(1-\tfrac{mN}{N-1}\Big)d\nu_j-m\bar t,\qquad
-dq^E_A=\Big[\Big(1-\tfrac{mN}{N-1}\Big)\lambda_A-m\Big]\bar t.
+dq^E_A=\Big[\Big(1-\tfrac{mN}{N-1}\Big)\lambda_{\mathrm{avg}}-m\Big]\bar t.
 \label{eq:real}
 \end{equation}
 
