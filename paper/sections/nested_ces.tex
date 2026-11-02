@@ -1,7 +1,7 @@
 \section{The Nested-CES Model}
 \label{sec:nestedces}
 
-This section specializes the decomposition of \cref{sec:decomposition} into average protection and relative treatment to a nested-CES trade model. In the model, $\eta$ governs substitution between the domestic tradable and the import composite, and $\rho$ governs substitution across foreign origins. We work locally, to first order around a symmetric, balanced, free-trade benchmark. The central result is that a unilateral tariff always appreciates the tariffing country's NEER and its currency against the target, but depreciates it against untariffed bystanders only when $\rho>N\rho_D$, where $\rho_D$ is a domestic diversion margin defined below. With weak home bias, $\alpha_D\geq1/N$, a specification with a single elasticity, $\rho=\eta$, cannot produce this reversal.
+This section introduces a nested-CES trade model to parameterize the decomposition of \cref{sec:decomposition} into average protection and relative treatment. In the model, $\eta$ governs substitution between the domestic tradable and the import composite, and $\rho$ governs substitution across foreign origins. We work locally, to first order around a symmetric, balanced, free-trade benchmark. The central result is that a unilateral tariff always appreciates the tariffing country's NEER and its currency against the target, but depreciates it against untariffed bystanders only when $\rho>N\rho_D$, where $\rho_D$ is a domestic diversion margin defined below. With weak home bias, $\alpha_D\geq1/N$, a specification with a single elasticity, $\rho=\eta$, cannot produce this reversal.
 
 \subsection{Production, preferences and equilibrium}
 \label{sec:model}
@@ -43,7 +43,7 @@ M_2\equiv1+2\alpha_D(\eta-1)=\varepsilon_X+\varepsilon_M-1.
 \end{gathered}
 \label{eq:twocountry}
 \end{equation}
-We call $\rho_D$ the domestic diversion margin. A tariff shifts expenditure toward the domestic economy in two ways: through substitution toward the domestic tradable, and through the income effect of the rebated revenue, part of which is spent on non-tradables. An exchange-rate movement raises no revenue and so has no rebate term, which is why $\rho_D$ differs from $M_2$. With more than two countries, adjustment also separates into a common movement against all foreign suppliers and relative movements across them.
+We call $\rho_D$ the domestic diversion margin. It captures the shift in expenditure toward the domestic economy following a tariff, which operates through both substitution toward the domestic tradable and the expenditure of rebated tariff revenue, including on non-tradables. By contrast, an exchange-rate movement generates no tariff revenue, so its effect on the trade balance is governed by $M_2$ rather than $\rho_D$. With more than two countries, a second distinction arises between exchange-rate movements common to all foreign suppliers and movements across individual partners.
 
 \subsection{The \texorpdfstring{$N$}{N}-country case}
 \label{sec:theorem}
@@ -128,7 +128,7 @@ N\rho_D-\eta=\eta(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)\geq0,
 so $\rho>\eta$ is necessary for a bystander depreciation. In any specification with a single elasticity across all tradable varieties ($\rho=\eta=\sigma$), $\rho-N\rho_D=-[\sigma(N\alpha_D-1)+N(1-\alpha_D)(1-\alpha_T)]\leq0$, so wherever MML holds $d\nu_c/d\tau\leq0$: $A$ never depreciates against a bystander. The response is strictly negative except at the knife edge $\alpha_D=1/N$, $\alpha_T=1$, where it is zero for every $\sigma>0$. More generally, at $\alpha_D=1/N$ the response is $-(1-\alpha_T)/(N\sigma)$: if $\alpha_T<1$ it approaches zero from below as $\sigma\to\infty$, and if $\alpha_T=1$ it is identically zero.
 \end{corollary}
 
-Under weak home bias, the reversal therefore requires cross-origin substitution to exceed home--import substitution. Evidence in \citet{feenstra2018} and \citet{li2022} supports allowing $\rho$ and $\eta$ to differ. At an illustrative US-like calibration ($\alpha_D=0.8$, $\alpha_T=0.4$, $\eta=1.5$, so $\rho_D=1.32$), the threshold is $N\rho_D=3.96$ for $N=3$ and $6.60$ for $N=5$.
+When domestic goods receive at least their symmetric expenditure share, $\alpha_D\geq1/N$, the reversal therefore requires cross-origin substitution to exceed home--import substitution. Evidence in \citet{feenstra2018} and \citet{li2022} supports allowing $\rho$ and $\eta$ to differ. At an illustrative US-like calibration ($\alpha_D=0.8$, $\alpha_T=0.4$, and $\eta=1.5$, so $\rho_D=1.32$), the threshold is $N\rho_D=3.96$ for $N=3$ and $6.60$ for $N=5$.
 
 \begin{figure}[t]
 \centering
@@ -166,12 +166,12 @@ At the symmetric benchmark with $N\geq3$, consider a tariff shock that treats th
 The complete mapping of trade weights and tariff shocks is given in \cref{app:proofs}.
 \end{proposition}
 
-The representation shows that the increase in the bystander threshold with $N$ is not a mechanical consequence of combining more countries into a larger bloc. As the number of bystanders rises, a larger share of the composite bloc's activity consists of trade among the original bystanders. That trade adjusts at the cross-origin elasticity $\rho$, which changes the bloc's internal adjustment and makes relative exchange-rate movements more effective.
+The increase in the bystander threshold with $N$ is not simply a mechanical consequence of aggregating additional countries into a larger bloc. As the number of bystanders rises, a larger share of the composite bloc's activity reflects trade among the underlying bystander economies. This internal trade responds at the cross-origin elasticity $\rho$, changing the bloc's adjustment and hence the effectiveness of relative exchange-rate movements. In this sense, $N$ captures the size and internal trade structure of the bystander bloc, rather than merely the number of countries it contains.
 
-This internal trade structure explains why the unilateral threshold rises to $N\rho_D$. A counterfactual that holds the composite bloc's internal elasticity fixed is reported in the online supplement.
+The three-country model therefore provides a flexible benchmark for multilateral analysis: the third country can be interpreted as a composite bystander bloc, while $N$ governs the importance of trade within that bloc. This structure explains why the unilateral threshold rises to $N\rho_D$. A counterfactual that holds the composite bloc's internal elasticity fixed is reported in the online supplement.
 
-A nominal bystander reversal need not imply a real reversal because the tariff also raises $A$'s consumer price index. At the US-like calibration with $N=3$, the nominal threshold is $3\rho_D=3.96$, while the real threshold is $4.93$. \Cref{sec:real} derives the real-exchange-rate results and the conditions under which the real effective exchange rate continues to appreciate.
+A nominal bystander reversal need not imply a real reversal because the tariff also raises $A$'s consumer price index. At the US-like calibration with $N=3$, the nominal threshold is $3\rho_D=3.96$, while the real threshold is $4.93$. \Cref{sec:real} derives the corresponding real-exchange-rate results and the conditions under which the real effective exchange rate continues to appreciate.
 
-The nested-CES model therefore gives economic content to the decomposition in \cref{sec:framework}. Average protection operates through the domestic diversion margin $\rho_D$, while relative treatment operates through cross-origin substitution $\rho$. Under a unilateral tariff, the two forces reinforce each other against the target but oppose each other against untariffed bystanders. A bystander depreciation requires $\rho>N\rho_D$, while the effective exchange rate continues to appreciate. We next examine how retaliation changes this balance.
+The nested-CES model therefore gives economic content to the decomposition in \cref{sec:framework}. Average protection operates through the domestic diversion margin $\rho_D$, while relative treatment operates through cross-origin substitution $\rho$. Under a unilateral tariff, these forces reinforce each other against the target but oppose each other against untariffed bystanders. A bystander depreciation requires $\rho>N\rho_D$, even as the effective exchange rate continues to appreciate. We next examine how retaliation changes this balance.
 
 \FloatBarrier
